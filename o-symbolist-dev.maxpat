@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 432.0, 79.0, 1499.0, 937.0 ],
+		"rect" : [ 147.0, 79.0, 1499.0, 937.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -60,7 +60,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 57.0, 296.999999999999943, 172.0, 92.0 ],
-					"presentation_linecount" : 6,
 					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 80, -11, -62, -113, 92, 40, -10, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 116, 105, 109, 101, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 12, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 51, 0, 0, 0 ],
 					"saved_bundle_length" : 148,
 					"text" : "/class : \"/noteline\",\n/pitch : 67.84,\n/amp : 1,\n/time : 12,\n/dur : 100,\n/id : \"foo-3\""
@@ -137,7 +136,7 @@
 									"patching_rect" : [ 372.5, 343.0, 150.0, 38.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 111, 116, 101, 79, 102, 102, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 115, 105, 110, 101, 47, 48, 47, 97, 109, 112, 0, 44, 105, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 64,
-									"text" : "/noteOff : 4,\n/sine/4/amp : 0"
+									"text" : "/noteOff : 0,\n/sine/0/amp : 0"
 								}
 
 							}
@@ -3965,12 +3964,6 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
 								"umenu" : 								{
 									"bgfillcolor" : 									{
 										"type" : "color",
@@ -3985,14 +3978,20 @@
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
 								"parentstyle" : "",
 								"multi" : 0
 							}
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4001,9 +4000,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4012,8 +4011,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4022,9 +4021,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4265,7 +4264,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p dev notehead, no duration"
+					"text" : "p dev notehead\\, no duration"
 				}
 
 			}
@@ -4276,7 +4275,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 736.351753830909729, 93.615384101867676, 322.0, 87.0 ],
+					"patching_rect" : [ 1103.351753830909729, 55.615384101867676, 322.0, 87.0 ],
 					"text" : "1. turn on drawsocket server\n2. initialize the Defs\n3. make some notes, you can drag them and alt-drag copy to make more\n4. do a lookup and see the output based on the defined scripts in the Defs"
 				}
 
@@ -4288,7 +4287,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 740.351753830909729, 186.0, 319.0, 60.0 ],
+					"patching_rect" : [ 1138.351753830909729, 164.0, 319.0, 60.0 ],
 					"text" : "known bugs (among many!)\n- mouse click drag in the View resets the object to the left edge since that's the object's start time, but should just offset when dragging."
 				}
 
@@ -4415,7 +4414,315 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "FullPacket" ],
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 8,
+											"minor" : 0,
+											"revision" : 8,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ 153.0, 79.0, 1238.0, 937.0 ],
+										"bglocked" : 0,
+										"openinpresentation" : 0,
+										"default_fontsize" : 12.0,
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"gridonopen" : 1,
+										"gridsize" : [ 15.0, 15.0 ],
+										"gridsnaponopen" : 1,
+										"objectsnaponopen" : 1,
+										"statusbarvisible" : 2,
+										"toolbarvisible" : 1,
+										"lefttoolbarpinned" : 0,
+										"toptoolbarpinned" : 0,
+										"righttoolbarpinned" : 0,
+										"bottomtoolbarpinned" : 0,
+										"toolbars_unpinned_last_save" : 0,
+										"tallnewobj" : 0,
+										"boxanimatetime" : 200,
+										"enablehscroll" : 1,
+										"enablevscroll" : 1,
+										"devicewidth" : 0.0,
+										"description" : "",
+										"digest" : "",
+										"tags" : "",
+										"style" : "",
+										"subpatcher_template" : "",
+										"visible" : 1,
+										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 0,
+													"patcher" : 													{
+														"fileversion" : 1,
+														"appversion" : 														{
+															"major" : 8,
+															"minor" : 0,
+															"revision" : 8,
+															"architecture" : "x64",
+															"modernui" : 1
+														}
+,
+														"classnamespace" : "box",
+														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+														"bglocked" : 0,
+														"openinpresentation" : 0,
+														"default_fontsize" : 12.0,
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"gridonopen" : 1,
+														"gridsize" : [ 15.0, 15.0 ],
+														"gridsnaponopen" : 1,
+														"objectsnaponopen" : 1,
+														"statusbarvisible" : 2,
+														"toolbarvisible" : 1,
+														"lefttoolbarpinned" : 0,
+														"toptoolbarpinned" : 0,
+														"righttoolbarpinned" : 0,
+														"bottomtoolbarpinned" : 0,
+														"toolbars_unpinned_last_save" : 0,
+														"tallnewobj" : 0,
+														"boxanimatetime" : 200,
+														"enablehscroll" : 1,
+														"enablevscroll" : 1,
+														"devicewidth" : 0.0,
+														"description" : "",
+														"digest" : "",
+														"tags" : "",
+														"style" : "",
+														"subpatcher_template" : "",
+														"boxes" : [ 															{
+																"box" : 																{
+																	"fontface" : 0,
+																	"fontsize" : 12.0,
+																	"id" : "obj-8",
+																	"linecount" : 7,
+																	"maxclass" : "o.compose",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 158.0, 326.0, 431.0, 106.0 ],
+																	"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -76, 47, 116, 114, 97, 115, 110, 102, 111, 114, 109, 47, 103, 101, 116, 77, 97, 116, 114, 105, 120, 0, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 93, 44, 10, 32, 32, 105, 102, 40, 32, 115, 116, 114, 102, 105, 110, 100, 40, 34, 109, 97, 116, 114, 105, 120, 34, 44, 32, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 32, 33, 61, 32, 45, 49, 44, 10, 32, 32, 32, 32, 102, 108, 111, 97, 116, 51, 50, 40, 115, 112, 108, 105, 116, 40, 34, 32, 34, 44, 32, 115, 116, 114, 99, 104, 97, 114, 40, 32, 97, 115, 101, 113, 40, 55, 44, 32, 115, 116, 114, 108, 101, 110, 40, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 32, 45, 32, 50, 41, 44, 32, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 41, 41, 10, 32, 32, 41, 10, 41, 0, 0, 0, 0, 0, 0, 0, 28, 47, 102, 111, 111, 0, 0, 0, 0, 44, 102, 102, 102, 0, 0, 0, 0, 63, -128, 0, 0, 64, 0, 0, 0, 64, 64, 0, 0 ],
+																	"saved_bundle_length" : 232,
+																	"text" : "/trasnform/getMatrix : \"lambda([matrix_str],\n  if( strfind(\\\"matrix\\\", matrix_str) != -1,\n    float32(split(\\\" \\\", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)\",\n/foo : [1., 2., 3.]"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontface" : 0,
+																	"fontsize" : 12.0,
+																	"id" : "obj-7",
+																	"linecount" : 8,
+																	"maxclass" : "o.expr.codebox",
+																	"numinlets" : 1,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "FullPacket", "FullPacket" ],
+																	"patching_rect" : [ 50.0, 100.0, 507.0, 127.0 ],
+																	"text" : "/trasnform/getMatrix = quote(lambda([matrix_str],\n  if( strfind(\"matrix\", matrix_str) != -1,\n    float32(split(\" \", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)),\n\n/foo = /trasnform/getMatrix( \"matrix(1 2 3)\" )"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-4",
+																	"linecount" : 5,
+																	"maxclass" : "comment",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 59.000006540748586, 414.0, 111.0, 87.0 ],
+																	"text" : "if the object has a transform it makes it harder to map to the note\n\n"
+																}
+
+															}
+ ],
+														"lines" : [ 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-8", 1 ],
+																	"source" : [ "obj-7", 0 ]
+																}
+
+															}
+ ]
+													}
+,
+													"patching_rect" : [ 1182.0, 307.0, 38.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"description" : "",
+														"digest" : "",
+														"globalpatchername" : "",
+														"tags" : ""
+													}
+,
+													"text" : "p dev"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-5",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 791.0, 29.0, 196.0, 33.0 ],
+													"text" : "parent should be a graphic object? i.e. in the view somewhere?"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-1",
+													"index" : 1,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 24.000006540748586, 1572.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-3",
+													"linecount" : 111,
+													"maxclass" : "o.expr.codebox",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 50.000006540748586, 92.0, 1062.0, 1541.0 ],
+													"text" : "/path./r = 1,\n/path./dur = 100,\n/path./amp = 1,\n\n/path./get/icon = quote(\n  lambda([xy],\n    /d = \"M0,0 S Z\"\n  )\n),\n\n/path./script/pointsToSVGString = quote(\n  lambda([pathObj, matrix], \n    /tmp = map( lambda([p],\n        /_xy = [getbundlemember(p, \"/x\"), getbundlemember(p, \"/y\")]\n        /transform/applyTransform( matrix, /_xy )\n      ), pathObj\n    )\n  )\n),\n\n/path./set/fromData = quote(\n  lambda([obj],\n    /points = getbundlemember(obj, \"/points\"),\n    /time = getbundlemember(obj, \"/time\"),\n    /dur = getbundlemember(obj, \"/dur\"),\n    /id = getbundlemember(obj, \"/id\"),\n\n    /time2pix = /parent./time2pix,\n\n    /n./new = \"path\",\n    /n./class = \"/path\",\n    /n./id = /id,\n\n    # path point array to SVG string\n\n    /n.d = /svgString,\n\n\n\n    /n1./cy = /parent./y + scale(/pitch, 0., 127., /parent./height, 0.),\n    /n1./cx = /parent./x + /time2pix( /time ) + /n1./r,\n\n    /n2./new = \"line\",\n    /n2./class = \"durationLine\",\n    /n2./x1 = /n1./cx - /n1./r,\n    /n2./y1 = /n1./cy,\n    /n2./x2 = /n2./x1 + /time2pix( /dur ),\n    /n2./y2 = /n1./cy,\n\n    /n./children = [/n1, /n2],\n\n    prog1(\n      /n,\n      delete(/n), delete(/n1), delete(/n2), delete(/pitch), delete(/amp), delete(/time), delete(/id), delete(/time2pix)\n    )\n  )\n),\n\n\n/path./set/fromGUI = quote(\n  lambda([obj],\n  # apply transform\n    /obj = obj,\n    /src = /obj./target,\n\n    if( bound(/src./children), map(\n      lambda([c],\n        /c_obj = c,\n        if( /c_obj./class == \"notehead\",\n          /notehead = /c_obj,\n          /durationLine = /c_obj\n        )\n      ), /src./children\n    )),\n \n\n    /xy = if( /src./id != \"svg\" && bound(/src./transform) && bound(/notehead),\n      /transform/applyTransform( /transform/getMatrix(/src./transform), [/notehead./cx, /notehead./cy ] ),\n      /obj./mouse/xy\n    ),\n    /id = /obj./id,\n\n    /r = bound(/obj./r) ? /obj./r : /note./r, # set default radius\n\n    /pix2time = /parent./pix2time,\n\n    /n./class = \"/path\",\n    /n./id = /id,\n    /n./pitch = scale( /xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),\n    /n./time = /pix2time( /xy[[0]] - /parent./x + /r),\n    /n./amp = /path./amp , #scale(/r, 1., 20., 0., 100. ),\n    /n./dur = bound(/durationLine) ? /pix2time( /durationLine./x2 - /durationLine./x1 ) : /path./dur,\n\n    prog1(\n      /n,\n      delete(/n), delete(/xy), delete(/id), delete(/pix2time), delete(/r), delete(/obj), delete(/c_obj), delete(/durationLine), delete(/notehead) \n    )\n  )\n),\n\n/path./get/fromTime = quote(\n  lambda([obj, t],\n    /_obj = obj,\n    /_out./relTime = (t - /_obj./time) / /_obj./dur,\n    if( /_out./relTime >= 0 && /_out./relTime <= 1,\n      prog1( /_out, delete(/_out), delete(/_obj) ),\n      progn( delete(/_out), delete(/_obj) )\n    )\n  )\n)\n\n"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-71",
+													"index" : 1,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "FullPacket" ],
+													"patching_rect" : [ 50.000006540748586, 40.0, 30.0, 30.0 ]
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-3", 0 ],
+													"source" : [ "obj-71", 0 ]
+												}
+
+											}
+ ],
+										"styles" : [ 											{
+												"name" : "black on white",
+												"umenu" : 												{
+													"bgfillcolor" : 													{
+														"type" : "color",
+														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+														"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+														"angle" : 270.0,
+														"proportion" : 0.39,
+														"autogradient" : 0
+													}
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "caption text",
+												"default" : 												{
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "section dividers",
+												"default" : 												{
+													"fontname" : [ "Arial" ],
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "section info reg",
+												"default" : 												{
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "titles",
+												"default" : 												{
+													"fontname" : [ "Arial" ],
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+ ]
+									}
+,
+									"patching_rect" : [ 148.0, 291.330096781253815, 61.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"description" : "",
+										"digest" : "",
+										"globalpatchername" : "",
+										"tags" : ""
+									}
+,
+									"text" : "p path"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
@@ -4518,7 +4825,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 148.0, 286.0, 67.0, 22.0 ],
+									"patching_rect" : [ 148.0, 368.0, 67.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -4575,6 +4882,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"comment" : "",
@@ -4605,12 +4913,12 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-2",
-													"linecount" : 29,
+													"linecount" : 28,
 													"maxclass" : "o.expr.codebox",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 164.0, 149.0, 507.0, 413.0 ],
+													"patching_rect" : [ 164.0, 149.0, 572.0, 399.0 ],
 													"text" : "/parent./x = 10.,\n/parent./y = 10.,\n/parent./width = 600.,\n/parent./height = 800.,\n\n/parent./time/start = 0.,\n/parent./time/dur = 1000.,\n\n/parent./time2pix = quote(lambda([t],\n  (t / /parent./time/dur) * /parent./width\n)),\n\n/parent./pix2time = quote(lambda([x],\n  x * (/parent./time/dur / /parent./width)\n)),\n\n/transform/getMatrix = quote(lambda([matrix_str],\n  if( strfind(\"matrix\", matrix_str) != -1,\n    float32(split(\" \", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)),\n\n\n/transform/applyTransform = quote(lambda([matrix, xy ],\n  [  matrix[[0]] * xy[[0]] + matrix[[2]] * xy[[1]] + matrix[[4]], \n     matrix[[1]] * xy[[0]] + matrix[[3]] * xy[[1]] + matrix[[5]]\n  ]\n))"
 												}
 
@@ -4633,12 +4941,6 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
 												"umenu" : 												{
 													"bgfillcolor" : 													{
 														"type" : "color",
@@ -4653,14 +4955,20 @@
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
 												"parentstyle" : "",
 												"multi" : 0
 											}
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4669,9 +4977,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4680,8 +4988,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4690,9 +4998,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4731,7 +5039,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 390.0, 79.0, 1238.0, 937.0 ],
+										"rect" : [ 408.0, 79.0, 1238.0, 937.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -4898,13 +5206,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-3",
-													"linecount" : 93,
+													"linecount" : 99,
 													"maxclass" : "o.expr.codebox",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 93.000006540748586, 116.0, 1062.0, 1296.0 ],
-													"text" : "/noteline./r = 1,\n/noteline./dur = 100,\n/noteline./amp = 1,\n\n/noteline./set/fromData = quote(\n  lambda([obj],\n    /pitch = getbundlemember(obj, \"/pitch\"),\n    /amp = getbundlemember(obj, \"/amp\"),\n    /time = getbundlemember(obj, \"/time\"),\n    /dur = getbundlemember(obj, \"/dur\"),\n    /id = getbundlemember(obj, \"/id\"),\n\n    /time2pix = /parent./time2pix,\n\n    /n./new = \"g\",\n    /n./class = \"/noteline\",\n    /n./id = /id,\n\n    /n1./new = \"circle\",\n    /n1./class = \"notehead\",\n    /n1./r = scale(/amp, 0., 100, 5., 20.),\n\n    /n1./cy = /parent./y + scale(/pitch, 0., 127., /parent./height, 0.),\n    /n1./cx = /parent./x + /time2pix( /time ) + /n1./r,\n\n    /n2./new = \"line\",\n    /n2./class = \"durationLine\",\n    /n2./x1 = /n1./cx - /n1./r,\n    /n2./y1 = /n1./cy,\n    /n2./x2 = /n2./x1 + /time2pix( /dur ),\n    /n2./y2 = /n1./cy,\n\n    /n./children = [/n1, /n2],\n\n    prog1(\n      /n,\n      delete(/n), delete(/n1), delete(/n2), delete(/pitch), delete(/amp), delete(/time), delete(/id), delete(/time2pix)\n    )\n  )\n),\n\n\n/noteline./set/fromGUI = quote(\n  lambda([obj],\n    /obj = obj,\n    /src = /obj./target,\n\n    if( bound(/src./children), map(\n      lambda([c],\n        /c_obj = c,\n        if( /c_obj./class == \"notehead\",\n          /notehead = /c_obj,\n          /durationLine = /c_obj\n        )\n      ), /src./children\n    )),\n \n\n    /xy = if( /src./id != \"svg\" && bound(/src./transform) && bound(/notehead),\n      /transform/applyTransform( /transform/getMatrix(/src./transform), [/notehead./cx, /notehead./cy ] ),\n      /obj./mouse/xy\n    ),\n    /id = /obj./id,\n\n    /r = bound(/obj./r) ? /obj./r : /note./r, # set default radius\n\n    /pix2time = /parent./pix2time,\n\n    /n./class = \"/noteline\",\n    /n./id = /id,\n    /n./pitch = scale( /xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),\n    /n./time = /pix2time( /xy[[0]] - /parent./x + /r),\n    /n./amp = /noteline./amp , #scale(/r, 1., 20., 0., 100. ),\n    /n./dur = bound(/durationLine) ? /pix2time( /durationLine./x2 - /durationLine./x1 ) : /noteline./dur,\n\n    prog1(\n      /n,\n      delete(/n), delete(/xy), delete(/id), delete(/pix2time), delete(/r), delete(/obj), delete(/c_obj), delete(/durationLine), delete(/notehead) \n    )\n  )\n),\n\n/noteline./get/fromTime = quote(\n  lambda([obj, t],\n    /_obj = obj,\n    /_out./relTime = (t - /_obj./time) / /_obj./dur,\n    if( /_out./relTime >= 0 && /_out./relTime <= 1,\n      prog1( /_out, delete(/_out), delete(/_obj) ),\n      progn( delete(/_out), delete(/_obj) )\n    )\n  )\n)\n\n"
+													"patching_rect" : [ 93.000006540748586, 116.0, 1062.0, 1378.0 ],
+													"text" : "/noteline./r = 1,\n/noteline./dur = 100,\n/noteline./amp = 1,\n\n/noteline./get/icon = quote(\n  lambda([xy],\n    /cx = 1\n  )\n),\n\n/noteline./set/fromData = quote(\n  lambda([obj],\n    /pitch = getbundlemember(obj, \"/pitch\"),\n    /amp = getbundlemember(obj, \"/amp\"),\n    /time = getbundlemember(obj, \"/time\"),\n    /dur = getbundlemember(obj, \"/dur\"),\n    /id = getbundlemember(obj, \"/id\"),\n\n    /time2pix = /parent./time2pix,\n\n    /n./new = \"g\",\n    /n./class = \"/noteline\",\n    /n./id = /id,\n\n    /n1./new = \"circle\",\n    /n1./class = \"notehead\",\n    /n1./r = scale(/amp, 0., 100, 5., 20.),\n\n    /n1./cy = /parent./y + scale(/pitch, 0., 127., /parent./height, 0.),\n    /n1./cx = /parent./x + /time2pix( /time ) + /n1./r,\n\n    /n2./new = \"line\",\n    /n2./class = \"durationLine\",\n    /n2./x1 = /n1./cx - /n1./r,\n    /n2./y1 = /n1./cy,\n    /n2./x2 = /n2./x1 + /time2pix( /dur ),\n    /n2./y2 = /n1./cy,\n\n    /n./children = [/n1, /n2],\n\n    prog1(\n      /n,\n      delete(/n), delete(/n1), delete(/n2), delete(/pitch), delete(/amp), delete(/time), delete(/id), delete(/time2pix)\n    )\n  )\n),\n\n\n/noteline./set/fromGUI = quote(\n  lambda([obj],\n    /obj = obj,\n    /src = /obj./target,\n\n    if( bound(/src./children), map(\n      lambda([c],\n        /c_obj = c,\n        if( /c_obj./class == \"notehead\",\n          /notehead = /c_obj,\n          /durationLine = /c_obj\n        )\n      ), /src./children\n    )),\n \n\n    /xy = if( /src./id != \"svg\" && bound(/src./transform) && bound(/notehead),\n      /transform/applyTransform( /transform/getMatrix(/src./transform), [/notehead./cx, /notehead./cy ] ),\n      /obj./mouse/xy\n    ),\n    /id = /obj./id,\n\n    /r = bound(/obj./r) ? /obj./r : /note./r, # set default radius\n\n    /pix2time = /parent./pix2time,\n\n    /n./class = \"/noteline\",\n    /n./id = /id,\n    /n./pitch = scale( /xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),\n    /n./time = /pix2time( /xy[[0]] - /parent./x + /r),\n    /n./amp = /noteline./amp , #scale(/r, 1., 20., 0., 100. ),\n    /n./dur = bound(/durationLine) ? /pix2time( /durationLine./x2 - /durationLine./x1 ) : /noteline./dur,\n\n    prog1(\n      /n,\n      delete(/n), delete(/xy), delete(/id), delete(/pix2time), delete(/r), delete(/obj), delete(/c_obj), delete(/durationLine), delete(/notehead) \n    )\n  )\n),\n\n/noteline./get/fromTime = quote(\n  lambda([obj, t],\n    /_obj = obj,\n    /_out./relTime = (t - /_obj./time) / /_obj./dur,\n    if( /_out./relTime >= 0 && /_out./relTime <= 1,\n      prog1( /_out, delete(/_out), delete(/_obj) ),\n      progn( delete(/_out), delete(/_obj) )\n    )\n  )\n)\n\n"
 												}
 
 											}
@@ -4939,12 +5247,6 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
 												"umenu" : 												{
 													"bgfillcolor" : 													{
 														"type" : "color",
@@ -4959,14 +5261,20 @@
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
 												"parentstyle" : "",
 												"multi" : 0
 											}
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4975,9 +5283,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4986,8 +5294,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4996,9 +5304,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5270,12 +5578,6 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
 												"umenu" : 												{
 													"bgfillcolor" : 													{
 														"type" : "color",
@@ -5290,14 +5592,20 @@
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
 												"parentstyle" : "",
 												"multi" : 0
 											}
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5306,9 +5614,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5317,8 +5625,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5327,9 +5635,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5371,7 +5679,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 352.330082285331741, 30.0, 30.0 ]
+									"patching_rect" : [ 148.0, 405.330082285331741, 30.0, 30.0 ]
 								}
 
 							}
@@ -5379,6 +5687,13 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -5414,12 +5729,6 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
 								"umenu" : 								{
 									"bgfillcolor" : 									{
 										"type" : "color",
@@ -5434,14 +5743,20 @@
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
 								"parentstyle" : "",
 								"multi" : 0
 							}
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5450,9 +5765,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5461,8 +5776,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5471,9 +5786,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5547,13 +5862,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-5",
-					"linecount" : 24,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 590.67474500000003, 744.728072166442871, 313.0, 347.0 ],
-					"text" : "/key : \"mouse\",\n/val : {\n\t/target : {\n\t\t/baseProfile : \"full\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/tag : \"svg\",\n\t\t/version : 1.1,\n\t\t/id : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\"\n\t},\n\t/xy : [1350, 0],\n\t/mods : {\n\t\t/shift : 0,\n\t\t/ctrl : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/button : 0,\n\t/action : \"mousemove\",\n\t/id : \"noteline_u_1tnvygv8axf\",\n\t/selectedClass : \"/noteline\"\n},\n/url : \"/view\""
+					"patching_rect" : [ 590.67474500000003, 744.728072166442871, 313.0, 34.0 ]
 				}
 
 			}
@@ -5576,7 +5889,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+						"rect" : [ 560.0, 159.0, 640.0, 857.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5621,15 +5934,15 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-16",
-									"linecount" : 15,
+									"linecount" : 22,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 100.0, 241.0, 214.0 ],
-									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 48, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 46, 46, 46, 46, 46, 46, 0, 0, 0, 0, 0, 0, -108, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 80, -11, -62, -113, 92, 40, -10, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 116, 105, 109, 101, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 12, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 51, 0, 0, 0, 0, 0, 0, -112, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 112, 105, 116, 99, 104, 0, 0, 44, 105, 0, 0, 0, 0, 0, 66, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 116, 105, 109, 101, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 10, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 50, 0, 0, 0, 0, 0, 0, -112, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 112, 105, 116, 99, 104, 0, 0, 44, 105, 0, 0, 0, 0, 0, 64, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 116, 105, 109, 101, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, -56, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 0, 0, 0, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 28, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 95, 117, 95, 50, 104, 110, 102, 55, 112, 116, 115, 118, 50, 107, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 85, -94, -72, 75, -41, 10, 62, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 106, -78, -86, -87, 85, 85, 86, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 28, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 95, 117, 95, 49, 100, 106, 121, 97, 97, 100, 54, 101, 113, 116, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 83, -59, 51, 45, 30, -72, 82, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 97, -112, 0, 10, -86, -86, -85, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 28, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 95, 117, 95, 50, 56, 114, 48, 113, 99, 54, 100, 119, 106, 102, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 91, 120, 61, 106, -113, 92, 41, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 123, 6, -86, -78, -86, -86, -85, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 28, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 95, 117, 95, 121, 119, 104, 99, 117, 53, 102, 51, 119, 49, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 83, 75, 71, -88, 0, 0, 0, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -119, 8, 0, 5, 85, 85, 86, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 28, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 95, 117, 95, 97, 51, 118, 122, 99, 112, 109, 105, 121, 119, 56, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 77, 56, -52, -64, -93, -41, 10, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 90, 37, 85, 85, 85, 85, 86, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 104, -1, -1, -107, 85, 85, 86 ],
-									"saved_bundle_length" : 1348,
-									"text" : "/model : [{\n\t/class : \"/noteline\",\n\t/pitch : 44,\n\t/amp : 1,\n\t/time : 0,\n\t/dur : 200,\n\t/id : \"foo-1\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 45,\n\t/amp : 1,\n\t/time : 10,\n\t/dur : 100,\n\t/id : \"foo-2\"\n}]"
+									"patching_rect" : [ 50.0, 100.0, 241.0, 310.0 ],
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -48, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, -108, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 80, -11, -62, -113, 92, 40, -10, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 116, 105, 109, 101, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 12, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 51, 0, 0, 0, 0, 0, 0, -112, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 112, 105, 116, 99, 104, 0, 0, 44, 105, 0, 0, 0, 0, 0, 66, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 116, 105, 109, 101, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 10, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 50, 0, 0, 0, 0, 0, 0, -112, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 112, 105, 116, 99, 104, 0, 0, 44, 105, 0, 0, 0, 0, 0, 64, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 116, 105, 109, 101, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, -56, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 0, 0, 0 ],
+									"saved_bundle_length" : 484,
+									"text" : "/model : [{\n\t/class : \"/noteline\",\n\t/pitch : 67.84,\n\t/amp : 1,\n\t/time : 12,\n\t/dur : 100,\n\t/id : \"foo-3\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 66,\n\t/amp : 1,\n\t/time : 10,\n\t/dur : 100,\n\t/id : \"foo-2\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 64,\n\t/amp : 1,\n\t/time : 0,\n\t/dur : 200,\n\t/id : \"foo-1\"\n}]"
 								}
 
 							}
@@ -5713,7 +6026,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+						"rect" : [ 165.0, 84.0, 405.0, 917.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5745,13 +6058,13 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-38",
-									"linecount" : 4,
+									"linecount" : 285,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 100.0, 219.0, 75.0 ],
-									"text" : "/view : {\n\t/key : \"clear\",\n\t/val : \"*\"\n}"
+									"patching_rect" : [ 50.0, 100.0, 219.0, 3895.0 ],
+									"text" : "/view : {\n\t/key : \"svg\",\n\t/val : [{\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-3\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 231.661,\n\t\t\t/cx : 155.8\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 150.65,\n\t\t\t/y1 : 231.661,\n\t\t\t/x2 : 210.65,\n\t\t\t/y2 : 231.661\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-2\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 394.252,\n\t\t\t/cx : 21.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 16,\n\t\t\t/y1 : 394.252,\n\t\t\t/x2 : 76.,\n\t\t\t/y2 : 394.252\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-1\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 406.85,\n\t\t\t/cx : 15.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 10.,\n\t\t\t/y1 : 406.85,\n\t\t\t/x2 : 130.,\n\t\t\t/y2 : 406.85\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-3_u_23i8bcagdo4\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 265.661,\n\t\t\t/cx : 102.95\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 97.8,\n\t\t\t/y1 : 265.661,\n\t\t\t/x2 : 157.8,\n\t\t\t/y2 : 265.661\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-3_u_29oy9tgys3f\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 298.661,\n\t\t\t/cx : 175.1\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 169.95,\n\t\t\t/y1 : 298.661,\n\t\t\t/x2 : 229.95,\n\t\t\t/y2 : 298.661\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-3_u_rttvdejnu1\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 334.661,\n\t\t\t/cx : 161.25\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 156.1,\n\t\t\t/y1 : 334.661,\n\t\t\t/x2 : 216.1,\n\t\t\t/y2 : 334.661\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_1xezyn0z2vw\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 163,\n\t\t\t/cx : 65.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 60,\n\t\t\t/y1 : 163,\n\t\t\t/x2 : 120.,\n\t\t\t/y2 : 163\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_1j4jkf8lx81\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 159.,\n\t\t\t/cx : 149.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 144.,\n\t\t\t/y1 : 159.,\n\t\t\t/x2 : 204.,\n\t\t\t/y2 : 159.\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_22skfyq0ax9\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 207.,\n\t\t\t/cx : 98.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 93.,\n\t\t\t/y1 : 207.,\n\t\t\t/x2 : 153.,\n\t\t\t/y2 : 207.\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_q6jenm988i\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 234.,\n\t\t\t/cx : 63.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 58.,\n\t\t\t/y1 : 234.,\n\t\t\t/x2 : 118.,\n\t\t\t/y2 : 234.\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_2cqo9vwww84\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 184.,\n\t\t\t/cx : 149.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 144.,\n\t\t\t/y1 : 184.,\n\t\t\t/x2 : 204.,\n\t\t\t/y2 : 184.\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_2m13ossfvnk\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 198.,\n\t\t\t/cx : 189.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 184.,\n\t\t\t/y1 : 198.,\n\t\t\t/x2 : 244.,\n\t\t\t/y2 : 198.\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_6w2y7mwwjdw\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 243.,\n\t\t\t/cx : 243.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 238.,\n\t\t\t/y1 : 243.,\n\t\t\t/x2 : 298.,\n\t\t\t/y2 : 243.\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_1rnzbexm1j\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 295.,\n\t\t\t/cx : 282.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 277.,\n\t\t\t/y1 : 295.,\n\t\t\t/x2 : 337.,\n\t\t\t/y2 : 295.\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_1fzbzz9cxt5\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 339,\n\t\t\t/cx : 301.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 296.,\n\t\t\t/y1 : 339,\n\t\t\t/x2 : 356.,\n\t\t\t/y2 : 339\n\t\t}]\n\t}]\n}"
 								}
 
 							}
@@ -5796,13 +6109,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-47",
-					"linecount" : 25,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 48.0, 583.5, 313.0, 360.0 ],
-					"text" : "/gui : {\n\t/mouse/xy : [75, 439],\n\t/id : \"foo-1_u_a3vzcpmiyw8\",\n\t/class : \"/noteline\",\n\t/target : {\n\t\t/children : [{\n\t\t\t/cy : 323.85,\n\t\t\t/r : 5.15,\n\t\t\t/tag : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 495.75\n\t\t}, {\n\t\t\t/x2 : 610.6,\n\t\t\t/x1 : 490.6,\n\t\t\t/tag : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 323.85,\n\t\t\t/y2 : 323.85\n\t\t}],\n\t\t/tag : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/transform : \"matrix(1 0 0 1 -424 118)\",\n\t\t/id : \"foo-1_u_a3vzcpmiyw8\"\n\t}\n}"
+					"patching_rect" : [ 48.0, 583.5, 313.0, 34.0 ]
 				}
 
 			}
@@ -5811,13 +6122,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-44",
-					"linecount" : 2,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 455.701751232147217, 665.728072166442871, 313.0, 48.0 ],
-					"text" : "/port/localhost : \"http://localhost:3002\",\n/port/ip : \"http://192.168.178.36:3002\""
+					"patching_rect" : [ 455.701751232147217, 665.728072166442871, 313.0, 34.0 ]
 				}
 
 			}
@@ -6887,7 +7196,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 59.0, 104.0, 656.0, 626.0 ],
+										"rect" : [ 280.0, 107.0, 656.0, 626.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -7168,7 +7477,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 131.961536999999993, 300.446603059768677, 455.0, 508.0 ],
-									"presentation_linecount" : 36,
 									"text" : "/outObjs = [],\n/outIdx = [],\n/prev/idx ??= [],\n\nmap(\n  lambda([o, idx],\n    /o = o,\n    /def = value( /o./class ),\n\n    /timeFn = /def./get/fromTime,\n\n    /n./idx = idx,\n    if( max( idx == /prev/idx ) == 0, /n./noteOn = 1 ),\n\t   /n./obj = /o,\n    /n./eval = /timeFn( /o, /t),\n\n    if( bound(/n./eval),\n      progn(\n        /outObjs = [/outObjs, /n],\n        /outIdx = [/outIdx, idx]\n      )\n    )\n  ), /obj, /idx\n),\n\n/out./play = /outObjs,\n/out./noteOff = map(\n  lambda(i,\n    if( max( i == /outIdx ) == 0, i)\n  ), /prev/idx\n),\n\n/prev/idx = /outIdx,\n\n/playheadFn = /playhead./set/fromTime,\n/playheadFn( /t )"
 								}
 
@@ -7227,13 +7535,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-5",
-									"linecount" : 42,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 704.961537000000021, 100.0, 248.0, 591.0 ],
-									"text" : "/view : {\n\t/key : \"svg\",\n\t/val : {\n\t\t/new : \"line\",\n\t\t/id : \"playhead\",\n\t\t/class : \"playhead\",\n\t\t/x1 : 229.,\n\t\t/x2 : 229.,\n\t\t/y1 : 10.,\n\t\t/y2 : 210.\n\t}\n},\n/out : {\n\t/play : [{\n\t\t/idx : 3,\n\t\t/obj : {\n\t\t\t/class : \"/noteline\",\n\t\t\t/id : \"foo-1_u_tg8rwdu7eu\",\n\t\t\t/pitch : 57.97,\n\t\t\t/time : 177.917,\n\t\t\t/amp : 1,\n\t\t\t/dur : 200\n\t\t},\n\t\t/eval : {\n\t\t\t/relTime : 0.935417\n\t\t}\n\t}, {\n\t\t/idx : 4,\n\t\t/obj : {\n\t\t\t/class : \"/noteline\",\n\t\t\t/id : \"foo-1_u_61wrzjnv9qg\",\n\t\t\t/pitch : 70.67,\n\t\t\t/time : 331,\n\t\t\t/amp : 1,\n\t\t\t/dur : 200\n\t\t},\n\t\t/eval : {\n\t\t\t/relTime : 0.17\n\t\t}\n\t}],\n\t/noteOff\n}"
+									"patching_rect" : [ 704.961537000000021, 100.0, 248.0, 34.0 ]
 								}
 
 							}
@@ -7570,12 +7876,6 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
 								"umenu" : 								{
 									"bgfillcolor" : 									{
 										"type" : "color",
@@ -7590,14 +7890,20 @@
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
 								"parentstyle" : "",
 								"multi" : 0
 							}
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7606,9 +7912,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7617,8 +7923,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7627,9 +7933,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8763,12 +9069,6 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
 								"umenu" : 								{
 									"bgfillcolor" : 									{
 										"type" : "color",
@@ -8783,14 +9083,20 @@
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
 								"parentstyle" : "",
 								"multi" : 0
 							}
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8799,9 +9105,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8810,8 +9116,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8820,9 +9126,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8977,12 +9283,6 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
 								"umenu" : 								{
 									"bgfillcolor" : 									{
 										"type" : "color",
@@ -8997,14 +9297,20 @@
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
 								"parentstyle" : "",
 								"multi" : 0
 							}
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9013,9 +9319,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9024,8 +9330,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9034,9 +9340,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9545,12 +9851,6 @@
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-				}
-,
 				"umenu" : 				{
 					"bgfillcolor" : 					{
 						"type" : "color",
@@ -9565,14 +9865,20 @@
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
 				"parentstyle" : "",
 				"multi" : 0
 			}
 , 			{
 				"name" : "caption text",
 				"default" : 				{
-					"fontsize" : [ 11.0 ],
-					"fontface" : [ 2 ]
+					"fontface" : [ 2 ],
+					"fontsize" : [ 11.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -9581,9 +9887,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
-					"fontsize" : [ 15.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 3 ]
+					"fontface" : [ 3 ],
+					"fontsize" : [ 15.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -9592,8 +9898,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -9602,9 +9908,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
-					"fontsize" : [ 20.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 1 ]
+					"fontface" : [ 1 ],
+					"fontsize" : [ 20.0 ]
 				}
 ,
 				"parentstyle" : "",
