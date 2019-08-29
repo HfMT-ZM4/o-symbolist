@@ -217,7 +217,7 @@ function isNumeric(value) {
 function elementToJSON(elm)
 {
     let obj = {};
-    obj.tag = elm.tagName;
+    obj.type = elm.tagName;
     for( let i = 0, l = elm.attributes.length; i < l; ++i)
     {
         const attr = elm.attributes[i];
