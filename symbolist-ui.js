@@ -223,6 +223,10 @@ function elementToJSON(elm)
         const attr = elm.attributes[i];
         if( attr.specified )
         {
+            if( obj.type === 'path' && attr.name === 'd' ){                
+                obj.points = SVGPoints.toPoints({ type: "path", d: attr.value });
+            }
+
             obj[attr.name] = (isNumeric(attr.value) ? Number(attr.value) : attr.value);
         }
     }

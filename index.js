@@ -31,6 +31,12 @@ so, we need:
         
     which things should be in symbolist which in drawsocket?
 
+    -> add path attribute to drawsocket paths, which can be an array of Points as in the points library, could be useful
+            or
+            maybe a separate path processing system somewhere
+                to lookup points in the path
+                apply transformations etc.
+
 */
 
 const Points = require('points');
