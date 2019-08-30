@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 651.0, 79.0, 1499.0, 937.0 ],
+		"rect" : [ 147.0, 79.0, 1056.0, 937.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -48,7 +48,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 231.0, 309.024273455142975, 150.0, 201.0 ],
-					"presentation_linecount" : 14,
 					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 47, 118, 105, 101, 119, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -20, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 118, 103, 0, 0, 0, 0, -60, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -76, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 112, 97, 116, 104, 0, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 112, 116, 45, 116, 101, 115, 116, 0, 0, 0, 0, 116, 47, 112, 111, 105, 110, 116, 115, 0, 44, 46, 46, 0, 0, 0, 0, 48, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 120, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 121, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 120, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 12, 47, 121, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100 ],
 					"saved_bundle_length" : 272,
 					"text" : "/view : {\n\t/key : \"svg\",\n\t/val : {\n\t\t/new : \"path\",\n\t\t/id : \"pt-test\",\n\t\t/points : [{\n\t\t\t/x : 0,\n\t\t\t/y : 0\n\t\t}, {\n\t\t\t/x : 100,\n\t\t\t/y : 100\n\t\t}]\n\t}\n}"
@@ -3982,7 +3981,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -3992,14 +3998,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -4450,7 +4449,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 153.0, 79.0, 1238.0, 937.0 ],
+										"rect" : [ 276.0, 79.0, 1238.0, 937.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -4617,13 +4616,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-3",
-													"linecount" : 111,
+													"linecount" : 101,
 													"maxclass" : "o.expr.codebox",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.000006540748586, 92.0, 1062.0, 1541.0 ],
-													"text" : "/path./r = 1,\n/path./dur = 100,\n/path./amp = 1,\n\n/path./get/icon = quote(\n  lambda([xy],\n    /d = \"M0,0 S Z\"\n  )\n),\n\n/path./script/pointsToSVGString = quote(\n  lambda([pathObj, matrix], \n    /tmp = map( lambda([p],\n        /_xy = [getbundlemember(p, \"/x\"), getbundlemember(p, \"/y\")]\n        /transform/applyTransform( matrix, /_xy )\n      ), pathObj\n    )\n  )\n),\n\n/path./set/fromData = quote(\n  lambda([obj],\n    /points = getbundlemember(obj, \"/points\"),\n    /time = getbundlemember(obj, \"/time\"),\n    /dur = getbundlemember(obj, \"/dur\"),\n    /id = getbundlemember(obj, \"/id\"),\n\n    /time2pix = /parent./time2pix,\n\n    /n./new = \"path\",\n    /n./class = \"/path\",\n    /n./id = /id,\n\n    # path point array to SVG string\n\n    /n.d = /svgString,\n\n\n\n    /n1./cy = /parent./y + scale(/pitch, 0., 127., /parent./height, 0.),\n    /n1./cx = /parent./x + /time2pix( /time ) + /n1./r,\n\n    /n2./new = \"line\",\n    /n2./class = \"durationLine\",\n    /n2./x1 = /n1./cx - /n1./r,\n    /n2./y1 = /n1./cy,\n    /n2./x2 = /n2./x1 + /time2pix( /dur ),\n    /n2./y2 = /n1./cy,\n\n    /n./children = [/n1, /n2],\n\n    prog1(\n      /n,\n      delete(/n), delete(/n1), delete(/n2), delete(/pitch), delete(/amp), delete(/time), delete(/id), delete(/time2pix)\n    )\n  )\n),\n\n\n/path./set/fromGUI = quote(\n  lambda([obj],\n  # apply transform\n    /obj = obj,\n    /src = /obj./target,\n\n    if( bound(/src./children), map(\n      lambda([c],\n        /c_obj = c,\n        if( /c_obj./class == \"notehead\",\n          /notehead = /c_obj,\n          /durationLine = /c_obj\n        )\n      ), /src./children\n    )),\n \n\n    /xy = if( /src./id != \"svg\" && bound(/src./transform) && bound(/notehead),\n      /transform/applyTransform( /transform/getMatrix(/src./transform), [/notehead./cx, /notehead./cy ] ),\n      /obj./mouse/xy\n    ),\n    /id = /obj./id,\n\n    /r = bound(/obj./r) ? /obj./r : /note./r, # set default radius\n\n    /pix2time = /parent./pix2time,\n\n    /n./class = \"/path\",\n    /n./id = /id,\n    /n./pitch = scale( /xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),\n    /n./time = /pix2time( /xy[[0]] - /parent./x + /r),\n    /n./amp = /path./amp , #scale(/r, 1., 20., 0., 100. ),\n    /n./dur = bound(/durationLine) ? /pix2time( /durationLine./x2 - /durationLine./x1 ) : /path./dur,\n\n    prog1(\n      /n,\n      delete(/n), delete(/xy), delete(/id), delete(/pix2time), delete(/r), delete(/obj), delete(/c_obj), delete(/durationLine), delete(/notehead) \n    )\n  )\n),\n\n/path./get/fromTime = quote(\n  lambda([obj, t],\n    /_obj = obj,\n    /_out./relTime = (t - /_obj./time) / /_obj./dur,\n    if( /_out./relTime >= 0 && /_out./relTime <= 1,\n      prog1( /_out, delete(/_out), delete(/_obj) ),\n      progn( delete(/_out), delete(/_obj) )\n    )\n  )\n)\n\n"
+													"patching_rect" : [ 50.000006540748586, 92.0, 1062.0, 1405.0 ],
+													"text" : "/path./r = 1,\n/path./dur = 100,\n/path./amp = 1,\n\n/path./get/icon = quote(\n  lambda([xy],\n    /d = \"M0,0 S Z\"\n  )\n),\n\n/path./set/fromData = quote(\n  lambda([obj],\n    /points = getbundlemember(obj, \"/points\"),\n    /time = getbundlemember(obj, \"/time\"),\n    /dur = getbundlemember(obj, \"/dur\"),\n    /id = getbundlemember(obj, \"/id\"),\n\n    /time2pix = /parent./time2pix,\n\n    /n./new = \"path\",\n    /n./class = \"/path\",\n    /n./id = /id,\n\n    # path point array to SVG string\n\n    /n./points = /points,\n\n\n\n    /n1./cy = /parent./y + scale(/pitch, 0., 127., /parent./height, 0.),\n    /n1./cx = /parent./x + /time2pix( /time ) + /n1./r,\n\n    /n2./new = \"line\",\n    /n2./class = \"durationLine\",\n    /n2./x1 = /n1./cx - /n1./r,\n    /n2./y1 = /n1./cy,\n    /n2./x2 = /n2./x1 + /time2pix( /dur ),\n    /n2./y2 = /n1./cy,\n\n    /n./children = [/n1, /n2],\n\n    prog1(\n      /n,\n      delete(/n), delete(/n1), delete(/n2), delete(/pitch), delete(/amp), delete(/time), delete(/id), delete(/time2pix)\n    )\n  )\n),\n\n\n/path./set/fromGUI = quote(\n  lambda([obj],\n  # apply transform\n    /obj = obj,\n    /src = /obj./target,\n\n    if( bound(/src./children), map(\n      lambda([c],\n        /c_obj = c,\n        if( /c_obj./class == \"notehead\",\n          /notehead = /c_obj,\n          /durationLine = /c_obj\n        )\n      ), /src./children\n    )),\n \n\n    /xy = if( /src./id != \"svg\" && bound(/src./transform) && bound(/notehead),\n      /transform/applyTransform( /transform/getMatrix(/src./transform), [/notehead./cx, /notehead./cy ] ),\n      /obj./mouse/xy\n    ),\n    /id = /obj./id,\n\n    /r = bound(/obj./r) ? /obj./r : /note./r, # set default radius\n\n    /pix2time = /parent./pix2time,\n\n    /n./class = \"/path\",\n    /n./id = /id,\n    /n./pitch = scale( /xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),\n    /n./time = /pix2time( /xy[[0]] - /parent./x + /r),\n    /n./amp = /path./amp , #scale(/r, 1., 20., 0., 100. ),\n    /n./dur = bound(/durationLine) ? /pix2time( /durationLine./x2 - /durationLine./x1 ) : /path./dur,\n\n    prog1(\n      /n,\n      delete(/n), delete(/xy), delete(/id), delete(/pix2time), delete(/r), delete(/obj), delete(/c_obj), delete(/durationLine), delete(/notehead) \n    )\n  )\n),\n\n/path./get/fromTime = quote(\n  lambda([obj, t],\n    /_obj = obj,\n    /_out./relTime = (t - /_obj./time) / /_obj./dur,\n    if( /_out./relTime >= 0 && /_out./relTime <= 1,\n      prog1( /_out, delete(/_out), delete(/_obj) ),\n      progn( delete(/_out), delete(/_obj) )\n    )\n  )\n)\n\n"
 												}
 
 											}
@@ -4658,7 +4657,14 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -4668,14 +4674,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
-												"number" : 												{
-													"fontname" : [ "Arial" ],
-													"fontsize" : [ 12.0 ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "",
@@ -4956,7 +4955,14 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -4966,14 +4972,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
-												"number" : 												{
-													"fontname" : [ "Arial" ],
-													"fontsize" : [ 12.0 ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "",
@@ -5262,7 +5261,14 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5272,14 +5278,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
-												"number" : 												{
-													"fontname" : [ "Arial" ],
-													"fontsize" : [ 12.0 ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "",
@@ -5593,7 +5592,14 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5603,14 +5609,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
-												"number" : 												{
-													"fontname" : [ "Arial" ],
-													"fontsize" : [ 12.0 ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "",
@@ -5744,7 +5743,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5754,14 +5760,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -5877,13 +5876,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-5",
-					"linecount" : 6,
+					"linecount" : 22,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 655.512324690818787, 39.0, 313.0, 102.0 ],
-					"text" : "/url : \"/view\",\n/key : \"status\",\n/val : {\n\t/connected : 1,\n\t/screensize : [1027, 516]\n}"
+					"patching_rect" : [ 655.512324690818787, 39.0, 313.0, 320.0 ],
+					"text" : "/url : \"/view\",\n/key : \"mouse\",\n/val : {\n\t/target : {\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/baseProfile : \"full\",\n\t\t/version : \"1.1\",\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\"\n\t},\n\t/action : \"mouseover\",\n\t/xy : [70, 294],\n\t/mods : {\n\t\t/meta : 0,\n\t\t/alt : 0,\n\t\t/shift : 0,\n\t\t/ctrl : 0\n\t},\n\t/button : 1\n}"
 				}
 
 			}
@@ -6126,13 +6125,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-47",
-					"linecount" : 25,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 48.0, 583.5, 313.0, 360.0 ],
-					"text" : "/gui : {\n\t/mouse/xy : [59, 117],\n\t/id : \"noteline_u_14ydnzywi8e\",\n\t/class : \"/noteline\",\n\t/target : {\n\t\t/type : \"g\",\n\t\t/transform : \"matrix(1 0 0 1 -96 -188)\",\n\t\t/children : [{\n\t\t\t/type : \"circle\",\n\t\t\t/cy : 307,\n\t\t\t/r : 5.15,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 155.3\n\t\t}, {\n\t\t\t/x1 : 150.15,\n\t\t\t/y2 : 307,\n\t\t\t/type : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x2 : 210.15,\n\t\t\t/y1 : 307\n\t\t}],\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_14ydnzywi8e\"\n\t}\n}"
+					"patching_rect" : [ 48.0, 583.5, 313.0, 34.0 ]
 				}
 
 			}
@@ -6169,7 +6166,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+						"rect" : [ 581.0, 267.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7897,7 +7894,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -7907,14 +7911,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -9090,7 +9087,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -9100,14 +9104,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -9304,7 +9301,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -9314,14 +9318,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -9439,8 +9436,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "FullPacket", "", "" ],
-					"patching_rect" : [ 420.0, 578.0, 100.0, 22.0 ],
-					"text" : "hfmt.drawsocket"
+					"patching_rect" : [ 420.0, 578.0, 136.0, 22.0 ],
+					"text" : "hfmt.drawsocket ../node"
 				}
 
 			}
@@ -9794,28 +9791,28 @@
 		"dependency_cache" : [ 			{
 				"name" : "hfmt.drawsocket.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/drawsocket/patchers",
-				"patcherrelativepath" : "../drawsocket/patchers",
+				"patcherrelativepath" : "../../../Max 8/Packages/drawsocket/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "drawsocket-server.js",
 				"bootpath" : "~/Documents/Max 8/Packages/drawsocket/code/node",
-				"patcherrelativepath" : "../drawsocket/code/node",
+				"patcherrelativepath" : "../../../Max 8/Packages/drawsocket/code/node",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "startscript.js",
 				"bootpath" : "~/Documents/Max 8/Packages/drawsocket/code",
-				"patcherrelativepath" : "../drawsocket/code",
+				"patcherrelativepath" : "../../../Max 8/Packages/drawsocket/code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.gather.select.maxpat",
 				"bootpath" : "~/Documents/dev-lib/CNMAT-odot/patchers/namespace",
-				"patcherrelativepath" : "../../../dev-lib/CNMAT-odot/patchers/namespace",
+				"patcherrelativepath" : "../../CNMAT-odot/patchers/namespace",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -9879,7 +9876,14 @@
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 12.0 ]
+				}
+,
 				"umenu" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -9889,14 +9893,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-				}
-,
-				"number" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "",

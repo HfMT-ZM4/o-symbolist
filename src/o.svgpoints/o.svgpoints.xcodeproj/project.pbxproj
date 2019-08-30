@@ -237,6 +237,7 @@
 				DEVELOPMENT_TEAM = 43QFH4NBN8;
 				INFOPLIST_FILE = o.svgpoints/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRELINK_LIBS = "\"$(SRCROOT)/../../libo/libo.a\" \"$(SRCROOT)/../../libomax/libomax.a\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.hfmt-hamburg.o-svgpoints";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -252,6 +253,7 @@
 				DEVELOPMENT_TEAM = 43QFH4NBN8;
 				INFOPLIST_FILE = o.svgpoints/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRELINK_LIBS = "\"$(SRCROOT)/../../libo/libo.a\" \"$(SRCROOT)/../../libomax/libomax.a\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.hfmt-hamburg.o-svgpoints";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
