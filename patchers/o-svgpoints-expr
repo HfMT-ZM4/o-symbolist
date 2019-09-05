@@ -1,0 +1,652 @@
+/objectWithoutProperties = quote(lambda (obj, keys) {
+  /target = {};
+
+  for (/i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+
+  return target;
+};
+
+/~/toPoints = quote(lambda[obj],
+    /type = getbundlemember(obj, "/type"),
+    if( /type == "circle", /~/getPointsFromCircle(obj),
+    if( /type == "ellipse", /~/getPointsFromEllipse(obj),
+    if( /type == "line", /~/getPointsFromLine(obj),
+    if( /type == "path", /~/getPointsFromPath(obj),
+    if( /type == "polygon", /~/getPointsFromPolygon(obj),
+    if( /type == "polyline", /~/getPointsFromPolyline(obj),
+    if( /type == "rect", /~/getPointsFromRect(obj),
+    if( /type == "g", /~/getPointsFromG(obj),
+    ))))))))
+)),
+
+/~/getPointsFromCircle = quote( lambda( [obj],
+    /cx = getbundlemember(obj, "/cx"),
+    /cy = getbundlemember(obj, "/cy"),
+    /r = getbundlemember(obj, "/r"),
+
+    /p1./x = /cx, 
+    /p1./y = /cy - /r,
+    /p1./moveTo = 1,
+
+    /p2./x = /cx, 
+    /p2./y = /cy + /r,
+    /curve./type = "arc",
+    /curve./rx = /r,
+    /curve./ry = /r,
+    /curve./sweepFlag = 1,
+    /p2./curve = /curve,
+
+    /p3./x = /cx, 
+    /p3./y = /cy - /r,
+    /p3./curve = /curve,
+
+    prog1(
+        [/p1, /p2, /p3],
+        delete(/p1), delete(/p2), delete(/p3), delete(/cx), delete(/cy), delete(/r), delete(/curve)
+    )
+)),
+
+/~/getPointsFromEllipse = quote( lambda( [obj],
+    /cx = getbundlemember(obj, "/cx"),
+    /cy = getbundlemember(obj, "/cy"),
+    /rx = getbundlemember(obj, "/rx"),
+    /ry = getbundlemember(obj, "/ry"),
+
+    /p1./x = /cx, 
+    /p1./y = /cy - /ry,
+    /p1./moveTo = 1,
+
+    /p2./x = /cx, 
+    /p2./y = /cy + /ry,
+    /curve./type = "arc",
+    /curve./rx = /rx,
+    /curve./ry = /ry,
+    /curve./sweepFlag = 1,
+    /p2./curve = /curve,
+
+    /p3./x = /cx, 
+    /p3./y = /cy - /ry,
+    /p3./curve = /curve,
+
+    prog1(
+        [/p1, /p2, /p3],
+        delete(/p1), delete(/p2), delete(/p3), delete(/cx), delete(/cy), delete(/rx), delete(/ry), delete(/curve)
+    )
+)),
+
+ 
+ 
+};
+
+/getPointsFromLine = quote(lambda getPointsFromLine(_ref4) {
+  /x1 = _ref4.x1,
+      x2 = _ref4.x2,
+      y1 = _ref4.y1,
+      y2 = _ref4.y2;
+
+  return [{ x: x1, y: y1, moveTo: true }, { x: x2, y: y2 }];
+};
+
+/validCommands = /[MmLlHhVvCcSsQqTtAaZz]/g;
+
+/commandLengths = {
+  A: 7,
+  C: 6,
+  H: 1,
+  L: 2,
+  M: 2,
+  Q: 4,
+  S: 4,
+  T: 2,
+  V: 1,
+  Z: 0
+};
+
+/relativeCommands = ['a', 'c', 'h', 'l', 'm', 'q', 's', 't', 'v'];
+
+/isRelative = quote(lambda isRelative(command) {
+  return relativeCommands.indexOf(command) !== -1;
+};
+
+/optionalArcKeys = ['xAxisRotation', 'largeArcFlag', 'sweepFlag'];
+
+/getCommands = quote(lambda getCommands(d) {
+  return d.match(validCommands);
+};
+
+/getParams = quote(lambda getParams(d) {
+  return d.split(validCommands).map(quote(lambda (v) {
+    return v.replace(/[0-9]+-/g, quote(lambda (m) {
+      return m.slice(0, -1) + ' -';
+    });
+  }).map(quote(lambda (v) {
+    return v.replace(/\.[0-9]+/g, quote(lambda (m) {
+      return m + ' ';
+    });
+  }).map(quote(lambda (v) {
+    return v.trim();
+  }).filter(quote(lambda (v) {
+    return v.length > 0;
+  }).map(quote(lambda (v) {
+    return v.split(/[ ,]+/).map(parseFloat).filter(quote(lambda (n) {
+      return !isNaN(n);
+    });
+  });
+};
+
+/getPointsFromPath = quote(lambda getPointsFromPath(_ref5) {
+  /d = _ref5.d;
+
+  /commands = getCommands(d);
+  /params = getParams(d);
+
+  /points = [];
+
+  /moveTo = void 0;
+
+  for (/i = 0, l = commands.length; i < l; i++) {
+    /command = commands[i];
+    /upperCaseCommand = command.toUpperCase();
+    /commandLength = commandLengths[upperCaseCommand];
+    /relative = isRelative(command);
+
+    if (commandLength > 0) {
+      /commandParams = params.shift();
+      /iterations = commandParams.length / commandLength;
+
+      for (/j = 0; j < iterations; j++) {
+        /prevPoint = points[points.length - 1] || { x: 0, y: 0 };
+
+        switch (upperCaseCommand) {
+          case 'M':
+            /x = (relative ? prevPoint.x : 0) + commandParams.shift();
+            /y = (relative ? prevPoint.y : 0) + commandParams.shift();
+
+            if (j === 0) {
+              moveTo = { x: x, y: y };
+              points.push({ x: x, y: y, moveTo: true });
+            } else {
+              points.push({ x: x, y: y });
+            }
+
+            break;
+
+          case 'L':
+            points.push({
+              x: (relative ? prevPoint.x : 0) + commandParams.shift(),
+              y: (relative ? prevPoint.y : 0) + commandParams.shift()
+            });
+
+            break;
+
+          case 'H':
+            points.push({
+              x: (relative ? prevPoint.x : 0) + commandParams.shift(),
+              y: prevPoint.y
+            });
+
+            break;
+
+          case 'V':
+            points.push({
+              x: prevPoint.x,
+              y: (relative ? prevPoint.y : 0) + commandParams.shift()
+            });
+
+            break;
+
+          case 'A':
+            points.push({
+              curve: {
+                type: 'arc',
+                rx: commandParams.shift(),
+                ry: commandParams.shift(),
+                xAxisRotation: commandParams.shift(),
+                largeArcFlag: commandParams.shift(),
+                sweepFlag: commandParams.shift()
+              },
+              x: (relative ? prevPoint.x : 0) + commandParams.shift(),
+              y: (relative ? prevPoint.y : 0) + commandParams.shift()
+            });
+
+            /_iteratorNormalCompletion = true;
+            /_didIteratorError = false;
+            /_iteratorError = undefined;
+
+            try {
+              for (/_iterator = optionalArcKeys[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                /k = _step.value;
+
+                if (points[points.length - 1]['curve'][k] === 0) {
+                  delete points[points.length - 1]['curve'][k];
+                }
+              }
+            } catch (err) {
+              _didIteratorError = true;
+              _iteratorError = err;
+            } finally {
+              try {
+                if (!_iteratorNormalCompletion && _iterator.return) {
+                  _iterator.return();
+                }
+              } finally {
+                if (_didIteratorError) {
+                  throw _iteratorError;
+                }
+              }
+            }
+
+            break;
+
+          case 'C':
+            points.push({
+              curve: {
+                type: 'cubic',
+                x1: (relative ? prevPoint.x : 0) + commandParams.shift(),
+                y1: (relative ? prevPoint.y : 0) + commandParams.shift(),
+                x2: (relative ? prevPoint.x : 0) + commandParams.shift(),
+                y2: (relative ? prevPoint.y : 0) + commandParams.shift()
+              },
+              x: (relative ? prevPoint.x : 0) + commandParams.shift(),
+              y: (relative ? prevPoint.y : 0) + commandParams.shift()
+            });
+
+            break;
+
+          case 'S':
+            /sx2 = (relative ? prevPoint.x : 0) + commandParams.shift();
+            /sy2 = (relative ? prevPoint.y : 0) + commandParams.shift();
+            /sx = (relative ? prevPoint.x : 0) + commandParams.shift();
+            /sy = (relative ? prevPoint.y : 0) + commandParams.shift();
+
+            /diff = {};
+
+            /sx1 = void 0;
+            /sy1 = void 0;
+
+            if (prevPoint.curve && prevPoint.curve.type === 'cubic') {
+              diff.x = Math.abs(prevPoint.x - prevPoint.curve.x2);
+              diff.y = Math.abs(prevPoint.y - prevPoint.curve.y2);
+              sx1 = prevPoint.x < prevPoint.curve.x2 ? prevPoint.x - diff.x : prevPoint.x + diff.x;
+              sy1 = prevPoint.y < prevPoint.curve.y2 ? prevPoint.y - diff.y : prevPoint.y + diff.y;
+            } else {
+              diff.x = Math.abs(sx - sx2);
+              diff.y = Math.abs(sy - sy2);
+              sx1 = prevPoint.x;
+              sy1 = prevPoint.y;
+            }
+
+            points.push({ curve: { type: 'cubic', x1: sx1, y1: sy1, x2: sx2, y2: sy2 }, x: sx, y: sy });
+
+            break;
+
+          case 'Q':
+            points.push({
+              curve: {
+                type: 'quadratic',
+                x1: (relative ? prevPoint.x : 0) + commandParams.shift(),
+                y1: (relative ? prevPoint.y : 0) + commandParams.shift()
+              },
+              x: (relative ? prevPoint.x : 0) + commandParams.shift(),
+              y: (relative ? prevPoint.y : 0) + commandParams.shift()
+            });
+
+            break;
+
+          case 'T':
+            /tx = (relative ? prevPoint.x : 0) + commandParams.shift();
+            /ty = (relative ? prevPoint.y : 0) + commandParams.shift();
+
+            /tx1 = void 0;
+            /ty1 = void 0;
+
+            if (prevPoint.curve && prevPoint.curve.type === 'quadratic') {
+              /_diff = {
+                x: Math.abs(prevPoint.x - prevPoint.curve.x1),
+                y: Math.abs(prevPoint.y - prevPoint.curve.y1)
+              };
+
+              tx1 = prevPoint.x < prevPoint.curve.x1 ? prevPoint.x - _diff.x : prevPoint.x + _diff.x;
+              ty1 = prevPoint.y < prevPoint.curve.y1 ? prevPoint.y - _diff.y : prevPoint.y + _diff.y;
+            } else {
+              tx1 = prevPoint.x;
+              ty1 = prevPoint.y;
+            }
+
+            points.push({ curve: { type: 'quadratic', x1: tx1, y1: ty1 }, x: tx, y: ty });
+
+            break;
+        }
+      }
+    } else {
+      /_prevPoint = points[points.length - 1] || { x: 0, y: 0 };
+
+      if (_prevPoint.x !== moveTo.x || _prevPoint.y !== moveTo.y) {
+        points.push({ x: moveTo.x, y: moveTo.y });
+      }
+    }
+  }
+
+  return points;
+};
+
+/getPointsFromPolygon = quote(lambda getPointsFromPolygon(_ref6) {
+  /points = _ref6.points;
+
+  return getPointsFromPoints({ closed: true, points: points });
+};
+
+/getPointsFromPolyline = quote(lambda getPointsFromPolyline(_ref7) {
+  /points = _ref7.points;
+
+  return getPointsFromPoints({ closed: false, points: points });
+};
+
+/getPointsFromPoints = quote(lambda getPointsFromPoints(_ref8) {
+  /closed = _ref8.closed,
+      points = _ref8.points;
+
+  /numbers = points.split(/[\s,]+/).map(quote(lambda (n) {
+    return parseFloat(n);
+  });
+
+  /p = numbers.reduce(quote(lambda (arr, point, i) {
+    if (i % 2 === 0) {
+      arr.push({ x: point });
+    } else {
+      arr[(i - 1) / 2].y = point;
+    }
+
+    return arr;
+  }, []);
+
+  if (closed) {
+    p.push(_extends({}, p[0]));
+  }
+
+  p[0].moveTo = true;
+
+  return p;
+};
+
+/getPointsFromRect = quote(lambda getPointsFromRect(_ref9) {
+  /height = _ref9.height,
+      rx = _ref9.rx,
+      ry = _ref9.ry,
+      width = _ref9.width,
+      x = _ref9.x,
+      y = _ref9.y;
+
+  if (rx || ry) {
+    return getPointsFromRectWithCornerRadius({
+      height: height,
+      rx: rx || ry,
+      ry: ry || rx,
+      width: width,
+      x: x,
+      y: y
+    });
+  }
+
+  return getPointsFromBasicRect({ height: height, width: width, x: x, y: y });
+};
+
+/getPointsFromBasicRect = quote(lambda getPointsFromBasicRect(_ref10) {
+  /height = _ref10.height,
+      width = _ref10.width,
+      x = _ref10.x,
+      y = _ref10.y;
+
+  return [{ x: x, y: y, moveTo: true }, { x: x + width, y: y }, { x: x + width, y: y + height }, { x: x, y: y + height }, { x: x, y: y }];
+};
+
+/getPointsFromRectWithCornerRadius = quote(lambda getPointsFromRectWithCornerRadius(_ref11) {
+  /height = _ref11.height,
+      rx = _ref11.rx,
+      ry = _ref11.ry,
+      width = _ref11.width,
+      x = _ref11.x,
+      y = _ref11.y;
+
+  /curve = { type: 'arc', rx: rx, ry: ry, sweepFlag: 1 };
+
+  return [{ x: x + rx, y: y, moveTo: true }, { x: x + width - rx, y: y }, { x: x + width, y: y + ry, curve: curve }, { x: x + width, y: y + height - ry }, { x: x + width - rx, y: y + height, curve: curve }, { x: x + rx, y: y + height }, { x: x, y: y + height - ry, curve: curve }, { x: x, y: y + ry }, { x: x + rx, y: y, curve: curve }];
+};
+
+/getPointsFromG = quote(lambda getPointsFromG(_ref12) {
+  /shapes = _ref12.shapes;
+  return shapes.map(quote(lambda (s) {
+    return toPoints(s);
+  });
+};
+
+/pointsToD = quote(lambda pointsToD(p) {
+  /d = '';
+  /i = 0;
+  /firstPoint = void 0;
+
+  /_iteratorNormalCompletion = true;
+  /_didIteratorError = false;
+  /_iteratorError = undefined;
+
+  try {
+    for (/_iterator = p[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      /point = _step.value;
+      /_point$curve = point.curve,
+          curve = _point$curve === undefined ? false : _point$curve,
+          moveTo = point.moveTo,
+          x = point.x,
+          y = point.y;
+
+      /isFirstPoint = i === 0 || moveTo;
+      /isLastPoint = i === p.length - 1 || p[i + 1].moveTo;
+      /prevPoint = i === 0 ? null : p[i - 1];
+
+      if (isFirstPoint) {
+        firstPoint = point;
+
+        if (!isLastPoint) {
+          d += 'M' + x + ',' + y;
+        }
+      } else if (curve) {
+        switch (curve.type) {
+          case 'arc':
+            /_point$curve2 = point.curve,
+                _point$curve2$largeAr = _point$curve2.largeArcFlag,
+                largeArcFlag = _point$curve2$largeAr === undefined ? 0 : _point$curve2$largeAr,
+                rx = _point$curve2.rx,
+                ry = _point$curve2.ry,
+                _point$curve2$sweepFl = _point$curve2.sweepFlag,
+                sweepFlag = _point$curve2$sweepFl === undefined ? 0 : _point$curve2$sweepFl,
+                _point$curve2$xAxisRo = _point$curve2.xAxisRotation,
+                xAxisRotation = _point$curve2$xAxisRo === undefined ? 0 : _point$curve2$xAxisRo;
+
+            d += 'A' + rx + ',' + ry + ',' + xAxisRotation + ',' + largeArcFlag + ',' + sweepFlag + ',' + x + ',' + y;
+            break;
+          case 'cubic':
+            /_point$curve3 = point.curve,
+                cx1 = _point$curve3.x1,
+                cy1 = _point$curve3.y1,
+                cx2 = _point$curve3.x2,
+                cy2 = _point$curve3.y2;
+
+            d += 'C' + cx1 + ',' + cy1 + ',' + cx2 + ',' + cy2 + ',' + x + ',' + y;
+            break;
+          case 'quadratic':
+            /_point$curve4 = point.curve,
+                qx1 = _point$curve4.x1,
+                qy1 = _point$curve4.y1;
+
+            d += 'Q' + qx1 + ',' + qy1 + ',' + x + ',' + y;
+            break;
+        }
+
+        if (isLastPoint && x === firstPoint.x && y === firstPoint.y) {
+          d += 'Z';
+        }
+      } else if (isLastPoint && x === firstPoint.x && y === firstPoint.y) {
+        d += 'Z';
+      } else if (x !== prevPoint.x && y !== prevPoint.y) {
+        d += 'L' + x + ',' + y;
+      } else if (x !== prevPoint.x) {
+        d += 'H' + x;
+      } else if (y !== prevPoint.y) {
+        d += 'V' + y;
+      }
+
+      i++;
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return d;
+};
+
+/toPath = quote(lambda toPath(s) {
+  /isPoints = Array.isArray(s);
+  /isGroup = isPoints ? Array.isArray(s[0]) : s.type === 'g';
+  /points = isPoints ? s : isGroup ? s.shapes.map(quote(lambda (shp) {
+    return toPoints(shp);
+  }) : toPoints(s);
+
+  if (isGroup) {
+    return points.map(quote(lambda (p) {
+      return pointsToD(p);
+    });
+  }
+
+  return pointsToD(points);
+};
+
+/getErrors = quote(lambda getErrors(shape) {
+  /rules = getRules(shape);
+  /errors = [];
+
+  rules.map(quote(lambda (_ref) {
+    /match = _ref.match,
+        prop = _ref.prop,
+        required = _ref.required,
+        type = _ref.type;
+
+    if (typeof shape[prop] === 'undefined') {
+      if (required) {
+        errors.push(prop + ' prop is required' + (prop === 'type' ? '' : ' on a ' + shape.type));
+      }
+    } else {
+      if (typeof type !== 'undefined') {
+        if (type === 'array') {
+          if (!Array.isArray(shape[prop])) {
+            errors.push(prop + ' prop must be of type array');
+          }
+        } else if (_typeof(shape[prop]) !== type) {
+          // eslint-disable-line valid-typeof
+          errors.push(prop + ' prop must be of type ' + type);
+        }
+      }
+
+      if (Array.isArray(match)) {
+        if (match.indexOf(shape[prop]) === -1) {
+          errors.push(prop + ' prop must be one of ' + match.join(', '));
+        }
+      }
+    }
+  });
+
+  if (shape.type === 'g' && Array.isArray(shape.shapes)) {
+    /childErrors = shape.shapes.map(quote(lambda (s) {
+      return getErrors(s);
+    });
+    return [].concat.apply(errors, childErrors);
+  }
+
+  return errors;
+};
+
+/getRules = quote(lambda getRules(shape) {
+  /rules = [{
+    match: ['circle', 'ellipse', 'line', 'path', 'polygon', 'polyline', 'rect', 'g'],
+    prop: 'type',
+    required: true,
+    type: 'string'
+  }];
+
+  switch (shape.type) {
+    case 'circle':
+      rules.push({ prop: 'cx', required: true, type: 'number' });
+      rules.push({ prop: 'cy', required: true, type: 'number' });
+      rules.push({ prop: 'r', required: true, type: 'number' });
+      break;
+
+    case 'ellipse':
+      rules.push({ prop: 'cx', required: true, type: 'number' });
+      rules.push({ prop: 'cy', required: true, type: 'number' });
+      rules.push({ prop: 'rx', required: true, type: 'number' });
+      rules.push({ prop: 'ry', required: true, type: 'number' });
+      break;
+
+    case 'line':
+      rules.push({ prop: 'x1', required: true, type: 'number' });
+      rules.push({ prop: 'x2', required: true, type: 'number' });
+      rules.push({ prop: 'y1', required: true, type: 'number' });
+      rules.push({ prop: 'y2', required: true, type: 'number' });
+      break;
+
+    case 'path':
+      rules.push({ prop: 'd', required: true, type: 'string' });
+      break;
+
+    case 'polygon':
+    case 'polyline':
+      rules.push({ prop: 'points', required: true, type: 'string' });
+      break;
+
+    case 'rect':
+      rules.push({ prop: 'height', required: true, type: 'number' });
+      rules.push({ prop: 'rx', type: 'number' });
+      rules.push({ prop: 'ry', type: 'number' });
+      rules.push({ prop: 'width', required: true, type: 'number' });
+      rules.push({ prop: 'x', required: true, type: 'number' });
+      rules.push({ prop: 'y', required: true, type: 'number' });
+      break;
+
+    case 'g':
+      rules.push({ prop: 'shapes', required: true, type: 'array' });
+      break;
+  }
+
+  return rules;
+};
+
+/valid = quote(lambda valid(shape) {
+  /errors = getErrors(shape);
+
+  return {
+    errors: errors,
+    valid: errors.length === 0
+  };
+};
+
+exports.toPath = toPath;
+exports.toPoints = toPoints;
+exports.valid = valid;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
+//# sourceMappingURL=svg-points.js.map

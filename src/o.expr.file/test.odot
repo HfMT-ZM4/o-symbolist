@@ -1,0 +1,11 @@
+/foo = 1,
+/bar = 2,
+
+/ex = "lambda([a],
+    a + 10
+)",
+
+/x = /ex(/bar),
+/test = 1,
+/foo += 3,
+/yes = true
