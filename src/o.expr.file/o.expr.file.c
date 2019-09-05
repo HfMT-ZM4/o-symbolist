@@ -24,7 +24,6 @@
 #include "o.h"
 
 
-////////////////////////// object struct
 typedef struct _oexprfile
 {
     t_object ob;
@@ -36,21 +35,13 @@ typedef struct _oexprfile
     t_critical lock;
     void *filewatcher;
 
+    char path_file[MAX_PATH_CHARS];
+    
     void *outlets[2];
 } t_oexprfile;
 
-///////////////////////// function prototypes
-//// standard set
-void *oexprfile_new(t_symbol *s, long argc, t_atom *argv);
-void oexprfile_free(t_oexprfile *x);
-void oexprfile_assist(t_oexprfile *x, void *b, long m, long a, char *s);
-void oexprfile_read(t_oexprfile *x, t_symbol *s);
-void oexprfile_doread(t_oexprfile *x, t_symbol *s, long argc, t_atom *argv);
-void oexprfile_dblclick(t_oexprfile *x);
-void oexprfile_edclose(t_oexprfile *x, char **text, long size);
-//////////////////////// global class pointer variable
-void *oexprfile_class;
 
+void *oexprfile_class;
 
 void oexprfile_fullPacket(t_oexprfile *x, t_symbol *msg, int argc, t_atom *argv)
 {
@@ -134,6 +125,23 @@ void oexprfile_parseText(t_oexprfile *x)
 
 void oexprfile_dblclick(t_oexprfile *x)
 {
+    
+    char buf[MAX_PATH_CHARS+256];
+    
+    // so we need to get the path of the external editor I guess?
+    // or you could open with a name of the editor you want to use? idk
+    
+    // the preferences are in the ~/Library folder, but not the path
+    // it just says the name of the application, so we could maybe use:
+    // short path_getapppath(void);
+    // to get the path to the /Applications folder
+    // and then search from there, but could the editor be in a different folder?
+    
+    
+    sprintf(buf, "nohup %s %s </dev/null >/dev/null 2>&1 &", "/Applications/Visual\\ Studio\\ Code.app/Contents/MacOS/Electron", x->path_file );
+    system(buf);
+    return;
+    
     if (x->t_editor)
         object_attr_setchar(x->t_editor, gensym("visible"), 1);
     else {
@@ -180,11 +188,20 @@ void oexprfile_doread(t_oexprfile *x, t_symbol *s, long argc, t_atom *argv)
             return;
     } else {
         strcpy(filename,s->s_name);
-        if (locatefile_extended(filename,&path,&type,&type,1)) {
+        if (locatefile_extended(filename, &path, &type, &type, 1)) {
             object_error((t_object *)x, "can't find file %s",filename);
             return;
         }
     }
+    
+    char fullPath[MAX_PATH_CHARS], fullPathNative[MAX_PATH_CHARS];
+    path_topathname(path, filename, fullPath);
+    path_nameconform(fullPath, fullPathNative, PATH_STYLE_SLASH, PATH_TYPE_BOOT);
+
+    critical_enter(x->lock);
+    memset(x->path_file, '\0', MAX_PATH_CHARS);
+    strncpy(x->path_file, fullPathNative, MAX_PATH_CHARS);
+    critical_exit(x->lock);
     
     oexprfile_procFile(x, filename, path);
 }
@@ -294,4 +311,7 @@ void ext_main(void *r)
 
     class_register(CLASS_BOX, c);
     oexprfile_class = c;
+    
+    osc_error_setHandler(omax_util_liboErrorHandler);
+
 }
