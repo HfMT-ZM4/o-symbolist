@@ -35,6 +35,7 @@ typedef struct _oexprfile
     t_critical lock;
     void *filewatcher;
 
+    char filename[MAX_PATH_CHARS];
     char path_file[MAX_PATH_CHARS];
     
     void *outlets[2];
@@ -201,6 +202,7 @@ void oexprfile_doread(t_oexprfile *x, t_symbol *s, long argc, t_atom *argv)
     critical_enter(x->lock);
     memset(x->path_file, '\0', MAX_PATH_CHARS);
     strncpy(x->path_file, fullPathNative, MAX_PATH_CHARS);
+    strncpy(x->filename, filename, MAX_PATH_CHARS);
     critical_exit(x->lock);
     
     oexprfile_procFile(x, filename, path);
@@ -294,6 +296,13 @@ void oexprfile_free(t_oexprfile *x)
 }
 
 
+int oexprfile_liboErrorHandler(void *context, const char * const errorstr)
+{
+    object_error((t_object*)context, "(%s): %s", ((t_oexprfile *)context)->filename, errorstr);
+    return 0;
+}
+
+
 void ext_main(void *r)
 {
     t_class *c;
@@ -302,16 +311,15 @@ void ext_main(void *r)
                   0L, A_GIMME, 0);
     
     class_addmethod(c, (method)oexprfile_fullPacket,    "FullPacket", A_GIMME, 0);
-    class_addmethod(c, (method)oexprfile_read,          "read",        A_DEFSYM, 0);
-    class_addmethod(c, (method)oexprfile_dblclick,      "dblclick",    A_CANT, 0);
+    class_addmethod(c, (method)oexprfile_read,          "read",       A_DEFSYM, 0);
+    class_addmethod(c, (method)oexprfile_dblclick,      "dblclick",   A_CANT, 0);
     class_addmethod(c, (method)oexprfile_edclose,       "edclose",    A_CANT, 0);
-    class_addmethod(c, (method)oexprfile_bang,          "bang", 0);
     class_addmethod(c, (method)oexprfile_filechanged,   "filechanged", A_CANT, 0);
-
+    class_addmethod(c, (method)oexprfile_bang,          "bang", 0);
 
     class_register(CLASS_BOX, c);
     oexprfile_class = c;
     
-    osc_error_setHandler(omax_util_liboErrorHandler);
+    osc_error_setHandler(oexprfile_liboErrorHandler);
 
 }

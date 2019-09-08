@@ -1,0 +1,172 @@
+/noteline : {
+    /r : 1,
+    /dur : 100,
+    /amp : 1,
+
+    /get/icon : quote(
+        lambda([xy],
+            /cx : 1
+        )
+    ),
+
+    /set/fromData : quote( 
+        lambda([obj],
+            #put test here to make sure the obj has the values we need?
+            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),
+                    pix_pitch_pos : /parent./y + scale(obj./pitch, 0., 127., /parent./height, 0.),
+                    pix_start : /parent./x + /parent./time2pix( obj./time ),
+                    pix_end : /parent./x + + /parent./time2pix( obj./time ) + /parent./time2pix( obj./dur )
+                }, # return the following object
+                {
+                    /new : "g",
+                    /class : "/noteline",
+                    /id : obj./id,
+                    /children : [
+                        {
+                            /new : "circle",
+                            /class : "notehead",
+                            /r : notehead_radius,
+                            /cy : pix_pitch_pos,
+                            /cx : pix_start + notehead_radius
+                        },
+                        {
+                            /new : "line",
+                            /class : "durationLine",
+                            /x1 : pix_start ,
+                            /y1 : pix_pitch_pos,
+                            /x2 : pix_end,
+                            /y2 : pix_pitch_pos
+                        }
+                    ]
+                }
+            )
+        )
+    ),
+
+    #   input parameters:
+    #   /amp, /dur, /pitch, /time, /dur
+    /set/fromGUI : quote( 
+        lambda([obj],
+            #put test here to make sure the obj has the values we need?
+            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),
+                    pix_pitch_pos : /parent./y + scale(obj./pitch, 0., 127., /parent./height, 0.),
+                    pix_start : /parent./x + /parent./time2pix( obj./time ),
+                    pix_end : /parent./x + + /parent./time2pix( obj./time ) + /parent./time2pix( obj./dur )
+                }, # return the following object
+                {
+                    /new : "g",
+                    /class : "/noteline",
+                    /id : obj./id,
+                    /children : [
+                        {
+                            /new : "circle",
+                            /class : "notehead",
+                            /r : notehead_radius,
+                            /cy : pix_pitch_pos,
+                            /cx : pix_start + notehead_radius
+                        },
+                        {
+                            /new : "line",
+                            /class : "durationLine",
+                            /x1 : pix_start ,
+                            /y1 : pix_pitch_pos,
+                            /x2 : pix_end,
+                            /y2 : pix_pitch_pos
+                        }
+                    ]
+                }
+            )
+        )
+    ),
+
+
+ /set/fromGUI : quote(
+        lambda([obj],
+            let({
+                    src: obj./target
+                },
+                # progn =>
+                if( bound(src./children), 
+                    map(
+                        lambda([c],
+                            if( c./class == "notehead",
+                                /notehead = c,
+                                /durationLine = c
+                            )
+                        ), src./children
+                    )
+                ),
+                if( bound(/notehead), ... )
+            )
+
+    #   input parameters:
+    #   /xy, /, /pitch, /time, /dur
+    /set/fromGUI/default : {},
+    /set/fromGUI/withParams : {},
+
+
+    /set/fromGUI : quote(
+        lambda([obj],
+            let({
+                    src: obj./target,
+                    notehead:   if( bound(obj./target./children) && length(obj./target./children) == 2,
+                                    if( obj./target./children[[0]]./class == "notehead", obj./target./children[[0]],
+                                        if( obj./target./children[[1]]./class == "notehead", obj./target./children[[1]]) #else unbound
+                                    )
+                                ),
+                    durationLine:   if( bound(obj./target./children) && length(obj./target./children) == 2,
+                                        if( obj./target./children[[0]]./class == "durationLine", obj./target./children[[0]],
+                                            if( obj./target./children[[1]]./class == "durationLine", obj./target./children[[1]]) #else unbound
+                                        )
+                                    ),
+
+                },
+
+                let({
+                    xy : if( src./id != "svg" && bound(src./transform) && bound(notehead),
+                            /transform/applyTransform( /transform/getMatrix( src./transform), [notehead./cx, notehead./cy ] ),
+                            obj./mouse/xy
+                        ),
+                    radius: bound(notehead) ? notehead./r : /note./r, # set default radius
+                    
+                },
+
+                )
+
+            )
+                
+            
+
+        /id = /obj./id,
+
+        /r = bound(/obj./r) ? /obj./r : /note./r, # set default radius
+
+        /pix2time = /parent./pix2time,
+
+        /n./class = "/noteline",
+        /n./id = /id,
+        /n./pitch = scale( /xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),
+        /n./time = /pix2time( /xy[[0]] - /parent./x + /r),
+        /n./amp = /amp , #scale(/r, 1., 20., 0., 100. ),
+        /n./dur = bound(/durationLine) ? /pix2time( /durationLine./x2 - /durationLine./x1 ) : /dur,
+
+        prog1(
+            /n,
+            delete(/n), delete(/xy), delete(/id), delete(/pix2time), delete(/r), delete(/obj), delete(/c_obj), delete(/durationLine), delete(/notehead) 
+        )
+    )
+    ),
+
+    /get/fromTime : quote(
+        lambda([obj, t],
+            /_obj = obj,
+            /_out./relTime = (t - /_obj./time) / /_obj./dur,
+            if( /_out./relTime >= 0 && /_out./relTime <= 1,
+            prog1( /_out, delete(/_out), delete(/_obj) ),
+            progn( delete(/_out), delete(/_obj) )
+            )
+        )
+    )
+
+
+}
