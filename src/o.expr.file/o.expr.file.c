@@ -38,7 +38,8 @@ typedef struct _oexpr_file_proc
     t_osc_expr *expr;
     void *filewatcher;
     
-    char filename[MAX_PATH_CHARS];
+    t_symbol *filename;
+    
     char path_file[MAX_PATH_CHARS];
     
     t_critical lock;
@@ -50,7 +51,7 @@ void oexprfile_updateStatus_cb(t_object * x_obj);
 
 int oexprfile_proc_liboErrorHandler(void *context, const char * const errorstr)
 {
-    object_error((t_object*)context, "(%s): %s", ((t_oexpr_file_proc *)context)->filename, errorstr);
+    object_error((t_object*)context, "(%s): %s", ((t_oexpr_file_proc *)context)->filename->s_name, errorstr);
     return 0;
 }
 
@@ -166,16 +167,15 @@ void oexpr_file_proc_doread(t_oexpr_file_proc *x, t_symbol *s, long argc, t_atom
     critical_enter(x->lock);
     memset(x->path_file, '\0', MAX_PATH_CHARS);
     strncpy(x->path_file, fullPathNative, MAX_PATH_CHARS);
-    strncpy(x->filename, filename, MAX_PATH_CHARS);
     critical_exit(x->lock);
     
     oexpr_file_proc_procFile(x, filename, path);
 }
 
 
-void oexpr_file_proc_read(t_oexpr_file_proc *x, t_symbol *s)
+void oexpr_file_proc_read(t_oexpr_file_proc *x)
 {
-    defer((t_object *)x, (method)oexpr_file_proc_doread, s, 0, NULL);
+    defer((t_object *)x, (method)oexpr_file_proc_doread, x->filename, 0, NULL);
 }
 
 void oexpr_file_proc_filechanged(t_oexpr_file_proc *x, char *filename, short path)
@@ -208,7 +208,7 @@ void oexpr_file_proc_free(t_oexpr_file_proc *x)
     }
 }
 
-void *oexpr_file_proc_new(t_object *ref_obj, int instance_num)
+void *oexpr_file_proc_new(t_object *ref_obj, int instance_num, t_symbol *filename)
 {
     t_oexpr_file_proc *x = NULL;
     
@@ -217,6 +217,8 @@ void *oexpr_file_proc_new(t_object *ref_obj, int instance_num)
         critical_new(&x->lock);
         
         x->expr = NULL;
+        
+        x->filename = filename;
         
         x->t_text = sysmem_newhandle(0);
         x->t_size = 0;
@@ -263,7 +265,7 @@ void oexprfile_read(t_oexprfile *x, t_symbol *msg, long argc, t_atom *argv)
     
     for (int i = 0; i < x->nfiles; i++)
     {
-        x->files[i] = (t_oexpr_file_proc *)oexpr_file_proc_new( (t_object *)x, i );
+        x->files[i] = (t_oexpr_file_proc *)oexpr_file_proc_new( (t_object *)x, i, atom_getsym(argv+i) );
     }
     critical_exit(x->lock0);
 
@@ -272,7 +274,7 @@ void oexprfile_read(t_oexprfile *x, t_symbol *msg, long argc, t_atom *argv)
     {
         if( atom_gettype(argv+i) == A_SYM )
         {
-            oexpr_file_proc_read(x->files[i], atom_getsym(argv+i) );
+            oexpr_file_proc_read(x->files[i]);
         }
     }
     
@@ -299,7 +301,7 @@ void oexprfile_updateStatus_cb(t_object * x_obj)
             if( status_bundle )
             {
                 t_osc_msg_u * name_msg = osc_message_u_allocWithAddress("/name");
-                osc_message_u_appendString( name_msg, x->files[i]->filename );
+                osc_message_u_appendString( name_msg, x->files[i]->filename->s_name );
                 osc_bundle_u_addMsg(status_bundle, name_msg);
                 
                 t_osc_msg_u * status_msg = osc_message_u_allocWithAddress("/status");
