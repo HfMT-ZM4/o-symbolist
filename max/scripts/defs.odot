@@ -79,83 +79,155 @@
         )
     ),
 
-
- /set/fromGUI : quote(
-        lambda([obj],
-            let({
-                    src: obj./target
-                },
-                # progn =>
-                if( bound(src./children), 
-                    map(
-                        lambda([c],
-                            if( c./class == "notehead",
-                                /notehead = c,
-                                /durationLine = c
-                            )
-                        ), src./children
-                    )
-                ),
-                if( bound(/notehead), ... )
+    /helper/getChildByClass : quote(
+        lambda([obj, classname],
+            if( bound(obj./target./children) ,
+                map( lambda([c],
+                        if( c./class == classname,
+                            return( c ) # << return function
+                        )
+                    ), obj./target./children
+                )
             )
+        )
+    ),
+
+    
+    /helper/getChildByClass : quote(
+        lambda([obj, classname],
+            /found = {},
+            if( bound(obj./target./children) ,
+                map( lambda([c],
+                        if( c./class == classname,
+                            /found = c
+                        )
+                    ), obj./target./children
+                )
+            ),
+            prog1(
+                /found,
+                delete(/found)
+            )
+        )
+    ),
 
     #   input parameters:
     #   /xy, /, /pitch, /time, /dur
-    /set/fromGUI/default : {},
-    /set/fromGUI/withParams : {},
-
-
     /set/fromGUI : quote(
         lambda([obj],
-            let({
-                    src: obj./target,
-                    notehead:   if( bound(obj./target./children) && length(obj./target./children) == 2,
-                                    if( obj./target./children[[0]]./class == "notehead", obj./target./children[[0]],
-                                        if( obj./target./children[[1]]./class == "notehead", obj./target./children[[1]]) #else unbound
+            if( obj./actionType == "newFromClick",
+                {
+                    /class : "/noteline",
+                    /id : obj./id,
+                    /pitch : scale( obj./mouse/xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),
+                    /time : /parent./pix2time( obj./mouse/xy[[0]] - /parent./x + /default./r ),
+                    /dur : /default./dur
+                },
+            #else
+                if( obj./actionType == "edit" && bound(obj./target./children) && length(obj./target./children) == 2,
+                    let({
+                            notehead : /helper/getChildByClass( obj, "notehead" ),
+                            durationLine : /helper/getChildByClass( obj, "durationLine" )
+                        },
+                        let({   # need a second let here because we need reference notehead
+                                xy : if( bound(notehead) && bound(obj./target./transform),
+                                        /transform/applyTransform( /transform/getMatrix( obj./target./transform), [notehead./cx, notehead./cy] ),
+                                        obj./mouse/xy
                                     )
-                                ),
-                    durationLine:   if( bound(obj./target./children) && length(obj./target./children) == 2,
-                                        if( obj./target./children[[0]]./class == "durationLine", obj./target./children[[0]],
-                                            if( obj./target./children[[1]]./class == "durationLine", obj./target./children[[1]]) #else unbound
-                                        )
-                                    ),
+                            },
+                            {
+                                /class : "/noteline",
+                                /id : obj./id,
+                                /pitch : scale( xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),
+                                /time : /parent./pix2time( xy[[0]] - /parent./x + ( bound(obj./r) ? obj./r : /default./r ) ),
+                                /dur : bound(durationLine) ? /parent./pix2time( durationLine./x2 - durationLine./x1 ) : /default./dur
+                            }
 
+                        )
+                    )
+                )
+            )
+        )
+    ),
+
+# VERSION 2, use /isValid to verify object and avoid the need for all the bound tests
+    #   input parameters:
+    #   /xy, /, /pitch, /time, /dur
+    /set/fromGUI : quote(
+        lambda([obj],
+            if( obj./actionType == "newFromClick",
+                {
+                    /class : "/noteline",
+                    /id : obj./id,
+                    /pitch : scale( obj./mouse/xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),
+                    /time : /parent./pix2time( obj./mouse/xy[[0]] - /parent./x + /default./r ),
+                    /dur : /default./dur
                 },
+            #else
+                if( obj./actionType == "edit" && /noteline./isValid(obj),
+                    let({
+                            notehead : /helper/getChildByClass( obj, "notehead" ),
+                            durationLine : /helper/getChildByClass( obj, "durationLine" )
+                        },
+                        let({  # second let here because we need to reference notehead
+                             xy : if( bound(obj./target./transform),
+                                        /transform/applyTransform( /transform/getMatrix( obj./target./transform), [notehead./cx, notehead./cy] ),
+                                        [notehead./cx, notehead./cy]
+                                    )
+                            },
+                            {
+                                /class : "/noteline",
+                                /id : obj./id,
+                                /pitch : scale( xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),
+                                /time : /parent./pix2time( xy[[0]] - /parent./x + notehead./r ),
+                                /dur : /parent./pix2time( durationLine./x2 - durationLine./x1 )
+                            }
+                        )
+                    )
+                )
+            )
+        )
+    ),
 
+
+# VERSION 3, use /isValid to verify object and avoid the need for all the bound tests
+# imaginary cond function
+    #   input parameters:
+    #   /xy, /, /pitch, /time, /dur
+    /set/fromGUI : quote(
+        lambda([obj],
+            cond(                 
+                obj./actionType == "newFromClick",
+                {
+                    /class : "/noteline",
+                    /id : obj./id,
+                    /pitch : scale( obj./mouse/xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),
+                    /time : /parent./pix2time( obj./mouse/xy[[0]] - /parent./x + /default./r ),
+                    /dur : /default./dur
+                },
+                obj./actionType == "edit" && /noteline./isValid(obj),
                 let({
-                    xy : if( src./id != "svg" && bound(src./transform) && bound(notehead),
-                            /transform/applyTransform( /transform/getMatrix( src./transform), [notehead./cx, notehead./cy ] ),
-                            obj./mouse/xy
-                        ),
-                    radius: bound(notehead) ? notehead./r : /note./r, # set default radius
-                    
-                },
-
+                        notehead : /helper/getChildByClass( obj, "notehead" ),
+                        durationLine : /helper/getChildByClass( obj, "durationLine" ),
+                        xy : if( bound(obj./target./transform),
+                                    /transform/applyTransform( /transform/getMatrix( obj./target./transform), [notehead./cx, notehead./cy] ),
+                                    [notehead./cx, notehead./cy]
+                                )
+                    },
+                    {
+                        /class : "/noteline",
+                        /id : obj./id,
+                        /pitch : scale( xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),
+                        /time : /parent./pix2time( xy[[0]] - /parent./x + notehead./r ),
+                        /dur : /parent./pix2time( durationLine./x2 - durationLine./x1 )
+                    }
                 )
 
             )
-                
-            
-
-        /id = /obj./id,
-
-        /r = bound(/obj./r) ? /obj./r : /note./r, # set default radius
-
-        /pix2time = /parent./pix2time,
-
-        /n./class = "/noteline",
-        /n./id = /id,
-        /n./pitch = scale( /xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),
-        /n./time = /pix2time( /xy[[0]] - /parent./x + /r),
-        /n./amp = /amp , #scale(/r, 1., 20., 0., 100. ),
-        /n./dur = bound(/durationLine) ? /pix2time( /durationLine./x2 - /durationLine./x1 ) : /dur,
-
-        prog1(
-            /n,
-            delete(/n), delete(/xy), delete(/id), delete(/pix2time), delete(/r), delete(/obj), delete(/c_obj), delete(/durationLine), delete(/notehead) 
         )
-    )
     ),
+
+
 
     /get/fromTime : quote(
         lambda([obj, t],

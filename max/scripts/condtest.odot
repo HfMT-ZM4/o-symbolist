@@ -1,0 +1,21 @@
+
+/cond = quote(
+    lambda([list],
+        if( length(list) % 2 == 0 ,
+            map(
+                lambda([t,e],
+                    if( eval(t), eval(e) )
+                ), list[[ aseq(0, length(list)-1, 2)]], list[[ aseq(1, length(list)-1, 2) ]]
+            )
+        )
+    )
+),
+
+/foo = /cond([
+    quote(/a == 1),
+    quote(/foo = 111),
+
+    quote(/a == 2),
+    quote(/foo = 222)
+
+])

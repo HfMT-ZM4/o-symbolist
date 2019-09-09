@@ -1,7 +1,6 @@
 dependencies: \
   /Users/r/Documents/dev-lib/o-symbolist/src/../../max-sdk/source/c74support/max-includes/macho-prefix.pch \
   /Users/r/Documents/dev-lib/o-symbolist/src/o.expr.file/o.expr.file.c \
-  /Users/r/Documents/dev-lib/o-symbolist/src/o.expr.file/o.expr.file.h \
   /Users/r/Documents/dev-lib/max-sdk/source/c74support/max-includes/ext.h \
   /Users/r/Documents/dev-lib/max-sdk/source/c74support/max-includes/ext_common.h \
   /Users/r/Documents/dev-lib/max-sdk/source/c74support/max-includes/max_types.h \

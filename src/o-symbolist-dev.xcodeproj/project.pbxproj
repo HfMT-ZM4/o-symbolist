@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1133D28123258E470000EC2A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1133D28023258E470000EC2A /* Carbon.framework */; };
 		1140C3CE232165EE00E32DDB /* o.expr.file.c in Sources */ = {isa = PBXBuildFile; fileRef = 1140C3CC232165EE00E32DDB /* o.expr.file.c */; };
 		1140C3D123216F2D00E32DDB /* libo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1140C3D023216F2D00E32DDB /* libo.a */; };
 		1140C3D323216F3F00E32DDB /* libomax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1140C3D223216F3F00E32DDB /* libomax.a */; };
@@ -14,9 +15,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1133D28023258E470000EC2A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		1133D282232592AD0000EC2A /* o.expr.file-handler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "o.expr.file-handler.cpp"; sourceTree = "<group>"; };
 		1140C3C9232164A200E32DDB /* o.expr.file.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = o.expr.file.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		1140C3CC232165EE00E32DDB /* o.expr.file.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = o.expr.file.c; sourceTree = "<group>"; };
-		1140C3CD232165EE00E32DDB /* o.expr.file.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = o.expr.file.h; sourceTree = "<group>"; };
+		1140C3CD232165EE00E32DDB /* o.expr.file-handler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "o.expr.file-handler.hpp"; sourceTree = "<group>"; };
 		1140C3D023216F2D00E32DDB /* libo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libo.a; path = ../../libo/libo.a; sourceTree = "<group>"; };
 		1140C3D223216F3F00E32DDB /* libomax.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomax.a; path = ../../libomax/libomax.a; sourceTree = "<group>"; };
 		11611CD9231908AB00E2F1DD /* o.svgpoints.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = o.svgpoints.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1133D28123258E470000EC2A /* Carbon.framework in Frameworks */,
 				1140C3D323216F3F00E32DDB /* libomax.a in Frameworks */,
 				1140C3D123216F2D00E32DDB /* libo.a in Frameworks */,
 			);
@@ -48,7 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				1140C3CC232165EE00E32DDB /* o.expr.file.c */,
-				1140C3CD232165EE00E32DDB /* o.expr.file.h */,
+				1140C3CD232165EE00E32DDB /* o.expr.file-handler.hpp */,
+				1133D282232592AD0000EC2A /* o.expr.file-handler.cpp */,
 			);
 			path = o.expr.file;
 			sourceTree = "<group>";
@@ -56,6 +61,7 @@
 		1140C3CF23216F2C00E32DDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1133D28023258E470000EC2A /* Carbon.framework */,
 				1140C3D223216F3F00E32DDB /* libomax.a */,
 				1140C3D023216F2D00E32DDB /* libo.a */,
 			);
