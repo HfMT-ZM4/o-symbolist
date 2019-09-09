@@ -43,7 +43,8 @@ typedef struct _oexpr_file_proc
     char path_file[MAX_PATH_CHARS];
     
     t_critical lock;
-
+    bool softlock;
+    
 } t_oexpr_file_proc;
 
 
@@ -87,21 +88,20 @@ int oexpr_file_proc_eval(t_oexpr_file_proc *x, long *len, char **ptr)
 
 void oexpr_file_proc_parseText(t_oexpr_file_proc *x)
 {
+    critical_enter(x->lock);
     if(x->expr){
-        critical_enter(x->lock);
         osc_expr_free(x->expr);
         x->expr = NULL;
-        // search and replace #n params
-        critical_exit(x->lock);
     }
     
-    if(x->t_size == 0){
+    if(x->t_size == 0 || !x->t_text ){
+        critical_exit(x->lock);
         object_error((t_object *)x->ref_obj, "no text");
+        oexprfile_updateStatus_cb(x->ref_obj);
         return;
     }
     
-    critical_enter(x->lock);
-    // search and replace #n params
+
     t_osc_err err = osc_expr_parser_parseExpr(*x->t_text, &(x->expr), x);
     
     if( err != OSC_ERR_NONE )
@@ -125,20 +125,41 @@ void oexpr_file_proc_procFile(t_oexpr_file_proc *x, char *filename, short path)
     long err = path_opensysfile(filename, path, &fh, READ_PERM);
     if (!err)
     {
-        sysfile_readtextfile(fh, (t_handle)x->t_text, 0, (t_sysfile_text_flags)(TEXT_LB_UNIX | TEXT_NULL_TERMINATE));
+        t_handle textData = sysmem_newhandle(0);
+        sysfile_readtextfile(fh, textData, 0, (t_sysfile_text_flags)(TEXT_LB_UNIX | TEXT_NULL_TERMINATE));
         sysfile_close(fh);
-        x->t_size = sysmem_handlesize(x->t_text);
         
-        if( x->filewatcher ){
-            filewatcher_stop(x->filewatcher);
-            object_free(x->filewatcher);
+        if( textData )
+        {
+            critical_enter(x->lock);
+            
+            if (x->t_text)
+                sysmem_freehandle(x->t_text);
+            
+            x->t_size = sysmem_handlesize(textData);
+            
+            x->t_text = sysmem_newhandleclear(x->t_size+1);
+            sysmem_copyptr((char *)*textData, *x->t_text, x->t_size);
+            
+            if( x->filewatcher ){
+                filewatcher_stop(x->filewatcher);
+                object_free(x->filewatcher);
+            }
+            
+            x->filewatcher = filewatcher_new((t_object *)x, path, filename);
+            if(x->filewatcher)
+                filewatcher_start(x->filewatcher);
+            
+            oexpr_file_proc_parseText(x);
+            
+            critical_exit(x->lock);
+            
+            sysmem_freehandle(textData);
         }
         
-        x->filewatcher = filewatcher_new((t_object *)x, path, filename);
-        if(x->filewatcher)
-            filewatcher_start(x->filewatcher);
-
-        oexpr_file_proc_parseText(x);
+        
+       
+        
     }
     else
     {
@@ -192,7 +213,7 @@ void oexpr_file_proc_filechanged(t_oexpr_file_proc *x, char *filename, short pat
 
 void oexpr_file_proc_free(t_oexpr_file_proc *x)
 {
-
+    critical_enter(x->lock);
     if (x->t_text)
         sysmem_freehandle(x->t_text);
     
@@ -200,12 +221,14 @@ void oexpr_file_proc_free(t_oexpr_file_proc *x)
         osc_expr_free(x->expr);
     }
     
-    critical_free(x->lock);
-    
     if( x->filewatcher ){
         filewatcher_stop(x->filewatcher);
         object_free(x->filewatcher);
     }
+    critical_exit(x->lock);
+    
+    critical_free(x->lock);
+   
 }
 
 void *oexpr_file_proc_new(t_object *ref_obj, int instance_num, t_symbol *filename)
@@ -215,6 +238,7 @@ void *oexpr_file_proc_new(t_object *ref_obj, int instance_num, t_symbol *filenam
     if((x = (t_oexpr_file_proc *)object_alloc(oexpr_file_proc_class)))
     {
         critical_new(&x->lock);
+        x->softlock = false;
         
         x->expr = NULL;
         
@@ -294,6 +318,7 @@ void oexprfile_updateStatus_cb(t_object * x_obj)
     
     if( bndl && msg )
     {
+        critical_enter(x->lock0);
         for( int i = 0; i < x->nfiles; i++ )
         {
             t_osc_bndl_u * status_bundle = osc_bundle_u_alloc();
@@ -319,11 +344,11 @@ void oexprfile_updateStatus_cb(t_object * x_obj)
                 
                 osc_message_u_appendBndl_u(msg, status_bundle);
             }
-        
             
         }
         
         x->allFilesAreValid = (n_valid_files == x->nfiles);
+        critical_exit(x->lock0);
         
         t_osc_msg_u * valid_msg = osc_message_u_allocWithAddress("/file/allFilesLoaded");
         osc_message_u_appendBool(valid_msg, x->allFilesAreValid );
