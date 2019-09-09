@@ -1,0 +1,43 @@
+
+/set/fromData = quote( 
+    lambda([obj],
+        /obj = obj,
+        #put test here to make sure the obj has the values we need?
+        let({   notehead_radius : /obj./amp,
+                pix_pitch_pos : /obj./pitch,
+                pix_start : /obj./time ,
+                pix_end : /obj./dur
+            }, # return the following object
+            {
+                /new : "g",
+                /class : "/noteline",
+                /id : /obj./id,
+                /children : [
+                    {
+                        /new : "circle",
+                        /class : "notehead",
+                        /r : notehead_radius,
+                        /cy : pix_pitch_pos,
+                        /cx : pix_start + notehead_radius
+                    },
+                    {
+                        /new : "line",
+                        /class : "durationLine",
+                        /x1 : pix_start ,
+                        /y1 : pix_pitch_pos,
+                        /x2 : pix_end,
+                        /y2 : pix_pitch_pos
+                    }
+                ]
+            }
+        )
+    )
+),
+
+/foo =/set/fromData({
+    /amp : 1,
+    /pitch : 60,
+    /time: 1,
+    /dur : 10,
+    /id : "foo"
+})

@@ -50,7 +50,7 @@ typedef struct _oexpr_file_proc
 
 void oexprfile_updateStatus_cb(t_object * x_obj);
 
-int oexprfile_proc_liboErrorHandler(void *context, const char * const errorstr)
+int oexprfile_proc_liboErrorHandler(void *context, t_osc_err errorcode, const char * const errorstr)
 {
     object_error((t_object*)context, "(%s): %s", ((t_oexpr_file_proc *)context)->filename->s_name, errorstr);
     return 0;
@@ -326,7 +326,8 @@ void oexprfile_updateStatus_cb(t_object * x_obj)
             if( status_bundle )
             {
                 t_osc_msg_u * name_msg = osc_message_u_allocWithAddress("/name");
-                osc_message_u_appendString( name_msg, x->files[i]->filename->s_name );
+                
+                osc_message_u_appendString( name_msg, ( x->files[i]->path_file[0] ? x->files[i]->path_file : x->files[i]->filename->s_name ) );
                 osc_bundle_u_addMsg(status_bundle, name_msg);
                 
                 t_osc_msg_u * status_msg = osc_message_u_allocWithAddress("/status");

@@ -1,0 +1,22 @@
+/foo = {
+                /new : "g",
+                /class : "/noteline",
+                /id : /obj./id,
+                /children : [
+                    {
+                        /new : "circle",
+                        /class : "notehead",
+                        /r : notehead_radius,
+                        /cy : pix_pitch_pos,
+                        /cx : pix_start + notehead_radius
+                    },
+                    {
+                        /new : "line",
+                        /class : "durationLine",
+                        /x1 : pix_start ,
+                        /y1 : pix_pitch_pos,
+                        /x2 : pix_end,
+                        /y2 : pix_pitch_pos
+                    }
+                ]
+            }

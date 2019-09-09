@@ -7,19 +7,191 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1126C09F2326D5AD006D1701 /* osc_hashtab.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0512326D5A7006D1701 /* osc_hashtab.h */; };
+		1126C0A02326D5AD006D1701 /* osc_expr_scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0522326D5A7006D1701 /* osc_expr_scanner.c */; };
+		1126C0A12326D5AD006D1701 /* osc_expr.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0532326D5A8006D1701 /* osc_expr.h */; };
+		1126C0A22326D5AD006D1701 /* osc_atom_array_s.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0542326D5A8006D1701 /* osc_atom_array_s.c */; };
+		1126C0A32326D5AD006D1701 /* osc_expr_func.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0552326D5A8006D1701 /* osc_expr_func.h */; };
+		1126C0A42326D5AD006D1701 /* osc_expr_rec.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0562326D5A8006D1701 /* osc_expr_rec.h */; };
+		1126C0A52326D5AD006D1701 /* osc_match.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0572326D5A8006D1701 /* osc_match.c */; };
+		1126C0A62326D5AD006D1701 /* osc_array.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0582326D5A8006D1701 /* osc_array.h */; };
+		1126C0A72326D5AD006D1701 /* osc_timetag.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0592326D5A8006D1701 /* osc_timetag.c */; };
+		1126C0A82326D5AD006D1701 /* osc_hashtab.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C05A2326D5A8006D1701 /* osc_hashtab.c */; };
+		1126C0A92326D5AD006D1701 /* osc_vtable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C05B2326D5A8006D1701 /* osc_vtable.h */; };
+		1126C0AA2326D5AD006D1701 /* osc_bundle_iterator_u.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C05C2326D5A8006D1701 /* osc_bundle_iterator_u.h */; };
+		1126C0AB2326D5AD006D1701 /* osc_message_iterator_u.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C05D2326D5A8006D1701 /* osc_message_iterator_u.h */; };
+		1126C0AC2326D5AD006D1701 /* osc_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C05E2326D5A8006D1701 /* osc_parser.h */; };
+		1126C0AD2326D5AD006D1701 /* osc_legacy_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C05F2326D5A8006D1701 /* osc_legacy_parser.c */; };
+		1126C0AE2326D5AD006D1701 /* osc_atom_s.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0602326D5A8006D1701 /* osc_atom_s.c */; };
+		1126C0AF2326D5AD006D1701 /* osc_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0612326D5A8006D1701 /* osc_parser.c */; };
+		1126C0B02326D5AD006D1701 /* osc_serial.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0622326D5A8006D1701 /* osc_serial.c */; };
+		1126C0B12326D5AD006D1701 /* osc_vtable.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0632326D5A8006D1701 /* osc_vtable.c */; };
+		1126C0B22326D5AD006D1701 /* osc_legacy_scanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0642326D5A8006D1701 /* osc_legacy_scanner.h */; };
+		1126C0B32326D5AD006D1701 /* osc_array.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0652326D5A8006D1701 /* osc_array.c */; };
+		1126C0B42326D5AD006D1701 /* osc_linkedlist.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0662326D5A8006D1701 /* osc_linkedlist.h */; };
+		1126C0B52326D5AD006D1701 /* osc_typetag.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0672326D5A8006D1701 /* osc_typetag.c */; };
+		1126C0B62326D5AD006D1701 /* osc_atom_array_u.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0682326D5A9006D1701 /* osc_atom_array_u.h */; };
+		1126C0B72326D5AD006D1701 /* osc_expr_u.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0692326D5A9006D1701 /* osc_expr_u.c */; };
+		1126C0B82326D5AD006D1701 /* osc_message_s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C06A2326D5A9006D1701 /* osc_message_s.h */; };
+		1126C0B92326D5AD006D1701 /* osc_atom_array_s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C06B2326D5A9006D1701 /* osc_atom_array_s.h */; };
+		1126C0BA2326D5AD006D1701 /* osc_serial.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C06C2326D5A9006D1701 /* osc_serial.h */; };
+		1126C0BB2326D5AD006D1701 /* osc_expr.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C06D2326D5A9006D1701 /* osc_expr.c */; };
+		1126C0BC2326D5AD006D1701 /* osc_atom_s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C06E2326D5A9006D1701 /* osc_atom_s.h */; };
+		1126C0BD2326D5AD006D1701 /* osc_bundle_iterator_s.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C06F2326D5A9006D1701 /* osc_bundle_iterator_s.c */; };
+		1126C0BE2326D5AD006D1701 /* osc_expr_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0702326D5A9006D1701 /* osc_expr_parser.h */; };
+		1126C0BF2326D5AD006D1701 /* osc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0712326D5A9006D1701 /* osc.h */; };
+		1126C0C02326D5AD006D1701 /* osc_util.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0722326D5A9006D1701 /* osc_util.c */; };
+		1126C0C12326D5AD006D1701 /* osc_expr_privatedecls.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0732326D5A9006D1701 /* osc_expr_privatedecls.h */; };
+		1126C0C22326D5AD006D1701 /* osc_message_iterator_s.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0742326D5A9006D1701 /* osc_message_iterator_s.c */; };
+		1126C0C32326D5AD006D1701 /* osc_expr_u_privatedecls.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0752326D5A9006D1701 /* osc_expr_u_privatedecls.h */; };
+		1126C0C42326D5AD006D1701 /* osc_bundle_u.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0762326D5AA006D1701 /* osc_bundle_u.c */; };
+		1126C0C52326D5AD006D1701 /* osc_message_iterator_u.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0772326D5AA006D1701 /* osc_message_iterator_u.c */; };
+		1126C0C62326D5AD006D1701 /* osc_atom_u.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0782326D5AA006D1701 /* osc_atom_u.h */; };
+		1126C0C72326D5AD006D1701 /* osc_scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0792326D5AA006D1701 /* osc_scanner.c */; };
+		1126C0C82326D5AD006D1701 /* osc_query.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C07A2326D5AA006D1701 /* osc_query.h */; };
+		1126C0C92326D5AD006D1701 /* osc_rset.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C07B2326D5AA006D1701 /* osc_rset.h */; };
+		1126C0CA2326D5AD006D1701 /* osc_mem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C07C2326D5AA006D1701 /* osc_mem.h */; };
+		1126C0CB2326D5AD006D1701 /* osc_query.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C07D2326D5AA006D1701 /* osc_query.c */; };
+		1126C0CC2326D5AD006D1701 /* osc_error.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C07E2326D5AA006D1701 /* osc_error.c */; };
+		1126C0CD2326D5AD006D1701 /* osc_expr_rec.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C07F2326D5AA006D1701 /* osc_expr_rec.c */; };
+		1126C0CE2326D5AD006D1701 /* osc_strfmt.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0802326D5AA006D1701 /* osc_strfmt.h */; };
+		1126C0CF2326D5AD006D1701 /* osc_bundle_u.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0812326D5AA006D1701 /* osc_bundle_u.h */; };
+		1126C0D02326D5AD006D1701 /* osc_expr_u.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0822326D5AA006D1701 /* osc_expr_u.h */; };
+		1126C0D12326D5AD006D1701 /* osc_error.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0832326D5AA006D1701 /* osc_error.h */; };
+		1126C0D22326D5AD006D1701 /* osc_dispatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0842326D5AB006D1701 /* osc_dispatch.c */; };
+		1126C0D32326D5AD006D1701 /* osc_bundle_iterator_s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0852326D5AB006D1701 /* osc_bundle_iterator_s.h */; };
+		1126C0D42326D5AD006D1701 /* osc_message_iterator_s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0862326D5AB006D1701 /* osc_message_iterator_s.h */; };
+		1126C0D52326D5AD006D1701 /* osc_message_s.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0872326D5AB006D1701 /* osc_message_s.c */; };
+		1126C0D62326D5AD006D1701 /* osc_atom_u.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0882326D5AB006D1701 /* osc_atom_u.c */; };
+		1126C0D72326D5AD006D1701 /* osc_expr_scanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0892326D5AB006D1701 /* osc_expr_scanner.h */; };
+		1126C0D82326D5AD006D1701 /* osc_bundle_s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C08A2326D5AB006D1701 /* osc_bundle_s.h */; };
+		1126C0D92326D5AD006D1701 /* osc_legacy_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C08B2326D5AB006D1701 /* osc_legacy_parser.h */; };
+		1126C0DA2326D5AD006D1701 /* osc_dispatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C08C2326D5AB006D1701 /* osc_dispatch.h */; };
+		1126C0DB2326D5AD006D1701 /* osc_bundle_s.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C08D2326D5AB006D1701 /* osc_bundle_s.c */; };
+		1126C0DC2326D5AD006D1701 /* osc_linkedlist.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C08E2326D5AB006D1701 /* osc_linkedlist.c */; };
+		1126C0DD2326D5AD006D1701 /* osc_match.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C08F2326D5AB006D1701 /* osc_match.h */; };
+		1126C0DE2326D5AD006D1701 /* osc_bundle_iterator_u.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0902326D5AC006D1701 /* osc_bundle_iterator_u.c */; };
+		1126C0DF2326D5AD006D1701 /* osc_profile.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0912326D5AC006D1701 /* osc_profile.h */; };
+		1126C0E02326D5AD006D1701 /* osc_legacy_scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0922326D5AC006D1701 /* osc_legacy_scanner.c */; };
+		1126C0E12326D5AD006D1701 /* osc_expr_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0932326D5AC006D1701 /* osc_expr_parser.c */; };
+		1126C0E22326D5AD006D1701 /* osc_byteorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0942326D5AC006D1701 /* osc_byteorder.h */; };
+		1126C0E32326D5AD006D1701 /* osc_mem.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0952326D5AC006D1701 /* osc_mem.c */; };
+		1126C0E42326D5AD006D1701 /* osc_util.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0962326D5AC006D1701 /* osc_util.h */; };
+		1126C0E52326D5AD006D1701 /* osc_message_u.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0972326D5AC006D1701 /* osc_message_u.c */; };
+		1126C0E62326D5AD006D1701 /* osc_atom_array_u.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0982326D5AC006D1701 /* osc_atom_array_u.c */; };
+		1126C0E72326D5AD006D1701 /* osc_timetag.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0992326D5AC006D1701 /* osc_timetag.h */; };
+		1126C0E82326D5AD006D1701 /* osc_message_u.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C09A2326D5AC006D1701 /* osc_message_u.h */; };
+		1126C0E92326D5AD006D1701 /* osc_rset.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C09B2326D5AC006D1701 /* osc_rset.c */; };
+		1126C0EA2326D5AD006D1701 /* osc_strfmt.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C09C2326D5AD006D1701 /* osc_strfmt.c */; };
+		1126C0EB2326D5AD006D1701 /* osc_typetag.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C09D2326D5AD006D1701 /* osc_typetag.h */; };
+		1126C0EC2326D5AD006D1701 /* osc_scanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C09E2326D5AD006D1701 /* osc_scanner.h */; };
+		1126C0FE2326D5F8006D1701 /* liblibo-symbolist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1126C04C2326D517006D1701 /* liblibo-symbolist.a */; };
 		1133D28123258E470000EC2A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1133D28023258E470000EC2A /* Carbon.framework */; };
 		1140C3CE232165EE00E32DDB /* o.expr.file.c in Sources */ = {isa = PBXBuildFile; fileRef = 1140C3CC232165EE00E32DDB /* o.expr.file.c */; };
-		1140C3D123216F2D00E32DDB /* libo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1140C3D023216F2D00E32DDB /* libo.a */; };
 		1140C3D323216F3F00E32DDB /* libomax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1140C3D223216F3F00E32DDB /* libomax.a */; };
 		11611CE423198B9E00E2F1DD /* o.svgpoints.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11611CE223198B9E00E2F1DD /* o.svgpoints.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1126C04C2326D517006D1701 /* liblibo-symbolist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblibo-symbolist.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1126C0512326D5A7006D1701 /* osc_hashtab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_hashtab.h; path = ../../../libo/osc_hashtab.h; sourceTree = "<group>"; };
+		1126C0522326D5A7006D1701 /* osc_expr_scanner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_expr_scanner.c; path = ../../../libo/osc_expr_scanner.c; sourceTree = "<group>"; };
+		1126C0532326D5A8006D1701 /* osc_expr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_expr.h; path = ../../../libo/osc_expr.h; sourceTree = "<group>"; };
+		1126C0542326D5A8006D1701 /* osc_atom_array_s.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_atom_array_s.c; path = ../../../libo/osc_atom_array_s.c; sourceTree = "<group>"; };
+		1126C0552326D5A8006D1701 /* osc_expr_func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_expr_func.h; path = ../../../libo/osc_expr_func.h; sourceTree = "<group>"; };
+		1126C0562326D5A8006D1701 /* osc_expr_rec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_expr_rec.h; path = ../../../libo/osc_expr_rec.h; sourceTree = "<group>"; };
+		1126C0572326D5A8006D1701 /* osc_match.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_match.c; path = ../../../libo/osc_match.c; sourceTree = "<group>"; };
+		1126C0582326D5A8006D1701 /* osc_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_array.h; path = ../../../libo/osc_array.h; sourceTree = "<group>"; };
+		1126C0592326D5A8006D1701 /* osc_timetag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_timetag.c; path = ../../../libo/osc_timetag.c; sourceTree = "<group>"; };
+		1126C05A2326D5A8006D1701 /* osc_hashtab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_hashtab.c; path = ../../../libo/osc_hashtab.c; sourceTree = "<group>"; };
+		1126C05B2326D5A8006D1701 /* osc_vtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_vtable.h; path = ../../../libo/osc_vtable.h; sourceTree = "<group>"; };
+		1126C05C2326D5A8006D1701 /* osc_bundle_iterator_u.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_bundle_iterator_u.h; path = ../../../libo/osc_bundle_iterator_u.h; sourceTree = "<group>"; };
+		1126C05D2326D5A8006D1701 /* osc_message_iterator_u.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_message_iterator_u.h; path = ../../../libo/osc_message_iterator_u.h; sourceTree = "<group>"; };
+		1126C05E2326D5A8006D1701 /* osc_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_parser.h; path = ../../../libo/osc_parser.h; sourceTree = "<group>"; };
+		1126C05F2326D5A8006D1701 /* osc_legacy_parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_legacy_parser.c; path = ../../../libo/osc_legacy_parser.c; sourceTree = "<group>"; };
+		1126C0602326D5A8006D1701 /* osc_atom_s.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_atom_s.c; path = ../../../libo/osc_atom_s.c; sourceTree = "<group>"; };
+		1126C0612326D5A8006D1701 /* osc_parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_parser.c; path = ../../../libo/osc_parser.c; sourceTree = "<group>"; };
+		1126C0622326D5A8006D1701 /* osc_serial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_serial.c; path = ../../../libo/osc_serial.c; sourceTree = "<group>"; };
+		1126C0632326D5A8006D1701 /* osc_vtable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_vtable.c; path = ../../../libo/osc_vtable.c; sourceTree = "<group>"; };
+		1126C0642326D5A8006D1701 /* osc_legacy_scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_legacy_scanner.h; path = ../../../libo/osc_legacy_scanner.h; sourceTree = "<group>"; };
+		1126C0652326D5A8006D1701 /* osc_array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_array.c; path = ../../../libo/osc_array.c; sourceTree = "<group>"; };
+		1126C0662326D5A8006D1701 /* osc_linkedlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_linkedlist.h; path = ../../../libo/osc_linkedlist.h; sourceTree = "<group>"; };
+		1126C0672326D5A8006D1701 /* osc_typetag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_typetag.c; path = ../../../libo/osc_typetag.c; sourceTree = "<group>"; };
+		1126C0682326D5A9006D1701 /* osc_atom_array_u.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_atom_array_u.h; path = ../../../libo/osc_atom_array_u.h; sourceTree = "<group>"; };
+		1126C0692326D5A9006D1701 /* osc_expr_u.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_expr_u.c; path = ../../../libo/osc_expr_u.c; sourceTree = "<group>"; };
+		1126C06A2326D5A9006D1701 /* osc_message_s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_message_s.h; path = ../../../libo/osc_message_s.h; sourceTree = "<group>"; };
+		1126C06B2326D5A9006D1701 /* osc_atom_array_s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_atom_array_s.h; path = ../../../libo/osc_atom_array_s.h; sourceTree = "<group>"; };
+		1126C06C2326D5A9006D1701 /* osc_serial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_serial.h; path = ../../../libo/osc_serial.h; sourceTree = "<group>"; };
+		1126C06D2326D5A9006D1701 /* osc_expr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_expr.c; path = ../../../libo/osc_expr.c; sourceTree = "<group>"; };
+		1126C06E2326D5A9006D1701 /* osc_atom_s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_atom_s.h; path = ../../../libo/osc_atom_s.h; sourceTree = "<group>"; };
+		1126C06F2326D5A9006D1701 /* osc_bundle_iterator_s.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_bundle_iterator_s.c; path = ../../../libo/osc_bundle_iterator_s.c; sourceTree = "<group>"; };
+		1126C0702326D5A9006D1701 /* osc_expr_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_expr_parser.h; path = ../../../libo/osc_expr_parser.h; sourceTree = "<group>"; };
+		1126C0712326D5A9006D1701 /* osc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc.h; path = ../../../libo/osc.h; sourceTree = "<group>"; };
+		1126C0722326D5A9006D1701 /* osc_util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_util.c; path = ../../../libo/osc_util.c; sourceTree = "<group>"; };
+		1126C0732326D5A9006D1701 /* osc_expr_privatedecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_expr_privatedecls.h; path = ../../../libo/osc_expr_privatedecls.h; sourceTree = "<group>"; };
+		1126C0742326D5A9006D1701 /* osc_message_iterator_s.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_message_iterator_s.c; path = ../../../libo/osc_message_iterator_s.c; sourceTree = "<group>"; };
+		1126C0752326D5A9006D1701 /* osc_expr_u_privatedecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_expr_u_privatedecls.h; path = ../../../libo/osc_expr_u_privatedecls.h; sourceTree = "<group>"; };
+		1126C0762326D5AA006D1701 /* osc_bundle_u.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_bundle_u.c; path = ../../../libo/osc_bundle_u.c; sourceTree = "<group>"; };
+		1126C0772326D5AA006D1701 /* osc_message_iterator_u.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_message_iterator_u.c; path = ../../../libo/osc_message_iterator_u.c; sourceTree = "<group>"; };
+		1126C0782326D5AA006D1701 /* osc_atom_u.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_atom_u.h; path = ../../../libo/osc_atom_u.h; sourceTree = "<group>"; };
+		1126C0792326D5AA006D1701 /* osc_scanner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_scanner.c; path = ../../../libo/osc_scanner.c; sourceTree = "<group>"; };
+		1126C07A2326D5AA006D1701 /* osc_query.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_query.h; path = ../../../libo/osc_query.h; sourceTree = "<group>"; };
+		1126C07B2326D5AA006D1701 /* osc_rset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_rset.h; path = ../../../libo/osc_rset.h; sourceTree = "<group>"; };
+		1126C07C2326D5AA006D1701 /* osc_mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_mem.h; path = ../../../libo/osc_mem.h; sourceTree = "<group>"; };
+		1126C07D2326D5AA006D1701 /* osc_query.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_query.c; path = ../../../libo/osc_query.c; sourceTree = "<group>"; };
+		1126C07E2326D5AA006D1701 /* osc_error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_error.c; path = ../../../libo/osc_error.c; sourceTree = "<group>"; };
+		1126C07F2326D5AA006D1701 /* osc_expr_rec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_expr_rec.c; path = ../../../libo/osc_expr_rec.c; sourceTree = "<group>"; };
+		1126C0802326D5AA006D1701 /* osc_strfmt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_strfmt.h; path = ../../../libo/osc_strfmt.h; sourceTree = "<group>"; };
+		1126C0812326D5AA006D1701 /* osc_bundle_u.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_bundle_u.h; path = ../../../libo/osc_bundle_u.h; sourceTree = "<group>"; };
+		1126C0822326D5AA006D1701 /* osc_expr_u.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_expr_u.h; path = ../../../libo/osc_expr_u.h; sourceTree = "<group>"; };
+		1126C0832326D5AA006D1701 /* osc_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_error.h; path = ../../../libo/osc_error.h; sourceTree = "<group>"; };
+		1126C0842326D5AB006D1701 /* osc_dispatch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_dispatch.c; path = ../../../libo/osc_dispatch.c; sourceTree = "<group>"; };
+		1126C0852326D5AB006D1701 /* osc_bundle_iterator_s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_bundle_iterator_s.h; path = ../../../libo/osc_bundle_iterator_s.h; sourceTree = "<group>"; };
+		1126C0862326D5AB006D1701 /* osc_message_iterator_s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_message_iterator_s.h; path = ../../../libo/osc_message_iterator_s.h; sourceTree = "<group>"; };
+		1126C0872326D5AB006D1701 /* osc_message_s.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_message_s.c; path = ../../../libo/osc_message_s.c; sourceTree = "<group>"; };
+		1126C0882326D5AB006D1701 /* osc_atom_u.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_atom_u.c; path = ../../../libo/osc_atom_u.c; sourceTree = "<group>"; };
+		1126C0892326D5AB006D1701 /* osc_expr_scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_expr_scanner.h; path = ../../../libo/osc_expr_scanner.h; sourceTree = "<group>"; };
+		1126C08A2326D5AB006D1701 /* osc_bundle_s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_bundle_s.h; path = ../../../libo/osc_bundle_s.h; sourceTree = "<group>"; };
+		1126C08B2326D5AB006D1701 /* osc_legacy_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_legacy_parser.h; path = ../../../libo/osc_legacy_parser.h; sourceTree = "<group>"; };
+		1126C08C2326D5AB006D1701 /* osc_dispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_dispatch.h; path = ../../../libo/osc_dispatch.h; sourceTree = "<group>"; };
+		1126C08D2326D5AB006D1701 /* osc_bundle_s.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_bundle_s.c; path = ../../../libo/osc_bundle_s.c; sourceTree = "<group>"; };
+		1126C08E2326D5AB006D1701 /* osc_linkedlist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_linkedlist.c; path = ../../../libo/osc_linkedlist.c; sourceTree = "<group>"; };
+		1126C08F2326D5AB006D1701 /* osc_match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_match.h; path = ../../../libo/osc_match.h; sourceTree = "<group>"; };
+		1126C0902326D5AC006D1701 /* osc_bundle_iterator_u.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_bundle_iterator_u.c; path = ../../../libo/osc_bundle_iterator_u.c; sourceTree = "<group>"; };
+		1126C0912326D5AC006D1701 /* osc_profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_profile.h; path = ../../../libo/osc_profile.h; sourceTree = "<group>"; };
+		1126C0922326D5AC006D1701 /* osc_legacy_scanner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_legacy_scanner.c; path = ../../../libo/osc_legacy_scanner.c; sourceTree = "<group>"; };
+		1126C0932326D5AC006D1701 /* osc_expr_parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_expr_parser.c; path = ../../../libo/osc_expr_parser.c; sourceTree = "<group>"; };
+		1126C0942326D5AC006D1701 /* osc_byteorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_byteorder.h; path = ../../../libo/osc_byteorder.h; sourceTree = "<group>"; };
+		1126C0952326D5AC006D1701 /* osc_mem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_mem.c; path = ../../../libo/osc_mem.c; sourceTree = "<group>"; };
+		1126C0962326D5AC006D1701 /* osc_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_util.h; path = ../../../libo/osc_util.h; sourceTree = "<group>"; };
+		1126C0972326D5AC006D1701 /* osc_message_u.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_message_u.c; path = ../../../libo/osc_message_u.c; sourceTree = "<group>"; };
+		1126C0982326D5AC006D1701 /* osc_atom_array_u.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_atom_array_u.c; path = ../../../libo/osc_atom_array_u.c; sourceTree = "<group>"; };
+		1126C0992326D5AC006D1701 /* osc_timetag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_timetag.h; path = ../../../libo/osc_timetag.h; sourceTree = "<group>"; };
+		1126C09A2326D5AC006D1701 /* osc_message_u.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_message_u.h; path = ../../../libo/osc_message_u.h; sourceTree = "<group>"; };
+		1126C09B2326D5AC006D1701 /* osc_rset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_rset.c; path = ../../../libo/osc_rset.c; sourceTree = "<group>"; };
+		1126C09C2326D5AD006D1701 /* osc_strfmt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_strfmt.c; path = ../../../libo/osc_strfmt.c; sourceTree = "<group>"; };
+		1126C09D2326D5AD006D1701 /* osc_typetag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_typetag.h; path = ../../../libo/osc_typetag.h; sourceTree = "<group>"; };
+		1126C09E2326D5AD006D1701 /* osc_scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_scanner.h; path = ../../../libo/osc_scanner.h; sourceTree = "<group>"; };
+		1126C0ED2326D5BF006D1701 /* osc_atom_s.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_atom_s.r; path = ../../../libo/osc_atom_s.r; sourceTree = "<group>"; };
+		1126C0EE2326D5BF006D1701 /* osc_message_iterator_u.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_message_iterator_u.r; path = ../../../libo/osc_message_iterator_u.r; sourceTree = "<group>"; };
+		1126C0EF2326D5C0006D1701 /* osc_expr_rec.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_expr_rec.r; path = ../../../libo/osc_expr_rec.r; sourceTree = "<group>"; };
+		1126C0F02326D5C0006D1701 /* osc_atom_u.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_atom_u.r; path = ../../../libo/osc_atom_u.r; sourceTree = "<group>"; };
+		1126C0F12326D5C0006D1701 /* osc_bundle_s.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_bundle_s.r; path = ../../../libo/osc_bundle_s.r; sourceTree = "<group>"; };
+		1126C0F22326D5C0006D1701 /* osc_bundle_iterator_u.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_bundle_iterator_u.r; path = ../../../libo/osc_bundle_iterator_u.r; sourceTree = "<group>"; };
+		1126C0F32326D5C0006D1701 /* osc_vtable.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_vtable.r; path = ../../../libo/osc_vtable.r; sourceTree = "<group>"; };
+		1126C0F42326D5C0006D1701 /* osc_linkedlist.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_linkedlist.r; path = ../../../libo/osc_linkedlist.r; sourceTree = "<group>"; };
+		1126C0F52326D5C0006D1701 /* osc_message_u.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_message_u.r; path = ../../../libo/osc_message_u.r; sourceTree = "<group>"; };
+		1126C0F62326D5C0006D1701 /* osc_bundle_iterator_s.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_bundle_iterator_s.r; path = ../../../libo/osc_bundle_iterator_s.r; sourceTree = "<group>"; };
+		1126C0F72326D5C0006D1701 /* osc_message_iterator_s.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_message_iterator_s.r; path = ../../../libo/osc_message_iterator_s.r; sourceTree = "<group>"; };
+		1126C0F82326D5C0006D1701 /* osc_bundle_u.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_bundle_u.r; path = ../../../libo/osc_bundle_u.r; sourceTree = "<group>"; };
+		1126C0F92326D5C0006D1701 /* osc_array.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_array.r; path = ../../../libo/osc_array.r; sourceTree = "<group>"; };
+		1126C0FA2326D5C0006D1701 /* osc_message_s.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_message_s.r; path = ../../../libo/osc_message_s.r; sourceTree = "<group>"; };
+		1126C0FB2326D5C1006D1701 /* osc_rset.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_rset.r; path = ../../../libo/osc_rset.r; sourceTree = "<group>"; };
+		1126C0FC2326D5C1006D1701 /* osc_hashtab.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_hashtab.r; path = ../../../libo/osc_hashtab.r; sourceTree = "<group>"; };
+		1126C0FD2326D5C1006D1701 /* osc_expr.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_expr.r; path = ../../../libo/osc_expr.r; sourceTree = "<group>"; };
 		1133D28023258E470000EC2A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		1133D282232592AD0000EC2A /* o.expr.file-handler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "o.expr.file-handler.cpp"; sourceTree = "<group>"; };
 		1140C3C9232164A200E32DDB /* o.expr.file.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = o.expr.file.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		1140C3CC232165EE00E32DDB /* o.expr.file.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = o.expr.file.c; sourceTree = "<group>"; };
-		1140C3CD232165EE00E32DDB /* o.expr.file-handler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "o.expr.file-handler.hpp"; sourceTree = "<group>"; };
 		1140C3D023216F2D00E32DDB /* libo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libo.a; path = ../../libo/libo.a; sourceTree = "<group>"; };
 		1140C3D223216F3F00E32DDB /* libomax.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomax.a; path = ../../libomax/libomax.a; sourceTree = "<group>"; };
 		11611CD9231908AB00E2F1DD /* o.svgpoints.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = o.svgpoints.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,13 +200,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1126C04A2326D517006D1701 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1140C3C4232164A200E32DDB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1126C0FE2326D5F8006D1701 /* liblibo-symbolist.a in Frameworks */,
 				1133D28123258E470000EC2A /* Carbon.framework in Frameworks */,
 				1140C3D323216F3F00E32DDB /* libomax.a in Frameworks */,
-				1140C3D123216F2D00E32DDB /* libo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,12 +227,112 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1126C0502326D523006D1701 /* libo-symbolist */ = {
+			isa = PBXGroup;
+			children = (
+				1126C0F92326D5C0006D1701 /* osc_array.r */,
+				1126C0ED2326D5BF006D1701 /* osc_atom_s.r */,
+				1126C0F02326D5C0006D1701 /* osc_atom_u.r */,
+				1126C0F62326D5C0006D1701 /* osc_bundle_iterator_s.r */,
+				1126C0F22326D5C0006D1701 /* osc_bundle_iterator_u.r */,
+				1126C0F12326D5C0006D1701 /* osc_bundle_s.r */,
+				1126C0F82326D5C0006D1701 /* osc_bundle_u.r */,
+				1126C0EF2326D5C0006D1701 /* osc_expr_rec.r */,
+				1126C0FD2326D5C1006D1701 /* osc_expr.r */,
+				1126C0FC2326D5C1006D1701 /* osc_hashtab.r */,
+				1126C0F42326D5C0006D1701 /* osc_linkedlist.r */,
+				1126C0F72326D5C0006D1701 /* osc_message_iterator_s.r */,
+				1126C0EE2326D5BF006D1701 /* osc_message_iterator_u.r */,
+				1126C0FA2326D5C0006D1701 /* osc_message_s.r */,
+				1126C0F52326D5C0006D1701 /* osc_message_u.r */,
+				1126C0FB2326D5C1006D1701 /* osc_rset.r */,
+				1126C0F32326D5C0006D1701 /* osc_vtable.r */,
+				1126C0652326D5A8006D1701 /* osc_array.c */,
+				1126C0582326D5A8006D1701 /* osc_array.h */,
+				1126C0542326D5A8006D1701 /* osc_atom_array_s.c */,
+				1126C06B2326D5A9006D1701 /* osc_atom_array_s.h */,
+				1126C0982326D5AC006D1701 /* osc_atom_array_u.c */,
+				1126C0682326D5A9006D1701 /* osc_atom_array_u.h */,
+				1126C0602326D5A8006D1701 /* osc_atom_s.c */,
+				1126C06E2326D5A9006D1701 /* osc_atom_s.h */,
+				1126C0882326D5AB006D1701 /* osc_atom_u.c */,
+				1126C0782326D5AA006D1701 /* osc_atom_u.h */,
+				1126C06F2326D5A9006D1701 /* osc_bundle_iterator_s.c */,
+				1126C0852326D5AB006D1701 /* osc_bundle_iterator_s.h */,
+				1126C0902326D5AC006D1701 /* osc_bundle_iterator_u.c */,
+				1126C05C2326D5A8006D1701 /* osc_bundle_iterator_u.h */,
+				1126C08D2326D5AB006D1701 /* osc_bundle_s.c */,
+				1126C08A2326D5AB006D1701 /* osc_bundle_s.h */,
+				1126C0762326D5AA006D1701 /* osc_bundle_u.c */,
+				1126C0812326D5AA006D1701 /* osc_bundle_u.h */,
+				1126C0942326D5AC006D1701 /* osc_byteorder.h */,
+				1126C0842326D5AB006D1701 /* osc_dispatch.c */,
+				1126C08C2326D5AB006D1701 /* osc_dispatch.h */,
+				1126C07E2326D5AA006D1701 /* osc_error.c */,
+				1126C0832326D5AA006D1701 /* osc_error.h */,
+				1126C0552326D5A8006D1701 /* osc_expr_func.h */,
+				1126C0932326D5AC006D1701 /* osc_expr_parser.c */,
+				1126C0702326D5A9006D1701 /* osc_expr_parser.h */,
+				1126C0732326D5A9006D1701 /* osc_expr_privatedecls.h */,
+				1126C07F2326D5AA006D1701 /* osc_expr_rec.c */,
+				1126C0562326D5A8006D1701 /* osc_expr_rec.h */,
+				1126C0522326D5A7006D1701 /* osc_expr_scanner.c */,
+				1126C0892326D5AB006D1701 /* osc_expr_scanner.h */,
+				1126C0752326D5A9006D1701 /* osc_expr_u_privatedecls.h */,
+				1126C0692326D5A9006D1701 /* osc_expr_u.c */,
+				1126C0822326D5AA006D1701 /* osc_expr_u.h */,
+				1126C06D2326D5A9006D1701 /* osc_expr.c */,
+				1126C0532326D5A8006D1701 /* osc_expr.h */,
+				1126C05A2326D5A8006D1701 /* osc_hashtab.c */,
+				1126C0512326D5A7006D1701 /* osc_hashtab.h */,
+				1126C05F2326D5A8006D1701 /* osc_legacy_parser.c */,
+				1126C08B2326D5AB006D1701 /* osc_legacy_parser.h */,
+				1126C0922326D5AC006D1701 /* osc_legacy_scanner.c */,
+				1126C0642326D5A8006D1701 /* osc_legacy_scanner.h */,
+				1126C08E2326D5AB006D1701 /* osc_linkedlist.c */,
+				1126C0662326D5A8006D1701 /* osc_linkedlist.h */,
+				1126C0572326D5A8006D1701 /* osc_match.c */,
+				1126C08F2326D5AB006D1701 /* osc_match.h */,
+				1126C0952326D5AC006D1701 /* osc_mem.c */,
+				1126C07C2326D5AA006D1701 /* osc_mem.h */,
+				1126C0742326D5A9006D1701 /* osc_message_iterator_s.c */,
+				1126C0862326D5AB006D1701 /* osc_message_iterator_s.h */,
+				1126C0772326D5AA006D1701 /* osc_message_iterator_u.c */,
+				1126C05D2326D5A8006D1701 /* osc_message_iterator_u.h */,
+				1126C0872326D5AB006D1701 /* osc_message_s.c */,
+				1126C06A2326D5A9006D1701 /* osc_message_s.h */,
+				1126C0972326D5AC006D1701 /* osc_message_u.c */,
+				1126C09A2326D5AC006D1701 /* osc_message_u.h */,
+				1126C0612326D5A8006D1701 /* osc_parser.c */,
+				1126C05E2326D5A8006D1701 /* osc_parser.h */,
+				1126C0912326D5AC006D1701 /* osc_profile.h */,
+				1126C07D2326D5AA006D1701 /* osc_query.c */,
+				1126C07A2326D5AA006D1701 /* osc_query.h */,
+				1126C09B2326D5AC006D1701 /* osc_rset.c */,
+				1126C07B2326D5AA006D1701 /* osc_rset.h */,
+				1126C0792326D5AA006D1701 /* osc_scanner.c */,
+				1126C09E2326D5AD006D1701 /* osc_scanner.h */,
+				1126C0622326D5A8006D1701 /* osc_serial.c */,
+				1126C06C2326D5A9006D1701 /* osc_serial.h */,
+				1126C09C2326D5AD006D1701 /* osc_strfmt.c */,
+				1126C0802326D5AA006D1701 /* osc_strfmt.h */,
+				1126C0592326D5A8006D1701 /* osc_timetag.c */,
+				1126C0992326D5AC006D1701 /* osc_timetag.h */,
+				1126C0672326D5A8006D1701 /* osc_typetag.c */,
+				1126C09D2326D5AD006D1701 /* osc_typetag.h */,
+				1126C0722326D5A9006D1701 /* osc_util.c */,
+				1126C0962326D5AC006D1701 /* osc_util.h */,
+				1126C0632326D5A8006D1701 /* osc_vtable.c */,
+				1126C05B2326D5A8006D1701 /* osc_vtable.h */,
+				1126C0712326D5A9006D1701 /* osc.h */,
+			);
+			path = "libo-symbolist";
+			sourceTree = "<group>";
+		};
 		1140C3CB232164ED00E32DDB /* o.expr.file */ = {
 			isa = PBXGroup;
 			children = (
 				1140C3CC232165EE00E32DDB /* o.expr.file.c */,
-				1140C3CD232165EE00E32DDB /* o.expr.file-handler.hpp */,
-				1133D282232592AD0000EC2A /* o.expr.file-handler.cpp */,
 			);
 			path = o.expr.file;
 			sourceTree = "<group>";
@@ -71,6 +350,7 @@
 		11611CD0231908AB00E2F1DD = {
 			isa = PBXGroup;
 			children = (
+				1126C0502326D523006D1701 /* libo-symbolist */,
 				1140C3CB232164ED00E32DDB /* o.expr.file */,
 				11611CDB231908AB00E2F1DD /* o.svgpoints */,
 				11611CDA231908AB00E2F1DD /* Products */,
@@ -83,6 +363,7 @@
 			children = (
 				11611CD9231908AB00E2F1DD /* o.svgpoints.mxo */,
 				1140C3C9232164A200E32DDB /* o.expr.file.mxo */,
+				1126C04C2326D517006D1701 /* liblibo-symbolist.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,7 +379,76 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		1126C0482326D517006D1701 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1126C0BF2326D5AD006D1701 /* osc.h in Headers */,
+				1126C0A42326D5AD006D1701 /* osc_expr_rec.h in Headers */,
+				1126C0C62326D5AD006D1701 /* osc_atom_u.h in Headers */,
+				1126C0EC2326D5AD006D1701 /* osc_scanner.h in Headers */,
+				1126C0D92326D5AD006D1701 /* osc_legacy_parser.h in Headers */,
+				1126C0DF2326D5AD006D1701 /* osc_profile.h in Headers */,
+				1126C0AC2326D5AD006D1701 /* osc_parser.h in Headers */,
+				1126C0CF2326D5AD006D1701 /* osc_bundle_u.h in Headers */,
+				1126C0E72326D5AD006D1701 /* osc_timetag.h in Headers */,
+				1126C0B22326D5AD006D1701 /* osc_legacy_scanner.h in Headers */,
+				1126C09F2326D5AD006D1701 /* osc_hashtab.h in Headers */,
+				1126C0A32326D5AD006D1701 /* osc_expr_func.h in Headers */,
+				1126C0DD2326D5AD006D1701 /* osc_match.h in Headers */,
+				1126C0D32326D5AD006D1701 /* osc_bundle_iterator_s.h in Headers */,
+				1126C0B82326D5AD006D1701 /* osc_message_s.h in Headers */,
+				1126C0AA2326D5AD006D1701 /* osc_bundle_iterator_u.h in Headers */,
+				1126C0E42326D5AD006D1701 /* osc_util.h in Headers */,
+				1126C0AB2326D5AD006D1701 /* osc_message_iterator_u.h in Headers */,
+				1126C0CA2326D5AD006D1701 /* osc_mem.h in Headers */,
+				1126C0E82326D5AD006D1701 /* osc_message_u.h in Headers */,
+				1126C0EB2326D5AD006D1701 /* osc_typetag.h in Headers */,
+				1126C0D72326D5AD006D1701 /* osc_expr_scanner.h in Headers */,
+				1126C0B62326D5AD006D1701 /* osc_atom_array_u.h in Headers */,
+				1126C0D02326D5AD006D1701 /* osc_expr_u.h in Headers */,
+				1126C0E22326D5AD006D1701 /* osc_byteorder.h in Headers */,
+				1126C0CE2326D5AD006D1701 /* osc_strfmt.h in Headers */,
+				1126C0D12326D5AD006D1701 /* osc_error.h in Headers */,
+				1126C0BC2326D5AD006D1701 /* osc_atom_s.h in Headers */,
+				1126C0D42326D5AD006D1701 /* osc_message_iterator_s.h in Headers */,
+				1126C0D82326D5AD006D1701 /* osc_bundle_s.h in Headers */,
+				1126C0BE2326D5AD006D1701 /* osc_expr_parser.h in Headers */,
+				1126C0A62326D5AD006D1701 /* osc_array.h in Headers */,
+				1126C0DA2326D5AD006D1701 /* osc_dispatch.h in Headers */,
+				1126C0A92326D5AD006D1701 /* osc_vtable.h in Headers */,
+				1126C0BA2326D5AD006D1701 /* osc_serial.h in Headers */,
+				1126C0C32326D5AD006D1701 /* osc_expr_u_privatedecls.h in Headers */,
+				1126C0B92326D5AD006D1701 /* osc_atom_array_s.h in Headers */,
+				1126C0B42326D5AD006D1701 /* osc_linkedlist.h in Headers */,
+				1126C0C82326D5AD006D1701 /* osc_query.h in Headers */,
+				1126C0C92326D5AD006D1701 /* osc_rset.h in Headers */,
+				1126C0C12326D5AD006D1701 /* osc_expr_privatedecls.h in Headers */,
+				1126C0A12326D5AD006D1701 /* osc_expr.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		1126C04B2326D517006D1701 /* libo-symbolist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1126C04F2326D517006D1701 /* Build configuration list for PBXNativeTarget "libo-symbolist" */;
+			buildPhases = (
+				1126C0482326D517006D1701 /* Headers */,
+				1126C0492326D517006D1701 /* Sources */,
+				1126C04A2326D517006D1701 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "libo-symbolist";
+			productName = "libo-symbolist";
+			productReference = 1126C04C2326D517006D1701 /* liblibo-symbolist.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		1140C3C1232164A200E32DDB /* o.expr.file */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1140C3C6232164A200E32DDB /* Build configuration list for PBXNativeTarget "o.expr.file" */;
@@ -142,6 +492,9 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "hfmt-hamburg";
 				TargetAttributes = {
+					1126C04B2326D517006D1701 = {
+						CreatedOnToolsVersion = 10.3;
+					};
 					11611CD8231908AB00E2F1DD = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -161,6 +514,7 @@
 			targets = (
 				11611CD8231908AB00E2F1DD /* o.svgpoints */,
 				1140C3C1232164A200E32DDB /* o.expr.file */,
+				1126C04B2326D517006D1701 /* libo-symbolist */,
 			);
 		};
 /* End PBXProject section */
@@ -183,6 +537,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1126C0492326D517006D1701 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1126C0A22326D5AD006D1701 /* osc_atom_array_s.c in Sources */,
+				1126C0A72326D5AD006D1701 /* osc_timetag.c in Sources */,
+				1126C0A52326D5AD006D1701 /* osc_match.c in Sources */,
+				1126C0AD2326D5AD006D1701 /* osc_legacy_parser.c in Sources */,
+				1126C0DC2326D5AD006D1701 /* osc_linkedlist.c in Sources */,
+				1126C0EA2326D5AD006D1701 /* osc_strfmt.c in Sources */,
+				1126C0C72326D5AD006D1701 /* osc_scanner.c in Sources */,
+				1126C0AE2326D5AD006D1701 /* osc_atom_s.c in Sources */,
+				1126C0B32326D5AD006D1701 /* osc_array.c in Sources */,
+				1126C0B12326D5AD006D1701 /* osc_vtable.c in Sources */,
+				1126C0C52326D5AD006D1701 /* osc_message_iterator_u.c in Sources */,
+				1126C0E62326D5AD006D1701 /* osc_atom_array_u.c in Sources */,
+				1126C0A02326D5AD006D1701 /* osc_expr_scanner.c in Sources */,
+				1126C0B52326D5AD006D1701 /* osc_typetag.c in Sources */,
+				1126C0CD2326D5AD006D1701 /* osc_expr_rec.c in Sources */,
+				1126C0C42326D5AD006D1701 /* osc_bundle_u.c in Sources */,
+				1126C0AF2326D5AD006D1701 /* osc_parser.c in Sources */,
+				1126C0DE2326D5AD006D1701 /* osc_bundle_iterator_u.c in Sources */,
+				1126C0C22326D5AD006D1701 /* osc_message_iterator_s.c in Sources */,
+				1126C0E02326D5AD006D1701 /* osc_legacy_scanner.c in Sources */,
+				1126C0E12326D5AD006D1701 /* osc_expr_parser.c in Sources */,
+				1126C0BB2326D5AD006D1701 /* osc_expr.c in Sources */,
+				1126C0E92326D5AD006D1701 /* osc_rset.c in Sources */,
+				1126C0D52326D5AD006D1701 /* osc_message_s.c in Sources */,
+				1126C0B02326D5AD006D1701 /* osc_serial.c in Sources */,
+				1126C0A82326D5AD006D1701 /* osc_hashtab.c in Sources */,
+				1126C0C02326D5AD006D1701 /* osc_util.c in Sources */,
+				1126C0DB2326D5AD006D1701 /* osc_bundle_s.c in Sources */,
+				1126C0D62326D5AD006D1701 /* osc_atom_u.c in Sources */,
+				1126C0D22326D5AD006D1701 /* osc_dispatch.c in Sources */,
+				1126C0CC2326D5AD006D1701 /* osc_error.c in Sources */,
+				1126C0E52326D5AD006D1701 /* osc_message_u.c in Sources */,
+				1126C0CB2326D5AD006D1701 /* osc_query.c in Sources */,
+				1126C0E32326D5AD006D1701 /* osc_mem.c in Sources */,
+				1126C0BD2326D5AD006D1701 /* osc_bundle_iterator_s.c in Sources */,
+				1126C0B72326D5AD006D1701 /* osc_expr_u.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1140C3C2232164A200E32DDB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,6 +599,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		1126C04D2326D517006D1701 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43QFH4NBN8;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1126C04E2326D517006D1701 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43QFH4NBN8;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		1140C3C7232164A200E32DDB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -213,7 +632,7 @@
 				INFOPLIST_FILE = "$(inherited)";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRELINK_LIBS = "\"$(SRCROOT)/../../libo/libo.a\" \"$(SRCROOT)/../../libomax/libomax.a\"";
+				PRELINK_LIBS = "\"$(SRCROOT)/../../libomax/libomax.a\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.hfmt-hamburg.oexprfile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -232,7 +651,7 @@
 				INFOPLIST_FILE = "$(inherited)";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRELINK_LIBS = "\"$(SRCROOT)/../../libo/libo.a\" \"$(SRCROOT)/../../libomax/libomax.a\"";
+				PRELINK_LIBS = "\"$(SRCROOT)/../../libomax/libomax.a\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.hfmt-hamburg.oexprfile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -466,6 +885,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1126C04F2326D517006D1701 /* Build configuration list for PBXNativeTarget "libo-symbolist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1126C04D2326D517006D1701 /* Debug */,
+				1126C04E2326D517006D1701 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1140C3C6232164A200E32DDB /* Build configuration list for PBXNativeTarget "o.expr.file" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

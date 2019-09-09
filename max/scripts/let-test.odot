@@ -1,0 +1,71 @@
+
+/parent./x = 10.,
+/parent./y = 10.,
+/parent./width = 600.,
+/parent./height = 100.,
+
+/parent./time/start = 0.,
+/parent./time/dur = 1000.,
+
+/parent./time2pix = quote(lambda([t],
+  (t / /parent./time/dur) * /parent./width
+)),
+
+/parent./pix2time = quote(lambda([x],
+  x * (/parent./time/dur / /parent./width)
+)),
+
+/transform/getMatrix = quote(lambda([matrix_str],
+  if( strfind("matrix", matrix_str) != -1,
+    float32(split(" ", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))
+  )
+)),
+
+/transform/applyTransform = quote(lambda([matrix, xy ],
+  [  matrix[[0]] * xy[[0]] + matrix[[2]] * xy[[1]] + matrix[[4]], 
+     matrix[[1]] * xy[[0]] + matrix[[3]] * xy[[1]] + matrix[[5]]
+  ]
+)),
+
+/set/fromData = quote( 
+    lambda([obj],
+        /obj = obj,
+        #put test here to make sure the obj has the values we need?
+        let({   notehead_radius : /obj./amp,
+                pix_pitch_pos : /obj./pitch,
+                pix_start : /obj./time ,
+                pix_end : /obj./dur
+            }, # return the following object
+            {
+                /new : "g",
+                /class : "/noteline",
+                /id : /obj./id,
+                /children : [
+                    {
+                        /new : "circle",
+                        /class : "notehead",
+                        /r : notehead_radius,
+                        /cy : pix_pitch_pos,
+                        /cx : pix_start + notehead_radius
+                    },
+                    {
+                        /new : "line",
+                        /class : "durationLine",
+                        /x1 : pix_start ,
+                        /y1 : pix_pitch_pos,
+                        /x2 : pix_end,
+                        /y2 : pix_pitch_pos
+                    }
+                ]
+            }
+        )
+    )
+),
+
+/foo =/set/fromData({
+    /amp : 1,
+    /pitch : 60,
+    /time: 1,
+    /dur : 10,
+    /id : "foo"
+})

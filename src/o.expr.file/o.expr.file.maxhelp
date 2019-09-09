@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 104.0, 951.0, 718.0 ],
+		"rect" : [ 59.0, 104.0, 865.0, 900.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,63 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontface" : 0,
+					"fontsize" : 12.0,
+					"id" : "obj-21",
+					"linecount" : 22,
+					"maxclass" : "o.expr.codebox",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "FullPacket", "FullPacket" ],
+					"patching_rect" : [ 750.0, 530.0, 421.0, 318.0 ],
+					"presentation_linecount" : 49,
+					"text" : "/foo = {\n                /new : \"g\",\n                /class : \"/noteline\",\n                /id : /obj./id,\n                /children : [\n                    {\n                        /new : \"circle\",\n                        /class : \"notehead\",\n                        /r : notehead_radius,\n                        /cy : pix_pitch_pos,\n                        /cx : pix_start + notehead_radius\n                    },\n                    {\n                        /new : \"line\",\n                        /class : \"durationLine\",\n                        /x1 : pix_start ,\n                        /y1 : pix_pitch_pos,\n                        /x2 : pix_end,\n                        /y2 : pix_pitch_pos\n                    }\n                ]\n            }"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"linecount" : 2,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 330.0, 14.0, 99.0, 35.0 ],
+					"text" : "read crash-test.odot"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"fontsize" : 12.0,
+					"id" : "obj-3",
+					"maxclass" : "o.compose",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 951.0, 205.0, 64.0, 24.0 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 115, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
+					"saved_bundle_length" : 32,
+					"text" : "/s : 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 798.0, 94.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-18",
 					"maxclass" : "message",
@@ -80,7 +137,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 677.0, 152.0, 100.0, 22.0 ],
-					"text" : "metro 1"
+					"text" : "metro 100"
 				}
 
 			}
@@ -89,15 +146,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-14",
-					"linecount" : 11,
 					"maxclass" : "o.compose",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 374.0, 288.5, 323.0, 160.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 102, 105, 108, 101, 47, 97, 108, 108, 70, 105, 108, 101, 115, 76, 111, 97, 100, 101, 100, 0, 0, 0, 0, 44, 84, 0, 0, 0, 0, 0, -36, 47, 102, 105, 108, 101, 0, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, 64, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 97, 109, 101, 0, 0, 0, 44, 115, 0, 0, 97, 46, 111, 100, 111, 116, 0, 0, 0, 0, 0, 20, 47, 115, 116, 97, 116, 117, 115, 0, 44, 115, 0, 0, 108, 111, 97, 100, 101, 100, 0, 0, 0, 0, 0, 64, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 97, 109, 101, 0, 0, 0, 44, 115, 0, 0, 98, 46, 111, 100, 111, 116, 0, 0, 0, 0, 0, 20, 47, 115, 116, 97, 116, 117, 115, 0, 44, 115, 0, 0, 108, 111, 97, 100, 101, 100, 0, 0, 0, 0, 0, 64, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 97, 109, 101, 0, 0, 0, 44, 115, 0, 0, 99, 46, 111, 100, 111, 116, 0, 0, 0, 0, 0, 20, 47, 115, 116, 97, 116, 117, 115, 0, 44, 115, 0, 0, 108, 111, 97, 100, 101, 100, 0, 0 ],
-					"saved_bundle_length" : 272,
-					"text" : "/file/allFilesLoaded : true,\n/file : [{\n\t/name : \"a.odot\",\n\t/status : \"loaded\"\n}, {\n\t/name : \"b.odot\",\n\t/status : \"loaded\"\n}, {\n\t/name : \"c.odot\",\n\t/status : \"loaded\"\n}]"
+					"patching_rect" : [ 420.0, 374.5, 582.0, 24.0 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+					"saved_bundle_length" : 16
 				}
 
 			}
@@ -108,8 +163,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 502.0, 219.0, 142.0, 22.0 ],
-					"text" : "read a.odot b.odot c.odot"
+					"patching_rect" : [ 579.0, 219.0, 99.0, 22.0 ],
+					"text" : "read let-test.odot"
 				}
 
 			}
@@ -118,13 +173,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-13",
-					"linecount" : 21,
+					"linecount" : 6,
 					"maxclass" : "o.expr.codebox",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 887.0, -56.0, 673.0, 304.0 ],
-					"text" : "\n/cond = quote(\n    lambda([list],\n        if( length(list) % 2 == 0 ,\n            map(\n                lambda([t,e],\n                    if( eval(t), eval(e) )\n                ), list[[ aseq(0, length(list)-1, 2)]], list[[ aseq(1, length(list)-1, 2) ]]\n            )\n        )\n    )\n),\n\n/foo = /cond([\n    quote(/a == 1),\n    quote(/foo = 111),\n\n    quote(/a == 2),\n    quote(/foo = 222)\n\n])"
+					"patching_rect" : [ 1074.0, 72.0, 140.0, 100.0 ],
+					"text" : "/foo = 1,\n/bar = 2,\n\n/s = /foo,\n\ndelete(/foo, /bar)"
 				}
 
 			}
@@ -154,7 +209,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 356.0, 468.0, 474.0, 146.0 ],
+					"patching_rect" : [ 211.0, 476.0, 172.0, 146.0 ],
 					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 97, 0, 0, 44, 105, 0, 0, 0, 0, 0, 2, 0, 0, 0, 88, 47, 108, 105, 115, 116, 0, 0, 0, 44, 115, 115, 115, 115, 0, 0, 0, 47, 97, 32, 61, 61, 32, 49, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 111, 32, 61, 32, 49, 49, 49, 10, 32, 32, 32, 32, 0, 0, 0, 0, 47, 97, 32, 61, 61, 32, 50, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 111, 32, 61, 32, 50, 50, 50, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 0, 16, 47, 49, 0, 0, 44, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 16, 47, 50, 0, 0, 44, 105, 105, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 12, 47, 116, 49, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 116, 0, 0, 44, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
 					"saved_bundle_length" : 200,
 					"text" : "/a : 2,\n/list : [\"/a == 1\", \"\n        /foo = 111\n    \", \"/a == 2\", \"\n        /foo = 222\n    \"],\n/1 : [0, 2],\n/2 : [1, 3],\n/t1 : 0,\n/t : [0, 0]"
@@ -246,29 +301,12 @@
 				"box" : 				{
 					"fontface" : 0,
 					"fontsize" : 12.0,
-					"id" : "obj-3",
-					"linecount" : 4,
-					"maxclass" : "o.compose",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 279.0, 280.0, 71.0, 65.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 97, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 12, 47, 100, 0, 0, 44, 105, 0, 0, 0, 0, 0, 4, 0, 0, 0, 12, 47, 98, 0, 0, 44, 105, 0, 0, 0, 0, 0, 2, 0, 0, 0, 12, 47, 99, 0, 0, 44, 105, 0, 0, 0, 0, 0, 3 ],
-					"saved_bundle_length" : 80,
-					"text" : "/a : 1,\n/d : 4,\n/b : 2,\n/c : 3"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 12.0,
 					"id" : "obj-2",
 					"maxclass" : "o.compose",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 337.0, 106.0, 64.0, 24.0 ],
+					"patching_rect" : [ 420.0, 72.0, 64.0, 24.0 ],
 					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 97, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
 					"saved_bundle_length" : 32,
 					"text" : "/a : 1"
@@ -290,15 +328,15 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 1 ],
-					"source" : [ "obj-1", 1 ]
+					"destination" : [ "obj-11", 1 ],
+					"source" : [ "obj-1", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 1 ],
-					"source" : [ "obj-1", 0 ]
+					"destination" : [ "obj-14", 1 ],
+					"source" : [ "obj-1", 1 ]
 				}
 
 			}
@@ -327,14 +365,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 1 ],
+					"destination" : [ "obj-3", 1 ],
 					"source" : [ "obj-13", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
+					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-15", 0 ]
 				}
 
@@ -356,6 +394,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
 					"order" : 1,
 					"source" : [ "obj-2", 0 ]
 				}
@@ -366,6 +411,13 @@
 					"destination" : [ "obj-13", 0 ],
 					"order" : 0,
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 1 ],
+					"source" : [ "obj-20", 0 ]
 				}
 
 			}
