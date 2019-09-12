@@ -188,9 +188,7 @@ void oexpr_file_proc_doread(t_oexpr_file_proc *x, t_symbol *s, long argc, t_atom
     
     critical_enter(x->lock);
     x->pathID = path;
-    post("%hu %hu", path, x->pathID);
-    memset(x->path_file, '\0', MAX_PATH_CHARS);
-    strncpy(x->path_file, fullPathNative, MAX_PATH_CHARS);
+    snprintf(x->path_file, MAX_PATH_CHARS, "%s", x->path_file);
     critical_exit(x->lock);
     
     oexpr_file_proc_procFile(x, filename, path);
@@ -480,7 +478,6 @@ void oexprfile_dblclick(t_oexprfile *x)
         object_attr_setchar(x->t_editor, gensym("visible"), 1);
     else {
         x->t_editor = object_new(CLASS_NOBOX, gensym("jed"), x, 0);
-        object_attr_setchar(x->t_editor, gensym("scratch"), 0);
         
         t_class *c = object_class(x->t_editor);
         long nkeys;
@@ -494,21 +491,14 @@ void oexprfile_dblclick(t_oexprfile *x)
         }
         
         if( x->nfiles && x->files[0] ){
-            
-            char pathStr[MAX_PATH_CHARS];
-            path_topathname(x->files[0]->pathID,x->files[0]->filename->s_name, pathStr);
-
-            post("%s %hu %s", x->files[0]->filename->s_name, x->files[0]->pathID, pathStr );
-            
             object_method(x->t_editor, gensym("settext"), *(x->files[0]->t_text), gensym("utf-8"));
-            //object_attr_setsym(x->t_editor, gensym("title"), x->files[0]->filename );
             object_method(x->t_editor, gensym("filename"), x->files[0]->filename->s_name, x->files[0]->pathID );
-            object_method(x->t_editor, gensym("openexternaleditor"));
-
+            object_method(x->t_editor, gensym("openwindow"));
         }
         else
         {
-            object_attr_setsym(x->t_editor, gensym("title"), gensym("untitled.odot") );
+            object_method(x->t_editor, gensym("filename"), "untitled.odot", path_getdefault());
+            object_attr_setchar(x->t_editor, gensym("scratch"), 0);
         }
         
 
