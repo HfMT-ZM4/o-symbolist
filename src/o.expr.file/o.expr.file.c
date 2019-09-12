@@ -39,7 +39,7 @@ typedef struct _oexpr_file_proc
     void *filewatcher;
     
     t_symbol *filename;
-    short pathID;
+    t_filepath pathID;
 
     char path_file[MAX_PATH_CHARS];
     
@@ -120,7 +120,7 @@ void oexpr_file_proc_parseText(t_oexpr_file_proc *x)
 
 }
 
-void oexpr_file_proc_procFile(t_oexpr_file_proc *x, char *filename, short path)
+void oexpr_file_proc_procFile(t_oexpr_file_proc *x, char *filename, t_filepath path)
 {
     t_filehandle fh;
     long err = path_opensysfile(filename, path, &fh, READ_PERM);
@@ -172,7 +172,7 @@ void oexpr_file_proc_procFile(t_oexpr_file_proc *x, char *filename, short path)
 void oexpr_file_proc_doread(t_oexpr_file_proc *x, t_symbol *s, long argc, t_atom *argv)
 {
     char filename[MAX_PATH_CHARS];
-    short path;
+    t_filepath path;
     t_fourcc type = FOUR_CHAR_CODE('TEXT');
     
     strcpy(filename, s->s_name);
@@ -200,7 +200,7 @@ void oexpr_file_proc_read(t_oexpr_file_proc *x)
     defer((t_object *)x, (method)oexpr_file_proc_doread, x->filename, 0, NULL);
 }
 
-void oexpr_file_proc_filechanged(t_oexpr_file_proc *x, char *filename, short path)
+void oexpr_file_proc_filechanged(t_oexpr_file_proc *x, char *filename, t_filepath path)
 {
     sysmem_resizehandle(x->t_text, 0);
     if(x->expr){
@@ -429,56 +429,13 @@ void oexprfile_bang(t_oexprfile *x)
 }
 
 
-/*
- 
- 
- long nkeys;
- t_symbol **keys = NULL;
- t_hashtab * hashTab = (t_hashtab *)c->c_methods;
- 
- long anItem;
- t_symbol **keySym;
- 
- t_hashtab_entry ** entry;
- 
- hashtab_print(hashTab);
- 
- hashtab_getkeys(hashTab, &nkeys, &keys);
- int i;
- for(i = 0; i < nkeys; i++)
- {
- t_atom_long keyflags = hashtab_getkeyflags(hashTab, keys[i]);
- 
- hashtab_lookup(hashTab, keys[i], (t_object **)anItem);
- 
- //hashtab_lookupsym(hashTab, keys[i], keySym);
- //hashtab_lookupentry(hashTab, keys[i], entry );
- 
- 
- post("%s %ld", keys[i]->s_name, anItem );
- }
- 
- if(keys)
- sysmem_freeptr(keys);
- 
- */
-/*
- t_messlist *mList = ob_messlist(c);
- 
- for(int i = 0; i < c->c_messcount; i++)
- {
- post("%p %s", mList[i], mList->m_sym->s_name );
- }
- */
-
-
 void oexprfile_dblclick(t_oexprfile *x)
 {
     if (x->t_editor)
         object_attr_setchar(x->t_editor, gensym("visible"), 1);
     else {
         x->t_editor = object_new(CLASS_NOBOX, gensym("jed"), x, 0);
-        
+        /*
         t_class *c = object_class(x->t_editor);
         long nkeys;
         t_symbol **keys = NULL;
@@ -489,7 +446,7 @@ void oexprfile_dblclick(t_oexprfile *x)
         {
             post("%s", keys[i]->s_name );
         }
-        
+        */
         if( x->nfiles && x->files[0] ){
             object_method(x->t_editor, gensym("settext"), *(x->files[0]->t_text), gensym("utf-8"));
             object_method(x->t_editor, gensym("filename"), x->files[0]->filename->s_name, x->files[0]->pathID );
@@ -500,12 +457,28 @@ void oexprfile_dblclick(t_oexprfile *x)
             object_method(x->t_editor, gensym("filename"), "untitled.odot", path_getdefault());
             object_attr_setchar(x->t_editor, gensym("scratch"), 0);
         }
-        
-
-        
 
     }
 }
+/*
+#define FourCC2Str(code) (char[5]){(code >> 24) & 0xFF, (code >> 16) & 0xFF, (code >> 8) & 0xFF, code & 0xFF, 0}
+
+t_max_err oexprfile_getdeftype(t_oexprfile *x, t_fourcc *type)
+{
+    printf("this is called\n");
+    *type = FOUR_CHAR_CODE('JSON');
+    
+    printf("post %s, \n", FourCC2Str( (*type) ));
+    return MAX_ERR_NONE;
+}
+*/
+
+t_max_err oexprfile_getdefext(t_oexprfile *x, char *ext)
+{
+    ext = NULL;
+    return MAX_ERR_NONE;
+}
+
 
 
 void oexprfile_edclose(t_oexprfile *x, char **text, long size)
@@ -520,11 +493,14 @@ void oexprfile_edclose(t_oexprfile *x, char **text, long size)
     sysmem_copyptr((char *)*text, *x->t_text, size);
     x->t_size = size+1;
      */
+    post("closed");
+
     x->t_editor = NULL;
 }
 
 long oexprfile_edsave(t_oexprfile *x, char **text, long size)
 {
+    post("saved");
     return 0;
 }
 
@@ -594,8 +570,11 @@ void ext_main(void *r)
     
     class_addmethod(c, (method)oexprfile_dblclick,      "dblclick",    A_CANT, 0);
     class_addmethod(c, (method)oexprfile_edclose,       "edclose",    A_CANT, 0);
-    class_addmethod(c, (method)oexprfile_edsave,       "edsave",    A_CANT, 0);
+    class_addmethod(c, (method)oexprfile_edsave,        "edsave",    A_CANT, 0);
+    //class_addmethod(c, (method)oexprfile_getdeftype,    "getdeftype",    A_CANT, 0);
+    class_addmethod(c, (method)oexprfile_getdefext,    "getdefext",    A_CANT, 0);
 
+    
 // dict
 
     t_class *bufpxy = class_new("expr_file_ref", NULL, NULL, sizeof(t_oexpr_file_proc), 0L, 0);
