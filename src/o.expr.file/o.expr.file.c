@@ -39,7 +39,8 @@ typedef struct _oexpr_file_proc
     void *filewatcher;
     
     t_symbol *filename;
-    
+    short pathID;
+
     char path_file[MAX_PATH_CHARS];
     
     t_critical lock;
@@ -186,6 +187,8 @@ void oexpr_file_proc_doread(t_oexpr_file_proc *x, t_symbol *s, long argc, t_atom
     path_nameconform(fullPath, fullPathNative, PATH_STYLE_SLASH, PATH_TYPE_BOOT);
     
     critical_enter(x->lock);
+    x->pathID = path;
+    post("%hu %hu", path, x->pathID);
     memset(x->path_file, '\0', MAX_PATH_CHARS);
     strncpy(x->path_file, fullPathNative, MAX_PATH_CHARS);
     critical_exit(x->lock);
@@ -243,6 +246,7 @@ void *oexpr_file_proc_new(t_object *ref_obj, int instance_num, t_symbol *filenam
         x->expr = NULL;
         
         x->filename = filename;
+        x->pathID = 0;
         
         x->t_text = sysmem_newhandle(0);
         x->t_size = 0;
@@ -262,7 +266,8 @@ void *oexpr_file_proc_new(t_object *ref_obj, int instance_num, t_symbol *filenam
 typedef struct _oexprfile
 {
     t_object ob;
-    
+    t_object *t_editor;
+
     t_oexpr_file_proc **files;
     long nfiles;
     
@@ -426,6 +431,114 @@ void oexprfile_bang(t_oexprfile *x)
 }
 
 
+/*
+ 
+ 
+ long nkeys;
+ t_symbol **keys = NULL;
+ t_hashtab * hashTab = (t_hashtab *)c->c_methods;
+ 
+ long anItem;
+ t_symbol **keySym;
+ 
+ t_hashtab_entry ** entry;
+ 
+ hashtab_print(hashTab);
+ 
+ hashtab_getkeys(hashTab, &nkeys, &keys);
+ int i;
+ for(i = 0; i < nkeys; i++)
+ {
+ t_atom_long keyflags = hashtab_getkeyflags(hashTab, keys[i]);
+ 
+ hashtab_lookup(hashTab, keys[i], (t_object **)anItem);
+ 
+ //hashtab_lookupsym(hashTab, keys[i], keySym);
+ //hashtab_lookupentry(hashTab, keys[i], entry );
+ 
+ 
+ post("%s %ld", keys[i]->s_name, anItem );
+ }
+ 
+ if(keys)
+ sysmem_freeptr(keys);
+ 
+ */
+/*
+ t_messlist *mList = ob_messlist(c);
+ 
+ for(int i = 0; i < c->c_messcount; i++)
+ {
+ post("%p %s", mList[i], mList->m_sym->s_name );
+ }
+ */
+
+
+void oexprfile_dblclick(t_oexprfile *x)
+{
+    if (x->t_editor)
+        object_attr_setchar(x->t_editor, gensym("visible"), 1);
+    else {
+        x->t_editor = object_new(CLASS_NOBOX, gensym("jed"), x, 0);
+        object_attr_setchar(x->t_editor, gensym("scratch"), 0);
+        
+        t_class *c = object_class(x->t_editor);
+        long nkeys;
+        t_symbol **keys = NULL;
+        t_hashtab * hashTab = (t_hashtab *)c->c_methods;
+        hashtab_getkeys(hashTab, &nkeys, &keys);
+        int i;
+        for(i = 0; i < nkeys; i++)
+        {
+            post("%s", keys[i]->s_name );
+        }
+        
+        if( x->nfiles && x->files[0] ){
+            
+            char pathStr[MAX_PATH_CHARS];
+            path_topathname(x->files[0]->pathID,x->files[0]->filename->s_name, pathStr);
+
+            post("%s %hu %s", x->files[0]->filename->s_name, x->files[0]->pathID, pathStr );
+            
+            object_method(x->t_editor, gensym("settext"), *(x->files[0]->t_text), gensym("utf-8"));
+            //object_attr_setsym(x->t_editor, gensym("title"), x->files[0]->filename );
+            object_method(x->t_editor, gensym("filename"), x->files[0]->filename->s_name, x->files[0]->pathID );
+            object_method(x->t_editor, gensym("openexternaleditor"));
+
+        }
+        else
+        {
+            object_attr_setsym(x->t_editor, gensym("title"), gensym("untitled.odot") );
+        }
+        
+
+        
+
+    }
+}
+
+
+void oexprfile_edclose(t_oexprfile *x, char **text, long size)
+{
+    // hopefully changed from filewatcher
+    /*
+    if (x->nfiles > 0 && x->files[0] )
+        oexpr_file_proc_free(x->files[0]);
+
+    
+    x->t_text = sysmem_newhandleclear(size+1);
+    sysmem_copyptr((char *)*text, *x->t_text, size);
+    x->t_size = size+1;
+     */
+    x->t_editor = NULL;
+}
+
+long oexprfile_edsave(t_oexprfile *x, char **text, long size)
+{
+    return 0;
+}
+
+
 void oexprfile_assist(t_oexprfile *x, void *b, long m, long a, char *s)
 {
     if (m == ASSIST_INLET)
@@ -446,6 +559,9 @@ void oexprfile_free(t_oexprfile *x)
     x->files = NULL;
     
     critical_free(x->lock0);
+    
+    object_free(x->t_editor);
+
 }
 
 void *oexprfile_new(t_symbol *s, long argc, t_atom *argv)
@@ -459,7 +575,8 @@ void *oexprfile_new(t_symbol *s, long argc, t_atom *argv)
         
         x->nfiles = 0;
         x->allFilesAreValid = 0;
-        
+        x->t_editor = NULL;
+
         critical_new(&x->lock0);
         
         x->outlets[2] = outlet_new((t_object *)x, "FullPacket");
@@ -479,12 +596,16 @@ void ext_main(void *r)
 {
     t_class *c;
     
-    c = class_new("o.expr.file", (method)oexprfile_new, (method)oexprfile_free, (long)sizeof(t_oexprfile),
-                  0L, A_GIMME, 0);
+    c = class_new("o.expr.file", (method)oexprfile_new, (method)oexprfile_free, (long)sizeof(t_oexprfile), 0L, A_GIMME, 0);
     
     class_addmethod(c, (method)oexprfile_fullPacket,    "FullPacket", A_GIMME, 0);
     class_addmethod(c, (method)oexprfile_read,          "read",       A_GIMME, 0);
     class_addmethod(c, (method)oexprfile_bang,          "bang", 0);
+    
+    class_addmethod(c, (method)oexprfile_dblclick,      "dblclick",    A_CANT, 0);
+    class_addmethod(c, (method)oexprfile_edclose,       "edclose",    A_CANT, 0);
+    class_addmethod(c, (method)oexprfile_edsave,       "edsave",    A_CANT, 0);
+
 // dict
 
     t_class *bufpxy = class_new("expr_file_ref", NULL, NULL, sizeof(t_oexpr_file_proc), 0L, 0);
