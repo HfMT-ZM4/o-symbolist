@@ -435,18 +435,7 @@ void oexprfile_dblclick(t_oexprfile *x)
         object_attr_setchar(x->t_editor, gensym("visible"), 1);
     else {
         x->t_editor = object_new(CLASS_NOBOX, gensym("jed"), x, 0);
-        /*
-        t_class *c = object_class(x->t_editor);
-        long nkeys;
-        t_symbol **keys = NULL;
-        t_hashtab * hashTab = (t_hashtab *)c->c_methods;
-        hashtab_getkeys(hashTab, &nkeys, &keys);
-        int i;
-        for(i = 0; i < nkeys; i++)
-        {
-            post("%s", keys[i]->s_name );
-        }
-        */
+
         if( x->nfiles && x->files[0] ){
             object_method(x->t_editor, gensym("settext"), *(x->files[0]->t_text), gensym("utf-8"));
             object_method(x->t_editor, gensym("filename"), x->files[0]->filename->s_name, x->files[0]->pathID );
@@ -493,14 +482,14 @@ void oexprfile_edclose(t_oexprfile *x, char **text, long size)
     sysmem_copyptr((char *)*text, *x->t_text, size);
     x->t_size = size+1;
      */
-    post("closed");
+    //post("closed");
 
     x->t_editor = NULL;
 }
 
 long oexprfile_edsave(t_oexprfile *x, char **text, long size)
 {
-    post("saved");
+    //post("saved");
     return 0;
 }
 

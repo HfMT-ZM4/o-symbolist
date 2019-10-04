@@ -250,36 +250,43 @@ function elementToJSON(elm)
 
 function sendMouseEvent(event, caller)
 {    
-  const _id = ( event.target.id != "svg" ) ? event.target.id : 
-    (selectedClass && selectedClass.startsWith('/') ? selectedClass.slice(1)+'_u_'+fairlyUniqueNumber() : selectedClass+'_u_'+fairlyUniqueNumber());
+    const toplevelObj = getTopLevel(event.target);
 
-  let obj = {};
-  obj['event'] = {
-    url: drawsocket.oscprefix,
-    key: 'mouse',
-    val: {
-        id: _id,
-        selectedClass: selectedClass,
-        action: caller,
-        xy: [ event.clientX, event.clientY ],
-        button: event.buttons,
-        mods : {
-            alt: event.altKey,
-            shift: event.shiftKey,
-            ctrl: event.ctrlKey,
-            meta: event.metaKey
-        },
-        target: elementToJSON( getTopLevel(event.target) )
+    const _id = ( event.target.id != "svg" ) ? toplevelObj.id : 
+        (selectedClass && selectedClass.startsWith('/') ? selectedClass.slice(1)+'_u_'+fairlyUniqueNumber() : selectedClass+'_u_'+fairlyUniqueNumber());
+
+   // console.log(_id, event.target);
+    
+    let obj = {};
+    obj['event'] = {
+        url: drawsocket.oscprefix,
+        key: 'mouse',
+        val: {
+            id: _id,
+            class : event.class,
+            selectedClass: selectedClass,
+            action: caller,
+            xy: [ event.clientX, event.clientY ],
+            button: event.buttons,
+            mods : {
+                alt: event.altKey,
+                shift: event.shiftKey,
+                ctrl: event.ctrlKey,
+                meta: event.metaKey
+            },
+            target: elementToJSON( toplevelObj )
+        }
+    };
+
+    if( caller == 'wheel' )
+    {
+        obj.event.val.delta = [ event.deltaX, event.deltaY ];
     }
-  };
 
-  if( caller == 'wheel' )
-  {
-    obj.event.val.delta = [ event.deltaX, event.deltaY ];
-  }
+    if( event.hasOwnProperty("symbolistAction") )
+        obj.event.val.symbolistAction = event.symbolistAction;
 
-
-  drawsocket.send(obj);
+    drawsocket.send(obj);
 
 }
 
@@ -391,6 +398,25 @@ function symbolist_mouseup(event)
             _eventTarget.classList.remove("symbolist_selected");
         }
         deselectAll();
+    }
+
+//    console.log("1", _eventTarget.getAttribute("class"));
+
+    const classString = _eventTarget.getAttribute("class");
+
+    if( event.metaKey ){
+        event.symbolistAction = "newFromClick";
+        event.class = currentPaletteClass;
+
+    }
+    else
+    {
+        event.symbolistAction = "edit";
+        
+        if( classString ) 
+        {
+            event.class = classString;
+        }
     }
 
     sendMouseEvent(event, "mouseup");

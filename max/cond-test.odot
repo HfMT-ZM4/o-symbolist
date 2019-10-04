@@ -1,0 +1,6 @@
+/bar ??= 1,
+/foo = cond(    /bar == 0, "hello!", 
+                /bar == 1, "bye!", 
+                /bar == 2, "yo",
+                /bar + 10
+            )

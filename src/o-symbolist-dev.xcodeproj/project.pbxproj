@@ -201,6 +201,12 @@
 		11611CD9231908AB00E2F1DD /* o.svgpoints.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = o.svgpoints.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		11611CE223198B9E00E2F1DD /* o.svgpoints.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = o.svgpoints.cpp; sourceTree = "<group>"; };
 		11611CE323198B9E00E2F1DD /* o.svgpoints.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = o.svgpoints.hpp; sourceTree = "<group>"; };
+		116695E6233B72D8005B2D9C /* osc_expr_scanner.l */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; name = osc_expr_scanner.l; path = ../../../libo/osc_expr_scanner.l; sourceTree = "<group>"; };
+		116695E7233B72D8005B2D9C /* osc_legacy_scanner.l */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; name = osc_legacy_scanner.l; path = ../../../libo/osc_legacy_scanner.l; sourceTree = "<group>"; };
+		116695E8233B72D8005B2D9C /* osc_scanner.l */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; name = osc_scanner.l; path = ../../../libo/osc_scanner.l; sourceTree = "<group>"; };
+		116695EC233B72E5005B2D9C /* osc_legacy_parser.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = osc_legacy_parser.y; path = ../../../libo/osc_legacy_parser.y; sourceTree = "<group>"; };
+		116695ED233B72E5005B2D9C /* osc_parser.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = osc_parser.y; path = ../../../libo/osc_parser.y; sourceTree = "<group>"; };
+		116695EE233B72E5005B2D9C /* osc_expr_parser.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = osc_expr_parser.y; path = ../../../libo/osc_expr_parser.y; sourceTree = "<group>"; };
 		11C28F952327DC02002D6E9B /* o.lookup~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "o.lookup~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C28F982327DC52002D6E9B /* o.lookup~.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "o.lookup~.hpp"; sourceTree = "<group>"; };
 		11C28F992327DC52002D6E9B /* o.lookup~.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "o.lookup~.cpp"; sourceTree = "<group>"; };
@@ -249,6 +255,12 @@
 		1126C0502326D523006D1701 /* libo-symbolist */ = {
 			isa = PBXGroup;
 			children = (
+				116695EE233B72E5005B2D9C /* osc_expr_parser.y */,
+				116695EC233B72E5005B2D9C /* osc_legacy_parser.y */,
+				116695ED233B72E5005B2D9C /* osc_parser.y */,
+				116695E6233B72D8005B2D9C /* osc_expr_scanner.l */,
+				116695E7233B72D8005B2D9C /* osc_legacy_scanner.l */,
+				116695E8233B72D8005B2D9C /* osc_scanner.l */,
 				1126C0F92326D5C0006D1701 /* osc_array.r */,
 				1126C0ED2326D5BF006D1701 /* osc_atom_s.r */,
 				1126C0F02326D5C0006D1701 /* osc_atom_u.r */,
