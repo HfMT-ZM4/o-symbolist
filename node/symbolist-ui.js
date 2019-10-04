@@ -267,6 +267,7 @@ function sendMouseEvent(event, caller)
             selectedClass: selectedClass,
             action: caller,
             xy: [ event.clientX, event.clientY ],
+            mousedownPos: event.buttons == 1 ? [mousedown_pos.x, mousedown_pos.y ] : null,
             button: event.buttons,
             mods : {
                 alt: event.altKey,
@@ -344,6 +345,12 @@ function symbolist_mousedown(event)
     }
     else
     {
+
+        if( event.metaKey ){
+            event.symbolistAction = "newFromClick_down";
+            event.class = currentPaletteClass;
+        }
+
         clickedObj = null;
         selectedClass = currentPaletteClass; // later, get from palette selection
     }
@@ -365,9 +372,10 @@ function symbolist_mousemove(event)
 
     if( event.buttons == 1 )
     {
+
         if( clickedObj )
         {
-            translate( clickedObj, deltaPt({ x: event.clientX, y: event.clientY }, mousedown_pos));
+            translate( clickedObj, deltaPt({ x: event.clientX, y: event.clientY }, mousedown_pos) );
         }
         else 
         {
@@ -375,8 +383,16 @@ function symbolist_mousemove(event)
                 deselectAll();
 
             selectAllInRegion( getDragRegion(event), mainSVG );
+
+            if( event.metaKey ){
+                event.symbolistAction = "newFromClick_drag";
+                event.class = currentPaletteClass;
+            }
+
         }
     }
+
+    
 
     prevEventTarget = _eventTarget;
 
@@ -387,10 +403,11 @@ function symbolist_mousemove(event)
 function symbolist_mouseup(event)
 {          
     const _eventTarget = getTopLevel( event.target );
-
+    
     if( prevEventTarget === null )
         prevEventTarget = _eventTarget;
 
+   
     if( !event.shiftKey )
     {
         if( _eventTarget.classList.contains("symbolist_selected") )
@@ -405,19 +422,27 @@ function symbolist_mouseup(event)
     const classString = _eventTarget.getAttribute("class");
 
     if( event.metaKey ){
-        event.symbolistAction = "newFromClick";
+        event.symbolistAction = "newFromClick_up";
         event.class = currentPaletteClass;
-
     }
     else
     {
-        event.symbolistAction = "edit";
-        
-        if( classString ) 
+        if( _eventTarget != svgObj )
         {
-            event.class = classString;
+            event.symbolistAction = "edit";
+        
+            if( classString ) 
+            {
+                event.class = classString;
+            }
         }
+        
     }
+
+    
+    
+
+    event.mousedownPos = mousedown_pos;
 
     sendMouseEvent(event, "mouseup");
 

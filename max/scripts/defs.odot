@@ -31,6 +31,7 @@
 
 # this is temporary, should be stored in model i guess
 #   and be able to be different types of objects
+# also the parent in the Model should not need the graphic info
 /parent = {
     /x : 10.,
     /y : 10.,
@@ -49,6 +50,11 @@
     ))
 },
 
+/rectangle = {
+    /default : {},
+    /set/fromData : {},
+    /set/fromGUI : {}
+},
 
 /noteline = {
 
@@ -66,12 +72,12 @@
 
     # /amp, /pitch, /time, /dur, (parent?)
     /set/fromData : quote( 
-        lambda([obj],
-            /parent_time2pix = /parent./time2pix,
+        lambda([obj, context],
+            /parent_time2pix = context./time2pix,
             let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),
-                    pix_pitch_pos : /parent./y + scale(obj./pitch, 0., 127., /parent./height, 0.),
-                    pix_start : /parent./x + /parent_time2pix( obj./time ),
-                    pix_end : /parent./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )
+                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),
+                    pix_start : context./x + /parent_time2pix( obj./time ),
+                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )
                 }, # return the following object
                 {
                     /new : "g",
@@ -101,20 +107,23 @@
     ),
 
     /set/fromGUI : quote(
-        lambda([obj],
-            # later: put these in a let function
-            /parent_pix2time = /parent./pix2time,
+        lambda([obj, context],
+            # later: put these in a let function, here now since /parent.pix2time() doesn't work
+            # also later, parent probably should be passed in
+            # to do new from click, select a reference object, if none are found, then the SVG is the parent?
+            # do that in the UI script
+            /parent_pix2time = context./pix2time,
             let({
                     target : obj./target,
                     default : /noteline./default
                 },
                 cond(                 
-                    obj./symbolistAction == "newFromClick",
+                    obj./symbolistAction == "newFromClick_down",
                     {
                         /class : "/noteline",
                         /id : obj./id,
-                        /pitch : scale( obj./xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),
-                        /time : /parent_pix2time( obj./xy[[0]] - /parent./x + default./r ),
+                        /pitch : scale( obj./xy[[1]] - context./y, context./height, 0., 0., 127.),
+                        /time : /parent_pix2time( obj./xy[[0]] - context./x + default./r ),
                         /dur : default./dur,
                         /amp : default./amp
                     },
@@ -131,8 +140,8 @@
                             {
                                 /class : "/noteline",
                                 /id : target./id,
-                                /pitch : scale( xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),
-                                /time : /parent_pix2time( xy[[0]] - /parent./x - notehead./r ),  
+                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),
+                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  
                                 /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),
                                 /amp : scale(notehead./r, 5., 20., 0., 100)
                             }
@@ -145,6 +154,4 @@
             
         )
     )
-
-
 }
