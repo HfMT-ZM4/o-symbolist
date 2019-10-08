@@ -15,8 +15,8 @@
                     style: {
                         fill: 'black'
                     },
-                    onmouseover : 'this.style.fill = \"red\" ',
-                    onmouseleave : 'this.style.fill = \"black\" ',
+                    onmouseover : `this.style.fill = 'red' `,
+                    onmouseleave : `this.style.fill = 'black' `,
                     onmousedown : `
                         drawsocket.input({
                             key: 'function',
