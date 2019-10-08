@@ -32,6 +32,7 @@
 # this is temporary, should be stored in model i guess
 #   and be able to be different types of objects
 # also the parent in the Model should not need the graphic info
+
 /parent = {
     /x : 10.,
     /y : 10.,
@@ -50,8 +51,32 @@
     ))
 },
 
+
+# the `context` is the graphic-context, and requires the bounding box for symbols to offset from
+# so the context is a union of the model and view data which the script uses to move between the two sides
+# therefore the default values don't require graphic values, because the graphic values are contained in the view data (which is produced by the script )
+
 /rectangle = {
-    /default : {},
+
+    /default : {
+    # not sure if the graphic information should be here already
+        /x : 10.,
+        /y : 10.,
+        /width : 600.,
+        /height : 800.,
+
+        /time/start : 0,
+        /time/dur : 1000.
+    },
+
+    /time2pix : quote(lambda([t],
+        (t / /parent./time/dur) * /parent./width
+    )),
+
+    /pix2time : quote(lambda([x],
+        x * (/parent./time/dur / /parent./width)
+    )),
+
     /set/fromData : {},
     /set/fromGUI : {}
 },

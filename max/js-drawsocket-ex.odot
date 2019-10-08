@@ -1,0 +1,36 @@
+
+
+/menu = {
+    /key : "svg",
+    /val : {
+        /new : "text",
+        /id : "test-text",
+        /text : "hi!",
+        /x : 50,
+        /y : 60,
+        /style : {
+            /fill : "black"
+        },
+        # note that in these functions there are no leading slashes, 
+        # since it's pure JS at this point
+        /onmouseover : "drawsocket.input({
+            key : 'svg',
+            val : {
+                id : 'test-text',
+                style : {
+                    fill : 'red'
+                }
+            }
+        })",
+        /onmouseleave : "drawsocket.input({
+            key : 'svg',
+            val : {
+                id : 'test-text',
+                style : {
+                    fill : 'black'
+                }
+            }
+        })"
+    }
+
+}

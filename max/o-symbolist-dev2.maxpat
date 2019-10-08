@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1282.0, 937.0 ],
+		"rect" : [ 34.0, 79.0, 1335.0, 937.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -6486,7 +6486,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 829.5, 788.5, 356.0, 292.0 ],
-					"text" : "/mousedownPos,\n/selectedClass : \"/noteline\",\n/button : 0,\n/id : \"noteline_u_9dhtun030m0\",\n/target : {\n\t/version : 1.1,\n\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t/id : \"svg\",\n\t/baseProfile : \"full\",\n\t/type : \"svg\",\n\t/xmlns : \"http://www.w3.org/2000/svg\"\n},\n/mods : {\n\t/alt : 0,\n\t/ctrl : 0,\n\t/shift : 0,\n\t/meta : 1\n},\n/xy : [507, 428],\n/action : \"mousemove\""
+					"text" : "/mousedownPos,\n/selectedClass : \"/noteline\",\n/button : 0,\n/id : \"noteline_u_bechcy96csw\",\n/target : {\n\t/version : 1.1,\n\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t/id : \"svg\",\n\t/baseProfile : \"full\",\n\t/type : \"svg\",\n\t/xmlns : \"http://www.w3.org/2000/svg\"\n},\n/mods : {\n\t/alt : 0,\n\t/ctrl : 0,\n\t/shift : 0,\n\t/meta : 1\n},\n/xy : [1138, 158],\n/action : \"mousemove\""
 				}
 
 			}
