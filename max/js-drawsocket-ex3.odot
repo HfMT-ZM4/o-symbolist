@@ -1,0 +1,60 @@
+
+/menu = [{
+    /key : "function",
+    /val : {
+        /id : "makeText",
+        /body : "
+            drawsocket.input({
+                key: 'svg',
+                val: {
+                    new: 'text',
+                    id: 'test_' + Math.floor(Math.random() * 2000),
+                    x: 20 + Math.floor(Math.random() * 500),
+                    y: 20 + Math.floor(Math.random() * 500),
+                    text: 'hi again!',
+                    style: {
+                        fill: 'black'
+                    },
+                    onmouseover : 'this.style.fill = \"red\" ',
+                    onmouseleave : 'this.style.fill = \"black\" ',
+                    onmousedown : `
+                        drawsocket.input({
+                            key: 'function',
+                            val: {
+                                id : 'makeText',
+                                call : ''
+                            }
+                        })`
+                }
+            })
+        "
+    }
+}, {
+    /key : "svg",
+    /val : {
+        /new : "text",
+        /id : "test-text",
+        /text : "hi!",
+        /x : 50,
+        /y : 60,
+        /style : {
+            /fill : "black"
+        },
+        # note that in these functions there are no leading slashes, 
+        # since it's pure JS at this point
+        /onmouseover : "
+            this.style.fill = 'red';
+        ",
+        /onmouseleave : "
+            this.style.fill = 'black';
+        ",
+        /onmousedown : "drawsocket.input({
+            key: 'function',
+            val: {
+                id : 'makeText',
+                call : ''
+            }
+        })"
+    }
+
+}]
