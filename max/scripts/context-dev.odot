@@ -1,0 +1,66 @@
+
+# merge view, model, and scripts
+# this gets passed to objects when they are created, or edited
+
+/context : {
+
+# view 
+# instance specific data
+
+    # wrap the view in a sub-bundle to avoid name clashing
+    /view : {
+         # always include the bbox
+        /bbox : {
+            /x : 0,
+            /y : 10,
+            /width : 100,
+            /height : 100
+        },
+        /class : "/rectangleObject",
+        /x : 0,
+        /y : 10,
+        /width : 100,
+        /height : 100
+        # a rect will of course be the same as the bbox, but all objects need a bbox
+    },
+
+# model 
+# instance specific data
+    /model : {
+        /class : "/rectangleObject",
+        /time/start : 100,
+        /time/dur : 1000
+    },
+
+# translation (controller) definitions
+    /def : {
+        /time2pix : quote(lambda([t, context],
+            (t / context./model./time/dur) * context./view./bbox./width
+        )),
+
+        /pix2time : quote(lambda([x, context],
+            x * (context./model./time/dur / context./view./bbox./width)
+        )),
+
+        # return GUI view object
+        /set/fromData : quote( 
+            lambda([obj, context],
+                {
+                    /new : "rect",
+                    /class : "/rectangleObject",
+                    /x : context./view./bbox./x + context./view./bbox./width + 100 + context./def.time2pix( obj./time/start, context ),
+                    /y : context./view./bbox./y,
+                    /width : context./def.time2pix( obj./time/dur ),
+                    /height : context./view./bbox./height
+                } 
+            )
+        ),
+
+        # return data model object
+        /set/fromGUI : quote( 
+            lambda([obj, context],
+                
+            )
+        )
+
+},

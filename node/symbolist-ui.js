@@ -11,6 +11,7 @@ const mainSVG = document.getElementById("main-svg");
 let clickedObj = null;
 let prevEventTarget = null;
 let selected = [];
+let selectedCopy = [];
 
 let mousedown_pos = {x: 0, y: 0};
 
@@ -36,12 +37,14 @@ drawsocket.input([
 );
 
 /** 
- * API
+ * API -- make namespace here 
  */
 
-function setClass(_class)
+function symbolist_setClass(_class)
 {
-    selectedClass = _class;
+    console.log("symbolist_setClass", _class);
+    
+    currentPaletteClass = _class;
 }
 
 
@@ -75,15 +78,46 @@ function recursiveHitTest(region, element)
     return false;
 }
 
+function addToSelection( element )
+{
+    selected.push(element);
+
+    if( !element.classList.contains("symbolist_selected") )
+    {
+        element.classList.add("symbolist_selected");
+    }
+
+    // copy with selected tag to deal with comparison later
+    selectedCopy.push( element.cloneNode(true) );
+
+}
+
+function selectedObjectsChanged()
+{
+    for( let i = 0; i < selected.length; i++)
+    {
+        if( !selectedCopy[i].isEqualNode( selected[i] ) ){
+      //      console.log(selectedCopy[i], selected[i] );    
+            return true;
+        }
+            
+        
+    }
+
+    return false;
+}
+
+
 function selectAllInRegion(region, element)
 {
     for (let i = 0; i < element.children.length; i++) 
     {
         if( recursiveHitTest(region, element.children[i]) )
-            selected.push(element.children[i]);
+            addToSelection( element.children[i] );//selected.push(element.children[i]);
 
     }
 
+    /*
     for( let i = 0; i < selected.length; i++)
     {
         if( !selected[i].classList.contains("symbolist_selected") )
@@ -91,7 +125,7 @@ function selectAllInRegion(region, element)
             selected[i].classList.add("symbolist_selected");
         }
     }
-    
+    */
         
 }
 
@@ -106,14 +140,16 @@ function deselectAll()
     }
 
     selected = [];
+    selectedCopy = [];
 }
+
 
 
 function deltaPt(ptA, ptB)
 {
     return { x: ptA.x - ptB.x, y: ptA.y - ptB.y };
 }
-
+/*
 function calcTransform(matrix, _x, _y)
 {  
     return { 
@@ -149,7 +185,7 @@ function applyTransform(obj)
             break;
     }
 }
-
+*/
 
 function translate(obj, delta_pos)
 {
@@ -214,8 +250,40 @@ function isNumeric(value) {
     return !isNaN(value - parseFloat(value));
 }
 
+
+// maybe use arrays instead?
+function formatClassArray(classlist)
+{
+    let classArr = attr.value.includes(" ") ? attr.value.split(" ") : attr.value;
+                
+    if( Array.isArray(classArr) )
+    {
+        let newClassList = [];
+        for( let ii = 0 ; ii < classArr.length; ii++)
+        {
+            if( classArr[ii] != 'symbolist_selected' )
+            {
+                newClassList.push(classArr[ii]);
+            }
+        }
+
+        return newClassList;
+    }
+    
+    return classArr;
+
+}
+
+function removedSymbolistSelected(classlist)
+{
+    return typeof classlist !== "undefined" ? classlist.replace(" symbolist_selected", "" ) : "";
+}
+
 function elementToJSON(elm)
 {
+    if( typeof elm === 'undefined')
+        return null;
+
     let obj = {};
     obj.type = elm.tagName;
     for( let i = 0, l = elm.attributes.length; i < l; ++i)
@@ -227,7 +295,13 @@ function elementToJSON(elm)
                 obj.points = SVGPoints.toPoints({ type: "path", d: attr.value });
             }
 
-            obj[attr.name] = (isNumeric(attr.value) ? Number(attr.value) : attr.value);
+            if( attr.name === "class" )
+            {
+                obj.class = removedSymbolistSelected(attr.value);
+                
+            }
+            else
+                obj[attr.name] = (isNumeric(attr.value) ? Number(attr.value) : attr.value);
         }
     }
 
@@ -242,8 +316,6 @@ function elementToJSON(elm)
             obj.children = children;
         }
     }
-    
-    
 
     return obj;
 }
@@ -256,15 +328,22 @@ function sendMouseEvent(event, caller)
         (selectedClass && selectedClass.startsWith('/') ? selectedClass.slice(1)+'_u_'+fairlyUniqueNumber() : selectedClass+'_u_'+fairlyUniqueNumber());
 
    // console.log(_id, event.target);
+   
+    let sel_arr = [];
+    for( let i = 0; i < selected.length; i++)
+    {
+        sel_arr.push( elementToJSON( selected[i] ) );
+    }
+
     
     let obj = {};
-    obj['event'] = {
+    obj.event = {
         url: drawsocket.oscprefix,
         key: 'mouse',
         val: {
             id: _id,
-            class : event.class,
-            selectedClass: selectedClass,
+//            class : removedSymbolistSelected(event.class), 
+            paletteClass: currentPaletteClass, // class specified by the palette
             action: caller,
             xy: [ event.clientX, event.clientY ],
             mousedownPos: event.buttons == 1 ? [mousedown_pos.x, mousedown_pos.y ] : null,
@@ -275,7 +354,8 @@ function sendMouseEvent(event, caller)
                 ctrl: event.ctrlKey,
                 meta: event.metaKey
             },
-            target: elementToJSON( toplevelObj )
+            target: elementToJSON( toplevelObj ), // the object receiving mouse event
+            selected: sel_arr
         }
     };
 
@@ -331,6 +411,10 @@ function symbolist_mousedown(event)
     if( prevEventTarget === null )
         prevEventTarget = _eventTarget;
 
+
+    if( !event.shiftKey )
+        deselectAll();
+
     if( _eventTarget != svgObj )
     {
         if( event.altKey )
@@ -339,6 +423,10 @@ function symbolist_mousedown(event)
         }
         else
         {
+
+
+            addToSelection( _eventTarget );
+            
             clickedObj = getTopLevel(_eventTarget);
             selectedClass =  clickedObj.classList[0]; // hopefully this will always be correct! not for sure though
         }
@@ -348,7 +436,6 @@ function symbolist_mousedown(event)
 
         if( event.metaKey ){
             event.symbolistAction = "newFromClick_down";
-            event.class = currentPaletteClass;
         }
 
         clickedObj = null;
@@ -386,7 +473,6 @@ function symbolist_mousemove(event)
 
             if( event.metaKey ){
                 event.symbolistAction = "newFromClick_drag";
-                event.class = currentPaletteClass;
             }
 
         }
@@ -407,34 +493,22 @@ function symbolist_mouseup(event)
     if( prevEventTarget === null )
         prevEventTarget = _eventTarget;
 
-   
-    if( !event.shiftKey )
-    {
-        if( _eventTarget.classList.contains("symbolist_selected") )
-        {
-            _eventTarget.classList.remove("symbolist_selected");
-        }
-        deselectAll();
-    }
 
 //    console.log("1", _eventTarget.getAttribute("class"));
 
-    const classString = _eventTarget.getAttribute("class");
+//    const classString = _eventTarget.getAttribute("class");
 
     if( event.metaKey ){
         event.symbolistAction = "newFromClick_up";
-        event.class = currentPaletteClass;
+
     }
     else
     {
-        if( _eventTarget != svgObj )
-        {
-            event.symbolistAction = "edit";
+       // console.log('compare', selectedCopy != selected, selectedCopy, selected );
         
-            if( classString ) 
-            {
-                event.class = classString;
-            }
+        if( selectedObjectsChanged() ) // _eventTarget != svgObj
+        {
+            event.symbolistAction = "transformed";
         }
         
     }
@@ -459,7 +533,7 @@ function symbolist_mouseover(event)
 
     if( prevEventTarget === null )
         prevEventTarget = _eventTarget;
-
+/*
     if( !event.shiftKey && _eventTarget != prevEventTarget )
     {
         if( prevEventTarget.classList.contains("symbolist_selected") )
@@ -473,7 +547,7 @@ function symbolist_mouseover(event)
         }
         
     }
-
+*/
     prevEventTarget = _eventTarget;
 
     //sendMouseEvent(event, "mouseover");
