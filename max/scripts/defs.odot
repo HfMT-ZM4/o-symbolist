@@ -98,9 +98,7 @@
     },
     
     /get/icon : quote(
-        lambda([xy],
-            /cx : 1
-        )
+        # return icon graphics
     ),
 
     # /amp, /pitch, /time, /dur, (parent?)
@@ -183,6 +181,44 @@
                 )
             )
             
+        )
+    ),
+
+   /get/fromTime : quote(
+    lambda([obj, t],
+        let({
+                relTime : (t - obj./time) / obj./dur
+            },
+            if( relTime >= 0 && relTime <= 1,
+                {
+                    /relTime : relTime
+                }
+            )
+        )
+    ))
+},
+
+/playhead = {
+    /set/fromTime : quote(
+        lambda([t, context],
+            /time2pix = context./time2pix,
+            prog1(
+                # later check if there are already view messages in place and union
+                {
+                    /view : {
+                        /key : "svg",
+                        /val : {
+                            /new : "line",
+                            /id : "playhead",
+                            /class : "playhead",
+                            /x1 : context./x + /time2pix( /t ),
+                            /x2 : context./x + /time2pix( /t ),
+                            /y1 : context./y,
+                            /y2 : context./y + context./height
+                        }
+                    }
+                }
+            )
         )
     )
 }

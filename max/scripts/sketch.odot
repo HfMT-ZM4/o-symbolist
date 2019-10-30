@@ -15,7 +15,7 @@
                         /dur : default./dur,
                         /amp : default./amp
                     },
-                    event./symbolistAction == "edit", #&& /noteline./isValid(event),
+                    event./symbolistAction == "transformed", #&& /noteline./isValid(event),
                     let({
                             notehead : /helper/getChildByClass( target, "notehead" ),
                             durationLine : /helper/getChildByClass( target, "durationLine" )

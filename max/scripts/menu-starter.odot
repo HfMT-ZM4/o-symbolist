@@ -1,0 +1,45 @@
+/* : [{
+	/key : "css",
+	/val : {
+		/selector : "menu_button",
+		/props : {
+			/position : "absolute",
+			/padding-left : "5px",
+			/padding-right : "5px",
+			/border-style : "solid",
+			/border-width : "1px"
+		}
+	}
+
+},{
+	/key : "html",
+	/val : [{
+		/new : "div",
+		/parent : "forms",
+		/id : "menu_button",
+		/text : "menu",
+		/style : {
+			/top : "200px",
+			/left : "100px"
+		},
+		/onclick : "console.log('got a click');",
+		/onmouseleave : "console.log('mouse left the menu object');"
+	}, {
+		/new : "ul",
+		/id : "dropdownMenu",
+		/class : "drop-down-menu",
+		/style : {
+			/visibility : "hidden"	
+		},
+		/children : [{
+			/new : "li",
+			/text : "A"
+		}, {
+			/new : "li",
+			/text : "B"
+		}, {
+			/new : "li",
+			/text : "C"
+		}]
+	}]
+}]
