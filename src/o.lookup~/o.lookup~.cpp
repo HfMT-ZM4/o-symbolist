@@ -17,45 +17,7 @@ format 1:
 }
 
 
-format 4:
-if /x, /y, /c are subbundles, the subbundle addresses are assumed to be phrases
-the order of the phrases in the bundle is used to set the order of the phrases - that means that it doesn't matter if the numbers don't match, however, it is a potential source of confusion, so be careful!
-
-{
-    /x : {
-        /11 : [1, 2, 3],
-        /111 : [0., 0.1, 1]
-    },
-    /y : {
-        /0 : [1, 2, 3],
-        /1 : [10., 10.1, 11]
-    }
-}
-
-if there are fewer x than y or visa versa, o.lookup~ will repeat the list from the previous values.
-this can be useful if you want to vary one or other other parameters for a set sequence of points.
-
-{
-    /x : {
-        /0 : [1, 2, 3],
-    },
-    /y : {
-        /0 : [1, 2, 3],
-        /1 : [10., 10.1, 11]
-    }
-}
-
-
-the /x values are also optional, you can just send a list of points in and the x values will be generated as indexes starting from 0
-
-{
-    /y : {
-        /0 : [1, 2, 3],
-        /1 : [10., 10.1, 11]
-    }
-}
-
-format 3:
+format 2:
 if /y is not found in the top level, o.lookup~ will assume that you have a set of subbundles containing phrases of points bound together -- and then look for subbundles that contain /y.
 In this format, the names of the bundles are converted to integers and used for lookup -- if you skip numbers in the sequence, it will add slots inbetween the missing indexes -- this makes it possible to insert new phrases without setting the whole set of phrases from scratch, but will have a little overhead if you use very large gaps between your indexes, so it's recommended to keep them sequential, starting from 0.
 
@@ -69,6 +31,48 @@ In this format, the names of the bundles are converted to integers and used for 
         /y : [10., 10.1, 11]
     }
 }
+ 
+ 
+ format 4 removed:
+  update:: assuming is bad -- let's only support format /1 : { /x : 1, /y : 2 } for indexed phrases
+  
+ if /x, /y, /c are subbundles, the subbundle addresses are assumed to be phrases
+ the order of the phrases in the bundle is used to set the order of the phrases - that means that it doesn't matter if the numbers don't match, however, it is a potential source of confusion, so be careful!
+
+ {
+     /x : {
+         /11 : [1, 2, 3],
+         /111 : [0., 0.1, 1]
+     },
+     /y : {
+         /0 : [1, 2, 3],
+         /1 : [10., 10.1, 11]
+     }
+ }
+
+ if there are fewer x than y or visa versa, o.lookup~ will repeat the list from the previous values.
+ this can be useful if you want to vary one or other other parameters for a set sequence of points.
+
+ {
+     /x : {
+         /0 : [1, 2, 3],
+     },
+     /y : {
+         /0 : [1, 2, 3],
+         /1 : [10., 10.1, 11]
+     }
+ }
+
+
+ the /x values are also optional, you can just send a list of points in and the x values will be generated as indexes starting from 0
+
+ {
+     /y : {
+         /0 : [1, 2, 3],
+         /1 : [10., 10.1, 11]
+     }
+ }
+
 
 */
 
@@ -118,25 +122,26 @@ typedef struct _olookup {
 } t_olookup;
 
 
-struct oPointSet {
+struct oPointSet
+{
     vector<t_osc_msg_u *> _x, _y, _c, _dur, _other;
-    int x_free = 0, y_free = 0, c_free = 0, d_free = 0, o_free = 0;
+    size_t x_free = 0, y_free = 0, c_free = 0, d_free = 0, o_free = 0;
 
     void release()
     {
-        for( int i = 0; i < x_free; ++i )
+        for( size_t i = 0; i < x_free; ++i )
             osc_message_u_free(_x[i]);
         
-        for( int i = 0; i < y_free; ++i )
+        for( size_t i = 0; i < y_free; ++i )
             osc_message_u_free(_y[i]);
         
-        for( int i = 0; i < c_free; ++i )
+        for( size_t i = 0; i < c_free; ++i )
             osc_message_u_free(_c[i]);
         
-        for( int i = 0; i < d_free; ++i )
+        for( size_t i = 0; i < d_free; ++i )
             osc_message_u_free(_dur[i]);
         
-        for( int i = 0; i < o_free; ++i )
+        for( size_t i = 0; i < o_free; ++i )
             osc_message_u_free(_other[i]);
         
         x_free = 0; y_free = 0; c_free = 0; d_free = 0; o_free = 0;
@@ -145,16 +150,16 @@ struct oPointSet {
     
     void release_xycd()
     {
-        for( int i = 0; i < x_free; ++i )
+        for( size_t i = 0; i < x_free; ++i )
             osc_message_u_free(_x[i]);
         
-        for( int i = 0; i < y_free; ++i )
+        for( size_t i = 0; i < y_free; ++i )
             osc_message_u_free(_y[i]);
         
-        for( int i = 0; i < c_free; ++i )
+        for( size_t i = 0; i < c_free; ++i )
             osc_message_u_free(_c[i]);
         
-        for( int i = 0; i < d_free; ++i )
+        for( size_t i = 0; i < d_free; ++i )
             osc_message_u_free(_dur[i]);
         
         x_free = 0; y_free = 0; c_free = 0; d_free = 0;
@@ -175,7 +180,7 @@ void olookup_expandToMatch2(vector<t_osc_msg_u*>& _x, vector<t_osc_msg_u*>& _y)
         if( nx > ny )
         {
             // duplicate y to match x
-            for( int i = ny-1; i < nx; ++i)
+            for( size_t i = ny-1; i < nx; ++i)
             {
                 _y.emplace_back( _y[ny-1] );
             }
@@ -184,7 +189,7 @@ void olookup_expandToMatch2(vector<t_osc_msg_u*>& _x, vector<t_osc_msg_u*>& _y)
         else
         {
             // duplicate x to match y
-            for( int i = nx-1; i < ny; ++i)
+            for( size_t i = nx-1; i < ny; ++i)
             {
                 _x.emplace_back( _x[nx-1] );
             }
@@ -204,7 +209,7 @@ void olookup_expandToMatch3(vector<t_osc_msg_u*>& _x, vector<t_osc_msg_u*>& _y, 
         {
             // duplicate y to match x
             t_osc_msg_u * repeat = _y.back();
-            for( int i = ny-1; i < nx; ++i)
+            for( size_t i = ny-1; i < nx; ++i)
             {
                 _y.emplace_back( repeat );
             }
@@ -214,7 +219,7 @@ void olookup_expandToMatch3(vector<t_osc_msg_u*>& _x, vector<t_osc_msg_u*>& _y, 
         {
             // duplicate x to match y
             t_osc_msg_u * repeat =_x.back();
-            for( int i = nx-1; i < ny; ++i)
+            for( size_t i = nx-1; i < ny; ++i)
             {
                 _x.emplace_back( repeat );
             }
@@ -227,7 +232,7 @@ void olookup_expandToMatch3(vector<t_osc_msg_u*>& _x, vector<t_osc_msg_u*>& _y, 
         {
             // duplicate c to match x/y
             t_osc_msg_u * repeat = _c.back();
-            for( int i = nc-1; i < nx; ++i)
+            for( size_t i = nc-1; i < nx; ++i)
             {
                 _c.emplace_back( repeat );
             }
@@ -239,7 +244,7 @@ void olookup_expandToMatch3(vector<t_osc_msg_u*>& _x, vector<t_osc_msg_u*>& _y, 
             t_osc_msg_u * repeatx =_x.back();
             t_osc_msg_u * repeaty =_y.back();
 
-            for( int i = nx-1; i < nc; ++i)
+            for( size_t i = nx-1; i < nc; ++i)
             {
                 _x.emplace_back( repeatx );
                 _y.emplace_back( repeaty );
@@ -292,7 +297,7 @@ bool olookup_parse_messages(t_olookup *x, vector<PhasePoints>& out_vec, oPointSe
     }
     
     
-    for( int i = 0; i < p._y.size(); ++i)
+    for( size_t i = 0; i < p._y.size(); ++i)
     {
         PhasePoints new_phrase;
         
@@ -428,7 +433,7 @@ bool olookup_indexed_phrase(t_olookup *x, vector<PhasePoints>& new_vec, oPointSe
     
 }
 
-void olookup_process_msg(t_osc_msg_s *m, vector<t_osc_msg_u*>& vec)
+void olookup_process_msg(t_olookup *x, t_osc_msg_s *m, vector<t_osc_msg_u*>& vec)
 {
     t_osc_atom_s *at = NULL;
     osc_message_s_getArg(m, 0, &at);
@@ -436,6 +441,7 @@ void olookup_process_msg(t_osc_msg_s *m, vector<t_osc_msg_u*>& vec)
     {
         if(  osc_atom_s_getTypetag( at ) == OSC_BUNDLE_TYPETAG )
         {
+            /*
             t_osc_bndl_s *sub = osc_atom_s_getBndl(at);
             auto itsub = osc_bndl_it_s_get(osc_bundle_s_getLen(sub), osc_bundle_s_getPtr(sub));
             while(osc_bndl_it_s_hasNext(itsub))
@@ -446,6 +452,9 @@ void olookup_process_msg(t_osc_msg_s *m, vector<t_osc_msg_u*>& vec)
             osc_bndl_it_s_destroy(itsub);
             
             osc_bundle_s_free(sub);
+             */
+            object_error((t_object *)x,"found bundle at %s, must be a list only", osc_message_s_getAddress(m));
+
         }
         else
         {
@@ -490,22 +499,22 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
         
         if( addr == "/x" )
         {
-            olookup_process_msg(m, p._x);
+            olookup_process_msg(x, m, p._x);
             p.x_free = p._x.size();
         }
         else if (  addr == "/y" )
         {
-            olookup_process_msg(m, p._y);
+            olookup_process_msg(x, m, p._y);
             p.y_free = p._y.size();
         }
         else if ( addr == "/c" || addr == "/curve" )
         {
-            olookup_process_msg(m, p._c);
+            olookup_process_msg(x, m, p._c);
             p.c_free = p._c.size();
         }
         else if ( addr == "/dur" )
         {
-            olookup_process_msg(m, p._dur);
+            olookup_process_msg(x, m, p._dur);
             p.d_free = p._dur.size();
 
         }
@@ -545,7 +554,7 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
 
     if( !parsed )
     {
-        object_error((t_object *)x, "parse error -- found %ld x, %ld dur, %ld y", p._x.size(), p._dur.size(), p._y.size() );
+        object_error((t_object *)x, "parse error -- valid count: x %ld, dur %ld, y %ld", p._x.size(), p._dur.size(), p._y.size() );
         return;
     }
     
@@ -628,9 +637,18 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
 
                 }
 
-                phrase_index = (t_int)CLAMP( in_idx, 0, max_phr_idx );
-                PhasePoints& phr = x_phrase[phrase_index];
+                phrase_index = in_idx; // (t_int)CLAMP( in_idx, 0, max_phr_idx );
+                if( phrase_index < 0 || phrase_index > max_phr_idx )
+                {
+                    *interp_val_out++ = 0;
+                    *rel_phase_out++ = 0;
+                    *index_out++ = 0;
+                    *delta_out++ = 0;
+                    *npoints_out++ = 0;
+                    continue;
+                }
                 
+                PhasePoints& phr = x_phrase[phrase_index];
                 points_len = phr.len;
                 
                 if( points_len > 1 )
@@ -757,6 +775,8 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     x->phrase_len = points_len;
     x->delta_between_points = delta;
     x->cur_phase = prev_inphase;
+    x->phrase_index = phrase_index;
+    
     
 }
 
