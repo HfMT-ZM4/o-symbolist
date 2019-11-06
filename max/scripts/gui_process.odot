@@ -1,0 +1,23 @@
+
+
+/test = 0,
+
+if( bound(/gui./selected),
+    progn(
+        /data = map( 
+            lambda([obj],
+                /objRef = value(obj./class),
+                /setFn = /objRef./set/fromGUI,
+                /context = /parent,
+                /test = 1,
+                /setFn( obj, /gui, /context )
+            ), /gui./selected
+        )  
+    ),
+    progn(
+        /objRef = value(/gui./paletteClass),
+        /setFn = /objRef./set/fromGUI,
+        /context = /parent,
+        /data =  /setFn( /gui./target, /gui, /context )
+    )
+)

@@ -207,6 +207,14 @@ function translate(obj, delta_pos)
 
 }
 
+function translate_selected(delta_pos)
+{
+    for( let i = 0; i < selected.length; i++)
+    {
+        translate(selected[i], delta_pos);
+    }
+}
+
 function fairlyUniqueNumber() {
     return (
       Number(String(Math.random()).slice(2)) + 
@@ -462,7 +470,7 @@ function symbolist_mousemove(event)
 
         if( clickedObj )
         {
-            translate( clickedObj, deltaPt({ x: event.clientX, y: event.clientY }, mousedown_pos) );
+            translate_selected( deltaPt({ x: event.clientX, y: event.clientY }, mousedown_pos) );
         }
         else 
         {
