@@ -102,6 +102,8 @@
     ),
 
     # /amp, /pitch, /time, /dur, (parent?)
+    
+    # input data+context, output view object
     /set/fromData : quote( 
         lambda([obj, context],
             /parent_time2pix = context./time2pix,
@@ -137,40 +139,77 @@
         )
     ),
 
+    # input view object + mouse event + context
+
     /set/fromGUI : quote(
-        lambda([obj, context],
+        lambda([viewobj, event, context],
+            # later: put these in a let function, here now since /parent.pix2time() doesn't work
+            # also later, parent probably should be passed in
+            # to do new from click, select a reference object, if none are found, then the SVG is the parent?
+            # do that in the UI script
+                                
+            /parent_pix2time = context./pix2time,
+            /test = 111,
+            let({
+                    default : /noteline./default
+                },
+                cond(                 
+                    event./symbolistAction == "newFromClick_down",
+                    {
+                        /class : "/noteline",
+                        /id : event./id,
+                        /pitch : scale( event./xy[[1]] - context./y, context./height, 0., 0., 127.),
+                        /time : /parent_pix2time( event./xy[[0]] - context./x + default./r ),
+                        /dur : default./dur,
+                        /amp : default./amp
+                    },
+                    event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
+                    progn(
+                        /test = "yo",
+                        {
+                            /foo : 1
+                        }
+                    )
+                    
+                )
+            )
+            
+        )
+    ),
+
+    /set/fromGUI2 : quote(
+        lambda([viewobj, event, context],
             # later: put these in a let function, here now since /parent.pix2time() doesn't work
             # also later, parent probably should be passed in
             # to do new from click, select a reference object, if none are found, then the SVG is the parent?
             # do that in the UI script
             /parent_pix2time = context./pix2time,
             let({
-                    target : obj./target,
                     default : /noteline./default
                 },
                 cond(                 
-                    obj./symbolistAction == "newFromClick_down",
+                    event./symbolistAction == "newFromClick_down",
                     {
                         /class : "/noteline",
-                        /id : obj./id,
-                        /pitch : scale( obj./xy[[1]] - context./y, context./height, 0., 0., 127.),
-                        /time : /parent_pix2time( obj./xy[[0]] - context./x + default./r ),
+                        /id : event./id,
+                        /pitch : scale( event./xy[[1]] - context./y, context./height, 0., 0., 127.),
+                        /time : /parent_pix2time( event./xy[[0]] - context./x + default./r ),
                         /dur : default./dur,
                         /amp : default./amp
                     },
-                    obj./symbolistAction == "transformed", #&& /noteline./isValid(obj),
+                    event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
                     let({
-                            notehead : /helper/getChildByClass( target, "notehead" ),
-                            durationLine : /helper/getChildByClass( target, "durationLine" )
+                            notehead : /helper/getChildByClass( viewobj, "notehead" ),
+                            durationLine : /helper/getChildByClass( viewobj, "durationLine" )
                         },
                         let({
-                                xy : if ( bound(target./transform),
-                                            /transform/applyTransform( /transform/getMatrix(target./transform), [notehead./cx, notehead./cy] ),
+                                xy : if ( bound(viewobj./transform),
+                                            /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),
                                             [notehead./cx, notehead./cy] )
                             },
                             {
                                 /class : "/noteline",
-                                /id : target./id,
+                                /id : viewobj./id,
                                 /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),
                                 /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  
                                 /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),
