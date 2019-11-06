@@ -80,15 +80,18 @@ function recursiveHitTest(region, element)
 
 function addToSelection( element )
 {
-    selected.push(element);
 
     if( !element.classList.contains("symbolist_selected") )
     {
+        selected.push(element);
+
         element.classList.add("symbolist_selected");
+
+          // copy with selected tag to deal with comparison later
+        selectedCopy.push( element.cloneNode(true) );
     }
 
-    // copy with selected tag to deal with comparison later
-    selectedCopy.push( element.cloneNode(true) );
+  
 
 }
 

@@ -57,7 +57,7 @@ int oexprfile_proc_liboErrorHandler(void *context, t_osc_err errorcode, const ch
     return 0;
 }
 
-int oexpr_file_proc_eval(t_oexpr_file_proc *x, long *len, char **ptr)
+int oexpr_file_proc_eval(t_oexpr_file_proc *x, long *len, char **ptr, void * context)
 {
     int ret = 0;
 
@@ -71,7 +71,7 @@ int oexpr_file_proc_eval(t_oexpr_file_proc *x, long *len, char **ptr)
         while(f)
         {
             t_osc_atom_ar_u *av = NULL;
-            ret = osc_expr_eval(f, len, ptr, &av, x);
+            ret = osc_expr_eval(f, len, ptr, &av, context);
             if(av){
                 osc_atom_array_u_free(av);
             }
@@ -399,7 +399,7 @@ void oexprfile_fullPacket(t_oexprfile *x, t_symbol *msg, int argc, t_atom *argv)
     critical_enter(x->lock0);
     for( int i = 0; i < x->nfiles; i++)
     {
-        ret = oexpr_file_proc_eval(x->files[i], &copylen, &copy);
+        ret = oexpr_file_proc_eval(x->files[i], &copylen, &copy, x);
     }
     critical_exit(x->lock0);
 

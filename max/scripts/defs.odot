@@ -164,11 +164,25 @@
                         /amp : default./amp
                     },
                     event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
-                    progn(
-                        /test = "yo",
-                        {
-                            /foo : 1
-                        }
+                    let({
+                            notehead : /helper/getChildByClass( viewobj, "notehead" ),
+                            durationLine : /helper/getChildByClass( viewobj, "durationLine" )
+                        },
+                                    /test = 222,
+                        let({
+                                xy : if ( bound(viewobj./transform),
+                                            /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),
+                                            [notehead./cx, notehead./cy] )
+                            },
+                            {
+                                /class : "/noteline",
+                                /id : viewobj./id,
+                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),
+                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  
+                                /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),
+                                /amp : scale(notehead./r, 5., 20., 0., 100)
+                            }
+                        )
                     )
                     
                 )
