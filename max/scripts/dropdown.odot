@@ -1,0 +1,114 @@
+/menu = [{
+	/key : "css",
+	/val : [{
+		/selector : ".dropbtn",
+		/props : {
+			/background-color : "#3498DB",
+			/color : "white",
+			/padding : "16px",
+			/font-family : "Gill Sans",
+			/font-size : "20px",
+			/border : "none",
+			/cursor : "pointer"
+		}
+	}, {
+		/selector : ".dropbtn:hover",
+		/props : {
+			/background-color : "#cfbc01"
+		}
+	}, {
+		/selector : ".dropdown",
+		/props : {
+			/position : "relative",
+			/display : "inline-block"
+		}
+	}, {
+		/selector : ".dropdown-content",
+		/props : {
+			/display : "none",
+			/position : "relative",
+			/background-color : "#f1f1f1",
+			/min-width : "150px",
+			/overflow : "auto",
+			/box-shadow : "0px 8px 16px 0px rgba(0, 0, 0, 0.2)"
+		}
+	}, {
+		/selector : ".dropdown-content ul li",
+		/props : {
+			/color : "black",
+			/padding : "8px 5px 8px 5px",
+			/font-family : "Gill Sans",
+			/font-size : "16px",
+			/display : "block"
+		}
+	}, {
+		/selector : ".dropdown-content ul li:hover",
+		/props : {
+			/background-color : "#ddd",
+			/border-left : "4px solid #666"
+		}
+	}, {
+		/selector : ".show",
+		/props : {
+			/display : "block"
+		}
+	}]
+}, {
+	/key : "html",
+	/val : [{
+		/new : "div",
+		/parent : "forms",
+		/class : "dropdown",
+		/id : "dropdown",
+		/style : {
+			/top : "100px",
+			/left : "150px",
+			/position : "relative",
+			/display : "inline-block"
+		}
+	}, {
+		/new : "button",
+		/class : "dropbtn",
+		/text : "Click me!",
+		/parent : "dropdown",
+		/onclick : "this.onclick = function showMenu() { 
+            document.getElementById('myDropdown').classList.toggle('show'); 
+            }",
+		/onmouseleave : "window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName('dropdown-content');
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                        }
+                    } 
+                }
+            }"
+	}, {
+		/new : "div",
+		/parent : "forms",
+		/class : "dropdown-content",
+		/id : "myDropdown",
+		/child : {
+			/new : "ul",
+			/id : "toplist",
+			/child : [{
+				/new : "li",
+				/text : "Copy"
+			}, {
+				/new : "li",
+				/text : "Paste"
+			}, {
+				/new : "li",
+				/text : "Delete"
+			}, {
+				/new : "li",
+				/text : "Select"
+			}, {
+				/new : "li",
+				/text : "Mute"
+			}]
+		}
+	}]
+}]

@@ -349,7 +349,6 @@ function sendMouseEvent(event, caller)
     
     let obj = {};
     obj.event = {
-        url: drawsocket.oscprefix,
         key: 'mouse',
         val: {
             id: _id,
@@ -430,7 +429,9 @@ function symbolist_mousedown(event)
     {
         if( event.altKey )
         {
-            clickedObj = copyObjectAndAddToParent(_eventTarget);           
+            clickedObj = copyObjectAndAddToParent(_eventTarget);       
+            addToSelection( clickedObj );
+    
         }
         else
         {
