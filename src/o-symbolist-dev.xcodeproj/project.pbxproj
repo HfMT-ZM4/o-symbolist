@@ -211,6 +211,7 @@
 		11C28F982327DC52002D6E9B /* o.lookup~.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "o.lookup~.hpp"; sourceTree = "<group>"; };
 		11C28F992327DC52002D6E9B /* o.lookup~.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "o.lookup~.cpp"; sourceTree = "<group>"; };
 		11C28F9C2327DCE5002D6E9B /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../max-sdk/source/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
+		11C72D7323C9E0360032DE5E /* o.expr.file copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "o.expr.file copy-Info.plist"; path = "/Users/r/Documents/dev-lib/o-symbolist/src/o.expr.file copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +388,7 @@
 				1126C0502326D523006D1701 /* libo-symbolist */,
 				11611CDA231908AB00E2F1DD /* Products */,
 				1140C3CF23216F2C00E32DDB /* Frameworks */,
+				11C72D7323C9E0360032DE5E /* o.expr.file copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};

@@ -1,6 +1,14 @@
 
 /* global drawsocket:readonly  */
  
+
+/**
+ * dev notes
+ * 
+ * considering moving all mouse interaction to the server-side, since some objects might translate or rotate in special ways...
+ * 
+ * 
+ */
     
 /**
  * globals
@@ -80,17 +88,21 @@ function recursiveHitTest(region, element)
 
 function addToSelection( element )
 {
+    for( let i = 0; i < selected.length; i++)
+    {
+        if( selected[i] == element )
+            return;    
+    }
+
+    selected.push(element);
 
     if( !element.classList.contains("symbolist_selected") )
     {
-        selected.push(element);
-
         element.classList.add("symbolist_selected");
-
-          // copy with selected tag to deal with comparison later
-        selectedCopy.push( element.cloneNode(true) );
     }
 
+    // copy with selected tag to deal with comparison later
+    selectedCopy.push( element.cloneNode(true) );
   
 
 }
@@ -116,24 +128,15 @@ function selectAllInRegion(region, element)
     for (let i = 0; i < element.children.length; i++) 
     {
         if( recursiveHitTest(region, element.children[i]) )
-            addToSelection( element.children[i] );//selected.push(element.children[i]);
+            addToSelection( element.children[i] );
 
     }
-
-    /*
-    for( let i = 0; i < selected.length; i++)
-    {
-        if( !selected[i].classList.contains("symbolist_selected") )
-        {
-            selected[i].classList.add("symbolist_selected");
-        }
-    }
-    */
         
 }
 
 function deselectAll()
 {
+
     for( let i = 0; i < selected.length; i++)
     {
         if( selected[i].classList.contains("symbolist_selected") )
@@ -218,6 +221,32 @@ function translate_selected(delta_pos)
     }
 }
 
+
+function copyObjectAndAddToParent(obj)
+{
+    let new_node = obj.cloneNode(true);
+    new_node.id = makeUniqueID(obj);
+    return obj.parentElement.appendChild(new_node);
+}
+
+function copySelected()
+{
+
+    let newArray = [];
+    for( let i = 0; i < selected.length; i++)
+    {
+        newArray.push( copyObjectAndAddToParent(selected[i]) );
+    }
+
+    deselectAll();
+
+    for( let i = 0; i < newArray.length; i++)
+    {
+        addToSelection(newArray[i]);
+    }
+
+}
+
 function fairlyUniqueNumber() {
     return (
       Number(String(Math.random()).slice(2)) + 
@@ -238,13 +267,6 @@ function makeUniqueID(obj)
 
 }
 
-function copyObjectAndAddToParent(obj)
-{
-    let new_node = obj.cloneNode(true);
-    new_node.id = makeUniqueID(obj);
-    return obj.parentElement.appendChild(new_node);
-
-}
 
 function getTopLevel(elm)
 {    
@@ -292,9 +314,9 @@ function removedSymbolistSelected(classlist)
 
 function elementToJSON(elm)
 {
-    if( typeof elm === 'undefined')
+    if( typeof elm === 'undefined' || elm == document)
         return null;
-
+    
     let obj = {};
     obj.type = elm.tagName;
     for( let i = 0, l = elm.attributes.length; i < l; ++i)
@@ -422,26 +444,23 @@ function symbolist_mousedown(event)
         prevEventTarget = _eventTarget;
 
 
-    if( !event.shiftKey )
+    if( !event.shiftKey && !event.altKey )
         deselectAll();
 
     if( _eventTarget != svgObj )
     {
+        addToSelection( _eventTarget );
+        clickedObj = _eventTarget;
+
+        selectedClass =  clickedObj.classList[0]; // hopefully this will always be correct! not for sure though
+
         if( event.altKey )
         {
-            clickedObj = copyObjectAndAddToParent(_eventTarget);       
-            addToSelection( clickedObj );
-    
+            copySelected();
+            //clickedObj = copyObjectAndAddToParent(_eventTarget);       
+            //addToSelection( clickedObj );
         }
-        else
-        {
 
-
-            addToSelection( _eventTarget );
-            
-            clickedObj = getTopLevel(_eventTarget);
-            selectedClass =  clickedObj.classList[0]; // hopefully this will always be correct! not for sure though
-        }
     }
     else
     {

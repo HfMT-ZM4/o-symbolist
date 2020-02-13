@@ -54,6 +54,7 @@ void oexprfile_updateStatus_cb(t_object * x_obj);
 int oexprfile_proc_liboErrorHandler(void *context, t_osc_err errorcode, const char * const errorstr)
 {
     object_error((t_object*)context, "(%s): %s", ((t_oexpr_file_proc *)context)->filename->s_name, errorstr);
+    printf("*error >>*\n%s\n*<< error*\n", errorstr);
     return 0;
 }
 

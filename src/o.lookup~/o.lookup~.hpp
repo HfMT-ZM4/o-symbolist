@@ -39,6 +39,8 @@ struct PhasePoints
 {
     vector< double > x, y, c;
     
+    long slot = 0;
+    
     long len = 0;
     
     void reserve( char *addr, long len );

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -38,6 +38,30 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 670.0, 294.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 826.0, 261.0, 99.0, 22.0 ],
+					"text" : "read va-test.odot"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
@@ -76,29 +100,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-18",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 964.0, 206.0, 69.0, 22.0 ],
-					"text" : "read a.odot"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1006.0, 253.0, 100.0, 22.0 ],
-					"text" : "simpletext"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "toggle",
 					"numinlets" : 1,
@@ -131,10 +132,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 695.0, 407.0, 582.0, 78.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 102, 105, 108, 101, 47, 97, 108, 108, 70, 105, 108, 101, 115, 76, 111, 97, 100, 101, 100, 0, 0, 0, 0, 44, 84, 0, 0, 0, 0, 0, 84, 47, 102, 105, 108, 101, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 68, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 110, 97, 109, 101, 0, 0, 0, 44, 115, 0, 0, 116, 101, 115, 116, 46, 111, 100, 111, 116, 0, 0, 0, 0, 0, 0, 20, 47, 115, 116, 97, 116, 117, 115, 0, 44, 115, 0, 0, 108, 111, 97, 100, 101, 100, 0, 0 ],
-					"saved_bundle_length" : 136,
-					"text" : "/file/allFilesLoaded : true,\n/file : {\n\t/name : \"test.odot\",\n\t/status : \"loaded\"\n}"
+					"patching_rect" : [ 637.0, 329.0, 582.0, 78.0 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 102, 105, 108, 101, 47, 97, 108, 108, 70, 105, 108, 101, 115, 76, 111, 97, 100, 101, 100, 0, 0, 0, 0, 44, 84, 0, 0, 0, 0, 0, 88, 47, 102, 105, 108, 101, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 72, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 110, 97, 109, 101, 0, 0, 0, 44, 115, 0, 0, 108, 101, 116, 45, 116, 101, 115, 116, 46, 111, 100, 111, 116, 0, 0, 0, 0, 0, 0, 20, 47, 115, 116, 97, 116, 117, 115, 0, 44, 115, 0, 0, 108, 111, 97, 100, 101, 100, 0, 0 ],
+					"saved_bundle_length" : 140,
+					"text" : "/file/allFilesLoaded : true,\n/file : {\n\t/name : \"let-test.odot\",\n\t/status : \"loaded\"\n}"
 				}
 
 			}
@@ -283,12 +284,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-1",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 593.0, 220.0, 63.0, 35.0 ],
+					"patching_rect" : [ 593.0, 220.0, 109.0, 22.0 ],
 					"text" : "o.expr.file test.odot"
 				}
 
@@ -304,6 +304,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 1 ],
+					"order" : 0,
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-18", 0 ],
+					"order" : 1,
 					"source" : [ "obj-1", 1 ]
 				}
 
@@ -324,6 +333,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-15", 0 ]
 				}
@@ -333,13 +349,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
 					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-16", 0 ],
-					"source" : [ "obj-18", 0 ]
 				}
 
 			}
@@ -385,10 +394,6 @@
 			}
 , 			{
 				"name" : "o.compose.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "simpletext.mxo",
 				"type" : "iLaX"
 			}
  ],

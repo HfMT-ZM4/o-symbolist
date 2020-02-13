@@ -1,0 +1,190 @@
+/menu : [{
+	/key : "css",
+	/val : [{
+		/selector : ".dropbtn",
+		/props : {
+			/background-color : "#3498DB",
+			/color : "white",
+			/padding : "5px",
+			/font-family : "Gill Sans",
+			/font-size : "14px",
+			/border : "none",
+			/border-radius : "12px",
+			/cursor : "pointer"
+		}
+	}, {
+		/selector : ".dropbtn:hover",
+		/props : {
+			/background-color : "#cfbc01"
+		}
+	}, {
+		/selector : ".dropdown",
+		/props : {
+			/position : "relative",
+			/display : "inline-block"
+		}
+	}, {
+		/selector : ".dropdown-content",
+		/props : {
+			/display : "none",
+			/position : "relative",
+			/background-color : "#f1f1f1",
+			/min-width : "100px",
+			/overflow : "auto",
+			/box-shadow : "0px 5px 5px 0px rgba(0, 0, 0, 0.2)"
+		}
+	}, {
+		/selector : ".dropdown-content ul li",
+		/props : {
+			/color : "black",
+			/padding : "4px 5px 4px 5px",
+			/font-family : "Gill Sans",
+			/font-size : "12px",
+			/display : "block"
+		}
+	}, {
+		/selector : ".dropdown-content ul li:hover",
+		/props : {
+			/background-color : "#ddd",
+			/border-left : "2px solid #666"
+		}
+	}, {
+		/selector : ".show",
+		/props : {
+			/display : "block"
+		}
+	}]
+}, {
+	/key : "html",
+	/val : [{
+		/new : "div",
+		/parent : "forms",
+		/class : "dropdown",
+		/id : "dropdown",
+		/style : {
+			/top : "300px",
+			/left : "300px",
+			/position : "relative",
+			/display : "none"
+		}
+	}, {
+		/new : "button",
+		/class : "dropbtn",
+		/text : "Menu",
+		/parent : "dropdown",
+		/onmouseover : "
+			document.getElementById('myDropdown').classList.toggle('show');",
+		/onmouseleave : "
+            var dropdowns = document.getElementById('myDropdown'); 
+            if(dropdowns.classList.contains('show')) {
+                dropdowns.classList.remove('show');           
+        }"
+	}, {
+		/new : "div",
+		/parent : "dropdown",
+		/class : "dropdown-content",
+		/id : "myDropdown",
+		/onclick : "
+			var drops = document.getElementById('dropdown');
+			drops.style.display = 'none';",
+		/onmouseleave : "
+			if(event.target.matches('.show')) {
+				var drops = document.getElementById('dropdown');
+				drops.style.display = 'none';
+			};
+			this.classList.toggle('show');",
+		/child : {
+			/new : "ul",
+			/id : "toplist",
+			/child : [{
+				/new : "li",
+				/id : "zero",
+				/text : "Copy"
+			}, {
+				/new : "li",
+				/id : "first",
+				/text : "Paste"
+			}, {
+				/new : "li",
+				/id : "second",
+				/text : "Delete"
+			}, {
+				/new : "li",
+				/id : "third",
+				/text : "None"
+			}]
+		}
+	}]
+}, {
+	/key : "svg",
+	/val : {
+		/parent : "main-svg",
+		/id : "main",
+		/new : "g"
+	}
+}, {
+	/key : "svg",
+	/val : [{
+		/parent : "main",
+		/id : "clef",
+		/new : "text",
+		/text : "&#xE050",
+		/class : "bravura_text",
+		/onclick : "
+			if(event.shiftKey) {
+				var drops = document.getElementById('dropdown');
+				var clefMenu = document.createElement('li');
+				clefMenu.id = 'third';
+				var clefMenuContent = document.createTextNode('Change Clef');
+				clefMenu.appendChild(clefMenuContent);
+				var menu = document.getElementById('third');
+				var parentDiv = menu.parentNode;
+				parentDiv.replaceChild(clefMenu, menu);
+				var mouseX = event.clientX;
+				var mouseY = event.clientY;
+				drops.style.display = 'inline-block';
+				drops.style.top = mouseY + 15 + 'px';
+				drops.style.left = mouseX + 15 + 'px';
+				drawsocket.send({
+					clefMenu: {
+						exposed: true
+					}
+				})
+			} else {
+				alert('Please press SHIFT key to expose a menu');
+			}",
+		/x : 100,
+		/y : 100
+	}, {
+		/parent : "main",
+		/id : "circle",
+		/new : "circle",
+		/onclick : " 
+			if(event.shiftKey) {
+				var drops = document.getElementById('dropdown');
+				var imgMenu = document.createElement('li');
+				imgMenu.id = 'third';
+				var imgMenuContent = document.createTextNode('Change Image');
+				imgMenu.appendChild(imgMenuContent);
+				var menu = document.getElementById('third');
+				var parentDiv = menu.parentNode;
+				parentDiv.replaceChild(imgMenu, menu);
+				var mouseX = event.clientX;
+				var mouseY = event.clientY;
+				drops.style.display = 'inline-block';
+				drops.style.top = mouseY + 15 + 'px';
+				drops.style.left = mouseX + 15 + 'px';
+				drawsocket.send({
+					imgMenu: {
+						exposed: true
+					}
+				})
+			} else {
+				alert('Please press SHIFT key to expose a menu');
+			}",
+		/cx : 200,
+		/cy : 200,
+		/r : 15,
+		/fill : "green"
+	}]
+}]

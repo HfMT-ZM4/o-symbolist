@@ -16,6 +16,14 @@ format 1:
     /y : []
 }
 
+ format option 2b:
+ 
+ {
+    /x
+    /y
+    /index
+ }
+ 
 
 format 2:
 if /y is not found in the top level, o.lookup~ will assume that you have a set of subbundles containing phrases of points bound together -- and then look for subbundles that contain /y.
@@ -490,6 +498,7 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
     
     
     oPointSet p;
+    int index = -1;
     
     auto it = osc_bndl_it_s_get(len, ptr);
     while(osc_bndl_it_s_hasNext(it))
@@ -518,6 +527,17 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
             p.d_free = p._dur.size();
 
         }
+        else if ( addr == "/index" || addr == "/slot" )
+        {
+           t_osc_atom_s *at = NULL;
+            osc_message_s_getArg(m, 0, &at);
+            if( at )
+            {
+                index = osc_atom_s_getInt( at );
+                osc_mem_free(at);
+            }
+
+        }
         else
         {
             t_osc_atom_s *at = NULL;
@@ -540,7 +560,7 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
    
     vector<PhasePoints> new_vec;
     
-    bool parsed = olookup_parse_messages(x, new_vec, p, -1);
+    bool parsed = olookup_parse_messages(x, new_vec, p, index);
     
     if( !parsed && p._other.size() )
     {
