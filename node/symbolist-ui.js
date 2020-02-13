@@ -460,6 +460,10 @@ function symbolist_mousedown(event)
             //clickedObj = copyObjectAndAddToParent(_eventTarget);       
             //addToSelection( clickedObj );
         }
+        else if( event.altKey && event.metaKey )
+        {
+            event.symbolistAction = "create_menu";
+        }
 
     }
     else
