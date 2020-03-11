@@ -436,6 +436,32 @@ function getDragRegion(event)
     };
 }
 
+function drawDragRegion(_dragRegion)
+{
+    drawsocket.input({
+        key: 'svg',
+        val: {
+            id: 'dragRegion',
+            new: 'rect',
+            x: _dragRegion.left,
+            y: _dragRegion.top,
+            width: _dragRegion.right - _dragRegion.left,
+            height: _dragRegion.bottom - _dragRegion.top,
+            fill: 'none',
+            'stroke-width': 1,
+            'stroke': 'rgba(0,0,0,0.5)'
+        }
+    });
+}
+
+function clearDragRegionRect() 
+{
+    drawsocket.input({
+        key: 'remove',
+        val: 'dragRegion'
+    });    
+}
+
 function symbolist_mousedown(event)
 {          
     const _eventTarget = getTopLevel( event.target );
@@ -504,11 +530,15 @@ function symbolist_mousemove(event)
             if( !event.shiftKey )
                 deselectAll();
 
-            selectAllInRegion( getDragRegion(event), mainSVG );
-
             if( event.metaKey ){
                 event.symbolistAction = "newFromClick_drag";
             }
+
+            let dragRegion = getDragRegion(event);
+
+            selectAllInRegion( dragRegion, mainSVG );
+
+            drawDragRegion(dragRegion);
 
         }
     }
@@ -522,7 +552,9 @@ function symbolist_mousemove(event)
 }
 
 function symbolist_mouseup(event)
-{          
+{   
+    clearDragRegionRect();
+
     const _eventTarget = getTopLevel( event.target );
     
     if( prevEventTarget === null )

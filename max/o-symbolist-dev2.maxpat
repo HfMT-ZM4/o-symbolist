@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 0,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -61,7 +61,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -200,9 +200,9 @@
 					"fontsize" : 12.0,
 					"id" : "obj-24",
 					"maxclass" : "o.expr.codebox",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "FullPacket", "FullPacket" ],
+					"numinlets" : 2,
+					"numoutlets" : 3,
+					"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 					"patching_rect" : [ 1053.781553983688354, 848.0, 90.0, 32.0 ],
 					"text" : "/gui = /val"
 				}
@@ -232,7 +232,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -272,9 +272,9 @@
 									"id" : "obj-1",
 									"linecount" : 21,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "FullPacket", "FullPacket" ],
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 336.0, 622.0, 673.0, 304.0 ],
 									"text" : "\n/target = /val./target,\n\nif( /key == \"mouse\" && /url == \"/view\",\n  if( /target./id != \"svg\" && /val./action == \"mouseup\",\n    progn(\n      /gui./mouse/xy = /val./xy,\n      /gui./id = /target./id,\n      /gui./class = /val./class,\n      /gui./target = /target\n    ),\n    if( /target./id == \"svg\" && /val./action == \"mousedown\",\n       progn(\n        /gui./mouse/xy = /val./xy,\n        /gui./class = /val./selectedClass,\n        /gui./id = /gui./class + \"-\" + string(/time),\n        /gui./target = /target\n      )\n    )\n  )\n)"
 								}
@@ -311,9 +311,9 @@
 									"id" : "obj-9",
 									"linecount" : 22,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "FullPacket", "FullPacket" ],
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 50.0, 129.0, 673.0, 318.0 ],
 									"text" : "\n/target = /val./target,\n/mods = /val./mods,\n\nif( /key == \"mouse\" && /url == \"/view\",\n  if( /target./id != \"svg\" && /val./action == \"mouseup\",\n    progn(\n      /gui./mouse/xy = /val./xy,\n      /gui./id = /target./id,\n      /gui./class = /target./class,\n      /gui./target = /target\n    ),\n    if( /target./id == \"svg\" && /val./action == \"mousedown\" && /mods./meta == 1,\n       progn(\n        /gui./mouse/xy = /val./xy,\n        /gui./class = /val./selectedClass,\n        /gui./id = /val./id,\n        /gui./target = /target\n      )\n    )\n  )\n)"
 								}
@@ -326,9 +326,9 @@
 									"id" : "obj-19",
 									"linecount" : 11,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "FullPacket", "FullPacket" ],
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 769.0, 330.0, 673.0, 168.0 ],
 									"text" : "\n/target = /val./target,\n\nif( /key == \"mouse\" && /url == \"/view\" && /val./action == \"mouseup\" && /target./id != \"svg\",\n    progn(\n      /gui./mouse/xy = /val./xy,\n      /gui./id = /target./id,\n      /gui./class = /target./class,\n      /gui./target = /target\n    )\n)"
 								}
@@ -392,7 +392,6 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -402,13 +401,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -483,7 +483,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -523,9 +523,9 @@
 									"id" : "obj-1",
 									"linecount" : 21,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "FullPacket", "FullPacket" ],
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 336.0, 622.0, 673.0, 304.0 ],
 									"text" : "\n/target = /val./target,\n\nif( /key == \"mouse\" && /url == \"/view\",\n  if( /target./id != \"svg\" && /val./action == \"mouseup\",\n    progn(\n      /gui./mouse/xy = /val./xy,\n      /gui./id = /target./id,\n      /gui./class = /val./class,\n      /gui./target = /target\n    ),\n    if( /target./id == \"svg\" && /val./action == \"mousedown\",\n       progn(\n        /gui./mouse/xy = /val./xy,\n        /gui./class = /val./selectedClass,\n        /gui./id = /gui./class + \"-\" + string(/time),\n        /gui./target = /target\n      )\n    )\n  )\n)"
 								}
@@ -562,9 +562,9 @@
 									"id" : "obj-9",
 									"linecount" : 22,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "FullPacket", "FullPacket" ],
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 50.0, 129.0, 673.0, 318.0 ],
 									"text" : "\n/target = /val./target,\n/mods = /val./mods,\n\nif( /key == \"mouse\" && /url == \"/view\",\n  if( /target./id != \"svg\" && /val./action == \"mouseup\",\n    progn(\n      /gui./mouse/xy = /val./xy,\n      /gui./id = /target./id,\n      /gui./class = /target./class,\n      /gui./target = /target\n    ),\n    if( /target./id == \"svg\" && /val./action == \"mousedown\" && /mods./meta == 1,\n       progn(\n        /gui./mouse/xy = /val./xy,\n        /gui./class = /val./selectedClass,\n        /gui./id = /val./id,\n        /gui./target = /target\n      )\n    )\n  )\n)"
 								}
@@ -577,9 +577,9 @@
 									"id" : "obj-19",
 									"linecount" : 11,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "FullPacket", "FullPacket" ],
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 769.0, 330.0, 673.0, 168.0 ],
 									"text" : "\n/target = /val./target,\n\nif( /key == \"mouse\" && /url == \"/view\" && /val./action == \"mouseup\" && /target./id != \"svg\",\n    progn(\n      /gui./mouse/xy = /val./xy,\n      /gui./id = /target./id,\n      /gui./class = /target./class,\n      /gui./target = /target\n    )\n)"
 								}
@@ -643,7 +643,6 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -653,13 +652,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -817,7 +817,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -886,9 +886,9 @@
 									"id" : "obj-61",
 									"linecount" : 5,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "FullPacket", "FullPacket" ],
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 379.0, 184.5, 241.0, 86.0 ],
 									"text" : "map( \n  lambda(i, \n    assign(\"/sine/\"+i+\"/amp\", 0)\n  ),/noteOff\n)"
 								}
@@ -913,9 +913,9 @@
 									"id" : "obj-16",
 									"linecount" : 5,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "FullPacket", "FullPacket" ],
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 50.0, 184.5, 313.0, 86.0 ],
 									"text" : "/obj = /value./obj,\n/eval = /value./eval,\n/obj./phase = /eval./relTime,\n/obj./noteOn = bound(/value./noteOn),\nassign( \"/sine/\"+/value./idx, /obj)"
 								}
@@ -1087,7 +1087,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1144,7 +1144,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1479,7 +1479,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1814,7 +1814,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2149,7 +2149,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2484,7 +2484,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2819,7 +2819,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3154,7 +3154,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3489,7 +3489,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3824,7 +3824,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4171,7 +4171,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4704,7 +4704,6 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -4714,13 +4713,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4795,7 +4795,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5120,7 +5120,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5165,7 +5165,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5209,7 +5209,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5266,9 +5266,9 @@
 																	"id" : "obj-7",
 																	"linecount" : 8,
 																	"maxclass" : "o.expr.codebox",
-																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "FullPacket", "FullPacket" ],
+																	"numinlets" : 2,
+																	"numoutlets" : 3,
+																	"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 507.0, 127.0 ],
 																	"text" : "/trasnform/getMatrix = quote(lambda([matrix_str],\n  if( strfind(\"matrix\", matrix_str) != -1,\n    float32(split(\" \", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)),\n\n/foo = /trasnform/getMatrix( \"matrix(1 2 3)\" )"
 																}
@@ -5340,9 +5340,9 @@
 													"id" : "obj-3",
 													"linecount" : 101,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 50.000006540748586, 92.0, 1062.0, 1405.0 ],
 													"text" : "/path./r = 1,\n/path./dur = 100,\n/path./amp = 1,\n\n/path./get/icon = quote(\n  lambda([xy],\n    /d = \"M0,0 S Z\"\n  )\n),\n\n/path./set/fromData = quote(\n  lambda([obj],\n    /points = getbundlemember(obj, \"/points\"),\n    /time = getbundlemember(obj, \"/time\"),\n    /dur = getbundlemember(obj, \"/dur\"),\n    /id = getbundlemember(obj, \"/id\"),\n\n    /time2pix = /parent./time2pix,\n\n    /n./new = \"path\",\n    /n./class = \"/path\",\n    /n./id = /id,\n\n    # path point array to SVG string\n\n    /n./points = /points,\n\n\n\n    /n1./cy = /parent./y + scale(/pitch, 0., 127., /parent./height, 0.),\n    /n1./cx = /parent./x + /time2pix( /time ) + /n1./r,\n\n    /n2./new = \"line\",\n    /n2./class = \"durationLine\",\n    /n2./x1 = /n1./cx - /n1./r,\n    /n2./y1 = /n1./cy,\n    /n2./x2 = /n2./x1 + /time2pix( /dur ),\n    /n2./y2 = /n1./cy,\n\n    /n./children = [/n1, /n2],\n\n    prog1(\n      /n,\n      delete(/n), delete(/n1), delete(/n2), delete(/pitch), delete(/amp), delete(/time), delete(/id), delete(/time2pix)\n    )\n  )\n),\n\n\n/path./set/fromGUI = quote(\n  lambda([obj],\n  # apply transform\n    /obj = obj,\n    /src = /obj./target,\n\n    if( bound(/src./children), map(\n      lambda([c],\n        /c_obj = c,\n        if( /c_obj./class == \"notehead\",\n          /notehead = /c_obj,\n          /durationLine = /c_obj\n        )\n      ), /src./children\n    )),\n \n\n    /xy = if( /src./id != \"svg\" && bound(/src./transform) && bound(/notehead),\n      /transform/applyTransform( /transform/getMatrix(/src./transform), [/notehead./cx, /notehead./cy ] ),\n      /obj./mouse/xy\n    ),\n    /id = /obj./id,\n\n    /r = bound(/obj./r) ? /obj./r : /note./r, # set default radius\n\n    /pix2time = /parent./pix2time,\n\n    /n./class = \"/path\",\n    /n./id = /id,\n    /n./pitch = scale( /xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),\n    /n./time = /pix2time( /xy[[0]] - /parent./x + /r),\n    /n./amp = /path./amp , #scale(/r, 1., 20., 0., 100. ),\n    /n./dur = bound(/durationLine) ? /pix2time( /durationLine./x2 - /durationLine./x1 ) : /path./dur,\n\n    prog1(\n      /n,\n      delete(/n), delete(/xy), delete(/id), delete(/pix2time), delete(/r), delete(/obj), delete(/c_obj), delete(/durationLine), delete(/notehead) \n    )\n  )\n),\n\n/path./get/fromTime = quote(\n  lambda([obj, t],\n    /_obj = obj,\n    /_out./relTime = (t - /_obj./time) / /_obj./dur,\n    if( /_out./relTime >= 0 && /_out./relTime <= 1,\n      prog1( /_out, delete(/_out), delete(/_obj) ),\n      progn( delete(/_out), delete(/_obj) )\n    )\n  )\n)\n\n"
 												}
@@ -5380,7 +5380,6 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5390,13 +5389,14 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5471,7 +5471,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5511,9 +5511,9 @@
 													"id" : "obj-4",
 													"linecount" : 18,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 50.0, 100.0, 335.0, 263.0 ],
 													"text" : "/playhead./set/fromTime = quote(\n  lambda([t],\n    /time2pix = /parent./time2pix,\n    /line./new = \"line\",\n    /line./id = \"playhead\",\n    /line./class = \"playhead\",\n    /line./x1 = /parent./x + /time2pix( /t ),\n    /line./x2 = /line./x1,\n    /line./y1 = /parent./y,\n    /line./y2 = /parent./y + /parent./height,\n\n    /view./key = \"svg\",\n    /view./val = /line,\n\n    \n    delete(/line), delete(/time2pix)\n  )\n)"
 												}
@@ -5586,7 +5586,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5651,9 +5651,9 @@
 													"id" : "obj-2",
 													"linecount" : 28,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 164.0, 149.0, 572.0, 399.0 ],
 													"text" : "/parent./x = 10.,\n/parent./y = 10.,\n/parent./width = 600.,\n/parent./height = 800.,\n\n/parent./time/start = 0.,\n/parent./time/dur = 1000.,\n\n/parent./time2pix = quote(lambda([t],\n  (t / /parent./time/dur) * /parent./width\n)),\n\n/parent./pix2time = quote(lambda([x],\n  x * (/parent./time/dur / /parent./width)\n)),\n\n/transform/getMatrix = quote(lambda([matrix_str],\n  if( strfind(\"matrix\", matrix_str) != -1,\n    float32(split(\" \", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)),\n\n\n/transform/applyTransform = quote(lambda([matrix, xy ],\n  [  matrix[[0]] * xy[[0]] + matrix[[2]] * xy[[1]] + matrix[[4]], \n     matrix[[1]] * xy[[0]] + matrix[[3]] * xy[[1]] + matrix[[5]]\n  ]\n))"
 												}
@@ -5678,7 +5678,6 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5688,13 +5687,14 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5769,7 +5769,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5813,7 +5813,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5870,9 +5870,9 @@
 																	"id" : "obj-7",
 																	"linecount" : 8,
 																	"maxclass" : "o.expr.codebox",
-																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "FullPacket", "FullPacket" ],
+																	"numinlets" : 2,
+																	"numoutlets" : 3,
+																	"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 507.0, 127.0 ],
 																	"text" : "/trasnform/getMatrix = quote(lambda([matrix_str],\n  if( strfind(\"matrix\", matrix_str) != -1,\n    float32(split(\" \", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)),\n\n/foo = /trasnform/getMatrix( \"matrix(1 2 3)\" )"
 																}
@@ -5944,9 +5944,9 @@
 													"id" : "obj-3",
 													"linecount" : 99,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 86.000006540748586, 113.0, 1062.0, 1378.0 ],
 													"text" : "/noteline./r = 1,\n/noteline./dur = 100,\n/noteline./amp = 1,\n\n/noteline./get/icon = quote(\n  lambda([xy],\n    /cx = 1\n  )\n),\n\n/noteline./set/fromData = quote(\n  lambda([obj],\n    /pitch = getbundlemember(obj, \"/pitch\"),\n    /amp = getbundlemember(obj, \"/amp\"),\n    /time = getbundlemember(obj, \"/time\"),\n    /dur = getbundlemember(obj, \"/dur\"),\n    /id = getbundlemember(obj, \"/id\"),\n\n    /time2pix = /parent./time2pix,\n\n    /n./new = \"g\",\n    /n./class = \"/noteline\",\n    /n./id = /id,\n\n    /n1./new = \"circle\",\n    /n1./class = \"notehead\",\n    /n1./r = scale(/amp, 0., 100, 5., 20.),\n\n    /n1./cy = /parent./y + scale(/pitch, 0., 127., /parent./height, 0.),\n    /n1./cx = /parent./x + /time2pix( /time ) + /n1./r,\n\n    /n2./new = \"line\",\n    /n2./class = \"durationLine\",\n    /n2./x1 = /n1./cx - /n1./r,\n    /n2./y1 = /n1./cy,\n    /n2./x2 = /n2./x1 + /time2pix( /dur ),\n    /n2./y2 = /n1./cy,\n\n    /n./children = [/n1, /n2],\n\n    prog1(\n      /n,\n      delete(/n), delete(/n1), delete(/n2), delete(/pitch), delete(/amp), delete(/time), delete(/id), delete(/time2pix)\n    )\n  )\n),\n\n\n/noteline./set/fromGUI = quote(\n  lambda([obj],\n    /obj = obj,\n    /src = /obj./target,\n\n    if( bound(/src./children), map(\n      lambda([c],\n        /c_obj = c,\n        if( /c_obj./class == \"notehead\",\n          /notehead = /c_obj,\n          /durationLine = /c_obj\n        )\n      ), /src./children\n    )),\n \n\n    /xy = if( /src./id != \"svg\" && bound(/src./transform) && bound(/notehead),\n      /transform/applyTransform( /transform/getMatrix(/src./transform), [/notehead./cx, /notehead./cy ] ),\n      /obj./mouse/xy\n    ),\n    /id = /obj./id,\n\n    /r = bound(/obj./r) ? /obj./r : /note./r, # set default radius\n\n    /pix2time = /parent./pix2time,\n\n    /n./class = \"/noteline\",\n    /n./id = /id,\n    /n./pitch = scale( /xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),\n    /n./time = /pix2time( /xy[[0]] - /parent./x + /r),\n    /n./amp = /noteline./amp , #scale(/r, 1., 20., 0., 100. ),\n    /n./dur = bound(/durationLine) ? /pix2time( /durationLine./x2 - /durationLine./x1 ) : /noteline./dur,\n\n    prog1(\n      /n,\n      delete(/n), delete(/xy), delete(/id), delete(/pix2time), delete(/r), delete(/obj), delete(/c_obj), delete(/durationLine), delete(/notehead) \n    )\n  )\n),\n\n/noteline./get/fromTime = quote(\n  lambda([obj, t],\n    /_obj = obj,\n    /_out./relTime = (t - /_obj./time) / /_obj./dur,\n    if( /_out./relTime >= 0 && /_out./relTime <= 1,\n      prog1( /_out, delete(/_out), delete(/_obj) ),\n      progn( delete(/_out), delete(/_obj) )\n    )\n  )\n)\n\n"
 												}
@@ -5984,7 +5984,6 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5994,13 +5993,14 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -6075,7 +6075,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6119,7 +6119,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -6200,9 +6200,9 @@
 																	"id" : "obj-7",
 																	"linecount" : 8,
 																	"maxclass" : "o.expr.codebox",
-																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "FullPacket", "FullPacket" ],
+																	"numinlets" : 2,
+																	"numoutlets" : 3,
+																	"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 433.0, 507.0, 127.0 ],
 																	"text" : "/trasnform/getMatrix = quote(lambda([matrix_str],\n  if( strfind(\"matrix\", matrix_str) != -1,\n    float32(split(\" \", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)),\n\n/foo = /trasnform/getMatrix( \"matrix(1 2 3)\" )"
 																}
@@ -6275,9 +6275,9 @@
 													"id" : "obj-3",
 													"linecount" : 67,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 92.000006540748586, 54.0, 817.0, 943.0 ],
 													"text" : "/note./dur = 20,\n/note./r = 1,\n\n/note./set/fromData = quote(\n  lambda([obj],\n    /pitch = getbundlemember(obj, \"/pitch\"),\n    /amp = getbundlemember(obj, \"/amp\"),\n    /time = getbundlemember(obj, \"/time\"),\n    /id = getbundlemember(obj, \"/id\"),\n\n    /time2pix = /parent./time2pix,\n\n    /n./new = \"circle\",\n    /n./class = \"/note\",\n    /n./id = /id,\n    /n./r = scale(/amp, 0., 100, 5., 20.),\n    /n./cy = /parent./y + scale(/pitch, 0., 127., /parent./height, 0.),\n    /n./cx = /parent./x + /time2pix( /time ) + /n./r,\n\n\n    prog1(\n      /n,\n      delete(/n), delete(/pitch), delete(/amp), delete(/time), delete(/id), delete(/time2pix)\n    )\n  )\n),\n\n\n/note./set/fromGUI = quote(\n  lambda([obj],\n    /obj = obj,\n    /src = /obj./target,\n \n    /xy = if( /src./id != \"svg\" && bound(/src./transform),\n      /transform/applyTransform( /transform/getMatrix(/src./transform), [/src./cx, /src./cy ] ),\n      /obj./mouse/xy\n    ),\n    /id = /obj./id,\n\n    /r = bound(/obj./r) ? /obj./r : /note./r, # set default radius\n    \n    /pix2time = /parent./pix2time,\n\n    /n./class = \"/note\",\n    /n./id = /id,\n    /n./pitch = scale( /xy[[1]] - /parent./y, /parent./height, 0., 0., 127.),\n    /n./time = /pix2time( /xy[[0]] - /parent./x - /r ),\n    /n./amp = scale(/r, 1., 20., 0., 100. ),\n\n    prog1(\n      /n,\n      delete(/n) #, delete(/xy), delete(/id), delete(/pix2time), delete(/r), delete(/obj)\n    )\n  )\n),\n\n/note./get/fromTime = quote(\n  lambda([obj, t],\n    /_obj = obj,\n    /_out./relTime = (t - /_obj./time) / /note./dur,\n    if( /_out./relTime >= 0 && /_out./relTime <= 1,\n      prog1( /_out, delete(/_out), delete(/_obj) ),\n      progn( delete(/_out), delete(/_obj) )\n    )\n  )\n)\n\n"
 												}
@@ -6315,7 +6315,6 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -6325,13 +6324,14 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -6466,7 +6466,6 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -6476,13 +6475,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -6598,13 +6598,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-5",
-					"linecount" : 44,
+					"linecount" : 24,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 610.281553983688354, 786.0, 356.0, 619.0 ],
-					"text" : "/key : \"mouse\",\n/url : \"/view\",\n/val : {\n\t/action : \"mousemove\",\n\t/mousedownPos,\n\t/selected : {\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/type : \"circle\",\n\t\t\t/cx : 235.15,\n\t\t\t/r : 5.15,\n\t\t\t/cy : 79,\n\t\t\t/class : \"notehead\"\n\t\t}, {\n\t\t\t/type : \"line\",\n\t\t\t/y2 : 79,\n\t\t\t/x1 : 230,\n\t\t\t/y1 : 79,\n\t\t\t/x2 : 290,\n\t\t\t/class : \"durationLine\"\n\t\t}],\n\t\t/transform : \"matrix(1 0 0 1 158 303)\",\n\t\t/id : \"noteline_u_cfn8j0ui9fc\",\n\t\t/class : \"/noteline\"\n\t},\n\t/target : {\n\t\t/type : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/baseProfile : \"full\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1,\n\t\t/id : \"svg\"\n\t},\n\t/xy : [57, 467],\n\t/mods : {\n\t\t/alt : 0,\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0\n\t},\n\t/paletteClass : \"/noteline\",\n\t/id : \"noteline_u_14hb1i48hj6\",\n\t/button : 0\n}"
+					"patching_rect" : [ 610.281553983688354, 786.0, 356.0, 347.0 ],
+					"text" : "/val : {\n\t/paletteClass : \"/noteline\",\n\t/id : \"noteline_u_186k76nt7z9\",\n\t/xy : [37, 250],\n\t/target : {\n\t\t/id : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/type : \"svg\",\n\t\t/baseProfile : \"full\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1\n\t},\n\t/mousedownPos,\n\t/action : \"mousemove\",\n\t/mods : {\n\t\t/shift : 0,\n\t\t/ctrl : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/button : 0,\n\t/selected\n},\n/key : \"mouse\""
 				}
 
 			}
@@ -6621,7 +6621,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -6678,8 +6678,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 100.0, 251.0, 785.0 ],
-									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 12, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 0, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 52, 54, 122, 97, 114, 103, 56, 113, 50, 122, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 72, -122, -31, 71, -82, 20, 122, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 80, -86, -86, -76, -86, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 57, 117, 107, 106, 109, 104, 52, 51, 99, 55, 111, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 78, -32, 122, -31, 71, -82, 20, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 115, 95, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 100, 119, 56, 53, 119, 116, 122, 107, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 80, 59, 112, -93, -41, 10, 62, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 107, 127, -1, -22, 85, 85, 86, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 54, 99, 115, 118, 114, 54, 109, 113, 107, 107, 56, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 73, -12, -93, -41, 10, 61, 112, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 118, 47, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 100, 49, 106, 122, 115, 102, 113, 120, 103, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 82, 85, -21, -123, 30, -72, 82, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 125, 15, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 80, -4, 122, -31, 71, -82, 20, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -125, -81, -1, -6, -107, 85, 86, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 56, 48, 120, 103, 121, 114, 55, 57, 55, 113, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 72, 73, -21, -123, 30, -72, 82, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 123, -49, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 105, 105, 48, 121, 53, 117, 102, 111, 56, 121, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 71, -69, -82, 20, 122, -31, 72, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -124, 119, -1, -6, -107, 85, 86, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 54, 119, 117, 113, 97, 55, 110, 98, 48, 116, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 72, -61, -41, 10, 61, 112, -92, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 111, 10, -86, -86, -86, -86, -85, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 105, 112, 122, 117, 50, 102, 100, 103, 56, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 71, 45, 112, -93, -41, 10, 62, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 118, -75, 85, 85, 85, 85, 86, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
-									"saved_bundle_length" : 1824,
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, -56, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 46, 46, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, -96, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 51, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 78, 28, 41, 2, -31, 71, -82, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -113, -83, 85, 63, -22, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 88, -1, -3, -128, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -96, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 50, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 89, 18, -113, 82, 20, 122, -31, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -125, 69, 85, 79, -22, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -96, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 81, -15, -41, 4, 40, -11, -62, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -123, -6, -86, -91, 64, 0, 0, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 50, 116, 116, 57, 113, 118, 57, 108, 119, 99, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 86, -16, 122, -31, 71, -82, 20, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 100, 106, -86, -107, 0, 0, 0, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 115, 51, 52, 56, 114, 99, 101, 101, 101, 118, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 90, 120, -72, 81, -21, -123, 31, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 116, -17, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 53, 85, 85, 86, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 106, 56, 105, 99, 100, 120, 114, 54, 105, 101, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 84, -22, 81, -21, -123, 30, -72, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -116, 18, -86, -91, 64, 0, 0, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 114, 114, 48, 100, 52, 116, 53, 116, 102, 106, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 81, -97, 10, 61, 112, -93, -41, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 106, 117, 85, 85, 85, 85, 86, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
+									"saved_bundle_length" : 1244,
 									"text" : "/model : [{\n\t/class : \"/noteline\",\n\t/id : \"foo-3\",\n\t/pitch : 88.9538,\n\t/time : 93.6667,\n\t/dur : 100,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_2194ji5pmaq\",\n\t/pitch : 100.648,\n\t/time : 81.6667,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"foo-2\",\n\t/pitch : 83.6212,\n\t/time : 215,\n\t/dur : 100,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_2vledoam7t0\",\n\t/pitch : 98.9013,\n\t/time : 968.333,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1znp80ismzb\",\n\t/pitch : 79.8512,\n\t/time : 1035,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_rlsk9nlj53\",\n\t/pitch : 64.4525,\n\t/time : 995,\n\t/dur : 99.9999,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_2f7orieawky\",\n\t/pitch : 68.8975,\n\t/time : 780,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1h6u4bvz8ar\",\n\t/pitch : 92.8688,\n\t/time : 793.333,\n\t/dur : 100.,\n\t/amp : 1\n}]"
 								}
 
@@ -6758,7 +6758,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -6853,7 +6853,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 48.0, 583.5, 313.0, 768.0 ],
-					"text" : "/gui : {\n\t/symbolistAction : \"transformed\",\n\t/action : \"mouseup\",\n\t/mousedownPos,\n\t/selected : {\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/type : \"circle\",\n\t\t\t/cx : 235.15,\n\t\t\t/r : 5.15,\n\t\t\t/cy : 79,\n\t\t\t/class : \"notehead\"\n\t\t}, {\n\t\t\t/type : \"line\",\n\t\t\t/y2 : 79,\n\t\t\t/x1 : 230,\n\t\t\t/y1 : 79,\n\t\t\t/x2 : 290,\n\t\t\t/class : \"durationLine\"\n\t\t}],\n\t\t/transform : \"matrix(1 0 0 1 158 303)\",\n\t\t/id : \"noteline_u_cfn8j0ui9fc\",\n\t\t/class : \"/noteline\"\n\t},\n\t/target : {\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/type : \"circle\",\n\t\t\t/cx : 235.15,\n\t\t\t/r : 5.15,\n\t\t\t/cy : 79,\n\t\t\t/class : \"notehead\"\n\t\t}, {\n\t\t\t/type : \"line\",\n\t\t\t/y2 : 79,\n\t\t\t/x1 : 230,\n\t\t\t/y1 : 79,\n\t\t\t/x2 : 290,\n\t\t\t/class : \"durationLine\"\n\t\t}],\n\t\t/transform : \"matrix(1 0 0 1 158 303)\",\n\t\t/id : \"noteline_u_cfn8j0ui9fc\",\n\t\t/class : \"/noteline\"\n\t},\n\t/xy : [388, 379],\n\t/mods : {\n\t\t/alt : 0,\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0\n\t},\n\t/paletteClass : \"/noteline\",\n\t/id : \"noteline_u_cfn8j0ui9fc\",\n\t/button : 0\n}"
+					"text" : "/gui : {\n\t/paletteClass : \"/noteline\",\n\t/id : \"noteline_u_52tt9qv9lwc\",\n\t/symbolistAction : \"transformed\",\n\t/xy : [115, 232],\n\t/target : {\n\t\t/id : \"noteline_u_52tt9qv9lwc\",\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/cy : 300,\n\t\t\t/type : \"circle\",\n\t\t\t/r : 5.15,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 236.15\n\t\t}, {\n\t\t\t/y2 : 300,\n\t\t\t/x1 : 231,\n\t\t\t/type : \"line\",\n\t\t\t/x2 : 291,\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 300\n\t\t}],\n\t\t/transform : \"matrix(1 0 0 1 -123 -68)\",\n\t\t/class : \"/noteline\"\n\t},\n\t/mousedownPos,\n\t/action : \"mouseup\",\n\t/mods : {\n\t\t/shift : 0,\n\t\t/ctrl : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/button : 0,\n\t/selected : {\n\t\t/id : \"noteline_u_52tt9qv9lwc\",\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/cy : 300,\n\t\t\t/type : \"circle\",\n\t\t\t/r : 5.15,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 236.15\n\t\t}, {\n\t\t\t/y2 : 300,\n\t\t\t/x1 : 231,\n\t\t\t/type : \"line\",\n\t\t\t/x2 : 291,\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 300\n\t\t}],\n\t\t/transform : \"matrix(1 0 0 1 -123 -68)\",\n\t\t/class : \"/noteline\"\n\t}\n}"
 				}
 
 			}
@@ -6868,157 +6868,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 537.0, 656.5, 313.0, 48.0 ],
-					"text" : "/port/ip : \"http://192.168.1.4:3002\",\n/port/localhost : \"http://localhost:3002\""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-43",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patcher" : 					{
-						"fileversion" : 1,
-						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
-							"modernui" : 1
-						}
-,
-						"classnamespace" : "box",
-						"rect" : [ 581.0, 267.0, 640.0, 480.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
-						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-11",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 50.0, 140.5, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-13",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "FullPacket" ],
-									"patching_rect" : [ 50.0, 100.0, 127.0, 22.0 ],
-									"text" : "o.select /start/success"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 172.5, 191.0, 22.0 ],
-									"text" : "html_template symbolist-view.html"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"comment" : "",
-									"id" : "obj-41",
-									"index" : 1,
-									"maxclass" : "inlet",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"comment" : "",
-									"id" : "obj-42",
-									"index" : 1,
-									"maxclass" : "outlet",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 254.5, 30.0, 30.0 ]
-								}
-
-							}
- ],
-						"lines" : [ 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-11", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"source" : [ "obj-13", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-13", 0 ],
-									"source" : [ "obj-41", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-42", 0 ],
-									"source" : [ "obj-5", 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"patching_rect" : [ 537.0, 611.0, 84.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"tags" : ""
-					}
-,
-					"text" : "p set template"
+					"text" : "/port/ip : \"http://:3002\",\n/port/localhost : \"http://localhost:3002\""
 				}
 
 			}
@@ -7034,7 +6884,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -7203,7 +7053,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -7247,7 +7097,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7292,7 +7142,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -7356,9 +7206,9 @@
 																	"id" : "obj-8",
 																	"linecount" : 15,
 																	"maxclass" : "o.expr.codebox",
-																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "FullPacket", "FullPacket" ],
+																	"numinlets" : 2,
+																	"numoutlets" : 3,
+																	"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 148.946603059768677, 284.0, 236.0 ],
 																	"text" : "/prev/idx ??= [],\n\n/noteOn = map( \n  lambda(i, \n    if( max( i == /prev/idx ) == 0, i)\n  ), /out/idx\n),\n\n/noteOff = map(\n  lambda(i,\n    if( max( i == /out/idx ) == 0, i)\n  ), /prev/idx\n),\n\n/prev/idx = /out/idx\n"
 																}
@@ -7453,7 +7303,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -7517,9 +7367,9 @@
 																	"id" : "obj-8",
 																	"linecount" : 16,
 																	"maxclass" : "o.expr.codebox",
-																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "FullPacket", "FullPacket" ],
+																	"numinlets" : 2,
+																	"numoutlets" : 3,
+																	"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 148.946603059768677, 277.0, 250.0 ],
 																	"text" : "/prev/idx ??= [],\n\n/noteOn = map( \n  lambda(i, \n   if( max( i == /prev/idx ) != 0, i)\n  ), /out/idx\n),\n\n/noteOff = map(\n  lambda(i,\n     if( max( i == /out/idx ) == 0, i)\n  ), /prev/idx\n),\n\n/prev/idx = /out/idx\n"
 																}
@@ -7614,7 +7464,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -7692,9 +7542,9 @@
 																	"id" : "obj-1",
 																	"linecount" : 2,
 																	"maxclass" : "o.expr.codebox",
-																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "FullPacket", "FullPacket" ],
+																	"numinlets" : 2,
+																	"numoutlets" : 3,
+																	"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 318.0, 349.0, 46.0 ],
 																	"text" : "/idx = aseq(1,length(/ids)),\n/objIDX = max(/idx * (/target./id == /ids)) - 1"
 																}
@@ -7850,9 +7700,9 @@
 													"id" : "obj-8",
 													"linecount" : 15,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 50.0, 148.893206119537354, 284.0, 236.0 ],
 													"text" : "/prev/idx ??= [],\n\n/noteOn = map( \n  lambda(i, \n    if( max( i == /prev/idx ) == 0, i)\n  ), /out/idx\n),\n\n/noteOff = map(\n  lambda(i,\n    if( max( i == /out/idx ) == 0, i)\n  ), /prev/idx\n),\n\n/prev/idx = /out/idx\n"
 												}
@@ -7932,7 +7782,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7972,9 +7822,9 @@
 													"id" : "obj-7",
 													"linecount" : 19,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 50.0, 100.0, 378.0, 277.0 ],
 													"text" : "/times = [],\n/ids = [],\n/dur = [],\n\nmap(\n  lambda([o],\n    /times = [/times, getbundlemember(o, \"/time\")],\n    /ids = [/ids, getbundlemember(o, \"/id\")],\n    /dur = [/dur, getbundlemember(o, \"/dur\")]\n  ), /model\n),\n\n/end/times = /times + /dur,\n\n/sortedIdx = sortidx(/times),\n\n/times = /times[[ /sortedIdx ]],\n/ids = /ids[[ /sortedIdx ]],\n/end/times = /end/times[[ /sortedIdx ]]"
 												}
@@ -8047,7 +7897,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8087,9 +7937,9 @@
 													"id" : "obj-1",
 													"linecount" : 10,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 50.0, 100.0, 450.0, 154.0 ],
 													"text" : "/idx = map( \n  lambda([i, times, end_t], \n    if( times <= /t && /t <= end_t,\n      i\n    )\n  ), aseq(0, length(/times)), /times, /end/times\n),\n\n\n/obj = /model[[ /sortedIdx[[ /idx ]] ]]"
 												}
@@ -8215,11 +8065,10 @@
 									"id" : "obj-14",
 									"linecount" : 39,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "FullPacket", "FullPacket" ],
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 131.961536999999993, 303.446603059768677, 455.0, 549.0 ],
-									"presentation_linecount" : 39,
 									"text" : "/outObjs = [],\n/outIdx = [],\n/prev/idx ??= [],\n\nmap(\n  lambda([o, idx],\n    /o = o,\n    /def = value( /o./class ),\n\n    /timeFn = /def./get/fromTime,\n    /n = {},\n    /n./idx = idx,\n    if( max( idx == /prev/idx ) == 0, /n./noteOn = 1 ),\n\t   /n./obj = /o,\n    /n./eval = /timeFn( /o, /t),\n\n    if( bound(/n./eval),\n      progn(\n        /outObjs = [/outObjs, /n],\n        /outIdx = [/outIdx, idx]\n      )\n    )\n  ), /obj, /idx\n),\n\n/out = {\n  /play : /outObjs,\n  /noteOff : map(\n    lambda(i,\n      if( max( i == /outIdx ) == 0, i)\n    ), /prev/idx\n  )\n},\n\n/prev/idx = /outIdx,\n\n/playheadFn = /playhead./set/fromTime,\n/ret = /playheadFn( /t, /parent ),\nif( bound(/ret./view), /view = /ret./view)"
 								}
 
@@ -8463,7 +8312,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -8508,7 +8357,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8547,9 +8396,9 @@
 													"fontsize" : 12.0,
 													"id" : "obj-2",
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 188.0, 299.0, 176.0, 32.0 ],
 													"text" : "/route = \"gui\""
 												}
@@ -8561,9 +8410,9 @@
 													"fontsize" : 12.0,
 													"id" : "obj-34",
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 188.0, 223.0, 198.0, 32.0 ],
 													"text" : "/error = \"requires /class\""
 												}
@@ -8575,9 +8424,9 @@
 													"fontsize" : 12.0,
 													"id" : "obj-33",
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 163.0, 126.0, 176.0, 32.0 ],
 													"text" : "/error = \"requires /id\""
 												}
@@ -8745,15 +8594,15 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-5",
-									"linecount" : 514,
+									"linecount" : 8,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 588.0, 42.0, 914.0, 6998.0 ],
-									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, -24, 47, 103, 117, 105, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 4, -40, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 115, 121, 109, 98, 111, 108, 105, 115, 116, 65, 99, 116, 105, 111, 110, 0, 0, 0, 0, 44, 115, 0, 0, 116, 114, 97, 110, 115, 102, 111, 114, 109, 101, 100, 0, 0, 0, 0, 20, 47, 97, 99, 116, 105, 111, 110, 0, 44, 115, 0, 0, 109, 111, 117, 115, 101, 117, 112, 0, 0, 0, 0, 20, 47, 109, 111, 117, 115, 101, 100, 111, 119, 110, 80, 111, 115, 0, 0, 0, 44, 0, 0, 0, 0, 0, 1, -60, 47, 115, 101, 108, 101, 99, 116, 101, 100, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 1, 28, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, 124, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 109, 100, -52, -64, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 12, 47, 99, 121, 0, 44, 105, 0, 0, 0, 0, 0, 79, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, -120, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 12, 47, 121, 50, 0, 44, 105, 0, 0, 0, 0, 0, 79, 0, 0, 0, 12, 47, 120, 49, 0, 44, 105, 0, 0, 0, 0, 0, -26, 0, 0, 0, 12, 47, 121, 49, 0, 44, 105, 0, 0, 0, 0, 0, 79, 0, 0, 0, 12, 47, 120, 50, 0, 44, 105, 0, 0, 0, 0, 1, 34, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 40, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 0, 0, 44, 115, 0, 0, 109, 97, 116, 114, 105, 120, 40, 49, 32, 48, 32, 48, 32, 49, 32, 49, 53, 56, 32, 51, 48, 51, 41, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 1, -64, 47, 116, 97, 114, 103, 101, 116, 0, 44, 46, 0, 0, 0, 0, 1, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 1, 28, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, 124, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 109, 100, -52, -64, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 12, 47, 99, 121, 0, 44, 105, 0, 0, 0, 0, 0, 79, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, -120, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 12, 47, 121, 50, 0, 44, 105, 0, 0, 0, 0, 0, 79, 0, 0, 0, 12, 47, 120, 49, 0, 44, 105, 0, 0, 0, 0, 0, -26, 0, 0, 0, 12, 47, 121, 49, 0, 44, 105, 0, 0, 0, 0, 0, 79, 0, 0, 0, 12, 47, 120, 50, 0, 44, 105, 0, 0, 0, 0, 1, 34, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 40, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 0, 0, 44, 115, 0, 0, 109, 97, 116, 114, 105, 120, 40, 49, 32, 48, 32, 48, 32, 49, 32, 49, 53, 56, 32, 51, 48, 51, 41, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 120, 121, 0, 44, 105, 105, 0, 0, 0, 1, -124, 0, 0, 1, 123, 0, 0, 0, 112, 47, 109, 111, 100, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 96, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 97, 108, 116, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 116, 114, 108, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 115, 104, 105, 102, 116, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 109, 101, 116, 97, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 112, 97, 108, 101, 116, 116, 101, 67, 108, 97, 115, 115, 0, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 0, 16, 47, 98, 117, 116, 116, 111, 110, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, -76, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 103, 101, 116, 77, 97, 116, 114, 105, 120, 0, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 93, 44, 10, 32, 32, 105, 102, 40, 32, 115, 116, 114, 102, 105, 110, 100, 40, 34, 109, 97, 116, 114, 105, 120, 34, 44, 32, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 32, 33, 61, 32, 45, 49, 44, 10, 32, 32, 32, 32, 102, 108, 111, 97, 116, 51, 50, 40, 115, 112, 108, 105, 116, 40, 34, 32, 34, 44, 32, 115, 116, 114, 99, 104, 97, 114, 40, 32, 97, 115, 101, 113, 40, 55, 44, 32, 115, 116, 114, 108, 101, 110, 40, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 32, 45, 32, 50, 41, 44, 32, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 41, 41, 10, 32, 32, 41, 10, 41, 0, 0, 0, 0, 0, 0, 0, -64, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 97, 112, 112, 108, 121, 84, 114, 97, 110, 115, 102, 111, 114, 109, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 109, 97, 116, 114, 105, 120, 44, 32, 120, 121, 32, 93, 44, 10, 32, 32, 91, 32, 32, 109, 97, 116, 114, 105, 120, 91, 91, 48, 93, 93, 32, 42, 32, 120, 121, 91, 91, 48, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 50, 93, 93, 32, 42, 32, 120, 121, 91, 91, 49, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 52, 93, 93, 44, 32, 10, 32, 32, 32, 32, 32, 109, 97, 116, 114, 105, 120, 91, 91, 49, 93, 93, 32, 42, 32, 120, 121, 91, 91, 48, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 51, 93, 93, 32, 42, 32, 120, 121, 91, 91, 49, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 53, 93, 93, 10, 32, 32, 93, 10, 41, 0, 0, 0, 1, -128, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 108, 97, 115, 115, 110, 97, 109, 101, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 117, 110, 100, 32, 61, 32, 123, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 40, 32, 98, 111, 117, 110, 100, 40, 111, 98, 106, 46, 47, 99, 104, 105, 108, 100, 114, 101, 110, 41, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 109, 97, 112, 40, 32, 108, 97, 109, 98, 100, 97, 40, 91, 99, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 40, 32, 99, 46, 47, 99, 108, 97, 115, 115, 32, 61, 61, 32, 99, 108, 97, 115, 115, 110, 97, 109, 101, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 117, 110, 100, 32, 61, 32, 99, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 44, 32, 111, 98, 106, 46, 47, 99, 104, 105, 108, 100, 114, 101, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 112, 114, 111, 103, 49, 40, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 117, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 101, 108, 101, 116, 101, 40, 47, 102, 111, 117, 110, 100, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 41, 10, 0, 0, 0, 1, 96, 47, 112, 97, 114, 101, 110, 116, 0, 44, 46, 0, 0, 0, 0, 1, 80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 119, 105, 100, 116, 104, 0, 0, 44, 100, 0, 0, 64, -126, -64, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 104, 101, 105, 103, 104, 116, 0, 44, 100, 0, 0, 64, -119, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 64, -113, 64, 0, 0, 0, 0, 0, 0, 0, 0, 84, 47, 116, 105, 109, 101, 50, 112, 105, 120, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 40, 116, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 41, 32, 42, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 84, 47, 112, 105, 120, 50, 116, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 120, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 120, 32, 42, 32, 40, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 2, 0, 47, 114, 101, 99, 116, 97, 110, 103, 108, 101, 0, 0, 44, 46, 0, 0, 0, 0, 1, -20, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -80, 47, 100, 101, 102, 97, 117, 108, 116, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 119, 105, 100, 116, 104, 0, 0, 44, 100, 0, 0, 64, -126, -64, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 104, 101, 105, 103, 104, 116, 0, 44, 100, 0, 0, 64, -119, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 64, -113, 64, 0, 0, 0, 0, 0, 0, 0, 0, 84, 47, 116, 105, 109, 101, 50, 112, 105, 120, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 40, 116, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 41, 32, 42, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 84, 47, 112, 105, 120, 50, 116, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 120, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 120, 32, 42, 32, 40, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 72, 47, 115, 101, 116, 47, 102, 114, 111, 109, 68, 97, 116, 97, 0, 0, 0, 44, 115, 0, 0, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 0, 40, 47, 115, 101, 116, 47, 102, 114, 111, 109, 71, 85, 73, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 16, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, -96, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 44, 46, 0, 0, 0, 0, 16, -116, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 92, 47, 100, 101, 102, 97, 117, 108, 116, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 72, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 114, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 76, 47, 103, 101, 116, 47, 105, 99, 111, 110, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 120, 121, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 49, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 5, 112, 47, 115, 101, 116, 47, 102, 114, 111, 109, 68, 97, 116, 97, 0, 0, 0, 44, 115, 0, 0, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 116, 105, 109, 101, 50, 112, 105, 120, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 32, 58, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 97, 109, 112, 44, 32, 48, 46, 44, 32, 49, 48, 48, 44, 32, 53, 46, 44, 32, 50, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 32, 43, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 112, 105, 116, 99, 104, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 101, 110, 100, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 100, 117, 114, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 32, 35, 32, 114, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 102, 111, 108, 108, 111, 119, 105, 110, 103, 32, 111, 98, 106, 101, 99, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 103, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 104, 105, 108, 100, 114, 101, 110, 32, 58, 32, 91, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 99, 105, 114, 99, 108, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 32, 58, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 121, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 43, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 49, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 49, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 50, 32, 58, 32, 112, 105, 120, 95, 101, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 50, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 93, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 9, 60, 47, 115, 101, 116, 47, 102, 114, 111, 109, 71, 85, 73, 0, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 108, 97, 116, 101, 114, 58, 32, 112, 117, 116, 32, 116, 104, 101, 115, 101, 32, 105, 110, 32, 97, 32, 108, 101, 116, 32, 102, 117, 110, 99, 116, 105, 111, 110, 44, 32, 104, 101, 114, 101, 32, 110, 111, 119, 32, 115, 105, 110, 99, 101, 32, 47, 112, 97, 114, 101, 110, 116, 46, 112, 105, 120, 50, 116, 105, 109, 101, 40, 41, 32, 100, 111, 101, 115, 110, 39, 116, 32, 119, 111, 114, 107, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 97, 108, 115, 111, 32, 108, 97, 116, 101, 114, 44, 32, 112, 97, 114, 101, 110, 116, 32, 112, 114, 111, 98, 97, 98, 108, 121, 32, 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 112, 97, 115, 115, 101, 100, 32, 105, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 116, 111, 32, 100, 111, 32, 110, 101, 119, 32, 102, 114, 111, 109, 32, 99, 108, 105, 99, 107, 44, 32, 115, 101, 108, 101, 99, 116, 32, 97, 32, 114, 101, 102, 101, 114, 101, 110, 99, 101, 32, 111, 98, 106, 101, 99, 116, 44, 32, 105, 102, 32, 110, 111, 110, 101, 32, 97, 114, 101, 32, 102, 111, 117, 110, 100, 44, 32, 116, 104, 101, 110, 32, 116, 104, 101, 32, 83, 86, 71, 32, 105, 115, 32, 116, 104, 101, 32, 112, 97, 114, 101, 110, 116, 63, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 100, 111, 32, 116, 104, 97, 116, 32, 105, 110, 32, 116, 104, 101, 32, 85, 73, 32, 115, 99, 114, 105, 112, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 112, 105, 120, 50, 116, 105, 109, 101, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 116, 97, 114, 103, 101, 116, 32, 58, 32, 111, 98, 106, 46, 47, 116, 97, 114, 103, 101, 116, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 101, 102, 97, 117, 108, 116, 32, 58, 32, 47, 110, 111, 116, 101, 108, 105, 110, 101, 46, 47, 100, 101, 102, 97, 117, 108, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 99, 111, 110, 100, 40, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 111, 98, 106, 46, 47, 115, 121, 109, 98, 111, 108, 105, 115, 116, 65, 99, 116, 105, 111, 110, 32, 61, 61, 32, 34, 110, 101, 119, 70, 114, 111, 109, 67, 108, 105, 99, 107, 95, 100, 111, 119, 110, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 105, 116, 99, 104, 32, 58, 32, 115, 99, 97, 108, 101, 40, 32, 111, 98, 106, 46, 47, 120, 121, 91, 91, 49, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 105, 109, 101, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 111, 98, 106, 46, 47, 120, 121, 91, 91, 48, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 114, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 100, 117, 114, 32, 58, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 100, 117, 114, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 97, 109, 112, 32, 58, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 97, 109, 112, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 111, 98, 106, 46, 47, 115, 121, 109, 98, 111, 108, 105, 115, 116, 65, 99, 116, 105, 111, 110, 32, 61, 61, 32, 34, 116, 114, 97, 110, 115, 102, 111, 114, 109, 101, 100, 34, 44, 32, 35, 38, 38, 32, 47, 110, 111, 116, 101, 108, 105, 110, 101, 46, 47, 105, 115, 86, 97, 108, 105, 100, 40, 111, 98, 106, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 32, 58, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 32, 58, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 120, 121, 32, 58, 32, 105, 102, 32, 40, 32, 98, 111, 117, 110, 100, 40, 116, 97, 114, 103, 101, 116, 46, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 97, 112, 112, 108, 121, 84, 114, 97, 110, 115, 102, 111, 114, 109, 40, 32, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 103, 101, 116, 77, 97, 116, 114, 105, 120, 40, 116, 97, 114, 103, 101, 116, 46, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 41, 44, 32, 91, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 120, 44, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 121, 93, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 91, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 120, 44, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 121, 93, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 116, 97, 114, 103, 101, 116, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 105, 116, 99, 104, 32, 58, 32, 115, 99, 97, 108, 101, 40, 32, 120, 121, 91, 91, 49, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 105, 109, 101, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 120, 121, 91, 91, 48, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 45, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 114, 32, 41, 44, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 100, 117, 114, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 46, 47, 120, 50, 32, 45, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 46, 47, 120, 49, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 97, 109, 112, 32, 58, 32, 115, 99, 97, 108, 101, 40, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 114, 44, 32, 53, 46, 44, 32, 50, 48, 46, 44, 32, 48, 46, 44, 32, 49, 48, 48, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 1, 20, 47, 103, 101, 116, 47, 102, 114, 111, 109, 84, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 114, 101, 108, 84, 105, 109, 101, 32, 58, 32, 40, 116, 32, 45, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 41, 32, 47, 32, 111, 98, 106, 46, 47, 100, 117, 114, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 40, 32, 114, 101, 108, 84, 105, 109, 101, 32, 62, 61, 32, 48, 32, 38, 38, 32, 114, 101, 108, 84, 105, 109, 101, 32, 60, 61, 32, 49, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 101, 108, 84, 105, 109, 101, 32, 58, 32, 114, 101, 108, 84, 105, 109, 101, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 3, 60, 47, 112, 108, 97, 121, 104, 101, 97, 100, 0, 0, 0, 44, 46, 0, 0, 0, 0, 3, 40, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 20, 47, 115, 101, 116, 47, 102, 114, 111, 109, 84, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 116, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 105, 109, 101, 50, 112, 105, 120, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 116, 105, 109, 101, 50, 112, 105, 120, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 114, 111, 103, 49, 40, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 108, 97, 116, 101, 114, 32, 99, 104, 101, 99, 107, 32, 105, 102, 32, 116, 104, 101, 114, 101, 32, 97, 114, 101, 32, 97, 108, 114, 101, 97, 100, 121, 32, 118, 105, 101, 119, 32, 109, 101, 115, 115, 97, 103, 101, 115, 32, 105, 110, 32, 112, 108, 97, 99, 101, 32, 97, 110, 100, 32, 117, 110, 105, 111, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 118, 105, 101, 119, 32, 58, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 107, 101, 121, 32, 58, 32, 34, 115, 118, 103, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 118, 97, 108, 32, 58, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 34, 112, 108, 97, 121, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 112, 108, 97, 121, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 49, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 47, 116, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 50, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 47, 116, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 49, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 50, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 32, 43, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 16, -100, 47, 111, 98, 106, 82, 101, 102, 0, 44, 46, 0, 0, 0, 0, 16, -116, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 92, 47, 100, 101, 102, 97, 117, 108, 116, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 72, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 114, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 76, 47, 103, 101, 116, 47, 105, 99, 111, 110, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 120, 121, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 49, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 5, 112, 47, 115, 101, 116, 47, 102, 114, 111, 109, 68, 97, 116, 97, 0, 0, 0, 44, 115, 0, 0, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 116, 105, 109, 101, 50, 112, 105, 120, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 32, 58, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 97, 109, 112, 44, 32, 48, 46, 44, 32, 49, 48, 48, 44, 32, 53, 46, 44, 32, 50, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 32, 43, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 112, 105, 116, 99, 104, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 101, 110, 100, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 100, 117, 114, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 32, 35, 32, 114, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 102, 111, 108, 108, 111, 119, 105, 110, 103, 32, 111, 98, 106, 101, 99, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 103, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 104, 105, 108, 100, 114, 101, 110, 32, 58, 32, 91, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 99, 105, 114, 99, 108, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 32, 58, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 121, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 43, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 49, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 49, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 50, 32, 58, 32, 112, 105, 120, 95, 101, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 50, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 93, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 9, 60, 47, 115, 101, 116, 47, 102, 114, 111, 109, 71, 85, 73, 0, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 108, 97, 116, 101, 114, 58, 32, 112, 117, 116, 32, 116, 104, 101, 115, 101, 32, 105, 110, 32, 97, 32, 108, 101, 116, 32, 102, 117, 110, 99, 116, 105, 111, 110, 44, 32, 104, 101, 114, 101, 32, 110, 111, 119, 32, 115, 105, 110, 99, 101, 32, 47, 112, 97, 114, 101, 110, 116, 46, 112, 105, 120, 50, 116, 105, 109, 101, 40, 41, 32, 100, 111, 101, 115, 110, 39, 116, 32, 119, 111, 114, 107, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 97, 108, 115, 111, 32, 108, 97, 116, 101, 114, 44, 32, 112, 97, 114, 101, 110, 116, 32, 112, 114, 111, 98, 97, 98, 108, 121, 32, 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 112, 97, 115, 115, 101, 100, 32, 105, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 116, 111, 32, 100, 111, 32, 110, 101, 119, 32, 102, 114, 111, 109, 32, 99, 108, 105, 99, 107, 44, 32, 115, 101, 108, 101, 99, 116, 32, 97, 32, 114, 101, 102, 101, 114, 101, 110, 99, 101, 32, 111, 98, 106, 101, 99, 116, 44, 32, 105, 102, 32, 110, 111, 110, 101, 32, 97, 114, 101, 32, 102, 111, 117, 110, 100, 44, 32, 116, 104, 101, 110, 32, 116, 104, 101, 32, 83, 86, 71, 32, 105, 115, 32, 116, 104, 101, 32, 112, 97, 114, 101, 110, 116, 63, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 100, 111, 32, 116, 104, 97, 116, 32, 105, 110, 32, 116, 104, 101, 32, 85, 73, 32, 115, 99, 114, 105, 112, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 112, 105, 120, 50, 116, 105, 109, 101, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 116, 97, 114, 103, 101, 116, 32, 58, 32, 111, 98, 106, 46, 47, 116, 97, 114, 103, 101, 116, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 101, 102, 97, 117, 108, 116, 32, 58, 32, 47, 110, 111, 116, 101, 108, 105, 110, 101, 46, 47, 100, 101, 102, 97, 117, 108, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 99, 111, 110, 100, 40, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 111, 98, 106, 46, 47, 115, 121, 109, 98, 111, 108, 105, 115, 116, 65, 99, 116, 105, 111, 110, 32, 61, 61, 32, 34, 110, 101, 119, 70, 114, 111, 109, 67, 108, 105, 99, 107, 95, 100, 111, 119, 110, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 105, 116, 99, 104, 32, 58, 32, 115, 99, 97, 108, 101, 40, 32, 111, 98, 106, 46, 47, 120, 121, 91, 91, 49, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 105, 109, 101, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 111, 98, 106, 46, 47, 120, 121, 91, 91, 48, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 114, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 100, 117, 114, 32, 58, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 100, 117, 114, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 97, 109, 112, 32, 58, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 97, 109, 112, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 111, 98, 106, 46, 47, 115, 121, 109, 98, 111, 108, 105, 115, 116, 65, 99, 116, 105, 111, 110, 32, 61, 61, 32, 34, 116, 114, 97, 110, 115, 102, 111, 114, 109, 101, 100, 34, 44, 32, 35, 38, 38, 32, 47, 110, 111, 116, 101, 108, 105, 110, 101, 46, 47, 105, 115, 86, 97, 108, 105, 100, 40, 111, 98, 106, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 32, 58, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 32, 58, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 120, 121, 32, 58, 32, 105, 102, 32, 40, 32, 98, 111, 117, 110, 100, 40, 116, 97, 114, 103, 101, 116, 46, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 97, 112, 112, 108, 121, 84, 114, 97, 110, 115, 102, 111, 114, 109, 40, 32, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 103, 101, 116, 77, 97, 116, 114, 105, 120, 40, 116, 97, 114, 103, 101, 116, 46, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 41, 44, 32, 91, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 120, 44, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 121, 93, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 91, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 120, 44, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 121, 93, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 116, 97, 114, 103, 101, 116, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 105, 116, 99, 104, 32, 58, 32, 115, 99, 97, 108, 101, 40, 32, 120, 121, 91, 91, 49, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 105, 109, 101, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 120, 121, 91, 91, 48, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 45, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 114, 32, 41, 44, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 100, 117, 114, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 46, 47, 120, 50, 32, 45, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 46, 47, 120, 49, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 97, 109, 112, 32, 58, 32, 115, 99, 97, 108, 101, 40, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 114, 44, 32, 53, 46, 44, 32, 50, 48, 46, 44, 32, 48, 46, 44, 32, 49, 48, 48, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 1, 20, 47, 103, 101, 116, 47, 102, 114, 111, 109, 84, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 114, 101, 108, 84, 105, 109, 101, 32, 58, 32, 40, 116, 32, 45, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 41, 32, 47, 32, 111, 98, 106, 46, 47, 100, 117, 114, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 40, 32, 114, 101, 108, 84, 105, 109, 101, 32, 62, 61, 32, 48, 32, 38, 38, 32, 114, 101, 108, 84, 105, 109, 101, 32, 60, 61, 32, 49, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 101, 108, 84, 105, 109, 101, 32, 58, 32, 114, 101, 108, 84, 105, 109, 101, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 5, 104, 47, 115, 101, 116, 70, 110, 0, 0, 44, 115, 0, 0, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 116, 105, 109, 101, 50, 112, 105, 120, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 32, 58, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 97, 109, 112, 44, 32, 48, 46, 44, 32, 49, 48, 48, 44, 32, 53, 46, 44, 32, 50, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 32, 43, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 112, 105, 116, 99, 104, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 101, 110, 100, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 100, 117, 114, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 32, 35, 32, 114, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 102, 111, 108, 108, 111, 119, 105, 110, 103, 32, 111, 98, 106, 101, 99, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 103, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 104, 105, 108, 100, 114, 101, 110, 32, 58, 32, 91, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 99, 105, 114, 99, 108, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 32, 58, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 121, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 43, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 49, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 49, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 50, 32, 58, 32, 112, 105, 120, 95, 101, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 50, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 93, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 1, 100, 47, 99, 111, 110, 116, 101, 120, 116, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, 80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 119, 105, 100, 116, 104, 0, 0, 44, 100, 0, 0, 64, -126, -64, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 104, 101, 105, 103, 104, 116, 0, 44, 100, 0, 0, 64, -119, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 64, -113, 64, 0, 0, 0, 0, 0, 0, 0, 0, 84, 47, 116, 105, 109, 101, 50, 112, 105, 120, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 40, 116, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 41, 32, 42, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 84, 47, 112, 105, 120, 50, 116, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 120, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 120, 32, 42, 32, 40, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 92, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 0, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 40, 116, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 41, 32, 42, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 1, -84, 47, 110, 101, 119, 86, 105, 101, 119, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 100, 49, 106, 122, 115, 102, 113, 120, 103, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 114, 98, 102, 96, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 114, 15, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 117, -49, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 12, 47, 116, 105, 109, 101, 115, 0, 0, 44, 0, 0, 0, 0, 0, 1, 4, 47, 105, 100, 115, 0, 0, 0, 0, 44, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 52, 54, 122, 97, 114, 103, 56, 113, 50, 122, 119, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 57, 117, 107, 106, 109, 104, 52, 51, 99, 55, 111, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 100, 119, 56, 53, 119, 116, 122, 107, 119, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 54, 99, 115, 118, 114, 54, 109, 113, 107, 107, 56, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 100, 49, 106, 122, 115, 102, 113, 120, 103, 119, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 56, 48, 120, 103, 121, 114, 55, 57, 55, 113, 0, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 105, 105, 48, 121, 53, 117, 102, 111, 56, 121, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 54, 119, 117, 113, 97, 55, 110, 98, 48, 116, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 105, 112, 122, 117, 50, 102, 100, 103, 56, 0, 0, 0, 0, 0, 16, 44, 47, 118, 105, 101, 119, 65, 114, 0, 44, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 52, 54, 122, 97, 114, 103, 56, 113, 50, 122, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 75, -109, 51, 64, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 73, 0, 0, 12, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 91, -128, 0, 6, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 57, 117, 107, 106, 109, 104, 52, 51, 99, 55, 111, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 105, 36, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 104, 127, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 111, -1, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 100, 119, 56, 53, 119, 116, 122, 107, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 98, 100, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 97, -65, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 105, 63, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 54, 99, 115, 118, 114, 54, 109, 113, 107, 107, 56, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 108, -124, -52, -64, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 107, -33, -1, -13, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 113, -81, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 100, 49, 106, 122, 115, 102, 113, 120, 103, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 114, 98, 102, 96, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 114, 15, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 117, -49, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 109, 100, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 108, -65, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 114, 31, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 56, 48, 120, 103, 121, 114, 55, 57, 55, 113, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 113, -94, 102, 96, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 113, 79, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 117, 15, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 105, 105, 48, 121, 53, 117, 102, 111, 56, 121, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 121, -126, 102, 96, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 121, 47, -1, -7, -128, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 124, -17, -1, -7, -128, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 54, 119, 117, 113, 97, 55, 110, 98, 48, 116, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 100, -124, -52, -52, -52, -52, -51, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 99, -32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 107, 96, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 105, 112, 122, 117, 50, 102, 100, 103, 56, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 109, 36, -52, -52, -52, -52, -50, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 108, -128, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 114, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 7, 12, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 0, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 52, 54, 122, 97, 114, 103, 56, 113, 50, 122, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 72, -122, -31, 71, -82, 20, 122, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 80, -86, -86, -76, -86, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 57, 117, 107, 106, 109, 104, 52, 51, 99, 55, 111, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 78, -32, 122, -31, 71, -82, 20, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 115, 95, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 100, 119, 56, 53, 119, 116, 122, 107, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 80, 59, 112, -93, -41, 10, 62, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 107, 127, -1, -22, 85, 85, 86, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 54, 99, 115, 118, 114, 54, 109, 113, 107, 107, 56, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 73, -12, -93, -41, 10, 61, 112, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 118, 47, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 100, 49, 106, 122, 115, 102, 113, 120, 103, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 82, 85, -21, -123, 30, -72, 82, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 125, 15, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 93, 2, -11, -62, -113, 92, 41, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 118, -22, -86, -97, -43, 85, 86, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 56, 48, 120, 103, 121, 114, 55, 57, 55, 113, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 72, 73, -21, -123, 30, -72, 82, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 123, -49, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 105, 105, 48, 121, 53, 117, 102, 111, 56, 121, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 71, -69, -82, 20, 122, -31, 72, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -124, 119, -1, -6, -107, 85, 86, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 54, 119, 117, 113, 97, 55, 110, 98, 48, 116, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 72, -61, -41, 10, 61, 112, -92, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 111, 10, -86, -86, -86, -86, -85, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 105, 112, 122, 117, 50, 102, 100, 103, 56, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 71, 45, 112, -93, -41, 10, 62, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 118, -75, 85, 85, 85, 85, 86, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 16, 100, 47, 118, 105, 101, 119, 0, 0, 0, 44, 46, 0, 0, 0, 0, 16, 84, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 118, 103, 0, 0, 0, 16, 44, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 52, 54, 122, 97, 114, 103, 56, 113, 50, 122, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 75, -109, 51, 64, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 73, 0, 0, 12, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 91, -128, 0, 6, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 57, 117, 107, 106, 109, 104, 52, 51, 99, 55, 111, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 105, 36, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 104, 127, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 111, -1, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 100, 119, 56, 53, 119, 116, 122, 107, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 98, 100, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 97, -65, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 105, 63, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 54, 99, 115, 118, 114, 54, 109, 113, 107, 107, 56, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 108, -124, -52, -64, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 107, -33, -1, -13, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 113, -81, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 100, 49, 106, 122, 115, 102, 113, 120, 103, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 114, 98, 102, 96, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 114, 15, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 117, -49, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 109, 100, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 108, -65, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 114, 31, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 56, 48, 120, 103, 121, 114, 55, 57, 55, 113, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 113, -94, 102, 96, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 113, 79, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 117, 15, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 105, 105, 48, 121, 53, 117, 102, 111, 56, 121, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 121, -126, 102, 96, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 121, 47, -1, -7, -128, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 124, -17, -1, -7, -128, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 54, 119, 117, 113, 97, 55, 110, 98, 48, 116, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 100, -124, -52, -52, -52, -52, -51, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 99, -32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 107, 96, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 105, 112, 122, 117, 50, 102, 100, 103, 56, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 109, 36, -52, -52, -52, -52, -50, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 108, -128, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 114, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 111, 98, 106, 73, 68, 88, 0, 44, 105, 0, 0, 0, 0, 0, 4 ],
-									"saved_bundle_length" : 24992,
-									"text" : "/gui : {\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/meta : 0,\n\t\t/alt : 0,\n\t\t/shift : 0\n\t},\n\t/target : {\n\t\t/class : \"/noteline\",\n\t\t/transform : \"matrix(1 0 0 1 -28 -58)\",\n\t\t/children : [{\n\t\t\t/r : 5.15,\n\t\t\t/cy : 163.252,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 257.15,\n\t\t\t/type : \"circle\"\n\t\t}, {\n\t\t\t/y1 : 163.252,\n\t\t\t/x1 : 252,\n\t\t\t/class : \"durationLine\",\n\t\t\t/x2 : 312,\n\t\t\t/y2 : 163.252,\n\t\t\t/type : \"line\"\n\t\t}],\n\t\t/id : \"foo-2\",\n\t\t/type : \"g\"\n\t},\n\t/button : 0,\n\t/symbolistAction : \"transformed\",\n\t/paletteClass : \"/noteline\",\n\t/selected : {\n\t\t/class : \"/noteline\",\n\t\t/transform : \"matrix(1 0 0 1 -28 -58)\",\n\t\t/children : [{\n\t\t\t/r : 5.15,\n\t\t\t/cy : 163.252,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 257.15,\n\t\t\t/type : \"circle\"\n\t\t}, {\n\t\t\t/y1 : 163.252,\n\t\t\t/x1 : 252,\n\t\t\t/class : \"durationLine\",\n\t\t\t/x2 : 312,\n\t\t\t/y2 : 163.252,\n\t\t\t/type : \"line\"\n\t\t}],\n\t\t/id : \"foo-2\",\n\t\t/type : \"g\"\n\t},\n\t/action : \"mouseup\",\n\t/mousedownPos,\n\t/id : \"foo-2\",\n\t/xy : [228, 107]\n},\n/transform/getMatrix : \"lambda([matrix_str],\n  if( strfind(\\\"matrix\\\", matrix_str) != -1,\n    float32(split(\\\" \\\", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)\",\n/transform/applyTransform : \"lambda([matrix, xy ],\n  [  matrix[[0]] * xy[[0]] + matrix[[2]] * xy[[1]] + matrix[[4]], \n     matrix[[1]] * xy[[0]] + matrix[[3]] * xy[[1]] + matrix[[5]]\n  ]\n)\",\n/helper/getChildByClass : \"\n    lambda([obj, classname],\n        /found = {},\n        if( bound(obj./children) ,\n            map( lambda([c],\n                    if( c./class == classname,\n                        /found = c\n                    )\n                ), obj./children\n            )\n        ),\n        prog1(\n            /found,\n            delete(/found)\n        )\n    )\n\",\n/parent : {\n\t/x : 10.,\n\t/y : 10.,\n\t/width : 600.,\n\t/height : 800.,\n\t/time/start : 0.,\n\t/time/dur : 1000.,\n\t/time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n\t/pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\"\n},\n/rectangle : {\n\t/default : {\n\t\t/x : 10.,\n\t\t/y : 10.,\n\t\t/width : 600.,\n\t\t/height : 800.,\n\t\t/time/start : 0,\n\t\t/time/dur : 1000.\n\t},\n\t/time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n\t/pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\",\n\t/set/fromData : \" \n        lambda([obj, context],\n\n        )\n    \",\n\t/set/fromGUI : {\n\n\t}\n},\n/noteline : {\n\t/default : {\n\t\t/r : 1,\n\t\t/dur : 100,\n\t\t/amp : 1\n\t},\n\t/get/icon : \"\n        lambda([xy],\n            /cx : 1\n        )\n    \",\n\t/set/fromData : \" \n        lambda([obj, context],\n            /parent_time2pix = context./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),\n                    pix_start : context./x + /parent_time2pix( obj./time ),\n                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([obj, context],\n            # later: put these in a let function, here now since /parent.pix2time() doesn't work\n            # also later, parent probably should be passed in\n            # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n            # do that in the UI script\n            /parent_pix2time = context./pix2time,\n            let({\n                    target : obj./target,\n                    default : /noteline./default\n                },\n                cond(                 \n                    obj./symbolistAction == \\\"newFromClick_down\\\",\n                    {\n                        /class : \\\"/noteline\\\",\n                        /id : obj./id,\n                        /pitch : scale( obj./xy[[1]] - context./y, context./height, 0., 0., 127.),\n                        /time : /parent_pix2time( obj./xy[[0]] - context./x + default./r ),\n                        /dur : default./dur,\n                        /amp : default./amp\n                    },\n                    obj./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                    let({\n                            notehead : /helper/getChildByClass( target, \\\"notehead\\\" ),\n                            durationLine : /helper/getChildByClass( target, \\\"durationLine\\\" )\n                        },\n                        let({\n                                xy : if ( bound(target./transform),\n                                            /transform/applyTransform( /transform/getMatrix(target./transform), [notehead./cx, notehead./cy] ),\n                                            [notehead./cx, notehead./cy] )\n                            },\n                            {\n                                /class : \\\"/noteline\\\",\n                                /id : target./id,\n                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),\n                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  \n                                /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                /amp : scale(notehead./r, 5., 20., 0., 100)\n                            }\n                        )\n                    )\n                )\n            )\n            \n        )\n    \"\n},\n/objRef : {\n\t/default : {\n\t\t/r : 1,\n\t\t/dur : 100,\n\t\t/amp : 1\n\t},\n\t/get/icon : \"\n        lambda([xy],\n            /cx : 1\n        )\n    \",\n\t/set/fromData : \" \n        lambda([obj, context],\n            /parent_time2pix = context./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),\n                    pix_start : context./x + /parent_time2pix( obj./time ),\n                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([obj, context],\n            # later: put these in a let function, here now since /parent.pix2time() doesn't work\n            # also later, parent probably should be passed in\n            # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n            # do that in the UI script\n            /parent_pix2time = context./pix2time,\n            let({\n                    target : obj./target,\n                    default : /noteline./default\n                },\n                cond(                 \n                    obj./symbolistAction == \\\"newFromClick_down\\\",\n                    {\n                        /class : \\\"/noteline\\\",\n                        /id : obj./id,\n                        /pitch : scale( obj./xy[[1]] - context./y, context./height, 0., 0., 127.),\n                        /time : /parent_pix2time( obj./xy[[0]] - context./x + default./r ),\n                        /dur : default./dur,\n                        /amp : default./amp\n                    },\n                    obj./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                    let({\n                            notehead : /helper/getChildByClass( target, \\\"notehead\\\" ),\n                            durationLine : /helper/getChildByClass( target, \\\"durationLine\\\" )\n                        },\n                        let({\n                                xy : if ( bound(target./transform),\n                                            /transform/applyTransform( /transform/getMatrix(target./transform), [notehead./cx, notehead./cy] ),\n                                            [notehead./cx, notehead./cy] )\n                            },\n                            {\n                                /class : \\\"/noteline\\\",\n                                /id : target./id,\n                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),\n                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  \n                                /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                /amp : scale(notehead./r, 5., 20., 0., 100)\n                            }\n                        )\n                    )\n                )\n            )\n            \n        )\n    \"\n},\n/setFn : \" \n        lambda([obj, context],\n            /parent_time2pix = context./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),\n                    pix_start : context./x + /parent_time2pix( obj./time ),\n                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n/context : {\n\t/x : 10.,\n\t/y : 10.,\n\t/width : 600.,\n\t/height : 800.,\n\t/time/start : 0.,\n\t/time/dur : 1000.,\n\t/time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n\t/pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\"\n},\n/parent_time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n/newView : {\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-1\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 269.85,\n\t\t/cx : 307.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 302,\n\t\t/y1 : 269.85,\n\t\t/x2 : 422,\n\t\t/y2 : 269.85\n\t}]\n},\n/times,\n/ids : [\"foo-3\", \"foo-2\", \"foo-1\"],\n/viewAr : [{\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-3\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 143.661,\n\t\t/cx : 82.35\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 77.2,\n\t\t/y1 : 143.661,\n\t\t/x2 : 137.2,\n\t\t/y2 : 143.661\n\t}]\n}, {\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-2\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 163.252,\n\t\t/cx : 257.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 252,\n\t\t/y1 : 163.252,\n\t\t/x2 : 312,\n\t\t/y2 : 163.252\n\t}]\n}, {\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-1\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 269.85,\n\t\t/cx : 307.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 302,\n\t\t/y1 : 269.85,\n\t\t/x2 : 422,\n\t\t/y2 : 269.85\n\t}]\n}],\n/model : [{\n\t/class : \"/noteline\",\n\t/id : \"foo-3\",\n\t/pitch : 105.781,\n\t/time : 112,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"foo-2\",\n\t/pitch : 102.671,\n\t/time : 403.333,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"foo-1\",\n\t/pitch : 85.7487,\n\t/time : 486.667,\n\t/dur : 200.,\n\t/amp : 1\n}],\n/view : {\n\t/key : \"svg\",\n\t/val : [{\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-3\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 143.661,\n\t\t\t/cx : 82.35\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 77.2,\n\t\t\t/y1 : 143.661,\n\t\t\t/x2 : 137.2,\n\t\t\t/y2 : 143.661\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-2\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 163.252,\n\t\t\t/cx : 257.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 252,\n\t\t\t/y1 : 163.252,\n\t\t\t/x2 : 312,\n\t\t\t/y2 : 163.252\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-1\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 269.85,\n\t\t\t/cx : 307.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 302,\n\t\t\t/y1 : 269.85,\n\t\t\t/x2 : 422,\n\t\t\t/y2 : 269.85\n\t\t}]\n\t}]\n},\n/objIDX : 2"
+									"patching_rect" : [ 588.0, 42.0, 914.0, 119.0 ],
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -80, 47, 100, 97, 116, 97, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -96, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 83, 65, 30, -78, 61, 112, -92, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 110, 53, 85, 63, -86, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96 ],
+									"saved_bundle_length" : 196,
+									"text" : "/data : {\n\t/class : \"/noteline\",\n\t/id : \"foo-1\",\n\t/pitch : 77.0175,\n\t/time : 241.667,\n\t/dur : 200.,\n\t/amp : 1\n}"
 								}
 
 							}
@@ -8832,13 +8681,13 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 197.0, 172.0, 1279.0, 937.0 ],
+										"rect" : [ 367.0, 79.0, 1279.0, 937.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -8867,13 +8716,105 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
-													"id" : "obj-12",
-													"linecount" : 3,
-													"maxclass" : "comment",
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-28",
+													"maxclass" : "o.expr.codebox",
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 304.0, 404.0, 150.0, 32.0 ],
+													"text" : "/viewobj = nil"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-27",
+													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 137.0, 427.0, 150.0, 47.0 ],
-													"text" : "check if bound, because not all mouse events will have mappings"
+													"numoutlets" : 2,
+													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 50.0, 276.0, 273.0, 22.0 ],
+													"text" : "o.cond bound(/selected)"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-23",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "FullPacket" ],
+													"patching_rect" : [ 50.0, 376.0, 91.0, 22.0 ],
+													"text" : "o.pack /viewobj"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-22",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "FullPacket" ],
+													"patching_rect" : [ 50.0, 346.0, 81.0, 22.0 ],
+													"text" : "o.route /value"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-20",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "FullPacket" ],
+													"patching_rect" : [ 50.0, 409.0, 142.0, 22.0 ],
+													"text" : "o.union"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-17",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 50.0, 319.0, 142.0, 22.0 ],
+													"text" : "o.listenumerate /selected"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-16",
+													"maxclass" : "o.expr.codebox",
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 50.0, 230.0, 277.0, 32.0 ],
+													"text" : "/selected = /gui./selected"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-9",
+													"linecount" : 48,
+													"maxclass" : "o.display",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 591.0, 309.0, 1047.0, 673.0 ],
+													"presentation_linecount" : 99,
+													"text" : "/setFn : \"\n        lambda([viewobj, event, context],\n            # later: put these in a let function, here now since /parent.pix2time() doesn't work\n            # also later, parent probably should be passed in\n            # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n            # do that in the UI script\n                                \n            /parent_pix2time = context./pix2time,\n            /test = 111,\n            let({\n                    default : /noteline./default\n                },\n                cond(                 \n                    event./symbolistAction == \\\"newFromClick_down\\\",\n                    {\n                        /class : \\\"/noteline\\\",\n                        /id : event./id,\n                        /pitch : scale( event./xy[[1]] - context./y, context./height, 0., 0., 127.),\n                        /time : /parent_pix2time( event./xy[[0]] - context./x + default./r ),\n                        /dur : default./dur,\n                        /amp : default./amp\n                    },\n                    event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                    let({\n                            notehead : /helper/getChildByClass( viewobj, \\\"notehead\\\" ),\n                            durationLine : /helper/getChildByClass( viewobj, \\\"durationLine\\\" )\n                        },\n                        let({\n                                xy : if ( bound(viewobj./transform),\n                                            /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),\n                                            [notehead./cx, notehead./cy] )\n                            },\n                            {\n                                /class : \\\"/noteline\\\",\n                                /id : viewobj./id,\n                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),\n                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  \n                                /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                /amp : scale(notehead./r, 5., 20., 0., 100)\n                            }\n                        )\n                    )\n                    \n                )\n            )\n            \n        )\n    \""
 												}
 
 											}
@@ -8884,7 +8825,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 379.0, 128.0, 22.0 ],
+													"patching_rect" : [ 50.0, 547.0, 128.0, 22.0 ],
 													"text" : "o.cond bound(/data)"
 												}
 
@@ -8921,19 +8862,6 @@
 												"box" : 												{
 													"fontface" : 0,
 													"fontsize" : 12.0,
-													"id" : "obj-13",
-													"maxclass" : "o.display",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 131.5, 496.0, 241.0, 34.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontface" : 0,
-													"fontsize" : 12.0,
 													"id" : "obj-11",
 													"maxclass" : "o.display",
 													"numinlets" : 1,
@@ -8950,9 +8878,9 @@
 													"id" : "obj-10",
 													"linecount" : 8,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 130.0, 5191.0, 198.0, 127.0 ],
 													"text" : "/set/fromGUI = quote(\n    lambda([obj],\n       /test = obj./target\n)),\n\n/set/fromGUI({\n    /target : \"hi\"\n})"
 												}
@@ -8966,7 +8894,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 293.0, 350.0, 24.0, 24.0 ]
+													"patching_rect" : [ 292.0, 523.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -8976,11 +8904,11 @@
 													"fontsize" : 12.0,
 													"id" : "obj-5",
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 239.0, 241.0, 32.0 ],
-													"text" : "/data = /setFn( /gui, /context )"
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 50.0, 455.0, 313.0, 32.0 ],
+													"text" : "/data = /setFn( /viewobj, /gui, /context )"
 												}
 
 											}
@@ -8991,9 +8919,9 @@
 													"id" : "obj-4",
 													"linecount" : 19,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 433.0, 630.0, 428.0, 277.0 ],
 													"text" : "/helper/getChildByClass = \"\n    lambda([obj, classname],\n        /found = {},\n        if( bound(obj./children) ,\n            map( lambda([c],\n                    if( c./class == classname,\n                        /found = c\n                    )\n                ), obj./children\n            )\n        ),\n        prog1(\n            /found,\n            delete(/found)\n        )\n    )\n\",\n\n/foo = /helper/getChildByClass( /gui./target, \"notehead\" )"
 												}
@@ -9006,7 +8934,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 316.0, 239.0, 87.0, 22.0 ],
+													"patching_rect" : [ 591.0, 276.0, 87.0, 22.0 ],
 													"text" : "o.select /setFn"
 												}
 
@@ -9035,7 +8963,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 50.0, 345.0, 100.0, 22.0 ],
+													"patching_rect" : [ 50.0, 513.0, 100.0, 22.0 ],
 													"text" : "o.select /data"
 												}
 
@@ -9047,10 +8975,10 @@
 													"id" : "obj-3",
 													"linecount" : 7,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 100.0, 284.0, 114.0 ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 50.0, 100.0, 291.0, 114.0 ],
 													"text" : "# get object by type\n/objRef = value(/gui./paletteClass),\n\n# get set from data function\n/setFn = /objRef./set/fromGUI,\n\n/context = /parent"
 												}
 
@@ -9076,15 +9004,43 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 50.0, 427.0, 30.0, 30.0 ]
+													"patching_rect" : [ 50.0, 595.0, 30.0, 30.0 ]
 												}
 
 											}
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
+													"destination" : [ "obj-9", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-11", 0 ],
 													"source" : [ "obj-10", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-27", 0 ],
+													"source" : [ "obj-16", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-20", 1 ],
+													"source" : [ "obj-17", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-22", 0 ],
+													"source" : [ "obj-17", 0 ]
 												}
 
 											}
@@ -9097,6 +9053,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-5", 0 ],
+													"source" : [ "obj-20", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-7", 0 ],
 													"source" : [ "obj-21", 0 ]
 												}
@@ -9104,16 +9067,42 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-1", 0 ],
-													"order" : 0,
-													"source" : [ "obj-3", 0 ]
+													"destination" : [ "obj-23", 0 ],
+													"source" : [ "obj-22", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-20", 0 ],
+													"source" : [ "obj-23", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-17", 0 ],
+													"source" : [ "obj-27", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-28", 0 ],
+													"source" : [ "obj-27", 1 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-5", 0 ],
-													"order" : 1,
+													"source" : [ "obj-28", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-16", 0 ],
 													"source" : [ "obj-3", 0 ]
 												}
 
@@ -9150,16 +9139,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-13", 0 ],
-													"order" : 0,
-													"source" : [ "obj-7", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-14", 0 ],
-													"order" : 1,
 													"source" : [ "obj-7", 0 ]
 												}
 
@@ -9168,7 +9148,6 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -9178,13 +9157,14 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9283,7 +9263,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9322,9 +9302,9 @@
 													"fontsize" : 12.0,
 													"id" : "obj-1",
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 189.0, 244.0, 176.0, 32.0 ],
 													"text" : "/route = \"data\""
 												}
@@ -9336,9 +9316,9 @@
 													"fontsize" : 12.0,
 													"id" : "obj-34",
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 163.0, 195.0, 198.0, 32.0 ],
 													"text" : "/error = \"requires /class\""
 												}
@@ -9350,9 +9330,9 @@
 													"fontsize" : 12.0,
 													"id" : "obj-33",
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 163.0, 126.0, 176.0, 32.0 ],
 													"text" : "/error = \"requires /id\""
 												}
@@ -9504,7 +9484,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9541,29 +9521,12 @@
 												"box" : 												{
 													"fontface" : 0,
 													"fontsize" : 12.0,
-													"id" : "obj-3",
-													"linecount" : 912,
-													"maxclass" : "o.compose",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 193.0, 317.0, 150.0, 12408.0 ],
-													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -64, 47, 100, 97, 116, 97, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 80, -4, 122, -31, 71, -82, 20, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -125, -81, -1, -6, -107, 85, 86, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -76, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 103, 101, 116, 77, 97, 116, 114, 105, 120, 0, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 93, 44, 10, 32, 32, 105, 102, 40, 32, 115, 116, 114, 102, 105, 110, 100, 40, 34, 109, 97, 116, 114, 105, 120, 34, 44, 32, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 32, 33, 61, 32, 45, 49, 44, 10, 32, 32, 32, 32, 102, 108, 111, 97, 116, 51, 50, 40, 115, 112, 108, 105, 116, 40, 34, 32, 34, 44, 32, 115, 116, 114, 99, 104, 97, 114, 40, 32, 97, 115, 101, 113, 40, 55, 44, 32, 115, 116, 114, 108, 101, 110, 40, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 32, 45, 32, 50, 41, 44, 32, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 41, 41, 10, 32, 32, 41, 10, 41, 0, 0, 0, 0, 0, 0, 0, -64, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 97, 112, 112, 108, 121, 84, 114, 97, 110, 115, 102, 111, 114, 109, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 109, 97, 116, 114, 105, 120, 44, 32, 120, 121, 32, 93, 44, 10, 32, 32, 91, 32, 32, 109, 97, 116, 114, 105, 120, 91, 91, 48, 93, 93, 32, 42, 32, 120, 121, 91, 91, 48, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 50, 93, 93, 32, 42, 32, 120, 121, 91, 91, 49, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 52, 93, 93, 44, 32, 10, 32, 32, 32, 32, 32, 109, 97, 116, 114, 105, 120, 91, 91, 49, 93, 93, 32, 42, 32, 120, 121, 91, 91, 48, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 51, 93, 93, 32, 42, 32, 120, 121, 91, 91, 49, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 53, 93, 93, 10, 32, 32, 93, 10, 41, 0, 0, 0, 1, -128, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 108, 97, 115, 115, 110, 97, 109, 101, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 117, 110, 100, 32, 61, 32, 123, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 40, 32, 98, 111, 117, 110, 100, 40, 111, 98, 106, 46, 47, 99, 104, 105, 108, 100, 114, 101, 110, 41, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 109, 97, 112, 40, 32, 108, 97, 109, 98, 100, 97, 40, 91, 99, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 40, 32, 99, 46, 47, 99, 108, 97, 115, 115, 32, 61, 61, 32, 99, 108, 97, 115, 115, 110, 97, 109, 101, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 117, 110, 100, 32, 61, 32, 99, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 44, 32, 111, 98, 106, 46, 47, 99, 104, 105, 108, 100, 114, 101, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 112, 114, 111, 103, 49, 40, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 117, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 101, 108, 101, 116, 101, 40, 47, 102, 111, 117, 110, 100, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 41, 10, 0, 0, 0, 1, 96, 47, 112, 97, 114, 101, 110, 116, 0, 44, 46, 0, 0, 0, 0, 1, 80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 119, 105, 100, 116, 104, 0, 0, 44, 100, 0, 0, 64, -126, -64, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 104, 101, 105, 103, 104, 116, 0, 44, 100, 0, 0, 64, -119, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 64, -113, 64, 0, 0, 0, 0, 0, 0, 0, 0, 84, 47, 116, 105, 109, 101, 50, 112, 105, 120, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 40, 116, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 41, 32, 42, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 84, 47, 112, 105, 120, 50, 116, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 120, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 120, 32, 42, 32, 40, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 2, 0, 47, 114, 101, 99, 116, 97, 110, 103, 108, 101, 0, 0, 44, 46, 0, 0, 0, 0, 1, -20, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -80, 47, 100, 101, 102, 97, 117, 108, 116, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 119, 105, 100, 116, 104, 0, 0, 44, 100, 0, 0, 64, -126, -64, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 104, 101, 105, 103, 104, 116, 0, 44, 100, 0, 0, 64, -119, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 64, -113, 64, 0, 0, 0, 0, 0, 0, 0, 0, 84, 47, 116, 105, 109, 101, 50, 112, 105, 120, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 40, 116, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 41, 32, 42, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 84, 47, 112, 105, 120, 50, 116, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 120, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 120, 32, 42, 32, 40, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 72, 47, 115, 101, 116, 47, 102, 114, 111, 109, 68, 97, 116, 97, 0, 0, 0, 44, 115, 0, 0, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 0, 40, 47, 115, 101, 116, 47, 102, 114, 111, 109, 71, 85, 73, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 16, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, -96, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 44, 46, 0, 0, 0, 0, 16, -116, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 92, 47, 100, 101, 102, 97, 117, 108, 116, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 72, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 114, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 76, 47, 103, 101, 116, 47, 105, 99, 111, 110, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 120, 121, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 49, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 5, 112, 47, 115, 101, 116, 47, 102, 114, 111, 109, 68, 97, 116, 97, 0, 0, 0, 44, 115, 0, 0, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 116, 105, 109, 101, 50, 112, 105, 120, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 32, 58, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 97, 109, 112, 44, 32, 48, 46, 44, 32, 49, 48, 48, 44, 32, 53, 46, 44, 32, 50, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 32, 43, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 112, 105, 116, 99, 104, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 101, 110, 100, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 100, 117, 114, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 32, 35, 32, 114, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 102, 111, 108, 108, 111, 119, 105, 110, 103, 32, 111, 98, 106, 101, 99, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 103, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 104, 105, 108, 100, 114, 101, 110, 32, 58, 32, 91, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 99, 105, 114, 99, 108, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 32, 58, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 121, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 43, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 49, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 49, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 50, 32, 58, 32, 112, 105, 120, 95, 101, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 50, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 93, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 9, 60, 47, 115, 101, 116, 47, 102, 114, 111, 109, 71, 85, 73, 0, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 108, 97, 116, 101, 114, 58, 32, 112, 117, 116, 32, 116, 104, 101, 115, 101, 32, 105, 110, 32, 97, 32, 108, 101, 116, 32, 102, 117, 110, 99, 116, 105, 111, 110, 44, 32, 104, 101, 114, 101, 32, 110, 111, 119, 32, 115, 105, 110, 99, 101, 32, 47, 112, 97, 114, 101, 110, 116, 46, 112, 105, 120, 50, 116, 105, 109, 101, 40, 41, 32, 100, 111, 101, 115, 110, 39, 116, 32, 119, 111, 114, 107, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 97, 108, 115, 111, 32, 108, 97, 116, 101, 114, 44, 32, 112, 97, 114, 101, 110, 116, 32, 112, 114, 111, 98, 97, 98, 108, 121, 32, 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 112, 97, 115, 115, 101, 100, 32, 105, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 116, 111, 32, 100, 111, 32, 110, 101, 119, 32, 102, 114, 111, 109, 32, 99, 108, 105, 99, 107, 44, 32, 115, 101, 108, 101, 99, 116, 32, 97, 32, 114, 101, 102, 101, 114, 101, 110, 99, 101, 32, 111, 98, 106, 101, 99, 116, 44, 32, 105, 102, 32, 110, 111, 110, 101, 32, 97, 114, 101, 32, 102, 111, 117, 110, 100, 44, 32, 116, 104, 101, 110, 32, 116, 104, 101, 32, 83, 86, 71, 32, 105, 115, 32, 116, 104, 101, 32, 112, 97, 114, 101, 110, 116, 63, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 100, 111, 32, 116, 104, 97, 116, 32, 105, 110, 32, 116, 104, 101, 32, 85, 73, 32, 115, 99, 114, 105, 112, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 112, 105, 120, 50, 116, 105, 109, 101, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 116, 97, 114, 103, 101, 116, 32, 58, 32, 111, 98, 106, 46, 47, 116, 97, 114, 103, 101, 116, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 101, 102, 97, 117, 108, 116, 32, 58, 32, 47, 110, 111, 116, 101, 108, 105, 110, 101, 46, 47, 100, 101, 102, 97, 117, 108, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 99, 111, 110, 100, 40, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 111, 98, 106, 46, 47, 115, 121, 109, 98, 111, 108, 105, 115, 116, 65, 99, 116, 105, 111, 110, 32, 61, 61, 32, 34, 110, 101, 119, 70, 114, 111, 109, 67, 108, 105, 99, 107, 95, 100, 111, 119, 110, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 105, 116, 99, 104, 32, 58, 32, 115, 99, 97, 108, 101, 40, 32, 111, 98, 106, 46, 47, 120, 121, 91, 91, 49, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 105, 109, 101, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 111, 98, 106, 46, 47, 120, 121, 91, 91, 48, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 114, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 100, 117, 114, 32, 58, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 100, 117, 114, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 97, 109, 112, 32, 58, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 97, 109, 112, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 111, 98, 106, 46, 47, 115, 121, 109, 98, 111, 108, 105, 115, 116, 65, 99, 116, 105, 111, 110, 32, 61, 61, 32, 34, 116, 114, 97, 110, 115, 102, 111, 114, 109, 101, 100, 34, 44, 32, 35, 38, 38, 32, 47, 110, 111, 116, 101, 108, 105, 110, 101, 46, 47, 105, 115, 86, 97, 108, 105, 100, 40, 111, 98, 106, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 32, 58, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 32, 58, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 120, 121, 32, 58, 32, 105, 102, 32, 40, 32, 98, 111, 117, 110, 100, 40, 116, 97, 114, 103, 101, 116, 46, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 97, 112, 112, 108, 121, 84, 114, 97, 110, 115, 102, 111, 114, 109, 40, 32, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 103, 101, 116, 77, 97, 116, 114, 105, 120, 40, 116, 97, 114, 103, 101, 116, 46, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 41, 44, 32, 91, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 120, 44, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 121, 93, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 91, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 120, 44, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 121, 93, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 116, 97, 114, 103, 101, 116, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 105, 116, 99, 104, 32, 58, 32, 115, 99, 97, 108, 101, 40, 32, 120, 121, 91, 91, 49, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 105, 109, 101, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 120, 121, 91, 91, 48, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 45, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 114, 32, 41, 44, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 100, 117, 114, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 46, 47, 120, 50, 32, 45, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 46, 47, 120, 49, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 97, 109, 112, 32, 58, 32, 115, 99, 97, 108, 101, 40, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 114, 44, 32, 53, 46, 44, 32, 50, 48, 46, 44, 32, 48, 46, 44, 32, 49, 48, 48, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 1, 20, 47, 103, 101, 116, 47, 102, 114, 111, 109, 84, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 114, 101, 108, 84, 105, 109, 101, 32, 58, 32, 40, 116, 32, 45, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 41, 32, 47, 32, 111, 98, 106, 46, 47, 100, 117, 114, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 40, 32, 114, 101, 108, 84, 105, 109, 101, 32, 62, 61, 32, 48, 32, 38, 38, 32, 114, 101, 108, 84, 105, 109, 101, 32, 60, 61, 32, 49, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 101, 108, 84, 105, 109, 101, 32, 58, 32, 114, 101, 108, 84, 105, 109, 101, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 3, 60, 47, 112, 108, 97, 121, 104, 101, 97, 100, 0, 0, 0, 44, 46, 0, 0, 0, 0, 3, 40, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 20, 47, 115, 101, 116, 47, 102, 114, 111, 109, 84, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 116, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 105, 109, 101, 50, 112, 105, 120, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 116, 105, 109, 101, 50, 112, 105, 120, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 114, 111, 103, 49, 40, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 108, 97, 116, 101, 114, 32, 99, 104, 101, 99, 107, 32, 105, 102, 32, 116, 104, 101, 114, 101, 32, 97, 114, 101, 32, 97, 108, 114, 101, 97, 100, 121, 32, 118, 105, 101, 119, 32, 109, 101, 115, 115, 97, 103, 101, 115, 32, 105, 110, 32, 112, 108, 97, 99, 101, 32, 97, 110, 100, 32, 117, 110, 105, 111, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 118, 105, 101, 119, 32, 58, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 107, 101, 121, 32, 58, 32, 34, 115, 118, 103, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 118, 97, 108, 32, 58, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 34, 112, 108, 97, 121, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 112, 108, 97, 121, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 49, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 47, 116, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 50, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 47, 116, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 49, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 50, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 32, 43, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 16, -100, 47, 111, 98, 106, 82, 101, 102, 0, 44, 46, 0, 0, 0, 0, 16, -116, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 92, 47, 100, 101, 102, 97, 117, 108, 116, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 72, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 114, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 76, 47, 103, 101, 116, 47, 105, 99, 111, 110, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 120, 121, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 49, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 5, 112, 47, 115, 101, 116, 47, 102, 114, 111, 109, 68, 97, 116, 97, 0, 0, 0, 44, 115, 0, 0, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 116, 105, 109, 101, 50, 112, 105, 120, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 32, 58, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 97, 109, 112, 44, 32, 48, 46, 44, 32, 49, 48, 48, 44, 32, 53, 46, 44, 32, 50, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 32, 43, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 112, 105, 116, 99, 104, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 101, 110, 100, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 100, 117, 114, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 32, 35, 32, 114, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 102, 111, 108, 108, 111, 119, 105, 110, 103, 32, 111, 98, 106, 101, 99, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 103, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 104, 105, 108, 100, 114, 101, 110, 32, 58, 32, 91, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 99, 105, 114, 99, 108, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 32, 58, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 121, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 43, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 49, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 49, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 50, 32, 58, 32, 112, 105, 120, 95, 101, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 50, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 93, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 9, 60, 47, 115, 101, 116, 47, 102, 114, 111, 109, 71, 85, 73, 0, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 108, 97, 116, 101, 114, 58, 32, 112, 117, 116, 32, 116, 104, 101, 115, 101, 32, 105, 110, 32, 97, 32, 108, 101, 116, 32, 102, 117, 110, 99, 116, 105, 111, 110, 44, 32, 104, 101, 114, 101, 32, 110, 111, 119, 32, 115, 105, 110, 99, 101, 32, 47, 112, 97, 114, 101, 110, 116, 46, 112, 105, 120, 50, 116, 105, 109, 101, 40, 41, 32, 100, 111, 101, 115, 110, 39, 116, 32, 119, 111, 114, 107, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 97, 108, 115, 111, 32, 108, 97, 116, 101, 114, 44, 32, 112, 97, 114, 101, 110, 116, 32, 112, 114, 111, 98, 97, 98, 108, 121, 32, 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 112, 97, 115, 115, 101, 100, 32, 105, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 116, 111, 32, 100, 111, 32, 110, 101, 119, 32, 102, 114, 111, 109, 32, 99, 108, 105, 99, 107, 44, 32, 115, 101, 108, 101, 99, 116, 32, 97, 32, 114, 101, 102, 101, 114, 101, 110, 99, 101, 32, 111, 98, 106, 101, 99, 116, 44, 32, 105, 102, 32, 110, 111, 110, 101, 32, 97, 114, 101, 32, 102, 111, 117, 110, 100, 44, 32, 116, 104, 101, 110, 32, 116, 104, 101, 32, 83, 86, 71, 32, 105, 115, 32, 116, 104, 101, 32, 112, 97, 114, 101, 110, 116, 63, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 100, 111, 32, 116, 104, 97, 116, 32, 105, 110, 32, 116, 104, 101, 32, 85, 73, 32, 115, 99, 114, 105, 112, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 112, 105, 120, 50, 116, 105, 109, 101, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 116, 97, 114, 103, 101, 116, 32, 58, 32, 111, 98, 106, 46, 47, 116, 97, 114, 103, 101, 116, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 101, 102, 97, 117, 108, 116, 32, 58, 32, 47, 110, 111, 116, 101, 108, 105, 110, 101, 46, 47, 100, 101, 102, 97, 117, 108, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 99, 111, 110, 100, 40, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 111, 98, 106, 46, 47, 115, 121, 109, 98, 111, 108, 105, 115, 116, 65, 99, 116, 105, 111, 110, 32, 61, 61, 32, 34, 110, 101, 119, 70, 114, 111, 109, 67, 108, 105, 99, 107, 95, 100, 111, 119, 110, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 105, 116, 99, 104, 32, 58, 32, 115, 99, 97, 108, 101, 40, 32, 111, 98, 106, 46, 47, 120, 121, 91, 91, 49, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 105, 109, 101, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 111, 98, 106, 46, 47, 120, 121, 91, 91, 48, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 114, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 100, 117, 114, 32, 58, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 100, 117, 114, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 97, 109, 112, 32, 58, 32, 100, 101, 102, 97, 117, 108, 116, 46, 47, 97, 109, 112, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 111, 98, 106, 46, 47, 115, 121, 109, 98, 111, 108, 105, 115, 116, 65, 99, 116, 105, 111, 110, 32, 61, 61, 32, 34, 116, 114, 97, 110, 115, 102, 111, 114, 109, 101, 100, 34, 44, 32, 35, 38, 38, 32, 47, 110, 111, 116, 101, 108, 105, 110, 101, 46, 47, 105, 115, 86, 97, 108, 105, 100, 40, 111, 98, 106, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 32, 58, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 32, 58, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 120, 121, 32, 58, 32, 105, 102, 32, 40, 32, 98, 111, 117, 110, 100, 40, 116, 97, 114, 103, 101, 116, 46, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 97, 112, 112, 108, 121, 84, 114, 97, 110, 115, 102, 111, 114, 109, 40, 32, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 103, 101, 116, 77, 97, 116, 114, 105, 120, 40, 116, 97, 114, 103, 101, 116, 46, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 41, 44, 32, 91, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 120, 44, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 121, 93, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 91, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 120, 44, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 99, 121, 93, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 116, 97, 114, 103, 101, 116, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 105, 116, 99, 104, 32, 58, 32, 115, 99, 97, 108, 101, 40, 32, 120, 121, 91, 91, 49, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 105, 109, 101, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 120, 121, 91, 91, 48, 93, 93, 32, 45, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 45, 32, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 114, 32, 41, 44, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 100, 117, 114, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 40, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 46, 47, 120, 50, 32, 45, 32, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 46, 47, 120, 49, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 97, 109, 112, 32, 58, 32, 115, 99, 97, 108, 101, 40, 110, 111, 116, 101, 104, 101, 97, 100, 46, 47, 114, 44, 32, 53, 46, 44, 32, 50, 48, 46, 44, 32, 48, 46, 44, 32, 49, 48, 48, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 1, 20, 47, 103, 101, 116, 47, 102, 114, 111, 109, 84, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 114, 101, 108, 84, 105, 109, 101, 32, 58, 32, 40, 116, 32, 45, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 41, 32, 47, 32, 111, 98, 106, 46, 47, 100, 117, 114, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 40, 32, 114, 101, 108, 84, 105, 109, 101, 32, 62, 61, 32, 48, 32, 38, 38, 32, 114, 101, 108, 84, 105, 109, 101, 32, 60, 61, 32, 49, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 101, 108, 84, 105, 109, 101, 32, 58, 32, 114, 101, 108, 84, 105, 109, 101, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 5, 104, 47, 115, 101, 116, 70, 110, 0, 0, 44, 115, 0, 0, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 111, 110, 116, 101, 120, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 32, 61, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 116, 105, 109, 101, 50, 112, 105, 120, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 32, 58, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 97, 109, 112, 44, 32, 48, 46, 44, 32, 49, 48, 48, 44, 32, 53, 46, 44, 32, 50, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 121, 32, 43, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 112, 105, 116, 99, 104, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 44, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 101, 110, 100, 32, 58, 32, 99, 111, 110, 116, 101, 120, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 100, 117, 114, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 32, 35, 32, 114, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 102, 111, 108, 108, 111, 119, 105, 110, 103, 32, 111, 98, 106, 101, 99, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 103, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 104, 105, 108, 100, 114, 101, 110, 32, 58, 32, 91, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 99, 105, 114, 99, 108, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 32, 58, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 121, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 43, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 49, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 49, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 50, 32, 58, 32, 112, 105, 120, 95, 101, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 50, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 93, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 1, 100, 47, 99, 111, 110, 116, 101, 120, 116, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, 80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 119, 105, 100, 116, 104, 0, 0, 44, 100, 0, 0, 64, -126, -64, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 104, 101, 105, 103, 104, 116, 0, 44, 100, 0, 0, 64, -119, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 64, -113, 64, 0, 0, 0, 0, 0, 0, 0, 0, 84, 47, 116, 105, 109, 101, 50, 112, 105, 120, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 40, 116, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 41, 32, 42, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 84, 47, 112, 105, 120, 50, 116, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 120, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 120, 32, 42, 32, 40, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 92, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 0, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 40, 116, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 41, 32, 42, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 1, -84, 47, 110, 101, 119, 86, 105, 101, 119, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 119, -32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 120, -110, 102, 96, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 120, 63, -1, -7, -128, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 119, -32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 123, -1, -1, -7, -128, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 119, -32, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 116, 105, 109, 101, 115, 0, 0, 44, 0, 0, 0, 0, 0, 1, 4, 47, 105, 100, 115, 0, 0, 0, 0, 44, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 52, 54, 122, 97, 114, 103, 56, 113, 50, 122, 119, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 57, 117, 107, 106, 109, 104, 52, 51, 99, 55, 111, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 100, 119, 56, 53, 119, 116, 122, 107, 119, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 54, 99, 115, 118, 114, 54, 109, 113, 107, 107, 56, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 100, 49, 106, 122, 115, 102, 113, 120, 103, 119, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 56, 48, 120, 103, 121, 114, 55, 57, 55, 113, 0, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 105, 105, 48, 121, 53, 117, 102, 111, 56, 121, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 54, 119, 117, 113, 97, 55, 110, 98, 48, 116, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 105, 112, 122, 117, 50, 102, 100, 103, 56, 0, 0, 0, 0, 0, 16, 44, 47, 118, 105, 101, 119, 65, 114, 0, 44, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 52, 54, 122, 97, 114, 103, 56, 113, 50, 122, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 75, -109, 51, 64, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 73, 0, 0, 12, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 91, -128, 0, 6, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 57, 117, 107, 106, 109, 104, 52, 51, 99, 55, 111, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 105, 36, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 104, 127, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 111, -1, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 100, 119, 56, 53, 119, 116, 122, 107, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 98, 100, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 97, -65, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 105, 63, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 54, 99, 115, 118, 114, 54, 109, 113, 107, 107, 56, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 108, -124, -52, -64, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 107, -33, -1, -13, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 113, -81, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 100, 49, 106, 122, 115, 102, 113, 120, 103, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 114, 98, 102, 96, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 114, 15, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 117, -49, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 109, 100, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 108, -65, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 114, 31, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 56, 48, 120, 103, 121, 114, 55, 57, 55, 113, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 113, -94, 102, 96, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 113, 79, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 117, 15, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 105, 105, 48, 121, 53, 117, 102, 111, 56, 121, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 121, -126, 102, 96, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 121, 47, -1, -7, -128, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 124, -17, -1, -7, -128, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 54, 119, 117, 113, 97, 55, 110, 98, 48, 116, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 100, -124, -52, -52, -52, -52, -51, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 99, -32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 107, 96, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 105, 112, 122, 117, 50, 102, 100, 103, 56, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 109, 36, -52, -52, -52, -52, -50, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 108, -128, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 114, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 7, 12, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 0, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 52, 54, 122, 97, 114, 103, 56, 113, 50, 122, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 72, -122, -31, 71, -82, 20, 122, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 80, -86, -86, -76, -86, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 57, 117, 107, 106, 109, 104, 52, 51, 99, 55, 111, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 78, -32, 122, -31, 71, -82, 20, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 115, 95, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 100, 119, 56, 53, 119, 116, 122, 107, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 80, 59, 112, -93, -41, 10, 62, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 107, 127, -1, -22, 85, 85, 86, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 54, 99, 115, 118, 114, 54, 109, 113, 107, 107, 56, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 73, -12, -93, -41, 10, 61, 112, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 118, 47, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 100, 49, 106, 122, 115, 102, 113, 120, 103, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 82, 85, -21, -123, 30, -72, 82, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 125, 15, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 93, 2, -11, -62, -113, 92, 41, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 118, -22, -86, -97, -43, 85, 86, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 56, 48, 120, 103, 121, 114, 55, 57, 55, 113, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 72, 73, -21, -123, 30, -72, 82, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 123, -49, -1, -11, 42, -86, -85, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 105, 105, 48, 121, 53, 117, 102, 111, 56, 121, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 71, -69, -82, 20, 122, -31, 72, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -124, 119, -1, -6, -107, 85, 86, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 54, 119, 117, 113, 97, 55, 110, 98, 48, 116, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 72, -61, -41, 10, 61, 112, -92, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 111, 10, -86, -86, -86, -86, -85, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 105, 112, 122, 117, 50, 102, 100, 103, 56, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 71, 45, 112, -93, -41, 10, 62, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 118, -75, 85, 85, 85, 85, 86, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 16, 100, 47, 118, 105, 101, 119, 0, 0, 0, 44, 46, 0, 0, 0, 0, 16, 84, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 118, 103, 0, 0, 0, 16, 44, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 52, 54, 122, 97, 114, 103, 56, 113, 50, 122, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 75, -109, 51, 64, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 73, 0, 0, 12, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 91, -128, 0, 6, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, 80, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 57, 117, 107, 106, 109, 104, 52, 51, 99, 55, 111, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 105, 36, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 104, 127, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 111, -1, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 122, 80, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 100, 119, 56, 53, 119, 116, 122, 107, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 98, 100, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 97, -65, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 105, 63, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 121, 15, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 54, 99, 115, 118, 114, 54, 109, 113, 107, 107, 56, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 108, -124, -52, -64, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 107, -33, -1, -13, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 113, -81, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 126, 48, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 100, 49, 106, 122, 115, 102, 113, 120, 103, 119, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 114, 98, 102, 96, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 114, 15, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 117, -49, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 117, -65, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 102, 110, 56, 106, 48, 117, 105, 57, 102, 99, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 109, 100, -52, -64, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 108, -65, -1, -13, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 114, 31, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 83, -64, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 56, 48, 120, 103, 121, 114, 55, 57, 55, 113, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 113, -94, 102, 96, 0, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 113, 79, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 117, 15, -1, -7, -128, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, -128, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 105, 105, 48, 121, 53, 117, 102, 111, 56, 121, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 121, -126, 102, 96, 0, 0, 1, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 121, 47, -1, -7, -128, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 124, -17, -1, -7, -128, 0, 1, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, -17, -1, -1, -1, -1, -1, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 54, 119, 117, 113, 97, 55, 110, 98, 48, 116, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 100, -124, -52, -52, -52, -52, -51, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 99, -32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 107, 96, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 127, 32, 0, 0, 0, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 105, 112, 122, 117, 50, 102, 100, 103, 56, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 109, 36, -52, -52, -52, -52, -50, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 108, -128, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 114, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, -128, 48, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 111, 98, 106, 73, 68, 88, 0, 44, 105, 0, 0, 0, 0, 0, 4 ],
-													"saved_bundle_length" : 23928,
-													"text" : "/data : {\n\t/class : \"/noteline\",\n\t/pitch : 64,\n\t/amp : 1,\n\t/time : 0,\n\t/dur : 200,\n\t/id : \"foo-1\"\n},\n/transform/getMatrix : \"lambda([matrix_str],\n  if( strfind(\\\"matrix\\\", matrix_str) != -1,\n    float32(split(\\\" \\\", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)\",\n/transform/applyTransform : \"lambda([matrix, xy ],\n  [  matrix[[0]] * xy[[0]] + matrix[[2]] * xy[[1]] + matrix[[4]], \n     matrix[[1]] * xy[[0]] + matrix[[3]] * xy[[1]] + matrix[[5]]\n  ]\n)\",\n/helper/getChildByClass : \"\n    lambda([obj, classname],\n        /found = {},\n        if( bound(obj./children) ,\n            map( lambda([c],\n                    if( c./class == classname,\n                        /found = c\n                    )\n                ), obj./children\n            )\n        ),\n        prog1(\n            /found,\n            delete(/found)\n        )\n    )\n\",\n/parent : {\n\t/x : 10.,\n\t/y : 10.,\n\t/width : 600.,\n\t/height : 800.,\n\t/time/start : 0.,\n\t/time/dur : 1000.,\n\t/time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n\t/pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\"\n},\n/rectangle : {\n\t/default : {\n\t\t/x : 10.,\n\t\t/y : 10.,\n\t\t/width : 600.,\n\t\t/height : 800.,\n\t\t/time/start : 0,\n\t\t/time/dur : 1000.\n\t},\n\t/time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n\t/pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\",\n\t/set/fromData : \" \n        lambda([obj, context],\n\n        )\n    \",\n\t/set/fromGUI : {\n\n\t}\n},\n/noteline : {\n\t/default : {\n\t\t/r : 1,\n\t\t/dur : 100,\n\t\t/amp : 1\n\t},\n\t/get/icon : \"\n        lambda([xy],\n            /cx : 1\n        )\n    \",\n\t/set/fromData : \" \n        lambda([obj, context],\n            /parent_time2pix = context./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),\n                    pix_start : context./x + /parent_time2pix( obj./time ),\n                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([obj, context],\n            # later: put these in a let function, here now since /parent.pix2time() doesn't work\n            # also later, parent probably should be passed in\n            # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n            # do that in the UI script\n            /parent_pix2time = context./pix2time,\n            let({\n                    target : obj./target,\n                    default : /noteline./default\n                },\n                cond(                 \n                    obj./symbolistAction == \\\"newFromClick_down\\\",\n                    {\n                        /class : \\\"/noteline\\\",\n                        /id : obj./id,\n                        /pitch : scale( obj./xy[[1]] - context./y, context./height, 0., 0., 127.),\n                        /time : /parent_pix2time( obj./xy[[0]] - context./x + default./r ),\n                        /dur : default./dur,\n                        /amp : default./amp\n                    },\n                    obj./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                    let({\n                            notehead : /helper/getChildByClass( target, \\\"notehead\\\" ),\n                            durationLine : /helper/getChildByClass( target, \\\"durationLine\\\" )\n                        },\n                        let({\n                                xy : if ( bound(target./transform),\n                                            /transform/applyTransform( /transform/getMatrix(target./transform), [notehead./cx, notehead./cy] ),\n                                            [notehead./cx, notehead./cy] )\n                            },\n                            {\n                                /class : \\\"/noteline\\\",\n                                /id : target./id,\n                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),\n                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  \n                                /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                /amp : scale(notehead./r, 5., 20., 0., 100)\n                            }\n                        )\n                    )\n                )\n            )\n            \n        )\n    \",\n\t/get/fromTime : \"\n    lambda([obj, t],\n        let({\n                relTime : (t - obj./time) / obj./dur\n            },\n            if( relTime >= 0 && relTime <= 1,\n                {\n                    /relTime : relTime\n                }\n            )\n        )\n    )\"\n},\n/objRef : {\n\t/default : {\n\t\t/r : 1,\n\t\t/dur : 100,\n\t\t/amp : 1\n\t},\n\t/get/icon : \"\n        lambda([xy],\n            /cx : 1\n        )\n    \",\n\t/set/fromData : \" \n        lambda([obj, context],\n            /parent_time2pix = context./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),\n                    pix_start : context./x + /parent_time2pix( obj./time ),\n                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([obj, context],\n            # later: put these in a let function, here now since /parent.pix2time() doesn't work\n            # also later, parent probably should be passed in\n            # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n            # do that in the UI script\n            /parent_pix2time = context./pix2time,\n            let({\n                    target : obj./target,\n                    default : /noteline./default\n                },\n                cond(                 \n                    obj./symbolistAction == \\\"newFromClick_down\\\",\n                    {\n                        /class : \\\"/noteline\\\",\n                        /id : obj./id,\n                        /pitch : scale( obj./xy[[1]] - context./y, context./height, 0., 0., 127.),\n                        /time : /parent_pix2time( obj./xy[[0]] - context./x + default./r ),\n                        /dur : default./dur,\n                        /amp : default./amp\n                    },\n                    obj./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                    let({\n                            notehead : /helper/getChildByClass( target, \\\"notehead\\\" ),\n                            durationLine : /helper/getChildByClass( target, \\\"durationLine\\\" )\n                        },\n                        let({\n                                xy : if ( bound(target./transform),\n                                            /transform/applyTransform( /transform/getMatrix(target./transform), [notehead./cx, notehead./cy] ),\n                                            [notehead./cx, notehead./cy] )\n                            },\n                            {\n                                /class : \\\"/noteline\\\",\n                                /id : target./id,\n                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),\n                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  \n                                /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                /amp : scale(notehead./r, 5., 20., 0., 100)\n                            }\n                        )\n                    )\n                )\n            )\n            \n        )\n    \",\n\t/get/fromTime : \"\n    lambda([obj, t],\n        let({\n                relTime : (t - obj./time) / obj./dur\n            },\n            if( relTime >= 0 && relTime <= 1,\n                {\n                    /relTime : relTime\n                }\n            )\n        )\n    )\"\n},\n/setFn : \" \n        lambda([obj, context],\n            /parent_time2pix = context./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),\n                    pix_start : context./x + /parent_time2pix( obj./time ),\n                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n/context : {\n\t/x : 10.,\n\t/y : 10.,\n\t/width : 600.,\n\t/height : 800.,\n\t/time/start : 0.,\n\t/time/dur : 1000.,\n\t/time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n\t/pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\"\n},\n/parent_time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n/newView : {\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-1\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 406.85,\n\t\t/cx : 15.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 10.,\n\t\t/y1 : 406.85,\n\t\t/x2 : 130.,\n\t\t/y2 : 406.85\n\t}]\n},\n/times,\n/ids : [\"foo-3\", \"foo-2\"],\n/viewAr : [{\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-3\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 382.661,\n\t\t/cx : 22.35\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 17.2,\n\t\t/y1 : 382.661,\n\t\t/x2 : 77.2,\n\t\t/y2 : 382.661\n\t}]\n}, {\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-2\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 394.252,\n\t\t/cx : 21.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 16.,\n\t\t/y1 : 394.252,\n\t\t/x2 : 76.,\n\t\t/y2 : 394.252\n\t}]\n}],\n/model : [{\n\t/class : \"/noteline\",\n\t/pitch : 67.84,\n\t/amp : 1,\n\t/time : 12,\n\t/dur : 100,\n\t/id : \"foo-3\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 66,\n\t/amp : 1,\n\t/time : 10,\n\t/dur : 100,\n\t/id : \"foo-2\"\n}],\n/view : {\n\t/key : \"svg\",\n\t/val : [{\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-3\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 382.661,\n\t\t\t/cx : 22.35\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 17.2,\n\t\t\t/y1 : 382.661,\n\t\t\t/x2 : 77.2,\n\t\t\t/y2 : 382.661\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-2\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 394.252,\n\t\t\t/cx : 21.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 16.,\n\t\t\t/y1 : 394.252,\n\t\t\t/x2 : 76.,\n\t\t\t/y2 : 394.252\n\t\t}]\n\t}]\n},\n/objIDX : -1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontface" : 0,
-													"fontsize" : 12.0,
 													"id" : "obj-1",
 													"linecount" : 9,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 50.0, 100.0, 446.0, 141.0 ],
 													"text" : "# get object by type\n/objRef = value(/data./class),\n\n# get set from data function\n/setFn = /objRef./set/fromData,\n\n/context = /parent,\n\n/newView = /setFn( /data, /context )"
 												}
@@ -9598,15 +9561,6 @@
 										"lines" : [ 											{
 												"patchline" : 												{
 													"destination" : [ "obj-28", 0 ],
-													"order" : 1,
-													"source" : [ "obj-1", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-3", 1 ],
-													"order" : 0,
 													"source" : [ "obj-1", 0 ]
 												}
 
@@ -9646,7 +9600,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9698,9 +9652,9 @@
 													"id" : "obj-23",
 													"linecount" : 28,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "FullPacket", "FullPacket" ],
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 50.0, 97.0, 516.0, 413.0 ],
 													"text" : "/times ??= [],\n/ids ??= [],\n\n\nif( length(/ids) == 0,\n  progn(\n    /ids = /data./id,\n    /viewAr = /newView,\n    /model = /data\n  ),\n  progn(\n    /objIDX = max( aseq(1,length(/ids)) * (/data./id == /ids) ) - 1,\n    if( /objIDX == -1,\n      progn(\n        /ids = [/ids, /data./id],\n        /viewAr = [ /viewAr, /newView ],\n        /model = [/model, /data]\n      ),\n      progn(\n        /viewAr[[/objIDX]] = /newView,\n        /model[[/objIDX]] = /data\n      )\n    )\n  )\n),\n\n/view./key = \"svg\",\n/view./val = /viewAr\n"
 												}
@@ -9845,7 +9799,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
-									"order" : 1,
 									"source" : [ "obj-2", 1 ]
 								}
 
@@ -9854,14 +9807,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
 									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 1 ],
-									"order" : 0,
-									"source" : [ "obj-2", 1 ]
 								}
 
 							}
@@ -9919,7 +9864,6 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -9929,13 +9873,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10039,7 +9984,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -10133,7 +10078,6 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -10143,13 +10087,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10263,12 +10208,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-28",
+					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "FullPacket", "", "" ],
-					"patching_rect" : [ 420.0, 578.0, 136.0, 22.0 ],
-					"text" : "hfmt.drawsocket ../node"
+					"patching_rect" : [ 420.0, 578.0, 136.0, 49.0 ],
+					"text" : "hfmt.drawsocket ../node @html_template symbolist-view.html"
 				}
 
 			}
@@ -10389,16 +10335,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-43", 0 ],
-					"order" : 0,
-					"source" : [ "obj-28", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-44", 0 ],
-					"order" : 1,
 					"source" : [ "obj-28", 2 ]
 				}
 
@@ -10478,14 +10415,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-58", 0 ],
 					"source" : [ "obj-41", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-28", 0 ],
-					"midpoints" : [ 546.5, 649.0, 643.754384517669678, 649.0, 643.754384517669678, 567.0, 429.5, 567.0 ],
-					"source" : [ "obj-43", 0 ]
 				}
 
 			}
@@ -10716,6 +10645,10 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "o.listenumerate.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "o.print.mxo",
 				"type" : "iLaX"
 			}
@@ -10728,10 +10661,6 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "o.listenumerate.mxo",
-				"type" : "iLaX"
-			}
-, 			{
 				"name" : "o.expr.file.mxo",
 				"type" : "iLaX"
 			}
@@ -10740,7 +10669,6 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -10750,13 +10678,14 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
