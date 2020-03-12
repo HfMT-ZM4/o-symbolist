@@ -100,9 +100,44 @@
         /amp : 1
     },
     
-    /get/icon : quote(
-        # return icon graphics
-    ),
+    # layout idea, make svg element the same size as bounding box and use css to center icons
+    /get/icon : quote(lambda([],
+    {
+        /key : "html",
+        /val : {
+            /new : "div",
+            /id : "noteline-button-div",
+            /parent : "palette",
+            /child : {
+                /new : "svg",
+                /id : "noteline-icon",
+                /onclick : "console.log('hello!')",
+                /child : {            
+                    /new : "g",
+                    /class : "/noteline",
+                    /children : [
+                        {
+                            /new : "circle",
+                            /class : "notehead",
+                            /r : 1,
+                            /cy : 0,
+                            /cx : 0
+                        },
+                        {
+                            /new : "line",
+                            /class : "durationLine",
+                            /x1 : 0,
+                            /y1 : 0,
+                            /x2 : 30,
+                            /y2 : 0
+                        }
+                    ]
+                }
+            }
+        }
+        
+    
+    })),
 
     # /amp, /pitch, /time, /dur, (parent?)
     

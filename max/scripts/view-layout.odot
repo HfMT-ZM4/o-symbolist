@@ -11,8 +11,34 @@
         /parent : "palette",
         /child : {
             /new : "svg",
-            /id : "noteline-svg",
-            /onclick : "console.log('hello!')"
-        }    
+            /id : "noteline-icon",
+            /xmlns : "http://www.w3.org/2000/svg",
+            /version : "1.1",
+            /onclick : "console.log('hello!')",
+            /child : {            
+                /new : "g",
+                /class : "/noteline",
+                /children : [
+                    {
+                        /new : "circle",
+                        /class : "notehead",
+                        /fill : "black",
+                        /r : 1,
+                        /cy : 0,
+                        /cx : 0
+                    },
+                    {
+                        /new : "line",
+                        /class : "durationLine",
+                        /fill : "black",
+                        /x1 : 0,
+                        /y1 : 0,
+                        /x2 : 30,
+                        /y2 : 0
+                    }
+                ]
+            }
+        }
+    
     }]
 }
