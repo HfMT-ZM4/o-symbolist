@@ -35,6 +35,7 @@
 #   and be able to be different types of objects
 # also the parent in the Model should not need the graphic info
 
+# this could be called "system"
 /parent = {
     /x : 10.,
     /y : 10.,
@@ -60,6 +61,8 @@
 
 
 /rectangle = {
+# probably better not to use generic names for classes
+# generic graphic items don't have /set/fromData?
 
     /default : {
     # not sure if the graphic information should be here already

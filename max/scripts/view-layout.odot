@@ -1,0 +1,18 @@
+
+ /view = {
+    /key : "html",
+    /val : [{
+        /new : "div",
+        /id : "palette",
+        /parent : "forms"
+    }, {
+        /new : "div",
+        /id : "noteline-button-div",
+        /parent : "palette",
+        /child : {
+            /new : "svg",
+            /id : "noteline-svg",
+            /onclick : "console.log('hello!')"
+        }    
+    }]
+}

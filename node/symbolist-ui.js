@@ -271,7 +271,7 @@ function makeUniqueID(obj)
 function getTopLevel(elm)
 {    
     
-    while( elm != svgObj && elm.parentNode && elm.parentNode.id != 'main-svg' )
+    while( elm != svgObj && elm.parentNode && elm.parentNode.id != 'main-svg' && elm.parentNode.id != 'palette' )
     {
         elm = elm.parentNode;
     }
@@ -314,9 +314,16 @@ function removedSymbolistSelected(classlist)
 
 function elementToJSON(elm)
 {
-    if( typeof elm === 'undefined' || elm == document)
+    if( typeof elm === 'undefined' || elm == document )
         return null;
-    
+
+    if( typeof elm.attributes === 'undefined' )
+    {
+        console.log('->',elm);
+        return null;
+    }
+        
+        
     let obj = {};
     obj.type = elm.tagName;
     for( let i = 0, l = elm.attributes.length; i < l; ++i)
@@ -466,6 +473,8 @@ function symbolist_mousedown(event)
 {          
     const _eventTarget = getTopLevel( event.target );
 
+    console.log("test", _eventTarget);
+    
     if( prevEventTarget === null )
         prevEventTarget = _eventTarget;
 
@@ -621,12 +630,21 @@ function symbolist_mouseover(event)
 
 }
 
+
+function symbolist_mouseleave(event)
+{           
+    clearDragRegionRect();
+    prevEventTarget = null;
+}
+
 function addSymbolistMouseHandlers(element)
 {
     element.addEventListener("mousedown", symbolist_mousedown, true);
     element.addEventListener("mousemove", symbolist_mousemove, true);
     element.addEventListener("mouseup", symbolist_mouseup, true);
     element.addEventListener("mouseover", symbolist_mouseover, true);
+    element.addEventListener("mouseleave", symbolist_mouseleave, true);
+
 }
 
 function removeSymbolistMouseHandlers(element)
@@ -635,9 +653,11 @@ function removeSymbolistMouseHandlers(element)
     element.removeEventListener("mousemove", symbolist_mousemove, true);
     element.removeEventListener("mouseup", symbolist_mouseup, true);
     element.removeEventListener("mouseover", symbolist_mouseover, true);
+    element.removeEventListener("mouseleave", symbolist_mouseleave, true);
+
 }
 
-addSymbolistMouseHandlers(document.body);
+addSymbolistMouseHandlers(svgObj);
 
 /*
 drawsocket.input({

@@ -1,0 +1,17 @@
+
+ # basic view
+ /view = {
+        /key : "svg",
+        /val : [
+            {
+                /new : "rect",
+                /id : "palette",
+                /x : 0,
+                /y : 0,
+                /width : 50,
+                /height : 400
+                #/style : "height: '100vh'"
+            }
+        ]
+
+}
