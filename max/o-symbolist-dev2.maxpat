@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 144.0, 79.0, 1182.0, 937.0 ],
+		"rect" : [ 381.0, 86.0, 794.0, 937.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 485.281553983688354, 249.499999999999943, 221.0, 29.0 ],
+					"patching_rect" : [ 485.281553983688354, 247.499999999999943, 221.0, 29.0 ],
 					"text" : "o.expr.file view-layout.odot"
 				}
 
@@ -405,6 +405,7 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -414,14 +415,13 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"number" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -656,6 +656,7 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -665,14 +666,13 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"number" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -4717,6 +4717,7 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -4726,14 +4727,13 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"number" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -5061,7 +5061,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 723.092220461959869, 201.999999714668263, 71.0, 20.0 ],
+					"patching_rect" : [ 723.092220461959869, 188.999999714668263, 71.0, 20.0 ],
 					"text" : "<< clear/init"
 				}
 
@@ -5393,6 +5393,7 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5402,14 +5403,13 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"number" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -5691,6 +5691,7 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5700,14 +5701,13 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"number" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -5997,6 +5997,7 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -6006,14 +6007,13 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"number" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -6328,6 +6328,7 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -6337,14 +6338,13 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"number" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -6479,6 +6479,7 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -6488,14 +6489,13 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"number" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -6565,7 +6565,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "bang" ],
-					"patching_rect" : [ 695.769229292869568, 230.009707999999989, 32.0, 22.0 ],
+					"patching_rect" : [ 695.769229292869568, 217.009707999999989, 32.0, 22.0 ],
 					"text" : "t b b"
 				}
 
@@ -6617,7 +6617,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 606.281553983688354, 800.5, 356.0, 347.0 ],
-					"text" : "/val : {\n\t/paletteClass : \"/noteline\",\n\t/id : \"noteline_u_1fbd6f2ibfr\",\n\t/xy : [416, 92],\n\t/target : {\n\t\t/id : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/type : \"svg\",\n\t\t/baseProfile : \"full\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1\n\t},\n\t/mousedownPos,\n\t/action : \"mousemove\",\n\t/mods : {\n\t\t/shift : 0,\n\t\t/ctrl : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/button : 0,\n\t/selected\n},\n/key : \"mouse\""
+					"text" : "/key : \"mouse\",\n/val : {\n\t/mousedownPos,\n\t/target : {\n\t\t/baseProfile : \"full\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/version : 1.1,\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\"\n\t},\n\t/xy : [648, 47],\n\t/button : 0,\n\t/mods : {\n\t\t/shift : 0,\n\t\t/ctrl : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/paletteClass : \"/noteline\",\n\t/selected,\n\t/id : \"noteline_u_1yqzmo7sih4\",\n\t/action : \"mousemove\"\n}"
 				}
 
 			}
@@ -6860,13 +6860,11 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-47",
-					"linecount" : 25,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 48.0, 583.5, 313.0, 360.0 ],
-					"text" : "/gui : {\n\t/paletteClass : \"/noteline\",\n\t/id : \"noteline_u_avof0jwdvok\",\n\t/symbolistAction : \"newFromClick_up\",\n\t/xy : [734, 220],\n\t/target : {\n\t\t/id : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/type : \"svg\",\n\t\t/baseProfile : \"full\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1\n\t},\n\t/mousedownPos,\n\t/action : \"mouseup\",\n\t/mods : {\n\t\t/shift : 0,\n\t\t/ctrl : 0,\n\t\t/meta : 1,\n\t\t/alt : 0\n\t},\n\t/button : 0,\n\t/selected\n}"
+					"patching_rect" : [ 48.0, 583.5, 313.0, 34.0 ]
 				}
 
 			}
@@ -7048,7 +7046,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 695.769229292869568, 175.009707999999989, 58.0, 22.0 ],
+					"patching_rect" : [ 695.769229292869568, 162.009707999999989, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -8826,7 +8824,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 591.0, 309.0, 1047.0, 673.0 ],
-													"presentation_linecount" : 99,
 													"text" : "/setFn : \"\n        lambda([viewobj, event, context],\n            # later: put these in a let function, here now since /parent.pix2time() doesn't work\n            # also later, parent probably should be passed in\n            # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n            # do that in the UI script\n                                \n            /parent_pix2time = context./pix2time,\n            /test = 111,\n            let({\n                    default : /noteline./default\n                },\n                cond(                 \n                    event./symbolistAction == \\\"newFromClick_down\\\",\n                    {\n                        /class : \\\"/noteline\\\",\n                        /id : event./id,\n                        /pitch : scale( event./xy[[1]] - context./y, context./height, 0., 0., 127.),\n                        /time : /parent_pix2time( event./xy[[0]] - context./x + default./r ),\n                        /dur : default./dur,\n                        /amp : default./amp\n                    },\n                    event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                    let({\n                            notehead : /helper/getChildByClass( viewobj, \\\"notehead\\\" ),\n                            durationLine : /helper/getChildByClass( viewobj, \\\"durationLine\\\" )\n                        },\n                        let({\n                                xy : if ( bound(viewobj./transform),\n                                            /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),\n                                            [notehead./cx, notehead./cy] )\n                            },\n                            {\n                                /class : \\\"/noteline\\\",\n                                /id : viewobj./id,\n                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),\n                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  \n                                /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                /amp : scale(notehead./r, 5., 20., 0., 100)\n                            }\n                        )\n                    )\n                    \n                )\n            )\n            \n        )\n    \""
 												}
 
@@ -9161,6 +9158,7 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -9170,14 +9168,13 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"number" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -9893,6 +9890,7 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -9902,14 +9900,13 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"number" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -10107,6 +10104,7 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -10116,14 +10114,13 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"number" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -10206,7 +10203,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 695.769229292869568, 201.999999714668263, 24.0, 24.0 ]
+					"patching_rect" : [ 695.769229292869568, 188.999999714668263, 24.0, 24.0 ]
 				}
 
 			}
@@ -10242,7 +10239,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "FullPacket", "", "" ],
-					"patching_rect" : [ 420.0, 578.0, 136.0, 49.0 ],
+					"patching_rect" : [ 420.0, 578.0, 139.0, 49.0 ],
 					"text" : "hfmt.drawsocket ../node @html_template symbolist-view.html"
 				}
 
@@ -10705,6 +10702,7 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -10714,14 +10712,13 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 				}
 ,
 				"number" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",

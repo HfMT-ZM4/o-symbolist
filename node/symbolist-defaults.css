@@ -1,3 +1,11 @@
+.symbolist_selected {
+  fill: blue;
+}
+
+.symbolist_selected line {
+  stroke: blue;
+}
+
 #palette {
   background-color : rgba(255, 255, 255, 100);
   color : black;

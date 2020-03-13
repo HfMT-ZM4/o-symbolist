@@ -26,22 +26,13 @@ let mousedown_pos = {x: 0, y: 0};
 let currentPaletteClass = "/noteline";
 let selectedClass = currentPaletteClass;
 
-drawsocket.input([
-    {
-        key : "css",
-        val : {
-            selector : ".symbolist_selected",
-            props : {
-                fill : "blue"
-            }
-        }
-    },
+drawsocket.input(
     {
         key : "mouse",
         val : {
             enable: 0
         }
-    }]
+    }
 );
 
 /** 
@@ -473,7 +464,7 @@ function symbolist_mousedown(event)
 {          
     const _eventTarget = getTopLevel( event.target );
 
-    console.log("test", _eventTarget);
+   // console.log("test", _eventTarget);
     
     if( prevEventTarget === null )
         prevEventTarget = _eventTarget;
