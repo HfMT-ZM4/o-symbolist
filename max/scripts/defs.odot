@@ -111,32 +111,40 @@
             /child : {
                 /new : "svg",
                 /id : "noteline-icon",
-                /onclick : "console.log('hello!')",
+                /style : {
+                    /height : 4,
+                    /width : 16,
+                    /top : "calc(50% - 2px)",
+                    /left : "calc(50% - 8px)"
+                },
+                /onclick : "console.log('select noteline'); symbolist_setClass('/noteline')",
                 /child : {            
                     /new : "g",
                     /class : "/noteline",
+                    /parent : "noteline-icon",
                     /children : [
                         {
                             /new : "circle",
                             /class : "notehead",
-                            /r : 1,
+                            /fill : "black",
+                            /r : 2,
                             /cy : 0,
                             /cx : 0
                         },
                         {
                             /new : "line",
                             /class : "durationLine",
+                            /fill : "black",
                             /x1 : 0,
                             /y1 : 0,
-                            /x2 : 30,
+                            /x2 : 16,
                             /y2 : 0
                         }
                     ]
                 }
             }
-        }
         
-    
+        }
     })),
 
     # /amp, /pitch, /time, /dur, (parent?)
