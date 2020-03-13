@@ -1,5 +1,5 @@
 
- /view = {
+ /view = [{
     /key : "html",
     /val : [{
         /new : "div",
@@ -12,18 +12,23 @@
         /child : {
             /new : "svg",
             /id : "noteline-icon",
-            /xmlns : "http://www.w3.org/2000/svg",
-            /version : "1.1",
-            /onclick : "console.log('hello!')",
+            /style : {
+                /height : 4,
+                /width : 16,
+                /top : "calc(50% - 2px)",
+                /left : "calc(50% - 8px)"
+            },
+            /onclick : "console.log('select noteline')",
             /child : {            
                 /new : "g",
                 /class : "/noteline",
+                /parent : "noteline-icon",
                 /children : [
                     {
                         /new : "circle",
                         /class : "notehead",
                         /fill : "black",
-                        /r : 1,
+                        /r : 2,
                         /cy : 0,
                         /cx : 0
                     },
@@ -33,7 +38,7 @@
                         /fill : "black",
                         /x1 : 0,
                         /y1 : 0,
-                        /x2 : 30,
+                        /x2 : 16,
                         /y2 : 0
                     }
                 ]
@@ -41,4 +46,4 @@
         }
     
     }]
-}
+}]
