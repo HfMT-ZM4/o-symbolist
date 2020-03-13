@@ -42,14 +42,14 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-16",
-					"linecount" : 11,
+					"linecount" : 4,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 586.0, 726.5, 313.0, 170.0 ],
-					"presentation_linecount" : 11,
-					"text" : "/key : \"key\",\n/val : {\n\t/keyVal : \"Meta\",\n\t/mods : {\n\t\t/shift : 0,\n\t\t/ctrl : 0,\n\t\t/meta : 1,\n\t\t/alt : 0\n\t},\n\t/action : \"keydown\"\n}"
+					"patching_rect" : [ 588.0, 713.5, 313.0, 75.0 ],
+					"presentation_linecount" : 4,
+					"text" : "/key : \"sync\",\n/val : {\n\t/syncOffset : 0\n}"
 				}
 
 			}
@@ -6891,12 +6891,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-44",
+					"linecount" : 2,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 537.0, 656.5, 313.0, 34.0 ],
-					"text" : "/port/ip : \"server stopped\""
+					"patching_rect" : [ 540.0, 643.5, 313.0, 48.0 ],
+					"text" : "/port/ip : \"http://192.168.178.36:3002\",\n/port/localhost : \"http://localhost:3002\""
 				}
 
 			}
@@ -7053,18 +7054,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 48.0, 539.024273455142975, 257.0, 35.0 ],
 					"text" : ";\rmax launchbrowser http://localhost:3002/view"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 695.769229292869568, 162.009707999999989, 58.0, 22.0 ],
-					"text" : "loadbang"
 				}
 
 			}
@@ -10010,7 +9999,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 420.0, 183.999999714668263, 89.0, 22.0 ],
+					"patching_rect" : [ 420.0, 171.009707999999989, 89.0, 22.0 ],
 					"text" : "o.pack /data"
 				}
 
@@ -10275,13 +10264,6 @@
 			}
  ],
 		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-37", 0 ],
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-11", 0 ]

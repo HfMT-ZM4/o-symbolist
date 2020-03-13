@@ -1,5 +1,16 @@
-
- /view = [{
+/view = [
+{
+    /key : "mouse",
+    /val : {
+        /enable : 0
+    }
+},
+{
+    /key : "key",
+    /val : {
+        /enable : 0
+    }
+ },{
     /key : "html",
     /val : [{
         /new : "div",

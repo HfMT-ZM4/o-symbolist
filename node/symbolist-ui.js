@@ -26,14 +26,6 @@ let mousedown_pos = {x: 0, y: 0};
 let currentPaletteClass = "/noteline";
 let selectedClass = currentPaletteClass;
 
-drawsocket.input(
-    {
-        key : "mouse",
-        val : {
-            enable: 0
-        }
-    }
-);
 
 /** 
  * API -- make namespace here 
@@ -351,6 +343,58 @@ function elementToJSON(elm)
     return obj;
 }
 
+
+function symbolost_sendKeyEvent(event, caller)
+{
+    
+    let sel_arr = [];
+    for( let i = 0; i < selected.length; i++)
+    {
+        sel_arr.push( elementToJSON( selected[i] ) );
+    }
+
+    drawsocket.send({
+        event: {
+            key: 'key',
+            val: {
+                action: caller,
+                keyVal: event.key,
+                mods : {
+                    alt: event.altKey,
+                    shift: event.shiftKey,
+                    ctrl: event.ctrlKey,
+                    meta: event.metaKey
+                },
+                paletteClass: currentPaletteClass, 
+                selected: sel_arr,
+                symbolistAction: event.symbolistAction
+            }
+        }
+    });
+}
+
+function symbolist_keydownhandler(event)
+{
+    let nmods =  event.altKey + event.shiftKey + event.ctrlKey + event.metaKey;
+    switch( event.key )
+    {
+        case "i":
+            if( nmods == 0 && selected.length > 0 )
+                event.symbolistAction = "getInfo";
+
+            break;
+
+    }
+
+    symbolost_sendKeyEvent(event, "keydown");
+}
+
+function symbolist_keyuphandler(event)
+{
+    symbolost_sendKeyEvent(event, "keyup");
+}
+
+
 function sendMouseEvent(event, caller)
 {    
     const toplevelObj = getTopLevel(event.target);
@@ -648,8 +692,21 @@ function removeSymbolistMouseHandlers(element)
 
 }
 
-addSymbolistMouseHandlers(svgObj);
+function addSymbolistKeyListeners()
+{
+  document.body.addEventListener("keydown", symbolist_keydownhandler);
+  document.body.addEventListener("keyup", symbolist_keyuphandler);
+}
 
+function removeSymbolistKeyListeners()
+{
+  document.body.removeEventListener("keydown", symbolist_keydownhandler);
+  document.body.removeEventListener("keyup", symbolist_keyuphandler);
+}
+
+
+addSymbolistMouseHandlers(svgObj);
+addSymbolistKeyListeners();
 /*
 drawsocket.input({
     key : "mouse",
