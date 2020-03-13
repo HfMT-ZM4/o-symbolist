@@ -229,6 +229,22 @@
         )
     ),
 
+
+    # /amp, /pitch, /time, /dur, (parent?)
+    /get/infoDisplay : quote(
+        lambda([dataobj],
+            {
+                /key : "html",
+                /val : {
+                    /new : "div",
+                    /parent : "info-panel",
+                    /class : "object-info",
+                    /text : "time: " + dataobj./time + "<br><br> pitch: " + dataobj./pitch
+                }
+            }
+        )
+    ),
+
    /get/fromTime : quote(
     lambda([obj, t],
         let({

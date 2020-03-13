@@ -10,13 +10,20 @@
     /val : {
         /enable : 0
     }
- },{
+ },
+ {
     /key : "html",
     /val : [{
         /new : "div",
         /id : "palette",
         /parent : "forms"
-    }, {
+    },
+    {
+        /new : "div",
+        /id : "info-panel",
+        /parent : "forms"
+    },
+    {
         /new : "div",
         /id : "noteline-button-div",
         /parent : "palette",
