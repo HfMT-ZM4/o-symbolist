@@ -18,7 +18,7 @@
                 /top : "calc(50% - 2px)",
                 /left : "calc(50% - 8px)"
             },
-            /onclick : "console.log('select noteline')",
+            /onclick : "console.log('select noteline'); symbolist_setClass('/noteline')",
             /child : {            
                 /new : "g",
                 /class : "/noteline",
