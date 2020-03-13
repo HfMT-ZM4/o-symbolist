@@ -101,6 +101,7 @@
     },
     
     # layout idea, make svg element the same size as bounding box and use css to center icons
+    # later, make this more streamlined with a helper function
     /get/icon : quote(lambda([],
     {
         /key : "html",
@@ -240,13 +241,18 @@
 
     # /amp, /pitch, /time, /dur, (parent?)
     /get/infoDisplay : quote(
-        lambda([dataobj],
+        lambda([dataobj, event],
             {
                 /key : "html",
                 /val : {
+                    /parent : "forms",
                     /new : "div",
-                    /parent : "info-panel",
-                    /class : "object-info",
+                    /style : {
+                        /left : event./xy[[0]]+"px",
+                        /top : event./xy[[1]]+"px"
+                    },
+                    /id : dataobj./id+"-info",
+                    /class : "infobox",
                     /text : "time: " + dataobj./time + "<br><br> pitch: " + dataobj./pitch
                 }
             }

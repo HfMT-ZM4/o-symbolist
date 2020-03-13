@@ -22,6 +22,8 @@ let selected = [];
 let selectedCopy = [];
 
 let mousedown_pos = {x: 0, y: 0};
+let mouse_pos = {x: 0, y: 0};
+
 
 let currentPaletteClass = "/noteline";
 let selectedClass = currentPaletteClass;
@@ -357,6 +359,7 @@ function symbolost_sendKeyEvent(event, caller)
         event: {
             key: 'key',
             val: {
+                xy: [mouse_pos.x, mouse_pos.y],
                 action: caller,
                 keyVal: event.key,
                 mods : {
@@ -549,6 +552,7 @@ function symbolist_mousedown(event)
     
 
     mousedown_pos = { x: event.clientX, y: event.clientY };
+    mouse_pos = mousedown_pos;
 
     prevEventTarget = _eventTarget;
     
@@ -588,7 +592,7 @@ function symbolist_mousemove(event)
     }
 
     
-
+    mouse_pos = { x: event.clientX, y: event.clientY };
     prevEventTarget = _eventTarget;
 
     sendMouseEvent(event, "mousemove");
@@ -626,7 +630,7 @@ function symbolist_mouseup(event)
 
     
     
-
+    mouse_pos = { x: event.clientX, y: event.clientY };
     event.mousedownPos = mousedown_pos;
 
     sendMouseEvent(event, "mouseup");

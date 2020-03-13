@@ -49,3 +49,7 @@
 #info-panel .object-info {
   font-size: 10px;
 }
+
+.infobox {
+  position: absolute;
+}
