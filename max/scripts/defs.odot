@@ -58,7 +58,20 @@
                                     /class : "infovalue",
                                     /type : "text",
                                     /id : data./id+"-"+deslashed_name+"-input",
-                                    /placeholder : getbundlemember(data, param)
+                                    /placeholder : getbundlemember(data, param),
+                                    /onkeydown : " if( event.key == 'Enter' ){
+                                        drawsocket.send( {
+                                            event:  {
+                                                key: 'symbolistEvent',
+                                                val: {
+                                                    id: '"+ data./id +"',
+                                                    symbolistAction: 'updateSymbolData',
+                                                    param: '"+ param +"',
+                                                    value: this.value
+                                                }
+                                            }
+                                        });
+                                    }"
                                 }]
                             
                         )
@@ -157,6 +170,13 @@
         /amp : 1
     },
     
+    /params : {
+        /amp : "float32",
+        /dur : "float32",
+        /pitch : "float32",
+        /time : "float32"
+    },
+
     # layout idea, make svg element the same size as bounding box and use css to center icons
     # later, make this more streamlined with a helper function
     /get/icon : quote(lambda([],
