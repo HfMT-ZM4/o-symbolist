@@ -127,11 +127,19 @@ function deselectAll()
         if( selected[i].classList.contains("symbolist_selected") )
         {
             selected[i].classList.remove("symbolist_selected");
+            
+            drawsocket.input({
+                key: "remove",
+                val: selected[i].id + "-infobox"
+            })
+            
         }
     }
 
     selected = [];
     selectedCopy = [];
+
+    
 }
 
 
@@ -384,7 +392,9 @@ function symbolist_keydownhandler(event)
         case "i":
             if( nmods == 0 && selected.length > 0 )
                 event.symbolistAction = "getInfo";
-
+            break;
+        case "Escape":
+            deselectAll();
             break;
 
     }

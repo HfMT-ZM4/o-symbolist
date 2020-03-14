@@ -251,7 +251,7 @@
                         /left : event./xy[[0]]+"px",
                         /top : event./xy[[1]]+"px"
                     },
-                    /id : dataobj./id+"-info",
+                    /id : dataobj./id+"-infobox",
                     /class : "infobox",
                     /children : [
                         {

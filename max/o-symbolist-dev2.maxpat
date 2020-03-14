@@ -39,22 +39,6 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 12.0,
-					"id" : "obj-40",
-					"linecount" : 22,
-					"maxclass" : "o.display",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 331.140776991844177, 448.0, 356.0, 320.0 ],
-					"presentation_linecount" : 22,
-					"text" : "/view : [{\n\t/key : \"mouse\",\n\t/val : {\n\t\t/enable : 0\n\t}\n}, {\n\t/key : \"key\",\n\t/val : {\n\t\t/enable : 0\n\t}\n}, {\n\t/key : \"html\",\n\t/val : [{\n\t\t/new : \"div\",\n\t\t/id : \"palette\",\n\t\t/parent : \"forms\"\n\t}, {\n\t\t/new : \"div\",\n\t\t/id : \"info-panel\",\n\t\t/parent : \"forms\"\n\t}]\n}]"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -6639,13 +6623,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-5",
-					"linecount" : 53,
+					"linecount" : 43,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 606.281553983688354, 800.5, 356.0, 741.0 ],
-					"text" : "/key : \"mouse\",\n/val : {\n\t/target : {\n\t\t/baseProfile : \"full\",\n\t\t/version : 1.1,\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\"\n\t},\n\t/xy : [185, 545],\n\t/button : 0,\n\t/mousedownPos,\n\t/action : \"mousemove\",\n\t/selected : [{\n\t\t/class : \"/noteline\",\n\t\t/children : [{\n\t\t\t/cy : 164,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 309.15,\n\t\t\t/type : \"circle\",\n\t\t\t/r : 5.15\n\t\t}, {\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 164,\n\t\t\t/x2 : 364,\n\t\t\t/y2 : 164,\n\t\t\t/x1 : 304,\n\t\t\t/type : \"line\"\n\t\t}],\n\t\t/id : \"noteline_u_1af7jaxtnfn\",\n\t\t/type : \"g\"\n\t}, {\n\t\t/class : \"symbolist_selected\",\n\t\t/width : 97,\n\t\t/x : 263,\n\t\t/fill : \"none\",\n\t\t/stroke : \"rgba(0,0,0,0.5)\",\n\t\t/id : \"dragRegion\",\n\t\t/stroke-width : 1,\n\t\t/height : 103,\n\t\t/type : \"rect\",\n\t\t/y : 116\n\t}],\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/id : \"noteline_u_1oivgagwk8w\",\n\t/paletteClass : \"/noteline\"\n}"
+					"patching_rect" : [ 606.281553983688354, 800.5, 356.0, 605.0 ],
+					"text" : "/key : \"mouse\",\n/val : {\n\t/target : {\n\t\t/baseProfile : \"full\",\n\t\t/version : 1.1,\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\"\n\t},\n\t/xy : [373, 0],\n\t/button : 0,\n\t/mousedownPos,\n\t/action : \"mousemove\",\n\t/selected : {\n\t\t/class : \"/noteline\",\n\t\t/children : [{\n\t\t\t/cy : 145,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 157.15,\n\t\t\t/type : \"circle\",\n\t\t\t/r : 5.15\n\t\t}, {\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 145,\n\t\t\t/x2 : 212,\n\t\t\t/y2 : 145,\n\t\t\t/x1 : 152,\n\t\t\t/type : \"line\"\n\t\t}],\n\t\t/id : \"noteline_u_2l2xe46q0tw\",\n\t\t/type : \"g\",\n\t\t/transform : \"matrix(1 0 0 1 361 229)\"\n\t},\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/id : \"noteline_u_ajb9fzsaig4\",\n\t/paletteClass : \"/noteline\"\n}"
 				}
 
 			}
@@ -6719,8 +6703,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 100.0, 251.0, 1547.0 ],
-									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -72, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 0, 0, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 49, 97, 102, 55, 106, 97, 120, 116, 110, 102, 110, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 89, -93, 92, 40, -11, -62, -113, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 126, -96, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
-									"saved_bundle_length" : 204,
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -64, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 0, 0, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 50, 120, 101, 52, 54, 113, 48, 116, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 81, 77, -62, -113, 92, 40, -10, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -118, 50, -86, -91, 64, 0, 0, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96 ],
+									"saved_bundle_length" : 212,
 									"text" : "/model : [{\n\t/class : \"/noteline\",\n\t/pitch : 67.84,\n\t/amp : 1,\n\t/time : 12,\n\t/dur : 100,\n\t/id : \"foo-3\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 66,\n\t/amp : 1,\n\t/time : 10,\n\t/dur : 100,\n\t/id : \"foo-2\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 64,\n\t/amp : 1,\n\t/time : 0,\n\t/dur : 200,\n\t/id : \"foo-1\"\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_5bycqf0dj5s\",\n\t/pitch : 59.055,\n\t/time : 390,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_45rpq3uej1c\",\n\t/pitch : 38.735,\n\t/time : 298.333,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_2aug49v15dm\",\n\t/pitch : 43.3388,\n\t/time : 1046.67,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_mhm0gnaqob\",\n\t/pitch : 67.1513,\n\t/time : 948.333,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_19k94970rv2\",\n\t/pitch : 83.3438,\n\t/time : 1081.67,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1acwcmg8ofq\",\n\t/pitch : 68.8975,\n\t/time : 655,\n\t/dur : 99.9999,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_24i0l10s725\",\n\t/pitch : 55.0862,\n\t/time : 790,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1jzs13gcreh\",\n\t/pitch : 61.9125,\n\t/time : 741.667,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_2gof48apl6v\",\n\t/pitch : 53.1813,\n\t/time : 706.667,\n\t/dur : 99.9999,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_17b9lt0qow9\",\n\t/pitch : 84.6137,\n\t/time : 815,\n\t/dur : 99.9999,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_neiq7xi18b\",\n\t/pitch : 100.013,\n\t/time : 830.,\n\t/dur : 100,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_7e65kg4mms\",\n\t/pitch : 100.965,\n\t/time : 1006.67,\n\t/dur : 100,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_c976crhyy2w\",\n\t/pitch : 93.6625,\n\t/time : 1208.33,\n\t/dur : 100,\n\t/amp : 1\n}]"
 								}
 
@@ -6888,13 +6872,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-47",
-					"linecount" : 43,
+					"linecount" : 33,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 48.0, 583.5, 313.0, 605.0 ],
-					"text" : "/gui : {\n\t/xy : [367, 226],\n\t/keyVal : \"i\",\n\t/action : \"keydown\",\n\t/selected : [{\n\t\t/class : \"/noteline\",\n\t\t/children : [{\n\t\t\t/cy : 164,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 309.15,\n\t\t\t/type : \"circle\",\n\t\t\t/r : 5.15\n\t\t}, {\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 164,\n\t\t\t/x2 : 364,\n\t\t\t/y2 : 164,\n\t\t\t/x1 : 304,\n\t\t\t/type : \"line\"\n\t\t}],\n\t\t/id : \"noteline_u_1af7jaxtnfn\",\n\t\t/type : \"g\"\n\t}, {\n\t\t/class : \"symbolist_selected\",\n\t\t/width : 97,\n\t\t/x : 263,\n\t\t/fill : \"none\",\n\t\t/stroke : \"rgba(0,0,0,0.5)\",\n\t\t/id : \"dragRegion\",\n\t\t/stroke-width : 1,\n\t\t/height : 103,\n\t\t/type : \"rect\",\n\t\t/y : 116\n\t}],\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/symbolistAction : \"getInfo\",\n\t/paletteClass : \"/noteline\"\n}"
+					"patching_rect" : [ 48.0, 583.5, 313.0, 469.0 ],
+					"text" : "/gui : {\n\t/xy : [421, 405],\n\t/keyVal : \"i\",\n\t/action : \"keydown\",\n\t/selected : {\n\t\t/class : \"/noteline\",\n\t\t/children : [{\n\t\t\t/cy : 145,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 157.15,\n\t\t\t/type : \"circle\",\n\t\t\t/r : 5.15\n\t\t}, {\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 145,\n\t\t\t/x2 : 212,\n\t\t\t/y2 : 145,\n\t\t\t/x1 : 152,\n\t\t\t/type : \"line\"\n\t\t}],\n\t\t/id : \"noteline_u_2l2xe46q0tw\",\n\t\t/type : \"g\",\n\t\t/transform : \"matrix(1 0 0 1 361 229)\"\n\t},\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/symbolistAction : \"getInfo\",\n\t/paletteClass : \"/noteline\"\n}"
 				}
 
 			}
@@ -10559,15 +10543,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
-					"order" : 0,
-					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-40", 0 ],
-					"order" : 1,
 					"source" : [ "obj-17", 0 ]
 				}
 
