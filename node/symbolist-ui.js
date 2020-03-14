@@ -73,6 +73,9 @@ function recursiveHitTest(region, element)
 
 function addToSelection( element )
 {
+    if( element.id == 'dragRegion' )
+        return;
+
     for( let i = 0; i < selected.length; i++)
     {
         if( selected[i] == element )
@@ -121,6 +124,7 @@ function selectAllInRegion(region, element)
 
 function deselectAll()
 {
+    let infoboxIds = [];
 
     for( let i = 0; i < selected.length; i++)
     {
@@ -128,18 +132,24 @@ function deselectAll()
         {
             selected[i].classList.remove("symbolist_selected");
             
-            drawsocket.input({
-                key: "remove",
-                val: selected[i].id + "-infobox"
-            })
-            
+            const boxname = selected[i].id + "-infobox";
+            infoboxIds.push(boxname);
+
         }
     }
 
     selected = [];
     selectedCopy = [];
-
     
+    drawsocket.send({
+        event : {
+            key: "symbolistEvent",
+            val: {
+                symbolistAction: 'removeFromViewCache',
+                ids: infoboxIds
+            }
+        }
+    }); 
 }
 
 
@@ -378,6 +388,7 @@ function symbolost_sendKeyEvent(event, caller)
                 },
                 paletteClass: currentPaletteClass, 
                 selected: sel_arr,
+                bboxes: event.bboxes,
                 symbolistAction: event.symbolistAction
             }
         }
@@ -392,6 +403,14 @@ function symbolist_keydownhandler(event)
         case "i":
             if( nmods == 0 && selected.length > 0 )
                 event.symbolistAction = "getInfo";
+                let bboxes = [];
+                for( let i = 0; i < selected.length; i++ )
+                {
+                    bboxes.push(
+                        selected[i].getBoundingClientRect()
+                    );
+                }
+                event.bboxes = bboxes;
             break;
         case "Escape":
             deselectAll();

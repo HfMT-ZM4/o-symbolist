@@ -241,15 +241,15 @@
 
     # /amp, /pitch, /time, /dur, (parent?)
     /get/infoDisplay : quote(
-        lambda([dataobj, event],
+        lambda([dataobj, bbox],
             {
                 /key : "html",
                 /val : {
                     /parent : "forms",
                     /new : "div",
                     /style : {
-                        /left : event./xy[[0]]+"px",
-                        /top : event./xy[[1]]+"px"
+                        /left : bbox./x+"px",
+                        /top : bbox./bottom+10+"px"
                     },
                     /id : dataobj./id+"-infobox",
                     /class : "infobox",

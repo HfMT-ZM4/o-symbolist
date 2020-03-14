@@ -416,7 +416,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontname" : [ "Arial" ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -426,14 +433,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -442,8 +442,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -452,9 +452,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontface" : [ 3 ],
 									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -473,9 +473,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontface" : [ 1 ],
 									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -667,7 +667,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontname" : [ "Arial" ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -677,14 +684,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -693,8 +693,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -703,9 +703,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontface" : [ 3 ],
 									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -724,9 +724,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontface" : [ 1 ],
 									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -754,8 +754,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 420.0, 732.5, 201.0, 22.0 ],
-					"text" : "o.cond /key == mouse || /key == key"
+					"patching_rect" : [ 420.0, 732.5, 337.0, 22.0 ],
+					"text" : "o.cond /key == mouse || /key == key || /key == symbolistEvent"
 				}
 
 			}
@@ -4728,7 +4728,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontname" : [ "Arial" ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -4738,14 +4745,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -4754,8 +4754,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4764,9 +4764,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontface" : [ 3 ],
 									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -4785,9 +4785,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontface" : [ 1 ],
 									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -5404,7 +5404,14 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontname" : [ "Arial" ]
+												}
+,
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5414,14 +5421,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "",
@@ -5430,8 +5430,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5440,9 +5440,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontface" : [ 3 ],
 													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -5461,9 +5461,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontface" : [ 1 ],
 													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -5702,7 +5702,14 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontname" : [ "Arial" ]
+												}
+,
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5712,14 +5719,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "",
@@ -5728,8 +5728,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5738,9 +5738,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontface" : [ 3 ],
 													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -5759,9 +5759,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontface" : [ 1 ],
 													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -6008,7 +6008,14 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontname" : [ "Arial" ]
+												}
+,
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -6018,14 +6025,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "",
@@ -6034,8 +6034,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -6044,9 +6044,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontface" : [ 3 ],
 													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -6065,9 +6065,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontface" : [ 1 ],
 													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -6339,7 +6339,14 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontname" : [ "Arial" ]
+												}
+,
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -6349,14 +6356,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "",
@@ -6365,8 +6365,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -6375,9 +6375,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontface" : [ 3 ],
 													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -6396,9 +6396,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontface" : [ 1 ],
 													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -6490,7 +6490,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontname" : [ "Arial" ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -6500,14 +6507,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -6516,8 +6516,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -6526,9 +6526,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontface" : [ 3 ],
 									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -6547,9 +6547,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontface" : [ 1 ],
 									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -6623,13 +6623,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-5",
-					"linecount" : 43,
+					"linecount" : 42,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 606.281553983688354, 800.5, 356.0, 605.0 ],
-					"text" : "/key : \"mouse\",\n/val : {\n\t/target : {\n\t\t/baseProfile : \"full\",\n\t\t/version : 1.1,\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\"\n\t},\n\t/xy : [373, 0],\n\t/button : 0,\n\t/mousedownPos,\n\t/action : \"mousemove\",\n\t/selected : {\n\t\t/class : \"/noteline\",\n\t\t/children : [{\n\t\t\t/cy : 145,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 157.15,\n\t\t\t/type : \"circle\",\n\t\t\t/r : 5.15\n\t\t}, {\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 145,\n\t\t\t/x2 : 212,\n\t\t\t/y2 : 145,\n\t\t\t/x1 : 152,\n\t\t\t/type : \"line\"\n\t\t}],\n\t\t/id : \"noteline_u_2l2xe46q0tw\",\n\t\t/type : \"g\",\n\t\t/transform : \"matrix(1 0 0 1 361 229)\"\n\t},\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/id : \"noteline_u_ajb9fzsaig4\",\n\t/paletteClass : \"/noteline\"\n}"
+					"patching_rect" : [ 611.5, 780.728072166442871, 356.0, 591.0 ],
+					"text" : "/key : \"mouse\",\n/val : {\n\t/id : \"noteline_u_15fp49eqryr\",\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/target : {\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/baseProfile : \"full\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1\n\t},\n\t/action : \"mousemove\",\n\t/xy : [224, 359],\n\t/button : 0,\n\t/paletteClass : \"/noteline\",\n\t/mousedownPos,\n\t/selected : {\n\t\t/id : \"noteline_u_1r8o1stma9b\",\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/type : \"circle\",\n\t\t\t/cx : 319.15,\n\t\t\t/r : 5.15,\n\t\t\t/cy : 190,\n\t\t\t/class : \"notehead\"\n\t\t}, {\n\t\t\t/type : \"line\",\n\t\t\t/y2 : 190,\n\t\t\t/x1 : 314,\n\t\t\t/x2 : 374,\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 190\n\t\t}],\n\t\t/class : \"/noteline\"\n\t}\n}"
 				}
 
 			}
@@ -6703,8 +6703,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 100.0, 251.0, 1547.0 ],
-									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -64, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 0, 0, 0, 0, 0, -80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 50, 120, 101, 52, 54, 113, 48, 116, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 81, 77, -62, -113, 92, 40, -10, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -118, 50, -86, -91, 64, 0, 0, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 64, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 109, 112, 0, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, -86, -86, -86, -96 ],
-									"saved_bundle_length" : 212,
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -72, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 0, 0, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 49, 114, 56, 111, 49, 115, 116, 109, 97, 57, 98, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 88, -101, 51, 51, 51, 51, 51, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 127, -86, -86, -86, -86, -86, -85, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
+									"saved_bundle_length" : 204,
 									"text" : "/model : [{\n\t/class : \"/noteline\",\n\t/pitch : 67.84,\n\t/amp : 1,\n\t/time : 12,\n\t/dur : 100,\n\t/id : \"foo-3\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 66,\n\t/amp : 1,\n\t/time : 10,\n\t/dur : 100,\n\t/id : \"foo-2\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 64,\n\t/amp : 1,\n\t/time : 0,\n\t/dur : 200,\n\t/id : \"foo-1\"\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_5bycqf0dj5s\",\n\t/pitch : 59.055,\n\t/time : 390,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_45rpq3uej1c\",\n\t/pitch : 38.735,\n\t/time : 298.333,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_2aug49v15dm\",\n\t/pitch : 43.3388,\n\t/time : 1046.67,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_mhm0gnaqob\",\n\t/pitch : 67.1513,\n\t/time : 948.333,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_19k94970rv2\",\n\t/pitch : 83.3438,\n\t/time : 1081.67,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1acwcmg8ofq\",\n\t/pitch : 68.8975,\n\t/time : 655,\n\t/dur : 99.9999,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_24i0l10s725\",\n\t/pitch : 55.0862,\n\t/time : 790,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1jzs13gcreh\",\n\t/pitch : 61.9125,\n\t/time : 741.667,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_2gof48apl6v\",\n\t/pitch : 53.1813,\n\t/time : 706.667,\n\t/dur : 99.9999,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_17b9lt0qow9\",\n\t/pitch : 84.6137,\n\t/time : 815,\n\t/dur : 99.9999,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_neiq7xi18b\",\n\t/pitch : 100.013,\n\t/time : 830.,\n\t/dur : 100,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_7e65kg4mms\",\n\t/pitch : 100.965,\n\t/time : 1006.67,\n\t/dur : 100,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_c976crhyy2w\",\n\t/pitch : 93.6625,\n\t/time : 1208.33,\n\t/dur : 100,\n\t/amp : 1\n}]"
 								}
 
@@ -6872,13 +6872,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-47",
-					"linecount" : 33,
+					"linecount" : 42,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 48.0, 583.5, 313.0, 469.0 ],
-					"text" : "/gui : {\n\t/xy : [421, 405],\n\t/keyVal : \"i\",\n\t/action : \"keydown\",\n\t/selected : {\n\t\t/class : \"/noteline\",\n\t\t/children : [{\n\t\t\t/cy : 145,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 157.15,\n\t\t\t/type : \"circle\",\n\t\t\t/r : 5.15\n\t\t}, {\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 145,\n\t\t\t/x2 : 212,\n\t\t\t/y2 : 145,\n\t\t\t/x1 : 152,\n\t\t\t/type : \"line\"\n\t\t}],\n\t\t/id : \"noteline_u_2l2xe46q0tw\",\n\t\t/type : \"g\",\n\t\t/transform : \"matrix(1 0 0 1 361 229)\"\n\t},\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/symbolistAction : \"getInfo\",\n\t/paletteClass : \"/noteline\"\n}"
+					"patching_rect" : [ 48.0, 583.5, 313.0, 591.0 ],
+					"text" : "/gui : {\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/action : \"keydown\",\n\t/xy : [340, 231],\n\t/bboxes : {\n\t\t/left : 314,\n\t\t/height : 10.3,\n\t\t/y : 184.85,\n\t\t/width : 60,\n\t\t/top : 184.85,\n\t\t/right : 374,\n\t\t/x : 314,\n\t\t/bottom : 195.15\n\t},\n\t/symbolistAction : \"getInfo\",\n\t/keyVal : \"i\",\n\t/paletteClass : \"/noteline\",\n\t/selected : {\n\t\t/id : \"noteline_u_1r8o1stma9b\",\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/type : \"circle\",\n\t\t\t/cx : 319.15,\n\t\t\t/r : 5.15,\n\t\t\t/cy : 190,\n\t\t\t/class : \"notehead\"\n\t\t}, {\n\t\t\t/type : \"line\",\n\t\t\t/y2 : 190,\n\t\t\t/x1 : 314,\n\t\t\t/x2 : 374,\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 190\n\t\t}],\n\t\t/class : \"/noteline\"\n\t}\n}"
 				}
 
 			}
@@ -6893,7 +6893,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 540.0, 665.5, 313.0, 48.0 ],
-					"text" : "/port/ip : \"http://192.168.178.36:3002\",\n/port/localhost : \"http://localhost:3002\""
+					"text" : "/port/localhost : \"http://localhost:3002\",\n/port/ip : \"http://192.168.178.36:3002\""
 				}
 
 			}
@@ -8358,10 +8358,12 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontsize" : 18.0,
-									"id" : "obj-13",
+									"id" : "obj-3",
+									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -8377,7 +8379,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 59.0, 104.0, 1003.0, 809.0 ],
+										"rect" : [ 477.0, 233.0, 615.0, 809.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -8433,14 +8435,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-2",
-													"linecount" : 34,
+													"linecount" : 6,
 													"maxclass" : "o.expr.codebox",
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 131.0, 529.0, 494.0 ],
-													"presentation_linecount" : 34,
-													"text" : "/ids ??= [],\n\n/selected = first(/gui./selected),\n\n\nif( length(/ids) > 0,\n  progn(\n    /objIDX = max( aseq(1,length(/ids)) * (/selected./id == /ids) ) - 1,\n    if( /objIDX != -1,\n      progn(\n        /instance/view = /viewAr[[/objIDX]],\n        /instance/data = /model[[/objIDX]],\n\n        # get object by type\n        /objRef = value(/instance/data./class),\n\n        # get set from data function\n        /getInfoFn = /objRef./get/infoDisplay,\n\n        # create \n\n        /direct/view = [{\n           /key : \"clear\",\n           /val : \"info-panel\"\n        }, /getInfoFn( /instance/data, /gui ) ]\n        \n\n      )\n    )\n  )\n)\n\n\n\n"
+													"patching_rect" : [ 50.0, 131.0, 213.0, 98.0 ],
+													"text" : "if( bound(/gui./ids),\n  /direct/view = {\n    /key : \"remove\",\n    /val : /gui./ids\n  }\n)"
 												}
 
 											}
@@ -8503,7 +8504,14 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontname" : [ "Arial" ]
+												}
+,
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -8513,14 +8521,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "",
@@ -8529,8 +8530,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8539,9 +8540,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontface" : [ 3 ],
 													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -8560,9 +8561,286 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontface" : [ 1 ],
 													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontname" : [ "Arial" ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+ ]
+									}
+,
+									"patching_rect" : [ 365.0, 272.5, 121.0, 69.0 ],
+									"presentation_linecount" : 5,
+									"saved_object_attributes" : 									{
+										"description" : "",
+										"digest" : "",
+										"globalpatchername" : "",
+										"tags" : ""
+									}
+,
+									"text" : "p remove From View Cache"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 18.0,
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 8,
+											"minor" : 1,
+											"revision" : 3,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ 59.0, 104.0, 1003.0, 809.0 ],
+										"bglocked" : 0,
+										"openinpresentation" : 0,
+										"default_fontsize" : 12.0,
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"gridonopen" : 1,
+										"gridsize" : [ 15.0, 15.0 ],
+										"gridsnaponopen" : 1,
+										"objectsnaponopen" : 1,
+										"statusbarvisible" : 2,
+										"toolbarvisible" : 1,
+										"lefttoolbarpinned" : 0,
+										"toptoolbarpinned" : 0,
+										"righttoolbarpinned" : 0,
+										"bottomtoolbarpinned" : 0,
+										"toolbars_unpinned_last_save" : 0,
+										"tallnewobj" : 0,
+										"boxanimatetime" : 200,
+										"enablehscroll" : 1,
+										"enablevscroll" : 1,
+										"devicewidth" : 0.0,
+										"description" : "",
+										"digest" : "",
+										"tags" : "",
+										"style" : "",
+										"subpatcher_template" : "",
+										"visible" : 1,
+										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-5",
+													"linecount" : 2,
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "FullPacket" ],
+													"patching_rect" : [ 187.0, 572.0, 100.0, 35.0 ],
+													"text" : "o.select /instance"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-4",
+													"linecount" : 886,
+													"maxclass" : "o.display",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 300.0, 615.0, 325.0, 12065.0 ],
+													"text" : "/gui : {\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/action : \"keydown\",\n\t/xy : [340, 231],\n\t/bboxes : {\n\t\t/left : 314,\n\t\t/height : 10.3,\n\t\t/y : 184.85,\n\t\t/width : 60,\n\t\t/top : 184.85,\n\t\t/right : 374,\n\t\t/x : 314,\n\t\t/bottom : 195.15\n\t},\n\t/symbolistAction : \"getInfo\",\n\t/keyVal : \"i\",\n\t/paletteClass : \"/noteline\",\n\t/selected : {\n\t\t/id : \"noteline_u_1r8o1stma9b\",\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/type : \"circle\",\n\t\t\t/cx : 319.15,\n\t\t\t/r : 5.15,\n\t\t\t/cy : 190,\n\t\t\t/class : \"notehead\"\n\t\t}, {\n\t\t\t/type : \"line\",\n\t\t\t/y2 : 190,\n\t\t\t/x1 : 314,\n\t\t\t/x2 : 374,\n\t\t\t/class : \"durationLine\",\n\t\t\t/y1 : 190\n\t\t}],\n\t\t/class : \"/noteline\"\n\t}\n},\n/transform/getMatrix : \"lambda([matrix_str],\n  if( strfind(\\\"matrix\\\", matrix_str) != -1,\n    float32(split(\\\" \\\", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)\",\n/transform/applyTransform : \"lambda([matrix, xy ],\n  [  matrix[[0]] * xy[[0]] + matrix[[2]] * xy[[1]] + matrix[[4]], \n     matrix[[1]] * xy[[0]] + matrix[[3]] * xy[[1]] + matrix[[5]]\n  ]\n)\",\n/helper/getChildByClass : \"\n    lambda([obj, classname],\n        /found = {},\n        if( bound(obj./children) ,\n            map( lambda([c],\n                    if( c./class == classname,\n                        /found = c\n                    )\n                ), obj./children\n            )\n        ),\n        prog1(\n            /found,\n            delete(/found)\n        )\n    )\n\",\n/parent : {\n\t/x : 10.,\n\t/y : 10.,\n\t/width : 600.,\n\t/height : 800.,\n\t/time/start : 0.,\n\t/time/dur : 1000.,\n\t/time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n\t/pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\"\n},\n/rectangle : {\n\t/default : {\n\t\t/x : 10.,\n\t\t/y : 10.,\n\t\t/width : 600.,\n\t\t/height : 800.,\n\t\t/time/start : 0,\n\t\t/time/dur : 1000.\n\t},\n\t/time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n\t/pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\",\n\t/set/fromData : \" \n        lambda([obj, context],\n\n        )\n    \",\n\t/set/fromGUI : {\n\n\t}\n},\n/noteline : {\n\t/default : {\n\t\t/r : 1,\n\t\t/dur : 100,\n\t\t/amp : 1\n\t},\n\t/get/icon : \"lambda([],\n    {\n        /key : \\\"html\\\",\n        /val : {\n            /new : \\\"div\\\",\n            /id : \\\"noteline-button-div\\\",\n            /parent : \\\"palette\\\",\n            /child : {\n                /new : \\\"svg\\\",\n                /id : \\\"noteline-icon\\\",\n                /style : {\n                    /height : 4,\n                    /width : 16,\n                    /top : \\\"calc(50% - 2px)\\\",\n                    /left : \\\"calc(50% - 8px)\\\"\n                },\n                /onclick : \\\"console.log('select noteline'); symbolist_setClass('/noteline')\\\",\n                /child : {            \n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /parent : \\\"noteline-icon\\\",\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /fill : \\\"black\\\",\n                            /r : 2,\n                            /cy : 0,\n                            /cx : 0\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /fill : \\\"black\\\",\n                            /x1 : 0,\n                            /y1 : 0,\n                            /x2 : 16,\n                            /y2 : 0\n                        }\n                    ]\n                }\n            }\n        \n        }\n    })\",\n\t/set/fromData : \" \n        lambda([obj, context],\n            /parent_time2pix = context./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),\n                    pix_start : context./x + /parent_time2pix( obj./time ),\n                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([viewobj, event, context],\n            # later: put these in a let function, here now since /parent.pix2time() doesn't work\n            # also later, parent probably should be passed in\n            # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n            # do that in the UI script\n                                \n            /parent_pix2time = context./pix2time,\n            /test = 111,\n            let({\n                    default : /noteline./default\n                },\n                cond(                 \n                    event./symbolistAction == \\\"newFromClick_down\\\",\n                    {\n                        /class : \\\"/noteline\\\",\n                        /id : event./id,\n                        /pitch : scale( event./xy[[1]] - context./y, context./height, 0., 0., 127.),\n                        /time : /parent_pix2time( event./xy[[0]] - context./x + default./r ),\n                        /dur : default./dur,\n                        /amp : default./amp\n                    },\n                    event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                    let({\n                            notehead : /helper/getChildByClass( viewobj, \\\"notehead\\\" ),\n                            durationLine : /helper/getChildByClass( viewobj, \\\"durationLine\\\" )\n                        },\n                        let({\n                                xy : if ( bound(viewobj./transform),\n                                            /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),\n                                            [notehead./cx, notehead./cy] )\n                            },\n                            {\n                                /class : \\\"/noteline\\\",\n                                /id : viewobj./id,\n                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),\n                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  \n                                /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                /amp : scale(notehead./r, 5., 20., 0., 100)\n                            }\n                        )\n                    )\n                    \n                )\n            )\n            \n        )\n    \",\n\t/get/infoDisplay : \"\n        lambda([dataobj, bbox],\n            {\n                /key : \\\"html\\\",\n                /val : {\n                    /parent : \\\"forms\\\",\n                    /new : \\\"div\\\",\n                    /style : {\n                        /left : bbox./x+\\\"px\\\",\n                        /top : bbox./bottom+10+\\\"px\\\"\n                    },\n                    /id : dataobj./id+\\\"-infobox\\\",\n                    /class : \\\"infobox\\\",\n                    /children : [\n                        {\n                            /new : \\\"label\\\",\n                            /for : dataobj./id+\\\"-time-input\\\",\n                            /text : \\\"time:\\\"\n                        }, {\n                            /new : \\\"input\\\",\n                            /type : \\\"text\\\",\n                            /id : dataobj./id+\\\"-time-input\\\",\n                            /placeholder : dataobj./time\n                        },\n                        {\n                            /new : \\\"label\\\",\n                            /for : dataobj./id+\\\"-pitch-input\\\",\n                            /text : \\\"pitch:\\\"\n                        }, {\n                            /new : \\\"input\\\",\n                            /type : \\\"text\\\",\n                            /id : dataobj./id+\\\"-pitch-input\\\",\n                            /placeholder : dataobj./pitch\n                        }\n                    ]\n                }\n            }\n        )\n    \",\n\t/get/fromTime : \"\n    lambda([obj, t],\n        let({\n                relTime : (t - obj./time) / obj./dur\n            },\n            if( relTime >= 0 && relTime <= 1,\n                {\n                    /relTime : relTime\n                }\n            )\n        )\n    )\"\n},\n/playhead : {\n\t/set/fromTime : \"\n        lambda([t, context],\n            /time2pix = context./time2pix,\n            prog1(\n                # later check if there are already view messages in place and union\n                {\n                    /view : {\n                        /key : \\\"svg\\\",\n                        /val : {\n                            /new : \\\"line\\\",\n                            /id : \\\"playhead\\\",\n                            /class : \\\"playhead\\\",\n                            /x1 : context./x + /time2pix( /t ),\n                            /x2 : context./x + /time2pix( /t ),\n                            /y1 : context./y,\n                            /y2 : context./y + context./height\n                        }\n                    }\n                }\n            )\n        )\n    \"\n},\n/addrs : [\"/transform/getMatrix\", \"/transform/applyTransform\", \"/helper/getChildByClass\", \"/parent\", \"/rectangle\", \"/noteline\", \"/playhead\"],\n/iconFN : \"lambda([],\n    {\n        /key : \\\"html\\\",\n        /val : {\n            /new : \\\"div\\\",\n            /id : \\\"noteline-button-div\\\",\n            /parent : \\\"palette\\\",\n            /child : {\n                /new : \\\"svg\\\",\n                /id : \\\"noteline-icon\\\",\n                /style : {\n                    /height : 4,\n                    /width : 16,\n                    /top : \\\"calc(50% - 2px)\\\",\n                    /left : \\\"calc(50% - 8px)\\\"\n                },\n                /onclick : \\\"console.log('select noteline'); symbolist_setClass('/noteline')\\\",\n                /child : {            \n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /parent : \\\"noteline-icon\\\",\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /fill : \\\"black\\\",\n                            /r : 2,\n                            /cy : 0,\n                            /cx : 0\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /fill : \\\"black\\\",\n                            /x1 : 0,\n                            /y1 : 0,\n                            /x2 : 16,\n                            /y2 : 0\n                        }\n                    ]\n                }\n            }\n        \n        }\n    })\",\n/objRef : {\n\t/default : {\n\t\t/r : 1,\n\t\t/dur : 100,\n\t\t/amp : 1\n\t},\n\t/get/icon : \"lambda([],\n    {\n        /key : \\\"html\\\",\n        /val : {\n            /new : \\\"div\\\",\n            /id : \\\"noteline-button-div\\\",\n            /parent : \\\"palette\\\",\n            /child : {\n                /new : \\\"svg\\\",\n                /id : \\\"noteline-icon\\\",\n                /style : {\n                    /height : 4,\n                    /width : 16,\n                    /top : \\\"calc(50% - 2px)\\\",\n                    /left : \\\"calc(50% - 8px)\\\"\n                },\n                /onclick : \\\"console.log('select noteline'); symbolist_setClass('/noteline')\\\",\n                /child : {            \n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /parent : \\\"noteline-icon\\\",\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /fill : \\\"black\\\",\n                            /r : 2,\n                            /cy : 0,\n                            /cx : 0\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /fill : \\\"black\\\",\n                            /x1 : 0,\n                            /y1 : 0,\n                            /x2 : 16,\n                            /y2 : 0\n                        }\n                    ]\n                }\n            }\n        \n        }\n    })\",\n\t/set/fromData : \" \n        lambda([obj, context],\n            /parent_time2pix = context./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),\n                    pix_start : context./x + /parent_time2pix( obj./time ),\n                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([viewobj, event, context],\n            # later: put these in a let function, here now since /parent.pix2time() doesn't work\n            # also later, parent probably should be passed in\n            # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n            # do that in the UI script\n                                \n            /parent_pix2time = context./pix2time,\n            /test = 111,\n            let({\n                    default : /noteline./default\n                },\n                cond(                 \n                    event./symbolistAction == \\\"newFromClick_down\\\",\n                    {\n                        /class : \\\"/noteline\\\",\n                        /id : event./id,\n                        /pitch : scale( event./xy[[1]] - context./y, context./height, 0., 0., 127.),\n                        /time : /parent_pix2time( event./xy[[0]] - context./x + default./r ),\n                        /dur : default./dur,\n                        /amp : default./amp\n                    },\n                    event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                    let({\n                            notehead : /helper/getChildByClass( viewobj, \\\"notehead\\\" ),\n                            durationLine : /helper/getChildByClass( viewobj, \\\"durationLine\\\" )\n                        },\n                        let({\n                                xy : if ( bound(viewobj./transform),\n                                            /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),\n                                            [notehead./cx, notehead./cy] )\n                            },\n                            {\n                                /class : \\\"/noteline\\\",\n                                /id : viewobj./id,\n                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),\n                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  \n                                /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                /amp : scale(notehead./r, 5., 20., 0., 100)\n                            }\n                        )\n                    )\n                    \n                )\n            )\n            \n        )\n    \",\n\t/get/infoDisplay : \"\n        lambda([dataobj, bbox],\n            {\n                /key : \\\"html\\\",\n                /val : {\n                    /parent : \\\"forms\\\",\n                    /new : \\\"div\\\",\n                    /style : {\n                        /left : bbox./x+\\\"px\\\",\n                        /top : bbox./bottom+10+\\\"px\\\"\n                    },\n                    /id : dataobj./id+\\\"-infobox\\\",\n                    /class : \\\"infobox\\\",\n                    /children : [\n                        {\n                            /new : \\\"label\\\",\n                            /for : dataobj./id+\\\"-time-input\\\",\n                            /text : \\\"time:\\\"\n                        }, {\n                            /new : \\\"input\\\",\n                            /type : \\\"text\\\",\n                            /id : dataobj./id+\\\"-time-input\\\",\n                            /placeholder : dataobj./time\n                        },\n                        {\n                            /new : \\\"label\\\",\n                            /for : dataobj./id+\\\"-pitch-input\\\",\n                            /text : \\\"pitch:\\\"\n                        }, {\n                            /new : \\\"input\\\",\n                            /type : \\\"text\\\",\n                            /id : dataobj./id+\\\"-pitch-input\\\",\n                            /placeholder : dataobj./pitch\n                        }\n                    ]\n                }\n            }\n        )\n    \",\n\t/get/fromTime : \"\n    lambda([obj, t],\n        let({\n                relTime : (t - obj./time) / obj./dur\n            },\n            if( relTime >= 0 && relTime <= 1,\n                {\n                    /relTime : relTime\n                }\n            )\n        )\n    )\"\n},\n/setFn : \" \n        lambda([obj, context],\n            /parent_time2pix = context./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),\n                    pix_start : context./x + /parent_time2pix( obj./time ),\n                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n/context : {\n\t/x : 10.,\n\t/y : 10.,\n\t/width : 600.,\n\t/height : 800.,\n\t/time/start : 0.,\n\t/time/dur : 1000.,\n\t/time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n\t/pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\"\n},\n/parent_time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n/newView : {\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1r8o1stma9b\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 190.,\n\t\t/cx : 319.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 314.,\n\t\t/y1 : 190.,\n\t\t/x2 : 374.,\n\t\t/y2 : 190.\n\t}]\n},\n/times,\n/ids : \"noteline_u_1r8o1stma9b\",\n/viewAr : {\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1r8o1stma9b\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 190.,\n\t\t/cx : 319.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 314.,\n\t\t/y1 : 190.,\n\t\t/x2 : 374.,\n\t\t/y2 : 190.\n\t}]\n},\n/model : {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1r8o1stma9b\",\n\t/pitch : 98.425,\n\t/time : 506.667,\n\t/dur : 100,\n\t/amp : 1\n},\n/view : {\n\t/key : \"svg\",\n\t/val : {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"noteline_u_1r8o1stma9b\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 190.,\n\t\t\t/cx : 319.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 314.,\n\t\t\t/y1 : 190.,\n\t\t\t/x2 : 374.,\n\t\t\t/y2 : 190.\n\t\t}]\n\t}\n}"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-3",
+													"linecount" : 34,
+													"maxclass" : "o.expr.codebox",
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 880.0, 142.0, 529.0, 494.0 ],
+													"presentation_linecount" : 34,
+													"text" : "/ids ??= [],\n\n/selected = first(/gui./selected),\n/bbox = first(/gui./bboxes),\n\nif( length(/ids) > 0,\n  progn(\n    /objIDX = max( aseq(1,length(/ids)) * (/selected./id == /ids) ) - 1,\n    if( /objIDX != -1,\n      progn(\n        /instance/view = /viewAr[[/objIDX]],\n        /instance/data = /model[[/objIDX]],\n\n        # get object by type\n        /objRef = value(/instance/data./class),\n\n        # get set from data function\n        /getInfoFn = /objRef./get/infoDisplay,\n\n        # create \n\n        /direct/view = [{\n           /key : \"clear\",\n           /val : \"info-panel\"\n        }, /getInfoFn( /instance/data, /bbox ) ]\n        \n\n      )\n    )\n  )\n)\n\n\n\n"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-17",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "FullPacket" ],
+													"patching_rect" : [ 50.0, 598.0, 100.0, 22.0 ],
+													"text" : "o.select /direct"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-15",
+													"maxclass" : "button",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 165.0, 69.0, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-2",
+													"linecount" : 28,
+													"maxclass" : "o.expr.codebox",
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 50.0, 131.0, 579.0, 413.0 ],
+													"text" : "/ids ??= [],\n\n/direct/view = [],\n\nif( length(/ids) > 0,\n  map(\n    lambda([id, bbox],\n      /objIDX = max( aseq(1,length(/ids)) * (id == /ids) ) - 1,\n      if( /objIDX != -1,  progn(\n\n        /instance/data = /model[[/objIDX]],\n\n        # get object by type\n        /objRef = value(/instance/data./class),\n\n        # get set from data function\n        /getInfoFn = /objRef./get/infoDisplay#,\n\n        # create \n        #/direct/view = [/direct/view, /getInfoFn( /instance/data, bbox ) ]\n\n      ))\n    ), /gui./selected, /gui./bboxes\n  )\n),\n\nif( !bound(/direct/view), delete(/direct/view) )\n\n"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-7",
+													"index" : 1,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "FullPacket" ],
+													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-9",
+													"index" : 1,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 50.0, 721.0, 30.0, 30.0 ]
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-9", 0 ],
+													"source" : [ "obj-17", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-17", 0 ],
+													"source" : [ "obj-2", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"source" : [ "obj-5", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-15", 0 ],
+													"order" : 0,
+													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"order" : 1,
+													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+ ],
+										"styles" : [ 											{
+												"name" : "black on white",
+												"number" : 												{
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontname" : [ "Arial" ]
+												}
+,
+												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"bgfillcolor" : 													{
+														"type" : "color",
+														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+														"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+														"angle" : 270.0,
+														"proportion" : 0.39,
+														"autogradient" : 0
+													}
+
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "caption text",
+												"default" : 												{
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "section dividers",
+												"default" : 												{
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ],
+													"fontname" : [ "Arial" ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "section info reg",
+												"default" : 												{
+													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "titles",
+												"default" : 												{
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ],
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -8586,12 +8864,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 260.0, 212.0, 215.0, 22.0 ],
-									"text" : "o.cond /gui./symbolistAction == getInfo"
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+									"patching_rect" : [ 260.0, 212.0, 273.0, 35.0 ],
+									"text" : "o.cond /gui./symbolistAction == getInfo\\, /gui./symbolistAction == removeFromViewCache"
 								}
 
 							}
@@ -8815,7 +9094,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 240.5, 113.0, 93.0, 22.0 ],
+									"patching_rect" : [ 724.5, 41.5, 93.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -8868,7 +9147,7 @@
 								"box" : 								{
 									"fontsize" : 18.0,
 									"id" : "obj-15",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -9341,7 +9620,14 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontname" : [ "Arial" ]
+												}
+,
 												"umenu" : 												{
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -9351,14 +9637,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "",
@@ -9367,8 +9646,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9377,9 +9656,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontface" : [ 3 ],
 													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -9398,9 +9677,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontface" : [ 1 ],
 													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -9409,7 +9688,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 374.5, 253.5, 119.0, 49.0 ],
+									"patching_rect" : [ 514.0, 272.5, 93.0, 69.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -9997,6 +10276,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-1", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-1", 1 ]
 								}
 
@@ -10019,7 +10305,7 @@
 								"patchline" : 								{
 									"color" : [ 0.0, 0.607816278934479, 0.716754078865051, 1.0 ],
 									"destination" : [ "obj-16", 0 ],
-									"midpoints" : [ 384.0, 371.5, 519.5, 371.5, 519.5, 109.0, 57.5, 109.0 ],
+									"midpoints" : [ 523.5, 371.5, 635.5, 371.5, 635.5, 109.0, 57.5, 109.0 ],
 									"source" : [ "obj-15", 0 ]
 								}
 
@@ -10091,6 +10377,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-29", 0 ],
 									"source" : [ "obj-38", 0 ]
 								}
@@ -10106,7 +10399,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-16", 1 ],
-									"midpoints" : [ 188.5, 533.5, 544.5, 533.5, 544.5, 94.0, 138.5, 94.0 ],
+									"midpoints" : [ 188.5, 533.5, 663.5, 533.5, 663.5, 94.0, 138.5, 94.0 ],
 									"source" : [ "obj-6", 3 ]
 								}
 
@@ -10121,7 +10414,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontname" : [ "Arial" ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -10131,14 +10431,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -10147,8 +10440,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10157,9 +10450,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontface" : [ 3 ],
 									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -10178,9 +10471,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontface" : [ 1 ],
 									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -10335,7 +10628,14 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontname" : [ "Arial" ]
+								}
+,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -10345,14 +10645,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -10361,8 +10654,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10371,9 +10664,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontface" : [ 3 ],
 									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -10392,9 +10685,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontface" : [ 1 ],
 									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -10940,7 +11233,14 @@
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
+				"number" : 				{
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontname" : [ "Arial" ]
+				}
+,
 				"umenu" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -10950,14 +11250,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-				}
-,
-				"number" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "",
@@ -10966,8 +11259,8 @@
 , 			{
 				"name" : "caption text",
 				"default" : 				{
-					"fontsize" : [ 11.0 ],
-					"fontface" : [ 2 ]
+					"fontface" : [ 2 ],
+					"fontsize" : [ 11.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -10976,9 +11269,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontface" : [ 3 ],
 					"fontsize" : [ 15.0 ],
-					"fontname" : [ "Arial" ],
-					"fontface" : [ 3 ]
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -10997,9 +11290,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontface" : [ 1 ],
 					"fontsize" : [ 20.0 ],
-					"fontname" : [ "Arial" ],
-					"fontface" : [ 1 ]
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
