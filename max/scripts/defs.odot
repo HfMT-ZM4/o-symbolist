@@ -253,7 +253,28 @@
                     },
                     /id : dataobj./id+"-info",
                     /class : "infobox",
-                    /text : "time: " + dataobj./time + "<br><br> pitch: " + dataobj./pitch
+                    /children : [
+                        {
+                            /new : "label",
+                            /for : dataobj./id+"-time-input",
+                            /text : "time:"
+                        }, {
+                            /new : "input",
+                            /type : "text",
+                            /id : dataobj./id+"-time-input",
+                            /placeholder : dataobj./time
+                        },
+                        {
+                            /new : "label",
+                            /for : dataobj./id+"-pitch-input",
+                            /text : "pitch:"
+                        }, {
+                            /new : "input",
+                            /type : "text",
+                            /id : dataobj./id+"-pitch-input",
+                            /placeholder : dataobj./pitch
+                        }
+                    ]
                 }
             }
         )
