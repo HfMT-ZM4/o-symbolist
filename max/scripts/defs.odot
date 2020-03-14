@@ -31,35 +31,53 @@
     )
 ),
 
-/helper/make/infoDisplay = quote(
-        lambda([data],
+/helper/make/parms_inputs = quote(
+    lambda([data],
+            map(
+                lambda([param],
+                    let({
+                            deslashed_name : join("", split("/", param))
+                        },
+                        {
+                            /new : "div",
+                            /class : "info-input-div",
+                            /children : [{
+                                /new : "label",
+                                /for : data./id+"-"+deslashed_name+"-input",
+                                /text : param
+                            }, {
+                                /new : "input",
+                                /type : "text",
+                                /id : data./id+"-"+deslashed_name+"-input",
+                                /placeholder : getbundlemember(data, param)
+                            }]
+                        }
+                        
+                    )
+                ), getaddresses(data)
+            )
+        
+    )
+),
 
-                map(
-                    lambda([param],
-                        let({
-                                deslashed_name : join("", split("/", param))
-                            },
-                            {
-                                /new : "div",
-                                /class : "info-input-div",
-                                /children : [{
-                                    /new : "label",
-                                    /for : data./id+"-"+deslashed_name+"-input",
-                                    /text : param
-                                }, {
-                                    /new : "input",
-                                    /type : "text",
-                                    /id : data./id+"-"+deslashed_name+"-input",
-                                    /placeholder : getbundlemember(data, param)
-                                }]
-                            }
-                            
-                        )
-                    ), getaddresses(data)
-                )
-            
-        )
-    ),
+/helper/make/default_infoDisplay = quote(
+    lambda([dataobj, bbox],
+        {
+            /key : "html",
+            /val : {
+                /parent : "forms",
+                /new : "div",
+                /style : {
+                    /left : bbox./x+"px",
+                    /top : bbox./bottom+10+"px"
+                },
+                /id : dataobj./id+"-infobox",
+                /class : "infobox",
+                /children : /helper/make/parms_inputs(dataobj)
+            }
+        }
+    )
+),
 
 # this is temporary, should be stored in model i guess
 #   and be able to be different types of objects
@@ -268,24 +286,9 @@
         )
     ),
 
-
-    # /amp, /pitch, /time, /dur, (parent?)
     /get/infoDisplay : quote(
         lambda([dataobj, bbox],
-            {
-                /key : "html",
-                /val : {
-                    /parent : "forms",
-                    /new : "div",
-                    /style : {
-                        /left : bbox./x+"px",
-                        /top : bbox./bottom+10+"px"
-                    },
-                    /id : dataobj./id+"-infobox",
-                    /class : "infobox",
-                    /children : /helper/make/infoDisplay(dataobj)
-                }
-            }
+            /helper/make/default_infoDisplay(dataobj, bbox) # default display generator
         )
     ),
 
