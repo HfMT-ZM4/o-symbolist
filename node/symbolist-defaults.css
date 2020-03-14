@@ -57,14 +57,24 @@
   font-family: helvetica;
   font-size: 12px;
   position: absolute;
-  display: inline-block;
+  
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: start;
+  justify-content: space-between;
+  
 }
 
-.info-input-div {
-  display: inline-block;
-  position: relative;
-}
-
-.infobox label {
+.infoparam {
   padding: 5px 5px 5px 5px;
+}
+
+.infovalue-noedit {
+  padding: 5px 5px 5px 5px;
+  color: gray;
+  font-style: italic;
+}
+
+.infovalue input {
+  padding: 5px 0px 5px 0px;
 }

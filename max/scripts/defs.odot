@@ -38,21 +38,30 @@
                     let({
                             deslashed_name : join("", split("/", param))
                         },
-                        {
-                            /new : "div",
-                            /class : "info-input-div",
-                            /children : [{
-                                /new : "label",
-                                /for : data./id+"-"+deslashed_name+"-input",
-                                /text : param
-                            }, {
-                                /new : "input",
-                                /type : "text",
-                                /id : data./id+"-"+deslashed_name+"-input",
-                                /placeholder : getbundlemember(data, param)
-                            }]
-                        }
-                        
+                        if( deslashed_name == "id" || deslashed_name == "class",
+                            [{
+                                    /new : "span",
+                                    /class : "infoparam",
+                                    /text : param
+                                }, {
+                                    /new : "span",
+                                    /class : "infovalue-noedit",
+                                    /text : getbundlemember(data, param)
+                                }],
+                                [{
+                                    /new : "label",
+                                    /class : "infoparam",
+                                    /for : data./id+"-"+deslashed_name+"-input",
+                                    /text : param
+                                }, {
+                                    /new : "input",
+                                    /class : "infovalue",
+                                    /type : "text",
+                                    /id : data./id+"-"+deslashed_name+"-input",
+                                    /placeholder : getbundlemember(data, param)
+                                }]
+                            
+                        )
                     )
                 ), getaddresses(data)
             )
