@@ -31,6 +31,36 @@
     )
 ),
 
+/helper/make/infoDisplay = quote(
+        lambda([data],
+
+                map(
+                    lambda([param],
+                        let({
+                                deslashed_name : join("", split("/", param))
+                            },
+                            {
+                                /new : "div",
+                                /class : "info-input-div",
+                                /children : [{
+                                    /new : "label",
+                                    /for : data./id+"-"+deslashed_name+"-input",
+                                    /text : param
+                                }, {
+                                    /new : "input",
+                                    /type : "text",
+                                    /id : data./id+"-"+deslashed_name+"-input",
+                                    /placeholder : getbundlemember(data, param)
+                                }]
+                            }
+                            
+                        )
+                    ), getaddresses(data)
+                )
+            
+        )
+    ),
+
 # this is temporary, should be stored in model i guess
 #   and be able to be different types of objects
 # also the parent in the Model should not need the graphic info
@@ -253,28 +283,7 @@
                     },
                     /id : dataobj./id+"-infobox",
                     /class : "infobox",
-                    /children : [
-                        {
-                            /new : "label",
-                            /for : dataobj./id+"-time-input",
-                            /text : "time:"
-                        }, {
-                            /new : "input",
-                            /type : "text",
-                            /id : dataobj./id+"-time-input",
-                            /placeholder : dataobj./time
-                        },
-                        {
-                            /new : "label",
-                            /for : dataobj./id+"-pitch-input",
-                            /text : "pitch:"
-                        }, {
-                            /new : "input",
-                            /type : "text",
-                            /id : dataobj./id+"-pitch-input",
-                            /placeholder : dataobj./pitch
-                        }
-                    ]
+                    /children : /helper/make/infoDisplay(dataobj)
                 }
             }
         )

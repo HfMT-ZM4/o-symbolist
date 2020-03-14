@@ -30,7 +30,7 @@ let selectedClass = currentPaletteClass;
 
 
 /** 
- * API -- make namespace here 
+ * API -- make namespace here ?
  */
 
 function symbolist_setClass(_class)
@@ -39,7 +39,6 @@ function symbolist_setClass(_class)
     
     currentPaletteClass = _class;
 }
-
 
  /**
   * internal methods
