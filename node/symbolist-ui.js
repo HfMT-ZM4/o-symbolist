@@ -29,6 +29,11 @@ let currentPaletteClass = "/noteline";
 let selectedClass = currentPaletteClass;
 
 
+drawsocket.setInputListener( (key, objarr) => {
+   // console.log("called", key);
+   // we can handle additional messages to drawsocket here
+});
+
 /** 
  * API -- make namespace here ?
  */

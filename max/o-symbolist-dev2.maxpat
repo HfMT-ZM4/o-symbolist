@@ -39,12 +39,24 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-22",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 524.0, 268.0, 207.0, 33.0 ],
+					"text" : "symbol defs must come before layout which creates the palette"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 502.0, 264.999999999999943, 132.0, 22.0 ],
+					"patching_rect" : [ 502.0, 236.999999999999943, 132.0, 22.0 ],
 					"text" : "o.expr.file noteline.odot"
 				}
 
@@ -68,7 +80,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 502.0, 232.999999999999943, 150.0, 22.0 ],
+					"patching_rect" : [ 502.0, 300.499999999999943, 150.0, 22.0 ],
 					"text" : "o.expr.file view-layout.odot"
 				}
 
@@ -6621,13 +6633,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-5",
-					"linecount" : 14,
+					"linecount" : 24,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 611.5, 780.728072166442871, 356.0, 211.0 ],
-					"text" : "/key : \"key\",\n/val : {\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 1,\n\t\t/alt : 0\n\t},\n\t/action : \"keydown\",\n\t/xy : [611, 309],\n\t/keyVal : \"Meta\",\n\t/paletteClass : \"/noteline\",\n\t/selected\n}"
+					"patching_rect" : [ 611.5, 780.728072166442871, 356.0, 347.0 ],
+					"text" : "/key : \"mouse\",\n/val : {\n\t/id : \"noteline_u_1xf2ubjjtq8\",\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/target : {\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/baseProfile : \"full\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1\n\t},\n\t/action : \"mousemove\",\n\t/xy : [819, 517],\n\t/button : 0,\n\t/paletteClass : \"/noteline\",\n\t/mousedownPos,\n\t/selected\n}"
 				}
 
 			}
@@ -6701,7 +6713,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 100.0, 251.0, 1547.0 ],
-									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 100, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 0, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 53, 122, 48, 107, 104, 55, 56, 106, 97, 116, 119, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 90, 80, 20, 122, -31, 71, -82, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -127, -115, 85, 85, 85, 85, 86, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 49, 111, 106, 114, 121, 97, 121, 53, 97, 99, 100, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 89, 41, 112, -93, -41, 10, 62, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 116, -96, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 100, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 0, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 49, 101, 97, 97, 102, 107, 50, 106, 111, 98, 102, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 90, -14, -93, -41, 10, 61, 112, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, 124, -38, -86, -86, -86, -86, -85, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 32, 47, 105, 100, 0, 44, 115, 0, 0, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 105, 120, 110, 49, 118, 57, 114, 117, 48, 115, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 89, 82, 20, 122, -31, 71, -82, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 64, -125, 16, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
 									"saved_bundle_length" : 376,
 									"text" : "/model : [{\n\t/class : \"/noteline\",\n\t/pitch : 67.84,\n\t/amp : 1,\n\t/time : 12,\n\t/dur : 100,\n\t/id : \"foo-3\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 66,\n\t/amp : 1,\n\t/time : 10,\n\t/dur : 100,\n\t/id : \"foo-2\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 64,\n\t/amp : 1,\n\t/time : 0,\n\t/dur : 200,\n\t/id : \"foo-1\"\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_5bycqf0dj5s\",\n\t/pitch : 59.055,\n\t/time : 390,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_45rpq3uej1c\",\n\t/pitch : 38.735,\n\t/time : 298.333,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_2aug49v15dm\",\n\t/pitch : 43.3388,\n\t/time : 1046.67,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_mhm0gnaqob\",\n\t/pitch : 67.1513,\n\t/time : 948.333,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_19k94970rv2\",\n\t/pitch : 83.3438,\n\t/time : 1081.67,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1acwcmg8ofq\",\n\t/pitch : 68.8975,\n\t/time : 655,\n\t/dur : 99.9999,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_24i0l10s725\",\n\t/pitch : 55.0862,\n\t/time : 790,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_1jzs13gcreh\",\n\t/pitch : 61.9125,\n\t/time : 741.667,\n\t/dur : 100.,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_2gof48apl6v\",\n\t/pitch : 53.1813,\n\t/time : 706.667,\n\t/dur : 99.9999,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_17b9lt0qow9\",\n\t/pitch : 84.6137,\n\t/time : 815,\n\t/dur : 99.9999,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_neiq7xi18b\",\n\t/pitch : 100.013,\n\t/time : 830.,\n\t/dur : 100,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_7e65kg4mms\",\n\t/pitch : 100.965,\n\t/time : 1006.67,\n\t/dur : 100,\n\t/amp : 1\n}, {\n\t/class : \"/noteline\",\n\t/id : \"noteline_u_c976crhyy2w\",\n\t/pitch : 93.6625,\n\t/time : 1208.33,\n\t/dur : 100,\n\t/amp : 1\n}]"
 								}
@@ -6876,7 +6888,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 48.0, 583.5, 313.0, 88.0 ],
-					"text" : "/gui : {\n\t/symbolistAction : \"removeFromViewCache\",\n\t/ids : [\"noteline_u_5z0kh78jatw-infobox\", \"noteline_u_1ojryay5acd-infobox\"]\n}"
+					"text" : "/gui : {\n\t/symbolistAction : \"removeFromViewCache\",\n\t/ids : [\"noteline_u_1eaafk2jobf-infobox\", \"noteline_u_2ixn1v9ru0s-infobox\"]\n}"
 				}
 
 			}
@@ -8914,13 +8926,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-4",
-													"linecount" : 68,
+													"linecount" : 315,
 													"maxclass" : "o.display",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 300.0, 615.0, 356.0, 945.0 ],
-													"text" : "/direct/view : {\n\t/key : \"html\",\n\t/val : {\n\t\t/parent : \"forms\",\n\t\t/new : \"div\",\n\t\t/style : {\n\t\t\t/left : \"229px\",\n\t\t\t/top : \"187.15px\"\n\t\t},\n\t\t/id : \"noteline_u_7sdbtr3fups-infobox\",\n\t\t/class : \"infobox\",\n\t\t/children : [{\n\t\t\t/new : \"label\",\n\t\t\t/for : \"noteline_u_7sdbtr3fups-/class-input\",\n\t\t\t/text : \"/class\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_7sdbtr3fups-/class-input\",\n\t\t\t/placeholder : \"/noteline\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/for : \"noteline_u_7sdbtr3fups-/id-input\",\n\t\t\t/text : \"/id\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_7sdbtr3fups-/id-input\",\n\t\t\t/placeholder : \"noteline_u_7sdbtr3fups\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/for : \"noteline_u_7sdbtr3fups-/pitch-input\",\n\t\t\t/text : \"/pitch\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_7sdbtr3fups-/pitch-input\",\n\t\t\t/placeholder : 101.282\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/for : \"noteline_u_7sdbtr3fups-/time-input\",\n\t\t\t/text : \"/time\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_7sdbtr3fups-/time-input\",\n\t\t\t/placeholder : 365.\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/for : \"noteline_u_7sdbtr3fups-/dur-input\",\n\t\t\t/text : \"/dur\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_7sdbtr3fups-/dur-input\",\n\t\t\t/placeholder : 100\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/for : \"noteline_u_7sdbtr3fups-/amp-input\",\n\t\t\t/text : \"/amp\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_7sdbtr3fups-/amp-input\",\n\t\t\t/placeholder : 1\n\t\t}]\n\t}\n}"
+													"patching_rect" : [ 300.0, 615.0, 356.0, 4303.0 ],
+													"text" : "/direct/view : [{\n\t/key : \"html\",\n\t/val : {\n\t\t/parent : \"forms\",\n\t\t/new : \"div\",\n\t\t/style : {\n\t\t\t/left : \"287px\",\n\t\t\t/top : \"146.15px\"\n\t\t},\n\t\t/id : \"noteline_u_1eaafk2jobf-infobox\",\n\t\t/class : \"infobox\",\n\t\t/children : [{\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/text : \"/class\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infovalue-noedit\",\n\t\t\t/text : \"/noteline\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/text : \"/id\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infovalue-noedit\",\n\t\t\t/text : \"noteline_u_1eaafk2jobf\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_1eaafk2jobf-pitch-input\",\n\t\t\t/text : \"/pitch\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_1eaafk2jobf-pitch-input\",\n\t\t\t/placeholder : 107.791,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_1eaafk2jobf',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/pitch',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_1eaafk2jobf-time-input\",\n\t\t\t/text : \"/time\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_1eaafk2jobf-time-input\",\n\t\t\t/placeholder : 461.667,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_1eaafk2jobf',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/time',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_1eaafk2jobf-dur-input\",\n\t\t\t/text : \"/dur\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_1eaafk2jobf-dur-input\",\n\t\t\t/placeholder : 100,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_1eaafk2jobf',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/dur',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_1eaafk2jobf-amp-input\",\n\t\t\t/text : \"/amp\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_1eaafk2jobf-amp-input\",\n\t\t\t/placeholder : 1,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_1eaafk2jobf',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/amp',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}]\n\t}\n}, {\n\t/key : \"html\",\n\t/val : {\n\t\t/parent : \"forms\",\n\t\t/new : \"div\",\n\t\t/style : {\n\t\t\t/left : \"376px\",\n\t\t\t/top : \"187.15px\"\n\t\t},\n\t\t/id : \"noteline_u_2ixn1v9ru0s-infobox\",\n\t\t/class : \"infobox\",\n\t\t/children : [{\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/text : \"/class\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infovalue-noedit\",\n\t\t\t/text : \"/noteline\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/text : \"/id\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infovalue-noedit\",\n\t\t\t/text : \"noteline_u_2ixn1v9ru0s\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_2ixn1v9ru0s-pitch-input\",\n\t\t\t/text : \"/pitch\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_2ixn1v9ru0s-pitch-input\",\n\t\t\t/placeholder : 101.282,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_2ixn1v9ru0s',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/pitch',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_2ixn1v9ru0s-time-input\",\n\t\t\t/text : \"/time\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_2ixn1v9ru0s-time-input\",\n\t\t\t/placeholder : 610.,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_2ixn1v9ru0s',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/time',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_2ixn1v9ru0s-dur-input\",\n\t\t\t/text : \"/dur\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_2ixn1v9ru0s-dur-input\",\n\t\t\t/placeholder : 100,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_2ixn1v9ru0s',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/dur',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_2ixn1v9ru0s-amp-input\",\n\t\t\t/text : \"/amp\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_2ixn1v9ru0s-amp-input\",\n\t\t\t/placeholder : 1,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_2ixn1v9ru0s',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/amp',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}]\n\t}\n}]"
 												}
 
 											}
@@ -10297,7 +10309,6 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontface" : 0,
@@ -11073,9 +11084,16 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-45", 1 ],
 					"order" : 1,
-					"source" : [ "obj-1", 0 ]
+					"source" : [ "obj-11", 0 ]
 				}
 
 			}
@@ -11083,13 +11101,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-55", 2 ],
 					"order" : 0,
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-11", 0 ]
 				}
 
@@ -11407,7 +11418,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
+					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-8", 0 ]
 				}
 
