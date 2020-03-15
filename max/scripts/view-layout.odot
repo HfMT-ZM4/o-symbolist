@@ -37,4 +37,6 @@ map(
             )
          )
     ), /addrs
-)
+),
+
+delete(/addrs), delete(/iconFN)
