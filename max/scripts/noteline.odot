@@ -1,0 +1,175 @@
+
+# noteline object definitio
+
+/noteline = {
+
+    /default : {
+        /r : 1,
+        /dur : 100,
+        /amp : 1
+    },
+    
+    /params : {
+        /amp : "float32",
+        /dur : "float32",
+        /pitch : "float32",
+        /time : "float32"
+    },
+
+    # layout idea, make svg element the same size as bounding box and use css to center icons
+    # later, make this more streamlined with a helper function
+    /get/icon : quote(lambda([],
+    {
+        /key : "html",
+        /val : {
+            /new : "div",
+            /id : "noteline-button-div",
+            /parent : "palette",
+            /child : {
+                /new : "svg",
+                /id : "noteline-icon",
+                /style : {
+                    /height : 4,
+                    /width : 16,
+                    /top : "calc(50% - 2px)",
+                    /left : "calc(50% - 8px)"
+                },
+                /onclick : "console.log('select noteline'); symbolist_setClass('/noteline')",
+                /child : {            
+                    /new : "g",
+                    /class : "/noteline",
+                    /parent : "noteline-icon",
+                    /children : [
+                        {
+                            /new : "circle",
+                            /class : "notehead",
+                            /fill : "black",
+                            /r : 2,
+                            /cy : 0,
+                            /cx : 0
+                        },
+                        {
+                            /new : "line",
+                            /class : "durationLine",
+                            /fill : "black",
+                            /x1 : 0,
+                            /y1 : 0,
+                            /x2 : 16,
+                            /y2 : 0
+                        }
+                    ]
+                }
+            }
+        
+        }
+    })),
+
+    # /amp, /pitch, /time, /dur, (parent?)
+    
+    # input data+context
+    # output view object
+    /set/fromData : quote( 
+        lambda([obj, context],
+            /parent_time2pix = context./time2pix,
+            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),
+                    pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),
+                    pix_start : context./x + /parent_time2pix( obj./time ),
+                    pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )
+                }, # return the following object
+                {
+                    /new : "g",
+                    /class : "/noteline",
+                    /id : obj./id,
+                    /children : [
+                        {
+                            /new : "circle",
+                            /class : "notehead",
+                            /r : notehead_radius,
+                            /cy : pix_pitch_pos,
+                            /cx : pix_start + notehead_radius
+                        },
+                        {
+                            /new : "line",
+                            /class : "durationLine",
+                            /x1 : pix_start ,
+                            /y1 : pix_pitch_pos,
+                            /x2 : pix_end,
+                            /y2 : pix_pitch_pos
+                        }
+                    ]
+                }
+            )
+            
+        )
+    ),
+
+    # input view object + mouse event + context
+    # output data object
+    /set/fromGUI : quote(
+        lambda([viewobj, event, context],
+            # later: put these in a let function, here now since /parent.pix2time() doesn't work
+            # also later, parent probably should be passed in
+            # to do new from click, select a reference object, if none are found, then the SVG is the parent?
+            # do that in the UI script
+                                
+            /parent_pix2time = context./pix2time,
+            /test = 111,
+            let({
+                    default : /noteline./default
+                },
+                cond(                 
+                    event./symbolistAction == "newFromClick_down",
+                    {
+                        /class : "/noteline",
+                        /id : event./id,
+                        /pitch : scale( event./xy[[1]] - context./y, context./height, 0., 0., 127.),
+                        /time : /parent_pix2time( event./xy[[0]] - context./x + default./r ),
+                        /dur : default./dur,
+                        /amp : default./amp
+                    },
+                    event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
+                    let({
+                            notehead : /helper/getChildByClass( viewobj, "notehead" ),
+                            durationLine : /helper/getChildByClass( viewobj, "durationLine" )
+                        },
+                        let({
+                                xy : if ( bound(viewobj./transform),
+                                            /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),
+                                            [notehead./cx, notehead./cy] )
+                            },
+                            {
+                                /class : "/noteline",
+                                /id : viewobj./id,
+                                /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),
+                                /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  
+                                /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),
+                                /amp : scale(notehead./r, 5., 20., 0., 100)
+                            }
+                        )
+                    )
+                    
+                )
+            )
+            
+        )
+    ),
+
+    /get/infoDisplay : quote(
+        lambda([dataobj, bbox],
+            /helper/make/default_infoDisplay(dataobj, bbox) # default display generator
+        )
+    ),
+
+   /get/fromTime : quote(
+    lambda([obj, t],
+        let({
+                relTime : (t - obj./time) / obj./dur
+            },
+            if( relTime >= 0 && relTime <= 1,
+                {
+                    /relTime : relTime
+                }
+            )
+        )
+    ))
+}
