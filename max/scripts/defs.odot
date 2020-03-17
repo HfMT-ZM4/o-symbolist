@@ -131,39 +131,6 @@
 # therefore the default values don't require graphic values, because the graphic values are contained in the view data (which is produced by the script )
 
 
-/rectangle = {
-# probably better not to use generic names for classes
-# generic graphic items don't have /set/fromData?
-
-    /default : {
-    # not sure if the graphic information should be here already
-        /x : 10.,
-        /y : 10.,
-        /width : 600.,
-        /height : 800.,
-
-        /time/start : 0,
-        /time/dur : 1000.
-    },
-
-    /time2pix : quote(lambda([t],
-        (t / /parent./time/dur) * /parent./width
-    )),
-
-    /pix2time : quote(lambda([x],
-        x * (/parent./time/dur / /parent./width)
-    )),
-
-    /set/fromData : quote( 
-        lambda([obj, context],
-
-        )
-    ),
-
-    /set/fromGUI : {}
-},
-
-
 /playhead = {
     /set/fromTime : quote(
         lambda([t, context],

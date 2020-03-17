@@ -1,4 +1,8 @@
 /addrs = getaddresses(),
+ 
+ # maybe put defaults here for layout offsets, margins etc.
+
+# clefs and symbols should probably use the css display grid approach 
 
 /direct/view = [
 {
@@ -18,7 +22,21 @@
     /val : [{
         /new : "div",
         /id : "palette",
-        /parent : "forms"
+        /class : "palette",
+        /parent : "forms",
+        /children : [
+            {
+                /new : "div",
+                /id : "palette-clefs",
+                /class : "palette-clefs"
+            },
+            {
+                /new : "div",
+                /id : "palette-symbols",
+                /class : "palette-symbols"
+
+            }
+        ]
     },
     {
         /new : "div",
@@ -27,16 +45,36 @@
     }]
 }],
 
-
 map(
     lambda([a],
         if( bound(a./get/icon),
             progn(
                 /iconFN = a./get/icon,
-                /direct/view = [/direct/view, /iconFN() ]
+                /direct/view = [/direct/view, /iconFN() ],
+                if( bound(a./palette) && !bound(/firstPalette), 
+                    /firstPalette = a./palette
+                )
             )
          )
     ), /addrs
 ),
 
-delete(/addrs), delete(/iconFN)
+if( bound(/firstPalette),
+    map(
+        lambda([a],
+            let({
+                    symbol: getbundlemember(/firstPalette, a)
+                },
+                if( bound(symbol./get/icon),
+                    progn(
+                        /iconFN = symbol./get/icon,
+                        /direct/view = [/direct/view, /iconFN() ]
+                    )
+                )
+            )
+            
+        ), getaddresses(/firstPalette)
+    )
+),
+
+delete(/addrs), delete(/iconFN), delete(/firstPalette)

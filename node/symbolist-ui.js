@@ -25,7 +25,8 @@ let mousedown_pos = {x: 0, y: 0};
 let mouse_pos = {x: 0, y: 0};
 
 
-let currentPaletteClass = "/noteline";
+let currentPaletteClass =  "thereminStave.noteline";
+
 let selectedClass = currentPaletteClass;
 
 
@@ -41,8 +42,17 @@ drawsocket.setInputListener( (key, objarr) => {
 function symbolist_setClass(_class)
 {
     console.log("symbolist_setClass", _class);
-    
+   
+    document.querySelectorAll(".palette .selected").forEach( el => {
+        el.classList.remove("selected");
+    });
+
+    let paletteItem = document.getElementById(`${_class}-paletteIcon`);
+    paletteItem.classList.add("selected");
+
     currentPaletteClass = _class;
+
+    
 }
 
  /**
@@ -144,16 +154,19 @@ function deselectAll()
 
     selected = [];
     selectedCopy = [];
-    
-    drawsocket.send({
-        event : {
-            key: "symbolistEvent",
-            val: {
-                symbolistAction: 'removeFromViewCache',
-                ids: infoboxIds
+    if( infoboxIds.length > 0 )
+    {
+        drawsocket.send({
+            event : {
+                key: "symbolistEvent",
+                val: {
+                    symbolistAction: 'removeFromViewCache',
+                    ids: infoboxIds
+                }
             }
-        }
-    }); 
+        }); 
+    }
+    
 }
 
 
@@ -436,17 +449,20 @@ function sendMouseEvent(event, caller)
     const toplevelObj = getTopLevel(event.target);
 
     const _id = ( event.target.id != "svg" ) ? toplevelObj.id : 
-        (selectedClass && selectedClass.startsWith('/') ? selectedClass.slice(1)+'_u_'+fairlyUniqueNumber() : selectedClass+'_u_'+fairlyUniqueNumber());
+        selectedClass+'_u_'+fairlyUniqueNumber();
 
-   // console.log(_id, event.target);
+    //console.log(_id, event.target);
    
     let sel_arr = [];
+
     for( let i = 0; i < selected.length; i++)
     {
-        sel_arr.push( elementToJSON( selected[i] ) );
+        let _jsonEl = elementToJSON( selected[i]);
+        _jsonEl.bbox = selected[i].getBoundingClientRect();
+        sel_arr.push( _jsonEl );
+       
     }
 
-    
     let obj = {};
     obj.event = {
         key: 'mouse',
@@ -702,6 +718,10 @@ function symbolist_mouseover(event)
 
 }
 
+function symbolsit_doubleclick(event)
+{
+
+}
 
 function symbolist_mouseleave(event)
 {           
@@ -716,6 +736,7 @@ function addSymbolistMouseHandlers(element)
     element.addEventListener("mouseup", symbolist_mouseup, true);
     element.addEventListener("mouseover", symbolist_mouseover, true);
     element.addEventListener("mouseleave", symbolist_mouseleave, true);
+    element.addEventListener("dblclick", symbolsit_doubleclick, true);
 
 }
 
@@ -726,7 +747,7 @@ function removeSymbolistMouseHandlers(element)
     element.removeEventListener("mouseup", symbolist_mouseup, true);
     element.removeEventListener("mouseover", symbolist_mouseover, true);
     element.removeEventListener("mouseleave", symbolist_mouseleave, true);
-
+    element.removeEventListener("dblclick", symbolsit_doubleclick, true);
 }
 
 function addSymbolistKeyListeners()

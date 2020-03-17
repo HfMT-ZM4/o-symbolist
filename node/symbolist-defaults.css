@@ -1,3 +1,7 @@
+body {
+  background-color: gray;
+}
+
 .symbolist_selected {
   fill: blue;
 }
@@ -6,39 +10,67 @@
   stroke: blue;
 }
 
-#palette {
-  background-color : rgba(255, 255, 255, 100);
+.palette {
   color : black;
-  border-right : 1px solid black;
+  border-right : 1px dotted white;
  
   top: 0px;
   left: 0px;
   width: 62px;
   height: calc(100vh - 2px);
+
+  
 }
 
-#palette div {
-  background-color : rgba(255, 255, 255, 100);
+.palette .selected {
+  border : 2px solid white;
+}
+
+.palette div {
+  position: relative;
+
+  border-bottom : 1px dotted white;
+  border-top : 1px dotted white;
+
+  width: auto;
+  height: auto;
+}
+
+.palette-clefs div {
   color : black;
-  border : 1px solid black;
+  border : 1px solid white;
   position: relative;
  
-  width: 40px;
-  margin-left: 10px;
-
+  width: auto;
   height: 40px;
-  margin-top: 10px;
+
+  margin: 10%;
+  padding: 4%;
 
 }
 
-#palette svg {
+.palette-symbols div {
+  color : black;
+  border : 1px solid white;
+  position: relative;
+ 
+  width: auto;
+  height: 40px;
+
+  margin: 10%;
+  padding: 4%;
+
+  overflow: hidden;
+
+}
+
+.palette svg {
+
   z-index: 10;
 }
 
 #info-panel {
-  background-color : rgba(255, 255, 255, 100);
-  color : black;
-  border-left : 1px solid black;
+  border-left : 1px dotted white;
   
   left: calc(100vw - 50px);
   top: 0px;
@@ -52,7 +84,7 @@
 
 .infobox {
   background-color: rgba(255, 255, 255, 0.75);
-  border : 1px solid black;
+  border : 1px solid white;
   border-radius: 5px;
   font-family: helvetica;
   font-size: 12px;
