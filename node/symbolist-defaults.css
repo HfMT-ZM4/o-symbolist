@@ -2,13 +2,15 @@ body {
   background-color: gray;
 }
 
-.symbolist_selected {
-  fill: blue;
+.symbolist_selected line {
+  stroke: blue !important;
 }
 
-.symbolist_selected line {
-  stroke: blue;
+.symbolist_selected rect {
+  stroke: blue !important;
+
 }
+
 
 .palette {
   color : black;

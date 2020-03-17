@@ -27,35 +27,41 @@
     
     # could inlude scalars in map here...
     /map : {
-        /time2pix : quote(lambda([thisDef, clefview, t],
+
+        /x2time : quote(lambda([clefview, x],
             let({
-                    scalar : thisDef./scalar
+                    scalar : /thereminStave./scalar,
+                    rect: /helper/getChildByClass(clefview, "thereminStaff")
                 },
-                clefview./x + (t * scalar./time2pix)
+                clefdata./time/start + ((x - rect./x) * scalar./pix2time)
             )
         )),
 
-        /pix2time : quote(lambda([thisDef, clefdata, x],
+         /time2x : quote(lambda([clefview, t],
             let({
-                    scalar : thisDef./scalar
+                    scalar : /thereminStave./scalar,
+                    rect: /helper/getChildByClass(clefview, "thereminStaff")
                 },
-                clefdata./time/start + (x * scalar./pix2time)
+                rect./x + (t * scalar./time2pix)
             )
         )),
 
-        /pitch2pix : quote(lambda([thisDef, clefview, pitch],
+        /y2pitch : quote(lambda([clefview, y],
             let({
-                    scalar : thisDef./scalar
+                    scalar: /thereminStave./scalar,
+                    rect: /helper/getChildByClass(clefview, "thereminStaff")
                 },
-                clefview./y + /clefview./height - pitch * scalar./pitch2pix
+                ((y - rect./y) + rect./height ) * scalar./pix2pitch
             )
         )),
 
-        /pix2pitch : quote(lambda([thisDef, clefdata, x],
+
+        /pitch2y : quote(lambda([clefview, pitch],
             let({
-                    scalar : thisDef./scalar
+                    scalar : /thereminStave./scalar,
+                    rect: /helper/getChildByClass(clefview, "thereminStaff")
                 },
-                x * scalar./pix2pitch # min is zero so no scale needed
+                rect./y + rect./height - pitch * scalar./pitch2pix
             )
         ))
 
@@ -89,16 +95,17 @@
     
     # to do: figure out how to match the function signature with the symbol signatures also
     /set/fromData : quote( 
-        lambda([thisdef, dataobj, context],
+        lambda([dataobj, context],
             let({ 
-                    maps : thisdef./map,
-                    scalar : thisdef./scalar
+                    maps : /thereminStave./map,
+                    scalar : /thereminStave./scalar,
+                    bbox : context./bbox
                 }, 
                 let({
                         #basic rect here so that the inner children can reference the values
-                        x : dataobj./offsetInParent/x + scalar./time2pix * dataobj./time/start, # sorting of staves?
+                        x : bbox./x + dataobj./offsetInParent/x + scalar./time2pix * dataobj./time/start, # sorting of staves?
                         width : (scalar./time2pix * dataobj./time/start) + (scalar./time2pix * dataobj./time/dur),
-                        y : dataobj./offsetInParent/y, # << obviously we're not done here
+                        y : bbox./y + dataobj./offsetInParent/y, # << obviously we're not done here
                         height : scalar./pitch2pix * dataobj./pitch/range
                     },
                     {
@@ -132,7 +139,7 @@
     # input view object + mouse event + context
     # output data object
     /set/fromGUI : quote(
-        lambda([viewobj, event, context],                    
+        lambda([viewobj, event],                    
             cond(            
                 event./symbolistAction == "newFromClick_down",
                 {
@@ -236,32 +243,37 @@
             # input data+context
             # output view object
             /set/fromData : quote( 
-                lambda([obj, context],
-                    /parent_time2pix = context./time2pix,
-                    let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),
-                            pix_pitch_pos : context./y + scale(obj./pitch, 0., 127., context./height, 0.),
-                            pix_start : context./x + /parent_time2pix( obj./time ),
-                            pix_end : context./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )
+                lambda([dataobj, context],
+
+                    /map = /thereminStave./map,
+                    /time2x = /map./time2x,
+                    /pitch2y = /map./pitch2y,
+
+                    let({   r : scale(dataobj./amp, 0., 100, 5., 20.),
+                            y : /pitch2y( context, dataobj./pitch),
+                            x1 : /time2x( context, dataobj./time),
+                            x2 : /time2x( context, dataobj./time + dataobj./dur)
                         }, # return the following object
                         {
                             /new : "g",
-                            /class : "thereminStave.noteline"
-                            /id : obj./id,
+                            /class : "thereminStave.noteline",
+                            /id : dataobj./id,
+                            /parent : context./id,
                             /children : [
                                 {
                                     /new : "circle",
                                     /class : "notehead",
-                                    /r : notehead_radius,
-                                    /cy : pix_pitch_pos,
-                                    /cx : pix_start + notehead_radius
+                                    /r : r,
+                                    /cy : y,
+                                    /cx : x1 + r
                                 },
                                 {
                                     /new : "line",
                                     /class : "durationLine",
-                                    /x1 : pix_start ,
-                                    /y1 : pix_pitch_pos,
-                                    /x2 : pix_end,
-                                    /y2 : pix_pitch_pos
+                                    /x1 : x1 ,
+                                    /y1 : y,
+                                    /x2 : x2,
+                                    /y2 : y
                                 }
                             ]
                         }
@@ -273,22 +285,29 @@
             # input view object + mouse event + context
             # output data object
             /set/fromGUI : quote(
-                lambda([viewobj, event, context],
+                lambda([viewobj, event],
                     # later: put these in a let function, here now since /parent./pix2time() doesn't work
                     # to do new from click, select a reference object, if none are found, then the SVG is the parent?
                     # do that in the UI script
-                                        
-                    /parent_pix2time = context./pix2time,
+                    /map = /thereminStave./map,
+                    /x2time = /map./x2time,
+                    /y2pitch = /map./y2pitch,
+
                     let({
-                            default : /noteline./default
+                            default:  {
+                                /r : 1,
+                                /dur : 100,
+                                /amp : 1
+                            },
+                            context: event./context
                         },
                         cond(            
                             event./symbolistAction == "newFromClick_down",
                             {
-                                /class : "noteline",
+                                /class : "thereminStave.noteline",
                                 /id : event./id,
-                                /pitch : scale( event./xy[[1]] - context./y, context./height, 0., 0., 127.),
-                                /time : /parent_pix2time( event./xy[[0]] - context./x + default./r ),
+                                /time : /x2time( context, event./xy[[0]] - default./r ),
+                                /pitch : /y2pitch( context, event./xy[[1]] ),
                                 /dur : default./dur,
                                 /amp : default./amp
                             },
@@ -323,6 +342,7 @@
                             
                         )
                     )
+                    
                     
                 )
             ),

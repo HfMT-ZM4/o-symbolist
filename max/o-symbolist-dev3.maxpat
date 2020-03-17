@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 217.0, 79.0, 846.0, 937.0 ],
+		"rect" : [ 34.0, 79.0, 874.0, 937.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -5049,13 +5049,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-5",
-					"linecount" : 53,
+					"linecount" : 65,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 611.5, 780.728072166442871, 356.0, 741.0 ],
-					"text" : "/key : \"mouse\",\n/val : {\n\t/mousedownPos,\n\t/target : {\n\t\t/baseProfile : \"full\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1,\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\"\n\t},\n\t/paletteClass : \"thereminStave\",\n\t/selected : {\n\t\t/bbox : {\n\t\t\t/left : 102,\n\t\t\t/x : 102,\n\t\t\t/width : 1010,\n\t\t\t/height : 400,\n\t\t\t/bottom : 477,\n\t\t\t/right : 1112,\n\t\t\t/y : 77,\n\t\t\t/top : 77\n\t\t},\n\t\t/children : [{\n\t\t\t/x : 112,\n\t\t\t/width : 1000,\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 77,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/y2 : 477,\n\t\t\t/x1 : 102,\n\t\t\t/x2 : 102,\n\t\t\t/y1 : 77,\n\t\t\t/type : \"line\",\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/id : \"thereminStave_u_c04cjhici2o\",\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave\"\n\t},\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/xy : [64, 120],\n\t/id : \"thereminStave_u_1pap1qba6yt\",\n\t/button : 0,\n\t/action : \"mousemove\"\n}"
+					"patching_rect" : [ 611.5, 780.728072166442871, 356.0, 904.0 ],
+					"text" : "/key : \"mouse\",\n/val : {\n\t/mousedownPos,\n\t/target : {\n\t\t/baseProfile : \"full\",\n\t\t/bbox : {\n\t\t\t/left : 0,\n\t\t\t/x : 0,\n\t\t\t/width : 1073,\n\t\t\t/height : 535,\n\t\t\t/bottom : 535,\n\t\t\t/right : 1073,\n\t\t\t/y : 0,\n\t\t\t/top : 0\n\t\t},\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1,\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/class : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\"\n\t},\n\t/paletteClass : \"thereminStave.noteline\",\n\t/selected,\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/xy : [84, 344],\n\t/id : \"thereminStave.noteline_u_1phwamuetwx\",\n\t/button : 0,\n\t/action : \"mousemove\",\n\t/context : {\n\t\t/bbox : {\n\t\t\t/left : 95,\n\t\t\t/x : 95,\n\t\t\t/width : 1010,\n\t\t\t/height : 400,\n\t\t\t/bottom : 468,\n\t\t\t/right : 1105,\n\t\t\t/y : 68,\n\t\t\t/top : 68\n\t\t},\n\t\t/children : [{\n\t\t\t/x : 105,\n\t\t\t/width : 1000,\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 68,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/y2 : 468,\n\t\t\t/x1 : 95,\n\t\t\t/x2 : 95,\n\t\t\t/y1 : 68,\n\t\t\t/type : \"line\",\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave\"\n\t}\n}"
 				}
 
 			}
@@ -5128,10 +5128,10 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 100.0, 287.0, 133.0 ],
-									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 0, 0, 0, 0, 0, -20, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 0, 0, 0, 0, 0, 0, 36, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 95, 117, 95, 99, 48, 52, 99, 106, 104, 105, 99, 105, 50, 111, 0, 0, 0, 0, 28, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 120, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 112, 0, 0, 0, 28, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 121, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 77, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 112, 105, 116, 99, 104, 47, 114, 97, 110, 103, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 127 ],
+									"patching_rect" : [ 50.0, 100.0, 352.0, 133.0 ],
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 0, 0, 0, 0, 0, -20, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 0, 0, 0, 0, 0, 0, 36, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 95, 117, 95, 54, 120, 104, 109, 54, 116, 101, 56, 56, 107, 103, 0, 0, 0, 0, 28, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 120, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 105, 0, 0, 0, 28, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 121, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 68, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 112, 105, 116, 99, 104, 47, 114, 97, 110, 103, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 127 ],
 									"saved_bundle_length" : 272,
-									"text" : "/model : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_c04cjhici2o\",\n\t/offsetInParent/x : 112,\n\t/offsetInParent/y : 77,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}"
+									"text" : "/model : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t/offsetInParent/x : 108,\n\t/offsetInParent/y : 105,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}"
 								}
 
 							}
@@ -5254,7 +5254,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 100.0, 284.0, 333.0 ],
-									"text" : "/view : {\n\t/key : \"svg\",\n\t/val : {\n\t\t/new : \"g\",\n\t\t/class : \"thereminStave\",\n\t\t/id : \"thereminStave_u_c04cjhici2o\",\n\t\t/children : [{\n\t\t\t/new : \"rect\",\n\t\t\t/class : \"thereminStaff\",\n\t\t\t/x : 112.,\n\t\t\t/width : 1000.,\n\t\t\t/y : 77,\n\t\t\t/height : 400.\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"thereminClef\",\n\t\t\t/x1 : 102.,\n\t\t\t/y1 : 77,\n\t\t\t/x2 : 102.,\n\t\t\t/y2 : 477.\n\t\t}]\n\t}\n}"
+									"text" : "/view : {\n\t/key : \"svg\",\n\t/val : {\n\t\t/new : \"g\",\n\t\t/class : \"thereminStave\",\n\t\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t\t/children : [{\n\t\t\t/new : \"rect\",\n\t\t\t/class : \"thereminStaff\",\n\t\t\t/x : 105.,\n\t\t\t/width : 1000.,\n\t\t\t/y : 68,\n\t\t\t/height : 400.\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"thereminClef\",\n\t\t\t/x1 : 95.,\n\t\t\t/y1 : 68,\n\t\t\t/x2 : 95.,\n\t\t\t/y2 : 468.\n\t\t}]\n\t}\n}"
 								}
 
 							}
@@ -5299,13 +5299,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-47",
-					"linecount" : 5,
+					"linecount" : 77,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 75.0, 544.5, 313.0, 88.0 ],
-					"text" : "/gui : {\n\t/ids : \"thereminStave_u_c04cjhici2o-infobox\",\n\t/symbolistAction : \"removeFromViewCache\"\n}"
+					"patching_rect" : [ 75.0, 544.5, 313.0, 1067.0 ],
+					"text" : "/gui : {\n\t/mousedownPos,\n\t/target : {\n\t\t/bbox : {\n\t\t\t/left : 95,\n\t\t\t/x : 95,\n\t\t\t/width : 1010,\n\t\t\t/height : 400,\n\t\t\t/bottom : 468,\n\t\t\t/right : 1105,\n\t\t\t/y : 68,\n\t\t\t/top : 68\n\t\t},\n\t\t/children : [{\n\t\t\t/x : 105,\n\t\t\t/width : 1000,\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 68,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/y2 : 468,\n\t\t\t/x1 : 95,\n\t\t\t/x2 : 95,\n\t\t\t/y1 : 68,\n\t\t\t/type : \"line\",\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave\"\n\t},\n\t/paletteClass : \"thereminStave.noteline\",\n\t/selected,\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 1,\n\t\t/alt : 0\n\t},\n\t/xy : [299, 225],\n\t/id : \"thereminStave.noteline_u_8pjmzwli8i\",\n\t/symbolistAction : \"newFromClick_up\",\n\t/button : 0,\n\t/action : \"mouseup\",\n\t/context : {\n\t\t/bbox : {\n\t\t\t/left : 95,\n\t\t\t/x : 95,\n\t\t\t/width : 1010,\n\t\t\t/height : 400,\n\t\t\t/bottom : 468,\n\t\t\t/right : 1105,\n\t\t\t/y : 68,\n\t\t\t/top : 68\n\t\t},\n\t\t/children : [{\n\t\t\t/x : 105,\n\t\t\t/width : 1000,\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 68,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/y2 : 468,\n\t\t\t/x1 : 95,\n\t\t\t/x2 : 95,\n\t\t\t/y1 : 68,\n\t\t\t/type : \"line\",\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave\"\n\t}\n}"
 				}
 
 			}
@@ -5320,7 +5320,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 540.0, 665.5, 313.0, 48.0 ],
-					"text" : "/port/localhost : \"http://localhost:3002\",\n/port/ip : \"http://192.168.178.52:3002\""
+					"text" : "/port/localhost : \"http://localhost:3002\",\n/port/ip : \"http://192.168.178.36:3002\""
 				}
 
 			}
@@ -6758,7 +6758,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 606.0, 79.0, 873.0, 937.0 ],
+						"rect" : [ 34.0, 79.0, 873.0, 937.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7340,13 +7340,11 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-4",
-													"linecount" : 315,
 													"maxclass" : "o.display",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 300.0, 615.0, 356.0, 4303.0 ],
-													"text" : "/direct/view : [{\n\t/key : \"html\",\n\t/val : {\n\t\t/parent : \"forms\",\n\t\t/new : \"div\",\n\t\t/style : {\n\t\t\t/left : \"287px\",\n\t\t\t/top : \"146.15px\"\n\t\t},\n\t\t/id : \"noteline_u_1eaafk2jobf-infobox\",\n\t\t/class : \"infobox\",\n\t\t/children : [{\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/text : \"/class\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infovalue-noedit\",\n\t\t\t/text : \"/noteline\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/text : \"/id\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infovalue-noedit\",\n\t\t\t/text : \"noteline_u_1eaafk2jobf\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_1eaafk2jobf-pitch-input\",\n\t\t\t/text : \"/pitch\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_1eaafk2jobf-pitch-input\",\n\t\t\t/placeholder : 107.791,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_1eaafk2jobf',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/pitch',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_1eaafk2jobf-time-input\",\n\t\t\t/text : \"/time\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_1eaafk2jobf-time-input\",\n\t\t\t/placeholder : 461.667,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_1eaafk2jobf',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/time',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_1eaafk2jobf-dur-input\",\n\t\t\t/text : \"/dur\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_1eaafk2jobf-dur-input\",\n\t\t\t/placeholder : 100,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_1eaafk2jobf',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/dur',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_1eaafk2jobf-amp-input\",\n\t\t\t/text : \"/amp\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_1eaafk2jobf-amp-input\",\n\t\t\t/placeholder : 1,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_1eaafk2jobf',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/amp',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}]\n\t}\n}, {\n\t/key : \"html\",\n\t/val : {\n\t\t/parent : \"forms\",\n\t\t/new : \"div\",\n\t\t/style : {\n\t\t\t/left : \"376px\",\n\t\t\t/top : \"187.15px\"\n\t\t},\n\t\t/id : \"noteline_u_2ixn1v9ru0s-infobox\",\n\t\t/class : \"infobox\",\n\t\t/children : [{\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/text : \"/class\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infovalue-noedit\",\n\t\t\t/text : \"/noteline\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/text : \"/id\"\n\t\t}, {\n\t\t\t/new : \"span\",\n\t\t\t/class : \"infovalue-noedit\",\n\t\t\t/text : \"noteline_u_2ixn1v9ru0s\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_2ixn1v9ru0s-pitch-input\",\n\t\t\t/text : \"/pitch\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_2ixn1v9ru0s-pitch-input\",\n\t\t\t/placeholder : 101.282,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_2ixn1v9ru0s',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/pitch',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_2ixn1v9ru0s-time-input\",\n\t\t\t/text : \"/time\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_2ixn1v9ru0s-time-input\",\n\t\t\t/placeholder : 610.,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_2ixn1v9ru0s',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/time',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_2ixn1v9ru0s-dur-input\",\n\t\t\t/text : \"/dur\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_2ixn1v9ru0s-dur-input\",\n\t\t\t/placeholder : 100,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_2ixn1v9ru0s',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/dur',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}, {\n\t\t\t/new : \"label\",\n\t\t\t/class : \"infoparam\",\n\t\t\t/for : \"noteline_u_2ixn1v9ru0s-amp-input\",\n\t\t\t/text : \"/amp\"\n\t\t}, {\n\t\t\t/new : \"input\",\n\t\t\t/class : \"infovalue\",\n\t\t\t/type : \"text\",\n\t\t\t/id : \"noteline_u_2ixn1v9ru0s-amp-input\",\n\t\t\t/placeholder : 1,\n\t\t\t/onkeydown : \" if( event.key == 'Enter' ){\n                                    drawsocket.send( {\n                                        event:  {\n                                            key: 'symbolistEvent',\n                                            val: {\n                                                id: 'noteline_u_2ixn1v9ru0s',\n                                                symbolistAction: 'updateSymbolData',\n                                                param: '/amp',\n                                                value: this.value\n                                            }\n                                        }\n                                    });\n                                }\"\n\t\t}]\n\t}\n}]"
+													"patching_rect" : [ 300.0, 615.0, 356.0, 34.0 ]
 												}
 
 											}
@@ -7399,8 +7397,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 131.0, 579.0, 413.0 ],
-													"text" : "/ids ??= [],\n\n/direct/view = [],\n\nif( length(/ids) > 0,\n  map(\n    lambda([selected, bbox],\n      /objIDX = max( aseq(1,length(/ids)) * (selected./id == /ids) ) - 1,\n      if( /objIDX != -1,  progn(\n\n        /instance/data = /model[[/objIDX]],\n\n        # get object by type\n        /objRef = value(/instance/data./class),\n\n        # get set from data function\n        /getInfoFn = /objRef./get/infoDisplay,\n\n        # create \n        /direct/view = [/direct/view, /getInfoFn( /instance/data, bbox ) ]\n\n      ))\n    ), /gui./selected, /gui./bboxes\n  )\n),\n\nif( !bound(/direct/view), delete(/direct/view) )\n\n"
+													"patching_rect" : [ 50.0, 131.0, 615.0, 413.0 ],
+													"text" : "/ids ??= [],\n\n/direct/view = [],\n\nif( length(/ids) > 0,\n  map(\n    lambda([selected],\n      /objIDX = max( aseq(1,length(/ids)) * (selected./id == /ids) ) - 1,\n      if( /objIDX != -1,  progn(\n\n        /instance/data = /model[[/objIDX]],\n\n        # get object by type\n        /objRef = value(/instance/data./class),\n\n        # get set from data function\n        /getInfoFn = /objRef./get/infoDisplay,\n\n        # create \n        /direct/view = [/direct/view, /getInfoFn( /instance/data, selected./bbox ) ]\n\n      ))\n    ), /gui./selected\n  )\n),\n\nif( !bound(/direct/view), delete(/direct/view) )\n\n"
 												}
 
 											}
@@ -7854,7 +7852,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 43.0, 79.0, 1279.0, 937.0 ],
+										"rect" : [ 43.0, 79.0, 870.0, 937.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -7882,6 +7880,34 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-26",
+													"maxclass" : "button",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 419.0, 629.0, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-24",
+													"linecount" : 29,
+													"maxclass" : "o.display",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 73.0, 880.0, 299.0, 415.0 ],
+													"presentation_linecount" : 29,
+													"text" : "/context : {\n\t/baseProfile : \"full\",\n\t/bbox : {\n\t\t/left : 0,\n\t\t/x : 0,\n\t\t/width : 1073,\n\t\t/height : 535,\n\t\t/bottom : 535,\n\t\t/right : 1073,\n\t\t/y : 0,\n\t\t/top : 0\n\t},\n\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t/version : 1.1,\n\t/id : \"svg\",\n\t/type : \"svg\",\n\t/class : \"svg\",\n\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\"\n},\n/data : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t/offsetInParent/x : 105,\n\t/offsetInParent/y : 68,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"fontface" : 0,
 													"fontsize" : 12.0,
@@ -7911,12 +7937,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 390.0, 392.0, 100.0, 22.0 ],
-													"text" : "o.select /objRef"
+													"patching_rect" : [ 390.0, 392.0, 100.0, 35.0 ],
+													"text" : "o.select /contextDef"
 												}
 
 											}
@@ -7925,11 +7952,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-12",
+													"linecount" : 333,
 													"maxclass" : "o.display",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 583.0, 232.0, 1047.0, 34.0 ]
+													"patching_rect" : [ 583.0, 232.0, 1047.0, 4547.0 ],
+													"text" : "/contextDef : {\n\t/default : {\n\t\t/offsetInParent/x : 0,\n\t\t/offsetInParent/y : 0,\n\t\t/time/start : 0.,\n\t\t/time/dur : 1.,\n\t\t/pitch/range : 127\n\t},\n\t/params : {\n\t\t/time/start : \"float32\",\n\t\t/time/dur : \"float32\",\n\t\t/pitch/range : \"float32\",\n\t\t/offsetInParent/x : \"float32\",\n\t\t/offsetInParent/y : \"float32\"\n\t},\n\t/scalar : {\n\t\t/time2pix : 1000.,\n\t\t/pix2time : 0.001,\n\t\t/pitch2pix : 3.14961,\n\t\t/pix2pitch : 0.3175\n\t},\n\t/map : {\n\t\t/x2time : \"lambda([clefview, x],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass(clefview, \\\"thereminStaff\\\")\n                },\n                clefdata./time/start + ((x - rect./x) * scalar./pix2time)\n            )\n        )\",\n\t\t/time2x : \"lambda([clefview, t],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass(clefview, \\\"thereminStaff\\\")\n                },\n                rect./x + (t * scalar./time2pix)\n            )\n        )\",\n\t\t/y2pitch : \"lambda([clefview, y],\n            let({\n                    scalar: /thereminStave./scalar,\n                    rect: /helper/getChildByClass(clefview, \\\"thereminStaff\\\")\n                },\n                ((y - rect./y) + rect./height ) * scalar./pix2pitch\n            )\n        )\",\n\t\t/pitch2y : \"lambda([clefview, pitch],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass(clefview, \\\"thereminStaff\\\")\n                },\n                rect./y + rect./height - pitch * scalar./pitch2pix\n            )\n        )\"\n\t},\n\t/get/icon : \"lambda([],\n    {\n        /key : \\\"html\\\",\n        /val : {\n            /new : \\\"div\\\",\n            /id : \\\"thereminStave-paletteIcon\\\",\n            /parent : \\\"palette-clefs\\\",\n            /child : {\n                /new : \\\"img\\\",\n                /id : \\\"thereminStave-display\\\",\n                /src : \\\"assets/thereminClef.svg\\\",\n                /style : {\n                    /width : \\\"100%\\\",\n                    /height : \\\"100%\\\"\n                },\n                /onclick : \\\"\n                    console.log('select thereminStave'); \n                    symbolist_setClass('thereminStave');\n                \\\"\n            }\n        \n        }\n    })\",\n\t/set/fromData : \" \n        lambda([dataobj, context],\n            let({ \n                    maps : /thereminStave./map,\n                    scalar : /thereminStave./scalar,\n                    bbox : context./bbox\n                }, \n                let({\n                        #basic rect here so that the inner children can reference the values\n                        x : bbox./x + dataobj./offsetInParent/x + scalar./time2pix * dataobj./time/start, # sorting of staves?\n                        width : (scalar./time2pix * dataobj./time/start) + (scalar./time2pix * dataobj./time/dur),\n                        y : bbox./y + dataobj./offsetInParent/y, # << obviously we're not done here\n                        height : scalar./pitch2pix * dataobj./pitch/range\n                    },\n                    {\n                        /new : \\\"g\\\",\n                        /class : \\\"thereminStave\\\",\n                        /id : dataobj./id,\n                        /children : [\n                            {\n                                /new : \\\"rect\\\",\n                                /class : \\\"thereminStaff\\\",\n                                /x : x,\n                                /width : width,\n                                /y : y,\n                                /height : height\n                            },\n                            { #make clef symbol here, with a negative x so that it's behind the zero time point\n                                /new : \\\"line\\\",\n                                /class : \\\"thereminClef\\\",\n                                /x1 : x - 10,\n                                /y1 : y,\n                                /x2 : x - 10,\n                                /y2 : y + height\n                            }\n                        ]\n                    }\n                )\n            )\n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([viewobj, event],                    \n            cond(            \n                event./symbolistAction == \\\"newFromClick_down\\\",\n                {\n                    /class : \\\"thereminStave\\\",\n                    /id : event./id,\n                    /offsetInParent/x : event./xy[[0]],\n                    /offsetInParent/y : event./xy[[1]],\n                    /time/start : 0.,\n                    /time/dur : 1., # seconds\n                    /pitch/range : 127 # min implied as zero\n                },\n                event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                let({\n                        bbox: viewobj./bbox\n                    },\n                    {\n                        /class : \\\"thereminStave\\\",\n                        /id : viewobj./id,\n                        /offsetInParent/x : bbox./x,\n                        /offsetInParent/y : bbox./y,\n                        /time/start : 0.,\n                        /time/dur : 1., # seconds\n                        /pitch/range : 127 # min implied as zero\n                    }\n                )\n            )\n            \n        )\n    \",\n\t/palette : {\n\t\t/noteline : {\n\t\t\t/default : {\n\t\t\t\t/r : 1,\n\t\t\t\t/dur : 100,\n\t\t\t\t/amp : 1\n\t\t\t},\n\t\t\t/params : {\n\t\t\t\t/amp : \"float32\",\n\t\t\t\t/dur : \"float32\",\n\t\t\t\t/pitch : \"float32\",\n\t\t\t\t/time : \"float32\"\n\t\t\t},\n\t\t\t/get/icon : \"lambda([],\n            {\n                /key : \\\"html\\\",\n                /val : {\n                    /new : \\\"div\\\",\n                    /id : \\\"thereminStave.noteline-paletteIcon\\\",\n                    /parent : \\\"palette-symbols\\\",\n                    /child : {\n                        /new : \\\"svg\\\",\n                        /id : \\\"noteline-icon\\\",\n                        /style : {\n                            /height : 4,\n                            /width : 16,\n                            /top : \\\"calc(50% - 2px)\\\",\n                            /left : \\\"calc(50% - 8px)\\\"\n                        },\n                        /onclick : \\\"\n                                console.log('select noteline'); \n                                symbolist_setClass('thereminStave.noteline');\n                        \\\",\n                        /child : {            \n                            /new : \\\"g\\\",\n                            /class : \\\"noteline\\\",\n                            /parent : \\\"noteline-icon\\\",\n                            /children : [\n                                {\n                                    /new : \\\"circle\\\",\n                                    /class : \\\"notehead\\\",\n                                    /fill : \\\"black\\\",\n                                    /r : 2,\n                                    /cy : 0,\n                                    /cx : 0\n                                },\n                                {\n                                    /new : \\\"line\\\",\n                                    /class : \\\"durationLine\\\",\n                                    /fill : \\\"black\\\",\n                                    /x1 : 0,\n                                    /y1 : 0,\n                                    /x2 : 16,\n                                    /y2 : 0\n                                }\n                            ]\n                        }\n                    }\n                \n                }\n            })\",\n\t\t\t/set/fromData : \" \n                lambda([dataobj, context],\n\n                    /map = /thereminStave./map,\n                    /time2x = /map./time2x,\n                    /pitch2y = /map./pitch2y,\n\n                    let({   r : scale(dataobj./amp, 0., 100, 5., 20.),\n                            y : /pitch2y( context, dataobj./pitch),\n                            x1 : /time2x( context, dataobj./time),\n                            x2 : /time2x( context, dataobj./time + dataobj./dur)\n                        }, # return the following object\n                        {\n                            /new : \\\"g\\\",\n                            /class : \\\"thereminStave.noteline\\\",\n                            /id : dataobj./id,\n                            /parent : context./id,\n                            /children : [\n                                {\n                                    /new : \\\"circle\\\",\n                                    /class : \\\"notehead\\\",\n                                    /r : r,\n                                    /cy : y,\n                                    /cx : x1 + r\n                                },\n                                {\n                                    /new : \\\"line\\\",\n                                    /class : \\\"durationLine\\\",\n                                    /x1 : x1 ,\n                                    /y1 : y,\n                                    /x2 : x2,\n                                    /y2 : y\n                                }\n                            ]\n                        }\n                    )\n                    \n                )\n            \",\n\t\t\t/set/fromGUI : \"\n                lambda([viewobj, event],\n                    # later: put these in a let function, here now since /parent./pix2time() doesn't work\n                    # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n                    # do that in the UI script\n                    /map = /thereminStave./map,\n                    /x2time = /map./x2time,\n                    /y2pitch = /map./y2pitch,\n\n                    let({\n                            default:  {\n                                /r : 1,\n                                /dur : 100,\n                                /amp : 1\n                            },\n                            context: event./context\n                        },\n                        cond(            \n                            event./symbolistAction == \\\"newFromClick_down\\\",\n                            {\n                                /class : \\\"thereminStave.noteline\\\",\n                                /id : event./id,\n                                /time : /x2time( context, event./xy[[0]] - default./r ),\n                                /pitch : /y2pitch( context, event./xy[[1]] ),\n                                /dur : default./dur,\n                                /amp : default./amp\n                            },\n                            event./symbolistAction == \\\"selected\\\",\n                            {\n\n                            },\n                            event./symbolistAction == \\\"deselected\\\",\n                            {\n                                \n                            },\n                            event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                            let({\n                                    notehead : /helper/getChildByClass( viewobj, \\\"notehead\\\" ),\n                                    durationLine : /helper/getChildByClass( viewobj, \\\"durationLine\\\" )\n                                },\n                                let({\n                                        xy : if ( bound(viewobj./transform),\n                                                    /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),\n                                                    [notehead./cx, notehead./cy] )\n                                    },\n                                    {\n                                        /class : \\\"noteline\\\",\n                                        /id : viewobj./id,\n                                        /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),\n                                        /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  \n                                        /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                        /amp : scale(notehead./r, 5., 20., 0., 100)\n                                    }\n                                )\n                            )\n                            \n                        )\n                    )\n                    \n                    \n                )\n            \",\n\t\t\t/get/infoDisplay : \"\n                lambda([dataobj, bbox],\n                    /helper/make/default_infoDisplay(dataobj, bbox) # default display generator\n                )\n            \",\n\t\t\t/get/fromTime : \"\n            lambda([obj, t],\n                let({\n                        relTime : (t - obj./time) / obj./dur\n                    },\n                    if( relTime >= 0 && relTime <= 1,\n                        {\n                            /relTime : relTime\n                        }\n                    )\n                )\n            )\"\n\t\t}\n\t}\n}"
 												}
 
 											}
@@ -7942,7 +7971,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 304.0, 561.0, 150.0, 32.0 ],
+													"patching_rect" : [ 308.0, 584.0, 150.0, 32.0 ],
 													"text" : "/viewobj = nil"
 												}
 
@@ -7954,7 +7983,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 433.0, 273.0, 22.0 ],
+													"patching_rect" : [ 54.0, 465.0, 273.0, 22.0 ],
 													"text" : "o.cond bound(/selected)"
 												}
 
@@ -7966,7 +7995,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
-													"patching_rect" : [ 50.0, 533.0, 91.0, 22.0 ],
+													"patching_rect" : [ 54.0, 565.0, 91.0, 22.0 ],
 													"text" : "o.pack /viewobj"
 												}
 
@@ -7978,7 +8007,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 50.0, 503.0, 81.0, 22.0 ],
+													"patching_rect" : [ 54.0, 535.0, 81.0, 22.0 ],
 													"text" : "o.route /value"
 												}
 
@@ -7990,7 +8019,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
-													"patching_rect" : [ 50.0, 566.0, 142.0, 22.0 ],
+													"patching_rect" : [ 54.0, 598.0, 142.0, 22.0 ],
 													"text" : "o.union"
 												}
 
@@ -8002,7 +8031,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 476.0, 142.0, 22.0 ],
+													"patching_rect" : [ 54.0, 508.0, 142.0, 22.0 ],
 													"text" : "o.listenumerate /selected"
 												}
 
@@ -8016,7 +8045,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 387.0, 277.0, 32.0 ],
+													"patching_rect" : [ 54.0, 419.0, 277.0, 32.0 ],
 													"text" : "/selected = /gui./selected"
 												}
 
@@ -8041,7 +8070,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 704.0, 128.0, 22.0 ],
+													"patching_rect" : [ 54.0, 736.0, 128.0, 22.0 ],
 													"text" : "o.cond bound(/data)"
 												}
 
@@ -8110,7 +8139,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 292.0, 680.0, 24.0, 24.0 ]
+													"patching_rect" : [ 296.0, 712.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -8123,8 +8152,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 612.0, 313.0, 32.0 ],
-													"text" : "/data = /setFn( /viewobj, /gui, /context )"
+													"patching_rect" : [ 54.0, 644.0, 335.0, 32.0 ],
+													"text" : "/data = /setFn( /viewobj, /gui )"
 												}
 
 											}
@@ -8179,8 +8208,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 50.0, 670.0, 100.0, 22.0 ],
-													"text" : "o.select /data"
+													"patching_rect" : [ 54.0, 702.0, 162.0, 22.0 ],
+													"text" : "o.gather.select /data /context"
 												}
 
 											}
@@ -8189,13 +8218,14 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-3",
-													"linecount" : 19,
+													"linecount" : 20,
 													"maxclass" : "o.expr.codebox",
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 76.0, 407.0, 277.0 ],
-													"text" : "/tok = \"/\" + split(\".\", /gui./paletteClass),\n\n/clef = value(/tok[[0]]),\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n),\n\n# get set from data function\n/setFn = /objRef./set/fromGUI,\n\n# get ready to make this the clef... \n/context = /parent"
+													"patching_rect" : [ 50.0, 76.0, 407.0, 290.0 ],
+													"presentation_linecount" : 20,
+													"text" : "/tok = \"/\" + split(\".\", /gui./paletteClass),\n\n/clef = value(/tok[[0]]),\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n),\n\n# get set from data function\n/setFn = /objRef./set/fromGUI,\n\n# get ready to make this the clef... \n/context = /gui./context,\n/contextDef = value(\"/\"+/context./class)"
 												}
 
 											}
@@ -8220,7 +8250,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 50.0, 752.0, 30.0, 30.0 ]
+													"patching_rect" : [ 54.0, 784.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -8327,22 +8357,33 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-5", 0 ],
+													"destination" : [ "obj-26", 0 ],
+													"order" : 0,
 													"source" : [ "obj-28", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-16", 0 ],
-													"source" : [ "obj-3", 0 ]
+													"destination" : [ "obj-5", 0 ],
+													"order" : 1,
+													"source" : [ "obj-28", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-13", 0 ],
-													"source" : [ "obj-30", 0 ]
+													"order" : 0,
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-16", 0 ],
+													"order" : 1,
+													"source" : [ "obj-3", 0 ]
 												}
 
 											}
@@ -8379,6 +8420,15 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-14", 0 ],
+													"order" : 1,
+													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-24", 0 ],
+													"order" : 0,
 													"source" : [ "obj-7", 0 ]
 												}
 
@@ -8798,6 +8848,18 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-12",
+													"maxclass" : "button",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 535.0, 214.0, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-10",
@@ -8806,7 +8868,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 441.0, 633.0, 738.0, 358.0 ],
+													"patching_rect" : [ 401.0, 780.0, 738.0, 358.0 ],
 													"presentation_linecount" : 25,
 													"text" : "# get object by type\n/objRef = value(/data./class),\n\n# get set from data function\n/setFn = /objRef./set/fromData,\n\n/context = /parent,\n\n/fn = quote(\n  lambda([thisdef, dataobj, context],\n    let({\n          maps : thisdef./map,\n          scalar : thisdef./scalar\n        },\n          /x = scalar./time2pix * dataobj./time/start, # sorting of staves?\n          /width = (scalar./time2pix * dataobj./time/start) + (scalar./time2pix * dataobj./time/dur),\n          /y = 0, # << obviously we're not done here\n          /height = scalar./pitch2pix * dataobj./pitch/range\n    )\n  )\n),\n\n/newView = /fn( /objRef, /data, /context )\n\n    "
 												}
@@ -8815,12 +8877,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-9",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 332.0, 440.5, 161.0, 22.0 ],
-													"text" : "o.select /data"
+													"patching_rect" : [ 529.0, 120.5, 161.0, 35.0 ],
+													"text" : "o.gather.select /data /context"
 												}
 
 											}
@@ -8829,14 +8892,14 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-3",
-													"linecount" : 9,
+													"linecount" : 39,
 													"maxclass" : "o.display",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 319.0, 491.0, 748.0, 143.0 ],
-													"presentation_linecount" : 9,
-													"text" : "/data : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_1w8ql56gsqm\",\n\t/offsetInParent/x : 242,\n\t/offsetInParent/y : 137,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}"
+													"patching_rect" : [ 559.0, 171.0, 748.0, 551.0 ],
+													"presentation_linecount" : 39,
+													"text" : "/context : {\n\t/bbox : {\n\t\t/left : 0,\n\t\t/x : 0,\n\t\t/width : 0,\n\t\t/height : 0,\n\t\t/bottom : 0,\n\t\t/right : 0,\n\t\t/y : 0,\n\t\t/top : 0\n\t},\n\t/children : [{\n\t\t/x : 112,\n\t\t/width : 1000,\n\t\t/height : 400,\n\t\t/type : \"rect\",\n\t\t/y : 74,\n\t\t/class : \"thereminStaff\"\n\t}, {\n\t\t/y2 : 474,\n\t\t/x1 : 102,\n\t\t/x2 : 102,\n\t\t/y1 : 74,\n\t\t/type : \"line\",\n\t\t/class : \"thereminClef\"\n\t}],\n\t/id : \"thereminStave_u_1uxa9ol62l6\",\n\t/type : \"g\",\n\t/class : \"thereminStave\"\n},\n/data : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t/offsetInParent/x : 108,\n\t/offsetInParent/y : 105,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}"
 												}
 
 											}
@@ -8873,13 +8936,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-6",
-													"linecount" : 9,
+													"linecount" : 20,
 													"maxclass" : "o.expr.codebox",
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 47.0, 122.0, 446.0, 141.0 ],
-													"text" : "# get object by type\n/objRef = value(\"/\"+/data./class),\n\n# get set from data function\n/setFn = /objRef./set/fromData,\n\n/context = /parent,\n\n/newView = /setFn( /objRef, /data, /context )"
+													"patching_rect" : [ 47.0, 122.0, 446.0, 290.0 ],
+													"text" : "/tok = \"/\" + split(\".\", /data./class),\n\n/clef = value(/tok[[0]]),\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n),\n\n# get set from data function\n/setFn = /objRef./set/fromData,\n\n/context ??= /svg,\n\n/newView = /setFn( /data, /context )"
 												}
 
 											}
@@ -8888,26 +8951,25 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-5",
-													"linecount" : 11,
+													"linecount" : 20,
 													"maxclass" : "o.display",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 137.0, 556.0, 748.0, 170.0 ],
-													"text" : "/data : {\n\t/class : \"/thereminClef\",\n\t/id : \"thereminClef_u_239l90c0sgv\",\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n},\n/height : 1000.,\n/width : 100.,\n/y : 0,\n/x : 0."
+													"patching_rect" : [ 137.0, 556.0, 748.0, 292.0 ],
+													"text" : "/newView : {\n\t/new : \"g\",\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t/children : [{\n\t\t/new : \"rect\",\n\t\t/class : \"thereminStaff\",\n\t\t/x : 108.,\n\t\t/width : 1000.,\n\t\t/y : 105,\n\t\t/height : 400.\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"thereminClef\",\n\t\t/x1 : 98.,\n\t\t/y1 : 105,\n\t\t/x2 : 98.,\n\t\t/y2 : 505.\n\t}]\n}"
 												}
 
 											}
 , 											{
 												"box" : 												{
 													"id" : "obj-4",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 137.0, 483.5, 161.0, 35.0 ],
-													"text" : "o.gather.select /x /y /width /height /data"
+													"patching_rect" : [ 158.0, 446.5, 161.0, 22.0 ],
+													"text" : "o.gather.select /newView"
 												}
 
 											}
@@ -8920,7 +8982,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+													"patching_rect" : [ 47.0, 36.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -8972,13 +9034,31 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-28", 0 ],
+													"order" : 1,
 													"source" : [ "obj-6", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"order" : 0,
+													"source" : [ "obj-6", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-12", 0 ],
+													"order" : 1,
+													"source" : [ "obj-9", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-3", 0 ],
+													"order" : 0,
 													"source" : [ "obj-9", 0 ]
 												}
 
