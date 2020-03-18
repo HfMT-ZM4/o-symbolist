@@ -13,15 +13,20 @@
   ]
 )),
 
-/helper/emptybundle = quote(lambda([b], 
+/~/emptybundle = quote(lambda([b], 
 	length(getaddresses(b)) == 0 
 )),
+
+/~/hasAddress = quote(lambda([obj, addr],
+  max( getaddresses(obj) == addr ) 
+)),
+
 
 
 /helper/getChildByClass = quote(
     lambda([obj, classname],
         /found = {},
-        if( bound(obj./children) ,
+        if( /~/hasAddress(obj, "/children") ,
             map( lambda([c],
                     if( c./class == classname,
                         /found = c
@@ -40,21 +45,27 @@
 
 /helper/getChildByClass_recursive = quote(
     lambda([obj, classname],
-        if( bound(obj./children),
-            map( 
-				lambda([c],
-                    if( !bound(/found) && bound(c./class) && c./class == classname,
-						/found = c,
-						/found = /helper/getChildByClass_recursive( c, classname )
+        if( /~/hasAddress(obj, "/class") && obj./class == classname,
+            obj,
+            progn(
+                if( /~/hasAddress(obj, "/children"),
+                    map( 
+                        lambda([c],
+                            if( !bound(/found) && /~/hasAddress(c, "/class") && c./class == classname,
+                                /found = c,
+                                /found = /helper/getChildByClass_recursive( c, classname )
+                            )
+                        ), obj./children
                     )
-                ), obj./children
+                ),
+                if( bound(/found), 
+                    prog1(
+                    /found,
+                    delete(/found)
+                    )
+                )
             )
-        ),
-        if( bound(/found), 
-            prog1(
-               /found,
-               delete(/found)
-            )
+            
         )
     )
 ),
