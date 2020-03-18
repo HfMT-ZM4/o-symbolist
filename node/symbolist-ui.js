@@ -16,6 +16,8 @@
 const svgObj = document.getElementById("svg");
 const mainSVG = document.getElementById("main-svg");
 
+let symbolist_log;
+
 let clickedObj = null;
 let prevEventTarget = null;
 let selected = [];
@@ -52,8 +54,24 @@ function symbolist_setClass(_class)
 
     currentPaletteClass = _class;
 
-    
 }
+
+function symbolist_setContext(obj)
+{
+
+   currentContext = document.getElementById(obj.id);
+   symbolist_set_log(`set context to ${obj.id}`)
+}
+
+function symbolist_set_log(msg)
+{
+    if(typeof symbolist_log === "undefined" )
+        symbolist_log = document.getElementById("symbolist_log");
+    
+    symbolist_log.innerHTML = `<span>${msg}</span>`;
+
+}
+
 
  /**
   * internal methods
@@ -420,9 +438,14 @@ function symbolost_sendKeyEvent(event, caller)
     });
 }
 
-function setContext()
+function setSelectedContext()
 {
+    if( selected.length > 0 )
+    {
+        currentContext = selected[selected.length-1];
 
+        symbolist_set_log(`context is now: ${currentContext.id}`);
+    }
 }
 
 function symbolist_keydownhandler(event)
@@ -438,10 +461,8 @@ function symbolist_keydownhandler(event)
             deselectAll();
             break;
         case "s":
-            if( selected.length > 0 )
-            {
-                currentContext = selected[selected.length-1];
-            }
+            setSelectedContext();
+            event.symbolistAction = "setContext";
             break;
 
     }
@@ -574,8 +595,12 @@ function clearDragRegionRect()
 
 function symbolsit_dblclick(event)
 {
+    setSelectedContext();
     deselectAll();
+    event.symbolistAction = "setContext";
+    sendMouseEvent(event, "dblclick");
 
+/*
     const _eventTarget = getTopLevel( event.target );
 
     if( prevEventTarget === null )
@@ -591,6 +616,7 @@ function symbolsit_dblclick(event)
     }
     
     sendMouseEvent(event, "dblclick");
+    */
 }
 
 

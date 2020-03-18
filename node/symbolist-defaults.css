@@ -15,9 +15,38 @@ body {
   stroke: blue !important;
 }
 
+#symbolist_log {
+  border-top : 1px dotted white;
+  left: 62px;
+  top: calc(100vh - 20px);
+  width: calc(100vw - (62px * 2) - 10px);
+  height: 20px;
+  font-family: helvetica;
+  font-size: 10px;
+  color: white;  
+}
+
+#symbolist_log span {
+  margin: 10px; 
+}
+
+#info-panel {
+  border-left : 1px dotted white;
+  
+  left: calc(100vw - 62px);
+  top: 0px;
+  width: 62px;
+  height: calc(100vh - 2px);
+}
+
+#info-panel .object-info {
+  font-size: 10px;
+}
+
 
 .palette {
-  color : black;
+  background-color: inherit;
+  color : white;
   border-right : 1px dotted white;
  
   top: 0px;
@@ -43,7 +72,8 @@ body {
 }
 
 .palette-clefs div {
-  color : black;
+  background-color: inherit;
+
   border : 1px solid white;
   position: relative;
  
@@ -56,7 +86,8 @@ body {
 }
 
 .palette-symbols div {
-  color : black;
+  background-color: inherit;
+
   border : 1px solid white;
   position: relative;
  
@@ -66,8 +97,6 @@ body {
   margin: 10%;
   padding: 4%;
 
-  overflow: hidden;
-
 }
 
 .palette svg {
@@ -75,18 +104,6 @@ body {
   z-index: 10;
 }
 
-#info-panel {
-  border-left : 1px dotted white;
-  
-  left: calc(100vw - 50px);
-  top: 0px;
-  width: 62px;
-  height: calc(100vh - 2px);
-}
-
-#info-panel .object-info {
-  font-size: 10px;
-}
 
 .infobox {
   background-color: rgba(255, 255, 255, 0.75);

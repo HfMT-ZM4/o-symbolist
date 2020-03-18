@@ -74,6 +74,10 @@
             /new : "div",
             /id : "thereminStave-paletteIcon",
             /parent : "palette-clefs",
+            /onclick : "
+                console.log('select thereminStave'); 
+                symbolist_setClass('thereminStave');
+            ",
             /child : {
                 /new : "img",
                 /id : "thereminStave-display",
@@ -81,11 +85,7 @@
                 /style : {
                     /width : "100%",
                     /height : "100%"
-                },
-                /onclick : "
-                    console.log('select thereminStave'); 
-                    symbolist_setClass('thereminStave');
-                "
+                }
             }
         
         }
@@ -112,26 +112,32 @@
                         /new : "g",
                         /class : "thereminStave",
                         /id : dataobj./id,
-                        /children : {
-                            /new : "g",
-                            /class : "thereminStave-display",
-                            /children : [{
-                                /new : "rect",
-                                /class : "thereminStaff",
-                                /x : x,
-                                /width : width,
-                                /y : y,
-                                /height : height
+                        /children : [
+                            {   # top stave layer for events
+                                /new : "g",
+                                /id : dataobj./id + "-events",
+                                /class : "thereminStave-events"
                             },
-                            { #make clef symbol here, with a negative x so that it's behind the zero time point
-                                /new : "line",
-                                /class : "thereminClef",
-                                /x1 : x - 10,
-                                /y1 : y,
-                                /x2 : x - 10,
-                                /y2 : y + height
-                            }]   
-                        }
+                            {
+                                /new : "g",
+                                /class : "thereminStave-display",
+                                /children : [{
+                                    /new : "rect",
+                                    /class : "thereminStaff",
+                                    /x : x,
+                                    /width : width,
+                                    /y : y,
+                                    /height : height
+                                },
+                                { #make clef symbol here, with a negative x so that it's behind the zero time point
+                                    /new : "line",
+                                    /class : "thereminClef",
+                                    /x1 : x - 10,
+                                    /y1 : y,
+                                    /x2 : x - 10,
+                                    /y2 : y + height
+                                }]   
+                            }]
                     }
                 )
             )
@@ -198,7 +204,11 @@
                     /new : "div",
                     /id : "thereminStave.noteline-paletteIcon",
                     /parent : "palette-symbols",
-                    /child : {
+                    /onclick : "
+                        console.log('select noteline'); 
+                        symbolist_setClass('thereminStave.noteline');
+                    ",
+                    /children : {
                         /new : "svg",
                         /id : "noteline-icon",
                         /style : {
@@ -207,11 +217,7 @@
                             /top : "calc(50% - 2px)",
                             /left : "calc(50% - 8px)"
                         },
-                        /onclick : "
-                                console.log('select noteline'); 
-                                symbolist_setClass('thereminStave.noteline');
-                        ",
-                        /child : {            
+                        /children : {            
                             /new : "g",
                             /class : "noteline",
                             /parent : "noteline-icon",
@@ -260,7 +266,7 @@
                             /new : "g",
                             /class : "thereminStave.noteline",
                             /id : dataobj./id,
-                            /parent : view_ref./id,
+                            /parent : view_ref./id + "-events",
                             /children : [
                                 {
                                     /new : "circle",

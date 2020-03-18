@@ -15,6 +15,14 @@
 
 /direct/view = [
 {
+	/key : "function",
+	/val : {
+		/id : "setContext",
+		/args : "context",
+		/body : "symbolist_setContext(context);"
+	}
+},
+{
     /key : "mouse",
     /val : {
         /enable : 0
@@ -51,10 +59,14 @@
         /new : "div",
         /id : "info-panel",
         /parent : "forms"
+    },
+	{
+        /new : "div",
+        /id : "symbolist_log",
+        /parent : "forms"
     }]
 }],
 
-/test = [],
 map(
     lambda([a],
         /test = [/test, a./get/icon],
@@ -62,7 +74,7 @@ map(
             progn(
                 /iconFN = a./get/icon,
                 /direct/view = [/direct/view, /iconFN() ],
-                if( bound(a./palette) && !bound(/firstPalette), 
+                if( bound(a./palette) && !bound(/firstPalette),
                     /firstPalette = a./palette
                 )
             )
