@@ -31,7 +31,6 @@
 		1126C0B42326D5AD006D1701 /* osc_linkedlist.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0662326D5A8006D1701 /* osc_linkedlist.h */; };
 		1126C0B52326D5AD006D1701 /* osc_typetag.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0672326D5A8006D1701 /* osc_typetag.c */; };
 		1126C0B62326D5AD006D1701 /* osc_atom_array_u.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0682326D5A9006D1701 /* osc_atom_array_u.h */; };
-		1126C0B72326D5AD006D1701 /* osc_expr_u.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0692326D5A9006D1701 /* osc_expr_u.c */; };
 		1126C0B82326D5AD006D1701 /* osc_message_s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C06A2326D5A9006D1701 /* osc_message_s.h */; };
 		1126C0B92326D5AD006D1701 /* osc_atom_array_s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C06B2326D5A9006D1701 /* osc_atom_array_s.h */; };
 		1126C0BA2326D5AD006D1701 /* osc_serial.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C06C2326D5A9006D1701 /* osc_serial.h */; };
@@ -56,7 +55,6 @@
 		1126C0CD2326D5AD006D1701 /* osc_expr_rec.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C07F2326D5AA006D1701 /* osc_expr_rec.c */; };
 		1126C0CE2326D5AD006D1701 /* osc_strfmt.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0802326D5AA006D1701 /* osc_strfmt.h */; };
 		1126C0CF2326D5AD006D1701 /* osc_bundle_u.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0812326D5AA006D1701 /* osc_bundle_u.h */; };
-		1126C0D02326D5AD006D1701 /* osc_expr_u.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0822326D5AA006D1701 /* osc_expr_u.h */; };
 		1126C0D12326D5AD006D1701 /* osc_error.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0832326D5AA006D1701 /* osc_error.h */; };
 		1126C0D22326D5AD006D1701 /* osc_dispatch.c in Sources */ = {isa = PBXBuildFile; fileRef = 1126C0842326D5AB006D1701 /* osc_dispatch.c */; };
 		1126C0D32326D5AD006D1701 /* osc_bundle_iterator_s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1126C0852326D5AB006D1701 /* osc_bundle_iterator_s.h */; };
@@ -123,7 +121,6 @@
 		1126C0662326D5A8006D1701 /* osc_linkedlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_linkedlist.h; path = ../../../libo/osc_linkedlist.h; sourceTree = "<group>"; };
 		1126C0672326D5A8006D1701 /* osc_typetag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_typetag.c; path = ../../../libo/osc_typetag.c; sourceTree = "<group>"; };
 		1126C0682326D5A9006D1701 /* osc_atom_array_u.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_atom_array_u.h; path = ../../../libo/osc_atom_array_u.h; sourceTree = "<group>"; };
-		1126C0692326D5A9006D1701 /* osc_expr_u.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_expr_u.c; path = ../../../libo/osc_expr_u.c; sourceTree = "<group>"; };
 		1126C06A2326D5A9006D1701 /* osc_message_s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_message_s.h; path = ../../../libo/osc_message_s.h; sourceTree = "<group>"; };
 		1126C06B2326D5A9006D1701 /* osc_atom_array_s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_atom_array_s.h; path = ../../../libo/osc_atom_array_s.h; sourceTree = "<group>"; };
 		1126C06C2326D5A9006D1701 /* osc_serial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_serial.h; path = ../../../libo/osc_serial.h; sourceTree = "<group>"; };
@@ -148,7 +145,6 @@
 		1126C07F2326D5AA006D1701 /* osc_expr_rec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_expr_rec.c; path = ../../../libo/osc_expr_rec.c; sourceTree = "<group>"; };
 		1126C0802326D5AA006D1701 /* osc_strfmt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_strfmt.h; path = ../../../libo/osc_strfmt.h; sourceTree = "<group>"; };
 		1126C0812326D5AA006D1701 /* osc_bundle_u.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_bundle_u.h; path = ../../../libo/osc_bundle_u.h; sourceTree = "<group>"; };
-		1126C0822326D5AA006D1701 /* osc_expr_u.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_expr_u.h; path = ../../../libo/osc_expr_u.h; sourceTree = "<group>"; };
 		1126C0832326D5AA006D1701 /* osc_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_error.h; path = ../../../libo/osc_error.h; sourceTree = "<group>"; };
 		1126C0842326D5AB006D1701 /* osc_dispatch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = osc_dispatch.c; path = ../../../libo/osc_dispatch.c; sourceTree = "<group>"; };
 		1126C0852326D5AB006D1701 /* osc_bundle_iterator_s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osc_bundle_iterator_s.h; path = ../../../libo/osc_bundle_iterator_s.h; sourceTree = "<group>"; };
@@ -311,8 +307,6 @@
 				1126C0522326D5A7006D1701 /* osc_expr_scanner.c */,
 				1126C0892326D5AB006D1701 /* osc_expr_scanner.h */,
 				1126C0752326D5A9006D1701 /* osc_expr_u_privatedecls.h */,
-				1126C0692326D5A9006D1701 /* osc_expr_u.c */,
-				1126C0822326D5AA006D1701 /* osc_expr_u.h */,
 				1126C06D2326D5A9006D1701 /* osc_expr.c */,
 				1126C0532326D5A8006D1701 /* osc_expr.h */,
 				1126C05A2326D5A8006D1701 /* osc_hashtab.c */,
@@ -451,7 +445,6 @@
 				1126C0EB2326D5AD006D1701 /* osc_typetag.h in Headers */,
 				1126C0D72326D5AD006D1701 /* osc_expr_scanner.h in Headers */,
 				1126C0B62326D5AD006D1701 /* osc_atom_array_u.h in Headers */,
-				1126C0D02326D5AD006D1701 /* osc_expr_u.h in Headers */,
 				1126C0E22326D5AD006D1701 /* osc_byteorder.h in Headers */,
 				1126C0CE2326D5AD006D1701 /* osc_strfmt.h in Headers */,
 				1126C0D12326D5AD006D1701 /* osc_error.h in Headers */,
@@ -645,7 +638,6 @@
 				1126C0CB2326D5AD006D1701 /* osc_query.c in Sources */,
 				1126C0E32326D5AD006D1701 /* osc_mem.c in Sources */,
 				1126C0BD2326D5AD006D1701 /* osc_bundle_iterator_s.c in Sources */,
-				1126C0B72326D5AD006D1701 /* osc_expr_u.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

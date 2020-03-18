@@ -2,13 +2,17 @@ body {
   background-color: gray;
 }
 
+.symbolist_selected {
+  stroke-width: 1 !important;
+  stroke: blue !important;
+}
+
 .symbolist_selected line {
   stroke: blue !important;
 }
 
 .symbolist_selected rect {
   stroke: blue !important;
-
 }
 
 

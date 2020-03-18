@@ -28,40 +28,40 @@
     # could inlude scalars in map here...
     /map : {
 
-        /x2time : quote(lambda([clefview, x],
+        /x2time : quote(lambda([clefdata, clefview, x],
             let({
                     scalar : /thereminStave./scalar,
-                    rect: /helper/getChildByClass(clefview, "thereminStaff")
+                    rect: /helper/getChildByClass_recursive(clefview, "thereminStaff")
                 },
                 clefdata./time/start + ((x - rect./x) * scalar./pix2time)
             )
         )),
 
-         /time2x : quote(lambda([clefview, t],
+         /time2x : quote(lambda([clefdata, clefview, t],
             let({
                     scalar : /thereminStave./scalar,
-                    rect: /helper/getChildByClass(clefview, "thereminStaff")
+                    rect: /helper/getChildByClass_recursive(clefview, "thereminStaff")
                 },
-                rect./x + (t * scalar./time2pix)
+                rect./x + ((t - clefdata./time/start) * scalar./time2pix)
             )
         )),
 
-        /y2pitch : quote(lambda([clefview, y],
+        /y2pitch : quote(lambda([clefdata, clefview, y],
             let({
                     scalar: /thereminStave./scalar,
-                    rect: /helper/getChildByClass(clefview, "thereminStaff")
+                    rect: /helper/getChildByClass_recursive(clefview, "thereminStaff")
                 },
-                ((y - rect./y) + rect./height ) * scalar./pix2pitch
+                (rect./y + rect./height - y) * scalar./pix2pitch
             )
         )),
 
 
-        /pitch2y : quote(lambda([clefview, pitch],
+        /pitch2y : quote(lambda([clefdata, clefview, pitch],
             let({
                     scalar : /thereminStave./scalar,
-                    rect: /helper/getChildByClass(clefview, "thereminStaff")
+                    rect: /helper/getChildByClass_recursive(clefview, "thereminStaff")
                 },
-                rect./y + rect./height - pitch * scalar./pitch2pix
+                rect./y + rect./height - (pitch * scalar./pitch2pix)
             )
         ))
 
@@ -95,11 +95,11 @@
     
     # to do: figure out how to match the function signature with the symbol signatures also
     /set/fromData : quote( 
-        lambda([dataobj, context],
+        lambda([dataobj, view_ref, context_data_ref],
             let({ 
                     maps : /thereminStave./map,
                     scalar : /thereminStave./scalar,
-                    bbox : context./bbox
+                    bbox : view_ref./bbox
                 }, 
                 let({
                         #basic rect here so that the inner children can reference the values
@@ -112,8 +112,10 @@
                         /new : "g",
                         /class : "thereminStave",
                         /id : dataobj./id,
-                        /children : [
-                            {
+                        /children : {
+                            /new : "g",
+                            /class : "thereminStave-display",
+                            /children : [{
                                 /new : "rect",
                                 /class : "thereminStaff",
                                 /x : x,
@@ -128,8 +130,8 @@
                                 /y1 : y,
                                 /x2 : x - 10,
                                 /y2 : y + height
-                            }
-                        ]
+                            }]   
+                        }
                     }
                 )
             )
@@ -139,19 +141,19 @@
     # input view object + mouse event + context
     # output data object
     /set/fromGUI : quote(
-        lambda([viewobj, event],                    
+        lambda([viewobj, gui_event, data_ref],                    
             cond(            
-                event./symbolistAction == "newFromClick_down",
+                gui_event./symbolistAction == "newFromClick_down",
                 {
                     /class : "thereminStave",
-                    /id : event./id,
-                    /offsetInParent/x : event./xy[[0]],
-                    /offsetInParent/y : event./xy[[1]],
+                    /id : gui_event./id,
+                    /offsetInParent/x : gui_event./xy[[0]],
+                    /offsetInParent/y : gui_event./xy[[1]],
                     /time/start : 0.,
                     /time/dur : 1., # seconds
                     /pitch/range : 127 # min implied as zero
                 },
-                event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
+                gui_event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
                 let({
                         bbox: viewobj./bbox
                     },
@@ -243,22 +245,22 @@
             # input data+context
             # output view object
             /set/fromData : quote( 
-                lambda([dataobj, context],
+                lambda([dataobj, view_ref, context_data_ref],
 
                     /map = /thereminStave./map,
                     /time2x = /map./time2x,
                     /pitch2y = /map./pitch2y,
 
                     let({   r : scale(dataobj./amp, 0., 100, 5., 20.),
-                            y : /pitch2y( context, dataobj./pitch),
-                            x1 : /time2x( context, dataobj./time),
-                            x2 : /time2x( context, dataobj./time + dataobj./dur)
+                            y : /pitch2y( context_data_ref, view_ref, dataobj./pitch),
+                            x1 : /time2x( context_data_ref, view_ref, dataobj./time),
+                            x2 : /time2x( context_data_ref, view_ref, dataobj./time + dataobj./dur)
                         }, # return the following object
                         {
                             /new : "g",
                             /class : "thereminStave.noteline",
                             /id : dataobj./id,
-                            /parent : context./id,
+                            /parent : view_ref./id,
                             /children : [
                                 {
                                     /new : "circle",
@@ -282,44 +284,46 @@
                 )
             ),
 
-            # input view object + mouse event + context
-            # output data object
+
+            # viewobj: this view object if already existing (for transform)
+            # gui_event: mouse event from gui, including /context parent
+            # data_ref: perceptual data object for context parent reference
+
             /set/fromGUI : quote(
-                lambda([viewobj, event],
+                lambda([viewobj, gui_event, data_ref],
                     # later: put these in a let function, here now since /parent./pix2time() doesn't work
                     # to do new from click, select a reference object, if none are found, then the SVG is the parent?
                     # do that in the UI script
                     /map = /thereminStave./map,
                     /x2time = /map./x2time,
                     /y2pitch = /map./y2pitch,
-
-                    let({
-                            default:  {
+                    /default =  {
                                 /r : 1,
-                                /dur : 100,
+                                /dur : 0.1,
                                 /amp : 1
                             },
-                            context: event./context
+                    let({   
+                            gui_context: gui_event./context
                         },
                         cond(            
-                            event./symbolistAction == "newFromClick_down",
+                            gui_event./symbolistAction == "newFromClick_down",
                             {
                                 /class : "thereminStave.noteline",
-                                /id : event./id,
-                                /time : /x2time( context, event./xy[[0]] - default./r ),
-                                /pitch : /y2pitch( context, event./xy[[1]] ),
-                                /dur : default./dur,
-                                /amp : default./amp
+                                /id : gui_event./id,
+                                /time : /x2time( data_ref, gui_context, gui_event./xy[[0]] - /default./r ),
+                                /pitch : /y2pitch( data_ref, gui_context, gui_event./xy[[1]] ),
+                                /dur : /default./dur,
+                                /amp : /default./amp
                             },
-                            event./symbolistAction == "selected",
+                            gui_event./symbolistAction == "selected",
                             {
 
                             },
-                            event./symbolistAction == "deselected",
+                            gui_event./symbolistAction == "deselected",
                             {
                                 
                             },
-                            event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
+                            gui_event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
                             let({
                                     notehead : /helper/getChildByClass( viewobj, "notehead" ),
                                     durationLine : /helper/getChildByClass( viewobj, "durationLine" )
@@ -332,8 +336,8 @@
                                     {
                                         /class : "noteline",
                                         /id : viewobj./id,
-                                        /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),
-                                        /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  
+                                        /pitch : scale( xy[[1]] - gui_context./y, gui_context./height, 0., 0., 127.),
+                                        /time : /parent_pix2time( xy[[0]] - gui_context./x - notehead./r ),  
                                         /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),
                                         /amp : scale(notehead./r, 5., 20., 0., 100)
                                     }

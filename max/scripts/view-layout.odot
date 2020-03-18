@@ -54,8 +54,10 @@
     }]
 }],
 
+/test = [],
 map(
     lambda([a],
+        /test = [/test, a./get/icon],
         if( bound(a./get/icon),
             progn(
                 /iconFN = a./get/icon,

@@ -267,6 +267,10 @@ function copySelected()
 
 }
 
+function isNumeric(value) {
+    return !isNaN(value - parseFloat(value));
+}
+
 function fairlyUniqueNumber() {
     return (
       Number(String(Math.random()).slice(2)) + 
@@ -278,20 +282,22 @@ function fairlyUniqueNumber() {
 function makeUniqueID(obj)
 {
     let tok = obj.id.split("_u_");
-
     let base = ( tok.length == 1 ) ? tok : tok[0];
-
     let newId = base+'_u_'+fairlyUniqueNumber();
-    
     return newId;
-
 }
 
+/**
+ * iterates to top level element from child
+ * @param {target element} elm 
+ */
 
 function getTopLevel(elm)
 {    
-    
-    while( elm != svgObj && elm.parentNode && elm.parentNode.id != 'main-svg' && elm.parentNode.id != 'palette' )
+    while(  elm != svgObj && 
+            elm.parentNode && 
+            elm.parentNode.id != 'main-svg' && 
+            elm.parentNode.id != 'palette' ) // elm.parentNode != currentContext
     {
         elm = elm.parentNode;
     }
@@ -299,9 +305,6 @@ function getTopLevel(elm)
     return elm;
 }
 
-function isNumeric(value) {
-    return !isNaN(value - parseFloat(value));
-}
 
 
 // maybe use arrays instead?
@@ -417,6 +420,11 @@ function symbolost_sendKeyEvent(event, caller)
     });
 }
 
+function setContext()
+{
+
+}
+
 function symbolist_keydownhandler(event)
 {
     let nmods =  event.altKey + event.shiftKey + event.ctrlKey + event.metaKey;
@@ -428,6 +436,12 @@ function symbolist_keydownhandler(event)
             break;
         case "Escape":
             deselectAll();
+            break;
+        case "s":
+            if( selected.length > 0 )
+            {
+                currentContext = selected[selected.length-1];
+            }
             break;
 
     }
@@ -595,6 +609,8 @@ function symbolist_mousedown(event)
 
     if( _eventTarget != svgObj && _eventTarget != currentContext )
     {
+        console.log(`selection, event ${_eventTarget.classList}, context ${currentContext.classList}` );
+        
         addToSelection( _eventTarget );
         clickedObj = _eventTarget;
 
@@ -785,118 +801,4 @@ function removeSymbolistKeyListeners()
 
 addSymbolistMouseHandlers(svgObj);
 addSymbolistKeyListeners();
-/*
-drawsocket.input({
-    key : "mouse",
-    val : {
-        enable: 1
-    }
-});
-*/
 
-
-/*
-function mouseHandler(event, caller)
-{
-    // let t = fairlyUniqueNumber();
-    // console.log( t, t.length );
-    if( prevEventTarget === null )
-        prevEventTarget = event.target;
-
-    switch( caller )
-    {
-        case "mousedown":
-            
-            if( event.altKey )
-            {
-                clickedObj = copyObjectAndAddToParent(event.target);           
-            }
-            else if( event.target != svgObj )
-                clickedObj = event.target;
-            else
-                clickedObj = null;
-
-            mousedown_pos = { x: event.clientX, y: event.clientY };
-        break;
-        case "mousemove":
-            if( event.buttons == 1 )
-            {
-                if( clickedObj )
-                {
-                    translate( clickedObj, deltaPt({ x: event.clientX, y: event.clientY }, mousedown_pos));
-                }
-                else 
-                {
-                    if( !event.shiftKey )
-                        deselectAll();
-
-                    selectAllInRegion( getDragRegion(event), mainSVG );
-                }
-            }
-            
-        break;
-        case "mouseover":
-
-            if( !event.shiftKey && event.target != prevEventTarget )
-            {
-                if( prevEventTarget.classList.contains("symbolist_selected") )
-                {
-                    prevEventTarget.classList.remove("symbolist_selected");
-                }
-
-                if( event.target != svgObj )
-                {
-                    event.target.classList.add("symbolist_selected");
-                }
-                
-            }
-
-        break;
-        
-        case "mouseup":
-            if( !event.shiftKey ){
-                if( event.target.classList.contains("symbolist_selected") )
-                {
-                    event.target.classList.remove("symbolist_selected");
-                }
-                deselectAll();
-            }
-            
-
-
-            
-            clickedObj = null;
-        break;
-        default:
-            clickedObj = null;
-        break;
-    }
-
-    prevEventTarget = event.target;
-}
-
-
-document.body.addEventListener("mousemove", function(event)
-{
-  mouseHandler(event, "mousemove");
-});
-
-document.body.addEventListener("mousedown", function(event)
-{
-  mouseHandler(event, "mousedown");
-});
-
-
-document.body.addEventListener("mouseup", function(event)
-{
-  mouseHandler(event, "mouseup");
-});
-
-
-document.body.addEventListener("mouseover", function(event)
-{
- mouseHandler(event, "mouseover")
-});
-
-
-*/

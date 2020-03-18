@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 638.0, 65.524273455142975, 50.5, 22.0 ],
+					"text" : "sel 96"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "int", "int", "int" ],
+					"patching_rect" : [ 638.0, 38.524273455142975, 50.5, 22.0 ],
+					"text" : "key"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-7",
 					"linecount" : 2,
 					"maxclass" : "comment",
@@ -66,7 +90,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+						"rect" : [ 84.0, 129.0, 1246.0, 788.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -93,18 +117,19 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-32",
-									"linecount" : 94,
+									"linecount" : 4,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 100.0, 558.0, 1298.0 ],
-									"text" : "/view : [{\n\t/key : \"mouse\",\n\t/val : {\n\t\t/enable : 0\n\t}\n}, {\n\t/key : \"key\",\n\t/val : {\n\t\t/enable : 0\n\t}\n}, {\n\t/key : \"html\",\n\t/val : [{\n\t\t/new : \"div\",\n\t\t/id : \"palette\",\n\t\t/class : \"palette\",\n\t\t/parent : \"forms\",\n\t\t/children : [{\n\t\t\t/new : \"div\",\n\t\t\t/id : \"palette-clefs\",\n\t\t\t/class : \"palette-clefs\"\n\t\t}, {\n\t\t\t/new : \"div\",\n\t\t\t/id : \"palette-symbols\",\n\t\t\t/class : \"palette-symbols\"\n\t\t}]\n\t}, {\n\t\t/new : \"div\",\n\t\t/id : \"info-panel\",\n\t\t/parent : \"forms\"\n\t}]\n}, {\n\t/key : \"html\",\n\t/val : {\n\t\t/new : \"div\",\n\t\t/id : \"thereminClef-paletteIcon\",\n\t\t/parent : \"palette-clefs\",\n\t\t/child : {\n\t\t\t/new : \"img\",\n\t\t\t/id : \"thereminClef-display\",\n\t\t\t/src : \"assets/thereminClef.svg\",\n\t\t\t/style : {\n\t\t\t\t/width : \"100%\",\n\t\t\t\t/height : \"100%\"\n\t\t\t},\n\t\t\t/onclick : \"\n                    console.log('select thereminClef'); \n                    symbolist_setClass('thereminClef');\n                \"\n\t\t}\n\t}\n}, {\n\t/key : \"html\",\n\t/val : {\n\t\t/new : \"div\",\n\t\t/id : \"thereminClef.noteline-paletteIcon\",\n\t\t/parent : \"palette-symbols\",\n\t\t/child : {\n\t\t\t/new : \"svg\",\n\t\t\t/id : \"noteline-icon\",\n\t\t\t/style : {\n\t\t\t\t/height : 4,\n\t\t\t\t/width : 16,\n\t\t\t\t/top : \"calc(50% - 2px)\",\n\t\t\t\t/left : \"calc(50% - 8px)\"\n\t\t\t},\n\t\t\t/onclick : \"\n                                console.log('select noteline'); \n                                symbolist_setClass('thereminClef.noteline');\n                        \",\n\t\t\t/child : {\n\t\t\t\t/new : \"g\",\n\t\t\t\t/class : \"/noteline\",\n\t\t\t\t/parent : \"noteline-icon\",\n\t\t\t\t/children : [{\n\t\t\t\t\t/new : \"circle\",\n\t\t\t\t\t/class : \"notehead\",\n\t\t\t\t\t/fill : \"black\",\n\t\t\t\t\t/r : 2,\n\t\t\t\t\t/cy : 0,\n\t\t\t\t\t/cx : 0\n\t\t\t\t}, {\n\t\t\t\t\t/new : \"line\",\n\t\t\t\t\t/class : \"durationLine\",\n\t\t\t\t\t/fill : \"black\",\n\t\t\t\t\t/x1 : 0,\n\t\t\t\t\t/y1 : 0,\n\t\t\t\t\t/x2 : 16,\n\t\t\t\t\t/y2 : 0\n\t\t\t\t}]\n\t\t\t}\n\t\t}\n\t}\n}]"
+									"patching_rect" : [ 50.0, 100.0, 1126.0, 75.0 ],
+									"text" : "/view : {\n\t/key : \"remove\",\n\t/val : \"thereminStave_u_82zrgsdu1o-infobox\"\n}"
 								}
 
 							}
@@ -4632,14 +4657,7 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
-								}
-,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -4649,7 +4667,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4668,9 +4693,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontname" : [ "Arial" ],
 									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4679,8 +4704,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4689,9 +4714,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontname" : [ "Arial" ],
 									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5049,13 +5074,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-5",
-					"linecount" : 65,
+					"linecount" : 120,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 611.5, 780.728072166442871, 356.0, 904.0 ],
-					"text" : "/key : \"mouse\",\n/val : {\n\t/mousedownPos,\n\t/target : {\n\t\t/baseProfile : \"full\",\n\t\t/bbox : {\n\t\t\t/left : 0,\n\t\t\t/x : 0,\n\t\t\t/width : 1073,\n\t\t\t/height : 535,\n\t\t\t/bottom : 535,\n\t\t\t/right : 1073,\n\t\t\t/y : 0,\n\t\t\t/top : 0\n\t\t},\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1,\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/class : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\"\n\t},\n\t/paletteClass : \"thereminStave.noteline\",\n\t/selected,\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/xy : [84, 344],\n\t/id : \"thereminStave.noteline_u_1phwamuetwx\",\n\t/button : 0,\n\t/action : \"mousemove\",\n\t/context : {\n\t\t/bbox : {\n\t\t\t/left : 95,\n\t\t\t/x : 95,\n\t\t\t/width : 1010,\n\t\t\t/height : 400,\n\t\t\t/bottom : 468,\n\t\t\t/right : 1105,\n\t\t\t/y : 68,\n\t\t\t/top : 68\n\t\t},\n\t\t/children : [{\n\t\t\t/x : 105,\n\t\t\t/width : 1000,\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 68,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/y2 : 468,\n\t\t\t/x1 : 95,\n\t\t\t/x2 : 95,\n\t\t\t/y1 : 68,\n\t\t\t/type : \"line\",\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave\"\n\t}\n}"
+					"patching_rect" : [ 611.5, 780.728072166442871, 356.0, 1652.0 ],
+					"text" : "/key : \"mouse\",\n/val : {\n\t/id : \"thereminStave.noteline_u_4676rtr5fk4\",\n\t/selected : {\n\t\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t\t/children : [{\n\t\t\t/children : [{\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 83,\n\t\t\t\t/width : 1000,\n\t\t\t\t/x : 110,\n\t\t\t\t/class : \"thereminStaff\"\n\t\t\t}, {\n\t\t\t\t/x2 : 100,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y1 : 83,\n\t\t\t\t/y2 : 483,\n\t\t\t\t/x1 : 100,\n\t\t\t\t/class : \"thereminClef\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave-display\"\n\t\t}, {\n\t\t\t/id : \"thereminStave.noteline_u_1qzqcnl3cj2\",\n\t\t\t/children : [{\n\t\t\t\t/type : \"circle\",\n\t\t\t\t/cx : 253.15,\n\t\t\t\t/r : 5.15,\n\t\t\t\t/class : \"notehead\",\n\t\t\t\t/cy : 242\n\t\t\t}, {\n\t\t\t\t/x2 : 348,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y1 : 242,\n\t\t\t\t/y2 : 242,\n\t\t\t\t/x1 : 248,\n\t\t\t\t/class : \"durationLine\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave.noteline\"\n\t\t}],\n\t\t/type : \"g\",\n\t\t/bbox : {\n\t\t\t/bottom : 483,\n\t\t\t/right : 1106,\n\t\t\t/height : 400,\n\t\t\t/y : 83,\n\t\t\t/top : 83,\n\t\t\t/width : 1010,\n\t\t\t/left : 96,\n\t\t\t/x : 96\n\t\t},\n\t\t/class : \"thereminStave\"\n\t},\n\t/xy : [308, 20],\n\t/context : {\n\t\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t\t/children : {\n\t\t\t/children : [{\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 83,\n\t\t\t\t/width : 1000,\n\t\t\t\t/x : 110,\n\t\t\t\t/class : \"thereminStaff\"\n\t\t\t}, {\n\t\t\t\t/x2 : 100,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y1 : 83,\n\t\t\t\t/y2 : 483,\n\t\t\t\t/x1 : 100,\n\t\t\t\t/class : \"thereminClef\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave-display\"\n\t\t},\n\t\t/type : \"g\",\n\t\t/bbox : {\n\t\t\t/bottom : 0,\n\t\t\t/right : 0,\n\t\t\t/height : 0,\n\t\t\t/y : 0,\n\t\t\t/top : 0,\n\t\t\t/width : 0,\n\t\t\t/left : 0,\n\t\t\t/x : 0\n\t\t},\n\t\t/class : \"thereminStave\"\n\t},\n\t/mousedownPos,\n\t/target : {\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/baseProfile : \"full\",\n\t\t/bbox : {\n\t\t\t/bottom : 535,\n\t\t\t/right : 1103,\n\t\t\t/height : 535,\n\t\t\t/y : 0,\n\t\t\t/top : 0,\n\t\t\t/width : 1107,\n\t\t\t/left : -4,\n\t\t\t/x : -4\n\t\t},\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/class : \"svg\",\n\t\t/version : 1.1\n\t},\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/action : \"mousemove\",\n\t/paletteClass : \"thereminStave.noteline\",\n\t/button : 0\n}"
 				}
 
 			}
@@ -5129,9 +5154,9 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 100.0, 352.0, 133.0 ],
-									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 0, 0, 0, 0, 0, -20, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 0, 0, 0, 0, 0, 0, 36, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 95, 117, 95, 54, 120, 104, 109, 54, 116, 101, 56, 56, 107, 103, 0, 0, 0, 0, 28, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 120, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 105, 0, 0, 0, 28, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 121, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 68, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 112, 105, 116, 99, 104, 47, 114, 97, 110, 103, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 127 ],
-									"saved_bundle_length" : 272,
-									"text" : "/model : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t/offsetInParent/x : 108,\n\t/offsetInParent/y : 105,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}"
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -56, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 0, 0, 0, 0, -20, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 0, 0, 0, 0, 0, 0, 36, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 95, 117, 95, 56, 50, 122, 114, 103, 115, 100, 117, 49, 111, 0, 0, 0, 0, 0, 28, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 120, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 110, 0, 0, 0, 28, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 121, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 83, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 112, 105, 116, 99, 104, 47, 114, 97, 110, 103, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 127, 0, 0, 0, -56, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 48, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 49, 113, 122, 113, 99, 110, 108, 51, 99, 106, 50, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 63, -63, -87, -5, -25, 108, -117, 68, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 83, 33, 30, -72, 81, -21, -123, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
+									"saved_bundle_length" : 476,
+									"text" : "/model : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_q3f4w0fib3\",\n\t/offsetInParent/x : 130,\n\t/offsetInParent/y : 93,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}"
 								}
 
 							}
@@ -5248,13 +5273,13 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-38",
-									"linecount" : 23,
+									"linecount" : 49,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 100.0, 284.0, 333.0 ],
-									"text" : "/view : {\n\t/key : \"svg\",\n\t/val : {\n\t\t/new : \"g\",\n\t\t/class : \"thereminStave\",\n\t\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t\t/children : [{\n\t\t\t/new : \"rect\",\n\t\t\t/class : \"thereminStaff\",\n\t\t\t/x : 105.,\n\t\t\t/width : 1000.,\n\t\t\t/y : 68,\n\t\t\t/height : 400.\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"thereminClef\",\n\t\t\t/x1 : 95.,\n\t\t\t/y1 : 68,\n\t\t\t/x2 : 95.,\n\t\t\t/y2 : 468.\n\t\t}]\n\t}\n}"
+									"patching_rect" : [ 50.0, 100.0, 284.0, 687.0 ],
+									"text" : "/view : {\n\t/key : \"svg\",\n\t/val : [{\n\t\t/new : \"g\",\n\t\t/class : \"thereminStave\",\n\t\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t\t/children : {\n\t\t\t/new : \"g\",\n\t\t\t/class : \"thereminStave-display\",\n\t\t\t/children : [{\n\t\t\t\t/new : \"rect\",\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/x : 110.,\n\t\t\t\t/width : 1000.,\n\t\t\t\t/y : 83,\n\t\t\t\t/height : 400.\n\t\t\t}, {\n\t\t\t\t/new : \"line\",\n\t\t\t\t/class : \"thereminClef\",\n\t\t\t\t/x1 : 100.,\n\t\t\t\t/y1 : 83,\n\t\t\t\t/x2 : 100.,\n\t\t\t\t/y2 : 483.\n\t\t\t}]\n\t\t}\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"thereminStave.noteline\",\n\t\t/id : \"thereminStave.noteline_u_1qzqcnl3cj2\",\n\t\t/parent : \"thereminStave_u_82zrgsdu1o\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 242.,\n\t\t\t/cx : 253.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 248.,\n\t\t\t/y1 : 242.,\n\t\t\t/x2 : 348.,\n\t\t\t/y2 : 242.\n\t\t}]\n\t}]\n}"
 								}
 
 							}
@@ -5299,13 +5324,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-47",
-					"linecount" : 77,
+					"linecount" : 156,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 75.0, 544.5, 313.0, 1067.0 ],
-					"text" : "/gui : {\n\t/mousedownPos,\n\t/target : {\n\t\t/bbox : {\n\t\t\t/left : 95,\n\t\t\t/x : 95,\n\t\t\t/width : 1010,\n\t\t\t/height : 400,\n\t\t\t/bottom : 468,\n\t\t\t/right : 1105,\n\t\t\t/y : 68,\n\t\t\t/top : 68\n\t\t},\n\t\t/children : [{\n\t\t\t/x : 105,\n\t\t\t/width : 1000,\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 68,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/y2 : 468,\n\t\t\t/x1 : 95,\n\t\t\t/x2 : 95,\n\t\t\t/y1 : 68,\n\t\t\t/type : \"line\",\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave\"\n\t},\n\t/paletteClass : \"thereminStave.noteline\",\n\t/selected,\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 1,\n\t\t/alt : 0\n\t},\n\t/xy : [299, 225],\n\t/id : \"thereminStave.noteline_u_8pjmzwli8i\",\n\t/symbolistAction : \"newFromClick_up\",\n\t/button : 0,\n\t/action : \"mouseup\",\n\t/context : {\n\t\t/bbox : {\n\t\t\t/left : 95,\n\t\t\t/x : 95,\n\t\t\t/width : 1010,\n\t\t\t/height : 400,\n\t\t\t/bottom : 468,\n\t\t\t/right : 1105,\n\t\t\t/y : 68,\n\t\t\t/top : 68\n\t\t},\n\t\t/children : [{\n\t\t\t/x : 105,\n\t\t\t/width : 1000,\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 68,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/y2 : 468,\n\t\t\t/x1 : 95,\n\t\t\t/x2 : 95,\n\t\t\t/y1 : 68,\n\t\t\t/type : \"line\",\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave\"\n\t}\n}"
+					"patching_rect" : [ 75.0, 544.5, 313.0, 2141.0 ],
+					"text" : "/gui : {\n\t/id : \"thereminStave.noteline_u_246bq8z54t7\",\n\t/selected : {\n\t\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t\t/children : [{\n\t\t\t/children : [{\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 83,\n\t\t\t\t/width : 1000,\n\t\t\t\t/x : 110,\n\t\t\t\t/class : \"thereminStaff\"\n\t\t\t}, {\n\t\t\t\t/x2 : 100,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y1 : 83,\n\t\t\t\t/y2 : 483,\n\t\t\t\t/x1 : 100,\n\t\t\t\t/class : \"thereminClef\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave-display\"\n\t\t}, {\n\t\t\t/id : \"thereminStave.noteline_u_1qzqcnl3cj2\",\n\t\t\t/children : [{\n\t\t\t\t/type : \"circle\",\n\t\t\t\t/cx : 253.15,\n\t\t\t\t/r : 5.15,\n\t\t\t\t/class : \"notehead\",\n\t\t\t\t/cy : 242\n\t\t\t}, {\n\t\t\t\t/x2 : 348,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y1 : 242,\n\t\t\t\t/y2 : 242,\n\t\t\t\t/x1 : 248,\n\t\t\t\t/class : \"durationLine\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave.noteline\"\n\t\t}],\n\t\t/type : \"g\",\n\t\t/bbox : {\n\t\t\t/bottom : 483,\n\t\t\t/right : 1106,\n\t\t\t/height : 400,\n\t\t\t/y : 83,\n\t\t\t/top : 83,\n\t\t\t/width : 1010,\n\t\t\t/left : 96,\n\t\t\t/x : 96\n\t\t},\n\t\t/class : \"thereminStave\"\n\t},\n\t/xy : [364, 182],\n\t/context : {\n\t\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t\t/children : {\n\t\t\t/children : [{\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 83,\n\t\t\t\t/width : 1000,\n\t\t\t\t/x : 110,\n\t\t\t\t/class : \"thereminStaff\"\n\t\t\t}, {\n\t\t\t\t/x2 : 100,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y1 : 83,\n\t\t\t\t/y2 : 483,\n\t\t\t\t/x1 : 100,\n\t\t\t\t/class : \"thereminClef\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave-display\"\n\t\t},\n\t\t/type : \"g\",\n\t\t/bbox : {\n\t\t\t/bottom : 0,\n\t\t\t/right : 0,\n\t\t\t/height : 0,\n\t\t\t/y : 0,\n\t\t\t/top : 0,\n\t\t\t/width : 0,\n\t\t\t/left : 0,\n\t\t\t/x : 0\n\t\t},\n\t\t/class : \"thereminStave\"\n\t},\n\t/mousedownPos,\n\t/symbolistAction : \"newFromClick_up\",\n\t/target : {\n\t\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t\t/children : [{\n\t\t\t/children : [{\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 83,\n\t\t\t\t/width : 1000,\n\t\t\t\t/x : 110,\n\t\t\t\t/class : \"thereminStaff\"\n\t\t\t}, {\n\t\t\t\t/x2 : 100,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y1 : 83,\n\t\t\t\t/y2 : 483,\n\t\t\t\t/x1 : 100,\n\t\t\t\t/class : \"thereminClef\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave-display\"\n\t\t}, {\n\t\t\t/id : \"thereminStave.noteline_u_1qzqcnl3cj2\",\n\t\t\t/children : [{\n\t\t\t\t/type : \"circle\",\n\t\t\t\t/cx : 253.15,\n\t\t\t\t/r : 5.15,\n\t\t\t\t/class : \"notehead\",\n\t\t\t\t/cy : 242\n\t\t\t}, {\n\t\t\t\t/x2 : 348,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y1 : 242,\n\t\t\t\t/y2 : 242,\n\t\t\t\t/x1 : 248,\n\t\t\t\t/class : \"durationLine\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave.noteline\"\n\t\t}],\n\t\t/type : \"g\",\n\t\t/bbox : {\n\t\t\t/bottom : 483,\n\t\t\t/right : 1106,\n\t\t\t/height : 400,\n\t\t\t/y : 83,\n\t\t\t/top : 83,\n\t\t\t/width : 1010,\n\t\t\t/left : 96,\n\t\t\t/x : 96\n\t\t},\n\t\t/class : \"thereminStave\"\n\t},\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 1,\n\t\t/alt : 0\n\t},\n\t/action : \"mouseup\",\n\t/paletteClass : \"thereminStave.noteline\",\n\t/button : 0\n}"
 				}
 
 			}
@@ -5320,7 +5345,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 540.0, 665.5, 313.0, 48.0 ],
-					"text" : "/port/localhost : \"http://localhost:3002\",\n/port/ip : \"http://192.168.178.36:3002\""
+					"text" : "/port/localhost : \"http://localhost:3002\",\n/port/ip : \"http://192.168.178.52:3002\""
 				}
 
 			}
@@ -6228,7 +6253,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 280.0, 107.0, 656.0, 626.0 ],
+										"rect" : [ 126.0, 104.0, 656.0, 626.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -6567,13 +6592,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-5",
-									"linecount" : 42,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 704.961537000000021, 100.0, 369.0, 591.0 ],
-									"text" : "/view : {\n\t/key : \"svg\",\n\t/val : {\n\t\t/new : \"line\",\n\t\t/id : \"playhead\",\n\t\t/class : \"playhead\",\n\t\t/x1 : 193.6,\n\t\t/x2 : 193.6,\n\t\t/y1 : 10.,\n\t\t/y2 : 810.\n\t}\n},\n/out : {\n\t/play : [{\n\t\t/idx : 10,\n\t\t/obj : {\n\t\t\t/class : \"/noteline\",\n\t\t\t/id : \"noteline_u_1muqr2vdvki\",\n\t\t\t/pitch : 73.3425,\n\t\t\t/time : 253.333,\n\t\t\t/dur : 100,\n\t\t\t/amp : 1\n\t\t},\n\t\t/eval : {\n\t\t\t/relTime : 0.526667\n\t\t}\n\t}, {\n\t\t/idx : 11,\n\t\t/obj : {\n\t\t\t/class : \"/noteline\",\n\t\t\t/id : \"noteline_u_9a3dctexcns\",\n\t\t\t/pitch : 75.565,\n\t\t\t/time : 283.333,\n\t\t\t/dur : 100,\n\t\t\t/amp : 1\n\t\t},\n\t\t/eval : {\n\t\t\t/relTime : 0.226667\n\t\t}\n\t}],\n\t/noteOff\n}"
+									"patching_rect" : [ 704.961537000000021, 100.0, 369.0, 34.0 ]
 								}
 
 							}
@@ -6785,6 +6808,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-21",
@@ -6971,14 +6995,7 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
-												}
-,
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -6988,7 +7005,14 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7007,9 +7031,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontname" : [ "Arial" ],
 													"fontface" : [ 3 ],
-													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7018,8 +7042,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7028,9 +7052,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontname" : [ "Arial" ],
 													"fontface" : [ 1 ],
-													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7196,14 +7220,7 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
-												}
-,
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -7213,7 +7230,14 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7232,9 +7256,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontname" : [ "Arial" ],
 													"fontface" : [ 3 ],
-													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7243,8 +7267,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7253,9 +7277,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontname" : [ "Arial" ],
 													"fontface" : [ 1 ],
-													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7322,6 +7346,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-5",
@@ -7470,14 +7495,7 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
-												}
-,
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -7487,7 +7505,14 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7506,9 +7531,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontname" : [ "Arial" ],
 													"fontface" : [ 3 ],
-													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7517,8 +7542,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7527,9 +7552,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontname" : [ "Arial" ],
 													"fontface" : [ 1 ],
-													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7852,7 +7877,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 43.0, 79.0, 870.0, 937.0 ],
+										"rect" : [ 34.0, 79.0, 1124.0, 937.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -7879,7 +7904,53 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"visible" : 1,
 										"boxes" : [ 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-2",
+													"linecount" : 42,
+													"maxclass" : "o.compose",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 864.0, -487.0, 287.0, 581.0 ],
+													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, -40, 47, 118, 105, 101, 119, 95, 99, 111, 110, 116, 101, 120, 116, 0, 0, 0, 44, 46, 0, 0, 0, 0, 2, -64, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 95, 117, 95, 50, 52, 50, 110, 122, 113, 55, 114, 53, 115, 121, 0, 0, 0, 1, -108, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -112, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 104, 101, 105, 103, 104, 116, 0, 44, 105, 0, 0, 0, 0, 1, -112, 0, 0, 0, 20, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 114, 101, 99, 116, 0, 0, 0, 0, 0, 0, 0, 12, 47, 121, 0, 0, 44, 105, 0, 0, 0, 0, 0, 96, 0, 0, 0, 16, 47, 119, 105, 100, 116, 104, 0, 0, 44, 105, 0, 0, 0, 0, 3, -24, 0, 0, 0, 12, 47, 120, 0, 0, 44, 105, 0, 0, 0, 0, 0, -41, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 102, 102, 0, 0, 0, 0, 0, 0, -120, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 120, 50, 0, 44, 105, 0, 0, 0, 0, 0, -51, 0, 0, 0, 20, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 12, 47, 121, 49, 0, 44, 105, 0, 0, 0, 0, 0, 96, 0, 0, 0, 12, 47, 121, 50, 0, 44, 105, 0, 0, 0, 0, 1, -16, 0, 0, 0, 12, 47, 120, 49, 0, 44, 105, 0, 0, 0, 0, 0, -51, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 67, 108, 101, 102, 0, 0, 0, 0, 0, 0, 0, 16, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 36, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 45, 100, 105, 115, 112, 108, 97, 121, 0, 0, 0, 0, 0, 0, 16, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, -72, 47, 98, 98, 111, 120, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 98, 111, 116, 116, 111, 109, 0, 44, 105, 0, 0, 0, 0, 1, -16, 0, 0, 0, 16, 47, 114, 105, 103, 104, 116, 0, 0, 44, 105, 0, 0, 0, 0, 4, -65, 0, 0, 0, 16, 47, 104, 101, 105, 103, 104, 116, 0, 44, 105, 0, 0, 0, 0, 1, -112, 0, 0, 0, 12, 47, 121, 0, 0, 44, 105, 0, 0, 0, 0, 0, 96, 0, 0, 0, 16, 47, 116, 111, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 96, 0, 0, 0, 16, 47, 119, 105, 100, 116, 104, 0, 0, 44, 105, 0, 0, 0, 0, 3, -14, 0, 0, 0, 16, 47, 108, 101, 102, 116, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, -51, 0, 0, 0, 12, 47, 120, 0, 0, 44, 105, 0, 0, 0, 0, 0, -51, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 0, 0, 0, 0, 0, 0, -96, 47, 114, 101, 99, 116, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -112, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 104, 101, 105, 103, 104, 116, 0, 44, 105, 0, 0, 0, 0, 1, -112, 0, 0, 0, 20, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 114, 101, 99, 116, 0, 0, 0, 0, 0, 0, 0, 12, 47, 121, 0, 0, 44, 105, 0, 0, 0, 0, 0, 96, 0, 0, 0, 16, 47, 119, 105, 100, 116, 104, 0, 0, 44, 105, 0, 0, 0, 0, 3, -24, 0, 0, 0, 12, 47, 120, 0, 0, 44, 105, 0, 0, 0, 0, 0, -41, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 102, 102, 0, 0, 0 ],
+													"saved_bundle_length" : 912,
+													"text" : "/view_context : {\n\t/id : \"thereminStave_u_242nzq7r5sy\",\n\t/children : {\n\t\t/children : [{\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 96,\n\t\t\t/width : 1000,\n\t\t\t/x : 215,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/x2 : 205,\n\t\t\t/type : \"line\",\n\t\t\t/y1 : 96,\n\t\t\t/y2 : 496,\n\t\t\t/x1 : 205,\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave-display\"\n\t},\n\t/type : \"g\",\n\t/bbox : {\n\t\t/bottom : 496,\n\t\t/right : 1215,\n\t\t/height : 400,\n\t\t/y : 96,\n\t\t/top : 96,\n\t\t/width : 1010,\n\t\t/left : 205,\n\t\t/x : 205\n\t},\n\t/class : \"thereminStave\"\n},\n/rect : {\n\t/height : 400,\n\t/type : \"rect\",\n\t/y : 96,\n\t/width : 1000,\n\t/x : 215,\n\t/class : \"thereminStaff\"\n}"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-1",
+													"linecount" : 26,
+													"maxclass" : "o.expr.codebox",
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 812.0, 122.0, 608.0, 386.0 ],
+													"presentation_linecount" : 31,
+													"text" : "\n/helper/getChildByClass_recursive = quote(\n    lambda([obj, classname],\n        if( bound(obj./children),\n            map( \n\t\t\t\tlambda([c],\n                    if( !bound(/found) && bound(c./class) && c./class == classname,\n                        /found = c,\n\t\t\t\t\t\tif( bound(c./children),\n\t\t\t\t\t\t\t/found = /helper/getChildByClass_recursive( c, classname )\n                        )\n                    )\n                ), obj./children\n            )\n        ),\n        if( bound(/found), \n            prog1(\n               /found,\n               delete(/found)\n            )\n        )\n    )\n),\n\n\n/rect = /helper/getChildByClass_recursive(/view_context, \"thereminStaff\")\n"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-15",
+													"maxclass" : "button",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 234.0, 583.0, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-26",
 													"maxclass" : "button",
@@ -7896,29 +7967,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-24",
-													"linecount" : 29,
+													"linecount" : 51,
 													"maxclass" : "o.display",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 73.0, 880.0, 299.0, 415.0 ],
-													"presentation_linecount" : 29,
-													"text" : "/context : {\n\t/baseProfile : \"full\",\n\t/bbox : {\n\t\t/left : 0,\n\t\t/x : 0,\n\t\t/width : 1073,\n\t\t/height : 535,\n\t\t/bottom : 535,\n\t\t/right : 1073,\n\t\t/y : 0,\n\t\t/top : 0\n\t},\n\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t/version : 1.1,\n\t/id : \"svg\",\n\t/type : \"svg\",\n\t/class : \"svg\",\n\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\"\n},\n/data : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t/offsetInParent/x : 105,\n\t/offsetInParent/y : 68,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontface" : 0,
-													"fontsize" : 12.0,
-													"id" : "obj-30",
-													"linecount" : 14,
-													"maxclass" : "o.expr.codebox",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 465.0, 10.0, 407.0, 209.0 ],
-													"text" : "/tok = \"/\" + split(\".\", /gui./paletteClass),\n\n/clef = value(/tok[[0]]),\n\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n)"
+													"patching_rect" : [ 94.0, 810.0, 349.0, 714.0 ],
+													"text" : "/data_context : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t/offsetInParent/x : 110,\n\t/offsetInParent/y : 83,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n},\n/view_context : {\n\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t/children : {\n\t\t/children : [{\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 83,\n\t\t\t/width : 1000,\n\t\t\t/x : 110,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/x2 : 100,\n\t\t\t/type : \"line\",\n\t\t\t/y1 : 83,\n\t\t\t/y2 : 483,\n\t\t\t/x1 : 100,\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave-display\"\n\t},\n\t/type : \"g\",\n\t/bbox : {\n\t\t/bottom : 483,\n\t\t/right : 1106,\n\t\t/height : 400,\n\t\t/y : 83,\n\t\t/top : 83,\n\t\t/width : 1010,\n\t\t/left : 96,\n\t\t/x : 96\n\t},\n\t/class : \"thereminStave\"\n},\n/data : {\n\t/class : \"thereminStave.noteline\",\n\t/id : \"thereminStave.noteline_u_1qzqcnl3cj2\",\n\t/time : 0.138,\n\t/pitch : 76.5175,\n\t/dur : 0.1,\n\t/amp : 1\n}"
 												}
 
 											}
@@ -7930,20 +7985,19 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 423.0, 445.0, 24.0, 24.0 ]
+													"patching_rect" : [ 452.0, 542.0, 24.0, 24.0 ]
 												}
 
 											}
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 390.0, 392.0, 100.0, 35.0 ],
-													"text" : "o.select /contextDef"
+													"patching_rect" : [ 439.0, 486.0, 221.0, 22.0 ],
+													"text" : "o.gather.select /rect /view_context"
 												}
 
 											}
@@ -7952,13 +8006,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-12",
-													"linecount" : 333,
+													"linecount" : 42,
 													"maxclass" : "o.display",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 583.0, 232.0, 1047.0, 4547.0 ],
-													"text" : "/contextDef : {\n\t/default : {\n\t\t/offsetInParent/x : 0,\n\t\t/offsetInParent/y : 0,\n\t\t/time/start : 0.,\n\t\t/time/dur : 1.,\n\t\t/pitch/range : 127\n\t},\n\t/params : {\n\t\t/time/start : \"float32\",\n\t\t/time/dur : \"float32\",\n\t\t/pitch/range : \"float32\",\n\t\t/offsetInParent/x : \"float32\",\n\t\t/offsetInParent/y : \"float32\"\n\t},\n\t/scalar : {\n\t\t/time2pix : 1000.,\n\t\t/pix2time : 0.001,\n\t\t/pitch2pix : 3.14961,\n\t\t/pix2pitch : 0.3175\n\t},\n\t/map : {\n\t\t/x2time : \"lambda([clefview, x],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass(clefview, \\\"thereminStaff\\\")\n                },\n                clefdata./time/start + ((x - rect./x) * scalar./pix2time)\n            )\n        )\",\n\t\t/time2x : \"lambda([clefview, t],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass(clefview, \\\"thereminStaff\\\")\n                },\n                rect./x + (t * scalar./time2pix)\n            )\n        )\",\n\t\t/y2pitch : \"lambda([clefview, y],\n            let({\n                    scalar: /thereminStave./scalar,\n                    rect: /helper/getChildByClass(clefview, \\\"thereminStaff\\\")\n                },\n                ((y - rect./y) + rect./height ) * scalar./pix2pitch\n            )\n        )\",\n\t\t/pitch2y : \"lambda([clefview, pitch],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass(clefview, \\\"thereminStaff\\\")\n                },\n                rect./y + rect./height - pitch * scalar./pitch2pix\n            )\n        )\"\n\t},\n\t/get/icon : \"lambda([],\n    {\n        /key : \\\"html\\\",\n        /val : {\n            /new : \\\"div\\\",\n            /id : \\\"thereminStave-paletteIcon\\\",\n            /parent : \\\"palette-clefs\\\",\n            /child : {\n                /new : \\\"img\\\",\n                /id : \\\"thereminStave-display\\\",\n                /src : \\\"assets/thereminClef.svg\\\",\n                /style : {\n                    /width : \\\"100%\\\",\n                    /height : \\\"100%\\\"\n                },\n                /onclick : \\\"\n                    console.log('select thereminStave'); \n                    symbolist_setClass('thereminStave');\n                \\\"\n            }\n        \n        }\n    })\",\n\t/set/fromData : \" \n        lambda([dataobj, context],\n            let({ \n                    maps : /thereminStave./map,\n                    scalar : /thereminStave./scalar,\n                    bbox : context./bbox\n                }, \n                let({\n                        #basic rect here so that the inner children can reference the values\n                        x : bbox./x + dataobj./offsetInParent/x + scalar./time2pix * dataobj./time/start, # sorting of staves?\n                        width : (scalar./time2pix * dataobj./time/start) + (scalar./time2pix * dataobj./time/dur),\n                        y : bbox./y + dataobj./offsetInParent/y, # << obviously we're not done here\n                        height : scalar./pitch2pix * dataobj./pitch/range\n                    },\n                    {\n                        /new : \\\"g\\\",\n                        /class : \\\"thereminStave\\\",\n                        /id : dataobj./id,\n                        /children : [\n                            {\n                                /new : \\\"rect\\\",\n                                /class : \\\"thereminStaff\\\",\n                                /x : x,\n                                /width : width,\n                                /y : y,\n                                /height : height\n                            },\n                            { #make clef symbol here, with a negative x so that it's behind the zero time point\n                                /new : \\\"line\\\",\n                                /class : \\\"thereminClef\\\",\n                                /x1 : x - 10,\n                                /y1 : y,\n                                /x2 : x - 10,\n                                /y2 : y + height\n                            }\n                        ]\n                    }\n                )\n            )\n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([viewobj, event],                    \n            cond(            \n                event./symbolistAction == \\\"newFromClick_down\\\",\n                {\n                    /class : \\\"thereminStave\\\",\n                    /id : event./id,\n                    /offsetInParent/x : event./xy[[0]],\n                    /offsetInParent/y : event./xy[[1]],\n                    /time/start : 0.,\n                    /time/dur : 1., # seconds\n                    /pitch/range : 127 # min implied as zero\n                },\n                event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                let({\n                        bbox: viewobj./bbox\n                    },\n                    {\n                        /class : \\\"thereminStave\\\",\n                        /id : viewobj./id,\n                        /offsetInParent/x : bbox./x,\n                        /offsetInParent/y : bbox./y,\n                        /time/start : 0.,\n                        /time/dur : 1., # seconds\n                        /pitch/range : 127 # min implied as zero\n                    }\n                )\n            )\n            \n        )\n    \",\n\t/palette : {\n\t\t/noteline : {\n\t\t\t/default : {\n\t\t\t\t/r : 1,\n\t\t\t\t/dur : 100,\n\t\t\t\t/amp : 1\n\t\t\t},\n\t\t\t/params : {\n\t\t\t\t/amp : \"float32\",\n\t\t\t\t/dur : \"float32\",\n\t\t\t\t/pitch : \"float32\",\n\t\t\t\t/time : \"float32\"\n\t\t\t},\n\t\t\t/get/icon : \"lambda([],\n            {\n                /key : \\\"html\\\",\n                /val : {\n                    /new : \\\"div\\\",\n                    /id : \\\"thereminStave.noteline-paletteIcon\\\",\n                    /parent : \\\"palette-symbols\\\",\n                    /child : {\n                        /new : \\\"svg\\\",\n                        /id : \\\"noteline-icon\\\",\n                        /style : {\n                            /height : 4,\n                            /width : 16,\n                            /top : \\\"calc(50% - 2px)\\\",\n                            /left : \\\"calc(50% - 8px)\\\"\n                        },\n                        /onclick : \\\"\n                                console.log('select noteline'); \n                                symbolist_setClass('thereminStave.noteline');\n                        \\\",\n                        /child : {            \n                            /new : \\\"g\\\",\n                            /class : \\\"noteline\\\",\n                            /parent : \\\"noteline-icon\\\",\n                            /children : [\n                                {\n                                    /new : \\\"circle\\\",\n                                    /class : \\\"notehead\\\",\n                                    /fill : \\\"black\\\",\n                                    /r : 2,\n                                    /cy : 0,\n                                    /cx : 0\n                                },\n                                {\n                                    /new : \\\"line\\\",\n                                    /class : \\\"durationLine\\\",\n                                    /fill : \\\"black\\\",\n                                    /x1 : 0,\n                                    /y1 : 0,\n                                    /x2 : 16,\n                                    /y2 : 0\n                                }\n                            ]\n                        }\n                    }\n                \n                }\n            })\",\n\t\t\t/set/fromData : \" \n                lambda([dataobj, context],\n\n                    /map = /thereminStave./map,\n                    /time2x = /map./time2x,\n                    /pitch2y = /map./pitch2y,\n\n                    let({   r : scale(dataobj./amp, 0., 100, 5., 20.),\n                            y : /pitch2y( context, dataobj./pitch),\n                            x1 : /time2x( context, dataobj./time),\n                            x2 : /time2x( context, dataobj./time + dataobj./dur)\n                        }, # return the following object\n                        {\n                            /new : \\\"g\\\",\n                            /class : \\\"thereminStave.noteline\\\",\n                            /id : dataobj./id,\n                            /parent : context./id,\n                            /children : [\n                                {\n                                    /new : \\\"circle\\\",\n                                    /class : \\\"notehead\\\",\n                                    /r : r,\n                                    /cy : y,\n                                    /cx : x1 + r\n                                },\n                                {\n                                    /new : \\\"line\\\",\n                                    /class : \\\"durationLine\\\",\n                                    /x1 : x1 ,\n                                    /y1 : y,\n                                    /x2 : x2,\n                                    /y2 : y\n                                }\n                            ]\n                        }\n                    )\n                    \n                )\n            \",\n\t\t\t/set/fromGUI : \"\n                lambda([viewobj, event],\n                    # later: put these in a let function, here now since /parent./pix2time() doesn't work\n                    # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n                    # do that in the UI script\n                    /map = /thereminStave./map,\n                    /x2time = /map./x2time,\n                    /y2pitch = /map./y2pitch,\n\n                    let({\n                            default:  {\n                                /r : 1,\n                                /dur : 100,\n                                /amp : 1\n                            },\n                            context: event./context\n                        },\n                        cond(            \n                            event./symbolistAction == \\\"newFromClick_down\\\",\n                            {\n                                /class : \\\"thereminStave.noteline\\\",\n                                /id : event./id,\n                                /time : /x2time( context, event./xy[[0]] - default./r ),\n                                /pitch : /y2pitch( context, event./xy[[1]] ),\n                                /dur : default./dur,\n                                /amp : default./amp\n                            },\n                            event./symbolistAction == \\\"selected\\\",\n                            {\n\n                            },\n                            event./symbolistAction == \\\"deselected\\\",\n                            {\n                                \n                            },\n                            event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                            let({\n                                    notehead : /helper/getChildByClass( viewobj, \\\"notehead\\\" ),\n                                    durationLine : /helper/getChildByClass( viewobj, \\\"durationLine\\\" )\n                                },\n                                let({\n                                        xy : if ( bound(viewobj./transform),\n                                                    /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),\n                                                    [notehead./cx, notehead./cy] )\n                                    },\n                                    {\n                                        /class : \\\"noteline\\\",\n                                        /id : viewobj./id,\n                                        /pitch : scale( xy[[1]] - context./y, context./height, 0., 0., 127.),\n                                        /time : /parent_pix2time( xy[[0]] - context./x - notehead./r ),  \n                                        /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                        /amp : scale(notehead./r, 5., 20., 0., 100)\n                                    }\n                                )\n                            )\n                            \n                        )\n                    )\n                    \n                    \n                )\n            \",\n\t\t\t/get/infoDisplay : \"\n                lambda([dataobj, bbox],\n                    /helper/make/default_infoDisplay(dataobj, bbox) # default display generator\n                )\n            \",\n\t\t\t/get/fromTime : \"\n            lambda([obj, t],\n                let({\n                        relTime : (t - obj./time) / obj./dur\n                    },\n                    if( relTime >= 0 && relTime <= 1,\n                        {\n                            /relTime : relTime\n                        }\n                    )\n                )\n            )\"\n\t\t}\n\t}\n}"
+													"patching_rect" : [ 693.0, 480.0, 1047.0, 591.0 ],
+													"text" : "/view_context : {\n\t/id : \"thereminStave_u_242nzq7r5sy\",\n\t/children : {\n\t\t/children : [{\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 96,\n\t\t\t/width : 1000,\n\t\t\t/x : 215,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/x2 : 205,\n\t\t\t/type : \"line\",\n\t\t\t/y1 : 96,\n\t\t\t/y2 : 496,\n\t\t\t/x1 : 205,\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave-display\"\n\t},\n\t/type : \"g\",\n\t/bbox : {\n\t\t/bottom : 496,\n\t\t/right : 1215,\n\t\t/height : 400,\n\t\t/y : 96,\n\t\t/top : 96,\n\t\t/width : 1010,\n\t\t/left : 205,\n\t\t/x : 205\n\t},\n\t/class : \"thereminStave\"\n},\n/rect : {\n\t/height : 400,\n\t/type : \"rect\",\n\t/y : 96,\n\t/width : 1000,\n\t/x : 215,\n\t/class : \"thereminStaff\"\n}"
 												}
 
 											}
@@ -7971,7 +8025,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 308.0, 584.0, 150.0, 32.0 ],
+													"patching_rect" : [ 308.0, 575.0, 150.0, 32.0 ],
 													"text" : "/viewobj = nil"
 												}
 
@@ -8033,33 +8087,6 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 54.0, 508.0, 142.0, 22.0 ],
 													"text" : "o.listenumerate /selected"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontface" : 0,
-													"fontsize" : 12.0,
-													"id" : "obj-16",
-													"maxclass" : "o.expr.codebox",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 54.0, 419.0, 277.0, 32.0 ],
-													"text" : "/selected = /gui./selected"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontface" : 0,
-													"fontsize" : 12.0,
-													"id" : "obj-9",
-													"maxclass" : "o.display",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 591.0, 352.0, 1047.0, 34.0 ]
 												}
 
 											}
@@ -8139,7 +8166,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 296.0, 712.0, 24.0, 24.0 ]
+													"patching_rect" : [ 388.0, 708.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -8152,52 +8179,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 54.0, 644.0, 335.0, 32.0 ],
-													"text" : "/data = /setFn( /viewobj, /gui )"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontface" : 0,
-													"fontsize" : 12.0,
-													"id" : "obj-4",
-													"linecount" : 19,
-													"maxclass" : "o.expr.codebox",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 433.0, 673.0, 428.0, 277.0 ],
-													"text" : "/helper/getChildByClass = \"\n    lambda([obj, classname],\n        /found = {},\n        if( bound(obj./children) ,\n            map( lambda([c],\n                    if( c./class == classname,\n                        /found = c\n                    )\n                ), obj./children\n            )\n        ),\n        prog1(\n            /found,\n            delete(/found)\n        )\n    )\n\",\n\n/foo = /helper/getChildByClass( /gui./target, \"notehead\" )"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-1",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 591.0, 319.0, 87.0, 22.0 ],
-													"text" : "o.select /setFn"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontface" : 0,
-													"fontsize" : 12.0,
-													"id" : "obj-2",
-													"linecount" : 369,
-													"maxclass" : "o.compose",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 896.0, 137.0, 762.0, 5027.0 ],
-													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 12, 47, 103, 117, 105, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 2, -4, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 97, 99, 116, 105, 111, 110, 0, 44, 115, 0, 0, 109, 111, 117, 115, 101, 117, 112, 0, 0, 0, 1, -68, 47, 116, 97, 114, 103, 101, 116, 0, 44, 46, 0, 0, 0, 0, 1, -84, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 40, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 0, 0, 44, 115, 0, 0, 109, 97, 116, 114, 105, 120, 40, 49, 32, 48, 32, 48, 32, 49, 32, 54, 52, 32, 51, 50, 41, 0, 0, 0, 0, 0, 1, 40, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 120, -92, 8, 32, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -96, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 53, 38, 102, 96, 0, 0, 0, 0, 0, 0, -112, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 121, 112, 101, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 120, -92, 8, 32, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 120, -92, 8, 32, 0, 0, 0, 0, 0, 0, 12, 47, 120, 49, 0, 44, 105, 0, 0, 0, 0, 0, 16, 0, 0, 0, 12, 47, 120, 50, 0, 44, 105, 0, 0, 0, 0, 0, 76, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 50, 0, 0, 0, 0, 0, 0, 32, 47, 115, 101, 108, 101, 99, 116, 101, 100, 67, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 98, 117, 116, 116, 111, 110, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 115, 121, 109, 98, 111, 108, 105, 115, 116, 65, 99, 116, 105, 111, 110, 0, 0, 0, 0, 44, 115, 0, 0, 101, 100, 105, 116, 0, 0, 0, 0, 0, 0, 0, 112, 47, 109, 111, 100, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 96, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 109, 101, 116, 97, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 115, 104, 105, 102, 116, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 97, 108, 116, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 116, 114, 108, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 50, 0, 0, 0, 0, 0, 0, 16, 47, 120, 121, 0, 44, 105, 105, 0, 0, 0, 0, 85, 0, 0, 1, -88, 0, 0, 0, -76, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 103, 101, 116, 77, 97, 116, 114, 105, 120, 0, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 93, 44, 10, 32, 32, 105, 102, 40, 32, 115, 116, 114, 102, 105, 110, 100, 40, 34, 109, 97, 116, 114, 105, 120, 34, 44, 32, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 32, 33, 61, 32, 45, 49, 44, 10, 32, 32, 32, 32, 102, 108, 111, 97, 116, 51, 50, 40, 115, 112, 108, 105, 116, 40, 34, 32, 34, 44, 32, 115, 116, 114, 99, 104, 97, 114, 40, 32, 97, 115, 101, 113, 40, 55, 44, 32, 115, 116, 114, 108, 101, 110, 40, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 32, 45, 32, 50, 41, 44, 32, 109, 97, 116, 114, 105, 120, 95, 115, 116, 114, 41, 41, 41, 10, 32, 32, 41, 10, 41, 0, 0, 0, 0, 0, 0, 0, -64, 47, 116, 114, 97, 110, 115, 102, 111, 114, 109, 47, 97, 112, 112, 108, 121, 84, 114, 97, 110, 115, 102, 111, 114, 109, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 109, 97, 116, 114, 105, 120, 44, 32, 120, 121, 32, 93, 44, 10, 32, 32, 91, 32, 32, 109, 97, 116, 114, 105, 120, 91, 91, 48, 93, 93, 32, 42, 32, 120, 121, 91, 91, 48, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 50, 93, 93, 32, 42, 32, 120, 121, 91, 91, 49, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 52, 93, 93, 44, 32, 10, 32, 32, 32, 32, 32, 109, 97, 116, 114, 105, 120, 91, 91, 49, 93, 93, 32, 42, 32, 120, 121, 91, 91, 48, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 51, 93, 93, 32, 42, 32, 120, 121, 91, 91, 49, 93, 93, 32, 43, 32, 109, 97, 116, 114, 105, 120, 91, 91, 53, 93, 93, 10, 32, 32, 93, 10, 41, 0, 0, 0, 1, -128, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 44, 32, 99, 108, 97, 115, 115, 110, 97, 109, 101, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 117, 110, 100, 32, 61, 32, 123, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 40, 32, 98, 111, 117, 110, 100, 40, 111, 98, 106, 46, 47, 99, 104, 105, 108, 100, 114, 101, 110, 41, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 109, 97, 112, 40, 32, 108, 97, 109, 98, 100, 97, 40, 91, 99, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 40, 32, 99, 46, 47, 99, 108, 97, 115, 115, 32, 61, 61, 32, 99, 108, 97, 115, 115, 110, 97, 109, 101, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 117, 110, 100, 32, 61, 32, 99, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 44, 32, 111, 98, 106, 46, 47, 99, 104, 105, 108, 100, 114, 101, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 112, 114, 111, 103, 49, 40, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 102, 111, 117, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 100, 101, 108, 101, 116, 101, 40, 47, 102, 111, 117, 110, 100, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 41, 10, 0, 0, 0, 1, 96, 47, 112, 97, 114, 101, 110, 116, 0, 44, 46, 0, 0, 0, 0, 1, 80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 0, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 119, 105, 100, 116, 104, 0, 0, 44, 100, 0, 0, 64, -126, -64, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 104, 101, 105, 103, 104, 116, 0, 44, 100, 0, 0, 64, -119, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 64, -113, 64, 0, 0, 0, 0, 0, 0, 0, 0, 84, 47, 116, 105, 109, 101, 50, 112, 105, 120, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 40, 116, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 41, 32, 42, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 84, 47, 112, 105, 120, 50, 116, 105, 109, 101, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 120, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 120, 32, 42, 32, 40, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 7, 100, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 44, 46, 0, 0, 0, 0, 7, 80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 114, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 76, 47, 103, 101, 116, 47, 105, 99, 111, 110, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 120, 121, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 49, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 5, 100, 47, 115, 101, 116, 47, 102, 114, 111, 109, 68, 97, 116, 97, 0, 0, 0, 44, 115, 0, 0, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 32, 61, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 50, 112, 105, 120, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 32, 58, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 97, 109, 112, 44, 32, 48, 46, 44, 32, 49, 48, 48, 44, 32, 53, 46, 44, 32, 50, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 121, 32, 43, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 112, 105, 116, 99, 104, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 44, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 101, 110, 100, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 100, 117, 114, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 32, 35, 32, 114, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 102, 111, 108, 108, 111, 119, 105, 110, 103, 32, 111, 98, 106, 101, 99, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 103, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 104, 105, 108, 100, 114, 101, 110, 32, 58, 32, 91, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 99, 105, 114, 99, 108, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 32, 58, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 121, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 43, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 49, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 49, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 50, 32, 58, 32, 112, 105, 120, 95, 101, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 50, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 93, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 1, 76, 47, 115, 101, 116, 47, 102, 114, 111, 109, 71, 85, 73, 0, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 108, 97, 116, 101, 114, 58, 32, 112, 117, 116, 32, 116, 104, 101, 115, 101, 32, 105, 110, 32, 97, 32, 108, 101, 116, 32, 102, 117, 110, 99, 116, 105, 111, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 32, 61, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 112, 105, 120, 50, 116, 105, 109, 101, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 116, 97, 114, 103, 101, 116, 32, 58, 32, 111, 98, 106, 46, 47, 116, 97, 114, 103, 101, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 101, 115, 116, 32, 61, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 7, 96, 47, 111, 98, 106, 82, 101, 102, 0, 44, 46, 0, 0, 0, 0, 7, 80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 114, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 76, 47, 103, 101, 116, 47, 105, 99, 111, 110, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 120, 121, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 49, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 0, 0, 5, 100, 47, 115, 101, 116, 47, 102, 114, 111, 109, 68, 97, 116, 97, 0, 0, 0, 44, 115, 0, 0, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 32, 61, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 50, 112, 105, 120, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 32, 32, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 32, 58, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 97, 109, 112, 44, 32, 48, 46, 44, 32, 49, 48, 48, 44, 32, 53, 46, 44, 32, 50, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 121, 32, 43, 32, 115, 99, 97, 108, 101, 40, 111, 98, 106, 46, 47, 112, 105, 116, 99, 104, 44, 32, 48, 46, 44, 32, 49, 50, 55, 46, 44, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 104, 101, 105, 103, 104, 116, 44, 32, 48, 46, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 112, 105, 120, 95, 101, 110, 100, 32, 58, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 120, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 116, 105, 109, 101, 32, 41, 32, 43, 32, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 40, 32, 111, 98, 106, 46, 47, 100, 117, 114, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 32, 35, 32, 114, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 102, 111, 108, 108, 111, 119, 105, 110, 103, 32, 111, 98, 106, 101, 99, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 103, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 47, 110, 111, 116, 101, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 105, 100, 32, 58, 32, 111, 98, 106, 46, 47, 105, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 104, 105, 108, 100, 114, 101, 110, 32, 58, 32, 91, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 99, 105, 114, 99, 108, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 114, 32, 58, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 121, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 120, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 43, 32, 110, 111, 116, 101, 104, 101, 97, 100, 95, 114, 97, 100, 105, 117, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 110, 101, 119, 32, 58, 32, 34, 108, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 99, 108, 97, 115, 115, 32, 58, 32, 34, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 34, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 49, 32, 58, 32, 112, 105, 120, 95, 115, 116, 97, 114, 116, 32, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 49, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 120, 50, 32, 58, 32, 112, 105, 120, 95, 101, 110, 100, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 121, 50, 32, 58, 32, 112, 105, 120, 95, 112, 105, 116, 99, 104, 95, 112, 111, 115, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 93, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 1, 76, 47, 115, 101, 116, 47, 102, 114, 111, 109, 71, 85, 73, 0, 0, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 108, 97, 116, 101, 114, 58, 32, 112, 117, 116, 32, 116, 104, 101, 115, 101, 32, 105, 110, 32, 97, 32, 108, 101, 116, 32, 102, 117, 110, 99, 116, 105, 111, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 32, 61, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 112, 105, 120, 50, 116, 105, 109, 101, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 116, 97, 114, 103, 101, 116, 32, 58, 32, 111, 98, 106, 46, 47, 116, 97, 114, 103, 101, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 101, 115, 116, 32, 61, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 1, 68, 47, 115, 101, 116, 70, 110, 0, 0, 44, 115, 0, 0, 10, 32, 32, 32, 32, 32, 32, 32, 32, 108, 97, 109, 98, 100, 97, 40, 91, 111, 98, 106, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 35, 32, 108, 97, 116, 101, 114, 58, 32, 112, 117, 116, 32, 116, 104, 101, 115, 101, 32, 105, 110, 32, 97, 32, 108, 101, 116, 32, 102, 117, 110, 99, 116, 105, 111, 110, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 32, 61, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 112, 105, 120, 50, 116, 105, 109, 101, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 108, 101, 116, 40, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 116, 97, 114, 103, 101, 116, 32, 58, 32, 111, 98, 106, 46, 47, 116, 97, 114, 103, 101, 116, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 47, 116, 101, 115, 116, 32, 61, 32, 47, 104, 101, 108, 112, 101, 114, 47, 103, 101, 116, 67, 104, 105, 108, 100, 66, 121, 67, 108, 97, 115, 115, 40, 32, 116, 97, 114, 103, 101, 116, 44, 32, 34, 110, 111, 116, 101, 104, 101, 97, 100, 34, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 10, 32, 32, 32, 32, 32, 32, 32, 32, 41, 10, 32, 32, 32, 32, 0, 0, 0, 0, 92, 47, 112, 97, 114, 101, 110, 116, 95, 116, 105, 109, 101, 50, 112, 105, 120, 0, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 116, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 40, 116, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 41, 32, 42, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 1, -100, 47, 110, 101, 119, 86, 105, 101, 119, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, -120, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 121, 109, -101, 54, 108, -39, -77, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 46, 76, -52, -52, -52, -52, -51, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 121, 109, -101, 54, 108, -39, -77, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 96, 64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 121, 109, -101, 54, 108, -39, -77, 0, 0, 0, 12, 47, 116, 105, 109, 101, 115, 0, 0, 44, 0, 0, 0, 0, 0, 0, 40, 47, 105, 100, 115, 0, 0, 0, 0, 44, 115, 115, 115, 0, 0, 0, 0, 102, 111, 111, 45, 51, 0, 0, 0, 102, 111, 111, 45, 50, 0, 0, 0, 102, 111, 111, 45, 49, 0, 0, 0, 0, 0, 4, -76, 47, 118, 105, 101, 119, 65, 114, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 1, -120, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 51, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 119, -22, -107, 42, 84, -87, 82, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 54, 89, -103, -103, -103, -103, -102, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 49, 51, 51, 51, 51, 51, 51, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 119, -22, -107, 42, 84, -87, 82, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 83, 76, -52, -52, -52, -52, -51, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 119, -22, -107, 42, 84, -87, 82, 0, 0, 1, -120, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 50, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 120, -92, 8, 16, 32, 64, -127, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 53, 38, 102, 102, 102, 102, 102, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 120, -92, 8, 16, 32, 64, -127, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 120, -92, 8, 16, 32, 64, -127, 0, 0, 1, -120, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 121, 109, -101, 54, 108, -39, -77, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 46, 76, -52, -52, -52, -52, -51, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 121, 109, -101, 54, 108, -39, -77, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 96, 64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 121, 109, -101, 54, 108, -39, -77, 0, 0, 1, -48, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, -108, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 80, -11, -62, -113, 92, 40, -10, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 116, 105, 109, 101, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 12, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 51, 0, 0, 0, 0, 0, 0, -112, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 112, 105, 116, 99, 104, 0, 0, 44, 105, 0, 0, 0, 0, 0, 66, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 116, 105, 109, 101, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 10, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 100, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 50, 0, 0, 0, 0, 0, 0, -112, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 112, 105, 116, 99, 104, 0, 0, 44, 105, 0, 0, 0, 0, 0, 64, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 116, 105, 109, 101, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, -56, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 0, 0, 0, 0, 0, 4, -20, 47, 118, 105, 101, 119, 0, 0, 0, 44, 46, 0, 0, 0, 0, 4, -36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 118, 103, 0, 0, 0, 4, -76, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 1, -120, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 51, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 119, -22, -107, 42, 84, -87, 82, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 54, 89, -103, -103, -103, -103, -102, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 49, 51, 51, 51, 51, 51, 51, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 119, -22, -107, 42, 84, -87, 82, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 83, 76, -52, -52, -52, -52, -51, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 119, -22, -107, 42, 84, -87, 82, 0, 0, 1, -120, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 50, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 120, -92, 8, 16, 32, 64, -127, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 53, 38, 102, 102, 102, 102, 102, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 120, -92, 8, 16, 32, 64, -127, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 120, -92, 8, 16, 32, 64, -127, 0, 0, 1, -120, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 103, 0, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 47, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 16, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 45, 49, 0, 0, 0, 0, 0, 1, 48, 47, 99, 104, 105, 108, 100, 114, 101, 110, 0, 0, 0, 44, 46, 46, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 99, 105, 114, 99, 108, 101, 0, 0, 0, 0, 0, 24, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 110, 111, 116, 101, 104, 101, 97, 100, 0, 0, 0, 0, 0, 0, 0, 16, 47, 114, 0, 0, 44, 100, 0, 0, 64, 20, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 99, 121, 0, 44, 100, 0, 0, 64, 121, 109, -101, 54, 108, -39, -77, 0, 0, 0, 16, 47, 99, 120, 0, 44, 100, 0, 0, 64, 46, 76, -52, -52, -52, -52, -51, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 100, 117, 114, 97, 116, 105, 111, 110, 76, 105, 110, 101, 0, 0, 0, 0, 0, 0, 0, 16, 47, 120, 49, 0, 44, 100, 0, 0, 64, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 49, 0, 44, 100, 0, 0, 64, 121, 109, -101, 54, 108, -39, -77, 0, 0, 0, 16, 47, 120, 50, 0, 44, 100, 0, 0, 64, 96, 64, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 121, 50, 0, 44, 100, 0, 0, 64, 121, 109, -101, 54, 108, -39, -77, 0, 0, 0, 16, 47, 111, 98, 106, 73, 68, 88, 0, 44, 105, 0, 0, -1, -1, -1, -1, 0, 0, 0, 92, 47, 112, 97, 114, 101, 110, 116, 95, 112, 105, 120, 50, 116, 105, 109, 101, 0, 0, 0, 0, 44, 115, 0, 0, 108, 97, 109, 98, 100, 97, 40, 91, 120, 93, 44, 10, 32, 32, 32, 32, 32, 32, 32, 32, 120, 32, 42, 32, 40, 47, 112, 97, 114, 101, 110, 116, 46, 47, 116, 105, 109, 101, 47, 100, 117, 114, 32, 47, 32, 47, 112, 97, 114, 101, 110, 116, 46, 47, 119, 105, 100, 116, 104, 41, 10, 32, 32, 32, 32, 41, 0, 0, 0, 0, 0, 32, 47, 116, 101, 115, 116, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 16, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 100, 97, 116, 97, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 16, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
-													"saved_bundle_length" : 9740,
-													"text" : "/gui : {\n\t/action : \"mouseup\",\n\t/target : {\n\t\t/type : \"g\",\n\t\t/transform : \"matrix(1 0 0 1 64 32)\",\n\t\t/children : [{\n\t\t\t/type : \"circle\",\n\t\t\t/cy : 394.252,\n\t\t\t/r : 5.15,\n\t\t\t/class : \"notehead\",\n\t\t\t/cx : 21.15\n\t\t}, {\n\t\t\t/type : \"line\",\n\t\t\t/y1 : 394.252,\n\t\t\t/class : \"durationLine\",\n\t\t\t/y2 : 394.252,\n\t\t\t/x1 : 16,\n\t\t\t/x2 : 76\n\t\t}],\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-2\"\n\t},\n\t/selectedClass : \"/noteline\",\n\t/class : \"/noteline\",\n\t/button : 0,\n\t/symbolistAction : \"edit\",\n\t/mods : {\n\t\t/meta : 0,\n\t\t/shift : 0,\n\t\t/alt : 0,\n\t\t/ctrl : 0\n\t},\n\t/id : \"foo-2\",\n\t/xy : [85, 424]\n},\n/transform/getMatrix : \"lambda([matrix_str],\n  if( strfind(\\\"matrix\\\", matrix_str) != -1,\n    float32(split(\\\" \\\", strchar( aseq(7, strlen(matrix_str) - 2), matrix_str)))\n  )\n)\",\n/transform/applyTransform : \"lambda([matrix, xy ],\n  [  matrix[[0]] * xy[[0]] + matrix[[2]] * xy[[1]] + matrix[[4]], \n     matrix[[1]] * xy[[0]] + matrix[[3]] * xy[[1]] + matrix[[5]]\n  ]\n)\",\n/helper/getChildByClass : \"\n    lambda([obj, classname],\n        /found = {},\n        if( bound(obj./children) ,\n            map( lambda([c],\n                    if( c./class == classname,\n                        /found = c\n                    )\n                ), obj./children\n            )\n        ),\n        prog1(\n            /found,\n            delete(/found)\n        )\n    )\n\",\n/parent : {\n\t/x : 10.,\n\t/y : 10.,\n\t/width : 600.,\n\t/height : 800.,\n\t/time/start : 0.,\n\t/time/dur : 1000.,\n\t/time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n\t/pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\"\n},\n/noteline : {\n\t/r : 1,\n\t/dur : 100,\n\t/amp : 1,\n\t/get/icon : \"\n        lambda([xy],\n            /cx : 1\n        )\n    \",\n\t/set/fromData : \" \n        lambda([obj],\n            /parent_time2pix = /parent./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : /parent./y + scale(obj./pitch, 0., 127., /parent./height, 0.),\n                    pix_start : /parent./x + /parent_time2pix( obj./time ),\n                    pix_end : /parent./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([obj],\n            # later: put these in a let function\n            /parent_pix2time = /parent./pix2time,\n            let({\n                    target : obj./target\n                },\n                /test = /helper/getChildByClass( target, \\\"notehead\\\" )\n            )\n            \n        )\n    \"\n},\n/objRef : {\n\t/r : 1,\n\t/dur : 100,\n\t/amp : 1,\n\t/get/icon : \"\n        lambda([xy],\n            /cx : 1\n        )\n    \",\n\t/set/fromData : \" \n        lambda([obj],\n            /parent_time2pix = /parent./time2pix,\n            let({   notehead_radius : scale(obj./amp, 0., 100, 5., 20.),\n                    pix_pitch_pos : /parent./y + scale(obj./pitch, 0., 127., /parent./height, 0.),\n                    pix_start : /parent./x + /parent_time2pix( obj./time ),\n                    pix_end : /parent./x + /parent_time2pix( obj./time ) + /parent_time2pix( obj./dur )\n                }, # return the following object\n                {\n                    /new : \\\"g\\\",\n                    /class : \\\"/noteline\\\",\n                    /id : obj./id,\n                    /children : [\n                        {\n                            /new : \\\"circle\\\",\n                            /class : \\\"notehead\\\",\n                            /r : notehead_radius,\n                            /cy : pix_pitch_pos,\n                            /cx : pix_start + notehead_radius\n                        },\n                        {\n                            /new : \\\"line\\\",\n                            /class : \\\"durationLine\\\",\n                            /x1 : pix_start ,\n                            /y1 : pix_pitch_pos,\n                            /x2 : pix_end,\n                            /y2 : pix_pitch_pos\n                        }\n                    ]\n                }\n            )\n            \n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([obj],\n            # later: put these in a let function\n            /parent_pix2time = /parent./pix2time,\n            let({\n                    target : obj./target\n                },\n                /test = /helper/getChildByClass( target, \\\"notehead\\\" )\n            )\n            \n        )\n    \"\n},\n/setFn : \"\n        lambda([obj],\n            # later: put these in a let function\n            /parent_pix2time = /parent./pix2time,\n            let({\n                    target : obj./target\n                },\n                /test = /helper/getChildByClass( target, \\\"notehead\\\" )\n            )\n            \n        )\n    \",\n/parent_time2pix : \"lambda([t],\n        (t / /parent./time/dur) * /parent./width\n    )\",\n/newView : {\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-1\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 406.85,\n\t\t/cx : 15.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 10.,\n\t\t/y1 : 406.85,\n\t\t/x2 : 130.,\n\t\t/y2 : 406.85\n\t}]\n},\n/times,\n/ids : [\"foo-3\", \"foo-2\", \"foo-1\"],\n/viewAr : [{\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-3\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 382.661,\n\t\t/cx : 22.35\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 17.2,\n\t\t/y1 : 382.661,\n\t\t/x2 : 77.2,\n\t\t/y2 : 382.661\n\t}]\n}, {\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-2\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 394.252,\n\t\t/cx : 21.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 16.,\n\t\t/y1 : 394.252,\n\t\t/x2 : 76.,\n\t\t/y2 : 394.252\n\t}]\n}, {\n\t/new : \"g\",\n\t/class : \"/noteline\",\n\t/id : \"foo-1\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 406.85,\n\t\t/cx : 15.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 10.,\n\t\t/y1 : 406.85,\n\t\t/x2 : 130.,\n\t\t/y2 : 406.85\n\t}]\n}],\n/model : [{\n\t/class : \"/noteline\",\n\t/pitch : 67.84,\n\t/amp : 1,\n\t/time : 12,\n\t/dur : 100,\n\t/id : \"foo-3\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 66,\n\t/amp : 1,\n\t/time : 10,\n\t/dur : 100,\n\t/id : \"foo-2\"\n}, {\n\t/class : \"/noteline\",\n\t/pitch : 64,\n\t/amp : 1,\n\t/time : 0,\n\t/dur : 200,\n\t/id : \"foo-1\"\n}],\n/view : {\n\t/key : \"svg\",\n\t/val : [{\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-3\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 382.661,\n\t\t\t/cx : 22.35\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 17.2,\n\t\t\t/y1 : 382.661,\n\t\t\t/x2 : 77.2,\n\t\t\t/y2 : 382.661\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-2\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 394.252,\n\t\t\t/cx : 21.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 16.,\n\t\t\t/y1 : 394.252,\n\t\t\t/x2 : 76.,\n\t\t\t/y2 : 394.252\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"/noteline\",\n\t\t/id : \"foo-1\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 406.85,\n\t\t\t/cx : 15.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 10.,\n\t\t\t/y1 : 406.85,\n\t\t\t/x2 : 130.,\n\t\t\t/y2 : 406.85\n\t\t}]\n\t}]\n},\n/objIDX : -1,\n/parent_pix2time : \"lambda([x],\n        x * (/parent./time/dur / /parent./width)\n    )\",\n/test : {\n\n},\n/data : {\n\n}"
+													"patching_rect" : [ 50.0, 644.0, 349.0, 32.0 ],
+													"text" : "/data = /setFn( /viewobj, /gui, /data_context )"
 												}
 
 											}
@@ -8208,8 +8191,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 54.0, 702.0, 162.0, 22.0 ],
-													"text" : "o.gather.select /data /context"
+													"patching_rect" : [ 54.0, 702.0, 268.0, 22.0 ],
+													"text" : "o.gather.select /data /view_context /data_context"
 												}
 
 											}
@@ -8218,14 +8201,14 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-3",
-													"linecount" : 20,
+													"linecount" : 25,
 													"maxclass" : "o.expr.codebox",
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 76.0, 407.0, 290.0 ],
-													"presentation_linecount" : 20,
-													"text" : "/tok = \"/\" + split(\".\", /gui./paletteClass),\n\n/clef = value(/tok[[0]]),\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n),\n\n# get set from data function\n/setFn = /objRef./set/fromGUI,\n\n# get ready to make this the clef... \n/context = /gui./context,\n/contextDef = value(\"/\"+/context./class)"
+													"patching_rect" : [ 54.0, 43.0, 673.0, 358.0 ],
+													"presentation_linecount" : 25,
+													"text" : "/ids ??= [],\n/model ??= [],\n\n/tok = \"/\" + split(\".\", /gui./paletteClass),\n\n/clef = value(/tok[[0]]),\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n),\n\n# get set from data function\n/setFn = /objRef./set/fromGUI,\n\n# not using this now, since the context is in the gui event\n/view_context = /gui./context,\n\n/dataRefIDX = max( aseq(1,length(/ids)) * (/view_context./id == /ids) ) - 1,\n/data_context = if( bound(/dataRefIDX) && /dataRefIDX != -1, /model[[ /dataRefIDX ]], /svg )"
 												}
 
 											}
@@ -8238,7 +8221,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
-													"patching_rect" : [ 50.0, 36.0, 30.0, 30.0 ]
+													"patching_rect" : [ 54.0, 4.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -8257,7 +8240,7 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-9", 0 ],
+													"destination" : [ "obj-13", 0 ],
 													"source" : [ "obj-1", 0 ]
 												}
 
@@ -8287,13 +8270,6 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-27", 0 ],
-													"source" : [ "obj-16", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-20", 1 ],
 													"source" : [ "obj-17", 1 ]
 												}
@@ -8315,7 +8291,16 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-15", 0 ],
+													"order" : 0,
+													"source" : [ "obj-20", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-5", 0 ],
+													"order" : 1,
 													"source" : [ "obj-20", 0 ]
 												}
 
@@ -8373,24 +8358,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-13", 0 ],
-													"order" : 0,
+													"destination" : [ "obj-27", 0 ],
 													"source" : [ "obj-3", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-16", 0 ],
-													"order" : 1,
-													"source" : [ "obj-3", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-18", 0 ],
-													"source" : [ "obj-4", 0 ]
 												}
 
 											}
@@ -8436,14 +8405,7 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
-												}
-,
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -8453,7 +8415,14 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8472,9 +8441,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontname" : [ "Arial" ],
 													"fontface" : [ 3 ],
-													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8483,8 +8452,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8493,9 +8462,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontname" : [ "Arial" ],
 													"fontface" : [ 1 ],
-													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8819,7 +8788,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 79.0, 1221.0, 937.0 ],
+										"rect" : [ 34.0, 79.0, 1612.0, 937.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -8846,7 +8815,64 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"visible" : 1,
 										"boxes" : [ 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-13",
+													"linecount" : 25,
+													"maxclass" : "o.expr.codebox",
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 36.0, 1067.0, 673.0, 358.0 ],
+													"text" : "/ids ??= [],\n/model ??= [],\n\n/tok = \"/\" + split(\".\", /gui./paletteClass),\n\n/clef = value(/tok[[0]]),\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n),\n\n# get set from data function\n/setFn = /objRef./set/fromGUI,\n\n# not using this now, since the context is in the gui event\n/view_context = /gui./context,\n\n/dataRefIDX = max( aseq(1,length(/ids)) * (/view_context./id == /ids) ) - 1,\n/data_context = if( bound(/dataRefIDX) && /dataRefIDX != -1, /model[[ /dataRefIDX ]], /svg )"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-11",
+													"maxclass" : "o.expr.codebox",
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 47.0, 406.0, 446.0, 32.0 ],
+													"text" : "/newView = /setFn( /data, /view_context, /data_context )"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-8",
+													"linecount" : 22,
+													"maxclass" : "o.expr.codebox",
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 47.0, 68.5, 464.0, 318.0 ],
+													"text" : "/ids ??= [],\n/model ??= [],\n\n/tok = \"/\" + split(\".\", /data./class),\n\n/clef = value(/tok[[0]]),\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n),\n\n# get set from data function\n/setFn = /objRef./set/fromData,\n\n/view_context ??= /svg,\n/data_context ??= nil"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "button",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 163.0, 24.0, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-12",
 													"maxclass" : "button",
@@ -8868,8 +8894,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 401.0, 780.0, 738.0, 358.0 ],
-													"presentation_linecount" : 25,
+													"patching_rect" : [ 42.0, 1240.0, 738.0, 358.0 ],
 													"text" : "# get object by type\n/objRef = value(/data./class),\n\n# get set from data function\n/setFn = /objRef./set/fromData,\n\n/context = /parent,\n\n/fn = quote(\n  lambda([thisdef, dataobj, context],\n    let({\n          maps : thisdef./map,\n          scalar : thisdef./scalar\n        },\n          /x = scalar./time2pix * dataobj./time/start, # sorting of staves?\n          /width = (scalar./time2pix * dataobj./time/start) + (scalar./time2pix * dataobj./time/dur),\n          /y = 0, # << obviously we're not done here\n          /height = scalar./pitch2pix * dataobj./pitch/range\n    )\n  )\n),\n\n/newView = /fn( /objRef, /data, /context )\n\n    "
 												}
 
@@ -8877,13 +8902,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-9",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 529.0, 120.5, 161.0, 35.0 ],
-													"text" : "o.gather.select /data /context"
+													"patching_rect" : [ 529.0, 120.5, 161.0, 49.0 ],
+													"text" : "o.gather.select /data /data_context /view_context /setFn /test"
 												}
 
 											}
@@ -8892,14 +8917,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-3",
-													"linecount" : 39,
+													"linecount" : 113,
 													"maxclass" : "o.display",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 559.0, 171.0, 748.0, 551.0 ],
-													"presentation_linecount" : 39,
-													"text" : "/context : {\n\t/bbox : {\n\t\t/left : 0,\n\t\t/x : 0,\n\t\t/width : 0,\n\t\t/height : 0,\n\t\t/bottom : 0,\n\t\t/right : 0,\n\t\t/y : 0,\n\t\t/top : 0\n\t},\n\t/children : [{\n\t\t/x : 112,\n\t\t/width : 1000,\n\t\t/height : 400,\n\t\t/type : \"rect\",\n\t\t/y : 74,\n\t\t/class : \"thereminStaff\"\n\t}, {\n\t\t/y2 : 474,\n\t\t/x1 : 102,\n\t\t/x2 : 102,\n\t\t/y1 : 74,\n\t\t/type : \"line\",\n\t\t/class : \"thereminClef\"\n\t}],\n\t/id : \"thereminStave_u_1uxa9ol62l6\",\n\t/type : \"g\",\n\t/class : \"thereminStave\"\n},\n/data : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t/offsetInParent/x : 108,\n\t/offsetInParent/y : 105,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}"
+													"patching_rect" : [ 821.0, -388.0, 723.0, 1557.0 ],
+													"text" : "/test : \"lambda([],\n    {\n        /key : \\\"html\\\",\n        /val : {\n            /new : \\\"div\\\",\n            /id : \\\"thereminStave-paletteIcon\\\",\n            /parent : \\\"palette-clefs\\\",\n            /child : {\n                /new : \\\"img\\\",\n                /id : \\\"thereminStave-display\\\",\n                /src : \\\"assets/thereminClef.svg\\\",\n                /style : {\n                    /width : \\\"100%\\\",\n                    /height : \\\"100%\\\"\n                },\n                /onclick : \\\"\n                    console.log('select thereminStave'); \n                    symbolist_setClass('thereminStave');\n                \\\"\n            }\n        \n        }\n    })\",\n/setFn : \" \n                lambda([dataobj, view_ref, context_data_ref],\n\n                    /map = /thereminStave./map,\n                    /time2x = /map./time2x,\n                    /pitch2y = /map./pitch2y,\n\n                    let({   r : scale(dataobj./amp, 0., 100, 5., 20.),\n                            y : /pitch2y( context_data_ref, view_ref, dataobj./pitch),\n                            x1 : /time2x( context_data_ref, view_ref, dataobj./time),\n                            x2 : /time2x( context_data_ref, view_ref, dataobj./time + dataobj./dur)\n                        }, # return the following object\n                        {\n                            /new : \\\"g\\\",\n                            /class : \\\"thereminStave.noteline\\\",\n                            /id : dataobj./id,\n                            /parent : view_ref./id,\n                            /children : [\n                                {\n                                    /new : \\\"circle\\\",\n                                    /class : \\\"notehead\\\",\n                                    /r : r,\n                                    /cy : y,\n                                    /cx : x1 + r\n                                },\n                                {\n                                    /new : \\\"line\\\",\n                                    /class : \\\"durationLine\\\",\n                                    /x1 : x1 ,\n                                    /y1 : y,\n                                    /x2 : x2,\n                                    /y2 : y\n                                }\n                            ]\n                        }\n                    )\n                    \n                )\n            \",\n/view_context : {\n\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t/children : {\n\t\t/children : [{\n\t\t\t/height : 400,\n\t\t\t/type : \"rect\",\n\t\t\t/y : 83,\n\t\t\t/width : 1000,\n\t\t\t/x : 110,\n\t\t\t/class : \"thereminStaff\"\n\t\t}, {\n\t\t\t/x2 : 100,\n\t\t\t/type : \"line\",\n\t\t\t/y1 : 83,\n\t\t\t/y2 : 483,\n\t\t\t/x1 : 100,\n\t\t\t/class : \"thereminClef\"\n\t\t}],\n\t\t/type : \"g\",\n\t\t/class : \"thereminStave-display\"\n\t},\n\t/type : \"g\",\n\t/bbox : {\n\t\t/bottom : 483,\n\t\t/right : 1106,\n\t\t/height : 400,\n\t\t/y : 83,\n\t\t/top : 83,\n\t\t/width : 1010,\n\t\t/left : 96,\n\t\t/x : 96\n\t},\n\t/class : \"thereminStave\"\n},\n/data_context : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t/offsetInParent/x : 110,\n\t/offsetInParent/y : 83,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n},\n/data : {\n\t/class : \"thereminStave.noteline\",\n\t/id : \"thereminStave.noteline_u_1qzqcnl3cj2\",\n\t/time : 0.138,\n\t/pitch : 76.5175,\n\t/dur : 0.1,\n\t/amp : 1\n}"
 												}
 
 											}
@@ -8911,7 +8935,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 194.0, 521.0, 24.0, 24.0 ]
+													"patching_rect" : [ 187.0, 675.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -8926,7 +8950,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 945.0, 86.5, 831.0, 671.0 ],
-													"presentation_linecount" : 55,
 													"text" : "# get object by type\n/objRef = value(/data./class),\n\n# get set from data function\n/setFn = /objRef./set/fromData,\n\n/context = /parent,\n\n\n\n/newView = apply( lambda([thisdef, dataobj, context],\n            let({ \n                    maps : thisdef./map,\n                    scalar : thisdef./scalar\n                }, \n                let({\n                        #basic rect here so that the inner children can reference the values\n                        x : scalar./time2pix * dataobj./time/start, # sorting of staves?\n                        width : (scalar./time2pix * dataobj./time/start) + (scalar./time2pix * dataobj./time/dur),\n                        y : 0, # << obviously we're not done here\n                        height : scalars./pitch2pix * dataobj./pitch/range\n                    },\n                    {\n                        /new : \"g\",\n                        /class : \"/thereminClef\",\n                        /id : dataobj./id,\n                        /children : [\n                            {\n                                /new : \"rect\",\n                                /class : \"thereminStave\",\n                                /x : x,\n                                /width : width,\n                                /y : y,\n                                /height : height\n                            },\n                            { #make clef symbol here, with a negative x so that it's behind the zero time point\n                                /new : \"line\",\n                                /class : \"thereminClef\",\n                                /x1 : x ,\n                                /y1 : y,\n                                /x2 : x,\n                                /y2 : y + height\n                            }\n                        ]\n                    }\n                )\n            )\n        ), /objRef, /data, /context )"
 												}
 
@@ -8941,8 +8964,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 47.0, 122.0, 446.0, 290.0 ],
-													"text" : "/tok = \"/\" + split(\".\", /data./class),\n\n/clef = value(/tok[[0]]),\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n),\n\n# get set from data function\n/setFn = /objRef./set/fromData,\n\n/context ??= /svg,\n\n/newView = /setFn( /data, /context )"
+													"patching_rect" : [ 335.0, 421.5, 446.0, 290.0 ],
+													"presentation_linecount" : 20,
+													"text" : "/tok = \"/\" + split(\".\", /data./class),\n\n/clef = value(/tok[[0]]),\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n),\n\n# get set from data function\n/setFn = /objRef./set/fromData,\n\n/view_context ??= /svg,\n\n/newView = /setFn( /data, /view_context )"
 												}
 
 											}
@@ -8956,8 +8980,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 137.0, 556.0, 748.0, 292.0 ],
-													"text" : "/newView : {\n\t/new : \"g\",\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_6xhm6te88kg\",\n\t/children : [{\n\t\t/new : \"rect\",\n\t\t/class : \"thereminStaff\",\n\t\t/x : 108.,\n\t\t/width : 1000.,\n\t\t/y : 105,\n\t\t/height : 400.\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"thereminClef\",\n\t\t/x1 : 98.,\n\t\t/y1 : 105,\n\t\t/x2 : 98.,\n\t\t/y2 : 505.\n\t}]\n}"
+													"patching_rect" : [ 102.0, 742.5, 748.0, 292.0 ],
+													"text" : "/newView : {\n\t/new : \"g\",\n\t/class : \"thereminStave.noteline\",\n\t/id : \"thereminStave.noteline_u_1qzqcnl3cj2\",\n\t/parent : \"thereminStave_u_82zrgsdu1o\",\n\t/children : [{\n\t\t/new : \"circle\",\n\t\t/class : \"notehead\",\n\t\t/r : 5.15,\n\t\t/cy : 242.,\n\t\t/cx : 253.15\n\t}, {\n\t\t/new : \"line\",\n\t\t/class : \"durationLine\",\n\t\t/x1 : 248.,\n\t\t/y1 : 242.,\n\t\t/x2 : 348.,\n\t\t/y2 : 242.\n\t}]\n}"
 												}
 
 											}
@@ -8968,7 +8992,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 158.0, 446.5, 161.0, 22.0 ],
+													"patching_rect" : [ 151.0, 600.5, 161.0, 22.0 ],
 													"text" : "o.gather.select /newView"
 												}
 
@@ -8982,7 +9006,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
-													"patching_rect" : [ 47.0, 36.0, 30.0, 30.0 ]
+													"patching_rect" : [ 47.0, 10.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -8994,23 +9018,39 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 50.0, 433.0, 30.0, 30.0 ]
+													"patching_rect" : [ 42.0, 884.5, 30.0, 30.0 ]
 												}
 
 											}
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-6", 0 ],
+													"destination" : [ "obj-28", 0 ],
 													"order" : 1,
+													"source" : [ "obj-11", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"order" : 0,
+													"source" : [ "obj-11", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"order" : 0,
 													"source" : [ "obj-27", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-9", 0 ],
-													"order" : 0,
+													"destination" : [ "obj-8", 0 ],
+													"order" : 1,
 													"source" : [ "obj-27", 0 ]
 												}
 
@@ -9033,17 +9073,17 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-28", 0 ],
+													"destination" : [ "obj-11", 0 ],
 													"order" : 1,
-													"source" : [ "obj-6", 0 ]
+													"source" : [ "obj-8", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-4", 0 ],
+													"destination" : [ "obj-9", 0 ],
 													"order" : 0,
-													"source" : [ "obj-6", 0 ]
+													"source" : [ "obj-8", 0 ]
 												}
 
 											}
@@ -9062,6 +9102,74 @@
 													"source" : [ "obj-9", 0 ]
 												}
 
+											}
+ ],
+										"styles" : [ 											{
+												"name" : "black on white",
+												"umenu" : 												{
+													"bgfillcolor" : 													{
+														"type" : "color",
+														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+														"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+														"angle" : 270.0,
+														"proportion" : 0.39,
+														"autogradient" : 0
+													}
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "caption text",
+												"default" : 												{
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "section dividers",
+												"default" : 												{
+													"fontname" : [ "Arial" ],
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "section info reg",
+												"default" : 												{
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "titles",
+												"default" : 												{
+													"fontname" : [ "Arial" ],
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
 											}
  ]
 									}
@@ -9413,14 +9521,7 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
-								}
-,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -9430,7 +9531,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9449,9 +9557,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontname" : [ "Arial" ],
 									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9460,8 +9568,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9470,9 +9578,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontname" : [ "Arial" ],
 									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9610,14 +9718,7 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
-								}
-,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -9627,7 +9728,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9646,9 +9754,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontname" : [ "Arial" ],
 									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9657,8 +9765,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9667,9 +9775,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontname" : [ "Arial" ],
 									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9817,6 +9925,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-37", 0 ],
+					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-27", 0 ],
 					"source" : [ "obj-17", 1 ]
 				}
@@ -9858,6 +9973,13 @@
 					"destination" : [ "obj-5", 0 ],
 					"order" : 0,
 					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -9973,13 +10095,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-12", 1 ],
 					"source" : [ "obj-38", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-55", 1 ],
-					"source" : [ "obj-38", 1 ]
 				}
 
 			}
@@ -10200,14 +10315,7 @@
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ]
-				}
-,
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -10217,7 +10325,14 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -10236,9 +10351,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 15.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -10247,8 +10362,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -10257,9 +10372,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 20.0 ]
 				}
 ,
 				"parentstyle" : "",
