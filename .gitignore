@@ -24,3 +24,4 @@ build-gcc
 !default.perspectivev3
 !xcshareddata
 src/build
+src/build*
