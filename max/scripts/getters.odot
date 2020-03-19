@@ -31,4 +31,38 @@
             )	
         )
     )
+),
+
+/__/getSubByMemValue = quote(
+    lambda([objarr, addr, value],
+        map(
+            lambda([obj],
+                if( /__/hasAddress(obj, addr) && getbundlemember(obj, addr) == value,
+                    obj,
+                    progn(
+                        if( typetags(obj) == '.',
+                            map(
+                                lambda([a],
+                                    let({
+                                            child : getbundlemember(obj, a)
+                                        },
+                                            if( !bound(/found) && /__/hasAddress(obj, addr) && getbundlemember(obj, addr) == value,
+                                                /found = child,
+                                                /found = /__/getSubByMemValue( child, addr, value )
+                                            )
+                                    )
+                                ), getaddresses(obj)
+                            )
+                        ),
+                        if( bound(/found), 
+                            prog1(
+                                /found,
+                                delete(/found)
+                            )
+                        )
+                    )
+                )
+            ), objarr
+        )
+    )
 )

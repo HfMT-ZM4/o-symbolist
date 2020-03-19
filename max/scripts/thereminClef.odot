@@ -1,7 +1,8 @@
 
 
 /thereminStave = {
-    
+    /class : "thereminStave",
+
     /default : {
         /offsetInParent/x : 0,
         /offsetInParent/y : 0,
@@ -166,21 +167,23 @@
                         events : /__/getChildByClass( viewobj, "stave_events" )
                     },
                     let({
-                            xy : if ( bound(viewobj./transform),
+                            xy : if ( /__/hasAddress(viewobj, "/transform"),
                                         /transform/applyTransform( /transform/getMatrix(viewobj./transform), [staff./x, staff./y] ),
                                         [staff./x, staff./y] 
                                     )
                         },
-                        {
-                            /class : "thereminStave",
-                            /id : viewobj./id,
-                            /id : gui_event./id,
-                            /offsetInParent/x : xy[[0]],
-                            /offsetInParent/y : xy[[1]],
-                            /time/start : 0.,
-                            /time/dur : 1., # seconds
-                            /pitch/range : 127 # min implied as zero
-                        }
+                        [
+                            {
+                                /class : "thereminStave",
+                                /id : viewobj./id,
+                                /offsetInParent/x : xy[[0]],
+                                /offsetInParent/y : xy[[1]],
+                                /time/start : 0.,
+                                /time/dur : 1., # seconds
+                                /pitch/range : 127 # min implied as zero
+                            }, 
+                            /__/processGUIstaveEvents(/thereminStave, events)
+                        ]
                         # update all events also
 
 
@@ -194,7 +197,8 @@
     /palette : {
 
         /noteline : {
-
+            /class : "noteline",
+            
             /default : {
                 /r : 1,
                 /dur : 100,
@@ -344,8 +348,8 @@
                             },
                             gui_event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
                             let({
-                                    notehead : /helper/getChildByClass( viewobj, "notehead" ),
-                                    durationLine : /helper/getChildByClass( viewobj, "durationLine" )
+                                    notehead : /__/getChildByClass( viewobj, "notehead" ),
+                                    durationLine : /__/getChildByClass( viewobj, "durationLine" )
                                 },
                                 let({
                                         xy : if ( bound(viewobj./transform),
@@ -353,7 +357,7 @@
                                                     [notehead./cx, notehead./cy] )
                                     },
                                     {
-                                        /class : "noteline",
+                                        /class : "thereminStave.noteline",
                                         /id : viewobj./id,
                                         /pitch : scale( xy[[1]] - gui_context./y, gui_context./height, 0., 0., 127.),
                                         /time : /parent_pix2time( xy[[0]] - gui_context./x - notehead./r ),  

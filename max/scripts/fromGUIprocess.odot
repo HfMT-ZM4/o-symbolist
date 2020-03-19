@@ -1,0 +1,26 @@
+/__/processGUIstaveEvents = quote(
+    lambda([staveRef, events],
+        if( /__/hasAddress(events, "/children"),
+            let({
+                    palette: staveRef./palette
+                },
+                    map(
+                        lambda([obj],
+                            /classDef = getbundlemember(palette, "/" + split(".", obj./class)[[1]] ),
+                            /setFn = /classDef./set/fromGUI,
+
+                            /data_ref = /__/getSubByMemValue(/model, "/id", obj./id),
+                            prog1(
+                                if( bound(/data_ref),
+                                    /setFn( obj, gui_event, /data_ref)
+                                ),
+                                delete(/objIDX), delete(/setFn), delete(/classDef)
+                            )
+                        ), events./children
+                    )
+            ) 
+            # else return nothing
+        )
+
+    )
+)
