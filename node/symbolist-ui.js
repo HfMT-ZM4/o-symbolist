@@ -61,6 +61,8 @@ function symbolist_set_log(msg)
     if( symbolist_log == null )
         symbolist_log = document.getElementById("symbolist_log");
     
+    //console.log(symbolist_log == null);
+
     if( symbolist_log != null )
         symbolist_log.innerHTML = `<span>${msg}</span>`;
 }

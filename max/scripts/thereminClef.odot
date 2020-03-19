@@ -68,6 +68,12 @@
 
     },
 
+    /get/infoDisplay : quote(
+        lambda([dataobj, bbox],
+            /helper/make/default_infoDisplay(dataobj, bbox) # default display generator
+        )
+    ),
+
     /get/icon : quote(lambda([],
     {
         /key : "html",
@@ -182,9 +188,8 @@
                                 /time/dur : 1., # seconds
                                 /pitch/range : 127 # min implied as zero
                             }, 
-                            /__/processGUIstaveEvents(/thereminStave, events)
+                            /__/processGUIstaveEvents(/thereminStave, events, gui_event, data_ref) # update child events
                         ]
-                        # update all events also
 
 
                     )
@@ -198,7 +203,7 @@
 
         /noteline : {
             /class : "noteline",
-            
+
             /default : {
                 /r : 1,
                 /dur : 100,
@@ -318,8 +323,10 @@
                     # to do new from click, select a reference object, if none are found, then the SVG is the parent?
                     # do that in the UI script
                     /map = /thereminStave./map,
+
                     /x2time = /map./x2time,
                     /y2pitch = /map./y2pitch,
+
                     /default =  {
                                 /r : 1,
                                 /dur : 0.1,
@@ -352,17 +359,18 @@
                                     durationLine : /__/getChildByClass( viewobj, "durationLine" )
                                 },
                                 let({
-                                        xy : if ( bound(viewobj./transform),
+                                        xy : if ( /__/hasAddress(viewobj, "/transform"),
                                                     /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),
                                                     [notehead./cx, notehead./cy] )
                                     },
                                     {
                                         /class : "thereminStave.noteline",
+                                        /xy : xy,
                                         /id : viewobj./id,
-                                        /pitch : scale( xy[[1]] - gui_context./y, gui_context./height, 0., 0., 127.),
-                                        /time : /parent_pix2time( xy[[0]] - gui_context./x - notehead./r ),  
-                                        /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),
-                                        /amp : scale(notehead./r, 5., 20., 0., 100)
+                                        /pitch : /y2pitch( data_ref, gui_context, xy[[1]] ),
+                                        /time : /x2time( data_ref, gui_context, xy[[0]] - /default./r ), 
+                                        /dur : /default./dur, #/x2time( data_ref, gui_context, durationLine./x2 - durationLine./x1),
+                                        /amp : /default./amp
                                     }
                                 )
                             )
@@ -380,18 +388,20 @@
                 )
             ),
 
-        /get/fromTime : quote(
-            lambda([obj, t],
-                let({
-                        relTime : (t - obj./time) / obj./dur
-                    },
-                    if( relTime >= 0 && relTime <= 1,
-                        {
-                            /relTime : relTime
-                        }
+            /get/fromTime : quote(
+                lambda([obj, t],
+                    let({
+                            relTime : (t - obj./time) / obj./dur
+                        },
+                        if( relTime >= 0 && relTime <= 1,
+                            {
+                                /relTime : relTime
+                            }
+                        )
                     )
                 )
-            ))
+            )
+
         }
 
     }

@@ -37,16 +37,16 @@
     lambda([objarr, addr, value],
         map(
             lambda([obj],
-                if( /__/hasAddress(obj, addr) && getbundlemember(obj, addr) == value,
+                if( /__/hasAddress(obj, string(addr)) && getbundlemember(obj, string(addr)) == value,
                     obj,
                     progn(
                         if( typetags(obj) == '.',
                             map(
                                 lambda([a],
                                     let({
-                                            child : getbundlemember(obj, a)
+                                            child : getbundlemember(obj, string(a))
                                         },
-                                            if( !bound(/found) && /__/hasAddress(obj, addr) && getbundlemember(obj, addr) == value,
+                                            if( !bound(/found) && /__/hasAddress(child, string(addr)) && getbundlemember(child, string(addr)) == value,
                                                 /found = child,
                                                 /found = /__/getSubByMemValue( child, addr, value )
                                             )
