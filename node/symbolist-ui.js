@@ -16,7 +16,7 @@
 const svgObj = document.getElementById("svg");
 const mainSVG = document.getElementById("main-svg");
 
-let symbolist_log;
+let symbolist_log = null;
 
 let clickedObj = null;
 let prevEventTarget = null;
@@ -32,19 +32,45 @@ let currentPaletteClass =  "thereminStave";
 let selectedClass = currentPaletteClass;
 
 
-drawsocket.setInputListener( (key, objarr) => {
+/**
+ *  listener receives all forwarded messages from drawsocket
+ */
+ 
+drawsocket.setInputListener( (key, objarr, wasHandled) => {
+// or no default because we listen to all messages to drawsocket... ?
+    if( wasHandled == false )
+    {
+        switch (key) {
+            case "symbolist_log":
+                symbolist_set_log(objarr); // << prob need to iterate obj array...
+            break;
+            default: 
+                symbolist_set_log(`${key} message not handlded by symbolist or drawsocket`);
+            break;
+        }
+    }
    // console.log("called", key);
-   // we can handle additional messages to drawsocket here
 });
 
 /** 
  * API -- make namespace here ?
  */
 
+function symbolist_set_log(msg)
+{
+    if( symbolist_log == null )
+        symbolist_log = document.getElementById("symbolist_log");
+    
+    if( symbolist_log != null )
+        symbolist_log.innerHTML = `<span>${msg}</span>`;
+}
+
+
 function symbolist_setClass(_class)
 {
-    console.log("symbolist_setClass", _class);
-   
+//    console.log("symbolist_setClass", _class);
+    symbolist_set_log(`selected symbol ${_class}`)
+
     document.querySelectorAll(".palette .selected").forEach( el => {
         el.classList.remove("selected");
     });
@@ -56,26 +82,44 @@ function symbolist_setClass(_class)
 
 }
 
+/**
+ * 
+ * @param {set context from symbolist controller} obj 
+ */
 function symbolist_setContext(obj)
 {
+    document.querySelectorAll(".current_context").forEach( el => {
+        el.classList.remove("current_context");
+    });
 
-   currentContext = document.getElementById(obj.id);
-   symbolist_set_log(`set context to ${obj.id}`)
-}
-
-function symbolist_set_log(msg)
-{
-    if(typeof symbolist_log === "undefined" )
-        symbolist_log = document.getElementById("symbolist_log");
-    
-    symbolist_log.innerHTML = `<span>${msg}</span>`;
-
+    obj.classList.add("current_context");
+    currentContext = document.getElementById(obj.id);
+    symbolist_set_log(`set context to ${obj.id}`)
 }
 
 
  /**
   * internal methods
   */
+
+
+/**
+ * set context from UI event, selecting most recently selected object
+ */
+function setSelectedContext()
+{
+    if( selected.length > 0 )
+    {
+        document.querySelectorAll(".current_context").forEach( el => {
+            el.classList.remove("current_context");
+        });
+
+        currentContext = selected[selected.length-1];
+
+        symbolist_set_log(`context is now: ${currentContext.id}`);
+    }
+}
+ 
 
 function hitTest(regionRect, obj)
 {
@@ -438,15 +482,6 @@ function symbolost_sendKeyEvent(event, caller)
     });
 }
 
-function setSelectedContext()
-{
-    if( selected.length > 0 )
-    {
-        currentContext = selected[selected.length-1];
-
-        symbolist_set_log(`context is now: ${currentContext.id}`);
-    }
-}
 
 function symbolist_keydownhandler(event)
 {

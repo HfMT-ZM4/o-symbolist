@@ -1,5 +1,6 @@
 # top level svg background values
 /svg = {
+	/class : "svg",
     /x : 10.,
     /y : 10.,
     /width : 600.,

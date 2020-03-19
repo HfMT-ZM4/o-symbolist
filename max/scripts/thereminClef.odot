@@ -116,7 +116,7 @@
                             {   # top stave layer for events
                                 /new : "g",
                                 /id : dataobj./id + "-events",
-                                /class : "thereminStave-events"
+                                /class : "stave_events"
                             },
                             {
                                 /new : "g",
@@ -129,12 +129,12 @@
                                     /y : y,
                                     /height : height
                                 },
-                                { #make clef symbol here, with a negative x so that it's behind the zero time point
+                                {
                                     /new : "line",
                                     /class : "thereminClef",
-                                    /x1 : x - 10,
+                                    /x1 : x + 10,
                                     /y1 : y,
-                                    /x2 : x - 10,
+                                    /x2 : x + 10,
                                     /y2 : y + height
                                 }]   
                             }]
@@ -159,19 +159,32 @@
                     /time/dur : 1., # seconds
                     /pitch/range : 127 # min implied as zero
                 },
-                gui_event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
+                gui_event./symbolistAction == "transformed", 
                 let({
-                        bbox: viewobj./bbox
+                        staff : /helper/getChildByClass_recursive( viewobj, "thereminStaff" ),
+                        clef : /helper/getChildByClass_recursive( viewobj, "thereminClef" ),
+                        events : /helper/getChildByClass_recursive( viewobj, "stave_events" )
                     },
-                    {
-                        /class : "thereminStave",
-                        /id : viewobj./id,
-                        /offsetInParent/x : bbox./x,
-                        /offsetInParent/y : bbox./y,
-                        /time/start : 0.,
-                        /time/dur : 1., # seconds
-                        /pitch/range : 127 # min implied as zero
-                    }
+                    let({
+                            xy : if ( bound(viewobj./transform),
+                                        /transform/applyTransform( /transform/getMatrix(viewobj./transform), [staff./x, staff./y] ),
+                                        [staff./x, staff./y] 
+                                    )
+                        },
+                        {
+                            /class : "thereminStave",
+                            /id : viewobj./id,
+                            /id : gui_event./id,
+                            /offsetInParent/x : xy[[0]],
+                            /offsetInParent/y : xy[[1]],
+                            /time/start : 0.,
+                            /time/dur : 1., # seconds
+                            /pitch/range : 127 # min implied as zero
+                        }
+                        # update all events also
+
+
+                    )
                 )
             )
             

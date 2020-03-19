@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1092.0, 937.0 ],
+		"rect" : [ 34.0, 79.0, 1320.0, 937.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-21",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "FullPacket" ],
+					"patching_rect" : [ 540.0, 659.024273455142975, 154.0, 22.0 ],
+					"text" : "o.select /port /start/success"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-32",
 					"linecount" : 4,
 					"maxclass" : "comment",
@@ -51,28 +63,13 @@
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 12.0,
-					"id" : "obj-26",
-					"linecount" : 11,
-					"maxclass" : "o.display",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 599.140776991844177, 794.5, 356.0, 170.0 ],
-					"text" : "/event : {\n\t/key : \"status\",\n\t/from : {\n\t\t/url : \"/view\",\n\t\t/uniqueid : \"FU/j03S+gWlAShSj2veZcA==\",\n\t\t/ip : \"::1\"\n\t},\n\t/val : {\n\t\t/connected : 0\n\t}\n}"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-24",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 333.0, 896.0, 24.0, 24.0 ]
+					"patching_rect" : [ 617.5, 829.5, 24.0, 24.0 ]
 				}
 
 			}
@@ -541,7 +538,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 915.730770707130432, 608.75, 19.0, 22.0 ],
+					"patching_rect" : [ 1062.529019474983215, 505.0, 19.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -722,7 +719,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 873.701751232147217, 577.75, 83.0, 22.0 ],
+					"patching_rect" : [ 1020.5, 474.0, 83.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -753,7 +750,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 421.140776991844177, 766.5, 82.0, 22.0 ],
+					"patching_rect" : [ 421.140776991844177, 795.5, 82.0, 22.0 ],
 					"text" : "o.route /val"
 				}
 
@@ -765,7 +762,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 421.140776991844177, 800.5, 176.0, 22.0 ],
+					"patching_rect" : [ 421.140776991844177, 829.5, 176.0, 22.0 ],
 					"text" : "o.cond bound(/symbolistAction)"
 				}
 
@@ -777,7 +774,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 420.0, 732.5, 337.0, 22.0 ],
+					"patching_rect" : [ 420.0, 761.5, 337.0, 22.0 ],
 					"text" : "o.cond /key == mouse || /key == key || /key == symbolistEvent"
 				}
 
@@ -4704,6 +4701,12 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
+								}
+,
 								"umenu" : 								{
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
@@ -4718,20 +4721,14 @@
 
 								}
 ,
-								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
-								}
-,
 								"parentstyle" : "",
 								"multi" : 0
 							}
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4740,9 +4737,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4751,8 +4748,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4761,9 +4758,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5121,13 +5118,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-5",
-					"linecount" : 91,
+					"linecount" : 92,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 147.140776991844177, 783.728072166442871, 356.0, 1258.0 ],
-					"text" : "/key : \"key\",\n/val : {\n\t/context : {\n\t\t/bbox : {\n\t\t\t/width : 0,\n\t\t\t/bottom : 0,\n\t\t\t/left : 0,\n\t\t\t/top : 0,\n\t\t\t/x : 0,\n\t\t\t/height : 0,\n\t\t\t/right : 0,\n\t\t\t/y : 0\n\t\t},\n\t\t/class : \"thereminStave\",\n\t\t/transform : \"matrix(1 0 0 1 53 26)\",\n\t\t/children : [{\n\t\t\t/class : \"thereminStave-events\",\n\t\t\t/children : [{\n\t\t\t\t/class : \"thereminStave.noteline\",\n\t\t\t\t/children : [{\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/class : \"notehead\",\n\t\t\t\t\t/cx : 247.15,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/cy : 172\n\t\t\t\t}, {\n\t\t\t\t\t/y1 : 172,\n\t\t\t\t\t/class : \"durationLine\",\n\t\t\t\t\t/y2 : 172,\n\t\t\t\t\t/x1 : 242,\n\t\t\t\t\t/x2 : 342,\n\t\t\t\t\t/type : \"line\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_vddo15ysjw\",\n\t\t\t\t/type : \"g\"\n\t\t\t}, {\n\t\t\t\t/class : \"thereminStave.noteline\",\n\t\t\t\t/children : [{\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/class : \"notehead\",\n\t\t\t\t\t/cx : 312.15,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/cy : 247\n\t\t\t\t}, {\n\t\t\t\t\t/y1 : 247,\n\t\t\t\t\t/class : \"durationLine\",\n\t\t\t\t\t/y2 : 247,\n\t\t\t\t\t/x1 : 307,\n\t\t\t\t\t/x2 : 407,\n\t\t\t\t\t/type : \"line\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_17smr1i0k1u\",\n\t\t\t\t/type : \"g\"\n\t\t\t}],\n\t\t\t/id : \"thereminStave_u_22y4os3y4k4-events\",\n\t\t\t/type : \"g\"\n\t\t}, {\n\t\t\t/class : \"thereminStave-display\",\n\t\t\t/children : [{\n\t\t\t\t/width : 1000,\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/x : 105,\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 81\n\t\t\t}, {\n\t\t\t\t/y1 : 81,\n\t\t\t\t/class : \"thereminClef\",\n\t\t\t\t/y2 : 481,\n\t\t\t\t/x1 : 95,\n\t\t\t\t/x2 : 95,\n\t\t\t\t/type : \"line\"\n\t\t\t}],\n\t\t\t/type : \"g\"\n\t\t}],\n\t\t/id : \"thereminStave_u_22y4os3y4k4\",\n\t\t/type : \"g\"\n\t},\n\t/action : \"keydown\",\n\t/paletteClass : \"thereminStave.noteline\",\n\t/selected,\n\t/mods : {\n\t\t/alt : 0,\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 1\n\t},\n\t/xy : [329, 255],\n\t/keyVal : \"Meta\"\n}"
+					"patching_rect" : [ 648.5, 823.5, 356.0, 1271.0 ],
+					"text" : "/key : \"mouse\",\n/val : {\n\t/mods : {\n\t\t/meta : 0,\n\t\t/alt : 0,\n\t\t/shift : 0,\n\t\t/ctrl : 0\n\t},\n\t/button : 0,\n\t/context : {\n\t\t/class : \"svg\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1,\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/baseProfile : \"full\",\n\t\t/bbox : {\n\t\t\t/x : 0,\n\t\t\t/left : 0,\n\t\t\t/top : 0,\n\t\t\t/bottom : 595,\n\t\t\t/height : 595,\n\t\t\t/y : 0,\n\t\t\t/right : 1135,\n\t\t\t/width : 1135\n\t\t}\n\t},\n\t/paletteClass : \"thereminStave\",\n\t/id : \"thereminStave_u_1fthjeomg92\",\n\t/action : \"mousemove\",\n\t/selected : {\n\t\t/class : \"thereminStave\",\n\t\t/id : \"thereminStave_u_15fpehqeen8\",\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/class : \"stave_events\",\n\t\t\t/id : \"thereminStave_u_15fpehqeen8-events\",\n\t\t\t/type : \"g\"\n\t\t}, {\n\t\t\t/class : \"thereminStave-display\",\n\t\t\t/type : \"g\",\n\t\t\t/children : [{\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/x : 196,\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 59,\n\t\t\t\t/width : 1000\n\t\t\t}, {\n\t\t\t\t/class : \"thereminClef\",\n\t\t\t\t/y1 : 59,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y2 : 459,\n\t\t\t\t/x1 : 206,\n\t\t\t\t/x2 : 206\n\t\t\t}]\n\t\t}],\n\t\t/bbox : {\n\t\t\t/x : 0,\n\t\t\t/left : 0,\n\t\t\t/top : 0,\n\t\t\t/bottom : 0,\n\t\t\t/height : 0,\n\t\t\t/y : 0,\n\t\t\t/right : 0,\n\t\t\t/width : 0\n\t\t},\n\t\t/transform : \"matrix(1 0 0 1 -25 65)\"\n\t},\n\t/mousedownPos,\n\t/target : {\n\t\t/class : \"svg\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1,\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/baseProfile : \"full\",\n\t\t/bbox : {\n\t\t\t/x : 0,\n\t\t\t/left : 0,\n\t\t\t/top : 0,\n\t\t\t/bottom : 595,\n\t\t\t/height : 595,\n\t\t\t/y : 0,\n\t\t\t/right : 1135,\n\t\t\t/width : 1135\n\t\t}\n\t},\n\t/xy : [86, 142]\n}"
 				}
 
 			}
@@ -5201,8 +5198,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 100.0, 352.0, 228.0 ],
-									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 92, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 46, 46, 0, 0, 0, 0, 0, 0, -20, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 0, 0, 0, 0, 0, 0, 36, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 95, 117, 95, 50, 50, 121, 52, 111, 115, 51, 121, 52, 107, 52, 0, 0, 0, 0, 28, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 120, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 105, 0, 0, 0, 28, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 121, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 81, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 112, 105, 116, 99, 104, 47, 114, 97, 110, 103, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 127, 0, 0, 0, -60, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 44, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 118, 100, 100, 111, 49, 53, 121, 115, 106, 119, 0, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 63, -63, -119, 55, 75, -58, -89, -16, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 88, -122, -31, 71, -82, 20, 123, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, -56, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 48, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 49, 55, 115, 109, 114, 49, 105, 48, 107, 49, 117, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 63, -55, -37, 34, -48, -27, 96, 66, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 82, -110, -31, 71, -82, 20, 123, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, -60, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 44, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 120, 50, 98, 52, 49, 115, 115, 100, 51, 102, 0, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 63, -75, -127, 6, 36, -35, 47, 27, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 87, -109, 10, 61, 112, -93, -41, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
-									"saved_bundle_length" : 880,
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 44, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 0, 0, 0, 0, 1, 28, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 0, 0, 0, 0, 0, 0, 36, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 95, 117, 95, 49, 53, 102, 112, 101, 104, 113, 101, 101, 110, 56, 0, 0, 0, 0, 36, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 95, 117, 95, 49, 53, 102, 112, 101, 104, 113, 101, 101, 110, 56, 0, 0, 0, 0, 32, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 120, 0, 0, 0, 44, 100, 0, 0, 64, 101, 96, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 121, 0, 0, 0, 44, 100, 0, 0, 64, 95, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 112, 105, 116, 99, 104, 47, 114, 97, 110, 103, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 127 ],
+									"saved_bundle_length" : 320,
 									"text" : "/model : [{\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_82zrgsdu1o\",\n\t/offsetInParent/x : 110,\n\t/offsetInParent/y : 83,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}, {\n\t/class : \"thereminStave.noteline\",\n\t/id : \"thereminStave.noteline_u_1qzqcnl3cj2\",\n\t/time : 0.138,\n\t/pitch : 76.5175,\n\t/dur : 0.1,\n\t/amp : 1\n}]"
 								}
 
@@ -5314,19 +5311,18 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-38",
-									"linecount" : 96,
+									"linecount" : 31,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 100.0, 284.0, 1325.0 ],
-									"text" : "/view : {\n\t/key : \"svg\",\n\t/val : [{\n\t\t/new : \"g\",\n\t\t/class : \"thereminStave\",\n\t\t/id : \"thereminStave_u_22y4os3y4k4\",\n\t\t/children : [{\n\t\t\t/new : \"g\",\n\t\t\t/id : \"thereminStave_u_22y4os3y4k4-events\",\n\t\t\t/class : \"thereminStave-events\"\n\t\t}, {\n\t\t\t/new : \"g\",\n\t\t\t/class : \"thereminStave-display\",\n\t\t\t/children : [{\n\t\t\t\t/new : \"rect\",\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/x : 105.,\n\t\t\t\t/width : 1000.,\n\t\t\t\t/y : 81,\n\t\t\t\t/height : 400.\n\t\t\t}, {\n\t\t\t\t/new : \"line\",\n\t\t\t\t/class : \"thereminClef\",\n\t\t\t\t/x1 : 95.,\n\t\t\t\t/y1 : 81,\n\t\t\t\t/x2 : 95.,\n\t\t\t\t/y2 : 481.\n\t\t\t}]\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"thereminStave.noteline\",\n\t\t/id : \"thereminStave.noteline_u_vddo15ysjw\",\n\t\t/parent : \"thereminStave_u_22y4os3y4k4-events\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 172.,\n\t\t\t/cx : 247.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 242.,\n\t\t\t/y1 : 172.,\n\t\t\t/x2 : 342.,\n\t\t\t/y2 : 172.\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"thereminStave.noteline\",\n\t\t/id : \"thereminStave.noteline_u_17smr1i0k1u\",\n\t\t/parent : \"thereminStave_u_22y4os3y4k4-events\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 247,\n\t\t\t/cx : 312.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 307.,\n\t\t\t/y1 : 247,\n\t\t\t/x2 : 407,\n\t\t\t/y2 : 247\n\t\t}]\n\t}, {\n\t\t/new : \"g\",\n\t\t/class : \"thereminStave.noteline\",\n\t\t/id : \"thereminStave.noteline_u_x2b41ssd3f\",\n\t\t/parent : \"thereminStave_u_22y4os3y4k4-events\",\n\t\t/children : [{\n\t\t\t/new : \"circle\",\n\t\t\t/class : \"notehead\",\n\t\t\t/r : 5.15,\n\t\t\t/cy : 184.,\n\t\t\t/cx : 194.15\n\t\t}, {\n\t\t\t/new : \"line\",\n\t\t\t/class : \"durationLine\",\n\t\t\t/x1 : 189.,\n\t\t\t/y1 : 184.,\n\t\t\t/x2 : 289.,\n\t\t\t/y2 : 184.\n\t\t}]\n\t}]\n}"
+									"patching_rect" : [ 50.0, 100.0, 342.0, 442.0 ],
+									"text" : "/view : {\n\t/key : \"svg\",\n\t/val : {\n\t\t/new : \"g\",\n\t\t/class : \"thereminStave\",\n\t\t/id : \"thereminStave_u_beurwajuchc\",\n\t\t/children : [{\n\t\t\t/new : \"g\",\n\t\t\t/id : \"thereminStave_u_beurwajuchc-events\",\n\t\t\t/class : \"thereminStave-events\"\n\t\t}, {\n\t\t\t/new : \"g\",\n\t\t\t/class : \"thereminStave-display\",\n\t\t\t/children : [{\n\t\t\t\t/new : \"rect\",\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/x : 206.,\n\t\t\t\t/width : 1000.,\n\t\t\t\t/y : 119,\n\t\t\t\t/height : 400.\n\t\t\t}, {\n\t\t\t\t/new : \"line\",\n\t\t\t\t/class : \"thereminClef\",\n\t\t\t\t/x1 : 196.,\n\t\t\t\t/y1 : 119,\n\t\t\t\t/x2 : 196.,\n\t\t\t\t/y2 : 519.\n\t\t\t}]\n\t\t}]\n\t}\n}"
 								}
 
 							}
@@ -5371,13 +5367,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-47",
-					"linecount" : 175,
+					"linecount" : 115,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 75.0, 544.5, 313.0, 2399.0 ],
-					"text" : "/gui : {\n\t/mousedownPos,\n\t/target : {\n\t\t/bbox : {\n\t\t\t/width : 1010,\n\t\t\t/bottom : 507,\n\t\t\t/left : 148,\n\t\t\t/top : 107,\n\t\t\t/x : 148,\n\t\t\t/height : 400,\n\t\t\t/right : 1158,\n\t\t\t/y : 107\n\t\t},\n\t\t/class : \"thereminStave\",\n\t\t/transform : \"matrix(1 0 0 1 53 26)\",\n\t\t/children : [{\n\t\t\t/class : \"thereminStave-events\",\n\t\t\t/children : [{\n\t\t\t\t/class : \"thereminStave.noteline\",\n\t\t\t\t/children : [{\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/class : \"notehead\",\n\t\t\t\t\t/cx : 247.15,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/cy : 172\n\t\t\t\t}, {\n\t\t\t\t\t/y1 : 172,\n\t\t\t\t\t/class : \"durationLine\",\n\t\t\t\t\t/y2 : 172,\n\t\t\t\t\t/x1 : 242,\n\t\t\t\t\t/x2 : 342,\n\t\t\t\t\t/type : \"line\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_vddo15ysjw\",\n\t\t\t\t/type : \"g\"\n\t\t\t}, {\n\t\t\t\t/class : \"thereminStave.noteline\",\n\t\t\t\t/children : [{\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/class : \"notehead\",\n\t\t\t\t\t/cx : 312.15,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/cy : 247\n\t\t\t\t}, {\n\t\t\t\t\t/y1 : 247,\n\t\t\t\t\t/class : \"durationLine\",\n\t\t\t\t\t/y2 : 247,\n\t\t\t\t\t/x1 : 307,\n\t\t\t\t\t/x2 : 407,\n\t\t\t\t\t/type : \"line\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_17smr1i0k1u\",\n\t\t\t\t/type : \"g\"\n\t\t\t}],\n\t\t\t/id : \"thereminStave_u_22y4os3y4k4-events\",\n\t\t\t/type : \"g\"\n\t\t}, {\n\t\t\t/class : \"thereminStave-display\",\n\t\t\t/children : [{\n\t\t\t\t/width : 1000,\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/x : 105,\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 81\n\t\t\t}, {\n\t\t\t\t/y1 : 81,\n\t\t\t\t/class : \"thereminClef\",\n\t\t\t\t/y2 : 481,\n\t\t\t\t/x1 : 95,\n\t\t\t\t/x2 : 95,\n\t\t\t\t/type : \"line\"\n\t\t\t}],\n\t\t\t/type : \"g\"\n\t\t}],\n\t\t/id : \"thereminStave_u_22y4os3y4k4\",\n\t\t/type : \"g\"\n\t},\n\t/context : {\n\t\t/bbox : {\n\t\t\t/width : 1010,\n\t\t\t/bottom : 507,\n\t\t\t/left : 148,\n\t\t\t/top : 107,\n\t\t\t/x : 148,\n\t\t\t/height : 400,\n\t\t\t/right : 1158,\n\t\t\t/y : 107\n\t\t},\n\t\t/class : \"thereminStave\",\n\t\t/transform : \"matrix(1 0 0 1 53 26)\",\n\t\t/children : [{\n\t\t\t/class : \"thereminStave-events\",\n\t\t\t/children : [{\n\t\t\t\t/class : \"thereminStave.noteline\",\n\t\t\t\t/children : [{\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/class : \"notehead\",\n\t\t\t\t\t/cx : 247.15,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/cy : 172\n\t\t\t\t}, {\n\t\t\t\t\t/y1 : 172,\n\t\t\t\t\t/class : \"durationLine\",\n\t\t\t\t\t/y2 : 172,\n\t\t\t\t\t/x1 : 242,\n\t\t\t\t\t/x2 : 342,\n\t\t\t\t\t/type : \"line\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_vddo15ysjw\",\n\t\t\t\t/type : \"g\"\n\t\t\t}, {\n\t\t\t\t/class : \"thereminStave.noteline\",\n\t\t\t\t/children : [{\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/class : \"notehead\",\n\t\t\t\t\t/cx : 312.15,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/cy : 247\n\t\t\t\t}, {\n\t\t\t\t\t/y1 : 247,\n\t\t\t\t\t/class : \"durationLine\",\n\t\t\t\t\t/y2 : 247,\n\t\t\t\t\t/x1 : 307,\n\t\t\t\t\t/x2 : 407,\n\t\t\t\t\t/type : \"line\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_17smr1i0k1u\",\n\t\t\t\t/type : \"g\"\n\t\t\t}],\n\t\t\t/id : \"thereminStave_u_22y4os3y4k4-events\",\n\t\t\t/type : \"g\"\n\t\t}, {\n\t\t\t/class : \"thereminStave-display\",\n\t\t\t/children : [{\n\t\t\t\t/width : 1000,\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/x : 105,\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 81\n\t\t\t}, {\n\t\t\t\t/y1 : 81,\n\t\t\t\t/class : \"thereminClef\",\n\t\t\t\t/y2 : 481,\n\t\t\t\t/x1 : 95,\n\t\t\t\t/x2 : 95,\n\t\t\t\t/type : \"line\"\n\t\t\t}],\n\t\t\t/type : \"g\"\n\t\t}],\n\t\t/id : \"thereminStave_u_22y4os3y4k4\",\n\t\t/type : \"g\"\n\t},\n\t/symbolistAction : \"newFromClick_up\",\n\t/button : 0,\n\t/action : \"mouseup\",\n\t/paletteClass : \"thereminStave.noteline\",\n\t/selected,\n\t/mods : {\n\t\t/alt : 0,\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 1\n\t},\n\t/id : \"thereminStave.noteline_u_20i82f255pq\",\n\t/xy : [190, 184]\n}"
+					"patching_rect" : [ 75.0, 544.5, 313.0, 1584.0 ],
+					"text" : "/gui : {\n\t/mods : {\n\t\t/meta : 0,\n\t\t/alt : 0,\n\t\t/shift : 0,\n\t\t/ctrl : 0\n\t},\n\t/button : 0,\n\t/context : {\n\t\t/class : \"svg\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/version : 1.1,\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t\t/baseProfile : \"full\",\n\t\t/bbox : {\n\t\t\t/x : 0,\n\t\t\t/left : 0,\n\t\t\t/top : 0,\n\t\t\t/bottom : 595,\n\t\t\t/height : 595,\n\t\t\t/y : 0,\n\t\t\t/right : 1135,\n\t\t\t/width : 1135\n\t\t}\n\t},\n\t/paletteClass : \"thereminStave\",\n\t/id : \"thereminStave_u_15fpehqeen8\",\n\t/action : \"mouseup\",\n\t/selected : {\n\t\t/class : \"thereminStave\",\n\t\t/id : \"thereminStave_u_15fpehqeen8\",\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/class : \"stave_events\",\n\t\t\t/id : \"thereminStave_u_15fpehqeen8-events\",\n\t\t\t/type : \"g\"\n\t\t}, {\n\t\t\t/class : \"thereminStave-display\",\n\t\t\t/type : \"g\",\n\t\t\t/children : [{\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/x : 196,\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 59,\n\t\t\t\t/width : 1000\n\t\t\t}, {\n\t\t\t\t/class : \"thereminClef\",\n\t\t\t\t/y1 : 59,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y2 : 459,\n\t\t\t\t/x1 : 206,\n\t\t\t\t/x2 : 206\n\t\t\t}]\n\t\t}],\n\t\t/bbox : {\n\t\t\t/x : 171,\n\t\t\t/left : 171,\n\t\t\t/top : 124,\n\t\t\t/bottom : 524,\n\t\t\t/height : 400,\n\t\t\t/y : 124,\n\t\t\t/right : 1171,\n\t\t\t/width : 1000\n\t\t},\n\t\t/transform : \"matrix(1 0 0 1 -25 65)\"\n\t},\n\t/symbolistAction : \"transformed\",\n\t/mousedownPos,\n\t/target : {\n\t\t/class : \"thereminStave\",\n\t\t/id : \"thereminStave_u_15fpehqeen8\",\n\t\t/type : \"g\",\n\t\t/children : [{\n\t\t\t/class : \"stave_events\",\n\t\t\t/id : \"thereminStave_u_15fpehqeen8-events\",\n\t\t\t/type : \"g\"\n\t\t}, {\n\t\t\t/class : \"thereminStave-display\",\n\t\t\t/type : \"g\",\n\t\t\t/children : [{\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/x : 196,\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 59,\n\t\t\t\t/width : 1000\n\t\t\t}, {\n\t\t\t\t/class : \"thereminClef\",\n\t\t\t\t/y1 : 59,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y2 : 459,\n\t\t\t\t/x1 : 206,\n\t\t\t\t/x2 : 206\n\t\t\t}]\n\t\t}],\n\t\t/bbox : {\n\t\t\t/x : 171,\n\t\t\t/left : 171,\n\t\t\t/top : 124,\n\t\t\t/bottom : 524,\n\t\t\t/height : 400,\n\t\t\t/y : 124,\n\t\t\t/right : 1171,\n\t\t\t/width : 1000\n\t\t},\n\t\t/transform : \"matrix(1 0 0 1 -25 65)\"\n\t},\n\t/xy : [190, 123]\n}"
 				}
 
 			}
@@ -5391,8 +5387,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 540.0, 665.5, 313.0, 48.0 ],
-					"text" : "/port/localhost : \"http://localhost:3002\",\n/port/ip : \"http://192.168.178.36:3002\""
+					"patching_rect" : [ 540.0, 702.228072166442871, 313.0, 48.0 ],
+					"text" : "/port/localhost : \"http://localhost:3002\",\n/port/ip : \"http://192.168.178.52:3002\""
 				}
 
 			}
@@ -5547,7 +5543,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 603.0, 603.024273455142975, 257.0, 35.0 ],
+					"patching_rect" : [ 568.0, 600.0, 257.0, 35.0 ],
 					"text" : ";\rmax launchbrowser http://localhost:3002/view"
 				}
 
@@ -6855,6 +6851,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontsize" : 18.0,
@@ -7011,6 +7008,12 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
 												"umenu" : 												{
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
@@ -7025,20 +7028,14 @@
 
 												}
 ,
-												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
-												}
-,
 												"parentstyle" : "",
 												"multi" : 0
 											}
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7047,9 +7044,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7058,8 +7055,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7068,9 +7065,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7277,6 +7274,12 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
 												"umenu" : 												{
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
@@ -7291,20 +7294,14 @@
 
 												}
 ,
-												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
-												}
-,
 												"parentstyle" : "",
 												"multi" : 0
 											}
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7313,9 +7310,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7324,8 +7321,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7334,9 +7331,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7502,6 +7499,12 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
 												"umenu" : 												{
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
@@ -7516,20 +7519,14 @@
 
 												}
 ,
-												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
-												}
-,
 												"parentstyle" : "",
 												"multi" : 0
 											}
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7538,9 +7535,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7549,8 +7546,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7559,9 +7556,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7777,6 +7774,12 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
 												"umenu" : 												{
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
@@ -7791,20 +7794,14 @@
 
 												}
 ,
-												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
-												}
-,
 												"parentstyle" : "",
 												"multi" : 0
 											}
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7813,9 +7810,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7824,8 +7821,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7834,9 +7831,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8188,6 +8185,21 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-9",
+													"maxclass" : "o.expr.codebox",
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"patching_rect" : [ 54.0, 414.0, 493.0, 32.0 ],
+													"presentation_linecount" : 2,
+													"text" : "/selected = if(/~/hasAddress(/gui, \"/selected\"), /gui./selected )"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-4",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -8258,13 +8270,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-24",
-													"linecount" : 34,
+													"linecount" : 29,
 													"maxclass" : "o.display",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 94.0, 810.0, 349.0, 483.0 ],
-													"text" : "/data_context : {\n\t/x : 10.,\n\t/y : 10.,\n\t/width : 600.,\n\t/height : 800.\n},\n/view_context : {\n\t/bbox : {\n\t\t/width : 1073,\n\t\t/bottom : 535,\n\t\t/left : 0,\n\t\t/top : 0,\n\t\t/x : 0,\n\t\t/height : 535,\n\t\t/right : 1073,\n\t\t/y : 0\n\t},\n\t/class : \"svg\",\n\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t/version : 1.1,\n\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t/id : \"svg\",\n\t/type : \"svg\",\n\t/baseProfile : \"full\"\n},\n/data : {\n\t/class : \"thereminStave\",\n\t/id : \"thereminStave_u_1xi30l4cf9v\",\n\t/offsetInParent/x : 196,\n\t/offsetInParent/y : 97,\n\t/time/start : 0.,\n\t/time/dur : 1.,\n\t/pitch/range : 127\n}"
+													"patching_rect" : [ 115.0, 889.0, 356.0, 415.0 ],
+													"text" : "/data_context : {\n\t/class : \"svg\",\n\t/x : 10.,\n\t/y : 10.,\n\t/width : 600.,\n\t/height : 800.\n},\n/view_context : {\n\t/class : \"svg\",\n\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t/version : 1.1,\n\t/id : \"svg\",\n\t/type : \"svg\",\n\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t/baseProfile : \"full\",\n\t/bbox : {\n\t\t/x : 0,\n\t\t/left : 0,\n\t\t/top : 0,\n\t\t/bottom : 595,\n\t\t/height : 595,\n\t\t/y : 0,\n\t\t/right : 1135,\n\t\t/width : 1135\n\t}\n},\n/data : {\n\n}"
 												}
 
 											}
@@ -8297,13 +8309,13 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-12",
-													"linecount" : 359,
+													"linecount" : 352,
 													"maxclass" : "o.display",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 556.0, 609.0, 1047.0, 4901.0 ],
-													"text" : "/clef : {\n\t/default : {\n\t\t/offsetInParent/x : 0,\n\t\t/offsetInParent/y : 0,\n\t\t/time/start : 0.,\n\t\t/time/dur : 1.,\n\t\t/pitch/range : 127\n\t},\n\t/params : {\n\t\t/time/start : \"float32\",\n\t\t/time/dur : \"float32\",\n\t\t/pitch/range : \"float32\",\n\t\t/offsetInParent/x : \"float32\",\n\t\t/offsetInParent/y : \"float32\"\n\t},\n\t/scalar : {\n\t\t/time2pix : 1000.,\n\t\t/pix2time : 0.001,\n\t\t/pitch2pix : 3.14961,\n\t\t/pix2pitch : 0.3175\n\t},\n\t/map : {\n\t\t/x2time : \"lambda([clefdata, clefview, x],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass_recursive(clefview, \\\"thereminStaff\\\")\n                },\n                clefdata./time/start + ((x - rect./x) * scalar./pix2time)\n            )\n        )\",\n\t\t/time2x : \"lambda([clefdata, clefview, t],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass_recursive(clefview, \\\"thereminStaff\\\")\n                },\n                rect./x + ((t - clefdata./time/start) * scalar./time2pix)\n            )\n        )\",\n\t\t/y2pitch : \"lambda([clefdata, clefview, y],\n            let({\n                    scalar: /thereminStave./scalar,\n                    rect: /helper/getChildByClass_recursive(clefview, \\\"thereminStaff\\\")\n                },\n                (rect./y + rect./height - y) * scalar./pix2pitch\n            )\n        )\",\n\t\t/pitch2y : \"lambda([clefdata, clefview, pitch],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass_recursive(clefview, \\\"thereminStaff\\\")\n                },\n                rect./y + rect./height - (pitch * scalar./pitch2pix)\n            )\n        )\"\n\t},\n\t/get/icon : \"lambda([],\n    {\n        /key : \\\"html\\\",\n        /val : {\n            /new : \\\"div\\\",\n            /id : \\\"thereminStave-paletteIcon\\\",\n            /parent : \\\"palette-clefs\\\",\n            /onclick : \\\"\n                console.log('select thereminStave'); \n                symbolist_setClass('thereminStave');\n            \\\",\n            /child : {\n                /new : \\\"img\\\",\n                /id : \\\"thereminStave-display\\\",\n                /src : \\\"assets/thereminClef.svg\\\",\n                /style : {\n                    /width : \\\"100%\\\",\n                    /height : \\\"100%\\\"\n                }\n            }\n        \n        }\n    })\",\n\t/set/fromData : \" \n        lambda([dataobj, view_ref, context_data_ref],\n            let({ \n                    maps : /thereminStave./map,\n                    scalar : /thereminStave./scalar,\n                    bbox : view_ref./bbox\n                }, \n                let({\n                        #basic rect here so that the inner children can reference the values\n                        x : bbox./x + dataobj./offsetInParent/x + scalar./time2pix * dataobj./time/start, # sorting of staves?\n                        width : (scalar./time2pix * dataobj./time/start) + (scalar./time2pix * dataobj./time/dur),\n                        y : bbox./y + dataobj./offsetInParent/y, # << obviously we're not done here\n                        height : scalar./pitch2pix * dataobj./pitch/range\n                    },\n                    {\n                        /new : \\\"g\\\",\n                        /class : \\\"thereminStave\\\",\n                        /id : dataobj./id,\n                        /children : [\n                            {   # top stave layer for events\n                                /new : \\\"g\\\",\n                                /id : dataobj./id + \\\"-events\\\",\n                                /class : \\\"thereminStave-events\\\"\n                            },\n                            {\n                                /new : \\\"g\\\",\n                                /class : \\\"thereminStave-display\\\",\n                                /children : [{\n                                    /new : \\\"rect\\\",\n                                    /class : \\\"thereminStaff\\\",\n                                    /x : x,\n                                    /width : width,\n                                    /y : y,\n                                    /height : height\n                                },\n                                { #make clef symbol here, with a negative x so that it's behind the zero time point\n                                    /new : \\\"line\\\",\n                                    /class : \\\"thereminClef\\\",\n                                    /x1 : x - 10,\n                                    /y1 : y,\n                                    /x2 : x - 10,\n                                    /y2 : y + height\n                                }]   \n                            }]\n                    }\n                )\n            )\n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([viewobj, gui_event, data_ref],                    \n            cond(            \n                gui_event./symbolistAction == \\\"newFromClick_down\\\",\n                {\n                    /class : \\\"thereminStave\\\",\n                    /id : gui_event./id,\n                    /offsetInParent/x : gui_event./xy[[0]],\n                    /offsetInParent/y : gui_event./xy[[1]],\n                    /time/start : 0.,\n                    /time/dur : 1., # seconds\n                    /pitch/range : 127 # min implied as zero\n                },\n                gui_event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                let({\n                        bbox: viewobj./bbox\n                    },\n                    {\n                        /class : \\\"thereminStave\\\",\n                        /id : viewobj./id,\n                        /offsetInParent/x : bbox./x,\n                        /offsetInParent/y : bbox./y,\n                        /time/start : 0.,\n                        /time/dur : 1., # seconds\n                        /pitch/range : 127 # min implied as zero\n                    }\n                )\n            )\n            \n        )\n    \",\n\t/palette : {\n\t\t/noteline : {\n\t\t\t/default : {\n\t\t\t\t/r : 1,\n\t\t\t\t/dur : 100,\n\t\t\t\t/amp : 1\n\t\t\t},\n\t\t\t/params : {\n\t\t\t\t/amp : \"float32\",\n\t\t\t\t/dur : \"float32\",\n\t\t\t\t/pitch : \"float32\",\n\t\t\t\t/time : \"float32\"\n\t\t\t},\n\t\t\t/get/icon : \"lambda([],\n            {\n                /key : \\\"html\\\",\n                /val : {\n                    /new : \\\"div\\\",\n                    /id : \\\"thereminStave.noteline-paletteIcon\\\",\n                    /parent : \\\"palette-symbols\\\",\n                    /onclick : \\\"\n                        console.log('select noteline'); \n                        symbolist_setClass('thereminStave.noteline');\n                    \\\",\n                    /children : {\n                        /new : \\\"svg\\\",\n                        /id : \\\"noteline-icon\\\",\n                        /style : {\n                            /height : 4,\n                            /width : 16,\n                            /top : \\\"calc(50% - 2px)\\\",\n                            /left : \\\"calc(50% - 8px)\\\"\n                        },\n                        /children : {            \n                            /new : \\\"g\\\",\n                            /class : \\\"noteline\\\",\n                            /parent : \\\"noteline-icon\\\",\n                            /children : [\n                                {\n                                    /new : \\\"circle\\\",\n                                    /class : \\\"notehead\\\",\n                                    /fill : \\\"black\\\",\n                                    /r : 2,\n                                    /cy : 0,\n                                    /cx : 0\n                                },\n                                {\n                                    /new : \\\"line\\\",\n                                    /class : \\\"durationLine\\\",\n                                    /fill : \\\"black\\\",\n                                    /x1 : 0,\n                                    /y1 : 0,\n                                    /x2 : 16,\n                                    /y2 : 0\n                                }\n                            ]\n                        }\n                    }\n                \n                }\n            })\",\n\t\t\t/set/fromData : \" \n                lambda([dataobj, view_ref, context_data_ref],\n\n                    /map = /thereminStave./map,\n                    /time2x = /map./time2x,\n                    /pitch2y = /map./pitch2y,\n\n                    let({   r : scale(dataobj./amp, 0., 100, 5., 20.),\n                            y : /pitch2y( context_data_ref, view_ref, dataobj./pitch),\n                            x1 : /time2x( context_data_ref, view_ref, dataobj./time),\n                            x2 : /time2x( context_data_ref, view_ref, dataobj./time + dataobj./dur)\n                        }, # return the following object\n                        {\n                            /new : \\\"g\\\",\n                            /class : \\\"thereminStave.noteline\\\",\n                            /id : dataobj./id,\n                            /parent : view_ref./id + \\\"-events\\\",\n                            /children : [\n                                {\n                                    /new : \\\"circle\\\",\n                                    /class : \\\"notehead\\\",\n                                    /r : r,\n                                    /cy : y,\n                                    /cx : x1 + r\n                                },\n                                {\n                                    /new : \\\"line\\\",\n                                    /class : \\\"durationLine\\\",\n                                    /x1 : x1 ,\n                                    /y1 : y,\n                                    /x2 : x2,\n                                    /y2 : y\n                                }\n                            ]\n                        }\n                    )\n                    \n                )\n            \",\n\t\t\t/set/fromGUI : \"\n                lambda([viewobj, gui_event, data_ref],\n                    # later: put these in a let function, here now since /parent./pix2time() doesn't work\n                    # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n                    # do that in the UI script\n                    /map = /thereminStave./map,\n                    /x2time = /map./x2time,\n                    /y2pitch = /map./y2pitch,\n                    /default =  {\n                                /r : 1,\n                                /dur : 0.1,\n                                /amp : 1\n                            },\n                    let({   \n                            gui_context: gui_event./context\n                        },\n                        cond(            \n                            gui_event./symbolistAction == \\\"newFromClick_down\\\",\n                            {\n                                /class : \\\"thereminStave.noteline\\\",\n                                /id : gui_event./id,\n                                /time : /x2time( data_ref, gui_context, gui_event./xy[[0]] - /default./r ),\n                                /pitch : /y2pitch( data_ref, gui_context, gui_event./xy[[1]] ),\n                                /dur : /default./dur,\n                                /amp : /default./amp\n                            },\n                            gui_event./symbolistAction == \\\"selected\\\",\n                            {\n\n                            },\n                            gui_event./symbolistAction == \\\"deselected\\\",\n                            {\n                                \n                            },\n                            gui_event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                            let({\n                                    notehead : /helper/getChildByClass( viewobj, \\\"notehead\\\" ),\n                                    durationLine : /helper/getChildByClass( viewobj, \\\"durationLine\\\" )\n                                },\n                                let({\n                                        xy : if ( bound(viewobj./transform),\n                                                    /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),\n                                                    [notehead./cx, notehead./cy] )\n                                    },\n                                    {\n                                        /class : \\\"noteline\\\",\n                                        /id : viewobj./id,\n                                        /pitch : scale( xy[[1]] - gui_context./y, gui_context./height, 0., 0., 127.),\n                                        /time : /parent_pix2time( xy[[0]] - gui_context./x - notehead./r ),  \n                                        /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                        /amp : scale(notehead./r, 5., 20., 0., 100)\n                                    }\n                                )\n                            )\n                            \n                        )\n                    )\n                    \n                    \n                )\n            \",\n\t\t\t/get/infoDisplay : \"\n                lambda([dataobj, bbox],\n                    /helper/make/default_infoDisplay(dataobj, bbox) # default display generator\n                )\n            \",\n\t\t\t/get/fromTime : \"\n            lambda([obj, t],\n                let({\n                        relTime : (t - obj./time) / obj./dur\n                    },\n                    if( relTime >= 0 && relTime <= 1,\n                        {\n                            /relTime : relTime\n                        }\n                    )\n                )\n            )\"\n\t\t}\n\t}\n},\n/view_context : {\n\t/bbox : {\n\t\t/width : 1073,\n\t\t/bottom : 535,\n\t\t/left : 0,\n\t\t/top : 0,\n\t\t/x : 0,\n\t\t/height : 535,\n\t\t/right : 1073,\n\t\t/y : 0\n\t},\n\t/class : \"svg\",\n\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t/version : 1.1,\n\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t/id : \"svg\",\n\t/type : \"svg\",\n\t/baseProfile : \"full\"\n}"
+													"patching_rect" : [ 556.0, 609.0, 1047.0, 4805.0 ],
+													"text" : "/clef : {\n\t/default : {\n\t\t/offsetInParent/x : 0,\n\t\t/offsetInParent/y : 0,\n\t\t/time/start : 0.,\n\t\t/time/dur : 1.,\n\t\t/pitch/range : 127\n\t},\n\t/params : {\n\t\t/time/start : \"float32\",\n\t\t/time/dur : \"float32\",\n\t\t/pitch/range : \"float32\",\n\t\t/offsetInParent/x : \"float32\",\n\t\t/offsetInParent/y : \"float32\"\n\t},\n\t/scalar : {\n\t\t/time2pix : 1000.,\n\t\t/pix2time : 0.001,\n\t\t/pitch2pix : 3.14961,\n\t\t/pix2pitch : 0.3175\n\t},\n\t/map : {\n\t\t/x2time : \"lambda([clefdata, clefview, x],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass_recursive(clefview, \\\"thereminStaff\\\")\n                },\n                clefdata./time/start + ((x - rect./x) * scalar./pix2time)\n            )\n        )\",\n\t\t/time2x : \"lambda([clefdata, clefview, t],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass_recursive(clefview, \\\"thereminStaff\\\")\n                },\n                rect./x + ((t - clefdata./time/start) * scalar./time2pix)\n            )\n        )\",\n\t\t/y2pitch : \"lambda([clefdata, clefview, y],\n            let({\n                    scalar: /thereminStave./scalar,\n                    rect: /helper/getChildByClass_recursive(clefview, \\\"thereminStaff\\\")\n                },\n                (rect./y + rect./height - y) * scalar./pix2pitch\n            )\n        )\",\n\t\t/pitch2y : \"lambda([clefdata, clefview, pitch],\n            let({\n                    scalar : /thereminStave./scalar,\n                    rect: /helper/getChildByClass_recursive(clefview, \\\"thereminStaff\\\")\n                },\n                rect./y + rect./height - (pitch * scalar./pitch2pix)\n            )\n        )\"\n\t},\n\t/get/icon : \"lambda([],\n    {\n        /key : \\\"html\\\",\n        /val : {\n            /new : \\\"div\\\",\n            /id : \\\"thereminStave-paletteIcon\\\",\n            /parent : \\\"palette-clefs\\\",\n            /onclick : \\\"\n                console.log('select thereminStave'); \n                symbolist_setClass('thereminStave');\n            \\\",\n            /child : {\n                /new : \\\"img\\\",\n                /id : \\\"thereminStave-display\\\",\n                /src : \\\"assets/thereminClef.svg\\\",\n                /style : {\n                    /width : \\\"100%\\\",\n                    /height : \\\"100%\\\"\n                }\n            }\n        \n        }\n    })\",\n\t/set/fromData : \" \n        lambda([dataobj, view_ref, context_data_ref],\n            let({ \n                    maps : /thereminStave./map,\n                    scalar : /thereminStave./scalar,\n                    bbox : view_ref./bbox\n                }, \n                let({\n                        #basic rect here so that the inner children can reference the values\n                        x : bbox./x + dataobj./offsetInParent/x + scalar./time2pix * dataobj./time/start, # sorting of staves?\n                        width : (scalar./time2pix * dataobj./time/start) + (scalar./time2pix * dataobj./time/dur),\n                        y : bbox./y + dataobj./offsetInParent/y, # << obviously we're not done here\n                        height : scalar./pitch2pix * dataobj./pitch/range\n                    },\n                    {\n                        /new : \\\"g\\\",\n                        /class : \\\"thereminStave\\\",\n                        /id : dataobj./id,\n                        /children : [\n                            {   # top stave layer for events\n                                /new : \\\"g\\\",\n                                /id : dataobj./id + \\\"-events\\\",\n                                /class : \\\"stave_events\\\"\n                            },\n                            {\n                                /new : \\\"g\\\",\n                                /class : \\\"thereminStave-display\\\",\n                                /children : [{\n                                    /new : \\\"rect\\\",\n                                    /class : \\\"thereminStaff\\\",\n                                    /x : x,\n                                    /width : width,\n                                    /y : y,\n                                    /height : height\n                                },\n                                {\n                                    /new : \\\"line\\\",\n                                    /class : \\\"thereminClef\\\",\n                                    /x1 : x + 10,\n                                    /y1 : y,\n                                    /x2 : x + 10,\n                                    /y2 : y + height\n                                }]   \n                            }]\n                    }\n                )\n            )\n        )\n    \",\n\t/set/fromGUI : \"\n        lambda([viewobj, gui_event, data_ref],                    \n            cond(            \n                gui_event./symbolistAction == \\\"newFromClick_down\\\",\n                {\n                    /class : \\\"thereminStave\\\",\n                    /id : gui_event./id,\n                    /offsetInParent/x : gui_event./xy[[0]],\n                    /offsetInParent/y : gui_event./xy[[1]],\n                    /time/start : 0.,\n                    /time/dur : 1., # seconds\n                    /pitch/range : 127 # min implied as zero\n                },\n                gui_event./symbolistAction == \\\"transformed\\\", \n                /staff = /helper/getChildByClass_recursive( viewobj, \\\"thereminStaff\\\" ),\n                let({\n                        staff : /helper/getChildByClass_recursive( viewobj, \\\"thereminStaff\\\" )\n                    },\n                    {}\n                )\n            )\n            \n        )\n    \",\n\t/palette : {\n\t\t/noteline : {\n\t\t\t/default : {\n\t\t\t\t/r : 1,\n\t\t\t\t/dur : 100,\n\t\t\t\t/amp : 1\n\t\t\t},\n\t\t\t/params : {\n\t\t\t\t/amp : \"float32\",\n\t\t\t\t/dur : \"float32\",\n\t\t\t\t/pitch : \"float32\",\n\t\t\t\t/time : \"float32\"\n\t\t\t},\n\t\t\t/get/icon : \"lambda([],\n            {\n                /key : \\\"html\\\",\n                /val : {\n                    /new : \\\"div\\\",\n                    /id : \\\"thereminStave.noteline-paletteIcon\\\",\n                    /parent : \\\"palette-symbols\\\",\n                    /onclick : \\\"\n                        console.log('select noteline'); \n                        symbolist_setClass('thereminStave.noteline');\n                    \\\",\n                    /children : {\n                        /new : \\\"svg\\\",\n                        /id : \\\"noteline-icon\\\",\n                        /style : {\n                            /height : 4,\n                            /width : 16,\n                            /top : \\\"calc(50% - 2px)\\\",\n                            /left : \\\"calc(50% - 8px)\\\"\n                        },\n                        /children : {            \n                            /new : \\\"g\\\",\n                            /class : \\\"noteline\\\",\n                            /parent : \\\"noteline-icon\\\",\n                            /children : [\n                                {\n                                    /new : \\\"circle\\\",\n                                    /class : \\\"notehead\\\",\n                                    /fill : \\\"black\\\",\n                                    /r : 2,\n                                    /cy : 0,\n                                    /cx : 0\n                                },\n                                {\n                                    /new : \\\"line\\\",\n                                    /class : \\\"durationLine\\\",\n                                    /fill : \\\"black\\\",\n                                    /x1 : 0,\n                                    /y1 : 0,\n                                    /x2 : 16,\n                                    /y2 : 0\n                                }\n                            ]\n                        }\n                    }\n                \n                }\n            })\",\n\t\t\t/set/fromData : \" \n                lambda([dataobj, view_ref, context_data_ref],\n\n                    /map = /thereminStave./map,\n                    /time2x = /map./time2x,\n                    /pitch2y = /map./pitch2y,\n\n                    let({   r : scale(dataobj./amp, 0., 100, 5., 20.),\n                            y : /pitch2y( context_data_ref, view_ref, dataobj./pitch),\n                            x1 : /time2x( context_data_ref, view_ref, dataobj./time),\n                            x2 : /time2x( context_data_ref, view_ref, dataobj./time + dataobj./dur)\n                        }, # return the following object\n                        {\n                            /new : \\\"g\\\",\n                            /class : \\\"thereminStave.noteline\\\",\n                            /id : dataobj./id,\n                            /parent : view_ref./id + \\\"-events\\\",\n                            /children : [\n                                {\n                                    /new : \\\"circle\\\",\n                                    /class : \\\"notehead\\\",\n                                    /r : r,\n                                    /cy : y,\n                                    /cx : x1 + r\n                                },\n                                {\n                                    /new : \\\"line\\\",\n                                    /class : \\\"durationLine\\\",\n                                    /x1 : x1 ,\n                                    /y1 : y,\n                                    /x2 : x2,\n                                    /y2 : y\n                                }\n                            ]\n                        }\n                    )\n                    \n                )\n            \",\n\t\t\t/set/fromGUI : \"\n                lambda([viewobj, gui_event, data_ref],\n                    # later: put these in a let function, here now since /parent./pix2time() doesn't work\n                    # to do new from click, select a reference object, if none are found, then the SVG is the parent?\n                    # do that in the UI script\n                    /map = /thereminStave./map,\n                    /x2time = /map./x2time,\n                    /y2pitch = /map./y2pitch,\n                    /default =  {\n                                /r : 1,\n                                /dur : 0.1,\n                                /amp : 1\n                            },\n                    let({   \n                            gui_context: gui_event./context\n                        },\n                        cond(            \n                            gui_event./symbolistAction == \\\"newFromClick_down\\\",\n                            {\n                                /class : \\\"thereminStave.noteline\\\",\n                                /id : gui_event./id,\n                                /time : /x2time( data_ref, gui_context, gui_event./xy[[0]] - /default./r ),\n                                /pitch : /y2pitch( data_ref, gui_context, gui_event./xy[[1]] ),\n                                /dur : /default./dur,\n                                /amp : /default./amp\n                            },\n                            gui_event./symbolistAction == \\\"selected\\\",\n                            {\n\n                            },\n                            gui_event./symbolistAction == \\\"deselected\\\",\n                            {\n                                \n                            },\n                            gui_event./symbolistAction == \\\"transformed\\\", #&& /noteline./isValid(obj),\n                            let({\n                                    notehead : /helper/getChildByClass( viewobj, \\\"notehead\\\" ),\n                                    durationLine : /helper/getChildByClass( viewobj, \\\"durationLine\\\" )\n                                },\n                                let({\n                                        xy : if ( bound(viewobj./transform),\n                                                    /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),\n                                                    [notehead./cx, notehead./cy] )\n                                    },\n                                    {\n                                        /class : \\\"noteline\\\",\n                                        /id : viewobj./id,\n                                        /pitch : scale( xy[[1]] - gui_context./y, gui_context./height, 0., 0., 127.),\n                                        /time : /parent_pix2time( xy[[0]] - gui_context./x - notehead./r ),  \n                                        /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),\n                                        /amp : scale(notehead./r, 5., 20., 0., 100)\n                                    }\n                                )\n                            )\n                            \n                        )\n                    )\n                    \n                    \n                )\n            \",\n\t\t\t/get/infoDisplay : \"\n                lambda([dataobj, bbox],\n                    /helper/make/default_infoDisplay(dataobj, bbox) # default display generator\n                )\n            \",\n\t\t\t/get/fromTime : \"\n            lambda([obj, t],\n                let({\n                        relTime : (t - obj./time) / obj./dur\n                    },\n                    if( relTime >= 0 && relTime <= 1,\n                        {\n                            /relTime : relTime\n                        }\n                    )\n                )\n            )\"\n\t\t}\n\t}\n},\n/view_context : {\n\t/class : \"svg\",\n\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t/version : 1.1,\n\t/id : \"svg\",\n\t/type : \"svg\",\n\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\",\n\t/baseProfile : \"full\",\n\t/bbox : {\n\t\t/x : 0,\n\t\t/left : 0,\n\t\t/top : 0,\n\t\t/bottom : 595,\n\t\t/height : 595,\n\t\t/y : 0,\n\t\t/right : 1135,\n\t\t/width : 1135\n\t}\n}"
 												}
 
 											}
@@ -8388,7 +8400,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 54.0, 736.0, 128.0, 22.0 ],
+													"patching_rect" : [ 54.0, 796.0, 128.0, 22.0 ],
 													"text" : "o.cond bound(/data)"
 												}
 
@@ -8457,7 +8469,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 388.0, 708.0, 24.0, 24.0 ]
+													"patching_rect" : [ 409.0, 802.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -8470,7 +8482,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 50.0, 644.0, 349.0, 32.0 ],
+													"patching_rect" : [ 54.0, 668.0, 349.0, 32.0 ],
 													"text" : "/data = /setFn( /viewobj, /gui, /data_context )"
 												}
 
@@ -8482,7 +8494,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 54.0, 702.0, 268.0, 22.0 ],
+													"patching_rect" : [ 54.0, 762.0, 268.0, 22.0 ],
 													"text" : "o.gather.select /data /view_context /data_context"
 												}
 
@@ -8523,7 +8535,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 54.0, 784.0, 30.0, 30.0 ]
+													"patching_rect" : [ 54.0, 844.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -8641,16 +8653,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-13", 0 ],
-													"order" : 0,
-													"source" : [ "obj-3", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-27", 0 ],
-													"order" : 1,
+													"destination" : [ "obj-9", 0 ],
 													"source" : [ "obj-3", 0 ]
 												}
 
@@ -8694,9 +8697,31 @@
 												}
 
 											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-13", 0 ],
+													"order" : 0,
+													"source" : [ "obj-9", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-27", 0 ],
+													"order" : 1,
+													"source" : [ "obj-9", 0 ]
+												}
+
+											}
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
 												"umenu" : 												{
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
@@ -8711,20 +8736,14 @@
 
 												}
 ,
-												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
-												}
-,
 												"parentstyle" : "",
 												"multi" : 0
 											}
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8733,9 +8752,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8744,8 +8763,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8754,9 +8773,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9396,6 +9415,12 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ]
+												}
+,
 												"umenu" : 												{
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
@@ -9410,20 +9435,14 @@
 
 												}
 ,
-												"number" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
-												}
-,
 												"parentstyle" : "",
 												"multi" : 0
 											}
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9432,9 +9451,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9443,8 +9462,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9453,9 +9472,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9825,6 +9844,12 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
+								}
+,
 								"umenu" : 								{
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
@@ -9839,20 +9864,14 @@
 
 								}
 ,
-								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
-								}
-,
 								"parentstyle" : "",
 								"multi" : 0
 							}
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9861,9 +9880,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9872,8 +9891,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9882,9 +9901,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10022,6 +10041,12 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
+								}
+,
 								"umenu" : 								{
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
@@ -10036,20 +10061,14 @@
 
 								}
 ,
-								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
-								}
-,
 								"parentstyle" : "",
 								"multi" : 0
 							}
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10058,9 +10077,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10069,8 +10088,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10079,9 +10098,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10109,7 +10128,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 421.140776991844177, 838.5, 73.0, 22.0 ],
+					"patching_rect" : [ 421.140776991844177, 867.5, 73.0, 22.0 ],
 					"text" : "o.pack /gui"
 				}
 
@@ -10275,7 +10294,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
-					"order" : 0,
+					"order" : 2,
 					"source" : [ "obj-19", 0 ]
 				}
 
@@ -10283,7 +10302,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
-					"order" : 2,
+					"order" : 0,
 					"source" : [ "obj-19", 0 ]
 				}
 
@@ -10299,6 +10318,21 @@
 				"patchline" : 				{
 					"destination" : [ "obj-55", 2 ],
 					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-37", 0 ],
+					"midpoints" : [ 617.0, 691.024273455142975, 862.634614646434784, 691.024273455142975, 862.634614646434784, 116.999999714668263, 566.269229292869568, 116.999999714668263 ],
+					"source" : [ "obj-21", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-44", 0 ],
+					"source" : [ "obj-21", 0 ]
 				}
 
 			}
@@ -10342,22 +10376,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
-					"order" : 1,
 					"source" : [ "obj-28", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"order" : 0,
-					"source" : [ "obj-28", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-44", 0 ],
+					"destination" : [ "obj-21", 0 ],
 					"source" : [ "obj-28", 2 ]
 				}
 
@@ -10407,7 +10432,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
-					"midpoints" : [ 619.781553983688354, 553.0, 1111.640776991844177, 553.0, 1111.640776991844177, 99.0, 429.5, 99.0 ],
+					"midpoints" : [ 619.781553983688354, 589.0, 1111.640776991844177, 589.0, 1111.640776991844177, 99.0, 429.5, 99.0 ],
 					"source" : [ "obj-35", 0 ]
 				}
 
@@ -10643,6 +10668,12 @@
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 12.0 ]
+				}
+,
 				"umenu" : 				{
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
@@ -10657,20 +10688,14 @@
 
 				}
 ,
-				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
-				}
-,
 				"parentstyle" : "",
 				"multi" : 0
 			}
 , 			{
 				"name" : "caption text",
 				"default" : 				{
-					"fontsize" : [ 11.0 ],
-					"fontface" : [ 2 ]
+					"fontface" : [ 2 ],
+					"fontsize" : [ 11.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -10679,9 +10704,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
-					"fontsize" : [ 15.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 3 ]
+					"fontface" : [ 3 ],
+					"fontsize" : [ 15.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -10690,8 +10715,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -10700,9 +10725,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
-					"fontsize" : [ 20.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 1 ]
+					"fontface" : [ 1 ],
+					"fontsize" : [ 20.0 ]
 				}
 ,
 				"parentstyle" : "",

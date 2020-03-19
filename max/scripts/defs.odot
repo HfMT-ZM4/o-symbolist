@@ -14,11 +14,11 @@
 )),
 
 /~/emptybundle = quote(lambda([b], 
-	length(getaddresses(b)) == 0 
+	typetags(b) == '.' && length(getaddresses(b)) == 0 
 )),
 
 /~/hasAddress = quote(lambda([obj, addr],
-  max( getaddresses(obj) == addr ) 
+  typetags(obj) == '.' && max( getaddresses(obj) == addr )
 )),
 
 
@@ -60,11 +60,11 @@
                 ),
                 if( bound(/found), 
                     prog1(
-                    /found,
-                    delete(/found)
+                    	/found,
+                    	delete(/found)
                     )
                 )
-            )
+            )	
             
         )
     )
@@ -131,7 +131,10 @@
                                             }
                                         }
                                     });
-                                }"
+                                }",
+								/onmousedrag : "
+                                    console.log(event);
+                                "
                             }]
                             
                         )
