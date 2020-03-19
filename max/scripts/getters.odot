@@ -1,0 +1,34 @@
+/__/emptybundle = quote(lambda([b], 
+	typetags(b) == '.' && length(getaddresses(b)) == 0 
+)),
+
+/__/hasAddress = quote(lambda([obj, addr],
+  typetags(obj) == '.' && max( getaddresses(obj) == addr )
+)),
+
+
+/__/getChildByClass = quote(
+    lambda([obj, classname],
+        if( /__/hasAddress(obj, "/class") && obj./class == classname,
+            obj,
+            progn(
+                if( /~/hasAddress(obj, "/children"),
+                    map( 
+                        lambda([c],
+                            if( !bound(/found) && /__/hasAddress(c, "/class") && c./class == classname,
+                                /found = c,
+                                /found = /__/getChildByClass( c, classname )
+                            )
+                        ), obj./children
+                    )
+                ),
+                if( bound(/found), 
+                    prog1(
+                    	/found,
+                    	delete(/found)
+                    )
+                )
+            )	
+        )
+    )
+)

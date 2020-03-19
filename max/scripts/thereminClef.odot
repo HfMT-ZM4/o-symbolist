@@ -31,7 +31,7 @@
         /x2time : quote(lambda([clefdata, clefview, x],
             let({
                     scalar : /thereminStave./scalar,
-                    rect: /helper/getChildByClass_recursive(clefview, "thereminStaff")
+                    rect: /__/getChildByClass(clefview, "thereminStaff")
                 },
                 clefdata./time/start + ((x - rect./x) * scalar./pix2time)
             )
@@ -40,7 +40,7 @@
          /time2x : quote(lambda([clefdata, clefview, t],
             let({
                     scalar : /thereminStave./scalar,
-                    rect: /helper/getChildByClass_recursive(clefview, "thereminStaff")
+                    rect: /__/getChildByClass(clefview, "thereminStaff")
                 },
                 rect./x + ((t - clefdata./time/start) * scalar./time2pix)
             )
@@ -49,7 +49,7 @@
         /y2pitch : quote(lambda([clefdata, clefview, y],
             let({
                     scalar: /thereminStave./scalar,
-                    rect: /helper/getChildByClass_recursive(clefview, "thereminStaff")
+                    rect: /__/getChildByClass(clefview, "thereminStaff")
                 },
                 (rect./y + rect./height - y) * scalar./pix2pitch
             )
@@ -59,7 +59,7 @@
         /pitch2y : quote(lambda([clefdata, clefview, pitch],
             let({
                     scalar : /thereminStave./scalar,
-                    rect: /helper/getChildByClass_recursive(clefview, "thereminStaff")
+                    rect: /__/getChildByClass(clefview, "thereminStaff")
                 },
                 rect./y + rect./height - (pitch * scalar./pitch2pix)
             )
@@ -161,9 +161,9 @@
                 },
                 gui_event./symbolistAction == "transformed", 
                 let({
-                        staff : /helper/getChildByClass_recursive( viewobj, "thereminStaff" ),
-                        clef : /helper/getChildByClass_recursive( viewobj, "thereminClef" ),
-                        events : /helper/getChildByClass_recursive( viewobj, "stave_events" )
+                        staff : /__/getChildByClass( viewobj, "thereminStaff" ),
+                        clef : /__/getChildByClass( viewobj, "thereminClef" ),
+                        events : /__/getChildByClass( viewobj, "stave_events" )
                     },
                     let({
                             xy : if ( bound(viewobj./transform),
