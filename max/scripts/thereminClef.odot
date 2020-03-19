@@ -1,0 +1,395 @@
+
+
+/thereminStave = {
+    
+    /default : {
+        /offsetInParent/x : 0,
+        /offsetInParent/y : 0,
+        /time/start : 0.,
+        /time/dur : 1., # seconds
+        /pitch/range : 127 # min implied as zero
+    },
+
+    /params : {
+        /time/start: "float32",
+        /time/dur : "float32",
+        /pitch/range : "float32",
+        /offsetInParent/x : "float32",
+        /offsetInParent/y : "float32"
+    },
+
+    /scalar : {
+        /time2pix : 1000.,
+        /pix2time : 0.001,
+        /pitch2pix : (400. / 127.),
+        /pix2pitch : (127. / 400.)
+    },
+    
+    # could inlude scalars in map here...
+    /map : {
+
+        /x2time : quote(lambda([clefdata, clefview, x],
+            let({
+                    scalar : /thereminStave./scalar,
+                    rect: /__/getChildByClass(clefview, "thereminStaff")
+                },
+                clefdata./time/start + ((x - rect./x) * scalar./pix2time)
+            )
+        )),
+
+         /time2x : quote(lambda([clefdata, clefview, t],
+            let({
+                    scalar : /thereminStave./scalar,
+                    rect: /__/getChildByClass(clefview, "thereminStaff")
+                },
+                rect./x + ((t - clefdata./time/start) * scalar./time2pix)
+            )
+        )),
+
+        /y2pitch : quote(lambda([clefdata, clefview, y],
+            let({
+                    scalar: /thereminStave./scalar,
+                    rect: /__/getChildByClass(clefview, "thereminStaff")
+                },
+                (rect./y + rect./height - y) * scalar./pix2pitch
+            )
+        )),
+
+
+        /pitch2y : quote(lambda([clefdata, clefview, pitch],
+            let({
+                    scalar : /thereminStave./scalar,
+                    rect: /__/getChildByClass(clefview, "thereminStaff")
+                },
+                rect./y + rect./height - (pitch * scalar./pitch2pix)
+            )
+        ))
+
+    },
+
+    /get/icon : quote(lambda([],
+    {
+        /key : "html",
+        /val : {
+            /new : "div",
+            /id : "thereminStave-paletteIcon",
+            /parent : "palette-clefs",
+            /onclick : "
+                console.log('select thereminStave'); 
+                symbolist_setClass('thereminStave');
+            ",
+            /child : {
+                /new : "img",
+                /id : "thereminStave-display",
+                /src : "assets/thereminClef.svg",
+                /style : {
+                    /width : "100%",
+                    /height : "100%"
+                }
+            }
+        
+        }
+    })),
+    # for clefs context is the page
+    # for now just a single system
+    
+    # to do: figure out how to match the function signature with the symbol signatures also
+    /set/fromData : quote( 
+        lambda([dataobj, view_ref, context_data_ref],
+            let({ 
+                    maps : /thereminStave./map,
+                    scalar : /thereminStave./scalar,
+                    bbox : view_ref./bbox
+                }, 
+                let({
+                        #basic rect here so that the inner children can reference the values
+                        x : bbox./x + dataobj./offsetInParent/x + scalar./time2pix * dataobj./time/start, # sorting of staves?
+                        width : (scalar./time2pix * dataobj./time/start) + (scalar./time2pix * dataobj./time/dur),
+                        y : bbox./y + dataobj./offsetInParent/y, # << obviously we're not done here
+                        height : scalar./pitch2pix * dataobj./pitch/range
+                    },
+                    {
+                        /new : "g",
+                        /class : "thereminStave",
+                        /id : dataobj./id,
+                        /children : [
+                            {   # top stave layer for events
+                                /new : "g",
+                                /id : dataobj./id + "-events",
+                                /class : "stave_events"
+                            },
+                            {
+                                /new : "g",
+                                /class : "thereminStave-display",
+                                /children : [{
+                                    /new : "rect",
+                                    /class : "thereminStaff",
+                                    /x : x,
+                                    /width : width,
+                                    /y : y,
+                                    /height : height
+                                },
+                                {
+                                    /new : "line",
+                                    /class : "thereminClef",
+                                    /x1 : x + 10,
+                                    /y1 : y,
+                                    /x2 : x + 10,
+                                    /y2 : y + height
+                                }]   
+                            }]
+                    }
+                )
+            )
+        )
+    ),
+
+    # input view object + mouse event + context
+    # output data object
+    /set/fromGUI : quote(
+        lambda([viewobj, gui_event, data_ref],                    
+            cond(            
+                gui_event./symbolistAction == "newFromClick_down",
+                {
+                    /class : "thereminStave",
+                    /id : gui_event./id,
+                    /offsetInParent/x : gui_event./xy[[0]],
+                    /offsetInParent/y : gui_event./xy[[1]],
+                    /time/start : 0.,
+                    /time/dur : 1., # seconds
+                    /pitch/range : 127 # min implied as zero
+                },
+                gui_event./symbolistAction == "transformed", 
+                let({
+                        staff : /__/getChildByClass( viewobj, "thereminStaff" ),
+                        clef : /__/getChildByClass( viewobj, "thereminClef" ),
+                        events : /__/getChildByClass( viewobj, "stave_events" )
+                    },
+                    let({
+                            xy : if ( bound(viewobj./transform),
+                                        /transform/applyTransform( /transform/getMatrix(viewobj./transform), [staff./x, staff./y] ),
+                                        [staff./x, staff./y] 
+                                    )
+                        },
+                        {
+                            /class : "thereminStave",
+                            /id : viewobj./id,
+                            /id : gui_event./id,
+                            /offsetInParent/x : xy[[0]],
+                            /offsetInParent/y : xy[[1]],
+                            /time/start : 0.,
+                            /time/dur : 1., # seconds
+                            /pitch/range : 127 # min implied as zero
+                        }
+                        # update all events also
+
+
+                    )
+                )
+            )
+            
+        )
+    ),
+
+    /palette : {
+
+        /noteline : {
+
+            /default : {
+                /r : 1,
+                /dur : 100,
+                /amp : 1
+            },
+            
+            /params : {
+                /amp : "float32",
+                /dur : "float32",
+                /pitch : "float32",
+                /time : "float32"
+            },
+
+            # layout idea, make svg element the same size as bounding box and use css to center icons
+            # later, make this more streamlined with a helper function
+            /get/icon : quote(lambda([],
+            {
+                /key : "html",
+                /val : {
+                    /new : "div",
+                    /id : "thereminStave.noteline-paletteIcon",
+                    /parent : "palette-symbols",
+                    /onclick : "
+                        console.log('select noteline'); 
+                        symbolist_setClass('thereminStave.noteline');
+                    ",
+                    /children : {
+                        /new : "svg",
+                        /id : "noteline-icon",
+                        /style : {
+                            /height : 4,
+                            /width : 16,
+                            /top : "calc(50% - 2px)",
+                            /left : "calc(50% - 8px)"
+                        },
+                        /children : {            
+                            /new : "g",
+                            /class : "noteline",
+                            /parent : "noteline-icon",
+                            /children : [
+                                {
+                                    /new : "circle",
+                                    /class : "notehead",
+                                    /fill : "black",
+                                    /r : 2,
+                                    /cy : 0,
+                                    /cx : 0
+                                },
+                                {
+                                    /new : "line",
+                                    /class : "durationLine",
+                                    /fill : "black",
+                                    /x1 : 0,
+                                    /y1 : 0,
+                                    /x2 : 16,
+                                    /y2 : 0
+                                }
+                            ]
+                        }
+                    }
+                
+                }
+            })),
+
+            # /amp, /pitch, /time, /dur, (parent?)
+            
+            # input data+context
+            # output view object
+            /set/fromData : quote( 
+                lambda([dataobj, view_ref, context_data_ref],
+
+                    /map = /thereminStave./map,
+                    /time2x = /map./time2x,
+                    /pitch2y = /map./pitch2y,
+
+                    let({   r : scale(dataobj./amp, 0., 100, 5., 20.),
+                            y : /pitch2y( context_data_ref, view_ref, dataobj./pitch),
+                            x1 : /time2x( context_data_ref, view_ref, dataobj./time),
+                            x2 : /time2x( context_data_ref, view_ref, dataobj./time + dataobj./dur)
+                        }, # return the following object
+                        {
+                            /new : "g",
+                            /class : "thereminStave.noteline",
+                            /id : dataobj./id,
+                            /parent : view_ref./id + "-events",
+                            /children : [
+                                {
+                                    /new : "circle",
+                                    /class : "notehead",
+                                    /r : r,
+                                    /cy : y,
+                                    /cx : x1 + r
+                                },
+                                {
+                                    /new : "line",
+                                    /class : "durationLine",
+                                    /x1 : x1 ,
+                                    /y1 : y,
+                                    /x2 : x2,
+                                    /y2 : y
+                                }
+                            ]
+                        }
+                    )
+                    
+                )
+            ),
+
+
+            # viewobj: this view object if already existing (for transform)
+            # gui_event: mouse event from gui, including /context parent
+            # data_ref: perceptual data object for context parent reference
+
+            /set/fromGUI : quote(
+                lambda([viewobj, gui_event, data_ref],
+                    # later: put these in a let function, here now since /parent./pix2time() doesn't work
+                    # to do new from click, select a reference object, if none are found, then the SVG is the parent?
+                    # do that in the UI script
+                    /map = /thereminStave./map,
+                    /x2time = /map./x2time,
+                    /y2pitch = /map./y2pitch,
+                    /default =  {
+                                /r : 1,
+                                /dur : 0.1,
+                                /amp : 1
+                            },
+                    let({   
+                            gui_context: gui_event./context
+                        },
+                        cond(            
+                            gui_event./symbolistAction == "newFromClick_down",
+                            {
+                                /class : "thereminStave.noteline",
+                                /id : gui_event./id,
+                                /time : /x2time( data_ref, gui_context, gui_event./xy[[0]] - /default./r ),
+                                /pitch : /y2pitch( data_ref, gui_context, gui_event./xy[[1]] ),
+                                /dur : /default./dur,
+                                /amp : /default./amp
+                            },
+                            gui_event./symbolistAction == "selected",
+                            {
+
+                            },
+                            gui_event./symbolistAction == "deselected",
+                            {
+                                
+                            },
+                            gui_event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
+                            let({
+                                    notehead : /helper/getChildByClass( viewobj, "notehead" ),
+                                    durationLine : /helper/getChildByClass( viewobj, "durationLine" )
+                                },
+                                let({
+                                        xy : if ( bound(viewobj./transform),
+                                                    /transform/applyTransform( /transform/getMatrix(viewobj./transform), [notehead./cx, notehead./cy] ),
+                                                    [notehead./cx, notehead./cy] )
+                                    },
+                                    {
+                                        /class : "noteline",
+                                        /id : viewobj./id,
+                                        /pitch : scale( xy[[1]] - gui_context./y, gui_context./height, 0., 0., 127.),
+                                        /time : /parent_pix2time( xy[[0]] - gui_context./x - notehead./r ),  
+                                        /dur : /parent_pix2time( durationLine./x2 - durationLine./x1 ),
+                                        /amp : scale(notehead./r, 5., 20., 0., 100)
+                                    }
+                                )
+                            )
+                            
+                        )
+                    )
+                    
+                    
+                )
+            ),
+
+            /get/infoDisplay : quote(
+                lambda([dataobj, bbox],
+                    /helper/make/default_infoDisplay(dataobj, bbox) # default display generator
+                )
+            ),
+
+        /get/fromTime : quote(
+            lambda([obj, t],
+                let({
+                        relTime : (t - obj./time) / obj./dur
+                    },
+                    if( relTime >= 0 && relTime <= 1,
+                        {
+                            /relTime : relTime
+                        }
+                    )
+                )
+            ))
+        }
+
+    }
+
+}

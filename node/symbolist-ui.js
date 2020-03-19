@@ -16,6 +16,8 @@
 const svgObj = document.getElementById("svg");
 const mainSVG = document.getElementById("main-svg");
 
+let symbolist_log = null;
+
 let clickedObj = null;
 let prevEventTarget = null;
 let selected = [];
@@ -24,30 +26,100 @@ let selectedCopy = [];
 let mousedown_pos = {x: 0, y: 0};
 let mouse_pos = {x: 0, y: 0};
 
+let currentContext = svgObj;
+let currentPaletteClass =  "thereminStave";
 
-let currentPaletteClass = "/noteline";
 let selectedClass = currentPaletteClass;
 
 
-drawsocket.setInputListener( (key, objarr) => {
+/**
+ *  listener receives all forwarded messages from drawsocket
+ */
+ 
+drawsocket.setInputListener( (key, objarr, wasHandled) => {
+// or no default because we listen to all messages to drawsocket... ?
+    if( wasHandled == false )
+    {
+        switch (key) {
+            case "symbolist_log":
+                symbolist_set_log(objarr); // << prob need to iterate obj array...
+            break;
+            default: 
+                symbolist_set_log(`${key} message not handlded by symbolist or drawsocket`);
+            break;
+        }
+    }
    // console.log("called", key);
-   // we can handle additional messages to drawsocket here
 });
 
 /** 
  * API -- make namespace here ?
  */
 
+function symbolist_set_log(msg)
+{
+    if( symbolist_log == null )
+        symbolist_log = document.getElementById("symbolist_log");
+    
+    if( symbolist_log != null )
+        symbolist_log.innerHTML = `<span>${msg}</span>`;
+}
+
+
 function symbolist_setClass(_class)
 {
-    console.log("symbolist_setClass", _class);
-    
+//    console.log("symbolist_setClass", _class);
+    symbolist_set_log(`selected symbol ${_class}`)
+
+    document.querySelectorAll(".palette .selected").forEach( el => {
+        el.classList.remove("selected");
+    });
+
+    let paletteItem = document.getElementById(`${_class}-paletteIcon`);
+    paletteItem.classList.add("selected");
+
     currentPaletteClass = _class;
+
 }
+
+/**
+ * 
+ * @param {set context from symbolist controller} obj 
+ */
+function symbolist_setContext(obj)
+{
+    document.querySelectorAll(".current_context").forEach( el => {
+        el.classList.remove("current_context");
+    });
+
+    obj.classList.add("current_context");
+    currentContext = document.getElementById(obj.id);
+    symbolist_set_log(`set context to ${obj.id}`)
+}
+
 
  /**
   * internal methods
   */
+
+
+/**
+ * set context from UI event, selecting most recently selected object
+ */
+function setSelectedContext()
+{
+    if( selected.length > 0 )
+    {
+        document.querySelectorAll(".current_context").forEach( el => {
+            el.classList.remove("current_context");
+        });
+
+        currentContext = selected[selected.length-1];
+
+        symbolist_set_log(`context is now: ${currentContext.id}`);
+    }
+}
+ 
 
 function hitTest(regionRect, obj)
 {
@@ -144,16 +216,19 @@ function deselectAll()
 
     selected = [];
     selectedCopy = [];
-    
-    drawsocket.send({
-        event : {
-            key: "symbolistEvent",
-            val: {
-                symbolistAction: 'removeFromViewCache',
-                ids: infoboxIds
+    if( infoboxIds.length > 0 )
+    {
+        drawsocket.send({
+            event : {
+                key: "symbolistEvent",
+                val: {
+                    symbolistAction: 'removeFromViewCache',
+                    ids: infoboxIds
+                }
             }
-        }
-    }); 
+        }); 
+    }
+    
 }
 
 
@@ -254,6 +329,10 @@ function copySelected()
 
 }
 
+function isNumeric(value) {
+    return !isNaN(value - parseFloat(value));
+}
+
 function fairlyUniqueNumber() {
     return (
       Number(String(Math.random()).slice(2)) + 
@@ -265,20 +344,22 @@ function fairlyUniqueNumber() {
 function makeUniqueID(obj)
 {
     let tok = obj.id.split("_u_");
-
     let base = ( tok.length == 1 ) ? tok : tok[0];
-
     let newId = base+'_u_'+fairlyUniqueNumber();
-    
     return newId;
-
 }
 
+/**
+ * iterates to top level element from child
+ * @param {target element} elm 
+ */
 
 function getTopLevel(elm)
 {    
-    
-    while( elm != svgObj && elm.parentNode && elm.parentNode.id != 'main-svg' && elm.parentNode.id != 'palette' )
+    while(  elm != svgObj && 
+            elm.parentNode && 
+            elm.parentNode.id != 'main-svg' && 
+            elm.parentNode.id != 'palette' ) // elm.parentNode != currentContext
     {
         elm = elm.parentNode;
     }
@@ -286,9 +367,6 @@ function getTopLevel(elm)
     return elm;
 }
 
-function isNumeric(value) {
-    return !isNaN(value - parseFloat(value));
-}
 
 
 // maybe use arrays instead?
@@ -374,14 +452,20 @@ function symbolost_sendKeyEvent(event, caller)
     let sel_arr = [];
     for( let i = 0; i < selected.length; i++)
     {
-        sel_arr.push( elementToJSON( selected[i] ) );
+        let _jsonEl = elementToJSON( selected[i]);
+        _jsonEl.bbox = selected[i].getBoundingClientRect();
+        sel_arr.push( _jsonEl );
     }
+
+    let _jsonContext = elementToJSON( currentContext );
+    _jsonContext.bbox = currentContext.getBoundingClientRect();
 
     drawsocket.send({
         event: {
             key: 'key',
             val: {
                 xy: [mouse_pos.x, mouse_pos.y],
+                context: _jsonContext,
                 action: caller,
                 keyVal: event.key,
                 mods : {
@@ -392,12 +476,12 @@ function symbolost_sendKeyEvent(event, caller)
                 },
                 paletteClass: currentPaletteClass, 
                 selected: sel_arr,
-                bboxes: event.bboxes,
                 symbolistAction: event.symbolistAction
             }
         }
     });
 }
+
 
 function symbolist_keydownhandler(event)
 {
@@ -407,17 +491,13 @@ function symbolist_keydownhandler(event)
         case "i":
             if( nmods == 0 && selected.length > 0 )
                 event.symbolistAction = "getInfo";
-                let bboxes = [];
-                for( let i = 0; i < selected.length; i++ )
-                {
-                    bboxes.push(
-                        selected[i].getBoundingClientRect()
-                    );
-                }
-                event.bboxes = bboxes;
             break;
         case "Escape":
             deselectAll();
+            break;
+        case "s":
+            setSelectedContext();
+            event.symbolistAction = "setContext";
             break;
 
     }
@@ -434,25 +514,33 @@ function symbolist_keyuphandler(event)
 function sendMouseEvent(event, caller)
 {    
     const toplevelObj = getTopLevel(event.target);
+    
+    const _id = ( event.target.id == "svg" || toplevelObj.id == currentContext.id ) ? selectedClass+'_u_'+fairlyUniqueNumber() : toplevelObj.id;
 
-    const _id = ( event.target.id != "svg" ) ? toplevelObj.id : 
-        (selectedClass && selectedClass.startsWith('/') ? selectedClass.slice(1)+'_u_'+fairlyUniqueNumber() : selectedClass+'_u_'+fairlyUniqueNumber());
-
-   // console.log(_id, event.target);
+  //  console.log(_id, selectedClass, toplevelObj.id, currentContext);
    
     let sel_arr = [];
+
     for( let i = 0; i < selected.length; i++)
     {
-        sel_arr.push( elementToJSON( selected[i] ) );
+        let _jsonEl = elementToJSON( selected[i]);
+        _jsonEl.bbox = selected[i].getBoundingClientRect();
+        sel_arr.push( _jsonEl );    
     }
 
-    
+    let _jsonContext = elementToJSON( currentContext );
+    _jsonContext.bbox = currentContext.getBoundingClientRect();
+
+    let _jsonTarget = elementToJSON( toplevelObj );
+    _jsonTarget.bbox = toplevelObj.getBoundingClientRect();
+
+
     let obj = {};
     obj.event = {
         key: 'mouse',
         val: {
             id: _id,
-//            class : removedSymbolistSelected(event.class), 
+            context: _jsonContext,
             paletteClass: currentPaletteClass, // class specified by the palette
             action: caller,
             xy: [ event.clientX, event.clientY ],
@@ -464,7 +552,7 @@ function sendMouseEvent(event, caller)
                 ctrl: event.ctrlKey,
                 meta: event.metaKey
             },
-            target: elementToJSON( toplevelObj ), // the object receiving mouse event
+            target: _jsonTarget, // the object receiving mouse event
             selected: sel_arr
         }
     };
@@ -540,6 +628,33 @@ function clearDragRegionRect()
     });    
 }
 
+function symbolsit_dblclick(event)
+{
+    setSelectedContext();
+    deselectAll();
+    event.symbolistAction = "setContext";
+    sendMouseEvent(event, "dblclick");
+
+/*
+    const _eventTarget = getTopLevel( event.target );
+
+    if( prevEventTarget === null )
+        prevEventTarget = _eventTarget;
+
+    prevEventTarget = _eventTarget;             
+
+    if( currentContext !== _eventTarget )
+    {
+        event.symbolistAction = "set_context";
+        currentContext = _eventTarget;
+        console.log('set context to', currentContext);
+    }
+    
+    sendMouseEvent(event, "dblclick");
+    */
+}
+
+
 function symbolist_mousedown(event)
 {          
     const _eventTarget = getTopLevel( event.target );
@@ -553,12 +668,14 @@ function symbolist_mousedown(event)
     if( !event.shiftKey && !event.altKey )
         deselectAll();
 
-    if( _eventTarget != svgObj )
+    if( _eventTarget != svgObj && _eventTarget != currentContext )
     {
+        console.log(`selection, event ${_eventTarget.classList}, context ${currentContext.classList}` );
+        
         addToSelection( _eventTarget );
         clickedObj = _eventTarget;
 
-        selectedClass =  clickedObj.classList[0]; // hopefully this will always be correct! not for sure though
+//        selectedClass =  clickedObj.classList[0]; // hopefully this will always be correct! not for sure though
 
         if( event.altKey )
         {
@@ -716,6 +833,7 @@ function addSymbolistMouseHandlers(element)
     element.addEventListener("mouseup", symbolist_mouseup, true);
     element.addEventListener("mouseover", symbolist_mouseover, true);
     element.addEventListener("mouseleave", symbolist_mouseleave, true);
+    element.addEventListener("dblclick", symbolsit_dblclick, true);
 
 }
 
@@ -726,7 +844,7 @@ function removeSymbolistMouseHandlers(element)
     element.removeEventListener("mouseup", symbolist_mouseup, true);
     element.removeEventListener("mouseover", symbolist_mouseover, true);
     element.removeEventListener("mouseleave", symbolist_mouseleave, true);
-
+    element.removeEventListener("dblclick", symbolsit_dblclick, true);
 }
 
 function addSymbolistKeyListeners()
@@ -744,118 +862,4 @@ function removeSymbolistKeyListeners()
 
 addSymbolistMouseHandlers(svgObj);
 addSymbolistKeyListeners();
-/*
-drawsocket.input({
-    key : "mouse",
-    val : {
-        enable: 1
-    }
-});
-*/
 
-
-/*
-function mouseHandler(event, caller)
-{
-    // let t = fairlyUniqueNumber();
-    // console.log( t, t.length );
-    if( prevEventTarget === null )
-        prevEventTarget = event.target;
-
-    switch( caller )
-    {
-        case "mousedown":
-            
-            if( event.altKey )
-            {
-                clickedObj = copyObjectAndAddToParent(event.target);           
-            }
-            else if( event.target != svgObj )
-                clickedObj = event.target;
-            else
-                clickedObj = null;
-
-            mousedown_pos = { x: event.clientX, y: event.clientY };
-        break;
-        case "mousemove":
-            if( event.buttons == 1 )
-            {
-                if( clickedObj )
-                {
-                    translate( clickedObj, deltaPt({ x: event.clientX, y: event.clientY }, mousedown_pos));
-                }
-                else 
-                {
-                    if( !event.shiftKey )
-                        deselectAll();
-
-                    selectAllInRegion( getDragRegion(event), mainSVG );
-                }
-            }
-            
-        break;
-        case "mouseover":
-
-            if( !event.shiftKey && event.target != prevEventTarget )
-            {
-                if( prevEventTarget.classList.contains("symbolist_selected") )
-                {
-                    prevEventTarget.classList.remove("symbolist_selected");
-                }
-
-                if( event.target != svgObj )
-                {
-                    event.target.classList.add("symbolist_selected");
-                }
-                
-            }
-
-        break;
-        
-        case "mouseup":
-            if( !event.shiftKey ){
-                if( event.target.classList.contains("symbolist_selected") )
-                {
-                    event.target.classList.remove("symbolist_selected");
-                }
-                deselectAll();
-            }
-            
-
-
-            
-            clickedObj = null;
-        break;
-        default:
-            clickedObj = null;
-        break;
-    }
-
-    prevEventTarget = event.target;
-}
-
-
-document.body.addEventListener("mousemove", function(event)
-{
-  mouseHandler(event, "mousemove");
-});
-
-document.body.addEventListener("mousedown", function(event)
-{
-  mouseHandler(event, "mousedown");
-});
-
-
-document.body.addEventListener("mouseup", function(event)
-{
-  mouseHandler(event, "mouseup");
-});
-
-
-document.body.addEventListener("mouseover", function(event)
-{
- mouseHandler(event, "mouseover")
-});
-
-
-*/

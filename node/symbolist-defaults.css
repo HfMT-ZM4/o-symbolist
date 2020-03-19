@@ -1,46 +1,45 @@
+body {
+  background-color: gray;
+}
+
 .symbolist_selected {
-  fill: blue;
+  stroke-width: 1 !important;
+  stroke: blue !important;
 }
 
 .symbolist_selected line {
-  stroke: blue;
+  stroke: blue !important;
 }
 
-#palette {
-  background-color : rgba(255, 255, 255, 100);
-  color : black;
-  border-right : 1px solid black;
- 
-  top: 0px;
-  left: 0px;
-  width: 62px;
-  height: calc(100vh - 2px);
+.symbolist_selected rect {
+  stroke: blue !important;
 }
 
-#palette div {
-  background-color : rgba(255, 255, 255, 100);
-  color : black;
-  border : 1px solid black;
-  position: relative;
- 
-  width: 40px;
-  margin-left: 10px;
-
-  height: 40px;
-  margin-top: 10px;
-
+.current_context {
+  stroke-width: 1 !important;
+  stroke: yellow !important;
 }
 
-#palette svg {
-  z-index: 10;
+
+#symbolist_log {
+  border-top : 1px dotted white;
+  left: 62px;
+  top: calc(100vh - 20px);
+  width: calc(100vw - (62px * 2));
+  height: 20px;
+  font-family: helvetica;
+  font-size: 10px;
+  color: white;  
+}
+
+#symbolist_log span {
+  margin: 10px; 
 }
 
 #info-panel {
-  background-color : rgba(255, 255, 255, 100);
-  color : black;
-  border-left : 1px solid black;
+  border-left : 1px dotted white;
   
-  left: calc(100vw - 50px);
+  left: calc(100vw - 62px);
   top: 0px;
   width: 62px;
   height: calc(100vh - 2px);
@@ -50,9 +49,71 @@
   font-size: 10px;
 }
 
+
+.palette {
+  background-color: inherit;
+  color : white;
+  border-right : 1px dotted white;
+ 
+  top: 0px;
+  left: 0px;
+  width: 62px;
+  height: calc(100vh - 2px);
+
+  
+}
+
+.palette .selected {
+  border : 2px solid white;
+}
+
+.palette div {
+  position: relative;
+
+  border-bottom : 1px dotted white;
+  border-top : 1px dotted white;
+
+  width: auto;
+  height: auto;
+}
+
+.palette-clefs div {
+  background-color: inherit;
+
+  border : 1px solid white;
+  position: relative;
+ 
+  width: auto;
+  height: 40px;
+
+  margin: 10%;
+  padding: 4%;
+
+}
+
+.palette-symbols div {
+  background-color: inherit;
+
+  border : 1px solid white;
+  position: relative;
+ 
+  width: auto;
+  height: 40px;
+
+  margin: 10%;
+  padding: 4%;
+
+}
+
+.palette svg {
+
+  z-index: 10;
+}
+
+
 .infobox {
   background-color: rgba(255, 255, 255, 0.75);
-  border : 1px solid black;
+  border : 1px solid white;
   border-radius: 5px;
   font-family: helvetica;
   font-size: 12px;

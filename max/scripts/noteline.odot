@@ -107,17 +107,15 @@
     # output data object
     /set/fromGUI : quote(
         lambda([viewobj, event, context],
-            # later: put these in a let function, here now since /parent.pix2time() doesn't work
-            # also later, parent probably should be passed in
+            # later: put these in a let function, here now since /parent./pix2time() doesn't work
             # to do new from click, select a reference object, if none are found, then the SVG is the parent?
             # do that in the UI script
                                 
             /parent_pix2time = context./pix2time,
-            /test = 111,
             let({
                     default : /noteline./default
                 },
-                cond(                 
+                cond(            
                     event./symbolistAction == "newFromClick_down",
                     {
                         /class : "/noteline",
@@ -126,6 +124,14 @@
                         /time : /parent_pix2time( event./xy[[0]] - context./x + default./r ),
                         /dur : default./dur,
                         /amp : default./amp
+                    },
+                    event./symbolistAction == "selected",
+                    {
+
+                    },
+                    event./symbolistAction == "deselected",
+                    {
+                        
                     },
                     event./symbolistAction == "transformed", #&& /noteline./isValid(obj),
                     let({

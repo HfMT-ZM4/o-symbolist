@@ -1,6 +1,28 @@
+# top level svg background values
+/svg = {
+	/class : "svg",
+    /x : 10.,
+    /y : 10.,
+    /width : 600.,
+    /height : 800.
+
+},
+
 /addrs = getaddresses(),
+ 
+ # maybe put defaults here for layout offsets, margins etc.
+
+# clefs and symbols should probably use the css display grid approach 
 
 /direct/view = [
+{
+	/key : "function",
+	/val : {
+		/id : "setContext",
+		/args : "context",
+		/body : "symbolist_setContext(context);"
+	}
+},
 {
     /key : "mouse",
     /val : {
@@ -18,25 +40,65 @@
     /val : [{
         /new : "div",
         /id : "palette",
-        /parent : "forms"
+        /class : "palette",
+        /parent : "forms",
+        /children : [
+            {
+                /new : "div",
+                /id : "palette-clefs",
+                /class : "palette-clefs"
+            },
+            {
+                /new : "div",
+                /id : "palette-symbols",
+                /class : "palette-symbols"
+
+            }
+        ]
     },
     {
         /new : "div",
         /id : "info-panel",
         /parent : "forms"
+    },
+	{
+        /new : "div",
+        /id : "symbolist_log",
+        /parent : "forms"
     }]
 }],
 
-
 map(
     lambda([a],
+        /test = [/test, a./get/icon],
         if( bound(a./get/icon),
             progn(
                 /iconFN = a./get/icon,
-                /direct/view = [/direct/view, /iconFN() ]
+                /direct/view = [/direct/view, /iconFN() ],
+                if( bound(a./palette) && !bound(/firstPalette),
+                    /firstPalette = a./palette
+                )
             )
          )
     ), /addrs
 ),
 
-delete(/addrs), delete(/iconFN)
+if( bound(/firstPalette),
+    map(
+        lambda([a],
+            let({
+                    symbol: getbundlemember(/firstPalette, a)
+                },
+                if( bound(symbol./get/icon),
+                    progn(
+                        /iconFN = symbol./get/icon,
+                        /direct/view = [/direct/view, /iconFN() ]
+                    )
+                )
+            )
+            
+        ), getaddresses(/firstPalette)
+    )
+),
+
+delete(/addrs), delete(/iconFN), delete(/firstPalette)

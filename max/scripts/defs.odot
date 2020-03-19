@@ -13,10 +13,20 @@
   ]
 )),
 
+/~/emptybundle = quote(lambda([b], 
+	typetags(b) == '.' && length(getaddresses(b)) == 0 
+)),
+
+/~/hasAddress = quote(lambda([obj, addr],
+  typetags(obj) == '.' && max( getaddresses(obj) == addr )
+)),
+
+
+
 /helper/getChildByClass = quote(
     lambda([obj, classname],
         /found = {},
-        if( bound(obj./children) ,
+        if( /~/hasAddress(obj, "/children") ,
             map( lambda([c],
                     if( c./class == classname,
                         /found = c
@@ -28,6 +38,55 @@
             /found,
             delete(/found)
         )
+    )
+),
+
+
+
+/helper/getChildByClass_recursive = quote(
+    lambda([obj, classname],
+        if( /~/hasAddress(obj, "/class") && obj./class == classname,
+            obj,
+            progn(
+                if( /~/hasAddress(obj, "/children"),
+                    map( 
+                        lambda([c],
+                            if( !bound(/found) && /~/hasAddress(c, "/class") && c./class == classname,
+                                /found = c,
+                                /found = /helper/getChildByClass_recursive( c, classname )
+                            )
+                        ), obj./children
+                    )
+                ),
+                if( bound(/found), 
+                    prog1(
+                    	/found,
+                    	delete(/found)
+                    )
+                )
+            )	
+            
+        )
+    )
+),
+
+
+/helper/make/default_infoDisplay = quote(
+    lambda([dataobj, bbox],
+        {
+            /key : "html",
+            /val : {
+                /parent : "forms",
+                /new : "div",
+                /style : {
+                    /left : bbox./x+"px",
+                    /top : bbox./bottom+10+"px"
+                },
+                /id : dataobj./id+"-infobox",
+                /class : "infobox",
+                /children : /helper/make/parms_inputs(dataobj)
+            }
+        }
     )
 ),
 
@@ -72,7 +131,10 @@
                                             }
                                         }
                                     });
-                                }"
+                                }",
+								/onmousedrag : "
+                                    console.log(event);
+                                "
                             }]
                             
                         )
@@ -81,110 +143,4 @@
             )
         
     )
-),
-
-/helper/make/default_infoDisplay = quote(
-    lambda([dataobj, bbox],
-        {
-            /key : "html",
-            /val : {
-                /parent : "forms",
-                /new : "div",
-                /style : {
-                    /left : bbox./x+"px",
-                    /top : bbox./bottom+10+"px"
-                },
-                /id : dataobj./id+"-infobox",
-                /class : "infobox",
-                /children : /helper/make/parms_inputs(dataobj)
-            }
-        }
-    )
-),
-
-# this is temporary, should be stored in model i guess
-#   and be able to be different types of objects
-# also the parent in the Model should not need the graphic info
-
-# this could be called "system"
-/parent = {
-    /x : 10.,
-    /y : 10.,
-    /width : 600.,
-    /height : 800.,
-
-    /time/start: 0.,
-    /time/dur : 1000.,
-
-    /time2pix : quote(lambda([t],
-        (t / /parent./time/dur) * /parent./width
-    )),
-
-    /pix2time : quote(lambda([x],
-        x * (/parent./time/dur / /parent./width)
-    ))
-},
-
-
-# the `context` is the graphic-context, and requires the bounding box for symbols to offset from
-# so the context is a union of the model and view data which the script uses to move between the two sides
-# therefore the default values don't require graphic values, because the graphic values are contained in the view data (which is produced by the script )
-
-
-/rectangle = {
-# probably better not to use generic names for classes
-# generic graphic items don't have /set/fromData?
-
-    /default : {
-    # not sure if the graphic information should be here already
-        /x : 10.,
-        /y : 10.,
-        /width : 600.,
-        /height : 800.,
-
-        /time/start : 0,
-        /time/dur : 1000.
-    },
-
-    /time2pix : quote(lambda([t],
-        (t / /parent./time/dur) * /parent./width
-    )),
-
-    /pix2time : quote(lambda([x],
-        x * (/parent./time/dur / /parent./width)
-    )),
-
-    /set/fromData : quote( 
-        lambda([obj, context],
-
-        )
-    ),
-
-    /set/fromGUI : {}
-},
-
-
-/playhead = {
-    /set/fromTime : quote(
-        lambda([t, context],
-            /time2pix = context./time2pix,
-            prog1(
-                # later check if there are already view messages in place and union
-                {
-                    /view : {
-                        /key : "svg",
-                        /val : {
-                            /new : "line",
-                            /id : "playhead",
-                            /class : "playhead",
-                            /x1 : context./x + /time2pix( /t ),
-                            /x2 : context./x + /time2pix( /t ),
-                            /y1 : context./y,
-                            /y2 : context./y + context./height
-                        }
-                    }
-                }
-            )
-        )
-    )
-}
+)

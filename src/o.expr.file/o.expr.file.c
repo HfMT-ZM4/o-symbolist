@@ -576,6 +576,6 @@ void ext_main(void *r)
     class_register(CLASS_BOX, c);
     oexprfile_class = c;
     
-    osc_error_setHandler(oexprfile_proc_liboErrorHandler);
+   // osc_error_setHandler(oexprfile_proc_liboErrorHandler);
 
 }
