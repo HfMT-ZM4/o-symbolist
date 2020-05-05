@@ -119,6 +119,7 @@ typedef struct _olookup {
     long        interp;
     long        tie_repeats;
 
+    long        binary_search;
     
     short       connected[2];
     
@@ -593,6 +594,54 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
 }
 
 
+void olookup_search_sequential(const vector< double >& x_phrase, const long& points_len, const double& in_phase,t_int& idx, double& x0, double& x1 )
+{
+    // later: remove some of these clamps
+
+    long max_idx1 = points_len - 1; // max upper bound
+    long max_idx0 = points_len - 2; // max lower bound
+
+    // current segment start/end
+    x0 = x_phrase[ CLAMP(idx, 0, max_idx0) ];
+    x1 = x_phrase[ CLAMP(idx+1, 1, max_idx1) ];
+    
+     // sequential lookup for indexes
+     if( in_phase < x0 )
+     {
+         while( in_phase < x0 && idx-- > 0 )
+         {
+             x0 = x_phrase[ CLAMP(idx, 0, max_idx0) ];
+         }
+         
+         if( in_phase < x0 && idx <= 0 )
+             x1 = x0;
+         else
+             x1 = x_phrase[  CLAMP(idx+1, 1, max_idx1) ];
+         
+     }
+     else if( in_phase >= x1 )
+     {
+         while( in_phase >= x1 && idx++ < max_idx1 )
+         {
+             x1 = x_phrase[ CLAMP(idx+1, 1, max_idx1) ];
+         }
+         
+         if( in_phase > x1 && idx >= points_len )
+             x0 = x1;
+         else
+             x0 = x_phrase[  CLAMP(idx, 0, max_idx0) ];
+     }
+     
+}
+
+void olookup_search_binary(const vector< double >& x_phrase, const long& points_len, const double& in_phase, t_int& idx, double& x0, double& x1 )
+{
+    auto it = std::lower_bound(x_phrase.begin(), x_phrase.end(), in_phase);
+    x1 = (*it); // first element *not lower* than search value
+    idx = it - x_phrase.begin() - 1;
+    x0 = x_phrase[idx];
+}
+
 
 void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
@@ -673,15 +722,9 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                 
                 if( points_len > 1 )
                 {
-                    max_idx1 = points_len - 1;
-                    max_idx0 = points_len - 2;
-                    
-                    // later: remove some of these clamps
-                    
-                    // current segment start/end
-                    x0 = phr.x[ CLAMP(idx, 0, max_idx0) ];
-                    x1 = phr.x[ CLAMP(idx+1, 1, max_idx1) ];
-                    
+                    max_idx1 = points_len - 1; // max upper bound
+                    max_idx0 = points_len - 2; // max lower bound
+                   
                     if( x->phaseincr == 1 )
                     {
                         in_phase = prev_inphase + in_phase;
@@ -689,12 +732,24 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                     
                     if( x->phasewrap == 1 )
                     {
-                        double maxph = phr.x[max_idx1];
+                        double maxph = phr.x.back();
                         in_phase = ( in_phase >= 0 ) ? fmod(in_phase, maxph) : fmod(in_phase + maxph, maxph);
                     }
                     
                     prev_inphase = in_phase;
                     
+                    if( x->binary_search )
+                        olookup_search_binary(phr.x, points_len, in_phase, idx, x0, x1);
+                    else
+                        olookup_search_sequential(phr.x, points_len, in_phase, idx, x0, x1);
+                    /*
+                   // later: remove some of these clamps
+                   
+                   // current segment start/end
+                   x0 = phr.x[ CLAMP(idx, 0, max_idx0) ];
+                   x1 = phr.x[ CLAMP(idx+1, 1, max_idx1) ];
+                   
+                    // sequential lookup for indexes
                     if( in_phase < x0 )
                     {
                         while( in_phase < x0 && idx-- > 0 )
@@ -720,6 +775,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                         else
                             x0 = phr.x[  CLAMP(idx, 0, max_idx0) ];
                     }
+                    */
                     
                     delta = x1 - x0;
                     
@@ -889,6 +945,7 @@ void *olookup_new(t_symbol* s, short argc, t_atom* argv)
         x->interp = 1;
         x->phaseincr = 0;
         x->phasewrap = 0;
+        x->binary_search = 1;
         
         x->connected[0] = 0;
         x->connected[1] = 0;
@@ -933,7 +990,9 @@ int C74_EXPORT main(void)
     CLASS_ATTR_LONG(c, "phaseincr", 0, t_olookup, phaseincr);
     CLASS_ATTR_STYLE_LABEL(c, "phaseincr", 0, "onoff", "phaseincr");
 
-    
+    CLASS_ATTR_LONG(c, "binsearch", 0, t_olookup, binary_search);
+    CLASS_ATTR_STYLE_LABEL(c, "binsearch", 0, "onoff", "binary search");
+
     class_dspinit(c);
     class_register(CLASS_BOX, c);
     olookup_class = c;

@@ -8,7 +8,6 @@
                         lambda([obj],
                             /symbolDef = getbundlemember(palette, "/" + split(".", obj./class)[[1]] ),
                             /setFn = /symbolDef./set/fromGUI,
-
                             prog1(
                                 /setFn( obj, gui_event, stave_data_ref),
                                 delete(/setFn), delete(/symbolDef)

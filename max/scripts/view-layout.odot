@@ -99,6 +99,6 @@ if( bound(/firstPalette),
             
         ), getaddresses(/firstPalette)
     )
-),
+)#,
 
-delete(/addrs), delete(/iconFN), delete(/firstPalette)
+#delete(/addrs), delete(/iconFN), delete(/firstPalette)

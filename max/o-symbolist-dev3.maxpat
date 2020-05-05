@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 955.0, 937.0 ],
+		"rect" : [ 34.0, 79.0, 1179.0, 937.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 55.0, 79.524273455142975, 183.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "data is now an array, but not implemented for adding to view "
 				}
 
@@ -4728,8 +4727,8 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontname" : [ "Arial" ],
 									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
@@ -4753,8 +4752,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontface" : [ 2 ],
-									"fontsize" : [ 11.0 ]
+									"fontsize" : [ 11.0 ],
+									"fontface" : [ 2 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4763,9 +4762,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ]
+									"fontface" : [ 3 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4774,8 +4773,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -4784,9 +4783,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ]
+									"fontface" : [ 1 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5144,13 +5143,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-5",
-					"linecount" : 170,
+					"linecount" : 11,
 					"maxclass" : "o.display",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 648.5, 823.5, 356.0, 2331.0 ],
-					"text" : "/key : \"mouse\",\n/val : {\n\t/mousedownPos,\n\t/paletteClass : \"thereminStave.noteline\",\n\t/selected : {\n\t\t/transform : \"matrix(1 0 0 1 -113 1)\",\n\t\t/children : [{\n\t\t\t/children : [{\n\t\t\t\t/children : [{\n\t\t\t\t\t/cy : 123,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/cx : 221.15,\n\t\t\t\t\t/class : \"notehead\"\n\t\t\t\t}, {\n\t\t\t\t\t/x2 : 316,\n\t\t\t\t\t/y1 : 123,\n\t\t\t\t\t/type : \"line\",\n\t\t\t\t\t/y2 : 123,\n\t\t\t\t\t/x1 : 216,\n\t\t\t\t\t/class : \"durationLine\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_c45cafs8unk\",\n\t\t\t\t/type : \"g\",\n\t\t\t\t/class : \"thereminStave.noteline\"\n\t\t\t}, {\n\t\t\t\t/children : [{\n\t\t\t\t\t/cy : 165,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/cx : 303.15,\n\t\t\t\t\t/class : \"notehead\"\n\t\t\t\t}, {\n\t\t\t\t\t/x2 : 398,\n\t\t\t\t\t/y1 : 165,\n\t\t\t\t\t/type : \"line\",\n\t\t\t\t\t/y2 : 165,\n\t\t\t\t\t/x1 : 298,\n\t\t\t\t\t/class : \"durationLine\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_2l4cysvwyy6\",\n\t\t\t\t/type : \"g\",\n\t\t\t\t/class : \"thereminStave.noteline\"\n\t\t\t}],\n\t\t\t/id : \"thereminStave_u_2c5fk4cugqy-events\",\n\t\t\t/type : \"g\",\n\t\t\t/class : \"stave_events\"\n\t\t}, {\n\t\t\t/children : [{\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 79,\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/width : 1000,\n\t\t\t\t/x : 231\n\t\t\t}, {\n\t\t\t\t/x2 : 241,\n\t\t\t\t/y1 : 79,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y2 : 479,\n\t\t\t\t/x1 : 241,\n\t\t\t\t/class : \"thereminClef\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave-display\"\n\t\t}],\n\t\t/id : \"thereminStave_u_2c5fk4cugqy\",\n\t\t/type : \"g\",\n\t\t/bbox : {\n\t\t\t/bottom : 0,\n\t\t\t/height : 0,\n\t\t\t/y : 0,\n\t\t\t/right : 0,\n\t\t\t/left : 0,\n\t\t\t/width : 0,\n\t\t\t/top : 0,\n\t\t\t/x : 0\n\t\t},\n\t\t/class : \"thereminStave\"\n\t},\n\t/id : \"thereminStave.noteline_u_15dyknibhs3\",\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/action : \"mousemove\",\n\t/target : {\n\t\t/version : 1.1,\n\t\t/baseProfile : \"full\",\n\t\t/id : \"svg\",\n\t\t/type : \"svg\",\n\t\t/xmlns : \"http://www.w3.org/2000/svg\",\n\t\t/bbox : {\n\t\t\t/bottom : 595,\n\t\t\t/height : 595,\n\t\t\t/y : 0,\n\t\t\t/right : 1135,\n\t\t\t/left : 0,\n\t\t\t/width : 1135,\n\t\t\t/top : 0,\n\t\t\t/x : 0\n\t\t},\n\t\t/class : \"svg\",\n\t\t/xmlns:xlink : \"http://www.w3.org/1999/xlink\"\n\t},\n\t/context : {\n\t\t/children : [{\n\t\t\t/children : {\n\t\t\t\t/children : [{\n\t\t\t\t\t/cy : 123,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/cx : 221.15,\n\t\t\t\t\t/class : \"notehead\"\n\t\t\t\t}, {\n\t\t\t\t\t/x2 : 316,\n\t\t\t\t\t/y1 : 123,\n\t\t\t\t\t/type : \"line\",\n\t\t\t\t\t/y2 : 123,\n\t\t\t\t\t/x1 : 216,\n\t\t\t\t\t/class : \"durationLine\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_c45cafs8unk\",\n\t\t\t\t/type : \"g\",\n\t\t\t\t/class : \"thereminStave.noteline\"\n\t\t\t},\n\t\t\t/id : \"thereminStave_u_2c5fk4cugqy-events\",\n\t\t\t/type : \"g\",\n\t\t\t/class : \"stave_events\"\n\t\t}, {\n\t\t\t/children : [{\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 67,\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/width : 1000,\n\t\t\t\t/x : 198\n\t\t\t}, {\n\t\t\t\t/x2 : 208,\n\t\t\t\t/y1 : 67,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y2 : 467,\n\t\t\t\t/x1 : 208,\n\t\t\t\t/class : \"thereminClef\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave-display\"\n\t\t}],\n\t\t/id : \"thereminStave_u_2c5fk4cugqy\",\n\t\t/type : \"g\",\n\t\t/bbox : {\n\t\t\t/bottom : 0,\n\t\t\t/height : 0,\n\t\t\t/y : 0,\n\t\t\t/right : 0,\n\t\t\t/left : 0,\n\t\t\t/width : 0,\n\t\t\t/top : 0,\n\t\t\t/x : 0\n\t\t},\n\t\t/class : \"thereminStave\"\n\t},\n\t/button : 0,\n\t/xy : [197, 5]\n}"
+					"patching_rect" : [ 648.5, 823.5, 356.0, 170.0 ],
+					"text" : "/val : {\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/keyVal : \"Meta\",\n\t/action : \"keyup\"\n},\n/key : \"key\""
 				}
 
 			}
@@ -5223,8 +5222,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 100.0, 352.0, 24.0 ],
-									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, -96, 47, 109, 111, 100, 101, 108, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, -12, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 0, 0, 0, 0, 0, 0, 36, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 95, 117, 95, 50, 99, 53, 102, 107, 52, 99, 117, 103, 113, 121, 0, 0, 0, 0, 32, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 120, 0, 0, 0, 44, 100, 0, 0, 64, 93, -128, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 111, 102, 102, 115, 101, 116, 73, 110, 80, 97, 114, 101, 110, 116, 47, 121, 0, 0, 0, 44, 100, 0, 0, 64, 84, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 115, 116, 97, 114, 116, 0, 44, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 116, 105, 109, 101, 47, 100, 117, 114, 0, 0, 0, 44, 100, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 112, 105, 116, 99, 104, 47, 114, 97, 110, 103, 101, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 127, 0, 0, 0, -56, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 48, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 99, 52, 53, 99, 97, 102, 115, 56, 117, 110, 107, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 63, -73, 10, 61, 112, -93, -41, 10, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 91, 57, -62, -113, 92, 40, -10, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, -56, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 99, 108, 97, 115, 115, 0, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 0, 0, 0, 0, 0, 48, 47, 105, 100, 0, 44, 115, 0, 0, 116, 104, 101, 114, 101, 109, 105, 110, 83, 116, 97, 118, 101, 46, 110, 111, 116, 101, 108, 105, 110, 101, 95, 117, 95, 50, 108, 52, 99, 121, 115, 118, 119, 121, 121, 54, 0, 0, 0, 0, 0, 0, 0, 20, 47, 116, 105, 109, 101, 0, 0, 0, 44, 100, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 20, 47, 112, 105, 116, 99, 104, 0, 0, 44, 100, 0, 0, 64, 87, -8, -93, -41, 10, 61, 113, 0, 0, 0, 20, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 16, 47, 97, 109, 112, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
-									"saved_bundle_length" : 692,
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 47, 109, 111, 100, 101, 108, 0, 0, 44, 0, 0, 0 ],
+									"saved_bundle_length" : 32,
 									"text" : "/model"
 								}
 
@@ -5391,21 +5390,6 @@
 				"box" : 				{
 					"fontface" : 0,
 					"fontsize" : 12.0,
-					"id" : "obj-47",
-					"linecount" : 233,
-					"maxclass" : "o.display",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 75.0, 544.5, 313.0, 3188.0 ],
-					"text" : "/gui : {\n\t/mousedownPos,\n\t/paletteClass : \"thereminStave.noteline\",\n\t/selected : {\n\t\t/transform : \"matrix(1 0 0 1 -113 1)\",\n\t\t/children : [{\n\t\t\t/children : [{\n\t\t\t\t/children : [{\n\t\t\t\t\t/cy : 123,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/cx : 221.15,\n\t\t\t\t\t/class : \"notehead\"\n\t\t\t\t}, {\n\t\t\t\t\t/x2 : 316,\n\t\t\t\t\t/y1 : 123,\n\t\t\t\t\t/type : \"line\",\n\t\t\t\t\t/y2 : 123,\n\t\t\t\t\t/x1 : 216,\n\t\t\t\t\t/class : \"durationLine\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_c45cafs8unk\",\n\t\t\t\t/type : \"g\",\n\t\t\t\t/class : \"thereminStave.noteline\"\n\t\t\t}, {\n\t\t\t\t/children : [{\n\t\t\t\t\t/cy : 165,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/cx : 303.15,\n\t\t\t\t\t/class : \"notehead\"\n\t\t\t\t}, {\n\t\t\t\t\t/x2 : 398,\n\t\t\t\t\t/y1 : 165,\n\t\t\t\t\t/type : \"line\",\n\t\t\t\t\t/y2 : 165,\n\t\t\t\t\t/x1 : 298,\n\t\t\t\t\t/class : \"durationLine\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_2l4cysvwyy6\",\n\t\t\t\t/type : \"g\",\n\t\t\t\t/class : \"thereminStave.noteline\"\n\t\t\t}],\n\t\t\t/id : \"thereminStave_u_2c5fk4cugqy-events\",\n\t\t\t/type : \"g\",\n\t\t\t/class : \"stave_events\"\n\t\t}, {\n\t\t\t/children : [{\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 79,\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/width : 1000,\n\t\t\t\t/x : 231\n\t\t\t}, {\n\t\t\t\t/x2 : 241,\n\t\t\t\t/y1 : 79,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y2 : 479,\n\t\t\t\t/x1 : 241,\n\t\t\t\t/class : \"thereminClef\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave-display\"\n\t\t}],\n\t\t/id : \"thereminStave_u_2c5fk4cugqy\",\n\t\t/type : \"g\",\n\t\t/bbox : {\n\t\t\t/bottom : 480,\n\t\t\t/height : 400,\n\t\t\t/y : 80,\n\t\t\t/right : 1118,\n\t\t\t/left : 103,\n\t\t\t/width : 1015,\n\t\t\t/top : 80,\n\t\t\t/x : 103\n\t\t},\n\t\t/class : \"thereminStave\"\n\t},\n\t/id : \"thereminStave.noteline_u_1sajragap24\",\n\t/mods : {\n\t\t/ctrl : 0,\n\t\t/shift : 0,\n\t\t/meta : 0,\n\t\t/alt : 0\n\t},\n\t/action : \"mouseup\",\n\t/target : {\n\t\t/transform : \"matrix(1 0 0 1 -113 1)\",\n\t\t/children : [{\n\t\t\t/children : [{\n\t\t\t\t/children : [{\n\t\t\t\t\t/cy : 123,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/cx : 221.15,\n\t\t\t\t\t/class : \"notehead\"\n\t\t\t\t}, {\n\t\t\t\t\t/x2 : 316,\n\t\t\t\t\t/y1 : 123,\n\t\t\t\t\t/type : \"line\",\n\t\t\t\t\t/y2 : 123,\n\t\t\t\t\t/x1 : 216,\n\t\t\t\t\t/class : \"durationLine\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_c45cafs8unk\",\n\t\t\t\t/type : \"g\",\n\t\t\t\t/class : \"thereminStave.noteline\"\n\t\t\t}, {\n\t\t\t\t/children : [{\n\t\t\t\t\t/cy : 165,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/cx : 303.15,\n\t\t\t\t\t/class : \"notehead\"\n\t\t\t\t}, {\n\t\t\t\t\t/x2 : 398,\n\t\t\t\t\t/y1 : 165,\n\t\t\t\t\t/type : \"line\",\n\t\t\t\t\t/y2 : 165,\n\t\t\t\t\t/x1 : 298,\n\t\t\t\t\t/class : \"durationLine\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_2l4cysvwyy6\",\n\t\t\t\t/type : \"g\",\n\t\t\t\t/class : \"thereminStave.noteline\"\n\t\t\t}],\n\t\t\t/id : \"thereminStave_u_2c5fk4cugqy-events\",\n\t\t\t/type : \"g\",\n\t\t\t/class : \"stave_events\"\n\t\t}, {\n\t\t\t/children : [{\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 79,\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/width : 1000,\n\t\t\t\t/x : 231\n\t\t\t}, {\n\t\t\t\t/x2 : 241,\n\t\t\t\t/y1 : 79,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y2 : 479,\n\t\t\t\t/x1 : 241,\n\t\t\t\t/class : \"thereminClef\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave-display\"\n\t\t}],\n\t\t/id : \"thereminStave_u_2c5fk4cugqy\",\n\t\t/type : \"g\",\n\t\t/bbox : {\n\t\t\t/bottom : 480,\n\t\t\t/height : 400,\n\t\t\t/y : 80,\n\t\t\t/right : 1118,\n\t\t\t/left : 103,\n\t\t\t/width : 1015,\n\t\t\t/top : 80,\n\t\t\t/x : 103\n\t\t},\n\t\t/class : \"thereminStave\"\n\t},\n\t/symbolistAction : \"transformed\",\n\t/context : {\n\t\t/children : [{\n\t\t\t/children : {\n\t\t\t\t/children : [{\n\t\t\t\t\t/cy : 123,\n\t\t\t\t\t/type : \"circle\",\n\t\t\t\t\t/r : 5.15,\n\t\t\t\t\t/cx : 221.15,\n\t\t\t\t\t/class : \"notehead\"\n\t\t\t\t}, {\n\t\t\t\t\t/x2 : 316,\n\t\t\t\t\t/y1 : 123,\n\t\t\t\t\t/type : \"line\",\n\t\t\t\t\t/y2 : 123,\n\t\t\t\t\t/x1 : 216,\n\t\t\t\t\t/class : \"durationLine\"\n\t\t\t\t}],\n\t\t\t\t/id : \"thereminStave.noteline_u_c45cafs8unk\",\n\t\t\t\t/type : \"g\",\n\t\t\t\t/class : \"thereminStave.noteline\"\n\t\t\t},\n\t\t\t/id : \"thereminStave_u_2c5fk4cugqy-events\",\n\t\t\t/type : \"g\",\n\t\t\t/class : \"stave_events\"\n\t\t}, {\n\t\t\t/children : [{\n\t\t\t\t/height : 400,\n\t\t\t\t/type : \"rect\",\n\t\t\t\t/y : 67,\n\t\t\t\t/class : \"thereminStaff\",\n\t\t\t\t/width : 1000,\n\t\t\t\t/x : 198\n\t\t\t}, {\n\t\t\t\t/x2 : 208,\n\t\t\t\t/y1 : 67,\n\t\t\t\t/type : \"line\",\n\t\t\t\t/y2 : 467,\n\t\t\t\t/x1 : 208,\n\t\t\t\t/class : \"thereminClef\"\n\t\t\t}],\n\t\t\t/type : \"g\",\n\t\t\t/class : \"thereminStave-display\"\n\t\t}],\n\t\t/id : \"thereminStave_u_2c5fk4cugqy\",\n\t\t/type : \"g\",\n\t\t/bbox : {\n\t\t\t/bottom : 0,\n\t\t\t/height : 0,\n\t\t\t/y : 0,\n\t\t\t/right : 0,\n\t\t\t/left : 0,\n\t\t\t/width : 0,\n\t\t\t/top : 0,\n\t\t\t/x : 0\n\t\t},\n\t\t/class : \"thereminStave\"\n\t},\n\t/button : 0,\n\t/xy : [111, 123]\n}"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 12.0,
 					"id" : "obj-44",
 					"linecount" : 2,
 					"maxclass" : "o.display",
@@ -5413,7 +5397,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 540.0, 702.228072166442871, 313.0, 48.0 ],
-					"text" : "/port/ip : \"http://192.168.178.36:3002\",\n/port/localhost : \"http://localhost:3002\""
+					"text" : "/port/localhost : \"http://localhost:3002\",\n/port/ip : \"http://192.168.178.52:3002\""
 				}
 
 			}
@@ -7033,8 +7017,8 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontname" : [ "Arial" ],
 													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
@@ -7058,8 +7042,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontface" : [ 2 ],
-													"fontsize" : [ 11.0 ]
+													"fontsize" : [ 11.0 ],
+													"fontface" : [ 2 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7068,9 +7052,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ],
-													"fontsize" : [ 15.0 ]
+													"fontface" : [ 3 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7079,8 +7063,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontname" : [ "Arial" ],
-													"fontsize" : [ 12.0 ]
+													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -7089,9 +7073,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ],
-													"fontsize" : [ 20.0 ]
+													"fontface" : [ 1 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7299,8 +7283,8 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontname" : [ "Arial" ],
 													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
@@ -7324,8 +7308,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontface" : [ 2 ],
-													"fontsize" : [ 11.0 ]
+													"fontsize" : [ 11.0 ],
+													"fontface" : [ 2 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7334,9 +7318,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ],
-													"fontsize" : [ 15.0 ]
+													"fontface" : [ 3 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7345,8 +7329,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontname" : [ "Arial" ],
-													"fontsize" : [ 12.0 ]
+													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -7355,9 +7339,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ],
-													"fontsize" : [ 20.0 ]
+													"fontface" : [ 1 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7524,8 +7508,8 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontname" : [ "Arial" ],
 													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
@@ -7549,8 +7533,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontface" : [ 2 ],
-													"fontsize" : [ 11.0 ]
+													"fontsize" : [ 11.0 ],
+													"fontface" : [ 2 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7559,9 +7543,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ],
-													"fontsize" : [ 15.0 ]
+													"fontface" : [ 3 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7570,8 +7554,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontname" : [ "Arial" ],
-													"fontsize" : [ 12.0 ]
+													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -7580,9 +7564,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ],
-													"fontsize" : [ 20.0 ]
+													"fontface" : [ 1 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7798,8 +7782,8 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontname" : [ "Arial" ],
 													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
@@ -7823,8 +7807,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontface" : [ 2 ],
-													"fontsize" : [ 11.0 ]
+													"fontsize" : [ 11.0 ],
+													"fontface" : [ 2 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7833,9 +7817,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ],
-													"fontsize" : [ 15.0 ]
+													"fontface" : [ 3 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7844,8 +7828,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontname" : [ "Arial" ],
-													"fontsize" : [ 12.0 ]
+													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -7854,9 +7838,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ],
-													"fontsize" : [ 20.0 ]
+													"fontface" : [ 1 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8232,7 +8216,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 772.0, 457.0, 155.0, 59.0 ],
-													"presentation_linecount" : 3,
 													"text" : "/str = \"/bar\",\n/foo = string(/str),\n/t = typetags(/foo)"
 												}
 
@@ -8530,7 +8513,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 485.0, 692.0, 471.0, 59.0 ],
-													"presentation_linecount" : 5,
 													"text" : "if( bound(/viewobj) && typetags(/viewobj) == '.', \n  /data_refy = /__/getSubByMemValue(/model, \"/id\", /viewobj./id)\n)"
 												}
 
@@ -8546,7 +8528,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 308.0, 235.5, 234.0, 46.0 ],
-													"presentation_linecount" : 3,
 													"text" : "/class = /gui./paletteClass,\n/viewobj = nil"
 												}
 
@@ -8576,7 +8557,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 54.0, 331.0, 673.0, 331.0 ],
-													"presentation_linecount" : 23,
 													"text" : "\n/tok = \"/\" + split(\".\", /class),\n\n/clef = value(/tok[[0]]),\n/objRef = cond( \n  length(/tok) > 1,\n  let({\n        palette: getbundlemember(/clef, \"/palette\")\n      },\n      getbundlemember(palette, /tok[[1]])\n   ),\n   length(/tok) == 1,\n   /clef\n),\n\n# get set from data function\n/setFn = /objRef./set/fromGUI,\n\n# not using this now, since the context is in the gui event\n/view_context = /gui./context,\n\n/dataRefIDX = max( aseq(1,length(/ids)) * (/view_context./id == /ids) ) - 1,\n/data_context = if( bound(/dataRefIDX) && /dataRefIDX != -1, /model[[ /dataRefIDX ]], /svg )"
 												}
 
@@ -8592,7 +8572,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 54.0, 42.0, 493.0, 59.0 ],
-													"presentation_linecount" : 3,
 													"text" : "/ids ??= [],\n/model ??= [],\n/selected = if(/__/hasAddress(/gui, \"/selected\"), /gui./selected )"
 												}
 
@@ -8989,8 +8968,8 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontname" : [ "Arial" ],
 													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
@@ -9014,8 +8993,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontface" : [ 2 ],
-													"fontsize" : [ 11.0 ]
+													"fontsize" : [ 11.0 ],
+													"fontface" : [ 2 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9024,9 +9003,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ],
-													"fontsize" : [ 15.0 ]
+													"fontface" : [ 3 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9035,8 +9014,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontname" : [ "Arial" ],
-													"fontsize" : [ 12.0 ]
+													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -9045,9 +9024,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ],
-													"fontsize" : [ 20.0 ]
+													"fontface" : [ 1 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9572,8 +9551,8 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontname" : [ "Arial" ],
 													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
@@ -9597,8 +9576,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontface" : [ 2 ],
-													"fontsize" : [ 11.0 ]
+													"fontsize" : [ 11.0 ],
+													"fontface" : [ 2 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9607,9 +9586,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ],
-													"fontsize" : [ 15.0 ]
+													"fontface" : [ 3 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9618,8 +9597,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontname" : [ "Arial" ],
-													"fontsize" : [ 12.0 ]
+													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -9628,9 +9607,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ],
-													"fontsize" : [ 20.0 ]
+													"fontface" : [ 1 ]
 												}
 ,
 												"parentstyle" : "",
@@ -10025,8 +10004,8 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontname" : [ "Arial" ],
 									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
@@ -10050,8 +10029,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontface" : [ 2 ],
-									"fontsize" : [ 11.0 ]
+									"fontsize" : [ 11.0 ],
+									"fontface" : [ 2 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10060,9 +10039,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ]
+									"fontface" : [ 3 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10071,8 +10050,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -10081,9 +10060,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ]
+									"fontface" : [ 1 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10254,8 +10233,8 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontname" : [ "Arial" ],
 									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
@@ -10279,8 +10258,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontface" : [ 2 ],
-									"fontsize" : [ 11.0 ]
+									"fontsize" : [ 11.0 ],
+									"fontface" : [ 2 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10289,9 +10268,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ]
+									"fontface" : [ 3 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10300,8 +10279,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -10310,9 +10289,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ]
+									"fontface" : [ 1 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10774,15 +10753,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-45", 0 ],
 					"midpoints" : [ 430.640776991844177, 885.878642320632935, 372.5, 885.878642320632935, 372.5, 302.5, 429.5, 302.5 ],
-					"order" : 0,
-					"source" : [ "obj-82", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-47", 0 ],
-					"order" : 1,
 					"source" : [ "obj-82", 0 ]
 				}
 
@@ -10888,8 +10858,8 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"fontname" : [ "Arial" ],
 					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
@@ -10913,8 +10883,8 @@
 , 			{
 				"name" : "caption text",
 				"default" : 				{
-					"fontface" : [ 2 ],
-					"fontsize" : [ 11.0 ]
+					"fontsize" : [ 11.0 ],
+					"fontface" : [ 2 ]
 				}
 ,
 				"parentstyle" : "",
@@ -10923,9 +10893,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontsize" : [ 15.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ]
+					"fontface" : [ 3 ]
 				}
 ,
 				"parentstyle" : "",
@@ -10934,8 +10904,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -10944,9 +10914,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontsize" : [ 20.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ]
+					"fontface" : [ 1 ]
 				}
 ,
 				"parentstyle" : "",
