@@ -93,7 +93,22 @@
 		11C28F9A2327DC52002D6E9B /* o.lookup~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11C28F992327DC52002D6E9B /* o.lookup~.cpp */; };
 		11C28F9B2327DCA8002D6E9B /* o.expr.file.c in Sources */ = {isa = PBXBuildFile; fileRef = 1140C3CC232165EE00E32DDB /* o.expr.file.c */; };
 		11C28F9D2327DCE5002D6E9B /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C28F9C2327DCE5002D6E9B /* MaxAudioAPI.framework */; };
+		11DAE11A24629F4300444928 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11DAE11924629F4300444928 /* main.cpp */; };
+		11DCC41D254D7B1200831D25 /* o.udp.receive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11DCC41B254D7B1200831D25 /* o.udp.receive.cpp */; };
+		11DCC41E254D851F00831D25 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1133D28023258E470000EC2A /* Carbon.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		11DAE11524629F4300444928 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1126C04C2326D517006D1701 /* liblibo-symbolist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblibo-symbolist.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +223,12 @@
 		11C28F992327DC52002D6E9B /* o.lookup~.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "o.lookup~.cpp"; sourceTree = "<group>"; };
 		11C28F9C2327DCE5002D6E9B /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../max-sdk/source/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		11C72D7323C9E0360032DE5E /* o.expr.file copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "o.expr.file copy-Info.plist"; path = "/Users/r/Documents/dev-lib/o-symbolist/src/o.expr.file copy-Info.plist"; sourceTree = "<absolute>"; };
+		11DAE11724629F4300444928 /* tester */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tester; sourceTree = BUILT_PRODUCTS_DIR; };
+		11DAE11924629F4300444928 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		11DCC418254D7AB400831D25 /* o.udp.receive.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = o.udp.receive.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		11DCC419254D7AB400831D25 /* o.svgpoints copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "o.svgpoints copy-Info.plist"; path = "/Users/r/Documents/dev-lib/o-symbolist/src/o.svgpoints copy-Info.plist"; sourceTree = "<absolute>"; };
+		11DCC41B254D7B1200831D25 /* o.udp.receive.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = o.udp.receive.cpp; sourceTree = "<group>"; };
+		11DCC41C254D7B1200831D25 /* o.udp.receive.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = o.udp.receive.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +264,21 @@
 				11C28F8F2327DC02002D6E9B /* Carbon.framework in Frameworks */,
 				11C28F902327DC02002D6E9B /* libomax.a in Frameworks */,
 				11C28F9D2327DCE5002D6E9B /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DAE11424629F4300444928 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DCC413254D7AB400831D25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DCC41E254D851F00831D25 /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,13 +412,16 @@
 		11611CD0231908AB00E2F1DD = {
 			isa = PBXGroup;
 			children = (
+				11DCC41A254D7AF600831D25 /* o.upd.receive */,
 				11C28F972327DC1A002D6E9B /* o.lookup~ */,
 				1140C3CB232164ED00E32DDB /* o.expr.file */,
 				11611CDB231908AB00E2F1DD /* o.svgpoints */,
 				1126C0502326D523006D1701 /* libo-symbolist */,
+				11DAE11824629F4300444928 /* tester */,
 				11611CDA231908AB00E2F1DD /* Products */,
 				1140C3CF23216F2C00E32DDB /* Frameworks */,
 				11C72D7323C9E0360032DE5E /* o.expr.file copy-Info.plist */,
+				11DCC419254D7AB400831D25 /* o.svgpoints copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -393,6 +432,8 @@
 				1140C3C9232164A200E32DDB /* o.expr.file.mxo */,
 				1126C04C2326D517006D1701 /* liblibo-symbolist.a */,
 				11C28F952327DC02002D6E9B /* o.lookup~.mxo */,
+				11DAE11724629F4300444928 /* tester */,
+				11DCC418254D7AB400831D25 /* o.udp.receive.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -413,6 +454,23 @@
 				11C28F982327DC52002D6E9B /* o.lookup~.hpp */,
 			);
 			path = "o.lookup~";
+			sourceTree = "<group>";
+		};
+		11DAE11824629F4300444928 /* tester */ = {
+			isa = PBXGroup;
+			children = (
+				11DAE11924629F4300444928 /* main.cpp */,
+			);
+			path = tester;
+			sourceTree = "<group>";
+		};
+		11DCC41A254D7AF600831D25 /* o.upd.receive */ = {
+			isa = PBXGroup;
+			children = (
+				11DCC41B254D7B1200831D25 /* o.udp.receive.cpp */,
+				11DCC41C254D7B1200831D25 /* o.udp.receive.hpp */,
+			);
+			path = o.upd.receive;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,6 +595,40 @@
 			productReference = 11C28F952327DC02002D6E9B /* o.lookup~.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
+		11DAE11624629F4300444928 /* tester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11DAE11D24629F4300444928 /* Build configuration list for PBXNativeTarget "tester" */;
+			buildPhases = (
+				11DAE11324629F4300444928 /* Sources */,
+				11DAE11424629F4300444928 /* Frameworks */,
+				11DAE11524629F4300444928 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tester;
+			productName = tester;
+			productReference = 11DAE11724629F4300444928 /* tester */;
+			productType = "com.apple.product-type.tool";
+		};
+		11DCC410254D7AB400831D25 /* o.udp.receive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11DCC415254D7AB400831D25 /* Build configuration list for PBXNativeTarget "o.udp.receive" */;
+			buildPhases = (
+				11DCC411254D7AB400831D25 /* Sources */,
+				11DCC413254D7AB400831D25 /* Frameworks */,
+				11DCC414254D7AB400831D25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = o.udp.receive;
+			productName = o.svgpoints;
+			productReference = 11DCC418254D7AB400831D25 /* o.udp.receive.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -551,6 +643,9 @@
 					};
 					11611CD8231908AB00E2F1DD = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					11DAE11624629F4300444928 = {
+						CreatedOnToolsVersion = 11.2;
 					};
 				};
 			};
@@ -570,6 +665,8 @@
 				1140C3C1232164A200E32DDB /* o.expr.file */,
 				1126C04B2326D517006D1701 /* libo-symbolist */,
 				11C28F8A2327DC02002D6E9B /* o.lookup~ */,
+				11DAE11624629F4300444928 /* tester */,
+				11DCC410254D7AB400831D25 /* o.udp.receive */,
 			);
 		};
 /* End PBXProject section */
@@ -590,6 +687,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		11C28F912327DC02002D6E9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DCC414254D7AB400831D25 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -662,6 +766,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				11C28F9A2327DC52002D6E9B /* o.lookup~.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DAE11324629F4300444928 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DAE11A24629F4300444928 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DCC411254D7AB400831D25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DCC41D254D7B1200831D25 /* o.udp.receive.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,6 +1109,68 @@
 			};
 			name = Release;
 		};
+		11DAE11B24629F4300444928 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43QFH4NBN8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		11DAE11C24629F4300444928 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43QFH4NBN8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		11DCC416254D7AB400831D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 43QFH4NBN8;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "o.svgpoints copy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRELINK_LIBS = "\"$(SRCROOT)/../../libo/libo.a\" \"$(SRCROOT)/../../libomax/libomax.a\"";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hfmt-hamburg.o-svgpoints";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Debug;
+		};
+		11DCC417254D7AB400831D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 43QFH4NBN8;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "o.svgpoints copy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRELINK_LIBS = "\"$(SRCROOT)/../../libo/libo.a\" \"$(SRCROOT)/../../libomax/libomax.a\"";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hfmt-hamburg.o-svgpoints";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1033,6 +1215,24 @@
 			buildConfigurations = (
 				11C28F932327DC02002D6E9B /* Debug */,
 				11C28F942327DC02002D6E9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11DAE11D24629F4300444928 /* Build configuration list for PBXNativeTarget "tester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DAE11B24629F4300444928 /* Debug */,
+				11DAE11C24629F4300444928 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11DCC415254D7AB400831D25 /* Build configuration list for PBXNativeTarget "o.udp.receive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DCC416254D7AB400831D25 /* Debug */,
+				11DCC417254D7AB400831D25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

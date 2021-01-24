@@ -1,6 +1,56 @@
 
 /*
 
+ to do:
+    1) make mc version that outputs "tracks" for values of /y?
+        e.g.
+    {
+        /x : [1,2,3,4,5,6],
+        /y/1 : [.....],
+        /y/2 : [.....],
+        /y/3 : [.....],
+        /y/4 : [.....]
+    }
+    
+ this can also kind of be done with mc.index~ connected to the step output,
+ but for curves you might need something like that.
+ 
+    I think maybe it's kind of nice to do it this way in o.lookup, since then maybe later we could also support interp, curves etc.
+ 
+ true::: another option would be to write into a buffer wih a given sample rate
+ the issue there is that it takes longer to write every sample
+ 
+    2) add queue feature to output events if they get skipped
+        for example, if there is a very short note and the phrase is played quickly
+        probalby we don't want to skip the note
+        so that means delaying the current event sample, and playing the values as quick as possible
+            i guess with the maximum phase
+        so we would need a queue stack that gets added to and emptied as fast as possible
+ 
+        related, if two events are at the same x time, offset one of them by the lowest possible
+            or allow them to be doubled but use the queue stack and output as fast as possible
+            points that coincide in time of course can't be interpolated between, so no problem there,
+            but not sure how the sorting function will deal with that.
+                ok, the sort function appears to use the order that it finds them in,
+                so if there are two points with the same x, which ever arrives first will be output first
+ 
+    one solution could be to iterate the indexes skipped afterr doing the sequential lookup
+    in that case, no interpolation is possible,
+        so the phase output for each queue point should be 0
+        busy 1
+        index number as usual
+ 
+        so basically we would need to do something like this:
+ *interp_val_out++ = y_val;
+ *rel_phase_out++ = phase;
+ *index_out++ = idx;
+ *delta_out++ = delta;
+ *npoints_out++ = points_len;
+ 
+ and then we need to deal with the case that if inputs come at the end of the vector, we would need to then delay the buffer of incoming samples
+ 
+ 
+ old notes
 format no longer supported : use o.explode if you need to work like this
 {
     /0/x : [],
@@ -90,6 +140,7 @@ In this format, the names of the bundles are converted to integers and used for 
 #define COPYRIGHT_YEARS "2018"
 
 #include "o.lookup~.hpp"
+#include <queue>
 
 using namespace std;
 
@@ -112,6 +163,10 @@ typedef struct _olookup {
     
     bool        update = true;
     
+    
+    queue<t_float>  phase_queue;
+    queue<t_float>  phrase_idx_queue;
+
     // attrs
     long        phaseincr;
     long        phasewrap;
@@ -594,7 +649,8 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
 }
 
 
-void olookup_search_sequential(const vector< double >& x_phrase, const long& points_len, const double& in_phase,t_int& idx, double& x0, double& x1 )
+void olookup_search_sequential(const vector< double >& x_phrase, const long& points_len, const double& in_phase,
+                               t_int& idx, t_int& idx1, double& x0, double& x1 )
 {
     // later: remove some of these clamps
 
@@ -634,11 +690,22 @@ void olookup_search_sequential(const vector< double >& x_phrase, const long& poi
      
 }
 
-void olookup_search_binary(const vector< double >& x_phrase, const long& points_len, const double& in_phase, t_int& idx, double& x0, double& x1 )
+void olookup_search_binary(const vector< double >& x_phrase, const long& points_len, const double& in_phase, t_int& idx, t_int& idx1, double& x0, double& x1 )
 {
     auto it = std::lower_bound(x_phrase.begin(), x_phrase.end(), in_phase);
-    x1 = (*it); // first element *not lower* than search value
-    idx = it - x_phrase.begin() - 1;
+    if( it == x_phrase.end() )
+    {
+        idx = points_len - 2;
+        idx1 = points_len - 1;
+        x0 = x_phrase[idx1];
+        x1 = x0;
+    }
+        
+    idx1 = it - x_phrase.begin(); // first element *not lower* than search value
+    idx = CLAMP(idx1-1, 0, points_len - 2);
+    idx1 = CLAMP(idx1, 1, points_len - 1);
+    
+    x1 = (*it);
     x0 = x_phrase[idx];
 }
 
@@ -660,7 +727,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
 
     long max_phr_idx = x_phrase.size() - 1;
     
-    t_int in_idx, max_idx0, max_idx1;
+    t_int in_idx;
     double x0 = 0, x1 = 0, y0 = 0, y1 = 0, range = 0, fp = 0, gp = 0;
     
     double y_val = x->val;
@@ -676,6 +743,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     t_int points_len = x->phrase_len;
     
     long n = sampleframes;
+   // long n_delay_queue = 0;
     
     while (n--)
     {
@@ -690,8 +758,8 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
         else
         {
 
-            in_phase = x->connected[0] ?      *phase_in++   : 0;
-            in_idx = x->connected[1] ? (t_int)*index_in++   : 0;
+            in_phase = x->connected[0] ?    *phase_in++   : 0;
+            in_idx = x->connected[1] ?      *index_in++   : 0;
             
             if( in_phase != prev_inphase || in_idx != phrase_index || x->update || x->phaseincr > 0  )
             {
@@ -706,7 +774,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
 
                 }
 
-                phrase_index = in_idx; // (t_int)CLAMP( in_idx, 0, max_phr_idx );
+                phrase_index = (t_int)in_idx; // (t_int)CLAMP( in_idx, 0, max_phr_idx );
                 if( phrase_index < 0 || phrase_index > max_phr_idx )
                 {
                     *interp_val_out++ = 0;
@@ -722,9 +790,8 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                 
                 if( points_len > 1 )
                 {
-                    max_idx1 = points_len - 1; // max upper bound
-                    max_idx0 = points_len - 2; // max lower bound
-                   
+                    double maxphase = phr.x.back();
+
                     if( x->phaseincr == 1 )
                     {
                         in_phase = prev_inphase + in_phase;
@@ -732,54 +799,19 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                     
                     if( x->phasewrap == 1 )
                     {
-                        double maxph = phr.x.back();
-                        in_phase = ( in_phase >= 0 ) ? fmod(in_phase, maxph) : fmod(in_phase + maxph, maxph);
+                        in_phase = ( in_phase >= 0 ) ? fmod(in_phase, maxphase) : fmod(in_phase + maxphase, maxphase);
                     }
                     
                     prev_inphase = in_phase;
                     
                     if( x->binary_search )
-                        olookup_search_binary(phr.x, points_len, in_phase, idx, x0, x1);
+                        olookup_search_binary(phr.x, points_len, in_phase, idx, idx1, x0, x1);
                     else
-                        olookup_search_sequential(phr.x, points_len, in_phase, idx, x0, x1);
-                    /*
-                   // later: remove some of these clamps
-                   
-                   // current segment start/end
-                   x0 = phr.x[ CLAMP(idx, 0, max_idx0) ];
-                   x1 = phr.x[ CLAMP(idx+1, 1, max_idx1) ];
-                   
-                    // sequential lookup for indexes
-                    if( in_phase < x0 )
-                    {
-                        while( in_phase < x0 && idx-- > 0 )
-                        {
-                            x0 = phr.x[ CLAMP(idx, 0, max_idx0) ];
-                        }
-                        
-                        if( in_phase < x0 && idx <= 0 )
-                            x1 = x0;
-                        else
-                            x1 = phr.x[  CLAMP(idx+1, 1, max_idx1) ];
-                        
-                    }
-                    else if( in_phase >= x1 )
-                    {
-                        while( in_phase >= x1 && idx++ < max_idx1 )
-                        {
-                            x1 = phr.x[ CLAMP(idx+1, 1, max_idx1) ];
-                        }
-                        
-                        if( in_phase > x1 && idx >= points_len )
-                            x0 = x1;
-                        else
-                            x0 = phr.x[  CLAMP(idx, 0, max_idx0) ];
-                    }
-                    */
+                        olookup_search_sequential(phr.x, points_len, in_phase, idx, idx1, x0, x1);
                     
                     delta = x1 - x0;
                     
-                    if( idx >= max_idx1 && x0 == x1 )
+                    if( in_phase >= maxphase && x0 == x1 )
                     {
                         phase = 1;
                     }
@@ -790,8 +822,8 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                     else
                         phase = 0;
                     
-                    idx = CLAMP(idx, 0, max_idx0);
-                    idx1 = CLAMP(idx+1, 1, max_idx1);
+                    //idx = CLAMP(idx, 0, max_idx0);
+                    //idx1 = CLAMP(idx+1, 1, max_idx1);
                     
                     if( !x->interp )
                     {
