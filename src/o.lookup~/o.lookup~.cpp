@@ -164,10 +164,10 @@ typedef struct _olookup {
     bool        update = true;
     
     
-    queue<t_float>  phase_queue;
-    queue<t_float>  phrase_idx_queue;
+    queue< pair<t_float,t_float> >  inlet_queue;
 
     // attrs
+    long        queue;
     long        phaseincr;
     long        phasewrap;
     long        normal_x;
@@ -669,10 +669,12 @@ void olookup_search_sequential(const vector< double >& x_phrase, const long& poi
              x0 = x_phrase[ CLAMP(idx, 0, max_idx0) ];
          }
          
+         idx1 = idx + 1;
+         
          if( in_phase < x0 && idx <= 0 )
              x1 = x0;
          else
-             x1 = x_phrase[  CLAMP(idx+1, 1, max_idx1) ];
+             x1 = x_phrase[  CLAMP(idx1, 1, max_idx1) ];
          
      }
      else if( in_phase >= x1 )
@@ -682,12 +684,16 @@ void olookup_search_sequential(const vector< double >& x_phrase, const long& poi
              x1 = x_phrase[ CLAMP(idx+1, 1, max_idx1) ];
          }
          
+         idx1 = idx + 1;
+
          if( in_phase > x1 && idx >= points_len )
              x0 = x1;
          else
              x0 = x_phrase[  CLAMP(idx, 0, max_idx0) ];
      }
-     
+     else
+         idx1 = CLAMP(idx+1, 1, max_idx1);
+
 }
 
 void olookup_search_binary(const vector< double >& x_phrase, const long& points_len, const double& in_phase, t_int& idx, t_int& idx1, double& x0, double& x1 )
@@ -742,10 +748,9 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     
     t_int points_len = x->phrase_len;
     
-    long n = sampleframes;
-   // long n_delay_queue = 0;
+    long in_count = 0;
     
-    while (n--)
+    for (size_t out_count = 0; out_count < sampleframes; out_count++)
     {
         if( max_phr_idx == -1 )
         {
@@ -758,8 +763,10 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
         else
         {
 
-            in_phase = x->connected[0] ?    *phase_in++   : 0;
-            in_idx = x->connected[1] ?      *index_in++   : 0;
+            in_phase = x->connected[0] ?    phase_in[ in_count ]   : 0;
+            in_idx = x->connected[1] ?      index_in[ in_count ]   : 0;
+            
+            in_count++;
             
             if( in_phase != prev_inphase || in_idx != phrase_index || x->update || x->phaseincr > 0  )
             {
@@ -806,8 +813,20 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                     
                     if( x->binary_search )
                         olookup_search_binary(phr.x, points_len, in_phase, idx, idx1, x0, x1);
+                    else if( x->queue )
+                    {
+                        
+                        
+                        olookup_search_sequential(phr.x, points_len, in_phase, idx, idx1, x0, x1);
+                        
+                        /**
+                                                        
+                         */
+                    }
                     else
                         olookup_search_sequential(phr.x, points_len, in_phase, idx, idx1, x0, x1);
+                    
+                    
                     
                     delta = x1 - x0;
                     
@@ -840,7 +859,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                             y_val = y0 + phase*range;
                         else
                         {
-                            fp = phr.c[idx1];
+                            fp = phr.c[idx1]; // max's curve format uses the destination curve value coef
                             if( fp == 0 )
                                 y_val = y0 + phase*range;
                             else
@@ -900,6 +919,9 @@ void olookup_dsp64(t_olookup *x, t_object *dsp64, short *count, double samplerat
     x->index = 0;
     x->phrase_len = 0;
     x->cur_phase = 0;
+    
+    while (!x->inlet_queue.empty())
+        x->inlet_queue.pop();
     
     object_method(dsp64, gensym("dsp_add64"), x, olookup_perform64, 0, NULL);
 }
@@ -978,6 +1000,7 @@ void *olookup_new(t_symbol* s, short argc, t_atom* argv)
         x->phaseincr = 0;
         x->phasewrap = 0;
         x->binary_search = 1;
+        x->queue = 0;
         
         x->connected[0] = 0;
         x->connected[1] = 0;
@@ -1025,11 +1048,14 @@ int C74_EXPORT main(void)
     CLASS_ATTR_LONG(c, "binsearch", 0, t_olookup, binary_search);
     CLASS_ATTR_STYLE_LABEL(c, "binsearch", 0, "onoff", "binary search");
 
+    CLASS_ATTR_LONG(c, "queue", 0, t_olookup, queue);
+    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "synchronous point queue");
+    
     class_dspinit(c);
     class_register(CLASS_BOX, c);
     olookup_class = c;
     
     post("%s by %s.", NAME, AUTHORS);
-    post("Copyright (c) " COPYRIGHT_YEARS " Regents of the University of California & Unversity of Music and Theater Hamburg.  All rights reserved.");
+    post("Copyright (c) " COPYRIGHT_YEARS " Hochschule für Music und Theater Hamburg.  All rights reserved.");
 }
 END_USING_C_LINKAGE

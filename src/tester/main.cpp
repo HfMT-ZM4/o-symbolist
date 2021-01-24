@@ -10,12 +10,32 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
-
+#include <queue>
 
 int main(int argc, const char * argv[]) {
 
 
     using namespace std;
+
+    long n = 0;
+    while( ++n < 5 )
+        cout << n << " ";
+    
+    cout << endl;
+
+    queue< pair<float, float> >  inlet_queue;
+    
+    inlet_queue.emplace(0,0);
+    inlet_queue.emplace(1,1);
+    inlet_queue.emplace(2,3);
+    inlet_queue.emplace(2,4);
+    
+    
+    while (!inlet_queue.empty()) {
+        auto front = inlet_queue.front();
+        cout << "q " << front.first << " " << front.second << endl;
+        inlet_queue.pop();
+    }
     
     vector<double> x({ 4., 0., 5., 1., 2., 3., 1., 4., 1., 4., 1. });
     vector<size_t> idx(x.size());
