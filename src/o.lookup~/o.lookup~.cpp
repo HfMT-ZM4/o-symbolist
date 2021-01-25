@@ -49,6 +49,25 @@
  
  and then we need to deal with the case that if inputs come at the end of the vector, we would need to then delay the buffer of incoming samples
  
+ @queue 0 = no queue, output the first value if duplicated
+ @queue 1 = create queue for synchronized events
+ @queue 2 = create queue for synchronized events, plus any skipped events since previous phase point
+ 
+ 
+ a couple problems that have come up:
+ 1- if an event is over the boundary of the vector, it needs a queue to go into the next vector, which could eventually lead to greater delays
+ 2- if the input signal is a ramp, then it is always changing then the input must always be considered, so if the inlets signals are queued, there is no way to make up
+    for the missing time difference, espeicialy with interpolation, but anyway this is not working well
+ 
+ an alternative approach which is maybe more stable would be to auto spread synchronous events so that events are never synchronous
+ 
+ then the queue mode would be just for case 2 to accumulate skipped steps
+    so then if we iterate quickly what happens to the missing inlet values?
+    I guess it would be reasonable to say that you loose the input values
+ 
+ 
+ 
+ 
  
  old notes
 format no longer supported : use o.explode if you need to work like this
@@ -156,15 +175,16 @@ typedef struct _olookup {
     double      val;
     double      rel_phase;
     t_int       index;
+    t_int       upper_idx;
     double      delta_between_points;
     t_int       phrase_len;
     
-    int         phrase_index;
+    long        phrase_index;
     
     bool        update = true;
     
     
-    queue< pair<t_float,t_float> >  inlet_queue;
+    queue< pair<t_int, t_int> >  out_idx_queue;
 
     // attrs
     long        queue;
@@ -657,42 +677,45 @@ void olookup_search_sequential(const vector< double >& x_phrase, const long& poi
     long max_idx1 = points_len - 1; // max upper bound
     long max_idx0 = points_len - 2; // max lower bound
 
+    idx =  CLAMP(idx,  0, max_idx0);
+    idx1 = CLAMP(idx1, 1, max_idx1);
+
     // current segment start/end
-    x0 = x_phrase[ CLAMP(idx, 0, max_idx0) ];
-    x1 = x_phrase[ CLAMP(idx+1, 1, max_idx1) ];
+    x0 = x_phrase[idx];
+    x1 = x_phrase[idx1];
     
      // sequential lookup for indexes
      if( in_phase < x0 )
      {
          while( in_phase < x0 && idx-- > 0 )
          {
-             x0 = x_phrase[ CLAMP(idx, 0, max_idx0) ];
+             x0 = x_phrase[ idx ];
          }
-         
-         idx1 = idx + 1;
+         idx =  CLAMP(idx,   0, max_idx0);
+         idx1 = CLAMP(idx+1, 1, max_idx1);
          
          if( in_phase < x0 && idx <= 0 )
              x1 = x0;
          else
-             x1 = x_phrase[  CLAMP(idx1, 1, max_idx1) ];
+             x1 = x_phrase[ idx1 ];
          
      }
      else if( in_phase >= x1 )
      {
-         while( in_phase >= x1 && idx++ < max_idx1 )
+         while( in_phase >= x1 && idx1++ < max_idx1 )
          {
-             x1 = x_phrase[ CLAMP(idx+1, 1, max_idx1) ];
+             x1 = x_phrase[ idx1 ];
          }
          
-         idx1 = idx + 1;
+         idx  = CLAMP(idx1-1, 0, max_idx0);
+         idx1 = CLAMP(idx1,   1, max_idx1);
 
          if( in_phase > x1 && idx >= points_len )
              x0 = x1;
          else
-             x0 = x_phrase[  CLAMP(idx, 0, max_idx0) ];
+             x0 = x_phrase[ idx ];
      }
-     else
-         idx1 = CLAMP(idx+1, 1, max_idx1);
+    // else idx1 should be the same as before
 
 }
 
@@ -739,8 +762,12 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     double y_val = x->val;
     double in_phase = x->cur_phase, prev_inphase = x->cur_phase;
     double phase = x->rel_phase;
+    
     t_int idx = x->index;
-    t_int idx1 = x->index;
+    t_int idx1 = x->upper_idx;
+    t_int prev_idx = idx;
+    
+    t_int idx_delta = 0;
     
     double delta = x->delta_between_points;
     
@@ -748,157 +775,277 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     
     t_int points_len = x->phrase_len;
     
-    long in_count = 0;
+    long i = 0;// -(long)x->inlet_queue.size(); // in count
+    //if( x->inlet_queue.size() > sampleframes )
+    //    printf("uh oh, here comes trouble %ld\n", x->inlet_queue.size() );
     
-    for (size_t out_count = 0; out_count < sampleframes; out_count++)
+    bool q_incr_j = false;
+    long j = 0;
+    // for loop is the output vector j
+    for ( ; j < sampleframes; j++)
     {
+        /*
+        if( !x->out_idx_queue.empty() )
+        {
+            t_int q_idx = x->out_idx_queue.front();
+            
+            interp_val_out[j] = phr.y[q_idx];
+            rel_phase_out[j] = 0;
+            index_out[j] = q_idx;
+            delta_out[j] = phr.x[q_idx] - phr.x[q_idx + 1];
+            npoints_out[j] = points_len;
+            
+            x->out_idx_queue.pop();
+            
+        }
+*/
+        
         if( max_phr_idx == -1 )
         {
-            *interp_val_out++ = 0;
-            *rel_phase_out++ = 0;
-            *index_out++ = 0;
-            *delta_out++ = 0;
-            *npoints_out++ = 0;
+            if( j >= sampleframes )
+                printf("nononono j %ld line %i!! \n", j, __LINE__ );
+            
+            interp_val_out[j] = 0;
+            rel_phase_out[j] = 0;
+            index_out[j] = 0;
+            delta_out[j] = 0;
+            npoints_out[j] = 0;
+            i++;
         }
         else
         {
-
-            in_phase = x->connected[0] ?    phase_in[ in_count ]   : 0;
-            in_idx = x->connected[1] ?      index_in[ in_count ]   : 0;
             
-            in_count++;
-            
-            if( in_phase != prev_inphase || in_idx != phrase_index || x->update || x->phaseincr > 0  )
+            while( i <= j && i < sampleframes && j < sampleframes ) // catch up from this vector
             {
-                if( x->update )
+                q_incr_j = false;
+                // to do iterate delayed outputs from previous vector
+                /*
+                if( x->inlet_queue.size() > 0 )
                 {
-                    critical_enter(x->lock);
-                    x_phrase = x->phrase;
-                    x->update = false;
-                    critical_exit(x->lock);
-                    
-                    max_phr_idx = x_phrase.size() - 1;
-
+                    auto phase_index = x->inlet_queue.front();
+                    in_phase = x->connected[0]  ? phase_index.first   : 0;
+                    in_idx = x->connected[1]    ? phase_index.second  : 0;
+                    x->inlet_queue.pop();
                 }
-
-                phrase_index = (t_int)in_idx; // (t_int)CLAMP( in_idx, 0, max_phr_idx );
-                if( phrase_index < 0 || phrase_index > max_phr_idx )
+                else */
                 {
-                    *interp_val_out++ = 0;
-                    *rel_phase_out++ = 0;
-                    *index_out++ = 0;
-                    *delta_out++ = 0;
-                    *npoints_out++ = 0;
-                    continue;
+                    if( i < 0 || i >= sampleframes )
+                        printf("niiiii i %ld line %i!! \n", i, __LINE__ );
+
+                    in_phase = x->connected[0] ?    phase_in[ i ]   : 0;
+                    in_idx = x->connected[1] ?      index_in[ i ]   : 0;
                 }
                 
-                PhasePoints& phr = x_phrase[phrase_index];
-                points_len = phr.len;
                 
-                if( points_len > 1 )
+                if( in_phase != prev_inphase || in_idx != phrase_index || x->update || x->phaseincr > 0  )
                 {
-                    double maxphase = phr.x.back();
+                    if( i < j )
+                        q_incr_j = true;
 
-                    if( x->phaseincr == 1 )
+                    if( x->update )
                     {
-                        in_phase = prev_inphase + in_phase;
-                    }
-                    
-                    if( x->phasewrap == 1 )
-                    {
-                        in_phase = ( in_phase >= 0 ) ? fmod(in_phase, maxphase) : fmod(in_phase + maxphase, maxphase);
-                    }
-                    
-                    prev_inphase = in_phase;
-                    
-                    if( x->binary_search )
-                        olookup_search_binary(phr.x, points_len, in_phase, idx, idx1, x0, x1);
-                    else if( x->queue )
-                    {
+                        critical_enter(x->lock);
+                        x_phrase = x->phrase;
+                        x->update = false;
+                        critical_exit(x->lock);
                         
-                        
-                        olookup_search_sequential(phr.x, points_len, in_phase, idx, idx1, x0, x1);
-                        
-                        /**
-                                                        
-                         */
+                        max_phr_idx = x_phrase.size() - 1;
+
                     }
-                    else
-                        olookup_search_sequential(phr.x, points_len, in_phase, idx, idx1, x0, x1);
-                    
-                    
-                    
-                    delta = x1 - x0;
-                    
-                    if( in_phase >= maxphase && x0 == x1 )
+
+                    phrase_index = (t_int)in_idx; // (t_int)CLAMP( in_idx, 0, max_phr_idx );
+                    if( phrase_index < 0 || phrase_index > max_phr_idx )
                     {
-                        phase = 1;
-                    }
-                    else if( delta > 0 )
-                    {
-                        phase = (in_phase - x0) / delta;
-                    }
-                    else
+                        y_val = 0;
                         phase = 0;
-                    
-                    //idx = CLAMP(idx, 0, max_idx0);
-                    //idx1 = CLAMP(idx+1, 1, max_idx1);
-                    
-                    if( !x->interp )
-                    {
-                        y_val = phr.y[idx];
+                        idx = 0;
+                        delta = 0;
+                        points_len = 0;
                     }
                     else
                     {
-                        // get y positions and interpolate a la curve~
-                        y0 = phr.y[idx];
-                        y1 = phr.y[idx1];
-                        range = y1-y0;
+
+                        PhasePoints& phr = x_phrase[phrase_index];
+                        points_len = phr.len;
                         
-                        if( !phr.c.size() )
-                            y_val = y0 + phase*range;
-                        else
+                        if( points_len > 1 )
                         {
-                            fp = phr.c[idx1]; // max's curve format uses the destination curve value coef
-                            if( fp == 0 )
-                                y_val = y0 + phase*range;
+                            double maxphase = phr.x.back();
+
+                            if( x->phaseincr == 1 )
+                            {
+                                in_phase = prev_inphase + in_phase;
+                            }
+                            
+                            if( x->phasewrap == 1 )
+                            {
+                                in_phase = ( in_phase >= 0 ) ? fmod(in_phase, maxphase) : fmod(in_phase + maxphase, maxphase);
+                            }
+                                                        
+                            // note: idx and idx1 are updated in the lookup functions
+                            if( x->binary_search )
+                            {
+                                olookup_search_binary(phr.x, points_len, in_phase, idx, idx1, x0, x1);
+                            }
                             else
                             {
-                                // note: first half of equation is precalculated in the PhasePoints setter
-                                gp = ( exp(fp * phase) - 1.) / ( exp(fp) - 1. ) ;
-                                y_val = y0 + gp * range;
+                                olookup_search_sequential(phr.x, points_len, in_phase, idx, idx1, x0, x1);
+                                
+                                if( x->queue )
+                                {
+                                    //post("prev %ld new %ld", prev_idx, idx);
+                                    // if sequential queue mode case 2 (skipping case 1 for now)
+                                    // output all skipped values as quickly as possible and then continue
+                                    
+                                    idx_delta = idx - prev_idx;
+                                    if( idx_delta != 0 )
+                                    {
+                                        int sign = idx_delta > 0 ? 1 : -1;
+                                        idx_delta = abs(idx_delta) - 1;
+                                        
+                                        long idx_incr = prev_idx + sign;
+                                        // here -- we need to output more points, and queue some input values
+                                        while (idx_delta-- )
+                                        {
+                                      //      post("x %f idx %ld", phr.y[idx_incr], idx_incr);
+
+                                            if( j < sampleframes )
+                                            {
+                                                interp_val_out[j] = phr.y[idx_incr];
+                                                rel_phase_out[j] = 0;
+                                                index_out[j] = idx_incr;
+                                                delta_out[j] = phr.x[idx_incr] - phr.x[idx_incr + 1];
+                                                npoints_out[j] = points_len;
+                                                j++;
+                                            }
+                                            else
+                                            {
+//                                                printf("nononono j %ld line %i!! \n", j, __LINE__ );
+                                                x->out_idx_queue.emplace(idx_incr, phrase_index);
+                                            }
+                                           
+                                            
+                                            idx_incr += sign;
+                                            
+                                            
+                                            // so now the output has been updated, but the inlets have not been read for those samples
+                                            // we also need an output buffer, since the multiple event could overlap the end of the vector
+                                        }
+                                        
+                                        if( j >= sampleframes )
+                                            printf("nononono j %ld line %i!! \n", j, __LINE__ );
+                                        
+                                      //  q_incr_j = false;
+                                    }
+                                    
+                                    
+                                    prev_idx = idx;
+                                }
+                               
                             }
+                           
+                            
+                            delta = x1 - x0;
+                            
+                            if( in_phase >= maxphase && x0 == x1 )
+                            {
+                                phase = 1;
+                            }
+                            else if( delta > 0 )
+                            {
+                                phase = (in_phase - x0) / delta;
+                            }
+                            else
+                                phase = 0;
+                            
+                            //idx = CLAMP(idx, 0, max_idx0);
+                            //idx1 = CLAMP(idx+1, 1, max_idx1);
+                            
+                            if( !x->interp )
+                            {
+                                y_val = phr.y[idx];
+                            }
+                            else
+                            {
+                                // get y positions and interpolate a la curve~
+                                y0 = phr.y[idx];
+                                y1 = phr.y[idx1];
+                                range = y1-y0;
+                                
+                                if( !phr.c.size() )
+                                    y_val = y0 + phase*range;
+                                else
+                                {
+                                    fp = phr.c[idx1]; // max's curve format uses the destination curve value coef
+                                    if( fp == 0 )
+                                        y_val = y0 + phase*range;
+                                    else
+                                    {
+                                        // note: first half of equation is precalculated in the PhasePoints setter
+                                        gp = ( exp(fp * phase) - 1.) / ( exp(fp) - 1. ) ;
+                                        y_val = y0 + gp * range;
+                                    }
+                                }
+                                
+                            }
+                        }
+                        else
+                        {
+                            if( points_len == 1 )// one point case
+                                y_val = phr.y[0];
+                            else
+                                y_val = 0;
+                            
+                            phase = 0;
+                            idx = 0;
+                            delta = 0;
                         }
                         
                     }
                 }
-                else
-                {
-                    if( points_len == 1 )// one point case
-                        y_val = phr.y[0];
-                    else
-                        y_val = 0;
-                    
-                    phase = 0;
-                    idx = 0;
-                    delta = 0;
-                }
+
+                if( j >= sampleframes )
+                    printf("nononono j %ld line %i!! \n", j, __LINE__ );
                 
+                interp_val_out[j] = y_val;
+                rel_phase_out[j] = phase;
+                index_out[j] = idx;
+                delta_out[j] = delta;
+                npoints_out[j] = points_len;
+
+                prev_inphase = in_phase;
+
+                i++; // inlet counter
+                
+                if( q_incr_j )
+                    j++;
+
             }
             
-            *interp_val_out++ = y_val;
-            *rel_phase_out++ = phase;
-            *index_out++ = idx;
-            *delta_out++ = delta;
-            *npoints_out++ = points_len;
             
         }
         
     }
+    /*
+     // removing input queue, in favor of keeping in sync with input
+     // outlet can be delayed in case of queue, but not the input
+    while( i < sampleframes )
+    {
+        if( i < 0 )
+           printf("niiiii i %ld line %i!! \n", i, __LINE__ );
+        
+        x->inlet_queue.emplace( phase_in[i], index_in[i] );
+        i++;
+    }
+     
+    */
+    //if( x->inlet_queue.size() )
+    //   printf("%ld queue\n", x->inlet_queue.size());
 
     x->val = y_val;
     x->rel_phase = phase;
     x->index = idx;
+    x->upper_idx = idx1;
     x->phrase_len = points_len;
     x->delta_between_points = delta;
     x->cur_phase = prev_inphase;
@@ -909,19 +1056,28 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
 
 void olookup_dsp64(t_olookup *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
+    
+    critical_enter(x->lock);
+    
     x->connected[0] = count[0];
     x->connected[1] = count[1];
-    x->update = true;
+     
+    // post("connected %i %i", x->connected[0], x->connected[1]);
     
+    x->update = true;
     x->val = 0;
     x->rel_phase = 0;
     x->delta_between_points = 0;
     x->index = 0;
+    x->upper_idx = 0;
     x->phrase_len = 0;
     x->cur_phase = 0;
     
-    while (!x->inlet_queue.empty())
-        x->inlet_queue.pop();
+    while (!x->out_idx_queue.empty())
+        x->out_idx_queue.pop();
+    
+    critical_exit(x->lock);
+    
     
     object_method(dsp64, gensym("dsp_add64"), x, olookup_perform64, 0, NULL);
 }
@@ -1006,9 +1162,9 @@ void *olookup_new(t_symbol* s, short argc, t_atom* argv)
         x->connected[1] = 0;
         
         attr_args_process(x, argc, argv);
-        
+
         dsp_setup((t_pxobject *)x, 2);
-        
+
         x->osc_outlet = outlet_new((t_object *)x, "FullPacket");
         outlet_new((t_object *)x, "signal");
         outlet_new((t_object *)x, "signal");
@@ -1018,8 +1174,9 @@ void *olookup_new(t_symbol* s, short argc, t_atom* argv)
 
         x->proxy = proxy_new((t_object *)x, 1, &(x->osc_inlet));
         
-
         critical_new( &x->lock );
+        
+        x->ob.z_misc = Z_NO_INPLACE;
 
     }
     return (void *)x;
@@ -1049,7 +1206,7 @@ int C74_EXPORT main(void)
     CLASS_ATTR_STYLE_LABEL(c, "binsearch", 0, "onoff", "binary search");
 
     CLASS_ATTR_LONG(c, "queue", 0, t_olookup, queue);
-    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "synchronous point queue");
+    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "queue synchronous points");
     
     class_dspinit(c);
     class_register(CLASS_BOX, c);

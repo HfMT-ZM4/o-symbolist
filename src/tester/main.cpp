@@ -18,12 +18,28 @@ int main(int argc, const char * argv[]) {
     using namespace std;
 
     long n = 0;
-    while( ++n < 5 )
+    while( n < 5 ){
         cout << n << " ";
+        n++;
+    }
+    cout << endl;
+    
+    int i = 0;
+    n = 0;
+    while( n < 5 )
+    {
+        while( i < 10 ){
+            n++;
+            i++;
+        }
+    }
+
+    cout << n << " <<";
     
     cout << endl;
-
     queue< pair<float, float> >  inlet_queue;
+    
+    cout << "size " << inlet_queue.size() << endl;
     
     inlet_queue.emplace(0,0);
     inlet_queue.emplace(1,1);
