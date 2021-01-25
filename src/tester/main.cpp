@@ -24,11 +24,12 @@ int main(int argc, const char * argv[]) {
     }
     cout << endl;
     
-    int i = 0;
     n = 0;
     while( n < 5 )
     {
-        while( i < 10 ){
+        int i = 0;
+        while( i < 10 )
+        {
             n++;
             i++;
         }
