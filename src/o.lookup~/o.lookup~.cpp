@@ -64,7 +64,17 @@
  then the queue mode would be just for case 2 to accumulate skipped steps
     so then if we iterate quickly what happens to the missing inlet values?
     I guess it would be reasonable to say that you loose the input values
+            working pretty well
  
+ ok new plan:
+ 
+ @seq 0     optimize for random access search (binary)
+ @seq 1     optimize for forward reading, and accumulation (only in upwards direction)
+ @seq -1    optiimize for backwards reading, and accumulation (only in reverse direction)
+ @seq 2     optimize for playhead style reading, and accumulation (both directions)
+ 
+ @accum 0 - off
+ @accum 1 - accum based on seq direction
  
  
  
@@ -672,7 +682,6 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
 void olookup_search_sequential(const vector< double >& x_phrase, const long& points_len, const double& in_phase,
                                t_int& idx, t_int& idx1, double& x0, double& x1 )
 {
-    // later: remove some of these clamps
 
     long max_idx1 = points_len - 1; // max upper bound
     long max_idx0 = points_len - 2; // max lower bound
