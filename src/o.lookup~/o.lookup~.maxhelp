@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 268.0, 79.0, 1145.0, 732.0 ],
+		"rect" : [ 100.0, 100.0, 1145.0, 732.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,118 @@
 		"showontab" : 1,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 8,
+							"minor" : 2,
+							"revision" : 0,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 84.0, 129.0, 785.0, 480.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
+						"boxes" : [ 							{
+								"box" : 								{
+									"fontface" : 0,
+									"fontsize" : 12.0,
+									"id" : "obj-4",
+									"linecount" : 5,
+									"maxclass" : "o.expr.codebox",
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+									"patching_rect" : [ 234.0, 72.0, 306.0, 86.0 ],
+									"text" : "/y/1 = [1,2,3,4],\n/y/2 = [5,6,7,8],\n\n/max_x_point = length(/y/1) - 1,\n/x = aseq(0,/max_x_point) / /max_x_point"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "scope~",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"patching_rect" : [ 151.0, 292.0, 130.0, 130.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 6,
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"patching_rect" : [ 151.0, 182.0, 102.0, 22.0 ],
+									"text" : "o.lookup~ @mc 5"
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 2 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 819.0, 169.0, 100.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"tags" : ""
+					}
+,
+					"text" : "p mc"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-9",
 					"linecount" : 4,
@@ -394,7 +506,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 3,
 													"numoutlets" : 6,
-													"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+													"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 													"patching_rect" : [ 582.75, 398.0, 212.5, 22.0 ],
 													"text" : "o.lookup~"
 												}
@@ -485,7 +597,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 3,
 													"numoutlets" : 6,
-													"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+													"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 													"patching_rect" : [ 172.75, 398.0, 212.5, 22.0 ],
 													"text" : "o.lookup~"
 												}
@@ -852,7 +964,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 172.75, 398.0, 212.5, 22.0 ],
 									"text" : "o.lookup~"
 								}
@@ -1864,7 +1976,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 44.0, 349.0, 130.0, 22.0 ],
 									"text" : "o.lookup~"
 								}
@@ -1975,7 +2087,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 400.0, 349.0, 130.0, 22.0 ],
 									"text" : "o.lookup~"
 								}
@@ -2858,7 +2970,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 187.0, 376.0, 71.5, 22.0 ],
 									"text" : "o.lookup~"
 								}
@@ -3398,7 +3510,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 232.75, 335.4158935546875, 116.0, 22.0 ],
 									"text" : "o.lookup~ @interp 0"
 								}
@@ -3757,7 +3869,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 339.0, 475.9482421875, 116.0, 22.0 ],
 									"text" : "o.lookup~ @interp 1"
 								}
@@ -3897,7 +4009,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 232.75, 372.4158935546875, 116.0, 22.0 ],
 									"text" : "o.lookup~ @interp 0"
 								}
@@ -4386,7 +4498,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 236.75, 373.4158935546875, 116.0, 22.0 ],
 									"text" : "o.lookup~ @interp 0"
 								}
@@ -4469,7 +4581,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 104.75, 373.4158935546875, 116.0, 22.0 ],
 									"text" : "o.lookup~ @interp 1"
 								}
@@ -4788,7 +4900,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 652.85003662109375, 414.8905029296875, 392.99993896484375, 22.0 ],
 									"text" : "o.lookup~ @phaseincr 1 @phasewrap 0 @interp 0"
 								}
@@ -4872,7 +4984,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 652.85003662109375, 278.44525146484375, 392.99993896484375, 22.0 ],
 									"text" : "o.lookup~ @phaseincr 1 @phasewrap 1 @interp 0"
 								}
@@ -5084,7 +5196,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 652.85003662109375, 148.0, 392.99993896484375, 22.0 ],
 									"text" : "o.lookup~ @phaseincr 1 @phasewrap 1"
 								}
@@ -5396,7 +5508,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 238.75, 394.86114501953125, 223.0, 22.0 ],
 									"text" : "o.lookup~ @phaseincr 1 @phasewrap 1"
 								}
@@ -5961,7 +6073,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 3,
 													"numoutlets" : 6,
-													"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+													"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 													"patching_rect" : [ 236.75, 373.4158935546875, 116.0, 22.0 ],
 													"text" : "o.lookup~ @interp 0"
 												}
@@ -6044,7 +6156,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 3,
 													"numoutlets" : 6,
-													"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+													"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 													"patching_rect" : [ 104.75, 373.4158935546875, 116.0, 22.0 ],
 													"text" : "o.lookup~ @interp 1"
 												}
@@ -6340,7 +6452,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 183.25, 352.5, 122.75, 22.0 ],
 									"text" : "o.lookup~ @interp 0"
 								}
@@ -6653,7 +6765,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 268.0, 105.0, 1145.0, 706.0 ],
+						"rect" : [ 0.0, 26.0, 1145.0, 706.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7333,7 +7445,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 134.75, 242.30718994140625, 323.0, 22.0 ],
 									"text" : "o.lookup~"
 								}
@@ -7923,7 +8035,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 3,
 													"numoutlets" : 6,
-													"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+													"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 													"patching_rect" : [ 129.25, 306.0, 122.75, 22.0 ],
 													"text" : "o.lookup~ @interp 0"
 												}
@@ -9182,7 +9294,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 6,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "FullPacket" ],
+									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
 									"patching_rect" : [ 40.75, 283.0, 356.5, 22.0 ],
 									"text" : "o.lookup~"
 								}

@@ -192,7 +192,7 @@ typedef struct _olookup {
     long        phrase_index;
     
     bool        update = true;
-    
+
     
     queue< pair<t_int, t_int> >  out_idx_queue;
 
@@ -205,7 +205,6 @@ typedef struct _olookup {
 
     long        seq;
     long        accum;
-
     
     short       connected[2];
     
@@ -213,6 +212,8 @@ typedef struct _olookup {
     long        osc_inlet;
     t_proxy     proxy;
     t_critical  lock;
+    
+    long        numoutputs;
     
 } t_olookup;
 
@@ -1063,6 +1064,7 @@ void olookup_dsp64(t_olookup *x, t_object *dsp64, short *count, double samplerat
     object_method(dsp64, gensym("dsp_add64"), x, olookup_perform64, 0, NULL);
 }
 
+
 void olookup_assist(t_olookup *x, void *b, long m, long a, char *s)
 {
     if (m == ASSIST_INLET) { //inlet
@@ -1107,6 +1109,26 @@ void olookup_assist(t_olookup *x, void *b, long m, long a, char *s)
     
 }
 
+long olookup_multichanneloutputs(t_olookup *x, long outletindex)
+{
+    if( outletindex == 0)
+        return x->numoutputs;
+    else
+        return 1;
+}
+
+t_max_err olookup_mc_set(t_olookup *x, t_object *attr, long argc, t_atom *argv)
+{
+    return 0;
+}
+
+t_max_err olookup_mc_get(t_olookup *x, t_object *attr, long *argc, t_atom **argv)
+{
+    char alloc;
+    atom_alloc(argc, argv, &alloc);     // allocate return atom
+    atom_setlong(*argv, x->numoutputs);
+    return 0;
+}
 
 
 void olookup_free(t_olookup *x)
@@ -1143,22 +1165,40 @@ void *olookup_new(t_symbol* s, short argc, t_atom* argv)
         x->connected[0] = 0;
         x->connected[1] = 0;
         
+        x->numoutputs = 1;
+        
         attr_args_process(x, argc, argv);
+        
+        t_dictionary *dict = dictionary_new();
+        attr_args_dictionary(dict, argc, argv);
+        
+        t_symbol * sym_mc_attr = gensym("mc");
+        if( dictionary_hasentry(dict, sym_mc_attr ) )
+        {
+            t_atom_long val;
+            dictionary_getlong(dict, sym_mc_attr, &val);
+            x->numoutputs = val;
+        }
+        object_free(dict);
 
+        
         dsp_setup((t_pxobject *)x, 2);
 
         x->osc_outlet = outlet_new((t_object *)x, "FullPacket");
+
         outlet_new((t_object *)x, "signal");
         outlet_new((t_object *)x, "signal");
         outlet_new((t_object *)x, "signal");
         outlet_new((t_object *)x, "signal");
-        outlet_new((t_object *)x, "signal");
+        outlet_new((t_object *)x, "multichannelsignal"); // y output
+//        outlet_new((t_object *)x, "signal");
 
         x->proxy = proxy_new((t_object *)x, 1, &(x->osc_inlet));
         
         critical_new( &x->lock );
         
-      //  x->ob.z_misc = Z_NO_INPLACE;
+        x->ob.z_misc = Z_MC_INLETS ;//| Z_NO_INPLACE;
+    
 
     }
     return (void *)x;
@@ -1173,8 +1213,12 @@ int C74_EXPORT main(void)
     class_addmethod(c, (method)olookup_dsp64,       "dsp64",        A_CANT,     0);
     class_addmethod(c, (method)olookup_assist,      "assist",       A_CANT,     0);
     class_addmethod(c, (method)olookup_FullPacket,  "FullPacket",	A_GIMME,    0);
+    class_addmethod(c, (method)olookup_multichanneloutputs, "multichanneloutputs", A_CANT, 0);
 
     
+    CLASS_ATTR_LONG(c, "mc", 0, t_olookup, numoutputs);
+    CLASS_ATTR_ACCESSORS(c, "mc", olookup_mc_get, olookup_mc_set);
+
     CLASS_ATTR_LONG(c, "interp", 0, t_olookup, interp);
     CLASS_ATTR_STYLE_LABEL(c, "interp", 0, "onoff", "interpolation");
 
