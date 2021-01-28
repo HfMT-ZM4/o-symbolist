@@ -197,14 +197,15 @@ typedef struct _olookup {
     queue< pair<t_int, t_int> >  out_idx_queue;
 
     // attrs
-    long        queue;
     long        phaseincr;
     long        phasewrap;
     long        normal_x;
     long        interp;
     long        tie_repeats;
 
-    long        binary_search;
+    long        seq;
+    long        accum;
+
     
     short       connected[2];
     
@@ -863,7 +864,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                         }
                                                     
                         // note: idx and idx1 are updated in the lookup functions
-                        if( x->binary_search )
+                        if( !x->seq )
                         {
                             olookup_search_binary(phr.x, points_len, in_phase, idx, idx1, x0, x1);
                         }
@@ -871,7 +872,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                         {
                             olookup_search_sequential(phr.x, points_len, in_phase, idx, idx1, x0, x1);
                             
-                            if( x->queue )
+                            if( x->accum )
                             {
                                 //post("prev %ld new %ld", prev_idx, idx);
                                 // if sequential queue mode case 2 (skipping case 1 for now)
@@ -881,41 +882,41 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                                 if( idx_delta != 0 )
                                 {
                                     int sign = idx_delta > 0 ? 1 : -1;
-                                    idx_delta = abs(idx_delta) - 1;
                                     
-                                    long idx_incr = prev_idx + sign;
-                                    // here -- we need to output more points, and queue some input values
-                                    while (idx_delta--)
+                                    if( x->seq == sign || x->seq == 2 )
                                     {
-                                  //      post("x %f idx %ld", phr.y[idx_incr], idx_incr);
-
-                                        if( j < sampleframes )
+                                        idx_delta = abs(idx_delta) - 1;
+                                        long idx_incr = prev_idx + sign;
+                                        
+                                        while (idx_delta--)
                                         {
-                                            interp_val_out[j] = phr.y[idx_incr];
-                                            rel_phase_out[j] = 0;
-                                            index_out[j] = idx_incr;
-                                            delta_out[j] = phr.x[idx_incr] - phr.x[idx_incr + 1];
-                                            npoints_out[j] = points_len;
-                                            j++;
+                                            if( j < sampleframes )
+                                            {
+                                                interp_val_out[j] = phr.y[idx_incr];
+                                                rel_phase_out[j] = 0;
+                                                index_out[j] = idx_incr;
+                                                delta_out[j] = phr.x[idx_incr] - phr.x[idx_incr + 1];
+                                                npoints_out[j] = points_len;
+                                                j++;
+                                            }
+                                            else
+                                            {
+                                                x->out_idx_queue.emplace(idx_incr, phrase_index);
+                                            }
+                                           
+                                            idx_incr += sign;
+                                            
                                         }
-                                        else
-                                        {
-//                                                printf("nononono j %ld line %i!! \n", j, __LINE__ );
-                                            x->out_idx_queue.emplace(idx_incr, phrase_index);
-                                        }
-                                       
-                                        
-                                        idx_incr += sign;
-                                        
-                                        
-                                        // so now the output has been updated, but the inlets have not been read for those samples
-                                        // we also need an output buffer, since the multiple event could overlap the end of the vector
                                     }
                                     
-                                    if( j >= sampleframes )
-                                        printf("nononono j %ld line %i!! \n", j, __LINE__ );
                                     
-                                  //  q_incr_j = false;
+                                    if( j >= sampleframes )
+                                    {
+                                       // printf("nononono j %ld line %i!! \n", j, __LINE__ );
+                                        break;
+                                    }
+                                        
+                                    
                                 }
                                 
                                 
@@ -984,15 +985,22 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                 }
             }
 
-//            if( j >= sampleframes )
-//                printf("nononono j %ld line %i!! \n", j, __LINE__ );
+           // if( j >= sampleframes )
+           //     printf("nononono j %ld line %i!! \n", j, __LINE__ );
             
-            interp_val_out[j] = y_val;
-            rel_phase_out[j] = phase;
-            index_out[j] = idx;
-            delta_out[j] = delta;
-            npoints_out[j] = points_len;
-
+            if( j < sampleframes ) // since the break was added above, I think this should never happen
+            {
+                interp_val_out[j] = y_val;
+                rel_phase_out[j] = phase;
+                index_out[j] = idx;
+                delta_out[j] = delta;
+                npoints_out[j] = points_len;
+            }
+            else
+            {
+                printf("nononono j %ld line %i!! \n", j, __LINE__ );
+            }
+            
             prev_inphase = in_phase;
             
             
@@ -1021,7 +1029,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     x->upper_idx = idx1;
     x->phrase_len = points_len;
     x->delta_between_points = delta;
-    x->cur_phase = prev_inphase;
+    x->cur_phase = in_phase;
     x->phrase_index = phrase_index;
     
     
@@ -1044,8 +1052,8 @@ void olookup_dsp64(t_olookup *x, t_object *dsp64, short *count, double samplerat
     x->index = 0;
     x->upper_idx = 0;
     x->phrase_len = 0;
-    x->cur_phase = 0;
-    
+  //  x->cur_phase = 0;
+
     while (!x->out_idx_queue.empty())
         x->out_idx_queue.pop();
     
@@ -1128,8 +1136,9 @@ void *olookup_new(t_symbol* s, short argc, t_atom* argv)
         x->interp = 1;
         x->phaseincr = 0;
         x->phasewrap = 0;
-        x->binary_search = 1;
-        x->queue = 0;
+        
+        x->seq = 0;
+        x->accum = 0;
         
         x->connected[0] = 0;
         x->connected[1] = 0;
@@ -1175,12 +1184,14 @@ int C74_EXPORT main(void)
     CLASS_ATTR_LONG(c, "phaseincr", 0, t_olookup, phaseincr);
     CLASS_ATTR_STYLE_LABEL(c, "phaseincr", 0, "onoff", "phaseincr");
 
-    CLASS_ATTR_LONG(c, "binsearch", 0, t_olookup, binary_search);
-    CLASS_ATTR_STYLE_LABEL(c, "binsearch", 0, "onoff", "binary search");
-
-    CLASS_ATTR_LONG(c, "queue", 0, t_olookup, queue);
-    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "queue synchronous points");
+    CLASS_ATTR_LONG(c, "accum", 0, t_olookup, accum);
+    CLASS_ATTR_STYLE_LABEL(c, "accum", 0, "onoff", "acumulate points");
     
+    CLASS_ATTR_LONG(c, "seq", 0, t_olookup, seq);
+    CLASS_ATTR_FILTER_MIN(c, "seq", -1);
+    CLASS_ATTR_FILTER_MAX(c, "seq", 2);
+    CLASS_ATTR_LABEL(c, "seq", 0, "sequence optimization");
+
     class_dspinit(c);
     class_register(CLASS_BOX, c);
     olookup_class = c;
