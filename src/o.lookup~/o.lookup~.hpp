@@ -73,7 +73,7 @@ void PhasePoints::reserve( char *addr, long _len )
     {
         y.reserve( _len );
     }
-    else if( !strcmp(addr, "/x") )
+    else if( !strcmp(addr, "/x") || !strcmp(addr, "/dur") )
     {
         x.reserve( _len );
     }
@@ -103,6 +103,10 @@ void PhasePoints::append( char *addr, double val )
         double curve = CLAMP( (fabs(val) > 0.001) * val, -1., 1. ); // squash denormals
         double hp = signof(curve) * pow( (fabs(curve) + ( signof(curve) * 1e-20)) * 1.2, 0.41) * 0.91; // first half of max's weird curve algorithm
         c.emplace_back( hp / (1. - fabs(hp)) );
+    }
+    else if( !strcmp(addr, "/dur") )
+    {
+        x.emplace_back( x.back() + val );
     }
 }
 
