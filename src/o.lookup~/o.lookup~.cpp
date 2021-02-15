@@ -182,14 +182,14 @@ typedef struct _olookup {
     
     // sample and hold values if phase doesn't change
     double      cur_phase;
-    double      val;
+    vector<double>      val; // for mc version this needs to be a vector of the num ouputs
     double      rel_phase;
     t_int       index;
     t_int       upper_idx;
     double      delta_between_points;
     t_int       phrase_len;
     
-    long        phrase_index;
+    size_t      phrase_index;
     
     bool        update = true;
 
@@ -264,7 +264,7 @@ struct oPointSet
     }
 };
 
-
+/*
 
 void olookup_expandToMatch2(vector<t_osc_msg_u*>& _x, vector<t_osc_msg_u*>& _y)
 {
@@ -348,23 +348,10 @@ void olookup_expandToMatch3(vector<t_osc_msg_u*>& _x, vector<t_osc_msg_u*>& _y, 
         }
     }
 }
-
+*/
 bool olookup_parse_messages(t_olookup *x, vector<PhasePoints>& out_vec, oPointSet& p, int index = -1)
 {
-    /*
-     when the subbundle is /y /x /c or /dur, sub bundle addresses are ignored, and used in bundle order
-    {
-        /x : {
-            /11 : [1, 2, 3],
-            /111 : [0., 0.1, 1]
-        },
-        /y : {
-            /0 : [1, 2, 3],
-            /1 : [10., 10.1, 11]
-        }
-    }
-    */
-    
+
     size_t nx = p._x.size();
     size_t ny = p._y.size();
     size_t ndur = p._dur.size();
@@ -372,8 +359,10 @@ bool olookup_parse_messages(t_olookup *x, vector<PhasePoints>& out_vec, oPointSe
     if( !ny || (!nx && !ndur) )
         return false;
     
+    
     bool genX = !nx && ndur ;
     
+    /*
     if( genX )
     {
         // gen x from duration
@@ -391,7 +380,7 @@ bool olookup_parse_messages(t_olookup *x, vector<PhasePoints>& out_vec, oPointSe
         else
             olookup_expandToMatch3(p._x, p._y, p._c);
     }
-    
+    */
     
     for( size_t i = 0; i < p._y.size(); ++i)
     {
@@ -437,20 +426,32 @@ bool olookup_parse_messages(t_olookup *x, vector<PhasePoints>& out_vec, oPointSe
 
 }
 
-bool olookup_indexed_phrase(t_olookup *x, vector<PhasePoints>& new_vec, oPointSet& p)
+
+bool olookup_parse_mc_phrase(t_olookup *x, vector<PhasePoints>& new_vec, oPointSet& p)
 {
     int index = -1;
     
     for( auto& m : p._other )
     {
         
+        /**
+         for mc phrases, x and c lists should already be present
+         */
+        
         oPointSet op;
         string bundle_addr = osc_message_u_getAddress(m);
-        bundle_addr = bundle_addr.substr(1);
+        
+        if( bundle_addr.find_first_of("/y") == 0 )
+        {
+            cout << bundle_addr << endl;
+        }
+        
+        bundle_addr = bundle_addr.substr(3);
         
         try
         {
             index = stoi(bundle_addr);
+            cout << index << endl;
         }
         catch (std::exception& e)
         {
@@ -458,8 +459,17 @@ bool olookup_indexed_phrase(t_olookup *x, vector<PhasePoints>& new_vec, oPointSe
             return false;
         }
         
+        //if( index >= 0 && index < new_vec.... )
+    
+        //  maybe better to check for /y/0 - /y/n in basic loop, and then add support for this with multiple phrases
         
-        auto b = osc_atom_u_getBndl( osc_message_u_getArg(m, 0) );
+    
+        auto at = osc_message_u_getArg(m, 0);
+        
+        if( osc_atom_u_getTypetag( at ) != OSC_BUNDLE_TYPETAG )
+            return false;
+        
+        auto b = osc_atom_u_getBndl( at );
         auto it = osc_bndl_it_u_get(b);
         while(osc_bndl_it_u_hasNext(it))
         {
@@ -506,6 +516,111 @@ bool olookup_indexed_phrase(t_olookup *x, vector<PhasePoints>& new_vec, oPointSe
         if( op._y.size() && (op._dur.size() || op._x.size()) )
         {
             olookup_parse_messages( x, new_vec, op, index );
+        }
+        else
+        {
+            object_error((t_object *)x, "mis-matched list lengths for phrase %ld", index);
+        }
+        
+        op.release();
+    }
+    
+    
+    
+    /*
+     critical_enter(x->lock);
+     
+     if( i < x->phrase.size() )
+     x->phrase[i] = new_phrase;
+     else
+     x->phrase.emplace_back( new_phrase );
+     
+     x->update = true;
+     
+     critical_exit(x->lock);
+     */
+    return new_vec.size() > 0;
+    
+}
+
+
+bool olookup_indexed_phrase(t_olookup *x, vector<PhasePoints>& new_vec, oPointSet& p)
+{
+    int index = -1;
+    
+    for( auto& m : p._other )
+    {
+        
+        oPointSet op;
+        string bundle_addr = osc_message_u_getAddress(m);
+        bundle_addr = bundle_addr.substr(1);
+        
+        try
+        {
+            index = stoi(bundle_addr);
+        }
+        catch (std::exception& e)
+        {
+            object_error((t_object *)x, "indexed address could not be converted to int.");
+            return false;
+        }
+        
+        auto at = osc_message_u_getArg(m, 0);
+        
+        if( osc_atom_u_getTypetag( at ) != OSC_BUNDLE_TYPETAG )
+            return false;
+        
+        auto b = osc_atom_u_getBndl( at );
+        auto it = osc_bndl_it_u_get(b);
+        while(osc_bndl_it_u_hasNext(it))
+        {
+            t_osc_msg_u *m = osc_bndl_it_u_next(it);
+            const string addr = osc_message_u_getAddress(m);
+            
+            if( addr == "/x" )
+            {
+                t_osc_msg_u * copy = NULL;
+                osc_message_u_deepCopy(&copy, m);
+                op._x.emplace_back( copy );
+                op.x_free = op._x.size();
+            }
+            else if (  addr == "/y" )
+            {
+                t_osc_msg_u * copy = NULL;
+                osc_message_u_deepCopy(&copy, m);
+                op._y.emplace_back( copy );
+                op.y_free = op._y.size();
+            }
+            else if ( addr == "/c" || addr == "/curve" )
+            {
+                t_osc_msg_u * copy = NULL;
+                osc_message_u_deepCopy(&copy, m);
+                op._c.emplace_back( copy );
+                op.c_free = op._c.size();
+            }
+            else if ( addr == "/dur" )
+            {
+                t_osc_msg_u * copy = NULL;
+                osc_message_u_deepCopy(&copy, m);
+                op._dur.emplace_back( copy );
+                op.d_free = op._dur.size();
+                
+            }
+            else
+            {
+               // otherwise not valid
+            }
+            
+        }
+        osc_bndl_it_u_destroy(it);
+    
+        if( op._y.size() && (op._dur.size() || op._x.size()) )
+        {
+            olookup_parse_messages( x, new_vec, op, index );
+        }
+        else
+        {
+            object_error((t_object *)x, "mis-matched list lengths for phrase %ld", index);
         }
         
         op.release();
@@ -604,6 +719,23 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
             olookup_process_msg(x, m, p._y);
             p.y_free = p._y.size();
         }
+        else if( addr.find("/y/") != string::npos )
+        {
+            
+            string parseIdx = addr.substr(3);
+            try
+            {
+                index = stoi(parseIdx);
+                // << log into
+                cout << index << endl;
+                
+            }
+            catch (std::exception& e)
+            {
+                ;
+            }
+            
+        }
         else if ( addr == "/c" || addr == "/curve" )
         {
             olookup_process_msg(x, m, p._c);
@@ -615,27 +747,16 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
             p.d_free = p._dur.size();
 
         }
-        else if ( addr == "/index" || addr == "/slot" )
-        {
-           t_osc_atom_s *at = NULL;
-            osc_message_s_getArg(m, 0, &at);
-            if( at )
-            {
-                index = osc_atom_s_getInt( at );
-                osc_mem_free(at);
-            }
-
-        }
         else
         {
             t_osc_atom_s *at = NULL;
             osc_message_s_getArg(m, 0, &at);
             if( at )
             {
-                if( osc_atom_s_getTypetag( at ) == OSC_BUNDLE_TYPETAG )
-                {
+               if( osc_atom_s_getTypetag( at ) == OSC_BUNDLE_TYPETAG )
+               {
                     p._other.emplace_back( osc_message_s_deserialize(m) );
-                }
+               }
                 
                 osc_mem_free(at);
             }
@@ -653,11 +774,15 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
     if( !parsed && p._other.size() )
     {
         parsed = olookup_indexed_phrase(x, new_vec, p);
-        //if( !parsed ) // error?
+        if( !parsed )
+        {
+            ;// parsed = olookup_parse_mc_phrase(x, new_vec, p);
+        }
+        // error?
     }
     else
     {
-        // put some kind of error here
+        // put some kind of error here?
     }
 
     if( !parsed )
@@ -755,11 +880,14 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     t_double *phase_in = ins[0];
     t_double *index_in = ins[1];
 
-    t_double *interp_val_out = outs[0];
-    t_double *rel_phase_out = outs[1];
-    t_double *index_out = outs[2];
-    t_double *delta_out = outs[3];
-    t_double *npoints_out = outs[4];
+    const size_t mc_outs = x->numoutputs;
+    
+    t_double **interp_val_out = outs; // for mc this needs to be an array of values, and offset the other outlets
+    
+    t_double *rel_phase_out = outs[mc_outs];
+    t_double *index_out = outs[mc_outs+1];
+    t_double *delta_out = outs[mc_outs+2];
+    t_double *npoints_out = outs[mc_outs+3];
 
     critical_enter(x->lock);
     vector<PhasePoints> x_phrase = x->phrase;
@@ -770,7 +898,8 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     t_int in_idx;
     double x0 = 0, x1 = 0, y0 = 0, y1 = 0, range = 0, fp = 0, gp = 0;
     
-    double y_val = x->val;
+    vector<double> y_val(mc_outs); // for mc this needs to be an array of values
+    
     double in_phase = x->cur_phase, prev_inphase = x->cur_phase;
     double phase = x->rel_phase;
     
@@ -782,7 +911,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     
     double delta = x->delta_between_points;
     
-    t_int phrase_index = x->phrase_index;
+    size_t phrase_index = x->phrase_index;
     
     t_int points_len = x->phrase_len;
     
@@ -790,7 +919,9 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     {
         if( max_phr_idx == -1 )
         {
-            interp_val_out[j] = 0;
+            for( size_t n = 0; n < mc_outs; n++ )
+                interp_val_out[n][j] = 0; // for mc this needs to be an array of values
+            
             rel_phase_out[j] = 0;
             index_out[j] = 0;
             delta_out[j] = 0;
@@ -805,7 +936,9 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                 size_t q_idx = ptIdx_phraseIdx.first;
                 const auto& phr = x_phrase[ ptIdx_phraseIdx.second ];
                 
-                interp_val_out[j] = phr.y[q_idx];
+                for( size_t n = 0; n < mc_outs; n++ )
+                    interp_val_out[n][j] = phr.y[q_idx];
+                
                 rel_phase_out[j] = 0;
                 index_out[j] = q_idx;
                 delta_out[j] = phr.x[q_idx] - phr.x[q_idx + 1];
@@ -834,10 +967,11 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
 
                 }
 
-                phrase_index = (t_int)in_idx; // (t_int)CLAMP( in_idx, 0, max_phr_idx );
+                phrase_index = (size_t)in_idx; // (t_int)CLAMP( in_idx, 0, max_phr_idx );
                 if( phrase_index < 0 || phrase_index > max_phr_idx )
                 {
-                    y_val = 0;
+                    std::fill(y_val.begin(), y_val.end(), 0);
+//                    y_val = 0;
                     phase = 0;
                     idx = 0;
                     delta = 0;
@@ -893,7 +1027,10 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                                         {
                                             if( j < sampleframes )
                                             {
-                                                interp_val_out[j] = phr.y[idx_incr];
+                                                // -- add for mc y here
+                                                 for( size_t n = 0; n < mc_outs; n++ )
+                                                   interp_val_out[n][j] = phr.y[idx_incr];
+                                                
                                                 rel_phase_out[j] = 0;
                                                 index_out[j] = idx_incr;
                                                 delta_out[j] = phr.x[idx_incr] - phr.x[idx_incr + 1];
@@ -945,27 +1082,32 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                         
                         if( !x->interp )
                         {
-                            y_val = phr.y[idx];
+                            // -- add for mc y here
+                            for( size_t n = 0; n < mc_outs; n++ )
+                                y_val[n] = phr.y[idx];
                         }
                         else
                         {
-                            // get y positions and interpolate a la curve~
-                            y0 = phr.y[idx];
-                            y1 = phr.y[idx1];
-                            range = y1-y0;
-                            
-                            if( !phr.c.size() )
-                                y_val = y0 + phase*range;
-                            else
+                            // -- add for mc y here for the whole block
+                            for( size_t n = 0; n < mc_outs; n++ )
                             {
-                                fp = phr.c[idx1]; // max's curve format uses the destination curve value coef
-                                if( fp == 0 )
-                                    y_val = y0 + phase*range;
+                                y0 = phr.y[idx];
+                                y1 = phr.y[idx1];
+                                range = y1-y0;
+                                
+                                if( !phr.c.size() )
+                                    y_val[n] = y0 + phase*range;
                                 else
                                 {
-                                    // note: first half of equation is precalculated in the PhasePoints setter
-                                    gp = ( exp(fp * phase) - 1.) / ( exp(fp) - 1. ) ;
-                                    y_val = y0 + gp * range;
+                                    fp = phr.c[idx1]; // max's curve format uses the destination curve value coef
+                                    if( fp == 0 )
+                                        y_val[n] = y0 + phase*range;
+                                    else
+                                    {
+                                        // note: first half of equation is precalculated in the PhasePoints setter
+                                        gp = ( exp(fp * phase) - 1.) / ( exp(fp) - 1. ) ;
+                                        y_val[n] = y0 + gp * range;
+                                    }
                                 }
                             }
                             
@@ -974,9 +1116,19 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                     else
                     {
                         if( points_len == 1 )// one point case
-                            y_val = phr.y[0];
+                        {
+                            for( size_t n = 0; n < mc_outs; n++ )
+                            {
+                                y_val[n] = phr.y[0];
+                            }
+                        }
                         else
-                            y_val = 0;
+                        {
+                            for( size_t n = 0; n < mc_outs; n++ )
+                            {
+                                y_val[n] = 0;
+                            }
+                        }
                         
                         phase = 0;
                         idx = 0;
@@ -991,7 +1143,9 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
             
             if( j < sampleframes ) // since the break was added above, I think this should never happen
             {
-                interp_val_out[j] = y_val;
+                for( size_t n = 0; n < mc_outs; n++ )
+                    interp_val_out[n][j] = y_val[n];
+                
                 rel_phase_out[j] = phase;
                 index_out[j] = idx;
                 delta_out[j] = delta;
@@ -1047,7 +1201,8 @@ void olookup_dsp64(t_olookup *x, t_object *dsp64, short *count, double samplerat
     // post("connected %i %i", x->connected[0], x->connected[1]);
     
     x->update = true;
-    x->val = 0;
+    std::fill(x->val.begin(), x->val.end(), 0);
+    //x->val = 0;
     x->rel_phase = 0;
     x->delta_between_points = 0;
     x->index = 0;
@@ -1148,7 +1303,7 @@ void *olookup_new(t_symbol* s, short argc, t_atom* argv)
     {
         x->phrase.reserve(1);
 
-        x->val = 0;
+       // x->val = 0;
         x->rel_phase = 0;
         x->delta_between_points = 0;
         x->index = 0;
@@ -1180,7 +1335,8 @@ void *olookup_new(t_symbol* s, short argc, t_atom* argv)
             x->numoutputs = val;
         }
         object_free(dict);
-
+        
+        x->val.resize(x->numoutputs);
         
         dsp_setup((t_pxobject *)x, 2);
 
@@ -1190,9 +1346,12 @@ void *olookup_new(t_symbol* s, short argc, t_atom* argv)
         outlet_new((t_object *)x, "signal");
         outlet_new((t_object *)x, "signal");
         outlet_new((t_object *)x, "signal");
-        outlet_new((t_object *)x, "multichannelsignal"); // y output
-//        outlet_new((t_object *)x, "signal");
-
+        if( x->numoutputs == 1 )
+            outlet_new((t_object *)x, "signal");
+        else{
+            outlet_new((t_object *)x, "multichannelsignal"); // y output
+        }
+        
         x->proxy = proxy_new((t_object *)x, 1, &(x->osc_inlet));
         
         critical_new( &x->lock );

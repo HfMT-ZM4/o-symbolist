@@ -37,7 +37,9 @@ using namespace std;
 
 struct PhasePoints
 {
-    vector< double > x, y, c;
+    vector< double > x, c, y;
+    
+    vector< vector<double> > y_mc; // multiple arrays of values
     
     long slot = 0;
     
@@ -61,6 +63,7 @@ struct PhasePoints
     void print();
     
     void crop();
+    
 };
 
 
@@ -313,13 +316,17 @@ void PhasePoints::print()
         printf("%f ", x[i] );
     }
     printf("\n");
-    
+   
+    /*
     printf("y(%ld): ", y.size() );
     for(int i = 0; i < y.size(); i++ )
     {
-        printf("%f ", y[i] );
+        for(long j = 0; j < num_y_channels; j++ )
+
+        printf("\t%ld %f ", j, y[j][i] );
     }
     printf("\n");
+     */
 }
 
 
