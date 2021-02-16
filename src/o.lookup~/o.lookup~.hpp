@@ -37,7 +37,7 @@ using namespace std;
 
 struct PhasePoints
 {
-    vector< double > x, c, y;
+    vector< double > x, dur, c, y;
     
     vector< vector<double> > y_mc; // multiple arrays of values
     
@@ -48,8 +48,8 @@ struct PhasePoints
     void reserve( char *addr, long len );
     void append( char *addr, double val );
     
-    void parseMsg(char *addr_selector, t_osc_msg_u *m, t_object *context);
-    void parseDurMsg(t_osc_msg_u *m, t_object *context);
+   // void parseMsg(char *addr_selector, t_osc_msg_u *m, t_object *context);
+   // void parseDurMsg(t_osc_msg_u *m, t_object *context);
 
     bool init();
     
@@ -73,9 +73,14 @@ void PhasePoints::reserve( char *addr, long _len )
     {
         y.reserve( _len );
     }
-    else if( !strcmp(addr, "/x") || !strcmp(addr, "/dur") )
+    else if( !strcmp(addr, "/x") )
     {
         x.reserve( _len );
+    }
+    else if( !strcmp(addr, "/dur") )
+    {
+        dur.reserve( _len  + 1 );
+
     }
     else if( !strcmp(addr, "/c") || !strcmp(addr, "/curve"))
     {
@@ -89,7 +94,7 @@ inline int signof(double x) {
 
 void PhasePoints::append( char *addr, double val )
 {
-    //post("%s %f", addr, val);
+  //  post("%s %f", addr, val);
     if( !strcmp(addr, "/x") )
     {
         x.emplace_back( val );
@@ -106,7 +111,12 @@ void PhasePoints::append( char *addr, double val )
     }
     else if( !strcmp(addr, "/dur") )
     {
-        x.emplace_back( x.back() + val );
+        if( !dur.size() )
+        {
+            dur.emplace_back(0);
+        }
+        
+        dur.emplace_back( dur.back() + val );
     }
 }
 
@@ -189,8 +199,20 @@ void PhasePoints::crop()
   //  cout << x.size() << " " << y.size() << endl;
 }
 
+
 bool PhasePoints::init()
 {
+    
+    if( dur.size() )
+    {
+        x = dur;
+        y.emplace_back( y.back() );
+        
+        if( c.size() )
+            c.emplace_back( 0 );
+        
+    }
+    
     
     if( x.size() && y.size() )
     {
@@ -206,7 +228,7 @@ bool PhasePoints::init()
     return false;
 }
 
-
+/*
 void PhasePoints::parseMsg(char *addr_selector, t_osc_msg_u *m, t_object *context)
 {
 //    post("parsing %s", addr_selector);
@@ -310,7 +332,7 @@ void PhasePoints::parseDurMsg(t_osc_msg_u *m, t_object *context)
     y.emplace_back(y.back());
     
 }
-
+*/
 
 void PhasePoints::print()
 {
