@@ -222,6 +222,7 @@ void points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
 {
 
     PhasePoints newPhrase;
+    newPhrase.reserve_y_mc(x->numoutputs);
     
     int index = -1;
     t_osc_atom_s *at = NULL;
@@ -249,16 +250,13 @@ void points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
         }
         else if (  addr == "/y" )
         {
-           int len = osc_message_s_getArgCount(m);
+            int len = osc_message_s_getArgCount(m);
             
             newPhrase.reserve((char *)"/y", len);
             
             for(int i = 0; i < len; i++)
             {
                 osc_message_s_getArg(m, i, &at);
-//                double d = osc_atom_s_getDouble(at);
-//                double dd = (double)osc_atom_s_getInt32(at);
-//                post("%f %f %lf", d, dd, d);
                 newPhrase.append((char *)"/y", osc_atom_s_getDouble(at) );
                 osc_atom_s_free(at);
                 at = NULL;
@@ -271,8 +269,23 @@ void points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
             try
             {
                 index = stoi(parseIdx);
-                // << log into
-                cout << index << endl;
+                //cout << index << endl;
+                
+                if( index >= 0 && index < x->numoutputs )
+                {
+                    int len = osc_message_s_getArgCount(m);
+                 
+                    newPhrase.reserve((char *)"/y", len, index);
+
+                    for(int i = 0; i < len; i++)
+                    {
+                        osc_message_s_getArg(m, i, &at);
+                        newPhrase.append((char *)"/y", osc_atom_s_getDouble(at), index );
+                        osc_atom_s_free(at);
+                        at = NULL;
+                    }
+                }
+                
                 
             }
             catch (std::exception& e)
@@ -541,7 +554,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                 const auto& phr = x_phrase[ ptIdx_phraseIdx.second ];
                 
                 for( size_t n = 0; n < mc_outs; n++ )
-                    interp_val_out[n][j] = phr.y[q_idx];
+                    interp_val_out[n][j] = phr.y_mc[n][q_idx];
                 
                 rel_phase_out[j] = 0;
                 index_out[j] = q_idx;
@@ -636,7 +649,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                                             {
                                                 // -- add for mc y here
                                                  for( size_t n = 0; n < mc_outs; n++ )
-                                                   interp_val_out[n][j] = phr.y[idx_incr];
+                                                   interp_val_out[n][j] = phr.y_mc[n][idx_incr];
                                                 
                                                 rel_phase_out[j] = 0;
                                                 index_out[j] = idx_incr;
@@ -691,15 +704,16 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                         {
                             // -- add for mc y here
                             for( size_t n = 0; n < mc_outs; n++ )
-                                y_val[n] = phr.y[idx];
+                                y_val[n] = phr.y_mc[n][idx];
                         }
                         else
                         {
                             // -- add for mc y here for the whole block
                             for( size_t n = 0; n < mc_outs; n++ )
                             {
-                                y0 = phr.y[idx];
-                                y1 = phr.y[idx1];
+                              //  printf("%f %ld\n", phr.y_mc[n][idx], (long)idx );
+                                y0 = phr.y_mc[n][idx];
+                                y1 = phr.y_mc[n][idx1];
                                 range = y1-y0;
                                 
                                 if( !phr.c.size() )
@@ -726,7 +740,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                         {
                             for( size_t n = 0; n < mc_outs; n++ )
                             {
-                                y_val[n] = phr.y[0];
+                                y_val[n] = phr.y_mc[n][0];
                             }
                         }
                         else
