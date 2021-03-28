@@ -206,6 +206,7 @@
 		1126C0FC2326D5C1006D1701 /* osc_hashtab.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_hashtab.r; path = ../../../libo/osc_hashtab.r; sourceTree = "<group>"; };
 		1126C0FD2326D5C1006D1701 /* osc_expr.r */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.rez; name = osc_expr.r; path = ../../../libo/osc_expr.r; sourceTree = "<group>"; };
 		1133D28023258E470000EC2A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		113D14542610CB7900FB3090 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		1140C3C9232164A200E32DDB /* o.expr.file.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = o.expr.file.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		1140C3CC232165EE00E32DDB /* o.expr.file.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = o.expr.file.c; sourceTree = "<group>"; };
 		1140C3D223216F3F00E32DDB /* libomax.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomax.a; path = ../../libomax/libomax.a; sourceTree = "<group>"; };
@@ -402,6 +403,7 @@
 		1140C3CF23216F2C00E32DDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				113D14542610CB7900FB3090 /* CoreServices.framework */,
 				11C28F9C2327DCE5002D6E9B /* MaxAudioAPI.framework */,
 				1133D28023258E470000EC2A /* Carbon.framework */,
 				1140C3D223216F3F00E32DDB /* libomax.a */,
@@ -1084,7 +1086,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRELINK_LIBS = "\"$(SRCROOT)/../../libomax/libomax.a\"";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hfmt-hamburg.oexprfile";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hfmt-hamburg.olookup~";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mxo;
@@ -1104,7 +1106,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRELINK_LIBS = "\"$(SRCROOT)/../../libomax/libomax.a\"";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.hfmt-hamburg.oexprfile";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hfmt-hamburg.olookup~";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mxo;

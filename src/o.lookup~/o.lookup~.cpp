@@ -570,7 +570,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
             in_idx =    x->connected[1] ?   index_in[j] : 0;
         
                 
-            if( in_phase != prev_inphase || in_idx != phrase_index || x->update || x->phaseincr > 0  )
+            if( in_phase != prev_inphase || j == 0 || in_idx != phrase_index || x->update || x->phaseincr > 0  )
             {
 
                 if( x->update )
@@ -829,7 +829,7 @@ void olookup_dsp64(t_olookup *x, t_object *dsp64, short *count, double samplerat
     x->index = 0;
     x->upper_idx = 0;
     x->phrase_len = 0;
-  //  x->cur_phase = 0;
+    x->cur_phase = 0;
 
     while (!x->out_idx_queue.empty())
         x->out_idx_queue.pop();
@@ -971,13 +971,13 @@ void *olookup_new(t_symbol* s, short argc, t_atom* argv)
             outlet_new((t_object *)x, "signal");
         else{
             outlet_new((t_object *)x, "multichannelsignal"); // y output
+            x->ob.z_misc = Z_MC_INLETS;// | Z_NO_INPLACE;
         }
         
         x->proxy = proxy_new((t_object *)x, 1, &(x->osc_inlet));
         
         critical_new( &x->lock );
         
-        x->ob.z_misc = Z_MC_INLETS ;//| Z_NO_INPLACE;
     
 
     }

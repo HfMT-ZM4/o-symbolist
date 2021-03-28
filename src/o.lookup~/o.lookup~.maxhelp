@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 1,
+			"revision" : 10,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -49,14 +49,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 84.0, 129.0, 785.0, 480.0 ],
+						"rect" : [ 100.0, 126.0, 1145.0, 706.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -85,30 +85,158 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-9",
-									"maxclass" : "scope~",
-									"numinlets" : 2,
+									"id" : "obj-25",
+									"maxclass" : "comment",
+									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 306.0, 424.0, 130.0, 130.0 ]
+									"patching_rect" : [ 578.0, 321.0, 300.0, 20.0 ],
+									"text" : "here we use the envelopes to control some sine waves"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"fontface" : 0,
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-7",
-									"maxclass" : "number~",
-									"mode" : 2,
+									"id" : "obj-23",
+									"maxclass" : "message",
 									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 903.0, 554.0, 74.0, 22.0 ],
+									"text" : "stop"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-21",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 700.0, 234.21527099609375, 323.0, 37.0 ],
+									"presentation_linecount" : 2,
+									"text" : "if you send /y without a track number, it will be used for the first track, the other tracks will ouput zeros."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-20",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 706.0, 89.0, 335.0, 64.0 ],
+									"text" : "for example in this patch, there are 5 output channels\n\nnote that /y/5 is *not* output since /y/5 is the 6th /y address."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 13.0,
+									"id" : "obj-17",
+									"linecount" : 7,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 101.25, 37.0, 332.0, 108.0 ],
+									"text" : "@mc attribute sets the number of tracks to use for each phrase of points.\n\nall points in a phrase share the same /x point\n\n/y points are set with a number as a second address level, starting from 0."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-72",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "multichannelsignal" ],
+									"patching_rect" : [ 836.0, 470.0, 150.0, 22.0 ],
+									"text" : "mc.list~ 0 0.2 0.5 0.8 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "multichannelsignal" ],
+									"patching_rect" : [ 763.0, 505.0, 92.0, 22.0 ],
+									"text" : "mc.mixdown~ 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 763.0, 569.0, 54.0, 22.0 ],
+									"text" : "mc.dac~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "gain~",
+									"multichannelvariant" : 1,
+									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "signal", "float" ],
-									"patching_rect" : [ 318.0, 366.0, 56.0, 22.0 ],
-									"sig" : 0.0
+									"outlettype" : [ "multichannelsignal", "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 763.0, 371.9158935546875, 197.0, 63.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "newobj",
+									"numinlets" : 6,
+									"numoutlets" : 1,
+									"outlettype" : [ "multichannelsignal" ],
+									"patching_rect" : [ 568.0, 354.0, 130.0, 22.0 ],
+									"text" : "mc.scale~ 0 1 400 800"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "scope~",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"patching_rect" : [ 568.0, 436.0, 130.0, 130.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "multichannelsignal" ],
+									"patching_rect" : [ 568.0, 389.0, 100.0, 22.0 ],
+									"text" : "mc.cycle~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "scope~",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"patching_rect" : [ 428.0, 436.0, 130.0, 130.0 ]
 								}
 
 							}
@@ -121,7 +249,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 251.25, 246.21527099609375, 50.0, 22.0 ]
+									"patching_rect" : [ 277.25, 234.21527099609375, 50.0, 22.0 ]
 								}
 
 							}
@@ -135,7 +263,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 555.75, 433.0, 186.0, 51.0 ],
+									"patching_rect" : [ 506.5, 234.21527099609375, 187.0, 52.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 47, 120, 0, 0, 44, 105, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -23, -103, -103, -103, -103, -103, -102, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102, 0, 0, 0, 1, 0, 0, 0, 36, 47, 99, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 140,
 									"text" : "/x : [0, 0.5, 0.8, 1.],\n/y : [0, 0.75, 0.2, 1],\n/c : [0, 0.1, 0.5, 0]"
@@ -149,8 +277,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 251.25, 280.21527099609375, 66.0, 22.0 ],
-									"text" : "phasor~ 1"
+									"patching_rect" : [ 277.25, 268.21527099609375, 79.0, 22.0 ],
+									"text" : "phasor~ 0.15"
 								}
 
 							}
@@ -161,19 +289,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 462.0, 389.0, 74.0, 22.0 ],
+									"patching_rect" : [ 903.0, 520.0, 74.0, 22.0 ],
 									"text" : "startwindow"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-6",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 0,
-									"patching_rect" : [ 462.0, 427.4158935546875, 37.0, 22.0 ],
-									"text" : "dac~"
 								}
 
 							}
@@ -184,10 +301,10 @@
 									"id" : "obj-4",
 									"linecount" : 9,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 2,
-									"numoutlets" : 3,
-									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 337.0, 162.0, 306.0, 141.0 ],
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "FullPacket", "FullPacket" ],
+									"patching_rect" : [ 480.0, 62.0, 258.0, 150.0 ],
 									"text" : "/y/0 = -1 * [0, 0.75, 0.2, 1],\n/y/1 = [0, 0.75, 0.2, 1],\n/y/2 = rev(/y/1),\n/y/3 = /y/2 * -0.5,\n/y/4 = /y/2 * 0.5,\n/y/5 = -/y/2 * 0.1,\n\n/x = [0, 0.5, 0.8, 1.],\n/c = [0, 0.1, 0.5, 0]"
 								}
 
@@ -198,7 +315,7 @@
 									"maxclass" : "scope~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 158.0, 424.0, 130.0, 130.0 ]
+									"patching_rect" : [ 280.0, 436.0, 130.0, 130.0 ]
 								}
 
 							}
@@ -209,8 +326,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 6,
 									"outlettype" : [ "multichannelsignal", "signal", "signal", "signal", "signal", "FullPacket" ],
-									"patching_rect" : [ 254.0, 323.0, 102.0, 22.0 ],
-									"text" : "o.lookup~ @mc 5"
+									"patching_rect" : [ 280.0, 311.0, 219.0, 22.0 ],
+									"text" : "o.lookup~ @mc 5 @interp 0 @accum 1"
 								}
 
 							}
@@ -222,7 +339,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 703.75, 293.0, 150.0, 22.0 ]
+									"patching_rect" : [ 87.75, 283.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -234,22 +351,24 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 707.0, 331.0, 150.0, 22.0 ]
+									"patching_rect" : [ 91.0, 321.0, 150.0, 22.0 ]
 								}
 
 							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-2", 0 ],
+									"destination" : [ "obj-12", 0 ],
+									"order" : 0,
 									"source" : [ "obj-1", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"source" : [ "obj-1", 2 ]
+									"destination" : [ "obj-2", 0 ],
+									"order" : 1,
+									"source" : [ "obj-1", 0 ]
 								}
 
 							}
@@ -257,6 +376,43 @@
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-1", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"order" : 1,
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"order" : 0,
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-15", 0 ]
 								}
 
 							}
@@ -276,6 +432,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-3", 0 ]
 								}
@@ -290,8 +453,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
+									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 1 ],
+									"source" : [ "obj-72", 0 ]
 								}
 
 							}
@@ -346,8 +516,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -481,10 +651,10 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 393.5, 70.0, 208.0, 119.0 ],
+									"patching_rect" : [ 393.5, 70.0, 208.0, 122.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 49, 49, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 120, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 40, 47, 121, 0, 0, 44, 100, 100, 105, 100, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 50, 50, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102, 0, 0, 0, 40, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 248,
-									"text" : "/11 : {\n\t/x : [0, 0.5, 0.75, 1],\n\t/y : [0.5, 0., -1, 1.]\n},\n/22 : {\n\t/y : [0.5, 0., 0.2],\n\t/dur : [0.25, 0.5, 0.25]\n}"
+									"text" : "/11 : {\n  /x : [0, 0.5, 0.75, 1],\n  /y : [0.5, 0., -1, 1.]\n},\n/22 : {\n  /y : [0.5, 0., 0.2],\n  /dur : [0.25, 0.5, 0.25]\n}"
 								}
 
 							}
@@ -506,15 +676,15 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-21",
-									"linecount" : 7,
+									"linecount" : 9,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 405.0, 219.0, 193.0, 106.0 ],
+									"patching_rect" : [ 405.0, 219.0, 193.0, 136.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 49, 49, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 120, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 40, 47, 121, 0, 0, 44, 100, 100, 105, 100, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 68, 47, 50, 50, 0, 44, 46, 0, 0, 0, 0, 0, 56, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102 ],
 									"saved_bundle_length" : 204,
-									"text" : "/11 : {\n\t/x : [0, 0.5, 0.75, 1],\n\t/y : [0.5, 0., -1, 1.]\n},\n/22 : {\n\t/y : [0.5, 0., 0.2]\n}"
+									"text" : "/11 : {\n  /x : [0, 0.5, 0.75, 1],\n  /y : [0.5, 0., -1, 1.]\n},\n/22 : {\n  /y : [0.5, 0., 0.2]\n}"
 								}
 
 							}
@@ -617,8 +787,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -694,11 +864,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-24",
-									"linecount" : 5,
+									"linecount" : 8,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 2,
-									"numoutlets" : 3,
-									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 1127.0, 257.31707763671875, 342.0, 86.0 ],
 									"text" : "/y =   /list[[ aseq(0, length(/list)-1, 3) ]],\n/dur = /list[[ aseq(1, length(/list)-1, 3) ]],\n/c =   /list[[ aseq(2, length(/list)-1, 3) ]],\n/dur /= sum(/dur),\n/dur = [ rest(/dur), first(/dur) ]"
 								}
@@ -893,11 +1063,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-16",
-									"linecount" : 3,
+									"linecount" : 4,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 2,
-									"numoutlets" : 3,
-									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 556.0, 415.086296081542969, 255.0, 59.0 ],
 									"text" : "/dur /= sum(/dur),\n\n/dur = [ rest(/dur), first(/dur) ]"
 								}
@@ -925,7 +1095,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 155.5, 559.0, 683.0, 51.0 ],
+									"patching_rect" : [ 155.5, 559.0, 683.0, 52.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 108, 47, 121, 0, 0, 44, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -48, 49, 89, 114, 30, -41, -26, 63, -19, 77, 27, -62, 80, 49, 93, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -47, -68, 37, 3, 21, -105, 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 63, -74, 119, -44, 108, -17, -88, -38, 63, -43, -11, 27, 59, -22, 54, 120, 63, -76, 108, -17, -88, -39, -33, 84, 63, -79, 5, 114, 98, 10, -28, -59, 63, -123, -55, -120, 43, -109, 16, 98, 63, -84, -104, -126, -71, 49, 5, 113, 63, -93, 16, 87, 38, 32, -82, 70, 63, -64, -82, 76, 65, 92, -104, -125, 63, -57, 125, 70, -50, -6, -115, -98, 0, 0, 0, 0, 0, 0, 0, 0, 63, 117, -55, -120, 43, -109, 16, 87 ],
 									"saved_bundle_length" : 244,
 									"text" : "/y : [0., 1., 0., 0.253012, 0.915663, 1., 0., 1., 0., 0.277108, 0.],\n/dur : [0.087766, 0.343085, 0.0797872, 0.0664894, 0.0106383, 0.0558511, 0.037234, 0.130319, 0.183511, 0., 0.00531915]"
@@ -1220,8 +1390,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1319,11 +1489,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-46",
-									"linecount" : 5,
+									"linecount" : 6,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 2,
-									"numoutlets" : 3,
-									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 329.75, 217.0, 479.0, 86.0 ],
 									"text" : "/y   = [ 1,  (9 / 8.), (5 / 4.), (4 / 3.), (5 / 4.), (9 / 8.)  ],\n/dur = [1,    1,        4,        1,        1,        0.5     ],\n\n# normalize durations so the phase will be 0-1\n/dur = float32(/dur) / sum(/dur)"
 								}
@@ -1465,7 +1635,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1348.5, 668.4158935546875, 208.0, 106.0 ],
+									"patching_rect" : [ 1348.5, 668.4158935546875, 208.0, 108.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 49, 49, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 50, 50, 0, 44, 46, 0, 0, 0, 0, 0, 52, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 121, 0, 0, 44, 100, 105, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 63, -55, -103, -103, -103, -103, -103, -102 ],
 									"saved_bundle_length" : 200,
 									"text" : "/11 : {\n\t/dur : [0.25, 0.5, 0.25],\n\t/y : [0.5, 0., 1.]\n},\n/22 : {\n\t/y : [0.5, 1, 0.2]\n}"
@@ -1701,8 +1871,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1928,11 +2098,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-5",
-									"linecount" : 7,
+									"linecount" : 9,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 2,
-									"numoutlets" : 3,
-									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 383.0, 92.0, 241.0, 114.0 ],
 									"text" : "/seq/dur = [1,  1,  2,  1     ],\n/seq/y   = [64, 66, 68, 69+12 ],\n\n/seq/stepSum = sum(/seq/dur),\n\n/env/x = [0, 0.01, 1.],\n/env/y = [0, 1,   0 ]"
 								}
@@ -1960,7 +2130,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1348.5, 668.4158935546875, 208.0, 106.0 ],
+									"patching_rect" : [ 1348.5, 668.4158935546875, 208.0, 108.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 49, 49, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 50, 50, 0, 44, 46, 0, 0, 0, 0, 0, 52, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 121, 0, 0, 44, 100, 105, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 63, -55, -103, -103, -103, -103, -103, -102 ],
 									"saved_bundle_length" : 200,
 									"text" : "/11 : {\n\t/dur : [0.25, 0.5, 0.25],\n\t/y : [0.5, 0., 1.]\n},\n/22 : {\n\t/y : [0.5, 1, 0.2]\n}"
@@ -2206,8 +2376,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2368,7 +2538,7 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-2",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
@@ -2474,7 +2644,7 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-74",
-									"linecount" : 3,
+									"linecount" : 5,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
@@ -2693,8 +2863,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3112,12 +3282,12 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-29",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 856.85003662109375, 72.5841064453125, 193.0, 38.0 ],
+									"patching_rect" : [ 856.85003662109375, 72.5841064453125, 193.0, 52.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 120, 0, 0, 44, 105, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 40, 47, 121, 0, 0, 44, 105, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102, 63, -32, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 92,
 									"text" : "/x : [0, 1, 2, 3],\n/y : [0, 0.2, 0.5, 0.75]"
@@ -3424,12 +3594,12 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-74",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 442.75, 333.8905029296875, 193.0, 38.0 ],
+									"patching_rect" : [ 442.75, 333.8905029296875, 193.0, 52.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 120, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -45, 51, 51, 51, 51, 51, 51, 63, -26, 102, 102, 102, 102, 102, 102, 0, 0, 0, 1, 0, 0, 0, 40, 47, 121, 0, 0, 44, 105, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102, 63, -32, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 100,
 									"text" : "/x : [0, 0.3, 0.7, 1],\n/y : [0, 0.2, 0.5, 0.75]"
@@ -3736,8 +3906,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3782,8 +3952,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3943,7 +4113,7 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-2",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "o.compose",
 													"numinlets" : 2,
 													"numoutlets" : 1,
@@ -4049,7 +4219,7 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-74",
-													"linecount" : 3,
+													"linecount" : 5,
 													"maxclass" : "o.compose",
 													"numinlets" : 2,
 													"numoutlets" : 1,
@@ -4437,11 +4607,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-25",
-									"linecount" : 4,
+									"linecount" : 5,
 									"maxclass" : "o.expr.codebox",
-									"numinlets" : 2,
-									"numoutlets" : 3,
-									"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 287.0, 264.0, 241.0, 73.0 ],
 									"text" : "/y = /step,\n/dur = nfill(length(/y), 1),\n\n/dur = float32(/dur) / sum(/dur)"
 								}
@@ -4693,8 +4863,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4730,6 +4900,18 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 568.75, 630.12646484375, 31.0, 22.0 ],
+									"text" : "stop"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontface" : 0,
 									"fontname" : "Arial",
@@ -4834,12 +5016,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
-									"linecount" : 7,
+									"linecount" : 12,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 659.75, 247.0323486328125, 385.0, 100.0 ],
-									"text" : "@interp - interpolation on/off (1/0), default on\n@phaseincr - interpret input as phase increment on/off (1/0), default off\n@phasewrap - wrap phase (1/0), default off\n\nexperimental:\n@seq 0, 1, -1, 2\n@accum 0 1"
+									"patching_rect" : [ 659.75, 247.0323486328125, 385.0, 167.0 ],
+									"text" : "@interp - interpolation on/off (1/0), default on\n@phaseincr - interpret input as phase increment on/off (1/0), default off\n@phasewrap - wrap phase (1/0), default off\n\nexperimental:\n@accum 0 1 - accum mode will output any skipped values assuming a sequential lookup forwards or backwards, based on the @seq setting\n@seq 0, 1, -1, 2 - optimize search for sequential lookup, 1 for forward, -1 for backward, 2 for bidirectional, default: 0 to use binary search, best for random lookup.\n\n@mc - number of synchronized /y tracks"
 								}
 
 							}
@@ -4916,7 +5098,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 438.75, 146.997802734375, 186.0, 51.0 ],
+									"patching_rect" : [ 438.75, 146.997802734375, 187.0, 52.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 47, 120, 0, 0, 44, 105, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -23, -103, -103, -103, -103, -103, -102, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102, 0, 0, 0, 1, 0, 0, 0, 36, 47, 99, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 140,
 									"text" : "/x : [0, 0.5, 0.8, 1.],\n/y : [0, 0.75, 0.2, 1],\n/c : [0, 0.1, 0.5, 0]"
@@ -4931,7 +5113,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 659.75, 431.22308349609375, 53.0, 20.0 ],
+									"patching_rect" : [ 659.75, 498.22308349609375, 53.0, 20.0 ],
 									"text" : "Outlets"
 								}
 
@@ -4943,7 +5125,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 659.75, 453.22308349609375, 316.0, 87.0 ],
+									"patching_rect" : [ 659.75, 520.22308349609375, 316.0, 87.0 ],
 									"text" : "1: (signal) Y value with or without interpolation\n2: (signal) relative phase between points\n3: (signal) current point index\n4: (signal) x delta from point index to next point\n5: (signal) number of points in current phrase\n6: (FullPacket) OSC bundle pass-through"
 								}
 
@@ -4956,7 +5138,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 659.75, 351.5323486328125, 43.0, 20.0 ],
+									"patching_rect" : [ 659.75, 418.5323486328125, 43.0, 20.0 ],
 									"text" : "Inlets"
 								}
 
@@ -4971,7 +5153,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 438.75, 406.22308349609375, 176.0, 61.0 ],
+									"patching_rect" : [ 438.75, 406.22308349609375, 187.0, 62.0 ],
 									"text" : "/x : [0, 0.5, 0.8, 1.],\n/y : [0, 0.75, 0.2, 1],\n/c : [0, 0.1, 0.5, 0]"
 								}
 
@@ -5019,7 +5201,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 684.5, 583.510009765625, 59.0, 20.0 ],
+									"patching_rect" : [ 684.5, 617.510009765625, 59.0, 20.0 ],
 									"text" : "see also:"
 								}
 
@@ -5034,7 +5216,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 745.5, 583.510009765625, 155.5, 22.0 ]
+									"patching_rect" : [ 745.5, 617.510009765625, 155.5, 22.0 ]
 								}
 
 							}
@@ -5050,8 +5232,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5215,7 +5397,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 813.75, 609.7762451171875, 65.0, 22.0 ],
+									"patching_rect" : [ 813.75, 643.7762451171875, 65.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -5235,7 +5417,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 813.75, 632.9259033203125, 69.0, 22.0 ],
+									"patching_rect" : [ 813.75, 666.9259033203125, 69.0, 22.0 ],
 									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 									"text" : "thispatcher"
 								}
@@ -5393,7 +5575,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 659.75, 372.5323486328125, 186.0, 47.0 ],
+									"patching_rect" : [ 659.75, 439.5323486328125, 186.0, 47.0 ],
 									"text" : "1: (signal) phase input\n2: (signal) phrase index\n3: (FullPacket) OSC bundle input"
 								}
 
@@ -5522,6 +5704,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-95", 3 ]
 								}
@@ -5588,8 +5777,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5662,10 +5851,10 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 995.5, 435.5, 215.0, 133.0 ],
+									"patching_rect" : [ 995.5, 435.5, 215.0, 136.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 47, 120, 0, 0, 44, 46, 0, 0, 0, 0, 0, 88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 117, 115, 101, 70, 111, 114, 65, 108, 108, 0, 0, 44, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 32, 47, 100, 111, 101, 110, 115, 116, 119, 111, 114, 107, 0, 44, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 13, 0, 0, 0, -116, 47, 121, 0, 0, 44, 46, 0, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 48, 0, 0, 44, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 1, 0, 0, 0, 32, 47, 49, 0, 0, 44, 105, 100, 100, 0, 0, 0, 0, 0, 0, 0, 1, 63, -32, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 36, 47, 50, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 63, -32, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102 ],
 									"saved_bundle_length" : 264,
-									"text" : "/x : {\n\t/useForAll : [0, 1, 3],\n\t/doenstwork : [0, 1, 13]\n},\n/y : {\n\t/0 : [0., 0.1, 1],\n\t/1 : [1, 0.5, 0.1],\n\t/2 : [0.1, 0.5, 0.1]\n}"
+									"text" : "/x : {\n  /useForAll : [0, 1, 3],\n  /doenstwork : [0, 1, 13]\n},\n/y : {\n  /0 : [0., 0.1, 1],\n  /1 : [1, 0.5, 0.1],\n  /2 : [0.1, 0.5, 0.1]\n}"
 								}
 
 							}
@@ -5679,10 +5868,10 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 783.0, 756.0, 208.0, 119.0 ],
+									"patching_rect" : [ 783.0, 756.0, 208.0, 122.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 49, 49, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 120, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 40, 47, 121, 0, 0, 44, 100, 100, 105, 100, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 50, 50, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102, 0, 0, 0, 40, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 248,
-									"text" : "/11 : {\n\t/x : [0, 0.5, 0.75, 1],\n\t/y : [0.5, 0., -1, 1.]\n},\n/22 : {\n\t/y : [0.5, 0., 0.2],\n\t/dur : [0.25, 0.5, 0.25]\n}"
+									"text" : "/11 : {\n  /x : [0, 0.5, 0.75, 1],\n  /y : [0.5, 0., -1, 1.]\n},\n/22 : {\n  /y : [0.5, 0., 0.2],\n  /dur : [0.25, 0.5, 0.25]\n}"
 								}
 
 							}
@@ -5733,8 +5922,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5773,11 +5962,11 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-31",
-													"linecount" : 21,
+													"linecount" : 22,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 50.0, 100.0, 306.0, 304.0 ],
 													"text" : "/out/dur = [],\n/out/y = [],\n\n/prev/y = /y[[0]],\n/prev/dur = 0,\n\nmap(\n  lambda([dur,y],\n    if( y != /prev/y, \n      progn(\n        /out/dur = [/out/dur, /prev/dur],\n        /prev/dur = 0,\n        /out/y = [/out/y, /prev/y]\n      )\n    ),\n    /prev/y = y,\n    /prev/dur += dur\n  ), /dur, /y\n),\n/out/dur = [/out/dur, /prev/dur],\n/out/y = [/out/y, /prev/y]"
 												}
@@ -5848,8 +6037,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5914,7 +6103,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 287.0, 351.0, 167.0, 60.0 ],
+													"patching_rect" : [ 287.0, 351.0, 171.0, 60.0 ],
 													"text" : "splitting jongly.aif into 8 parts we can use the relative phase to drive wave~ with an offset set by the /y value."
 												}
 
@@ -6036,11 +6225,11 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-25",
-													"linecount" : 4,
+													"linecount" : 5,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 233.0, 197.5, 241.0, 73.0 ],
 													"text" : "/y = /step,\n/dur = nfill(length(/y), 1),\n\n/dur = float32(/dur) / sum(/dur)"
 												}
@@ -6289,15 +6478,15 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-21",
-									"linecount" : 7,
+									"linecount" : 9,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 783.0, 630.0, 193.0, 106.0 ],
+									"patching_rect" : [ 783.0, 630.0, 193.0, 136.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 49, 49, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 120, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 40, 47, 121, 0, 0, 44, 100, 100, 105, 100, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 68, 47, 50, 50, 0, 44, 46, 0, 0, 0, 0, 0, 56, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102 ],
 									"saved_bundle_length" : 204,
-									"text" : "/11 : {\n\t/x : [0, 0.5, 0.75, 1],\n\t/y : [0.5, 0., -1, 1.]\n},\n/22 : {\n\t/y : [0.5, 0., 0.2]\n}"
+									"text" : "/11 : {\n  /x : [0, 0.5, 0.75, 1],\n  /y : [0.5, 0., -1, 1.]\n},\n/22 : {\n  /y : [0.5, 0., 0.2]\n}"
 								}
 
 							}
@@ -6306,15 +6495,15 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-35",
-									"linecount" : 8,
+									"linecount" : 10,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 775.5, 469.0, 208.0, 119.0 ],
+									"patching_rect" : [ 775.5, 469.0, 208.0, 150.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 49, 49, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 108, 47, 50, 50, 0, 44, 46, 0, 0, 0, 0, 0, 96, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 121, 0, 0, 44, 100, 105, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 63, -55, -103, -103, -103, -103, -103, -102 ],
 									"saved_bundle_length" : 244,
-									"text" : "/11 : {\n\t/dur : [0.25, 0.5, 0.25],\n\t/y : [0.5, 0., 1.]\n},\n/22 : {\n\t/dur : [0.25, 0.5, 0.25],\n\t/y : [0.5, 1, 0.2]\n}"
+									"text" : "/11 : {\n  /dur : [0.25, 0.5, 0.25],\n  /y : [0.5, 0., 1.]\n},\n/22 : {\n  /dur : [0.25, 0.5, 0.25],\n  /y : [0.5, 1, 0.2]\n}"
 								}
 
 							}
@@ -6362,15 +6551,15 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-26",
-									"linecount" : 8,
+									"linecount" : 10,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 762.5, 181.0, 193.0, 119.0 ],
+									"patching_rect" : [ 762.5, 181.0, 193.0, 150.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 49, 49, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 120, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 40, 47, 121, 0, 0, 44, 100, 100, 105, 100, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 47, 50, 50, 0, 44, 46, 0, 0, 0, 0, 0, 88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 120, 0, 0, 44, 105, 100, 105, 0, 0, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 36, 47, 121, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102 ],
 									"saved_bundle_length" : 236,
-									"text" : "/11 : {\n\t/x : [0, 0.5, 0.75, 1],\n\t/y : [0.5, 0., -1, 1.]\n},\n/22 : {\n\t/x : [0, 0.5, 1],\n\t/y : [0.5, 0., 0.2]\n}"
+									"text" : "/11 : {\n  /x : [0, 0.5, 0.75, 1],\n  /y : [0.5, 0., -1, 1.]\n},\n/22 : {\n  /x : [0, 0.5, 1],\n  /y : [0.5, 0., 0.2]\n}"
 								}
 
 							}
@@ -6504,8 +6693,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6594,12 +6783,12 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-12",
-													"linecount" : 6,
+													"linecount" : 7,
 													"maxclass" : "o.compose",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 202.0, 455.0, 186.0, 92.0 ],
+													"patching_rect" : [ 202.0, 455.0, 186.0, 108.0 ],
 													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 32, 47, 121, 0, 0, 44, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 32, 47, 111, 117, 116, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 28, 47, 111, 117, 116, 47, 121, 0, 0, 44, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 16, 47, 112, 114, 101, 118, 47, 121, 0, 44, 105, 0, 0, 0, 0, 0, 2, 0, 0, 0, 20, 47, 112, 114, 101, 118, 47, 100, 117, 114, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
 													"saved_bundle_length" : 204,
 													"text" : "/dur : [1, 1, 1, 1, 1],\n/y : [0, 0, 1, 1, 2],\n/out/dur : [2, 2, 1],\n/out/y : [0, 1, 2],\n/prev/y : 2,\n/prev/dur : 1"
@@ -6611,12 +6800,12 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-9",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "o.compose",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 213.0, 53.0, 186.0, 38.0 ],
+													"patching_rect" : [ 213.0, 53.0, 186.0, 52.0 ],
 													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 32, 47, 121, 0, 0, 44, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 2 ],
 													"saved_bundle_length" : 92,
 													"text" : "/dur : [1, 1, 1, 1, 1],\n/y : [0, 0, 1, 1, 2]"
@@ -6639,11 +6828,11 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-8",
-													"linecount" : 21,
+													"linecount" : 22,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 213.0, 132.0, 306.0, 304.0 ],
 													"text" : "/out/dur = [],\n/out/y = [],\n\n/prev/y = /y[[0]],\n/prev/dur = 0,\n\nmap(\n  lambda([dur,y],\n    if( y != /prev/y, \n      progn(\n        /out/dur = [/out/dur, /prev/dur],\n        /prev/dur = 0,\n        /out/y = [/out/y, /prev/y]\n      )\n    ),\n    /prev/y = y,\n    /prev/dur += dur\n  ), /dur, /y\n),\n/out/dur = [/out/dur, /prev/dur],\n/out/y = [/out/y, /prev/y]"
 												}
@@ -6684,12 +6873,12 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-3",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 523.75, 521.0, 222.0, 38.0 ],
+									"patching_rect" : [ 523.75, 521.0, 222.0, 52.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 105, 105, 100, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 52, 47, 121, 0, 0, 44, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 63, -23, -103, -103, -103, -103, -103, -102, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 116,
 									"text" : "/dur : [1, 1, 1, 0.5, 1],\n/y : [0., 0.1, 0.8, 0.5, 0.]"
@@ -6701,15 +6890,15 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-17",
-									"linecount" : 8,
+									"linecount" : 9,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 758.5, 36.5, 172.0, 119.0 ],
+									"patching_rect" : [ 758.5, 36.5, 172.0, 136.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, 47, 100, 117, 114, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 72, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 48, 0, 0, 44, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 24, 47, 49, 0, 0, 44, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 104, 47, 121, 0, 0, 44, 46, 0, 0, 0, 0, 0, 92, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 48, 0, 0, 44, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 1, 0, 0, 0, 36, 47, 49, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 63, -32, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102 ],
 									"saved_bundle_length" : 216,
-									"text" : "/dur : {\n\t/0 : [1, 1, 3],\n\t/1 : [1, 2, 3]\n},\n/y : {\n\t/0 : [0., 0.1, 1],\n\t/1 : [0.1, 0.5, 0.1]\n}"
+									"text" : "/dur : {\n  /0 : [1, 1, 3],\n  /1 : [1, 2, 3]\n},\n/y : {\n  /0 : [0., 0.1, 1],\n  /1 : [0.1, 0.5, 0.1]\n}"
 								}
 
 							}
@@ -6740,8 +6929,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6793,9 +6982,9 @@
 													"id" : "obj-52",
 													"linecount" : 22,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 50.0, 100.0, 623.0, 318.0 ],
 													"text" : "if( bound(/x),\n  if( typetags(/x) == '.',\n    map(\n      lambda([a],\n        /subx = getbundlemember(/x, a),\n        assigntobundlemember(/x, a, scale( /subx, min(/subx), max(/subx), 0., 1.) )\n      ), getaddresses(/x)\n    ),\n    /x = scale( /x, min(/x), max(/x), 0., 1.)\n  )\n),\nif( bound(/dur),\n  if( typetags(/dur) == '.',\n    map(\n      lambda([a],\n        /subdur = getbundlemember(/dur, a),\n        assigntobundlemember(/dur, a, /subdur / float32( sum(/subdur) ) )\n      ), getaddresses(/dur)\n    ),\n    /dur /= float32( sum(/dur) )\n  )\n)"
 												}
@@ -6866,10 +7055,10 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 478.0, 413.0, 251.0, 119.0 ],
+									"patching_rect" : [ 478.0, 413.0, 251.0, 122.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 49, 49, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 120, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 40, 47, 121, 0, 0, 44, 100, 100, 105, 100, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 50, 50, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102, 0, 0, 0, 40, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -48, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 248,
-									"text" : "/11 : {\n\t/x : [0, 0.5, 0.75, 1],\n\t/y : [0.5, 0., -1, 1.]\n},\n/22 : {\n\t/y : [0.5, 0., 0.2],\n\t/dur : [0.25, 0.5, 0.25]\n}"
+									"text" : "/11 : {\n  /x : [0, 0.5, 0.75, 1],\n  /y : [0.5, 0., -1, 1.]\n},\n/22 : {\n  /y : [0.5, 0., 0.2],\n  /dur : [0.25, 0.5, 0.25]\n}"
 								}
 
 							}
@@ -6883,8 +7072,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6945,11 +7134,12 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-3",
+													"linecount" : 2,
 													"maxclass" : "o.compose",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 411.0, 309.0, 251.0, 24.0 ],
+													"patching_rect" : [ 411.0, 309.0, 251.0, 38.0 ],
 													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 47, 100, 117, 114, 0, 0, 0, 0, 44, 100, 100, 100, 100, 100, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102, 63, -55, -103, -103, -103, -103, -103, -102, 63, -55, -103, -103, -103, -103, -103, -102, 63, -55, -103, -103, -103, -103, -103, -102, 63, -55, -103, -103, -103, -103, -103, -102 ],
 													"saved_bundle_length" : 76,
 													"text" : "/dur : [0.2, 0.2, 0.2, 0.2, 0.2]"
@@ -6977,10 +7167,11 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-1",
+													"linecount" : 2,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 411.0, 192.0, 212.0, 32.0 ],
 													"text" : "/dur /= sum( float32(/dur) )"
 												}
@@ -6991,10 +7182,11 @@
 													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-52",
+													"linecount" : 2,
 													"maxclass" : "o.expr.codebox",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "FullPacket", "FullPacket", "FullPacket" ],
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 87.0, 192.0, 306.0, 32.0 ],
 													"text" : "/x = scale( /x, min(/x), max(/x), 0., 1.)"
 												}
@@ -7113,15 +7305,15 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-12",
-									"linecount" : 8,
+									"linecount" : 9,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 769.5, 319.5, 193.0, 119.0 ],
+									"patching_rect" : [ 769.5, 319.5, 193.0, 136.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 120, 0, 0, 44, 46, 0, 0, 0, 0, 0, 52, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 117, 115, 101, 70, 111, 114, 65, 108, 108, 0, 0, 44, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, -116, 47, 121, 0, 0, 44, 46, 0, 0, 0, 0, 0, -128, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 48, 0, 0, 44, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 1, 0, 0, 0, 32, 47, 49, 0, 0, 44, 105, 100, 100, 0, 0, 0, 0, 0, 0, 0, 1, 63, -32, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 0, 0, 0, 36, 47, 50, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102, 63, -32, 0, 0, 0, 0, 0, 0, 63, -71, -103, -103, -103, -103, -103, -102 ],
 									"saved_bundle_length" : 228,
-									"text" : "/x : {\n\t/useForAll : [0, 1, 3]\n},\n/y : {\n\t/0 : [0., 0.1, 1],\n\t/1 : [1, 0.5, 0.1],\n\t/2 : [0.1, 0.5, 0.1]\n}"
+									"text" : "/x : {\n  /useForAll : [0, 1, 3]\n},\n/y : {\n  /0 : [0., 0.1, 1],\n  /1 : [1, 0.5, 0.1],\n  /2 : [0.1, 0.5, 0.1]\n}"
 								}
 
 							}
