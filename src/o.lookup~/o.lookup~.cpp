@@ -218,7 +218,7 @@ typedef struct _olookup {
 } t_olookup;
 
 
-void points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& vec, long vec_index = -1)
+bool points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& vec, long vec_index = -1)
 {
 
     PhasePoints newPhrase;
@@ -340,7 +340,7 @@ void points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
                    catch (std::exception& e)
                    {
                        object_error((t_object *)x, "indexed address could not be converted to int.");
-                       return;
+                       return false;
                    }
                    
                    t_osc_bndl_s * sbndl = osc_atom_s_getBndl(at);
@@ -361,8 +361,8 @@ void points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
     }
     osc_bndl_it_s_destroy(it);
     
-    
-    if( newPhrase.init() )
+    bool valid = newPhrase.init();
+    if( valid )
     {
         if( vec_index == -1 )
             vec.emplace_back( newPhrase );
@@ -377,7 +377,7 @@ void points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
         }
     }
     
-    
+    return valid;
 }
 
 
@@ -406,11 +406,14 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
     
     vector<PhasePoints> new_vec;
     
-    points_to_phrase(x, len, ptr, new_vec, 0);
+    bool valid = points_to_phrase(x, len, ptr, new_vec, 0);
      
     critical_enter(x->lock);
-    x->phrase = new_vec;
-    x->update = true;
+    if( valid )
+    {
+        x->phrase = new_vec;
+        x->update = true;
+    }
     critical_exit(x->lock);
     
     

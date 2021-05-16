@@ -37,7 +37,8 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"showontab" : 1,
+		"showrootpatcherontab" : 0,
+		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
@@ -56,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 1145.0, 706.0 ],
+						"rect" : [ 0.0, 26.0, 1145.0, 706.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -86,6 +87,30 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-16",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 556.0, 27.0, 58.0, 22.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 480.0, 26.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-25",
 									"maxclass" : "comment",
@@ -117,7 +142,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 700.0, 234.21527099609375, 323.0, 37.0 ],
-									"presentation_linecount" : 2,
 									"text" : "if you send /y without a track number, it will be used for the first track, the other tracks will ouput zeros."
 								}
 
@@ -418,6 +442,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -455,6 +486,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -523,7 +561,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1145.0, 706.0 ],
+						"rect" : [ 100.0, 126.0, 1145.0, 706.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -625,7 +663,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "float" ],
 									"patching_rect" : [ 269.5, 351.0, 56.0, 22.0 ],
-									"sig" : 22.0
+									"sig" : 11.0
 								}
 
 							}
@@ -676,12 +714,12 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-21",
-									"linecount" : 9,
+									"linecount" : 7,
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 405.0, 219.0, 193.0, 136.0 ],
+									"patching_rect" : [ 405.0, 219.0, 201.0, 108.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 47, 49, 49, 0, 44, 46, 0, 0, 0, 0, 0, 100, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 120, 0, 0, 44, 105, 100, 100, 105, 0, 0, 0, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 63, -24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 40, 47, 121, 0, 0, 44, 100, 100, 105, 100, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, 63, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 68, 47, 50, 50, 0, 44, 46, 0, 0, 0, 0, 0, 56, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 47, 121, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 63, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -55, -103, -103, -103, -103, -103, -102 ],
 									"saved_bundle_length" : 204,
 									"text" : "/11 : {\n  /x : [0, 0.5, 0.75, 1],\n  /y : [0.5, 0., -1, 1.]\n},\n/22 : {\n  /y : [0.5, 0., 0.2]\n}"
@@ -888,7 +926,7 @@
 							}
 , 							{
 								"box" : 								{
-									"addpoints_with_curve" : [ 0.0, 0.0, 0, 0.0, 303.191489361702111, 0.587097981770833, 0, -0.745, 1000.0, 0.0, 0, 0.995 ],
+									"addpoints_with_curve" : [ 0.0, 0.0, 0, 0.0, 265.95744680851061, 0.707097981770833, 0, -0.745, 1000.0, 0.0, 0, -0.845 ],
 									"id" : "obj-5",
 									"maxclass" : "function",
 									"mode" : 1,
@@ -1489,12 +1527,12 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-46",
-									"linecount" : 6,
+									"linecount" : 5,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 329.75, 217.0, 479.0, 86.0 ],
+									"patching_rect" : [ 329.75, 217.0, 480.0, 88.0 ],
 									"text" : "/y   = [ 1,  (9 / 8.), (5 / 4.), (4 / 3.), (5 / 4.), (9 / 8.)  ],\n/dur = [1,    1,        4,        1,        1,        0.5     ],\n\n# normalize durations so the phase will be 0-1\n/dur = float32(/dur) / sum(/dur)"
 								}
 
@@ -3944,6 +3982,17 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 373.0, 179.0, 481.0, 20.0 ],
+									"text" : "(note: o.gui.attach is in the odot/dev folder you may need to add that to your search path)"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
@@ -4692,7 +4741,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 660.0, 496.5, 116.0, 22.0 ],
+									"patching_rect" : [ 661.0, 536.5, 116.0, 22.0 ],
 									"text" : "buffer~ foo jongly.aif"
 								}
 
@@ -5020,7 +5069,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 659.75, 247.0323486328125, 385.0, 167.0 ],
+									"patching_rect" : [ 659.75, 247.0323486328125, 389.0, 167.0 ],
 									"text" : "@interp - interpolation on/off (1/0), default on\n@phaseincr - interpret input as phase increment on/off (1/0), default off\n@phasewrap - wrap phase (1/0), default off\n\nexperimental:\n@accum 0 1 - accum mode will output any skipped values assuming a sequential lookup forwards or backwards, based on the @seq setting\n@seq 0, 1, -1, 2 - optimize search for sequential lookup, 1 for forward, -1 for backward, 2 for bidirectional, default: 0 to use binary search, best for random lookup.\n\n@mc - number of synchronized /y tracks"
 								}
 
