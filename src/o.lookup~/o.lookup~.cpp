@@ -178,7 +178,7 @@ static t_class *olookup_class;
 typedef struct _olookup {
     t_pxobject  ob;
     
-    vector< PhasePoints > phrase;
+    vector< unique_ptr<PhasePoints> > phrase;
     
     // sample and hold values if phase doesn't change
     double      cur_phase;
@@ -218,11 +218,11 @@ typedef struct _olookup {
 } t_olookup;
 
 
-bool points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& vec, long vec_index = -1)
+bool points_to_phrase(t_olookup *x, long len, char *ptr,vector<unique_ptr<PhasePoints>>& vec, long vec_index = -1)
 {
 
-    PhasePoints newPhrase;
-    newPhrase.reserve_y_mc(x->numoutputs);
+    unique_ptr<PhasePoints> newPhrase = make_unique<PhasePoints>();
+    newPhrase->reserve_y_mc(x->numoutputs);
     
     int index = -1;
     t_osc_atom_s *at = NULL;
@@ -237,12 +237,12 @@ bool points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
         {
             int len = osc_message_s_getArgCount(m);
             
-            newPhrase.reserve((char *)"/x", len);
+            newPhrase->reserve((char *)"/x", len);
             
             for(int i = 0; i < len; i++)
             {
                 osc_message_s_getArg(m, i, &at);
-                newPhrase.append((char *)"/x", osc_atom_s_getDouble(at) );
+                newPhrase->append((char *)"/x", osc_atom_s_getDouble(at) );
                 osc_atom_s_free(at);
                 at = NULL;
             }
@@ -252,12 +252,12 @@ bool points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
         {
             int len = osc_message_s_getArgCount(m);
             
-            newPhrase.reserve((char *)"/y", len);
+            newPhrase->reserve((char *)"/y", len);
             
             for(int i = 0; i < len; i++)
             {
                 osc_message_s_getArg(m, i, &at);
-                newPhrase.append((char *)"/y", osc_atom_s_getDouble(at) );
+                newPhrase->append((char *)"/y", osc_atom_s_getDouble(at) );
                 osc_atom_s_free(at);
                 at = NULL;
             }
@@ -275,12 +275,12 @@ bool points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
                 {
                     int len = osc_message_s_getArgCount(m);
                  
-                    newPhrase.reserve((char *)"/y", len, index);
+                    newPhrase->reserve((char *)"/y", len, index);
 
                     for(int i = 0; i < len; i++)
                     {
                         osc_message_s_getArg(m, i, &at);
-                        newPhrase.append((char *)"/y", osc_atom_s_getDouble(at), index );
+                        newPhrase->append((char *)"/y", osc_atom_s_getDouble(at), index );
                         osc_atom_s_free(at);
                         at = NULL;
                     }
@@ -298,12 +298,12 @@ bool points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
         {
            int len = osc_message_s_getArgCount(m);
             
-            newPhrase.reserve((char *)"/c", len);
+            newPhrase->reserve((char *)"/c", len);
             
             for(int i = 0; i < len; i++)
             {
                 osc_message_s_getArg(m, i, &at);
-                newPhrase.append((char *)"/c", osc_atom_s_getDouble(at) );
+                newPhrase->append((char *)"/c", osc_atom_s_getDouble(at) );
                 osc_atom_s_free(at);
                 at = NULL;
             }
@@ -312,12 +312,12 @@ bool points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
         {
             int len = osc_message_s_getArgCount(m);
                        
-            newPhrase.reserve((char *)"/dur", len);
+            newPhrase->reserve((char *)"/dur", len);
 
             for(int i = 0; i < len; i++)
             {
                 osc_message_s_getArg(m, i, &at);
-                newPhrase.append((char *)"/dur", osc_atom_s_getDouble(at) );
+                newPhrase->append((char *)"/dur", osc_atom_s_getDouble(at) );
                 osc_atom_s_free(at);
                 at = NULL;
             }
@@ -361,18 +361,18 @@ bool points_to_phrase(t_olookup *x, long len, char *ptr, vector<PhasePoints>& ve
     }
     osc_bndl_it_s_destroy(it);
     
-    bool valid = newPhrase.init();
+    bool valid = newPhrase->init();
     if( valid )
     {
         if( vec_index == -1 )
-            vec.emplace_back( newPhrase );
+            vec.emplace_back( move(newPhrase) );
         else
         {
             if( vec_index >= vec.size() ){
                 vec.resize(vec_index+1);
             }
             
-            vec[vec_index] = newPhrase;
+            vec[vec_index] = move(newPhrase);
             
         }
     }
@@ -404,14 +404,14 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
     // ==========================
     
     
-    vector<PhasePoints> new_vec;
+    vector<unique_ptr<PhasePoints>> new_vec;
     
     bool valid = points_to_phrase(x, len, ptr, new_vec, 0);
      
     critical_enter(x->lock);
     if( valid )
     {
-        x->phrase = new_vec;
+        x->phrase = move(new_vec);
         x->update = true;
     }
     critical_exit(x->lock);
@@ -510,7 +510,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     t_double *npoints_out = outs[mc_outs+3];
 
     critical_enter(x->lock);
-    vector<PhasePoints> x_phrase = x->phrase;
+    vector< unique_ptr<PhasePoints> >& x_phrase = x->phrase;
     critical_exit(x->lock);
 
     long max_phr_idx = x_phrase.size() - 1;
@@ -554,7 +554,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
             {
                 const auto& ptIdx_phraseIdx = x->out_idx_queue.front();
                 size_t q_idx = ptIdx_phraseIdx.first;
-                const auto& phr = x_phrase[ ptIdx_phraseIdx.second ];
+                const auto& phr = *(x_phrase[ ptIdx_phraseIdx.second ]);
                 
                 for( size_t n = 0; n < mc_outs; n++ )
                     interp_val_out[n][j] = phr.y_mc[n][q_idx];
@@ -580,7 +580,8 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                 {
                     
                     critical_enter(x->lock);
-                    x_phrase = x->phrase;
+                    // removed since x_phrase is now a reference to x->phrase
+                  //  x_phrase = x->phrase;
                     x->update = false;
                     critical_exit(x->lock);
                     
@@ -604,7 +605,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                 else
                 {
 
-                    PhasePoints& phr = x_phrase[phrase_index];
+                    PhasePoints& phr = *(x_phrase[phrase_index]);
                     points_len = phr.len;
                     
                     if( points_len > 1 )
