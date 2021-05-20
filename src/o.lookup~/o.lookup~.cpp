@@ -495,6 +495,17 @@ void olookup_search_binary(const vector< double >& x_phrase, const long& points_
 }
 
 
+vector< unique_ptr<PhasePoints> > copyPhrasePoints(vector< unique_ptr<PhasePoints> >& src )
+{
+    vector< unique_ptr<PhasePoints> > dst;
+    dst.reserve(src.size());
+    for( const auto& p : src )
+    {
+        dst.emplace_back( make_unique<PhasePoints>( *p ) );
+    }
+    return dst;
+}
+
 void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
     t_double *phase_in = ins[0];
@@ -510,7 +521,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
     t_double *npoints_out = outs[mc_outs+3];
 
     critical_enter(x->lock);
-    vector< unique_ptr<PhasePoints> >& x_phrase = x->phrase;
+    vector< unique_ptr<PhasePoints> > x_phrase = copyPhrasePoints(x->phrase);
     critical_exit(x->lock);
 
     long max_phr_idx = x_phrase.size() - 1;
@@ -580,8 +591,7 @@ void olookup_perform64(t_olookup *x, t_object *dsp64, double **ins, long numins,
                 {
                     
                     critical_enter(x->lock);
-                    // removed since x_phrase is now a reference to x->phrase
-                  //  x_phrase = x->phrase;
+                    x_phrase = copyPhrasePoints(x->phrase);
                     x->update = false;
                     critical_exit(x->lock);
                     

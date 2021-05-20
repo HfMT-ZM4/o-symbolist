@@ -87,7 +87,7 @@
 		1133D28123258E470000EC2A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1133D28023258E470000EC2A /* Carbon.framework */; };
 		1140C3D323216F3F00E32DDB /* libomax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1140C3D223216F3F00E32DDB /* libomax.a */; };
 		11611CE423198B9E00E2F1DD /* o.svgpoints.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11611CE223198B9E00E2F1DD /* o.svgpoints.cpp */; };
-		11C28F8E2327DC02002D6E9B /* liblibo-symbolist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1126C04C2326D517006D1701 /* liblibo-symbolist.a */; };
+		117BBACF263AB93000D59A49 /* libo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 117BBACE263AB92F00D59A49 /* libo.a */; };
 		11C28F8F2327DC02002D6E9B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1133D28023258E470000EC2A /* Carbon.framework */; };
 		11C28F902327DC02002D6E9B /* libomax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1140C3D223216F3F00E32DDB /* libomax.a */; };
 		11C28F9A2327DC52002D6E9B /* o.lookup~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11C28F992327DC52002D6E9B /* o.lookup~.cpp */; };
@@ -219,6 +219,7 @@
 		116695EC233B72E5005B2D9C /* osc_legacy_parser.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = osc_legacy_parser.y; path = ../../../libo/osc_legacy_parser.y; sourceTree = "<group>"; };
 		116695ED233B72E5005B2D9C /* osc_parser.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = osc_parser.y; path = ../../../libo/osc_parser.y; sourceTree = "<group>"; };
 		116695EE233B72E5005B2D9C /* osc_expr_parser.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = osc_expr_parser.y; path = ../../../libo/osc_expr_parser.y; sourceTree = "<group>"; };
+		117BBACE263AB92F00D59A49 /* libo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libo.a; path = ../../libo/libo.a; sourceTree = "<group>"; };
 		11C28F952327DC02002D6E9B /* o.lookup~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "o.lookup~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C28F982327DC52002D6E9B /* o.lookup~.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "o.lookup~.hpp"; sourceTree = "<group>"; };
 		11C28F992327DC52002D6E9B /* o.lookup~.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "o.lookup~.cpp"; sourceTree = "<group>"; };
@@ -261,7 +262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11C28F8E2327DC02002D6E9B /* liblibo-symbolist.a in Frameworks */,
+				117BBACF263AB93000D59A49 /* libo.a in Frameworks */,
 				11C28F8F2327DC02002D6E9B /* Carbon.framework in Frameworks */,
 				11C28F902327DC02002D6E9B /* libomax.a in Frameworks */,
 				11C28F9D2327DCE5002D6E9B /* MaxAudioAPI.framework in Frameworks */,
@@ -403,6 +404,7 @@
 		1140C3CF23216F2C00E32DDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				117BBACE263AB92F00D59A49 /* libo.a */,
 				113D14542610CB7900FB3090 /* CoreServices.framework */,
 				11C28F9C2327DCE5002D6E9B /* MaxAudioAPI.framework */,
 				1133D28023258E470000EC2A /* Carbon.framework */,
@@ -1101,6 +1103,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 43QFH4NBN8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 03;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(inherited)";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
