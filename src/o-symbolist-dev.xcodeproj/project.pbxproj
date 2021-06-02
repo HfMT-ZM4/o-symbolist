@@ -933,6 +933,7 @@
 				OTHER_CFLAGS = (
 					"-g",
 					"-DNO_TRANSLATION_SUPPORT",
+					"-fPIC",
 				);
 				OTHER_LDFLAGS = "@../../max-sdk/source/c74support/max-includes/c74_linker_flags.txt";
 				PRELINK_LIBS = "\"$(SRCROOT)/../../libomax/libomax.a\" \"$(SRCROOT)/../../libo/libo.a\"";
@@ -1020,8 +1021,9 @@
 				MTL_FAST_MATH = YES;
 				OBJROOT = build;
 				OTHER_CFLAGS = (
-					"-g",
+					"-O3",
 					"-DNO_TRANSLATION_SUPPORT",
+					"-fPIC",
 				);
 				OTHER_LDFLAGS = "@../../max-sdk/source/c74support/max-includes/c74_linker_flags.txt";
 				PRELINK_LIBS = "\"$(SRCROOT)/../../libomax/libomax.a\" \"$(SRCROOT)/../../libo/libo.a\"";

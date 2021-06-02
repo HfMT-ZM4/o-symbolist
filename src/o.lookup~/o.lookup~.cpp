@@ -416,13 +416,8 @@ void olookup_FullPacket(t_olookup *x, t_symbol *s, long argc, t_atom *argv)
     }
     critical_exit(x->lock);
     
-    
-//    post("interp %i norm %i", x->interp, x->normal_x);
-    
     omax_util_outletOSC(x->osc_outlet, len, ptr);
-    
-  //  p.release();
-    
+        
 }
 
 
@@ -485,13 +480,16 @@ void olookup_search_binary(const vector< double >& x_phrase, const long& points_
         x0 = x_phrase[idx1];
         x1 = x0;
     }
+    else
+    {
+        idx1 = it - x_phrase.begin(); // first element *not lower* than search value
+        idx = CLAMP(idx1-1, 0, points_len - 2);
+        idx1 = CLAMP(idx1, 1, points_len - 1);
         
-    idx1 = it - x_phrase.begin(); // first element *not lower* than search value
-    idx = CLAMP(idx1-1, 0, points_len - 2);
-    idx1 = CLAMP(idx1, 1, points_len - 1);
-    
-    x1 = (*it);
-    x0 = x_phrase[idx];
+        x1 = (*it);
+        x0 = x_phrase[idx];
+    }
+
 }
 
 
